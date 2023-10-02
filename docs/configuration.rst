@@ -3,9 +3,17 @@
 ##################
 Configuration File
 ##################
- 
+
+This page describes the configuration file for the Hercules S/370, ESA/390, and z/Architecture emulator.
+
+The configuration file hercules.cnf contains the processor and device layout. It is roughly equivalent to the IOCDS on a real System/390. The configuration file is an ASCII text file.
+
 Example configuration file
 ==========================
+
+
+.. note:  
+Please note that the below example configuration file should not be considered a good example of how an actual configuration file should look! It is only meant to illustrate what some of the supported configuration file statements look like and how they are used.
 
 .. code-block:: 
 
@@ -13,7 +21,6 @@ Example configuration file
     #                HERCULES EMULATOR CONTROL FILE                    #
     #             (Note: not all parameters are shown)                 #
     ####################################################################
-
 
     #------------------------------------------------------------------
     #                       SYSTEM PARAMETERS
@@ -171,15 +178,14 @@ ARCHLVL
 -------
    ``ARCHLVL S/370 | ESA/390 | ESAME | z/Arch``
 
-Specifies the initial architecture mode.
-
-* use ``S/370`` for OS/360, VM/370, and MVS 3.8.
-* use ``ESA/390`` for MVS/XA, MVS/ESA, OS/390, VM/ESA, VSE/ESA, Linux/390, and ZZSA.
-* use ``z/Arch`` or `ESAME` for z/OS and zLinux. This is the default.
+Specifies the initial architecture mode:
+ - use ``S/370`` for OS/360, VM/370, and MVS 3.8.
+ - use ``ESA/390`` for MVS/XA, MVS/ESA, OS/390, VM/ESA, VSE/ESA, Linux/390, and ZZSA.
+ - use ``z/Arch`` or `ESAME` for z/OS and zLinux. This is the default.
 
 When ``z/Arch`` or ``ESAME`` is specified, the machine will always IPL in ESA/390 mode, but is capable of being switched into z/Architecture mode after IPL. This is handled automatically by all z/Architecture operating systems.
 
-When ``ARCHLVL S/370`` is set, the current ``LPARNUM`` and ``CPUIDFMT`` settings will be automatically changed to ``BASIC``. When ``ARCHLVL z/Arch`` is set, ``LPARNUM`` and ``CPUIDFMT`` will be reset back to ``1`` and ``0`` respectively (if needed). Refer to the *"Limited automatic LPARNUM updating when setting certain architecture modes"* section of the Release Notes document for more information.
+When ``ARCHLVL S/370`` is set, the current ``LPARNUM`` and CPUIDFMT_ settings will be automatically changed to ``BASIC``. When ``ARCHLVL z/Arch`` is set, ``LPARNUM`` and ``CPUIDFMT`` will be reset back to ``1`` and ``0`` respectively (if needed). Refer to the *"Limited automatic LPARNUM updating when setting certain architecture modes"* section of the Release Notes document for more information.
 
 The ``ARCHLVL`` statement used to be called ``ARCHMODE`` in previous versions of Hercules but the use of ``ARCHMODE`` has been deprecated in favor of the new ``ARCHLVL`` statement. Existing ``ARCHMODE`` statements should be changed to ``ARCHLVL`` instead. For the time being however, ``ARCHMODE`` is still accepted and is treated as simply a synonym for the ``ARCHLVL`` statement.
 
@@ -363,6 +369,7 @@ The three values can also be modified on-demand via the conkpalv panel command, 
 Please also note that not all systems support being able to modify all three values. That is, not all values may be modifiable. It is operating system dependent which values you can change and which values you cannot. On Windows for example, the count value is ignored and cannot be changed from its default value of 10. Other systems may ignore one or more or all three values and use platform defaults instead. This is entirely system dependent. Check your system's documentation for details regarding which values can be changed and which cannot as well as how to adjust your system's default values.
 
 
+.. _CPUIDFMT:
 CPUIDFMT
 --------
 CPUIDFMT   0 | 1 | BASIC
