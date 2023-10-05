@@ -259,6 +259,7 @@ Other supported predefined codepage mappings are:
 
 .. csv-table::
   :header:  "Mapping", "ASCII", "EBCDIC", "Transparent?"
+
   "437/037","437 PC United States","037 United States/Canada","no"
   "437/500","437 PC United States","500 International","no"
   "437/1047","437 PC United States","1047 Open Systems Latin 1","no"
@@ -293,6 +294,7 @@ The recommended code page for non-Linux guests (e.g. z/OS, etc) is "819/1047", a
 
 .. csv-table::
   :header:  "Character", "Description"
+
   "!","exclamation point"
   "[","left square bracket"
   "]","right square bracket"
@@ -362,6 +364,7 @@ To make it easier to specify the model number for certain known models, the foll
 
 .. csv-table::
   :header:  "Symbol", "Model"
+
   "zPDT","1090"
   "EC12","2827"
   "BC12","2828"
