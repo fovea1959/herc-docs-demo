@@ -179,13 +179,10 @@ When ``ARCHLVL S/370`` is set, the current LPARNUM_ and CPUIDFMT_ settings will 
 
 The ARCHLVL statement used to be called ``ARCHMODE`` in previous versions of Hercules but the use of ``ARCHMODE`` has been deprecated in favor of the new ``ARCHLVL`` statement. Existing ``ARCHMODE`` statements should be changed to ``ARCHLVL`` instead. For the time being however, ``ARCHMODE`` is still accepted and is treated as simply a synonym for the ``ARCHLVL`` statement.
 
-When ``ARCHLVL S/370`` is set, the current LPARNUM_ and CPUIDFMT_ settings will be automatically changed to ``BASIC``. When ``ARCHLVL z/Arch`` is set, LPARNUM and CPUIDFMT will be reset back to 1 and 0 respectively (if needed). Refer to the *"Limited automatic LPARNUM updating when setting certain architecture modes"* section of the Release Notes document for more information.
-
-The ARCHLVL statement used to be called ARCHMODE in previous versions of Hercules but the use of ARCHMODE has been deprecated in favor of the new ARCHLVL statement. Existing ARCHMODE statements should be changed to ARCHLVL instead. For the time being however, ARCHMODE is still accepted and is treated as simply a synonym for the ARCHLVL statement.
 
 ASN_AND_LX_REUSE
 ----------------
-   ``ASN_AND_LX_REUSE   ENABLE | DISABLE`` (deprecated; use FACILITY_)
+   ``ASN_AND_LX_REUSE   *ENABLE* | *DISABLE*`` (deprecated; use FACILITY_)
 
 
 AUTOINIT
