@@ -182,12 +182,12 @@ The ARCHLVL statement used to be called ``ARCHMODE`` in previous versions of Her
 
 ASN_AND_LX_REUSE
 ----------------
-   ``ASN_AND_LX_REUSE   *ENABLE* | *DISABLE*`` (deprecated; use FACILITY_)
+Syntax: ``ASN_AND_LX_REUSE   ENABLE | DISABLE`` (deprecated; use FACILITY_)
 
 
 AUTOINIT
 --------
-   ``AUTOINIT   ON | OFF``
+Syntax: ``AUTOINIT   ON | OFF``
 The `AUTOINIT` option controls whether device files for emulated tape volumes should be automatically created or not.
 
 When ``AUTOINIT`` is ``ON``, a ``devinit`` command specifying a file that does not yet exist causes the tape driver to automatically create an empty unlabeled tape volume consisting of just two tapemarks when it discovers the specified file does not exist yet. When ``AUTOINIT`` is ``OFF`` a ``devinit`` command instead fails with an expected "file not found" error. For convenience the default setting is ``ON``.
@@ -195,7 +195,7 @@ When ``AUTOINIT`` is ``ON``, a ``devinit`` command specifying a file that does n
 
 AUTOMOUNT   [±]directory
 --------
-   ``AUTOMOUNT   [±]directory``
+Syntax: ``AUTOMOUNT   [±]directory``
 Specifies the host system directory where the guest is allowed or not allowed to automatically load virtual tape volumes from. Prefix allowable directories with a ``+`` plus sign and unallowable directories with a ``-`` minus sign. The default prefix if neither is specified is the ``+`` plus sign (i.e. an allowable directory).
 
 .. caution:: Enabling this feature may have security consequences depending on which allowable host system directories you specify as well as how your guest operating system enforces authorized use of the ``Set Diagnose (X'4B')`` channel command code.
@@ -222,7 +222,7 @@ The CCKD command and initialization statement can be used to affect cckd process
 
 CMDSEP
 ------
-   ``CMDSEP   OFF | c``
+Syntax: ``CMDSEP   OFF | c``
 
 A command line separator character allows multiple commands to be entered on a single line. The character ``c`` defines the command separator character. The values '.' (period or dot), '!' (exclamation mark or bang) and '-' (dash or hypen) are reserved and cannot be used. The default value is 'OFF' indicating command separation is disabled.
 
@@ -231,13 +231,13 @@ A command line separator character allows multiple commands to be entered on a s
 
 CMPSCPAD
 --------
-   ``CMPSCPAD   alignment``
+Syntax: ``CMPSCPAD   alignment``
 The CMPSCPAD command and initialization statement is used to define the zero padding storage alignment boundary for the CMPSC-Enhancement Facility. It must be a power of 2 value ranging anywhere from 1 to 12.
 
 
 CNSLPORT
 --------
-CNSLPORT   3270  -or-  nnnn  -or-  host:port
+Syntax: ``CNSLPORT   3270  -or-  nnnn  -or-  host:port``
 Specifies (typically) the port number (in decimal) to which tn3270 and telnet clients should connect. If an invalid value is specified Hercules defaults to port number 3270. See also the SYSGPORT statement.
 
 The CNSLPORT statement may also be specified as host:port, where host identifies the IP address of the host interface the telnet console server should bind to (listen for connections on). If not specified the server will accept connections on the port from any host interface.
@@ -247,7 +247,7 @@ See the Telnet/tn3270 Console How-To for additional information about setting up
 
 CODEPAGE
 --------
-CODEPAGE   mapping
+Syntax: ``CODEPAGE   mapping``
 Specifies the codepage conversion mapping table used for ASCII/EBCDIC translation.
 
 default specifies traditional Hercules codepage mapping, which is non-transparent.
@@ -341,12 +341,12 @@ _	    underscore
 
 CONKPALV
 --------
-CONKPALV   (idle,intv,count)
+Syntax: ``CONKPALV   (idle,intv,count)``
 Specifies the tn3270 console and telnet clients keepalive option values that control automatic detection of disconnected tn3270/telnet client sessions.
 
-idle  specifies the number of seconds of inactivity until the first keepalive probe is sent (idle time until first probe, or probe frequency).
-intv   specifies the interval in seconds between when successive keepalive packets are sent if no acknowledgement is received from the previous one (i.e. the timeout value of the probes themselves).
-count  specifies the number of unacknowledged keepalive packets sent before the connection is considered to have failed.
+`idle` specifies the number of seconds of inactivity until the first keepalive probe is sent (idle time until first probe, or probe frequency).
+`intv` specifies the interval in seconds between when successive keepalive packets are sent if no acknowledgement is received from the previous one (i.e. the timeout value of the probes themselves).
+`count` specifies the number of unacknowledged keepalive packets sent before the connection is considered to have failed.
 
 The default values for Windows are 3, 1, and 10. For non-Windows systems it is 3, 1, and 9. That is, send the initial probe 3 seconds after the connection goes idle and then wait no more than one second for it to be responded to. If it is not responded to within one second, then send up to 9 more probes (for a total of 10), each of which must also timeout without being responded to before the client is considered as having died and the connection thus automatically closed.
 
@@ -362,40 +362,43 @@ Please also note that not all systems support being able to modify all three val
 .. _CPUIDFMT:
 CPUIDFMT
 --------
-CPUIDFMT   0 | 1 | BASIC
-Specifies the format of the CPU ID the STIDP instruction should store. Refer to the LPARNUM statement for more information.
+Syntax: ``CPUIDFMT   0 | 1 | BASIC``
+Specifies the format of the CPU ID the STIDP instruction should store. Refer to the LPARNUM_ statement for more information.
 
 
 CPUMODEL
 --------
-CPUMODEL   0586 | xxxx | $(symbol)
+Syntax: ``CPUMODEL   0586 | xxxx | $(symbol)``
 Specifies the 4 hexadecimal digit CPU machine type number (known prior to ESA/390 as the model number) stored by the STIDP instruction.
 
 To make it easier to specify the model number for certain known models, the following symbols are now automatically predefined starting with Hercules version 4.4:
 
-Symbol	Model
-zPDT	1090
-EC12	2827
-BC12	2828
-z13	2964
-z13s	2965
-z14	3906
-z14ZR1	3907
-z15	8561
-z15T02	8562
-z16	3931
-Note: Hercules makes no attempt to emulate all aspects of, or features of, a given CPU model. The CPUMODEL statement defines a purely cosmetic value only. It defines only the value that the STIDP (Store CPU ID) instruction stores, and nothing more.
+.. csv-table::
+  :header:  "Symbol", "Model"
+
+  "zPDT","1090"
+  "EC12","2827"
+  "BC12","2828"
+  "z13","2964"
+  "z13s","2965"
+  "z14","3906"
+  "z14ZR1","3907"
+  "z15","8561"
+  "z15T02","8562"
+  "z16","3931"
+
+Note: Hercules makes no attempt to emulate all aspects of, or features of, a given CPU model. The `CPUMODEL` statement defines a purely cosmetic value only. It defines only the value that the STIDP (Store CPU ID) instruction stores, and nothing more.
 
 
 CPUSERIAL
 ---------
-CPUSERIAL   000001 | xxxxxx
+Syntax: ``CPUSERIAL   000001 | xxxxxx``
 Specifies the 6 hexadecimal digit CPU serial number stored by the STIDP instruction. In BASIC mode, the high-order digit may be replaced with the processor number when MAXCPU > 1; in LPAR mode, the two high-order digits are replaced with either the LPAR number or the CPU number and LPAR number with the full serial number available via the STSI instruction. The default serial number is 000001.
 
 
 CPUVERID
 --------
-CPUVERID   FD | xx   [FORCE]
+Syntax: ``CPUVERID   FD | xx   [FORCE]``
 Specifies the 2 hexadecimal digit CPU version code stored by the STIDP instruction.
 
 The default cpuverid version code at startup is FD, and that value will be stored by the STIDP instruction -- even for z/Arch -- unless and UNTIL you set it to a different value via the cpuverid command/statement.
@@ -405,7 +408,7 @@ If you try using the cpuverid command/statement to set a non-zero cpuverid value
 
 DEFSYM
 ------
-DEFSYM   symbol value
+Syntax: ``DEFSYM   symbol value``
 Defines symbol symbol as to contain value value. The symbol can then be the object of a substitution later in the configuration file or for panel commands. If value contains blanks or spaces, then it should be enclosed in double quotation marks ("). See substitutions for a more in-depth discussion on this feature.
 
 Substitution is available even in configuration statements, meaning it is possible to perform substitution in the DEFSYM statement itself. However, symbols are always defined as the last step in the process, so attempting to self define a symbol will result in an empty string:
@@ -416,12 +419,12 @@ Will set symbol FOO to ""
 
 DEVTMAX
 -------
-DEVTMAX   -1 | 0 | nnn
+Syntax: ``DEVTMAX   -1 | 0 | nnn``
 Specifies the maximum number of device threads allowed.
 
-Specify -1 to cause 'one time only' temporary threads to be created to service each I/O request to a device. Once the I/O request is complete, the thread exits. Subsequent I/O to the same device will cause another worker thread to be created again.
+Specify `-1` to cause 'one time only' temporary threads to be created to service each I/O request to a device. Once the I/O request is complete, the thread exits. Subsequent I/O to the same device will cause another worker thread to be created again.
 
-Specify 0 to cause an unlimited number of 'semi-permanent' threads to be created on an 'as-needed' basis. With this option, a thread is created to service an I/O request for a device if one doesn't already exist, but once the I/O is complete, the thread enters an idle state waiting for new work. If a new I/O request for the device arrives before the timeout period expires, the existing thread will be reused. The timeout value is currently hard coded at 5 minutes. Note that this option can cause one thread (or possibly more) to be created for each device defined in your configuration. Specifying 0 means there is no limit to the number of threads that can be created.
+Specify `0` to cause an unlimited number of 'semi-permanent' threads to be created on an 'as-needed' basis. With this option, a thread is created to service an I/O request for a device if one doesn't already exist, but once the I/O is complete, the thread enters an idle state waiting for new work. If a new I/O request for the device arrives before the timeout period expires, the existing thread will be reused. The timeout value is currently hard coded at 5 minutes. Note that this option can cause one thread (or possibly more) to be created for each device defined in your configuration. Specifying 0 means there is no limit to the number of threads that can be created.
 
 Specify a value from 1 to nnn  to set an upper limit to the number of threads that can be created to service any I/O request to any device. Like the 0 option, each thread, once done servicing an I/O request, enters an idle state. If a new request arrives before the timeout period expires, the thread is reused. If all threads are busy when a new I/O request arrives however, a new thread is created only if the specified maximum has not yet been reached. If the specified maximum number of threads has already been reached, then the I/O request is placed in a queue and will be serviced by the first available thread (i.e. by whichever thread becomes idle first). This option was created to address a threading issue (possibly related to the cygwin Pthreads implementation) on Windows systems.
 
@@ -430,24 +433,24 @@ The default for Windows is 8. The default for all other systems is 0.
 
 DIAG8CMD
 --------
-DIAG8CMD   DISABLE | ENABLE   [ECHO | NOECHO]
+Syntax: ``DIAG8CMD   DISABLE | ENABLE   [ECHO | NOECHO]``
 When ENABLE is specified the Hercules Diagnose 8 instruction command interface is enabled, allowing the guest to directly issue Hercules commands via the Diagnose 8 instruction. When set to DISABLE all Diagnose 8 instructions cause a Specification Exception program interrupt to occur instead.
 
-An optional second argument can be given to request whether an audit trail of such commands should be created or not. When ECHO is specified, a message is issued when the command is about to be issued, when the command is redisplayed (as is normally done when entered from the command line), as well as a final message indicating the command has finished executing. When NOECHO is specified no such audit trail messages are displayed and the command instead completes silently (except for whatever messages the command itself may issue).
+An optional second argument can be given to request whether an audit trail of such commands should be created or not. When `ECHO` is specified, a message is issued when the command is about to be issued, when the command is redisplayed (as is normally done when entered from the command line), as well as a final message indicating the command has finished executing. When `NOECHO` is specified no such audit trail messages are displayed and the command instead completes silently (except for whatever messages the command itself may issue).
 
-Security Alert:  Enabling this feature has security consequences. When this feature is enabled it is possible for guest operating systems running under Hercules to issue commands directly to the host operating system by means of the sh (host shell command) and exec (execute Rexx script) commands. This ability may be disabled via the SHCMDOPT statement's NODIAG8 option.
+Security Alert:  Enabling this feature has security consequences. When this feature is enabled it is possible for guest operating systems running under Hercules to issue commands directly to the host operating system by means of the sh (host shell command) and exec (execute Rexx script) commands. This ability may be disabled via the `SHCMDOPT` statement's `NODIAG8` option.
 
 The value of ECHO or NOECHO has no effect on whether or not command output will be placed into the Diagnose 8 instruction's response buffer if the instruction requested one, nor does it cause the resulting audit trail messages from being placed into the response buffer either. The ECHO option only impacts what is displayed on the hardware console (and what appears in the hardcopy logfile) but does not otherwise impact what is placed into the instruction's response buffer.
 
-The default is DISABLE NOECHO
+The default is `DISABLE NOECHO`
 
 
 ECPSVM
 ------
-ECPSVM   YES | NO | LEVEL nn    [ TRAP | NOTRAP ]
+Syntax: ``ECPSVM   YES | NO | LEVEL nn    [ TRAP | NOTRAP ]``
 Specifies whether ECPS:VM (Extended Control Program Support : Virtual Machine) support is to be enabled.
 
-If YES is specified, then the support level reported to the operating system is 20. The purpose of ECPS:VM is to provide to the VM/370 Operating system a set of shortcut facilities to perform hypervisor functions (CP Assists) and virtual machine simulation (VM Assists).
+If `YES` is specified, then the support level reported to the operating system is 20. The purpose of ECPS:VM is to provide to the VM/370 Operating system a set of shortcut facilities to perform hypervisor functions (CP Assists) and virtual machine simulation (VM Assists).
 
 Although this feature does not affect VM Operating system products operating in XA, ESA or z/Architecture mode, it will affect VM/370 and VM/SP products running under VM/XA, VM/ESA or z/VM.
 
@@ -464,17 +467,15 @@ Please refer to the README.ECPSVM document for more detailed information, includ
 
 ENGINES
 -------
-ENGINES   [nn*]CP|IL|AP|IP[,...]
+Syntax: ``ENGINES   [nn*]CP|IL|AP|IP[,...]``
 Specifies the type of engine for each installed processor. The default engine type is CP.
 
 nn* is an optional repeat count. Spaces are not permitted.
 
 Examples:
-
-ENGINES CP,CP,AP,IP
+`ENGINES CP,CP,AP,IP`
 specifies that processor engines 0 and 1 are of type CP, engine 2 is type AP, and engine 3 is type IP.
-
-ENGINES 4*CP,2*AP,2*IP
+`ENGINES 4*CP,2*AP,2*IP`
 specifies that the first four processor engines (engines 0-3) are of type CP, the next two (engines 4-5) are of type AP, and the next two (engines 6-7) are of type IP.
 
 The number of installed processor engines is determined by the MAXCPU statement. If the ENGINES statement specifies more than MAXCPU engines, the excess engines are ignored. If fewer than MAXCPU engines are specified, the remaining engines are set to type CP.
@@ -482,7 +483,7 @@ The number of installed processor engines is determined by the MAXCPU statement.
 .. _FACILITY:
 FACILITY
 --------
-FACILITY   ENABLE | DISABLE | QUERY  facility  [archlvl]
+Syntax: ``FACILITY   ENABLE | DISABLE | QUERY  facility  [archlvl]``
 Specifies a particular STFL/STFLE facility to be enabled or disabled, or a request to query of the current settings. Use QUERY ALL to obtain a list of valid facility  names that may be used for the given archlvl. Enter help facility for detailed FACILITY command/statement use.
 
 Alternatively, you can also specify the actual STFL/STFLE bit number to be turned off or on (disabled or enabled) using the format BITnn  where 'nn' corresponds to the exact STFL/STFLE facility bit you wish to be forced on or off. A popular one among the VM crowd is ENABLE BIT44 to force the PFPO (Perform Floating-Point Operation Facility) bit on, since the facility is not enabled by default in SDL Hyperion version 4.1 or earlier. The facility is only enabled by default starting with SDL Hyperion version 4.2 or later. Specifying ENABLE BIT44 allows z/VM guests running on SDL Hyperion 4.1 or earlier to IPL.
@@ -501,36 +502,36 @@ The ability to define process and thread priorities has been removed from SDL Hy
 
 HTTP   PORT
 -----------
-HTTP   PORT   nnnn [[NOAUTH] | [AUTH userid password]]
+Syntax: ``HTTP   PORT   nnnn [[NOAUTH] | [AUTH userid password]]``
 Specifies the port number (in decimal) on which the HTTP server will listen. The port number must either be 80 or within the range 1024 - 65535 inclusive. The server is not started until a subsequent HTTP START statement is found.
 
-AUTH indictates that a userid and password are required to access the HTTP server, whereas NOAUTH indicates that a userid and password are not required. The userid and password may be any valid string.
+`AUTH` indictates that a userid and password are required to access the HTTP server, whereas NOAUTH indicates that a userid and password are not required. The userid and password may be any valid string.
 
-Security Alert!  When AUTH is specified (and specifying a userid and password is thus required), one must exercise due diligence to prevent unauthorized access to Hercules's configuration file that contains those userids and passwords.
+Security Alert!  When `AUTH` is specified (and specifying a userid and password is thus required), one must exercise due diligence to prevent unauthorized access to Hercules's configuration file that contains those userids and passwords.
 
 Security Alert!  The HTTP Server currently utilizes the insecure "http" protocol, not the more secure "https" protocol. All commands and responses are transmitted over the network in the clear, allowing anyone sniffing network traffic to see everything you do and possibly inject unauthorized commands of their own. Exercise caution when using the HTTP Server feature.
 
 
 HTTP   ROOT
 -----------
-HTTP   ROOT   directory
+Syntax: ``HTTP   ROOT   directory``
 Specifies the root directory where the HTTP server's files reside. If not specified, the default value for Win32 builds of Hercules is the directory where the Hercules executable itself is executing out of, and for non-Win32 builds it is the directory specified as the default package installation directory when the Hercules executable was built (which can vary depending on how the Hercules package was built, but is usually /usr/local/share/hercules/).
 
 
 HTTP   START
 ------------
-HTTP   START
+Syntax: ``HTTP   START``
 Starts the HTTP server. (Note: The server is no longer started by default.)
 
 IGNORE INCLUDE_ERRORS
 ---------------------
-IGNORE   INCLUDE_ERRORS
+Syntax: ``IGNORE   INCLUDE_ERRORS``
 Indicates that errors caused by subsequent INCLUDE statements for files which do not exist should instead be ignored rather than causing startup to be aborted (as would otherwise normally occur).
 
 
 INCLUDE
 -------
-INCLUDE   filepath
+Syntax: ``INCLUDE   filepath``
 An INCLUDE statement tells Hercules configuration file processing to treat the contents of the file specified by filepath as if its contents had appeared in the configuration file at the point where the INCLUDE statement appears.
 
 Note that the included file may itself contain yet another INCLUDE statement as long as the maximum nesting depth (current 8) is not exceeded.
@@ -538,7 +539,7 @@ Note that the included file may itself contain yet another INCLUDE statement as 
 
 IODELAY
 -------
-IODELAY   usec
+Syntax: ``IODELAY   usec``
 Specifies the amount of time (in microseconds) to wait after an I/O interrupt is ready to be set pending. This value can also be set using the Hercules console. The purpose of this parameter is to bypass a bug in the Linux/390 and zLinux dasd.c device driver. The problem is more apt to happen under Hercules than on a real machine because we may present an I/O interrupt sooner than a real machine.
 
 .. note:: OSTAILOR LINUX no longer sets IODELAY to 800 since the problem described above is no longer present in recent versions of the Linux kernel.
@@ -546,7 +547,7 @@ Specifies the amount of time (in microseconds) to wait after an I/O interrupt is
 
 LDMOD
 -----
-LDMOD   module list
+Syntax: ``LDMOD   module list``
 Specifies additional modules that are to be loaded by the Hercules dynamic loader. The default search order is with the Hercules directory in the default DLL search path. Most systems also support absolute filenames (ie names starting with '/' or '.') in which case the default search path is not taken.
 
 Multiple LDMOD statements may be used.
@@ -554,17 +555,17 @@ Multiple LDMOD statements may be used.
 
 LEGACYSENSEID
 -------------
-LEGACYSENSEID   OFF | DISABLE | ON | ENABLE
+Syntax: ``LEGACYSENSEID   OFF | DISABLE | ON | ENABLE``
 Specifies whether the SENSE ID CCW (X'E4') will be honored for the devices that originally didn't support that feature. This includes (but may not be limited to) 3410 and 3420 tape drives, 2311 and 2314 direct access storage devices, and 2703 communication controllers.
 
 Specify ON or ENABLE if your guest operating system needs the Sense ID support to dynamically detect those devices. Note that most current operating systems will not detect those devices even though Sense ID is enabled because those devices never supported the Sense ID in the first place. So this mainly applies to custom built or modified versions of guest operating systems that are aware of this specific Hercules capability.
 
-Because those legacy devices didn't originally support this command, and for compatibility reasons, the default is OFF or DISABLE.
+Because those legacy devices didn't originally support this command, and for compatibility reasons, the default is `OFF` or `DISABLE`.
 
 
 LOADPARM
 --------
-LOADPARM   xxxxxxxx
+Syntax: ``LOADPARM   xxxxxxxx``
 Specifies the default eight-character IPL parameter used by some operating systems to select system parameters.
 
 The specified value is used as the IPL command's default LOADPARM option parameter when the IPL command is issued without the LOADPARM option. Regardless of the value specified for this setting, the value can alway be overridden by specifying a different value for the LOADPARM option on the IPL command itself. The LOADPARM configuration file option simply specifies a default value that will be used unless overridden with a different value on the IPL command itself.
@@ -572,21 +573,21 @@ The specified value is used as the IPL command's default LOADPARM option paramet
 
 LOGOPT
 ------
-LOGOPT   TIMESTAMP | NOTIMESTAMP | DATESTAMP | NODATESTAMP |
+Syntax: ``LOGOPT   TIMESTAMP | NOTIMESTAMP | DATESTAMP | NODATESTAMP``
 Sets logfile options. TIMESTAMP inserts a time stamp in front of each log message. NOTIMESTAMP logs messages without time stamps. Similarly, DATESTAMP and NODATESTAMP prefixes logfile messages with or without the current date. The current resolution of the stamp is one second.
 
-The default is TIMESTAMP NODATESTAMP.
+The default is `TIMESTAMP NODATESTAMP`.
 
 
 LPARNAME
 --------
-LPARNAME   name
-Specifies the LPAR name returned by DIAG X'204'. The default is HERCULES.
+Syntax: ``LPARNAME   name``
+Specifies the LPAR name returned by DIAG X'204'. The default is `HERCULES`.
 
 
 LPARNUM
 -------
-LPARNUM   BASIC | 1 | xx
+Syntax: ``LPARNUM   BASIC | 1 | xx``
 Specifies the one- or two-digit hexadecimal LPAR identification number stored by the STIDP instruction, or BASIC.
 
 If a one-digit number from 1 to F (hexadecimal) is specified, then STIDP stores a format-0 CPU ID unless a subsequent CPUIDFMT 1 statement is specified.
@@ -602,7 +603,7 @@ The default is LPARNUM 1 with a format-0 CPU ID.
 
 MAINSIZE
 --------
-MAINSIZE   nnnn | nnnK | nnnM | nnnG | nnnT | nnnP | nnnE
+Syntax: ``MAINSIZE   nnnn | nnnK | nnnM | nnnG | nnnT | nnnP | nnnE``
 Specifies the main storage size in megabytes, where nnnn  is a decimal number. Or, nnnM  where M  is K - Kilobytes, M - Megabytes, G - Gigabytes, T - Terabytes, P - Petabytes, E - Exabytes. The default on startup is 2M.
 
 For storage sizes less than 16M, sizes not on a 4K boundary are rounded up to the next 4K boundary. Otherwise, storage sizes not on a 1M boundary are rounded up to the next 1M boundary.
@@ -618,13 +619,13 @@ Use of storage sizes greater than supported by the guest operating system may ge
 
 MANUFACTURER
 ------------
-MANUFACTURER   name
-Specifies the 1-16 character MANUFACTURER name returned the STSI instruction. Valid characters are 0-9 and uppercase A-Z only. The default is HRC.
+Syntax: ``MANUFACTURER   name``
+Specifies the 1-16 character MANUFACTURER name returned the STSI instruction. Valid characters are 0-9 and uppercase A-Z only. The default is `HRC`.
 
 
 MAXCPU
 ------
-MAXCPU   nn
+Syntax: ``MAXCPU   nn``
 Specifies the number of installed processor engines. The NUMCPU statement specifies the number of engines which will be configured online at startup time. All processors are CP engines unless otherwise specified by the ENGINES statement.
 
 The value of MAXCPU cannot exceed the value of MAX_CPU_ENGS. If MAXCPU is not specified in the Hercules configuration file, then its initial value is equal to NUMCPU. If MAXCPU and NUMCPU are both omitted, MAXCPU is set to 1.
@@ -636,7 +637,7 @@ MAX_CPU_ENGS cannot exceed 64. For performance reasons, values above 32 are not 
 
 MODEL
 -----
-MODEL   hardware_model [ capacity_model ] [ perm_capacity_model ] [ temp_capacity_model ]
+Syntax: ``MODEL   hardware_model [ capacity_model ] [ perm_capacity_model ] [ temp_capacity_model ]``
 Specifies the 1-16 character MODEL names returned the STSI instruction. Valid characters are 0-9 and uppercase A-Z only. The default is EMULATOR.
 
 If two operands are supplied, the first is the hardware model name (CPC ND model) and the second is the capacity model name (CPC SI model). If only one operand is supplied, it is used as both the hardware model name and the capacity model name. The optional third and fourth operands specify the permanent capacity model name and the temporary capacity model name respectively.
@@ -644,7 +645,7 @@ If two operands are supplied, the first is the hardware model name (CPC ND model
 
 MODPATH
 -------
-MODPATH   path
+Syntax: ``MODPATH   path``
 Specifies the relative or absolute path of the directory where dynamic modules should be loaded from. Only one directory may be specified. The path should be enclosed within double quotes if it contains any blanks.
 
 When a modpath statement is specified, the path on the modpath statement is searched before the default path is searched. The system default varies depending on the host platform where Hercules is being run.
@@ -652,7 +653,7 @@ When a modpath statement is specified, the path on the modpath statement is sear
 
 MOUNTED_TAPE_REINIT
 -------------------
-MOUNTED_TAPE_REINIT   DISALLOW | DISABLE | ALLOW | ENABLE
+Syntax: ``MOUNTED_TAPE_REINIT   DISALLOW | DISABLE | ALLOW | ENABLE``
 Specifies whether reinitialization of tape drive devices (via the devinit command, in order to mount a new tape) should be allowed if there is already a tape mounted on the drive.
 
 Specifying ALLOW|ENABLE (default) indicates new tapes may be mounted (via 'devinit nnnn new-tape-filename') irrespective of whether or not there is already a tape mounted on the drive.
@@ -666,7 +667,7 @@ Also note that for SCSI tape drives the 'devinit nnnn *' command has no effect a
 
 NETDEV
 ------
-NETDEV   devname
+Syntax: ``NETDEV   devname``
 Specifies the name (or for Windows, the IP or MAC address) of the underlying default host network adapter to be used for Hercules communications devices unless overridden on the device statement itself.
 
 The default for Linux (except Apple and FreeBSD) is /dev/net/tun. The default for Apple and FreeBSD is /dev/tun.
@@ -680,7 +681,7 @@ Refer to the 'Help' file included in newer versions of CTCI-WIN (version 3.6.0 o
 
 NUMCPU
 ------
-NUMCPU   nn
+Syntax: ``NUMCPU   nn``
 Specifies the number of emulated processor engines which will be configured online at startup time. NUMCPU cannot exceed the value of MAXCPU. If NUMCPU is less than MAXCPU then the remaining engines can be configured online later. The default NUMCPU value is 1. The minimum value is 0.
 
 Multiprocessor emulation works best if your host system actually has more than one physical CPU, but you can still emulate multiple CPUs nervertheless even on a uniprocessor system (and you might even achieve a small performance benefit when you do). There is little point, however, in specifying NUMCPU greater than 1 unless your guest operating system (running under Hercules) is actually able to support multiple CPUs (and if you do not actually need multiprocessor emulation, then setting MAX_CPU_ENGS to 1 at compile time might even produce a slight performance advantage too).
@@ -688,7 +689,7 @@ Multiprocessor emulation works best if your host system actually has more than o
 
 OSTAILOR
 --------
-OSTAILOR   DEFAULT | OS/390 | z/OS | VM | z/VM | VSE | z/VSE | LINUX | OpenSolaris | QUIET | NULL
+Syntax: ``OSTAILOR   DEFAULT | OS/390 | z/OS | VM | z/VM | VSE | z/VSE | LINUX | OpenSolaris | QUIET | NULL``
 Specifies the intended operating system. The effect of this parameter is to reduce control panel message traffic by selectively suppressing trace messages for program checks which are considered normal in the specified environment. QUIET suppresses all exception messages. NULL displays all exception messages.
 
 .. note:: Neither QUIET nor NULL should ever be used in normal circumstances! QUIET hides what otherwise might be important messages needed to diagnose incorrect Hercules and/or guest functionality. Only use QUIET under the guidance of Hercules product support personnel. Instead, please specify an OSTAILOR value that is appropriate for the guest operating system you intend to run under Hercules, or else let it default by not specifying it at all.
@@ -706,7 +707,7 @@ Use the "pgmtrace" panel command to fine tune the current settings.
 
 PANOPT
 ------
-PANOPT   FULLPATH|NAMEONLY RATE=SLOW|FAST|nnn MSGCOLOR=NO|DARK|LIGHT TITLE=xxx
+Syntax: ``PANOPT   FULLPATH|NAMEONLY RATE=SLOW|FAST|nnn MSGCOLOR=NO|DARK|LIGHT TITLE=xxx``
 Defines panel display options. NAMEONLY requests the extended panel screen (that displays the list of devices and is reached by pressing the ESC key) to display only the emulated device's base filename. The default is FULLPATH which displays the file's full path filename.
 
 RATE=nnn specifies the panel refresh rate in milliseconds between screen refreshes. RATE=SLOW is the same as 500. RATE=FAST is the same as 50. A value less than the system clock tick interval or greater than 5000 will be rejected. SLOW is the default.
@@ -722,18 +723,18 @@ The TITLE= option takes effect only when the Hercules console is displayed on ei
 
 PANRATE
 -------
-PANRATE   SLOW | FAST | nn             (deprecated; use PANOPT instead)
+Syntax: ``PANRATE   SLOW | FAST | nn             (deprecated; use PANOPT instead)``
 This statement has been deprecated in favor of the PANOPT statement instead.
 
 
 PANTITLE
 --------
-PANTITLE   "title-string"             (deprecated; use PANOPT instead)
+Syntax: ``PANTITLE   "title-string"             (deprecated; use PANOPT instead)``
 This statement has been deprecated in favor of the PANOPT statement instead.
 
 PGMPRDOS
 --------
-PGMPRDOS   RESTRICTED | LICENSED
+Syntax: ``PGMPRDOS   RESTRICTED | LICENSED``
 Specifies whether or not Hercules will run licensed program product ESA or z/Architecture operating systems. If RESTRICTED is specified, Hercules will stop all CPUs when a licensed program product operating system is detected. Specify LICENSED to allow these operating systems to run normally. This parameter has no effect on Linux/390, Linux for z/Series, or any 370-mode OS.
 
 .. note:: It is YOUR responsibility to comply with the terms of the license for the operating system you intend to run on Hercules. If you specify LICENSED and run a licensed operating system in violation of that license, then don't come after the Hercules developers when the vendor sends their lawyers after you!
@@ -743,13 +744,13 @@ RESTRICTED is the default. Specifying LICENSED will produce a message when a lic
 
 PLANT
 -----
-PLANT   name
+Syntax: ``PLANT   name``
 Specifies the 1-4 character PLANT name returned the STSI instruction. Valid characters are 0-9 and uppercase A-Z only. The default is ZZ.
 
 
 SCSIMOUNT
 ---------
-SCSIMOUNT   NO | YES | nn
+Syntax: ``SCSIMOUNT   NO | YES | nn``
 Specifies whether automatic detection of SCSI tape mounts are to be enabled or not.
 
 Specifying NO or 0 seconds (the default) indicates the option is disabled, forcing all SCSI tape mounts to be done manually via an appropriate devinit command.
@@ -763,7 +764,7 @@ The scsimount panel command may also be used to display and/or modify this value
 
 SHCMDOPT
 --------
-SHCMDOPT   DISABLE | ENABLE   [DIAG8 | NODIAG8]
+Syntax: ``SHCMDOPT   DISABLE | ENABLE   [DIAG8 | NODIAG8]``
 When set to DISABLE, the sh (host shell command) and exec (Rexx execute script) commands are globally disabled and will result in an error if entered either directly via the hardware console or programmatically via the DIAG8CMD interface.
 
 If the optional NODIAG8 option is specified, then only the programmatic execution of commands via the the Diagnose 8 interface are disabled, but shell and Rexx commands entered directly via the Hercules command line still work. This includes commands entered via the HTTP server facility as well as commands issued by .rc "run command" scripts too (automatically at startup or directly or indirectly via the script command).
@@ -773,20 +774,20 @@ Security Alert:  Enabling this feature has security consequences. When ENABLE DI
 
 SHRDPORT
 --------
-SHRDPORT   nnnn
+Syntax: ``SHRDPORT   nnnn``
 Specifies the port number (in decimal) on which the Shared Device server will listen. Specifying SHRDPORT will allow other Hercules instances to access devices on this instance. (Currently only DASD devices may be shared). By default, the other Hercules instances (clients) will use port 3990. If you specify a different port number, then you will have to specify this port number on the device statement for the other Hercules clients. If no SHRDPORT statement is present then the Shared Device server thread will not be activated.
 
 
 SYSEPOCH
 --------
-SYSEPOCH   yyyy [±years]
+Syntax: ``SYSEPOCH   yyyy [±years]``
 Specifies the base date for the TOD clock. Use the default value (1900) for all systems except OS/360. Use 1960 for OS/360. Values other than these were formerly used to offset the TOD clock by a number of years to move the date before the year 2000 for non-Y2K-compliant operating systems. This use is deprecated, and support will be removed in a future release; at that time, only values of 1900 or 1960 will be accepted. Other values will produce a warning message with the equivalent values to specify in the SYSEPOCH statement.
 An optional year offset may be specified, and will be treated as though it had been specified on a YROFFSET statement.
 
 
 SYSGPORT
 --------
-SYSGPORT   NO  -or-  3278  -or-  nnnn  -or-  host:port
+Syntax: ``SYSGPORT   NO  -or-  3278  -or-  nnnn  -or-  host:port``
 Specifies (typically) the port number (in decimal) to which tn3270 and telnet clients should use to connect to a SYSG console device or the value NO. The default is NO, meaning no separate listening socket will be created for SYSG console connections. If an invalid value is specified Hercules defaults to port number 3278. See also the CNSLPORT statement.
 
 The SYSGPORT statement may also be specified as host:port, where host identifies the IP address of the host interface the telnet console server should bind to (listen for connections on). If not specified the server will accept connections on the port from any host interface.
@@ -796,7 +797,7 @@ See the Telnet/tn3270 Console How-To for additional information about setting up
 
 TIMERINT
 --------
-TIMERINT   DEFAULT | nnnn
+Syntax: ``TIMERINT   DEFAULT | nnnn``
 Specifies the internal timers update interval, in microseconds. This parameter specifies how frequently Hercules's internal timers-update thread updates the TOD Clock, CPU Timer, and other architectural related clock/timer values.
 
 When the z/Architecure Transactional-Execution Facility (073_TRANSACT_EXEC) is not installed or enabled, the minimum and default intervals are 1 and 50 microseconds respectively, which strikes a reasonable balance between clock accuracy and overall host performance.
@@ -812,13 +813,13 @@ Also note that due to host system limitations and/or design, some hosts may roun
 
 TODDRAG
 -------
-TODDRAG   n.nn
+Syntax: ``TODDRAG   n.nn``
 Specifies the TOD clock drag factor. This parameter can be used to slow down or speed up the TOD clock by a factor of nn. A significant slowdown can improve the performance of some operating systems which consume significant amounts of CPU time processing timer interrupts. A drag factor of 2.0 slows down the clock by 50%. A drag factor of 0.5 doubles the speed of the clock. A drag factor of 1.01 slows down the clock by 1%, and 0.99 speeds up the clock by 1%.
 
 
 TRACEOPT
 --------
-TRACEOPT   [TRADITIONAL | REGSFIRST | NOREGS]  [NOCH9OFLOW]
+Syntax: ``TRACEOPT   [TRADITIONAL | REGSFIRST | NOREGS]  [NOCH9OFLOW]``
 Sets the Hercules instruction and device tracing option(s).
 
 TRADITIONAL (the default), displays the instruction about to be executed followed by the current register values such that pressing the ENTER key (to execute the displayed instruction) then shows the next instruction to be executed followed by a display of the updated registers.
@@ -832,13 +833,13 @@ NOCH9OFLOW suppresses CCW tracing of printer channel-9 overflow unit checks whic
 
 TZOFFSET
 --------
-TZOFFSET   ±hhmm
+Syntax: ``TZOFFSET   ±hhmm``
 Specifies the hours and minutes by which the TOD clock will be offset from the current system time. For GMT, use the default value (0000). For timezones west of Greenwich, specify a negative value (example: -0500 for US Eastern Standard Time, -0800 for US Pacific Standard Time). For timezones east of Greenwich, specify a positive value (example: +0100 for Central European Time, +0930 for South Australian Time).
 
 
 XPNDSIZE
 --------
-XPNDSIZE   nnnn | nnnM | nnnG | nnnT | nnnP | nnnE
+Syntax: ``XPNDSIZE   nnnn | nnnM | nnnG | nnnT | nnnP | nnnE``
 Specifies the expanded storage size in megabytes, where nnnn is a decimal number. Or, nnnM  where M  is K - Kilobytes, M - Megabytes, G - Gigabytes, T - Terabytes, P - Petabytes, E - Exabytes.
 
 Storage sizes not on a 1M boundary are rounded up to the next 1M boundary. The lower limit and default is 0.
@@ -850,7 +851,7 @@ Use of storage sizes greater than supported by the guest operating system may ge
 
 YROFFSET
 --------
-YROFFSET   ±years
+Syntax: ``YROFFSET   ±years``
 Specifies a number of years to offset the TOD clock from the actual date. Positive numbers will move the clock forward in time, while negative numbers will move it backward. A common value for non-Y2K-compliant operating systems is YROFFSET -28, which has the advantage that the day of the week and the presence or absence of February 29 is the same as the current year. This value may not be specified as greater than ±142 years, the total range of the TOD clock. Specifying a value that causes the computed TOD clock year to be earlier than the value of SYSEPOCH or more than 142 years later than that value will produce unexpected results.
 
 A comment preceded by a # sign may be appended to any system parameter statement.
