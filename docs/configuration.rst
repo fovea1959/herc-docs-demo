@@ -6,14 +6,14 @@ Configuration File
 
 This page describes the configuration file for the Hercules S/370, ESA/390, and z/Architecture emulator.
 
-The configuration file hercules.cnf contains the processor and device layout. It is roughly equivalent to the IOCDS on a real System/390. The configuration file is an ASCII text file.
+The configuration file, often named hercules.cnf, contains the processor and device layout. It is roughly equivalent to the IOCDS on a real System/390. The configuration file is an ASCII text file.
 
 Example configuration file
 ==========================
 
-
-.. note:  
+.. note::  
 Please note that the below example configuration file should not be considered a good example of how an actual configuration file should look! It is only meant to illustrate what some of the supported configuration file statements look like and how they are used.
+
 
 .. code-block:: 
 
@@ -25,17 +25,6 @@ Please note that the below example configuration file should not be considered a
     #------------------------------------------------------------------
     #                       SYSTEM PARAMETERS
     #------------------------------------------------------------------
-
-    ##HERCPRIO   0                                        (deprecated; unsupported)
-    ##TODPRIO    -20                                      (deprecated; unsupported)
-    ##DEVPRIO    8                                        (deprecated; unsupported)
-    ##CPUPRIO    0                                        (deprecated; unsupported)
-
-    ##ARCHMODE   ESA/390                                  (deprecated; use ARCHLVL)
-    ##ASN_AND_LX_REUSE  disable                           (deprecated; use FACILITY)
-
-    ##PANRATE    FAST                                     (deprecated; use PANOPT)
-    ##PANTITLE   "My own private MAINFRAME!"              (deprecated; use PANOPT)
 
     ARCHLVL    ESA/390
     FACILITY   ENABLE 044_PFPO
@@ -179,20 +168,24 @@ ARCHLVL
    ``ARCHLVL S/370 | ESA/390 | ESAME | z/Arch``
 
 Specifies the initial architecture mode:
+
  - use ``S/370`` for OS/360, VM/370, and MVS 3.8.
  - use ``ESA/390`` for MVS/XA, MVS/ESA, OS/390, VM/ESA, VSE/ESA, Linux/390, and ZZSA.
  - use ``z/Arch`` or `ESAME` for z/OS and zLinux. This is the default.
 
 When ``z/Arch`` or ``ESAME`` is specified, the machine will always IPL in ESA/390 mode, but is capable of being switched into z/Architecture mode after IPL. This is handled automatically by all z/Architecture operating systems.
 
-When ``ARCHLVL S/370`` is set, the current ``LPARNUM`` and CPUIDFMT_ settings will be automatically changed to ``BASIC``. When ``ARCHLVL z/Arch`` is set, ``LPARNUM`` and ``CPUIDFMT`` will be reset back to ``1`` and ``0`` respectively (if needed). Refer to the *"Limited automatic LPARNUM updating when setting certain architecture modes"* section of the Release Notes document for more information.
+When ``ARCHLVL S/370`` is set, the current LPARNUM_ and CPUIDFMT_ settings will be automatically changed to ``BASIC``. When ``ARCHLVL z/Arch`` is set, ``LPARNUM`` and ``CPUIDFMT`` will be reset back to ``1`` and ``0`` respectively (if needed). Refer to the *"Limited automatic LPARNUM updating when setting certain architecture modes"* section of the Release Notes document for more information.
 
-The ``ARCHLVL`` statement used to be called ``ARCHMODE`` in previous versions of Hercules but the use of ``ARCHMODE`` has been deprecated in favor of the new ``ARCHLVL`` statement. Existing ``ARCHMODE`` statements should be changed to ``ARCHLVL`` instead. For the time being however, ``ARCHMODE`` is still accepted and is treated as simply a synonym for the ``ARCHLVL`` statement.
+The ARCHLVL statement used to be called ``ARCHMODE`` in previous versions of Hercules but the use of ``ARCHMODE`` has been deprecated in favor of the new ``ARCHLVL`` statement. Existing ``ARCHMODE`` statements should be changed to ``ARCHLVL`` instead. For the time being however, ``ARCHMODE`` is still accepted and is treated as simply a synonym for the ``ARCHLVL`` statement.
 
+When ``ARCHLVL S/370`` is set, the current LPARNUM_ and CPUIDFMT_ settings will be automatically changed to ``BASIC``. When ``ARCHLVL z/Arch`` is set, LPARNUM and CPUIDFMT will be reset back to 1 and 0 respectively (if needed). Refer to the *"Limited automatic LPARNUM updating when setting certain architecture modes"* section of the Release Notes document for more information.
+
+The ARCHLVL statement used to be called ARCHMODE in previous versions of Hercules but the use of ARCHMODE has been deprecated in favor of the new ARCHLVL statement. Existing ARCHMODE statements should be changed to ARCHLVL instead. For the time being however, ARCHMODE is still accepted and is treated as simply a synonym for the ARCHLVL statement.
 
 ASN_AND_LX_REUSE
 ----------------
-   ``ASN_AND_LX_REUSE   ENABLE | DISABLE`` (deprecated; use ``FACILITY``)
+   ``ASN_AND_LX_REUSE   ENABLE | DISABLE`` (deprecated; use FACILITY_)
 
 
 AUTOINIT
@@ -208,7 +201,7 @@ AUTOMOUNT   [±]directory
    ``AUTOMOUNT   [±]directory``
 Specifies the host system directory where the guest is allowed or not allowed to automatically load virtual tape volumes from. Prefix allowable directories with a ``+`` plus sign and unallowable directories with a ``-`` minus sign. The default prefix if neither is specified is the ``+`` plus sign (i.e. an allowable directory).
 
-.. caution:: Enabling this feature may have security consequences depending on which allowable host system directories you specify as well as how your guest operating system enforces authorized use of the Set Diagnose (X'4B') channel command code.
+.. caution:: Enabling this feature may have security consequences depending on which allowable host system directories you specify as well as how your guest operating system enforces authorized use of the ``Set Diagnose (X'4B')`` channel command code.
 
 All host system virtual tape volumes to be "automounted" by the guest must reside within one of the specified allowable host system directories or any of its subdirectories while not also being within any of the specified unallowable directories or any of their subdirectories, in order for the guest-invoked automount to be accepted.
 
@@ -489,7 +482,7 @@ specifies that the first four processor engines (engines 0-3) are of type CP, th
 
 The number of installed processor engines is determined by the MAXCPU statement. If the ENGINES statement specifies more than MAXCPU engines, the excess engines are ignored. If fewer than MAXCPU engines are specified, the remaining engines are set to type CP.
 
-
+.. _FACILITY:
 FACILITY
 --------
 FACILITY   ENABLE | DISABLE | QUERY  facility  [archlvl]
