@@ -2094,27 +2094,35 @@ The following are some additional options that may also be specified for 2703 de
     Specifies the ASCII byte value that, when received, marks the end of the input line. The default is EOL=0D.
 
 ``ISKIP=hh...``
+
     Specifies up to four ASCII bytes that are to be suppressed during input processing.
 
 ``KA=NO | (idle,intv,count)``
+
     Defines the TCP/IP keepalive settings for this line's connections. Refer the the CONKPALV statement for details.
 
 ``LNCTL=TELE2 | IBM1 | BSC``
+
     Specifies the type of communications line being defined.
 
     For asynchronous communications lines specify LNCTL=TELE2 if TERM=TTY or LNCTL=IBM1 if TERM=2741. For binary synchronous (BSC) lines specify LNCTL=BSC.
 
 ``SKIP=hh...``
+
     Specifies "garbage" code points (either byte-reversed ASCII for TERM=TTY or correspondence code/EBCD for TERM=2741) that are to be suppressed in output processing, thereby allowing distinct lists to be used for different terminal types.
 
 ``SENDCR=NO | YES``
+
     Send CR back to terminal when input line received.
 
 ``SWITCHED=IN | OUT | INOUT | NO``
+
     Switched is just a synonym for the DIAL option.
 
 ``TERM=TTY | 2741 | RXVT4APL``
+
     Specifies the terminal type. Use RXVT4APL for 8-bit and character translation in 2741 mode.
 
 ``UCTRANS=YES | NO``
+
     Enable automatic translation to uppercase.
