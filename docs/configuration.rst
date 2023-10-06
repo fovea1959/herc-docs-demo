@@ -1926,34 +1926,34 @@ Refer to "Creating an empty DASD volume" in the "Creating, formatting, and loadi
 If you specify an INET address, the format is:
 
 ``ip-name-or-addr:port:devnum``
-ip-name-or-addr specifies the internet name or address where the Hercules Shared Device server is running.
+    ip-name-or-addr specifies the internet name or address where the Hercules Shared Device server is running.
 
-port specifies the port number the Shared Device server is listening on. If omitted, the default is 3990.
+    port specifies the port number the Shared Device server is listening on. If omitted, the default is 3990.
 
-devnum specifies the device number on the Shared Device server. If omitted, the default is the current device number.
+    devnum specifies the device number on the Shared Device server. If omitted, the default is the current device number.
 
 In addition to the above, some additional optional arguments are also supported.
 
 ``sf=shadow-file-filename-template``
-Shadow files are only supported for compressed dasd images.
+    Shadow files are only supported for compressed dasd images.
 
-A shadow file contains all the changes made to the emulated dasd since it was created, until the next shadow file is created. The moment of the shadow file's creation can be thought of as a snapshot of the current emulated dasd at that time, because if the shadow file is later removed, then the emulated dasd reverts back to the state it was at when the snapshot was taken.
+    A shadow file contains all the changes made to the emulated dasd since it was created, until the next shadow file is created. The moment of the shadow file's creation can be thought of as a snapshot of the current emulated dasd at that time, because if the shadow file is later removed, then the emulated dasd reverts back to the state it was at when the snapshot was taken.
 
-Using shadow files, you can keep the base file on a read-only device such as cdrom, or change the base file attributes to read-only, ensuring that this file can never be corrupted.
+    Using shadow files, you can keep the base file on a read-only device such as cdrom, or change the base file attributes to read-only, ensuring that this file can never be corrupted.
 
-Hercules console commands are provided to add a new shadow file, remove the current shadow file (with or without backward merge), compress the current shadow file, and display the shadow file status and statistics
+    Hercules console commands are provided to add a new shadow file, remove the current shadow file (with or without backward merge), compress the current shadow file, and display the shadow file status and statistics
 
-For detailed information regarding shadow files and their use, please see the "Shadow Files" section of the Compressed Dasd Emulation web page.
+    For detailed information regarding shadow files and their use, please see the "Shadow Files" section of the Compressed Dasd Emulation web page.
 
 ``readonly``
-Readonly returns "write inhibited" sense when a write is attempted. Note that not all of the sense bits may be getting set absolutely correctly however. (Some people have reported getting different error messages under Hercules than a real machine, but it really hasn't been an issue for a while now.)
+    Readonly returns "write inhibited" sense when a write is attempted. Note that not all of the sense bits may be getting set absolutely correctly however. (Some people have reported getting different error messages under Hercules than a real machine, but it really hasn't been an issue for a while now.)
 
-readonly may be abbreviated as rdonly or ro
+    readonly may be abbreviated as rdonly or ro
 
 ``fakewrite``
-Fakewrite is a kludge for the readonly sense problem mentioned above. Here the disk is not intended to be updated (MVS updates the DSCB last referenced field for a readonly file) and any writes appear to be successful even though nothing actually gets written.
+    Fakewrite is a kludge for the readonly sense problem mentioned above. Here the disk is not intended to be updated (MVS updates the DSCB last referenced field for a readonly file) and any writes appear to be successful even though nothing actually gets written.
 
-fakewrite may be abbreviated as fakewrt or fw
+    fakewrite may be abbreviated as fakewrt or fw
 
 ``[no]lazywrite``
 ``[no]fulltrackio``
@@ -1961,28 +1961,28 @@ fakewrite may be abbreviated as fakewrt or fw
     ``fulltrackio`` may be abbreviated as fulltrkio or ftio
 
 ``cu=type``
-Specifies the type of control unit to which this device is attached. The use of this parameter does not necessarily imply that all functions of the specified control unit are emulated, its only purpose is to force a particular control unit type to be indicated in the data returned by SENSE ID and similar CCW's.
+    Specifies the type of control unit to which this device is attached. The use of this parameter does not necessarily imply that all functions of the specified control unit are emulated, its only purpose is to force a particular control unit type to be indicated in the data returned by SENSE ID and similar CCW's.
 
-The default value depends on the device type:
+    The default value depends on the device type:
 
-.. csv-table::
-  :header:  "Device type", "Default CU type"
+    .. csv-table::
+      :header:  "Device type", "Default CU type"
 
-  "2311","2841"
-  "2314","2314"
-  "3330","3340"
-  "3350","3375"
-  "3380","3880"
-  "3390","3990"
-  "9345","9343"
+      "2311","2841"
+      "2314","2314"
+      "3330","3340"
+      "3350","3375"
+      "3380","3880"
+      "3390","3990"
+      "9345","9343"
 
-Other values which may be specified are: 3990-3 and 3990-6.
+    Other values which may be specified are: 3990-3 and 3990-6.
 
-Normally the default value is appropriate and this parameter need not be specified.
+    Normally the default value is appropriate and this parameter need not be specified.
 
 
 ``ser=nnnnnnnnnnnn``
-Defines an optional overriding 12-digit serial number to be used for this device. The specified serial number will be used regardless of whatever permanent or randomly assigned serial number the device might have (if any).
+    Defines an optional overriding 12-digit serial number to be used for this device. The specified serial number will be used regardless of whatever permanent or randomly assigned serial number the device might have (if any).
 
 
 FBA DASD devices
@@ -1993,25 +1993,25 @@ The first argument specifies the name of a file which contains the FBA DASD imag
 
 If you specify a Shared Device server INET address, the format of the filename is:
 
-ip-name-or-addr:port:devnum
-ip-name-or-addr specifies the internet name or address where the Hercules Shared Device server is running.
+``ip-name-or-addr:port:devnum``
+    ip-name-or-addr specifies the internet name or address where the Hercules Shared Device server is running.
 
-port specifies the port number the Shared Device server is listening on. If omitted, the default is 3990.
+    port specifies the port number the Shared Device server is listening on. If omitted, the default is 3990.
 
-devnum specifies the device number on the Shared Device server. If omitted, the default is the current device number.
+    devnum specifies the device number on the Shared Device server. If omitted, the default is the current device number.
 
 To allow access to a minidisk within a full-pack FBA DASD image file, normal NON-compressed FBA dasds also support two additional arguments after the file name:
 
-origin
-Specifies the relative block number within the DASD image file at which the minidisk begins. The number must be less than the number of blocks in the file. The default origin is zero.
+``origin``
+    Specifies the relative block number within the DASD image file at which the minidisk begins. The number must be less than the number of blocks in the file. The default origin is zero.
 
-numblks
-Specifies the number of 512-byte blocks in the minidisk. This number must not exceed the number of blocks in the file minus the origin. If omitted, or if specified as an * asterisk, then the minidisk continues to the end of the DASD image file.
+``numblks``
+    Specifies the number of 512-byte blocks in the minidisk. This number must not exceed the number of blocks in the file minus the origin. If omitted, or if specified as an * asterisk, then the minidisk continues to the end of the DASD image file.
 
 Compressed CFBA dasds also support an additional optional argument:
 
-sf=shadow-file-name
-The handling of shadow files for compressed CFBA devices is identical as that for CCKD devices. Please refer to the preceding CKD section for information regarding use of the sf= shadow file option.
+``sf=shadow-file-name``
+    The handling of shadow files for compressed CFBA devices is identical as that for CCKD devices. Please refer to the preceding CKD section for information regarding use of the sf= shadow file option.
 
 
 Communication Line - BSC
@@ -2024,28 +2024,28 @@ The communication is emulated over a TCP connection. All bytes are transfered as
 
 The following options define the line emulation behaviour:
 
-DIAL=IN | OUT | INOUT | NO
-Specifies call direction (if any). If DIAL=NO is specified, the TCP outgoing connection is attempted as soon as an 'ENABLE' CCW is executed. Also, in this mode, an incoming connection will always be accepted. If DIAL=IN|INOUT is specified, a TCP incoming call is accepted ONLY if an 'ENABLE' CCW is currently executing on the device. If DIAL=OUT, the 'ENABLE' CCW is rejected. When DIAL=IN|INOUT is specified, a DIAL CCW allows the application to establish a TCP connection to a specific host. For other DIAL values, the DIAL CCW is rejected.
+``DIAL=IN | OUT | INOUT | NO``
+    Specifies call direction (if any). If DIAL=NO is specified, the TCP outgoing connection is attempted as soon as an 'ENABLE' CCW is executed. Also, in this mode, an incoming connection will always be accepted. If DIAL=IN|INOUT is specified, a TCP incoming call is accepted ONLY if an 'ENABLE' CCW is currently executing on the device. If DIAL=OUT, the 'ENABLE' CCW is rejected. When DIAL=IN|INOUT is specified, a DIAL CCW allows the application to establish a TCP connection to a specific host. For other DIAL values, the DIAL CCW is rejected.
 
-LHOST=hostname | ip address | *
-Specifies which IP address to listen on. This also conditions the network interface from which incoming calls will be accepted. Specifying '*' means all incoming TCP calls are accepted, regardless of the destination IP address or call origin. This is the default value. Specifying a specific IP address when DIAL=OUT is specified has no effect.
+``LHOST=hostname | ip address | *``
+    Specifies which IP address to listen on. This also conditions the network interface from which incoming calls will be accepted. Specifying '*' means all incoming TCP calls are accepted, regardless of the destination IP address or call origin. This is the default value. Specifying a specific IP address when DIAL=OUT is specified has no effect.
 
-LPORT=service name | port number
-Specifies the TCP port for which to listen to incoming TCP calls. This value is mandatory for DIAL=IN|INOUT|NO. It is ignored for DIAL=OUT.
+``LPORT=service name | port number``
+    Specifies the TCP port for which to listen to incoming TCP calls. This value is mandatory for DIAL=IN|INOUT|NO. It is ignored for DIAL=OUT.
 
-RHOST=hostname | ip address
-RPORT=service name | port number
-Specifies the remote host and port to which to direct a TCP connection on a DIAL=NO line when an 'ENABLE' CCW is executed. This option is mandatory when DIAL=NO is specified. It is ignored for other DIAL values.
+``RHOST=hostname | ip address``
+``RPORT=service name | port number``
+    Specifies the remote host and port to which to direct a TCP connection on a DIAL=NO line when an 'ENABLE' CCW is executed. This option is mandatory when DIAL=NO is specified. It is ignored for other DIAL values.
 
 The following options are tuning options. In most cases, using the default values give the best results
-RTO=0 | -1 | nnn | 3000
-Specifies the number of milliseconds before terminating a read on a timeout, when no read termination control character is received. Specifying 0 means the READ ends immediately. -1 specifies there is no timeout.
+``RTO=0 | -1 | nnn | 3000``
+    Specifies the number of milliseconds before terminating a read on a timeout, when no read termination control character is received. Specifying 0 means the READ ends immediately. -1 specifies there is no timeout.
 
-PTO=0 | -1 | nnn | 3000
-Specifies the number of milliseconds before terminating a POLL on a timeout, when no ACK or NACK sequence is received. Specifying 0 means the POLL ends immediately. -1 specifies there is no timeout.
+``PTO=0 | -1 | nnn | 3000``
+    Specifies the number of milliseconds before terminating a POLL on a timeout, when no ACK or NACK sequence is received. Specifying 0 means the POLL ends immediately. -1 specifies there is no timeout.
 
-ETO=0 | -1 | nnn | 10000
-Specifies the number of milliseconds before terminating an ENABLE operation on a timeout. the timeout applies when DIAL=NO|IN|INOUT is specified, the outgoing TCP call fails (DIAL=NO) and there is no previously or currently established TCP connection for this line. When DIAL=NO is specified, the timeout defaults to 10 seconds. For DIAL=IN|INOUT, the timeout defaults to -1.
+``ETO=0 | -1 | nnn | 10000``
+    Specifies the number of milliseconds before terminating an ENABLE operation on a timeout. the timeout applies when DIAL=NO|IN|INOUT is specified, the outgoing TCP call fails (DIAL=NO) and there is no previously or currently established TCP connection for this line. When DIAL=NO is specified, the timeout defaults to 10 seconds. For DIAL=IN|INOUT, the timeout defaults to -1.
 
 Communication Line - TTY
 ++++++++++++++++++++++++
@@ -2055,66 +2055,66 @@ Describes a 2703 Telegraph Terminal Control Type II (TTY 33/35) stop/start line,
 
 The following options define the line emulation behaviour:
 
-LPORT=port number
-Specifies the TCPIP port to listen on for incoming TCP calls.
+``LPORT=port number``
+    Specifies the TCPIP port to listen on for incoming TCP calls.
 
-DIAL=IN
-Specifies that this line is for in-bound calls. Required.
+``DIAL=IN``
+    Specifies that this line is for in-bound calls. Required.
 
-TERM=TTY
-Specifies that this definition is for a TTY port. Required
+``TERM=TTY``
+    Specifies that this definition is for a TTY port. Required
 
 Additional 2703 Communication Line options
 ++++++++++++++++++++++++++++++++++++++++++
 The following are some additional options that may also be specified for 2703 devices:
 
-APPEND=hh...
-PREPEND=hh...
-Specifies up to four bytes (in S/370 channel format, not ASCII) to be prepended or appended to input line data received from terminals before they are sent to the guest OS. Typical use is to add Circle D and C around each input transmission (2741's for APL\360).
+``APPEND=hh...``
+``PREPEND=hh...``
+    Specifies up to four bytes (in S/370 channel format, not ASCII) to be prepended or appended to input line data received from terminals before they are sent to the guest OS. Typical use is to add Circle D and C around each input transmission (2741's for APL\360).
 
-BINARY=NO | YES
-Negotiate to telnet binary mode if TERM=RXVT4APL.
+``BINARY=NO | YES``
+    Negotiate to telnet binary mode if TERM=RXVT4APL.
 
-BS=DUMB
-BREAK=DUMB
-Backspace and break key handling option.
+``BS=DUMB``
+``BREAK=DUMB``
+    Backspace and break key handling option.
 
-When using windows telnet it is recommended to always use BS=DUMB and BREAK=DUMB.
+    When using windows telnet it is recommended to always use BS=DUMB and BREAK=DUMB.
 
-CODE=EBCD | CORR | NONE
-Specify code=ebcd for EBCD, code=corr for correspondence code, or code=none to disable all translation. The code= option applies to 2741 mode only.
+``CODE=EBCD | CORR | NONE``
+    Specify code=ebcd for EBCD, code=corr for correspondence code, or code=none to disable all translation. The code= option applies to 2741 mode only.
 
-CRLF=YES | NO
-Option to map 2741 NL to TTY CRLF sequence.
+``CRLF=YES | NO``
+    Option to map 2741 NL to TTY CRLF sequence.
 
-CRLF2CR=YES | NO
-Remove LF that immediately follow CR.
+``CRLF2CR=YES | NO``
+    Remove LF that immediately follow CR.
 
-EOL=hh
-Specifies the ASCII byte value that, when received, marks the end of the input line. The default is EOL=0D.
+``EOL=hh``
+    Specifies the ASCII byte value that, when received, marks the end of the input line. The default is EOL=0D.
 
-ISKIP=hh...
-Specifies up to four ASCII bytes that are to be suppressed during input processing.
+``ISKIP=hh...``
+    Specifies up to four ASCII bytes that are to be suppressed during input processing.
 
-KA=NO | (idle,intv,count)
-Defines the TCP/IP keepalive settings for this line's connections. Refer the the CONKPALV statement for details.
+``KA=NO | (idle,intv,count)``
+    Defines the TCP/IP keepalive settings for this line's connections. Refer the the CONKPALV statement for details.
 
-LNCTL=TELE2 | IBM1 | BSC
-Specifies the type of communications line being defined.
+``LNCTL=TELE2 | IBM1 | BSC``
+    Specifies the type of communications line being defined.
 
-For asynchronous communications lines specify LNCTL=TELE2 if TERM=TTY or LNCTL=IBM1 if TERM=2741. For binary synchronous (BSC) lines specify LNCTL=BSC.
+    For asynchronous communications lines specify LNCTL=TELE2 if TERM=TTY or LNCTL=IBM1 if TERM=2741. For binary synchronous (BSC) lines specify LNCTL=BSC.
 
-SKIP=hh...
-Specifies "garbage" code points (either byte-reversed ASCII for TERM=TTY or correspondence code/EBCD for TERM=2741) that are to be suppressed in output processing, thereby allowing distinct lists to be used for different terminal types.
+``SKIP=hh...``
+    Specifies "garbage" code points (either byte-reversed ASCII for TERM=TTY or correspondence code/EBCD for TERM=2741) that are to be suppressed in output processing, thereby allowing distinct lists to be used for different terminal types.
 
-SENDCR=NO | YES
-Send CR back to terminal when input line received.
+``SENDCR=NO | YES``
+    Send CR back to terminal when input line received.
 
-SWITCHED=IN | OUT | INOUT | NO
-Switched is just a synonym for the DIAL option.
+``SWITCHED=IN | OUT | INOUT | NO``
+    Switched is just a synonym for the DIAL option.
 
-TERM=TTY | 2741 | RXVT4APL
-Specifies the terminal type. Use RXVT4APL for 8-bit and character translation in 2741 mode.
+``TERM=TTY | 2741 | RXVT4APL``
+    Specifies the terminal type. Use RXVT4APL for 8-bit and character translation in 2741 mode.
 
-UCTRANS=YES | NO
-Enable automatic translation to uppercase.
+``UCTRANS=YES | NO``
+    Enable automatic translation to uppercase.
