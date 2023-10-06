@@ -896,35 +896,33 @@ In configuration and device statements, as well as in panel commands and OAT fil
 
 Syntax
 ------
-To substitute symbol symbol with its contents, the symbol should be enclosed within parenthesis and preceded by a $ sign. For example, if symbol FOO contains the text string "BAR" then $(FOO) will be substituted with the string "BAR";. Symbol names are case sensitive.
+To substitute symbol symbol with its contents, the symbol should be enclosed within parenthesis and preceded by a `$` sign. For example, if symbol FOO contains the text string "BAR" then $(FOO) will be substituted with the string "BAR";. Symbol names are case sensitive.
 
-Example
-+++++++
-        DEFSYM  TAPEDIR  "/home/hercules/tapes"
+Examples
+++++++++
+        ``DEFSYM  TAPEDIR  "/home/hercules/tapes"``
 
-        ...
-
-        0380  3420  $(TAPEDIR)/scratch.aws
+        ``0380  3420  $(TAPEDIR)/scratch.aws``
 
         ...
 In this example, device 0380 will be a 3420 loaded with the AWS tape file in /home/hercules/tapes/scratch.aws
 
+
 Special symbols
 ---------------
+
 Device group symbols
 ++++++++++++++++++++
+
 When multiple devices are defined with a single device definition statement, then the symbols
 
-  CUU  
-  (3 digits device number, upper case hexadecimal digits)
-  CCUU  
-  (4 digits device number, upper case hexadecimal digits)
-  DEVN  
-  (4 digits device number, upper case hexadecimal digits)
+  ``CUU`` (3 digits device number, upper case hexadecimal digits)
+  ``CCUU`` (4 digits device number, upper case hexadecimal digits)
+  ``DEVN`` (4 digits device number, upper case hexadecimal digits)
 are defined to contain for each device the relevant device address. For example:
 
 
-    0200,0201  3340  /home/hercules/dasds/myvols.$(CUU)
+  ``0200,0201  3340  /home/hercules/dasds/myvols.$(CUU)``
 will define two 3340 packs, with device 0200 being loaded with the file myvols.200 and device 0201 defined with myvols.201.
 
 Environment variables
@@ -935,22 +933,24 @@ Undefined symbols
 +++++++++++++++++
 If a symbol is not defined by an explicit DEFSYM, is not an automatically generated symbol and is not an environment variable, an empty string will be substituted.
 
+
 Escaping substitution, recursion
-================================
-To be able to specify the '$(' string without incurring substitution, an additional '$' sign should be used. For example, $$(FOO) will not be substituted. If substitution is required but the preceding text is to contain a '$' sign as the very last character, then $$$(FOO) should be specified. Thus, if symbol FOO contains "BAR", then $$(FOO) will remain "$$(FOO)" while $$$(FOO) will become "$BAR".
+--------------------------------
+To be able to specify the ``$(`` string without incurring substitution, an additional ``$`` sign should be used. For example, ``$$(FOO)`` will not be substituted. If substitution is required but the preceding text is to contain a ``$`` sign as the very last character, then ``$$$(FOO)`` should be specified. Thus, if symbol FOO contains ``BAR``, then ``$$(FOO)`` will remain ``$$(FOO)`` while $$$(FOO) will become "$BAR".
 
 Substitution is not recursive (only one substitution pass is made).
 
 Enhanced symbol substitutions
+=============================
 Enhanced symbol substitution differs from the above normal symbol substitution in several very important ways:
 
 First, the syntax is different. Enhanced substitution symbol names are specified using ${var} (dollar + brace) rather than $(var) (dollar + parenthesis).
 
-Second, the enhanced syntax supports specifying a default value that is to be used instead whenever the name symbol is otherwise not defined. The default value is placed within the opening and closing braces just as the symbol name is, but separated from it by either a single equal sign '=' or a colon-equal-sign ':='.
+Second, the enhanced syntax supports specifying a default value that is to be used instead whenever the name symbol is otherwise not defined. The default value is placed within the opening and closing braces just as the symbol name is, but separated from it by either a single equal sign ``=`` or a colon-equal-sign ``:=``.
 
-For example, specifying "${DASD_PATH=dasd/}" in your configuration file requests that the value of the "DASD_PATH" symbol or environment variable be substituted, or, if the variable is undefined, to use the value "dasd/" instead. If no default value is specified then an empty string is used instead.
+For example, specifying ``${DASD_PATH=dasd/}`` in your configuration file requests that the value of the ``DASD_PATH`` symbol or environment variable be substituted, or, if the variable is undefined, to use the value ``dasd/`` instead. If no default value is specified then an empty string is used instead.
 
-Finally, enhanced symbol substitution occurs only from host defined environment variables and not from any identically named DEFSYM symbol should one exist. For example, if environment variable 'FOO' is defined with the value "bar", then the configuration file statement "DEFSYM FOO myfoo" followed immediately by the statement "${FOO}" causes the value "bar" to be substituted and not 'myfoo' as might otherwise be believed, whereas the statement "$(FOO)", since it is a normal symbol substitution sequence does get replaced with "myfoo" (since that was the value defined to it via the preceding DEFSYM statement).
+Finally, enhanced symbol substitution occurs only from host defined environment variables and not from any identically named DEFSYM symbol should one exist. For example, if environment variable 'FOO' is defined with the value "bar", then the configuration file statement ``DEFSYM FOO myfoo`` followed immediately by the statement ``${FOO}`` causes the value ``bar`` to be substituted and not ``myfoo`` as might otherwise be believed, whereas the statement ``$(FOO)``, since it is a normal symbol substitution sequence does get replaced with ``myfoo`` (since that was the value defined to it via the preceding DEFSYM statement).
 
 In other words each symbol substitution technique is supported completely separately from one another. DEFSYM allows one to define/undefine/use private (internally defined) symbols separate from the host operating system's environment variable pool, whereas the enhanced symbol substitution does not and instead only allows read-only access to the host's environment variable pool with no support for modifying an already defined symbol (environment variable) but a nonethless convenient means of defining a default value to be used should the specified host environment variable be currently undefined.
 
@@ -960,7 +960,7 @@ Syntax
 ------
 To substitute symbol symbol with the current environment variable value, the symbol should be enclosed within braces and preceded by a $ sign. For example, if an environment variable named FOO holds the value "BAR", then ${FOO} will be substituted with the string "BAR". If the environment variable "FOO" is not defined then a null (empty) string is substituted instead.
 
-If the string "${FOO:=myfoo}" is used instead, then the value "BAR" will still be substituted if the value "BAR" was indeed previously assigned to FOO, but will be substituted with the value "myfoo" instead if the environment variable FOO is currently undefined.
+If the string ``${FOO:=myfoo}`` is used instead, then the value ``BAR`` will still be substituted if the value ``BAR`` was indeed previously assigned to FOO, but will be substituted with the value ``myfoo`` instead if the environment variable FOO is currently undefined.
 
 Note too that the default value is a literal string and no substitution is applied to it. Thus attempting to use the syntax "${foo=${bar}}" will not yield the expected results. It will not be substituted with the currently defined value of the "bar" environment variable, but rather will always be substituted with the literal string "${bar" followed immediately by the literal character '}'.
 
@@ -973,6 +973,15 @@ Process and Thread Priorities
 Process Priorities
 ------------------
 For Windows, the following conversions are used for translating Unix process 'nice' values to Windows process priority classes:
+
+
+.. csv-table::
+  :header:  "'Nice' Value", "Windows Process Priority Class", "Meaning"
+  "-20 to -16","Real-time","Process that has the highest possible priority. The threads of the process preempt the threads of all other processes, including operating system processes performing important tasks. For example, a real-time process that executes for more than a very brief interval can cause disk caches not to flush or cause the mouse to be unresponsive."
+  "-15 to -9","High","Process that performs time-critical tasks that must be executed immediately. The threads of the process preempt the threads of normal or idle priority class processes. An example is the Task List, which must respond quickly when called by the user, regardless of the load on the operating system. Use extreme care when using the high-priority class, because a high-priority class application can use nearly all available CPU time."
+  "-8 to -1","Above Normal","Process that has priority above the Normal class but below the High class."
+
+
 
 'Nice'
 value	
@@ -1067,6 +1076,28 @@ A comment preceded by a # sign may be appended to any device definition statemen
 
 Supported Device Types
 ++++++++++++++++++++++
+
+.. csv-table::
+  :header:  "Device type", "Description", "Emulated by"
+  "3270, 3287","Local non-SNA 3270 display or printer","TN3270 client connection"
+  "SYSG","Integrated 3270 console","TN3270 client connection"
+  "1052, 3215","Console printer-keyboards","Telnet client connection"
+  "1052-C, 3215-C","Integrated console printer-keyboards","Integrated on Hercules console"
+  "1442, 2501, 3505","Card readers","Disk file(s) (ASCII or EBCDIC)"
+  "3525","Card punch","Disk file (ASCII or EBCDIC)"
+  "1403, 3203, 3211","Line printers","Disk file (ASCII)"
+  "3410, 3420, 3422, 3430, 3480, 3490, 3590, 9347, 8809","Tape drives","Disk file, CDROM, or SCSI tape"
+  "many","Communication and Channel-to-Channel devices","many"
+  "(( OSA ))","OSA Express adapter operating on QDIO mode. Both layer-2 and layer-3 modes are supported.","QETH (OSA/QDIO Ethernet Adapter) Tun/Tap Driver"
+  "(( LCS ))","IBM 8232 LCS device, LCS3172 driver of a P/390, IBM 2216 router, IBM 3172 running ICP.","LCS (LAN Channel Station) Tun/Tap Driver"
+  "(( CTCI ))","Channel-to-Channel link to host TCP/IP stack","CTCI Tun/Tap Driver"
+  "(( CTCE ))","Enhanced Channel-to-Channel Emulation via TCP connection (true 3088 CTCA)","CTCE driver"
+  "(( PTP ))","MPCPTP/MPCPTP6 Channel to Channel link","PTP Tun/Tap Driver"
+  "3310, 3370, 9332, 9335, 9336, 0671","FBA direct access storage devices","Disk file"
+  "2305, 2311, 2314, 3330, 3340, 3350, 3375, 3380, 3390, 9345","CKD direct access storage devices","Disk file"
+  "2703","Communication Line, Remote Teletype, etc.","TCP Socket"
+
+
 Device type	Description	Emulated by
 3270, 3287	Local non-SNA 3270 display or printer	TN3270 client connection
 SYSG	Integrated 3270 console	TN3270 client connection
@@ -1894,7 +1925,7 @@ Refer to "Creating an empty DASD volume" in the "Creating, formatting, and loadi
 
 If you specify an INET address, the format is:
 
-ip-name-or-addr:port:devnum
+``ip-name-or-addr:port:devnum``
 ip-name-or-addr specifies the internet name or address where the Hercules Shared Device server is running.
 
 port specifies the port number the Shared Device server is listening on. If omitted, the default is 3990.
@@ -1903,7 +1934,7 @@ devnum specifies the device number on the Shared Device server. If omitted, the 
 
 In addition to the above, some additional optional arguments are also supported.
 
-sf=shadow-file-filename-template
+``sf=shadow-file-filename-template``
 Shadow files are only supported for compressed dasd images.
 
 A shadow file contains all the changes made to the emulated dasd since it was created, until the next shadow file is created. The moment of the shadow file's creation can be thought of as a snapshot of the current emulated dasd at that time, because if the shadow file is later removed, then the emulated dasd reverts back to the state it was at when the snapshot was taken.
@@ -1914,41 +1945,43 @@ Hercules console commands are provided to add a new shadow file, remove the curr
 
 For detailed information regarding shadow files and their use, please see the "Shadow Files" section of the Compressed Dasd Emulation web page.
 
-readonly
+``readonly``
 Readonly returns "write inhibited" sense when a write is attempted. Note that not all of the sense bits may be getting set absolutely correctly however. (Some people have reported getting different error messages under Hercules than a real machine, but it really hasn't been an issue for a while now.)
 
 readonly may be abbreviated as rdonly or ro
 
-fakewrite
+``fakewrite``
 Fakewrite is a kludge for the readonly sense problem mentioned above. Here the disk is not intended to be updated (MVS updates the DSCB last referenced field for a readonly file) and any writes appear to be successful even though nothing actually gets written.
 
 fakewrite may be abbreviated as fakewrt or fw
 
-[no]lazywrite
-[no]fulltrackio
-These options have been deprecated. They are still accepted, but they do absolutely nothing.
+``[no]lazywrite``
+``[no]fulltrackio``
+    These options have been deprecated. They are still accepted, but they do absolutely nothing.
+    ``fulltrackio`` may be abbreviated as fulltrkio or ftio
 
-fulltrackio may be abbreviated as fulltrkio or ftio
-
-cu=type
+``cu=type``
 Specifies the type of control unit to which this device is attached. The use of this parameter does not necessarily imply that all functions of the specified control unit are emulated, its only purpose is to force a particular control unit type to be indicated in the data returned by SENSE ID and similar CCW's.
 
 The default value depends on the device type:
 
-Device type	Default CU type
-2311	2841
-2314	2314
-3330 3340
-3350 3375
-3380	3880
-3390	3990
-9345	9343
+.. csv-table::
+  :header:  "Device type", "Default CU type"
+
+  "2311","2841"
+  "2314","2314"
+  "3330","3340"
+  "3350","3375"
+  "3380","3880"
+  "3390","3990"
+  "9345","9343"
+
 Other values which may be specified are: 3990-3 and 3990-6.
 
 Normally the default value is appropriate and this parameter need not be specified.
 
 
-ser=nnnnnnnnnnnn
+``ser=nnnnnnnnnnnn``
 Defines an optional overriding 12-digit serial number to be used for this device. The specified serial number will be used regardless of whatever permanent or randomly assigned serial number the device might have (if any).
 
 
