@@ -1367,13 +1367,16 @@ A device filename identifying a SCSI tape device cannot be specified in an Autom
 
 Refer to the distributed source-code's README.TAPE document for additional information regarding system and application programming for tape devices and instructions regarding use of the emulated ACF (Automatic Cartridge Feeder) and AUTOMOUNT features for virtual (non-SCSI) tape devices.
 
+
+++++++++++++++++++++++++++
 AWSTAPE virtual tape files
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+++++++++++++++++++++++++++
 These contain a complete tape in one file. AWSTAPE files consist of variable length EBCDIC blocks. Each block is preceded by a 6-byte header. Filemarks are represented by a 6-byte header with no data. This is the same format as is used by the P/390. The argument specifies the location of the AWSTAPE file (for example ickdsf.aws)
 
 
++++++++++++++++++++++++++++
 FakeTape virtual tape files
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
++++++++++++++++++++++++++++
 These contain a complete tape in one file. FakeTape files consist of variable length EBCDIC blocks. Each block is preceded by a 12-ASCII-hex-character header. Filemarks are represented by a 12-character header with no data. The FakeTape format is used by the Flex-ES system from Fundamental Software Inc (FSI). The argument specifies the location of the FakeTape file (for example ickdsf.fkt). Note: "FLEX-ES" and "FakeTape" are trademarks of Fundamental Software, Inc.
 
 
