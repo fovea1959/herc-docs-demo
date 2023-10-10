@@ -11,11 +11,10 @@ The configuration file, often named hercules.cnf, contains the processor and dev
 Example configuration file
 ==========================
 
-.. note::  
-Please note that the below example configuration file should not be considered a good example of how an actual configuration file should look! It is only meant to illustrate what some of the supported configuration file statements look like and how they are used.
+.. note:: Please note that the below example configuration file should not be considered a good example of how an actual configuration file should look! It is only meant to illustrate what some of the supported configuration file statements look like and how they are used.
 
 
-.. code-block:: 
+.. code-block:: none
 
     ####################################################################
     #                HERCULES EMULATOR CONTROL FILE                    #
@@ -188,14 +187,16 @@ Syntax: ``ASN_AND_LX_REUSE   ENABLE | DISABLE`` (deprecated; use FACILITY_)
 AUTOINIT
 --------
 Syntax: ``AUTOINIT   ON | OFF``
+
 The `AUTOINIT` option controls whether device files for emulated tape volumes should be automatically created or not.
 
 When ``AUTOINIT`` is ``ON``, a ``devinit`` command specifying a file that does not yet exist causes the tape driver to automatically create an empty unlabeled tape volume consisting of just two tapemarks when it discovers the specified file does not exist yet. When ``AUTOINIT`` is ``OFF`` a ``devinit`` command instead fails with an expected "file not found" error. For convenience the default setting is ``ON``.
 
 
-AUTOMOUNT   [±]directory
---------
+AUTOMOUNT
+---------
 Syntax: ``AUTOMOUNT   [±]directory``
+
 Specifies the host system directory where the guest is allowed or not allowed to automatically load virtual tape volumes from. Prefix allowable directories with a ``+`` plus sign and unallowable directories with a ``-`` minus sign. The default prefix if neither is specified is the ``+`` plus sign (i.e. an allowable directory).
 
 .. caution:: Enabling this feature may have security consequences depending on which allowable host system directories you specify as well as how your guest operating system enforces authorized use of the ``Set Diagnose (X'4B')`` channel command code.
@@ -238,7 +239,7 @@ The CMPSCPAD command and initialization statement is used to define the zero pad
 
 CNSLPORT
 --------
-Syntax: ``CNSLPORT   3270  -or-  nnnn  -or-  host:port``
+Syntax: ``CNSLPORT   3270 | nnnn | host:port``
 
 Specifies (typically) the port number (in decimal) to which tn3270 and telnet clients should connect. If an invalid value is specified Hercules defaults to port number 3270. See also the SYSGPORT statement.
 
@@ -300,13 +301,13 @@ The recommended code page for non-Linux guests (e.g. z/OS, etc) is "819/1047", a
   "]","right square bracket"
   "{","left curly bracket"
   "}","right curly bracket"
-  "|","solid vertical bar"
+  "\|","solid vertical bar"
   "¦","broken vertical bar"
-  "\","backslash"
+  "\\","backslash"
   "¬","logical not"
   "^","caret / circumflex"
   "_","underscore"
-  "`","grave accent"
+  "\`","grave accent"
   "~","tilde"
   "¢","cent"
   "£","pound"
@@ -348,9 +349,11 @@ Please also note that not all systems support being able to modify all three val
 
 
 .. _CPUIDFMT:
+
 CPUIDFMT
 --------
 Syntax: ``CPUIDFMT   0 | 1 | BASIC``
+
 Specifies the format of the CPU ID the STIDP instruction should store. Refer to the LPARNUM_ statement for more information.
 
 
@@ -406,6 +409,7 @@ Defines symbol symbol as to contain value value. The symbol can then be the obje
 Substitution is available even in configuration statements, meaning it is possible to perform substitution in the DEFSYM statement itself. However, symbols are always defined as the last step in the process, so attempting to self define a symbol will result in an empty string:
 
     DEFSYM FOO $(FOO)
+
 Will set symbol FOO to ""
 
 
@@ -477,6 +481,7 @@ specifies that the first four processor engines (engines 0-3) are of type CP, th
 The number of installed processor engines is determined by the MAXCPU statement. If the ENGINES statement specifies more than MAXCPU engines, the excess engines are ignored. If fewer than MAXCPU engines are specified, the remaining engines are set to type CP.
 
 .. _FACILITY:
+
 FACILITY
 --------
 Syntax: ``FACILITY   ENABLE | DISABLE | QUERY  facility  [archlvl]``
@@ -679,11 +684,11 @@ Specifies whether reinitialization of tape drive devices (via the devinit comman
 
 Specifying ALLOW|ENABLE (default) indicates new tapes may be mounted (via 'devinit nnnn new-tape-filename') irrespective of whether or not there is already a tape mounted on the drive.
 
-Specifying DISALLOW|DISABLE prevents new tapes from being mounted if one is already mounted. When DISALLOW is specified and a tape is already mounted on the drive, it must first be unmounted (via the command 'devinit nnnn *') before the new tape can be mounted. Otherwise the devinit attempt to mount the new tape is rejected.
+Specifying DISALLOW|DISABLE prevents new tapes from being mounted if one is already mounted. When DISALLOW is specified and a tape is already mounted on the drive, it must first be unmounted (via the command 'devinit nnnn \*') before the new tape can be mounted. Otherwise the devinit attempt to mount the new tape is rejected.
 
 This option is meant as a safety mechanism to protect against accidentally dismounting a tape from the wrong drive as a result of a simple typo (thereby cancelling a potentially important tape job) and was added by user request.
 
-Also note that for SCSI tape drives the 'devinit nnnn *' command has no effect as the tape must be unmounted manually (since it is a real physical device and not one emulated via a disk file like .AWS tapes).
+Also note that for SCSI tape drives the 'devinit nnnn \*' command has no effect as the tape must be unmounted manually (since it is a real physical device and not one emulated via a disk file like .AWS tapes).
 
 
 NETDEV
@@ -911,6 +916,7 @@ Examples
         ``0380  3420  $(TAPEDIR)/scratch.aws``
 
         ...
+
 In this example, device 0380 will be a 3420 loaded with the AWS tape file in /home/hercules/tapes/scratch.aws
 
 
@@ -925,10 +931,12 @@ When multiple devices are defined with a single device definition statement, the
   ``CUU`` (3 digits device number, upper case hexadecimal digits)
   ``CCUU`` (4 digits device number, upper case hexadecimal digits)
   ``DEVN`` (4 digits device number, upper case hexadecimal digits)
+
 are defined to contain for each device the relevant device address. For example:
 
 
   ``0200,0201  3340  /home/hercules/dasds/myvols.$(CUU)``
+
 will define two 3340 packs, with device 0200 being loaded with the file myvols.200 and device 0201 defined with myvols.201.
 
 Environment variables
@@ -982,30 +990,13 @@ For Windows, the following conversions are used for translating Unix process 'ni
 
 
 .. csv-table::
-  :header:  "'Nice' Value", "Windows Process Priority Class", "Meaning"
+  :class: longtable
+  :header:  "'Nice' Value", "Windows Process Priority Class", "Foo Meaning"
+
   "-20 to -16","Real-time","Process that has the highest possible priority. The threads of the process preempt the threads of all other processes, including operating system processes performing important tasks. For example, a real-time process that executes for more than a very brief interval can cause disk caches not to flush or cause the mouse to be unresponsive."
   "-15 to -9","High","Process that performs time-critical tasks that must be executed immediately. The threads of the process preempt the threads of normal or idle priority class processes. An example is the Task List, which must respond quickly when called by the user, regardless of the load on the operating system. Use extreme care when using the high-priority class, because a high-priority class application can use nearly all available CPU time."
   "-8 to -1","Above Normal","Process that has priority above the Normal class but below the High class."
 
-
-
-'Nice'
-value	
-Windows Process
-Priority Class	
-Meaning
- 	 	 	 
--20 to -16	 	Real-time	Process that has the highest possible priority. The threads of the process preempt the threads of all other processes, including operating system processes performing important tasks. For example, a real-time process that executes for more than a very brief interval can cause disk caches not to flush or cause the mouse to be unresponsive.
- 	 	 	 
--15 to -9	 	High	Process that performs time-critical tasks that must be executed immediately. The threads of the process preempt the threads of normal or idle priority class processes. An example is the Task List, which must respond quickly when called by the user, regardless of the load on the operating system. Use extreme care when using the high-priority class, because a high-priority class application can use nearly all available CPU time.
- 	 	 	 
--8 to -1	 	Above Normal	Process that has priority above the Normal class but below the High class.
- 	 	 	 
-0 to +7	 	Normal	Process with no special scheduling needs.
- 	 	 	 
-+8 to +14	 	Below Normal	Process that has priority above the Idle class but below the Normal class.
- 	 	 	 
-+15 to +19	 	Idle	Process whose threads run only when the system is idle. The threads of the process are preempted by the threads of any process running in a higher priority class. An example is a screen saver. The idle-priority class is inherited by child processes.
 .. caution::  A high process priority (or low 'nice' value) could have a impact on how Hercules's internal thread priorities are interpreted, thereby impacting the overall performance of your host system.
 
 
@@ -1085,6 +1076,7 @@ Supported Device Types
 
 .. csv-table::
   :header:  "Device type", "Description", "Emulated by"
+
   "3270, 3287","Local non-SNA 3270 display or printer","TN3270 client connection"
   "SYSG","Integrated 3270 console","TN3270 client connection"
   "1052, 3215","Console printer-keyboards","Telnet client connection"
