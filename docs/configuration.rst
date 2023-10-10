@@ -505,9 +505,15 @@ Specifies the port number (in decimal) on which the HTTP server will listen. The
 
 `AUTH` indictates that a userid and password are required to access the HTTP server, whereas NOAUTH indicates that a userid and password are not required. The userid and password may be any valid string.
 
-.. caution:: When `AUTH` is specified (and specifying a userid and password is thus required), one must exercise due diligence to prevent unauthorized access to Hercules's configuration file that contains those userids and passwords.
+.. admonition:: Security Alert
+   :class: danger
 
-.. caution:: The HTTP Server currently utilizes the insecure "http" protocol, not the more secure "https" protocol. All commands and responses are transmitted over the network in the clear, allowing anyone sniffing network traffic to see everything you do and possibly inject unauthorized commands of their own. Exercise caution when using the HTTP Server feature.
+   When `AUTH` is specified (and specifying a userid and password is thus required), one must exercise due diligence to prevent unauthorized access to Hercules's configuration file that contains those userids and passwords.
+
+.. admonition:: Security Alert
+   :class: danger
+
+   The HTTP Server currently utilizes the insecure "http" protocol, not the more secure "https" protocol. All commands and responses are transmitted over the network in the clear, allowing anyone sniffing network traffic to see everything you do and possibly inject unauthorized commands of their own. Exercise caution when using the HTTP Server feature.
 
 
 HTTP   ROOT
