@@ -1,22 +1,25 @@
 ![docs_pages_workflow](https://github.com/maltfield/rtd-github-pages/workflows/docs_pages_workflow/badge.svg?branch=master)
+![docs_pages_workflow](https://github.com/gsf600y/herc-docs-demo/workflows/docs_pages_workflow/badge.svg?branch=master)
 
-# Hercules Documentation Testing
+![image](https://github.com/gsf600y/herc-docs-demo/assets/24498661/594cac0a-bc00-409f-9ab1-d7d705761156)
 
-/docs directory contains reStructuredText files.
+# Hercules Documentation Demo
 
-Changes commited will trigger automatic Action to build and deploy into the gh-pages branch.
+ - The /docs directory contains reStructuredText files.
+ - Changes commited will trigger automatic Action to build and deploy into the gh-pages branch.
+ - Published documentation [here](https://gsf600y.github.io/herc-docs-demo/)
+ - PDF and epub downloads available
 
-Published [here](https://gsf600y.github.io/rtd-github-pages/)
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+Original source repoisitory README.md follows
+<br />
+<br />
 
-.  
-.  
-.  
-.  
-Original README.md follows.....
-.  
-.  
-.  
-.  
    
 # Continuous Documentation: Hosting Read the Docs on GitHub Pages
 
