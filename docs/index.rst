@@ -7,7 +7,7 @@ Welcome to the Hercules Documentation Test site!
 ================================================
 
 .. toctree::
-   :maxdepth: 5
+   :maxdepth: 3
    :caption: Contents:
 
    installation
