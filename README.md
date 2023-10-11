@@ -1,13 +1,12 @@
-![docs_pages_workflow](https://github.com/maltfield/rtd-github-pages/workflows/docs_pages_workflow/badge.svg?branch=master)
-![docs_pages_workflow](https://github.com/gsf600y/herc-docs-demo/workflows/docs_pages_workflow/badge.svg?branch=master)
+![docs_pages_workflow](https://github.com/fovea1959/herc-docs-demo/workflows/docs_pages_workflow/badge.svg?branch=master)
 
-![image](https://github.com/gsf600y/herc-docs-demo/assets/24498661/594cac0a-bc00-409f-9ab1-d7d705761156)
+![image](https://github.com/fovea1959/herc-docs-demo/assets/24498661/594cac0a-bc00-409f-9ab1-d7d705761156)
 
 # Hercules Documentation Demo
 
  - The /docs directory contains reStructuredText files.
  - Changes commited will trigger automatic Action to build and deploy into the gh-pages branch.
- - Published documentation [here](https://gsf600y.github.io/herc-docs-demo/)
+ - Published documentation [here](https://fovea1959.github.io/herc-docs-demo/)
  - PDF and epub downloads available
 
 <br />

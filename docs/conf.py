@@ -24,7 +24,7 @@ copyright = '2023'
 author = 'Test Author'
 
 # The short X.Y version
-version = ''
+version = '1.0'
 # The full version, including alpha/beta/rc tags
 release = '1.0.0'
 
@@ -114,7 +114,7 @@ htmlhelp_basename = 'helloWorlddoc'
 latex_elements = {
     # The paper size ('letterpaper' or 'a4paper').
     #
-    # 'papersize': 'letterpaper',
+    'papersize': 'letterpaper',
 
     # The font size ('10pt', '11pt' or '12pt').
     #
@@ -265,7 +265,7 @@ html_context['downloads'].append( ('epub', '/' +REPO_NAME+ '/' +current_language
 ##########################
  
 html_context['display_github'] = True
-html_context['github_user'] = 'gsf600y'
+html_context['github_user'] = 'fovea1959'
 html_context['github_repo'] = 'herc-docs-demo'
 html_context['github_version'] = 'master/docs/'
  

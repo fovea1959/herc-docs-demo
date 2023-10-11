@@ -92,7 +92,7 @@ for current_version in ${versions}; do
 done
  
 # return to master branch
-git checkout master
+git checkout fovea1959
  
 #######################
 # Update GitHub Pages #
@@ -117,7 +117,7 @@ cat > index.html <<EOF
 <!DOCTYPE html>
 <html>
    <head>
-      <title>helloWorld Docs</title>
+      <title>Hercules Demo Docs</title>
       <meta http-equiv = "refresh" content="0; url='/${REPO_NAME}/en/master/'" />
    </head>
    <body>
