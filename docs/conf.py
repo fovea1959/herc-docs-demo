@@ -19,7 +19,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'Hercules Documentation Test'
+project = 'Hercules Documentation Demo'
 copyright = '2023'
 author = 'Test Author'
 
@@ -133,7 +133,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'helloWorld.tex', 'Hercules Documentation Test',
+    (master_doc, 'helloWorld.tex', 'Hercules Documentation Demo',
      'Michael Altfield', 'manual'),
 ]
 
@@ -266,6 +266,6 @@ html_context['downloads'].append( ('epub', '/' +REPO_NAME+ '/' +current_language
  
 html_context['display_github'] = True
 html_context['github_user'] = 'gsf600y'
-html_context['github_repo'] = 'rtd-github-pages'
+html_context['github_repo'] = 'herc-docs-demo'
 html_context['github_version'] = 'master/docs/'
  
