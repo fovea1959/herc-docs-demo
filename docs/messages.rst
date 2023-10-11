@@ -11,7 +11,7 @@ This page describes the system messages for the Hercules S/370, ESA/390, and z/A
 
 Message Format
 ==============
-All Hercules-issued messages are of the form ``HHC*mmnnns* *text*`` where:
+All Hercules-issued messages are of the form ``HHCmmnnns text`` where:
 
 - ``HHC`` is the message prefix for Hercules. All Hercules messages will have this prefix.
 - ``mm``  specifies the function that issued the message, from the below list
@@ -24,42 +24,44 @@ All Hercules-issued messages are of the form ``HHC*mmnnns* *text*`` where:
    - A  Action. You need to do something.
 - text  Message text.
 
-CA Communication Adapter emulation
-CF Configuration file processing
-CP CPU emulation
-CT Channel-to-channel adapter emulation
-CU CCKD utility
-DA DASD emulation (both CKD and FBA)
-DC dasdcopy
-DG dyngui.dll
-DI dasdinit
-DL dasdload
-DS dasdisup
-DT dasdcat
-DU DASD utilities common functions
-HD Hercules Dynamic Loader
-HE hetinit
-HG hetget
-HM hetmap
-HT HTTP server
-HU hetupd
-IF hercifc (Network interface configuration handler)
-IN Hercules initialization
-LC LCS emulation
-LG System Log functions
-PN Hercules control panel command messages
-PR Printer emulation
-PU Card punch emulation
-RD Card reader emulation
-SD Socket devices common functions
-TA Tape device emulation
-TC tapecopy
-TE 1052 and 3270 terminal emulation
-TM tapemap
-TS tapesplt
-TT TOD Clock and Timer Services
-TU TUN/TAP driver support
-VM VM/CP emulation facility
+.. csv-table::
+
+"CA","Communication Adapter emulation"
+"CF","Configuration file processing"
+"CP","CPU emulation"
+"CT","Channel-to-channel adapter emulation"
+"CU","CCKD utility"
+"DA","DASD emulation (both CKD and FBA)"
+"DC","dasdcopy"
+"DG","dyngui.dll"
+"DI","dasdinit"
+"DL","dasdload"
+"DS","dasdisup"
+"DT","dasdcat"
+"DU","DASD utilities common functions"
+"HD","Hercules Dynamic Loader"
+"HE","hetinit"
+"HG","hetget"
+"HM","hetmap"
+"HT","HTTP server"
+"HU","hetupd"
+"IF","hercifc (Network interface configuration handler)"
+"IN","Hercules initialization"
+"LC","LCS emulation"
+"LG","System Log functions"
+"PN","Hercules control panel command messages"
+"PR","Printer emulation"
+"PU","Card punch emulation"
+"RD","Card reader emulation"
+"SD","Socket devices common functions"
+"TA","Tape device emulation"
+"TC","tapecopy"
+"TE","1052 and 3270 terminal emulation"
+"TM","tapemap"
+"TS","tapesplt"
+"TT","TOD Clock and Timer Services"
+"TU","TUN/TAP driver support"
+"VM"," VM/CP emulation facility"
 
 
 CA Communication Adapter emulation
@@ -153,6 +155,9 @@ Operator Action
 None.
 Programmer Action
 Check the System Cause Text for any indication of where the error might come from. Notify Support.
+
+HHCCA007W
++++++++++
 HHCCA007W CCUU:Outgoing call failed during ENABLE|DIAL command : System Cause Text
 Explanation
 The system reported that a previously initiated TCP connection could not be completed
@@ -162,6 +167,9 @@ Operator Action
 If the error indicates that the error is temporary, retry the operation.
 Programmer Action
 Check that the destination for this line is correctly configured. If the operation was a DIAL attempt, check in the application configuration or operation data.
+
+HHCCA008I
++++++++++
 HHCCA008I CCUU:cthread - Incoming Call
 Explanation
 The BSC thread has received an incoming call.
@@ -171,6 +179,9 @@ Operator Action
 None. This is an informational message
 Programmer Action
 None. This is an informational message
+
+HHCCA009I
++++++++++
 HHCCA009I CCUU:BSC utility thread terminated
 Explanation
 The BSC thread has ended
@@ -180,6 +191,9 @@ Operator Action
 Refer to any previous error message if this message was not unexpected
 Programmer Action
 Refer to any previous error message if this message was not unexpected
+
+HHCCA010I
++++++++++
 HHCCA010I CCUU:initialisation not performed
 Explanation
 The Device initialisation process has failed.
@@ -189,6 +203,9 @@ Operator Action
 Refer to any previous error message
 Programmer Action
 Refer to any previous error message
+
+HHCCA011E
++++++++++
 HHCCA011E CCUU:Error parsing Keyword
 Explanation
 The device keyword parser found an error while parsing a known keyword.
@@ -198,6 +215,9 @@ Operator Action
 for a runtime initialisation, correct the device initialisation parameters, otherwise notify the programmer.
 Programmer Action
 For an engine initialisation, correct the device configuration parameters in the configuration file.
+
+HHCCA012E
++++++++++
 HHCCA012E CCUU:Unrecognized parameter Keyword
 Explanation
 The device keyword parser found an unknown keyword in the device parameter list.
@@ -207,6 +227,9 @@ Operator Action
 for a runtime initialisation, correct the device initialisation parameters, otherwise notify the programmer.
 Programmer Action
 For an engine initialisation, correct the device configuration parameters in the configuration file.
+
+HHCCA013E
++++++++++
 HHCCA013E CCUU:Incorrect local port|remote port|local host|remote host specification value
 Explanation
 The device initialisation routine could not correctly parse a parameter value.
@@ -216,6 +239,9 @@ Operator Action
 for a runtime initialisation, correct the device initialisation parameters, otherwise notify the programmer.
 Programmer Action
 For an engine initialisation, correct the device configuration parameters in the configuration file.
+
+HHCCA014E
++++++++++
 HHCCA014E CCUU:Incorrect switched/dial specification value; defaulting to DIAL=OUT
 Explanation
 The device initialisation routine found an incorrect DIAL value.
@@ -225,6 +251,9 @@ Operator Action
 for a runtime initialisation, correct the device initialisation parameters, otherwise notify the programmer.
 Programmer Action
 For an engine initialisation, correct the device configuration parameters in the configuration file.
+
+HHCCA015E
++++++++++
 HHCCA015E CCUU:Missing parameter : DIAL=NO|IN|OUT|INOUT and LPORT|RPORT|LHOST|RHOST not specified
 Explanation
 The device initialisation routine found that a mandatory parameter was not provided for a specific DIAL Value.
@@ -239,6 +268,9 @@ For DIAL=NO , LPORT, RPORT and RHOST are needed
 For DIAL=IN , LPORT is required
 For DIAL=OUT None of LPORT,LHOST,RPORT,RHOST are required
 For DIAL=INOUT, LPORT is required
+
+HHCCA016W
++++++++++
 HHCCA016W CCUU:Conflicting parameter : DIAL=NO|IN|OUT|INOUT and LPORT|RPORT|LHOST|RHOST=value specified
 Explanation
 The device initialisation routine found that a parameter was provided for a parameter that is not relevant for a specific DIAL Value.
@@ -252,6 +284,9 @@ Note
 For DIAL=IN , RPORT and RHOST are ignored
 For DIAL=OUT , LPORT, LHOST, RPORT and RHOST are ignored
 For DIAL=INOUT, RPORT and RHOST are ignored
+
+HHCCA017I
++++++++++
 HHCCA017I CCUU:LPORT|RPORT|LHOST|RHOST parameter ignored
 Explanation
 The system indicates that the parameter specified is ignored. This message is preceeded by message HHCCA016W
@@ -261,6 +296,9 @@ Operator Action
 None
 Programmer Action
 None
+
+HHCCA018E
++++++++++
 HHCCA018E CCUU:Bind failed : System Cause Text
 Explanation
 While attempting to bind a socket to a specific host/port, the host system returned an uncorrectable error.
@@ -270,6 +308,9 @@ Operator Action
 None
 Programmer Action
 Check that the LHOST parameter for this device is indeed a local IP address. Otherwise, notify support.
+
+HHCCA019E
++++++++++
 HHCCA019E CCUU:BSC comm thread did not initialise
 Explanation
 The BSC communication thread reported that it terminated while the device was initialising.
@@ -279,6 +320,9 @@ Operator Action
 Check for any previously issued error message.
 Programmer Action
 Check for any previously issued error message.
+
+HHCCA020E
++++++++++
 HHCCA020E CCUU:Memory allocation failure for main control block
 Explanation
 A memory allocation failure occured while attempting to reserve memory for the Communication Adapter control block
@@ -288,6 +332,9 @@ Operator Action
 None
 Programmer Action
 Contact support
+
+HHCCA021I
++++++++++
 HHCCA021I CCUU:Initialization failed due to previous errors
 Explanation
 The initialisation process for device CCUU did not complete succesfully
@@ -297,6 +344,9 @@ Operator Action
 None
 Programmer Action
 Refer to any previous error message
+
+HHCCA300D
++++++++++
 HHCCA300D Debug Message
 Explanation
 This is a debug message. CCW Tracing has been turned on for this device and the Line Handler issues debug messages to help diagnose interface, conformance and protocol issues.
