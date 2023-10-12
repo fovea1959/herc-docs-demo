@@ -1,6 +1,6 @@
 ![docs_pages_workflow](https://github.com/fovea1959/herc-docs-demo/workflows/docs_pages_workflow/badge.svg?branch=master)
 
-![image](https://github.com/fovea1959/herc-docs-demo/assets/24498661/594cac0a-bc00-409f-9ab1-d7d705761156)
+![image](https://github.com/fovea1959/herc-docs-demo/assets/24498661/ea472375-3d79-4a72-b94c-574bb123d6a8)
 
 # Hercules Documentation Demo
 
