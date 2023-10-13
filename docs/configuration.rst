@@ -5,6 +5,7 @@ Configuration File
 ##################
 
 This page describes the configuration file for the Hercules S/370, ESA/390, and z/Architecture emulator.
+You will need to amend the configuration file hercules.cnf to reflect your device layout and intended mode of operation (S/370, ESA/390, or z/Architecture). 
 
 The configuration file, often named hercules.cnf, contains the processor and device layout. It is roughly equivalent to the IOCDS on a real System/390. The configuration file is an ASCII text file.
 
@@ -160,6 +161,7 @@ Blank lines, and lines beginning with a # sign or an asterisk, are treated as co
 System parameters
 =================
 Except for the ARCHLVL and LPARNUM statements, system parameter statements may appear in any order but must precede any device statements. Each system parameter must be on a separate line.
+A comment preceded by a # sign may be appended to any system parameter statement.
 The following system parameters may be specified:
 
 ARCHLVL
@@ -899,8 +901,6 @@ Syntax: ``YROFFSET   ±years``
 
 Specifies a number of years to offset the TOD clock from the actual date. Positive numbers will move the clock forward in time, while negative numbers will move it backward. A common value for non-Y2K-compliant operating systems is YROFFSET -28, which has the advantage that the day of the week and the presence or absence of February 29 is the same as the current year. This value may not be specified as greater than ±142 years, the total range of the TOD clock. Specifying a value that causes the computed TOD clock year to be earlier than the value of SYSEPOCH or more than 142 years later than that value will produce unexpected results.
 
-A comment preceded by a # sign may be appended to any system parameter statement.
-
 Symbol substitutions
 ====================
 In configuration and device statements, as well as in panel commands and OAT files, symbols may be substituted for text.
@@ -1041,6 +1041,8 @@ All devices defined when devnums specifies more than one device have identical c
 
 See devnum immediately below for an explanation of how each device number is specified.
 
+A comment preceded by a # sign may be appended to any device definition statement.
+
 The 4 special subtitution symbols CUU, CCUU, cuu and ccuu are also defined for each device in a device group. See substitutions for details.
 
 devnum
@@ -1066,7 +1068,6 @@ arguments
 is a list of parameters whose meaning depends on the device type. The arguments required for each class of device are shown further below.
 
 # comments...
-A comment preceded by a # sign may be appended to any device definition statement.
 
 
  	

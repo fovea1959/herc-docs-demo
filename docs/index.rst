@@ -12,7 +12,9 @@ Welcome to the Hercules Documentation Demo site!
 
    installation
    configuration
+   dasd
    operation
+   support
    messages
 
 
