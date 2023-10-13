@@ -133,8 +133,8 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'helloWorld.tex', 'Hercules Documentation Demo',
-     'Michael Altfield', 'manual'),
+    (master_doc, 'HerculesDocumentationDemo.tex', 'Hercules Documentation Demo',
+     '', 'manual'),
 ]
 
 
@@ -247,7 +247,7 @@ for version in versions:
 rinoh_documents = [(
  master_doc,
  'target',
- project+ ' Documentation',
+ project,
  '© ' +copyright,
 )]
 today_fmt = "%B %d, %Y"
@@ -259,6 +259,8 @@ html_context['downloads'] = list()
 html_context['downloads'].append( ('pdf', '/' +REPO_NAME+ '/' +current_language+ '/' +current_version+ '/' +project+ '-docs_' +current_language+ '_' +current_version+ '.pdf') )
  
 html_context['downloads'].append( ('epub', '/' +REPO_NAME+ '/' +current_language+ '/' +current_version+ '/' +project+ '-docs_' +current_language+ '_' +current_version+ '.epub') )
+
+html_context['downloads'].append( ('tarred HTML', '/' +REPO_NAME+ '/' +current_language+ '/' +current_version+ '/' +project+ '-docs_' +current_language+ '_' +current_version+ '.tar.gz') )
  
 ##########################
 # "EDIT ON GITHUB" LINKS #
