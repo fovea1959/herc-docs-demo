@@ -164,7 +164,7 @@ The following system parameters may be specified:
 
 ARCHLVL
 -------
-   ``ARCHLVL S/370 | ESA/390 | ESAME | z/Arch``
+Syntax: ``ARCHLVL S/370 | ESA/390 | ESAME | z/Arch``
 
 Specifies the initial architecture mode:
 
@@ -436,7 +436,10 @@ When ENABLE is specified the Hercules Diagnose 8 instruction command interface i
 
 An optional second argument can be given to request whether an audit trail of such commands should be created or not. When `ECHO` is specified, a message is issued when the command is about to be issued, when the command is redisplayed (as is normally done when entered from the command line), as well as a final message indicating the command has finished executing. When `NOECHO` is specified no such audit trail messages are displayed and the command instead completes silently (except for whatever messages the command itself may issue).
 
-Security Alert:  Enabling this feature has security consequences. When this feature is enabled it is possible for guest operating systems running under Hercules to issue commands directly to the host operating system by means of the sh (host shell command) and exec (execute Rexx script) commands. This ability may be disabled via the `SHCMDOPT` statement's `NODIAG8` option.
+.. admonition:: Security Alert
+   :class: danger
+
+   Enabling this feature has security consequences. When this feature is enabled it is possible for guest operating systems running under Hercules to issue commands directly to the host operating system by means of the sh (host shell command) and exec (execute Rexx script) commands. This ability may be disabled via the `SHCMDOPT` statement's `NODIAG8` option.
 
 The value of ECHO or NOECHO has no effect on whether or not command output will be placed into the Diagnose 8 instruction's response buffer if the instruction requested one, nor does it cause the resulting audit trail messages from being placed into the response buffer either. The ECHO option only impacts what is displayed on the hardware console (and what appears in the hardcopy logfile) but does not otherwise impact what is placed into the instruction's response buffer.
 
@@ -634,7 +637,9 @@ The minimum size is 4K for S/370 and ESA/390, and 8K for z/Arch. A maximum of 64
 Notes:
 
 The actual upper limit is determined by your host system's architecture and operating system, the guest operating system, and the amount of physical memory and available paging space. The total of mainsize and xpndsize on host systems with a 32-bit architecture will be limited to less than 4G; host systems with a 64-bit architecture will be limited to less than 16E.
+
 .. caution:: Using minimum storage sizes, storage sizes less than 64K or a size that is not a multiple of 64K for S/370, or a size less than 1M or is not a multiple of 1M for z/Arch is not recommended as it could generate error conditions which are not covered by the Principles of Operations.
+
 Use of storage sizes greater than supported by the guest operating system may generate incorrect results or error conditions within the guest operating system.
 
 
@@ -805,7 +810,10 @@ When set to DISABLE, the sh (host shell command) and exec (Rexx execute script) 
 
 If the optional NODIAG8 option is specified, then only the programmatic execution of commands via the the Diagnose 8 interface are disabled, but shell and Rexx commands entered directly via the Hercules command line still work. This includes commands entered via the HTTP server facility as well as commands issued by .rc "run command" scripts too (automatically at startup or directly or indirectly via the script command).
 
-Security Alert:  Enabling this feature has security consequences. When ENABLE DIAG8 is specified it is possible for guest operating systems running under Hercules to issue commands directly to the host operating system.
+.. admonition:: Security Alert
+   :class: danger
+
+   Enabling this feature has security consequences. When ENABLE DIAG8 is specified it is possible for guest operating systems running under Hercules to issue commands directly to the host operating system.
 
 
 SHRDPORT
@@ -988,9 +996,10 @@ Process Priorities
 ------------------
 For Windows, the following conversions are used for translating Unix process 'nice' values to Windows process priority classes:
 
+.. 
+   tabularcolumns:: |p{1cm}|p{7cm}|
 
 .. csv-table::
-  :class: longtable
   :header:  "'Nice' Value", "Windows Process Priority Class", "Foo Meaning"
 
   "-20 to -16","Real-time","Process that has the highest possible priority. The threads of the process preempt the threads of all other processes, including operating system processes performing important tasks. For example, a real-time process that executes for more than a very brief interval can cause disk caches not to flush or cause the mouse to be unresponsive."
@@ -1023,6 +1032,7 @@ Description
 6	 	(unused)	---
  	 	 	 
 7	 	Timer	TOD Clock and Timer thread is the thread which manages the internal emulated TOD Clock and CPU Timer components of your emulated mainframe. In order to ensure accurate time of day and elapsed time and/or CPU time measurement, it should always be the very highest priority thread within Hercules.
+
 .. caution:: Hercules's internal thread priorities could be interpreted differently based on its process priority (or 'nice' value), thereby impacting the overall performance of your host system.
 
 
