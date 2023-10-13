@@ -10,11 +10,12 @@ Welcome to the Hercules Documentation Demo site!
    :maxdepth: 2
    :caption: Contents:
 
-   installation
+   hercinst
    configuration
-   dasd
-   operation
-   support
+   hercdasd
+   hercoper
+   hercsupp
+   hercfaq
    messages
 
 

@@ -102,20 +102,23 @@ bashful about asking for help.**
       ``sudo apt-get -y install libregina3-dev``
 
    -  Elbrus Linux (similar to Debian)
-      ``sudo apt-get -y install git wget time``
-      ``sudo apt-get -y install build-essential cmake flex gawk m4 autoconf automake libtool``
-      ``sudo apt-get -y install bzip2 zlib``
-      ``sudo apt-get -y install libcap``
+     
+      | ``sudo apt-get -y install git wget time``
+      | ``sudo apt-get -y install build-essential cmake flex gawk m4 autoconf automake libtool``
+      | ``sudo apt-get -y install bzip2 zlib``
+      | ``sudo apt-get -y install libcap``
 
    -  Arch / Manjaro
-      ``sudo pacman -S --needed --noconfirm git wget``
-      ``sudo pacman -S --needed --noconfirm base-devel make cmake flex gawk m4 autoconf automake``
-      ``sudo pacman -S --needed --noconfirm bzip2 zlib``
+
+      | ``sudo pacman -S --needed --noconfirm git wget``
+      | ``sudo pacman -S --needed --noconfirm base-devel make cmake flex gawk m4 autoconf automake``
+      | ``sudo pacman -S --needed --noconfirm bzip2 zlib``
 
    -  Fedora
-      ``sudo dnf -y install git wget``
-      ``sudo dnf -y install gcc make cmake flex gawk m4 autoconf automake libtool-ltdl-devel``
-      ``sudo dnf -y install bzip2-devel zlib-devel``
+
+      | ``sudo dnf -y install git wget``
+      | ``sudo dnf -y install gcc make cmake flex gawk m4 autoconf automake libtool-ltdl-devel``
+      | ``sudo dnf -y install bzip2-devel zlib-devel``
 
    -  CentOS / AlmaLinux / Rocky Linux 8+ / Red Hat RHEL 9
 
@@ -146,10 +149,11 @@ bashful about asking for help.**
       built from source.*
 
    -  openSUSE (15.1+)
-      ``sudo zypper install -y git``
-      ``sudo zypper install -y -t pattern devel_basis autoconf automake cmake flex gawk m4 libtool``
-      ``sudo zypper install -y -t pattern bzip2 libz1 zlib-devel``
-      ``sudo zypper install -y libcap-progs``
+
+      | ``sudo zypper install -y git``
+      | ``sudo zypper install -y -t pattern devel_basis autoconf automake cmake flex gawk m4 libtool``
+      | ``sudo zypper install -y -t pattern bzip2 libz1 zlib-devel``
+      | ``sudo zypper install -y libcap-progs``
 
    -  Apple Darwin (macOS High Sierra, Mojave, Catalina, Big Sur, etc.)
       with Homebrew

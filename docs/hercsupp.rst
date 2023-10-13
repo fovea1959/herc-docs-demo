@@ -1,3 +1,5 @@
+.. _techsupp:
+
 Technical Support
 =================
 
