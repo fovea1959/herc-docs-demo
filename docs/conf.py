@@ -121,8 +121,8 @@ latex_elements = {
     # 'pointsize': '10pt',
 
     # Additional stuff for the LaTeX preamble.
-    #
-    # 'preamble': '',
+    # see https://stackoverflow.com/q/20073309/17887564
+    'preamble': '\setcounter{tocdepth}{4}',
 
     # Latex figure (float) alignment
     #
