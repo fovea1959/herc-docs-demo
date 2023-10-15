@@ -17,7 +17,7 @@ set -x
 ###################
  
 apt-get update
-apt-get -y install git rsync python3-sphinx python3-sphinx-rtd-theme python3-stemmer python3-git python3-pip python3-setuptools
+apt-get -o Dpkg::Progress-Fancy=0 -y install git rsync python3-sphinx python3-sphinx-rtd-theme python3-stemmer python3-git python3-pip python3-setuptools
  
 python3 -m pip install --upgrade rinohtype pygments
  
@@ -44,7 +44,7 @@ export REPO_NAME="${GITHUB_REPOSITORY##*/}"
 # first, cleanup any old builds' static assets
 make -C docs clean
  
-# get a list of branches, excluding 'HEAD' and 'gh-pages'
+# get a list of branches, excluding 'HEAD' and 'gh-pages', along with the tags
 versions="
  `git for-each-ref '--format=%(refname:lstrip=-1)' refs/remotes/origin/ | grep -viE '^(HEAD|gh-pages)$'` \
  `git for-each-ref '--format=%(refname:lstrip=-1)' refs/tags/` \
@@ -57,6 +57,16 @@ versions="
    git checkout ${current_version}
  
    echo "INFO: Building sites for ${current_version}"
+
+   mkdir -p docs/_build/html/en/${current_version}
+   cat > docs/_build/html/en/${current_version}/index.html <<EOF
+<!DOCTYPE html>
+<html>
+   <body>
+      <p>No document source existed for branch/tag ${current_version}. Sorry.
+   </body>
+</html>
+EOF
  
    # skip this branch if it doesn't have our docs dir & sphinx config
    if [ ! -e 'docs/conf.py' ]; then
@@ -75,17 +85,24 @@ versions="
       ##########
       echo "INFO: Building for ${current_language}"
  
+      mkdir -vp "${docroot}/${current_language}/${current_version}/"
+
       # HTML #
       sphinx-build -b html docs/ docs/_build/html/${current_language}/${current_version} -D language="${current_language}"
+      tar cfz "${docroot}/${current_language}/${current_version}/Hercules Documentation Demo-docs_${current_language}_${current_version}.html.tar.gz" \
+	      docs/_build/html/${current_language}/${current_version}
  
+      # HTML #
+      sphinx-build -b html docs/ docs/_build/singlehtml/${current_language}/${current_version} -D language="${current_language}"
+      tar cfz "${docroot}/${current_language}/${current_version}/Hercules Documentation Demo-docs_${current_language}_${current_version}.single.html.tar.gz" \
+	      docs/_build/singlehtml/${current_language}/${current_version}
+
       # PDF #
       sphinx-build -b rinoh docs/ docs/_build/rinoh -D language="${current_language}"
-      mkdir -p "${docroot}/${current_language}/${current_version}"
       cp "docs/_build/rinoh/target.pdf" "${docroot}/${current_language}/${current_version}/Hercules Documentation Demo-docs_${current_language}_${current_version}.pdf"
  
       # EPUB #
       sphinx-build -b epub docs/ docs/_build/epub -D language="${current_language}"
-      mkdir -p "${docroot}/${current_language}/${current_version}"
       cp "docs/_build/epub/target.epub" "${docroot}/${current_language}/${current_version}/Hercules Documentation Demo-docs_${current_language}_${current_version}.epub"
  
       # copy the static assets produced by the above build into our docroot
@@ -96,7 +113,7 @@ versions="
 done
  
 # return to master branch
-git checkout fovea1959
+git checkout master
  
 #######################
 # Update GitHub Pages #
