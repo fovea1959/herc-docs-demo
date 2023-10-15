@@ -30,7 +30,7 @@ ADCD, then I suggest you lobby **IBM Developer Relations** at the
 address given on their web page. Different rules apply to the OS/390 and
 z/OS DemoPkg CD which is available only to IBM employees and business
 partners. If you fall into this category then you probably know what the
-rules are. I don't.  ``:-(``
+rules are. I don't.  :-(
 
 --------------
 
@@ -326,46 +326,35 @@ new DASD image file and load it with data from unloaded PDS files.
 
 The format of the dasdload / dasdload64 command is:
 
-|        
-  ``dasdload   ``\ *``[options]``*\ ````\ *``ctlfile outfile``\ ``[msglevel [maxdblk maxttr maxdscb]]``*
-|        
-  ``dasdload64``\ *``[options]``*\ ````\ *``ctlfile outfile``\ ``[msglevel [maxdblk maxttr maxdscb]]``*
+::
+
+  dasdload   [options] ctlfile outfile [msglevel [maxdblk maxttr maxdscb]]
+  dasdload64 [options] ctlfile outfile [msglevel [maxdblk maxttr maxdscb]]|        
 
 where *[options]* can be:
 
-   *``-z``*
-      Build compressed dasd image file using zlib.
-   *``-bz2``*
-      Build compressed dasd image file using bzip2.
-   *``-0``*
-      Build compressed dasd image file with no compression.
-   *``-lfs``*
-      Create only one very large output file (can exceed 2G).
-   *``-a``*
-      Build dasd image file that includes alternate cylinders.
-   *``-b``*
-      For a volume without IPL text, make the wait PSW written to the
-      IPL1 record a BC-mode PSW. The default is to make the wait PSW an
-      EC-mode PSW.
-   *``-m``*
-      For a volume without IPL text, make the wait PSW written to the
-      IPL1 record enabled for machine checks. The default is to make the
-      wait PSW disabled for machine checks.
-   *``ctlfile``*
+-z            Build compressed dasd image file using zlib.
+-bz2          Build compressed dasd image file using bzip2.
+-0            Build compressed dasd image file with no compression.
+-a            Build dasd image file that includes alternate cylinders.
+-b            For a volume without IPL text, make the wait PSW written to the IPL1 record a BC-mode PSW. The default is to make the wait PSW an EC-mode PSW.
+-m            For a volume without IPL text, make the wait PSW written to the IPL1 record enabled for machine checks. The default is to make the wait PSW disabled for machine checks.
+
+   ``ctlfile``
       is the name of the control file which specifies the datasets that
       are to be loaded onto the newly-created volume
-   *``outfile``*
+   ``outfile``
       is the name of the DASD image file to be created
-   *``msglevel``*
+   ``msglevel``
       is an optional number from 0 to 5 (default is 1) which controls
       the level of detail of the messages issued during the load.
-   *``maxdblk``*
+   ``maxdblk``
       is the optional maximum number of DBLK table entries or 0 to use
       the default
-   *``maxttr``*
+   ``maxttr``
       is the optional maximum number of TTR table entries or 0 to use
       the default
-   *``maxdscb``*
+   ``maxdscb``
       is the optional maximum number of DSCB table entries or 0 to use
       the default
 
