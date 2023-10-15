@@ -238,6 +238,8 @@ for lang in languages:
 html_context['versions'] = list()
  
 versions = [branch.name for branch in repo.branches]
+for tag in repo.tags:
+    versions.append(tag.name)
 for version in versions:
    html_context['versions'].append( (version, '/' +REPO_NAME+ '/'  +current_language+ '/' +version+ '/') )
  
@@ -260,7 +262,9 @@ html_context['downloads'].append( ('pdf', '/' +REPO_NAME+ '/' +current_language+
  
 html_context['downloads'].append( ('epub', '/' +REPO_NAME+ '/' +current_language+ '/' +current_version+ '/' +project+ '-docs_' +current_language+ '_' +current_version+ '.epub') )
 
-html_context['downloads'].append( ('tarred HTML', '/' +REPO_NAME+ '/' +current_language+ '/' +current_version+ '/' +project+ '-docs_' +current_language+ '_' +current_version+ '.tar.gz') )
+html_context['downloads'].append( ('tarred HTML', '/' +REPO_NAME+ '/' +current_language+ '/' +current_version+ '/' +project+ '-docs_' +current_language+ '_' +current_version+ '.html.tar.gz') )
+
+html_context['downloads'].append( ('tarred single file HTML', '/' +REPO_NAME+ '/' +current_language+ '/' +current_version+ '/' +project+ '-docs_' +current_language+ '_' +current_version+ '.single.html.tar.gz') )
  
 ##########################
 # "EDIT ON GITHUB" LINKS #
