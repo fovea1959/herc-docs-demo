@@ -339,24 +339,13 @@ where *[options]* can be:
 -a            Build dasd image file that includes alternate cylinders.
 -b            For a volume without IPL text, make the wait PSW written to the IPL1 record a BC-mode PSW. The default is to make the wait PSW an EC-mode PSW.
 -m            For a volume without IPL text, make the wait PSW written to the IPL1 record enabled for machine checks. The default is to make the wait PSW disabled for machine checks.
+ctlfile       is the name of the control file which specifies the datasets that are to be loaded onto the newly-created volume
+outfile       is the name of the DASD image file to be created
+msglevel      is an optional number from 0 to 5 (default is 1) which controls the level of detail of the messages issued during the load.
+maxdblk       is the optional maximum number of DBLK table entries or 0 to use the default
+maxttr        is the optional maximum number of TTR table entries or 0 to use the default
+maxdscb       is the optional maximum number of DSCB table entries or 0 to use the default
 
-   ``ctlfile``
-      is the name of the control file which specifies the datasets that
-      are to be loaded onto the newly-created volume
-   ``outfile``
-      is the name of the DASD image file to be created
-   ``msglevel``
-      is an optional number from 0 to 5 (default is 1) which controls
-      the level of detail of the messages issued during the load.
-   ``maxdblk``
-      is the optional maximum number of DBLK table entries or 0 to use
-      the default
-   ``maxttr``
-      is the optional maximum number of TTR table entries or 0 to use
-      the default
-   ``maxdscb``
-      is the optional maximum number of DSCB table entries or 0 to use
-      the default
 
 **Note** that dasdload's default for the wait PSW written to the IPL1
 record *have changed from earlier releases of Hercules*. In the past,
