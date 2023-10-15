@@ -347,6 +347,18 @@ maxttr        is the optional maximum number of TTR table entries or 0 to use th
 maxdscb       is the optional maximum number of DSCB table entries or 0 to use the default
 
 
+| command --option1 value1 \\
+|         --option2 value2 \\
+|         --option3 value3
+
+
+- ``--option1``: value1
+- ``--option2``: value2
+- ``--option3``: value3
+
+
+
+
 **Note** that dasdload's default for the wait PSW written to the IPL1
 record *have changed from earlier releases of Hercules*. In the past,
 the wait PSW created by dasdload on volumes without IPL text was a
