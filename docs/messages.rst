@@ -1,38 +1,24 @@
+#############################
 Hercules – Messages and Codes
-=============================
+#############################
 
 Version 4 Release 00
-
-Draft - November 21, 2015
--------------------------
-
-Hercules System/370, ESA/390, z/Architecture Emulator
------------------------------------------------------
-
-.. _hercules-messages-and-codes-1:
-
-Hercules – Messages and Codes
-=============================
-
-Version 4 Release 00
-
 First Edition, November 21, 2015
-
 HEMC040000- 00
 
-1. Preface
-----------
+Preface
+=======
 
-1.1 Edition information
-~~~~~~~~~~~~~~~~~~~~~~~
+Edition information
+-------------------
 
 This edition applies to the Hercules S/370, ESA/390 and z/Architecture
 Emulator Release 4.00.0 and to all subsequent versions, releases and
 modifications until otherwise indicated in new editions. Make sure you
 are using the correct edition for the level of software you are using.
 
-1.2 What this book is about
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+What this book is about
+---------------------------
 
 This book describes all messages and codes of the Hercules Emulator. For
 guidance in operating or debugging Hercules, for a general overview or
@@ -43,15 +29,15 @@ found in more than one manual. This redundancy is not intended to
 unnecessarily expand the manuals but should help to find all necessary
 information in one place.
 
-1.3 Who should read this book
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Who should read this book
+-------------------------
 
 This book is mainly intended for people who are responsible for
 operating the Hercules Emulator. It serves as a starting point for
 resolving errors in the Hercules environment.
 
-1.4 What you need to know to understand this book
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+What you need to know to understand this book
+---------------------------------------------
 
 To understand this book you should be somewhat familiar with the
 Microsoft Windows and/or Linux ope- rating systems. You should also be
@@ -60,22 +46,22 @@ itself. Last but not least you should be familiar with the hardware and
 software of IBM mainframe environments and their underlying ideas and
 concepts, as Hercules emulates IBM mainframe hardware.
 
-1.5 How to use this book
-~~~~~~~~~~~~~~~~~~~~~~~~
+How to use this book
+--------------------
 
 This book is designed as a reference book for all messages and codes of
 the Hercules Emulator and related products. It is not intended to be
 read chapter by chapter.
 
-1.6 Revision Notice
-~~~~~~~~~~~~~~~~~~~
+Revision Notice
+---------------
 
 Hercules Release: Version 4 Release 00 Modification 0 Publication
 Number: HEMC0 40000 SoftCopy Name: HerculesMessagesandCodes Revision
 Number: HEMC040000- 00 Date: November 21, 2015
 
-1.7 Readers Comments
-~~~~~~~~~~~~~~~~~~~~
+Readers Comments
+--------------------
 
 If you like or dislike anything about this book please send an email to
 the address below. Feel free to comment on any errors or lack of
@@ -86,8 +72,8 @@ your help.
 Send your comments by email to the Hercules-390 discussion group:
 hercules-390@yahoogroups.com
 
-1.8 Legal Advice
-~~~~~~~~~~~~~~~~
+Legal Advice
+------------
 
 Hercules implements only the raw S/370, ESA/390, and z/Architecture
 instruction set, it does not provide any operating system facilities.
@@ -101,8 +87,8 @@ which have been placed in the public domain.
 NOTE: It is YOUR responsibility to comply with the terms of the license
 for the operating system you intend to run on the Hercules Emulator.
 
-1.9 Trademarks
-~~~~~~~~~~~~~~
+Trademarks
+----------
 
 The following is a list of trademark acknowledgements and copyright
 notices of product and company names mentioned in this book. Other
@@ -128,8 +114,8 @@ be the trademarks or registered trademarks of their respective owners.
 -  Xmit Manager is copyrighted by Neal Johnston-Ward.
 -  FLEX-ES is a registered trademark of Fundamental Software, Inc.
 
-1.10 Acknowledgements
-~~~~~~~~~~~~~~~~~~~~~
+Acknowledgements
+----------------
 
 The Hercules manuals would not have been possible without the assistance
 of many people and I would like to thank all those who helped me. In
@@ -151,74 +137,11 @@ particular I would like to thank:
 If anyone feels they have been forgotten on this list please let me
 know. Peter Glanzmann
 
-2. Related Publications
------------------------
+Summary of changes
+=====================
 
-2.1 Hercules – General Information
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The Hercules “General Information” manual provides you an overview of
-the ideas and concepts of the Hercules Emulator as well as a
-documentation of the emulator’s functionality. It explains what Hercules
-does and does not do. It helps you decide if the software fits your
-needs fulfills your requirements.
-
-2.2 Hercules – Installation Guide
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The Hercules “Installation Guide” shows you how to install Hercules and
-all related optional and required software components under the
-Microsoft Windows, Linux and Apple MacIntosh OS X operating systems.
-After going through the installation guide you will have a working
-emulator environment ready to IPL a S370, S/390 or z/Architecture
-mainframe operating system.
-
-2.3 Hercules – User Reference Guide
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The Hercules “User Reference” leads you through all aspects of the
-emulator’s operation. It provides instruction in the operation of the
-Hercules Emulator with and without the Hercules GUIs. The usage details
-for the utilities are covered in the “Hercules Utilities” guide. After
-reading this manual you should be able to work with Hercules, to create
-a configuration file and to use Hercules commands through the console.
-
-2.4 Hercules – Operations and Utilities Guide
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The Hercules “Operations and Utilities Guide” describes the operation of
-Hercules as well as additional utilities that are delivered together
-with the emulator. Selected utilities from third-party suppliers are
-also covered in this manual. After reading this manual you should have
-the knowledge to operate Hercules and use the right utility for a
-certain housekeeping task within the Hercules environment. You should
-also be able to create virtual devices and understand backup / restore
-procedures.
-
-.. _hercules-messages-and-codes-2:
-
-2.5 Hercules – Messages and Codes
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The “Messages and Codes” manual provides a detailed explanation of all
-Hercules related messages. It is the primary source for troubleshooting
-and debugging if you experience problems with Hercules.
-
-2.6 Hercules – Reference Summary
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The Hercules “Reference Summary” booklet lists all the system
-parameters, device definitions, console commands, Hercules utilities
-etc. along with their arguments. This booklet is intended as a quick
-reference guide for experienced users. Consult the Hercules “User
-Reference Guide” and “Utilities Guide” for more detailed and additional
-information.
-
-3. Summary of changes
----------------------
-
-3.1 Version 4, First Edition (HEMC040000-00)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Version 4, First Edition (HEMC040000-00)
+----------------------------------------
 
 This section describes briefly the various changes that have been made
 in the “Messages and Codes” manual related to the previous edition. The
@@ -240,25 +163,25 @@ following:
 -  Appendix B. Message Index (Old → New) added.
 -  Appendix C. Links: List of links updated.
 
-4. Introduction
----------------
+Introduction
+============
 
-4.1 Overview
-~~~~~~~~~~~~
+Overview
+--------
 
 This Chapter gives an introduction to the messages and codes of the
 Hercules Emulator and related tools, as well as the messages written
 from the various standalone utility programs.
 
-4.2 Locations
-~~~~~~~~~~~~~
+Locations
+---------
 
 All messages are written to the Hercules console (native console as well
 as the Hercules Windows GUI / Hercules Studio) and to the Hercules log
 file, if a log file is specified in the startup command.
 
-4.3 Message Standardization
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Message Standardization
+-----------------------
 
 Hercules version 4.00 introduces the message standardization. With this
 major rework of the message processing it is ensured that messages are
@@ -271,8 +194,8 @@ relationship between old and new message identifiers will reduce the
 amount of work that has to be invested in these tasks. The cross
 reference tables can be found later on in this book.
 
-4.4 Message Format (Hercules V3.07)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Message Format (Hercules V3.07)
+-----------------------------------
 
 Up to Hercules version 3.07 all Hercules-issued messages had the
 following format:
@@ -299,8 +222,8 @@ text “text” is the actual message text.
 
 Table 1: Message Format until Hercules V3.
 
-4.5 Message Format (Hercules V4.00)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Message Format (Hercules V4.00)
+-------------------------------
 
 Beginning with Hercules version 4.00 all Hercules-issued messages have
 the following format:
@@ -324,8 +247,8 @@ text “text” is the actual message text.
 
 Table 2: Message Format since Hercules V4.
 
-4.6 Component List (Hercules V3.07)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Component List (Hercules V3.07)
+-------------------------------
 
 The following table presents all the Hercules component prefixes from
 the old message format, along with a short description of the issuing
@@ -412,8 +335,8 @@ VM VM / CP Emulation Facility
 Table 3: Hercules Component List (V3.07)
 ----------------------------------------
 
-4.7 Component List (Hercules V4.00)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Component List (Hercules V4.00)
+-------------------------------
 
 The following table presents all the Hercules components and the
 assigned messages ranges.
@@ -485,8 +408,8 @@ HHC90000s - HHC90999s Debug Messages
 Table 4: Hercules Component List (V4.00)
 ----------------------------------------
 
-4.8 Message Severity
-~~~~~~~~~~~~~~~~~~~~
+Message Severity
+----------------
 
 The following table shows the different message severities, issued by
 the Hercules Emulator.
@@ -510,8 +433,8 @@ the Hercules Emulator.
 Table 5: Message Severity
 -------------------------
 
-4.9 Debug Option
-~~~~~~~~~~~~~~~~
+Debug Option
+------------
 
 If DEBUG is defined, either by a “#define debug” statement or by
 “configure –enable-debug” and OPTION_DEBUG_MESSAGES is enabled in
@@ -524,8 +447,8 @@ Example: hsccmd.c 2597 HHC02204I Value ‘message level’ set to ‘debug’
 Debug messages can also be switched on by issuing the panel command
 “MSGLEVEL DEBUG”.
 
-4.10 Message Examples
-~~~~~~~~~~~~~~~~~~~~~
+Message Examples
+----------------
 
 The following figure shows some Hercules messages. Although these
 messages are from a real IPL, please note that they are not complete i.e
@@ -618,11 +541,11 @@ Figure 1: Sample Messages
 Part I: New Messages
 --------------------
 
-5. Messages HHC00001s – HHC00069s (General Messages)
-----------------------------------------------------
+Messages HHC00001s – HHC00069s (General Messages)
+=================================================
 
 HHC00001I
-~~~~~~~~~
+---------
 
 HHC00001I is not yet documented
 
@@ -633,7 +556,7 @@ Severity …
 Action …
 
 HHC00002E
-~~~~~~~~~
+---------
 
 HHC000 02 E is not yet documented
 
@@ -644,7 +567,7 @@ Severity …
 Action …
 
 HHC00003E
-~~~~~~~~~
+---------
 
 HHC000 03 E is not yet documented
 
@@ -655,7 +578,7 @@ Severity …
 Action …
 
 HHC00004I
-~~~~~~~~~
+---------
 
 HHC00004I is not yet documented
 
@@ -666,7 +589,7 @@ Severity …
 Action …
 
 HHC00005W
-~~~~~~~~~
+---------
 
 HHC00005W is not yet documented
 
@@ -677,7 +600,7 @@ Severity …
 Action …
 
 HHC00006I
-~~~~~~~~~
+---------
 
 HHC00006I is not yet documented
 
@@ -688,7 +611,7 @@ Severity …
 Action …
 
 HHC00007I
-~~~~~~~~~
+---------
 
 HHC00007I is not yet documented
 
@@ -699,7 +622,7 @@ Severity …
 Action …
 
 HHC00008I
-~~~~~~~~~
+---------
 
 HHC00008I is not yet documented
 
@@ -710,7 +633,7 @@ Severity …
 Action …
 
 HHC00009I
-~~~~~~~~~
+---------
 
 HHC00009I is not yet documented
 
@@ -721,7 +644,7 @@ Severity …
 Action …
 
 HHC00010A
-~~~~~~~~~
+---------
 
 HHC00010A is not yet documented
 
@@ -732,7 +655,7 @@ Severity …
 Action …
 
 HHC00011E
-~~~~~~~~~
+---------
 
 HHC00011E is not yet documented
 
@@ -743,7 +666,7 @@ Severity …
 Action …
 
 HHC00012W
-~~~~~~~~~
+---------
 
 HHC00012W is not yet documented
 
@@ -754,7 +677,7 @@ Severity …
 Action …
 
 HHC00013I
-~~~~~~~~~
+---------
 
 HHC00013I Herc command: ‘cmd’
 
@@ -766,7 +689,7 @@ Severity Information.
 Action None. This is an informational message.
 
 HHC00014E
-~~~~~~~~~
+---------
 
 HHC00014E is not yet documented
 
@@ -777,7 +700,7 @@ Severity …
 Action …
 
 HHC00015E
-~~~~~~~~~
+---------
 
 HHC00015E is not yet documented
 
@@ -788,7 +711,7 @@ Severity …
 Action …
 
 HHC00016E
-~~~~~~~~~
+---------
 
 HHC00016E is not yet documented
 
@@ -799,7 +722,7 @@ Severity …
 Action …
 
 HHC00017I
-~~~~~~~~~
+---------
 
 HHC00017I is not yet documented
 
@@ -810,7 +733,7 @@ Severity …
 Action …
 
 HHC00018I
-~~~~~~~~~
+---------
 
 HHC00018I Hercules is running in elevated mode
 
@@ -822,7 +745,7 @@ Severity Information.
 Action None. This is an informational message.
 
 HHC00018W
-~~~~~~~~~
+---------
 
 HHC00018W Hercules is not running in elevated mode
 
@@ -837,7 +760,7 @@ administrator. If no administrative rights are necessary then you can
 savely ignore this message.
 
 HHC00069I
-~~~~~~~~~
+---------
 
 HHC00069I is not yet documented
 
@@ -851,7 +774,7 @@ Action …
 ---------------------------------------------------------------
 
 HHC00070E
-~~~~~~~~~
+---------
 
 HHC00070E Unknown hao command, valid commands are: hao tgt : define
 target rule (pattern) to react on hao cmd : define command for
@@ -867,7 +790,7 @@ Severity Error.
 Action Enter a valid HAO command from the list of message HHC00070E.
 
 HHC00071E
-~~~~~~~~~
+---------
 
 HHC00071E The ‘command’ was not added because table is full; table size
 is nn
@@ -883,7 +806,7 @@ table entry or rebuild Hercules with an in- creased table size (“#define
 HAO_MAXRULE nn” in file hao.c).
 
 HHC00072E
-~~~~~~~~~
+---------
 
 HHC000 72 E The command ‘cmd’ given, but the command ‘tgt’ was expected
 HHC00072E The command ‘tgt’ given, but the command ‘cmd’ was expected
@@ -912,7 +835,7 @@ case of the first error message and a “HAO CMD command” in case of the
 second error message.
 
 HHC00073E
-~~~~~~~~~
+---------
 
 HHC00073E Empty ‘target’ specified HHC00073E Empty ‘command’ specified
 
@@ -927,7 +850,7 @@ Action Reenter the given HAO command with a valid target rule (“HAO TGT
 target”) or a valid command (“HAO CMD command”).
 
 HHC00074E
-~~~~~~~~~
+---------
 
 HHC00074E The target was not added because a duplicate was found in the
 table at nn
@@ -950,7 +873,7 @@ with a “HAO DEL nn” command. After deleting the rule redefine it with a
 new pair of “HAO TGT” and “HAO CMD” commands.
 
 HHC00075E
-~~~~~~~~~
+---------
 
 HHC00075E is not yet documented
 
@@ -961,7 +884,7 @@ Severity …
 Action …
 
 HHC00076E
-~~~~~~~~~
+---------
 
 HHC00076E The ‘command’ was not added because it causes a loop with the
 ‘target’ at index nn HHC00076E The ‘target’ was not added because it
@@ -978,7 +901,7 @@ Use the “HAO LIST nn” command to display the rule that is mentioned in
 the error message.
 
 HHC00077I
-~~~~~~~~~
+---------
 
 HHC00077I The ‘func’ was placed at index nn
 
@@ -990,7 +913,7 @@ Severity Information.
 Action None. This is an informational message.
 
 HHC00078E
-~~~~~~~~~
+---------
 
 HHC00078E The command was not added because it may cause dead locks
 
@@ -1004,7 +927,7 @@ Action Reenter the “HAO CMD” command with a valid command for the target
 rule.
 
 HHC00079E
-~~~~~~~~~
+---------
 
 HHC00079E No rule defined at index nn
 
@@ -1017,7 +940,7 @@ Action Use the “HAO LIST” command (without the index argument) to get a
 list of all defined HAO rules.
 
 HHC00080I
-~~~~~~~~~
+---------
 
 HHC00080I All HAO rules are cleared
 
@@ -1031,7 +954,7 @@ Severity Information.
 Action None. This is an informational message.
 
 HHC00081I
-~~~~~~~~~
+---------
 
 HHC00081I Match at index nn, executing command ‘cmd’
 
@@ -1043,7 +966,7 @@ Severity Information.
 Action None. This is an informational message.
 
 HHC00082I
-~~~~~~~~~
+---------
 
 HHC00082I nn rule(s) displayed:
 
@@ -1056,7 +979,7 @@ Severity Information.
 Action None. This is an informational message.
 
 HHC00083E
-~~~~~~~~~
+---------
 
 HHC00083E The command ‘del’ was given without a valid index
 
@@ -1070,7 +993,7 @@ between 0 and nn (“HAO DEL nn”). Enter a “HAO LIST” command first, if
 necessary, to get the list of used entries.
 
 HHC00084E
-~~~~~~~~~
+---------
 
 HHC00084E Invalid index; index must be between 0 and nn
 
@@ -1084,7 +1007,7 @@ between 0 and nn. Enter a “HAO LIST” command first, if necessary, to get
 the list of used entries.
 
 HHC00085E
-~~~~~~~~~
+---------
 
 HHC00085E Rule at index nn not deleted, already empty
 
@@ -1098,7 +1021,7 @@ rules. Check all listed entries to find the one you want to delete and
 retry the “HAO DEL” command with the correct index.
 
 HHC00086I
-~~~~~~~~~
+---------
 
 HHC00086I Rule at index nn successfully deleted
 
@@ -1110,7 +1033,7 @@ Severity Information.
 Action None. This is an informational message.
 
 HHC00087I
-~~~~~~~~~
+---------
 
 HHC00087I The defined Hercules Automatic Operator rule(s) are:
 
@@ -1122,7 +1045,7 @@ Severity Information.
 Action None. This is an informational message.
 
 HHC00088I
-~~~~~~~~~
+---------
 
 HHC00088I Index nn: target ‘target’ -> command ‘cmd’
 
@@ -1134,7 +1057,7 @@ Severity Information.
 Action None. This is an informational message.
 
 HHC00089E
-~~~~~~~~~
+---------
 
 HHC00089E There are no HAO rules defined
 
@@ -1149,7 +1072,7 @@ Action Define a HAO rule before using the “HAO LIST” command.
 ----------------------------------------------------
 
 HHC00100I
-~~~~~~~~~
+---------
 
 HHC00100I Thread id nnnnnnnn, prio nn, name ‘threadname’ started
 
@@ -1161,7 +1084,7 @@ Severity Information.
 Action None. This is an informational message.
 
 HHC00101I
-~~~~~~~~~
+---------
 
 HHC00101I Thread id nnnnnnnn, prio nn, name ‘threadname’ ended
 
@@ -1173,7 +1096,7 @@ Severity Information.
 Action None. This is an informational message.
 
 HHC00102E
-~~~~~~~~~
+---------
 
 HHC00102E Error in function create_thread(): threadname
 
@@ -1184,7 +1107,7 @@ Severity Error.
 Action See any additional messages for further details of the failure.
 
 HHC00103I
-~~~~~~~~~
+---------
 
 HHC00103I is not yet documented
 
@@ -1195,7 +1118,7 @@ Severity …
 Action …
 
 HHC00105E
-~~~~~~~~~
+---------
 
 HHC00105E is not yet documented
 
@@ -1206,7 +1129,7 @@ Severity …
 Action …
 
 HHC00130W
-~~~~~~~~~
+---------
 
 HHC00130W is not yet documented
 
@@ -1217,7 +1140,7 @@ Severity …
 Action …
 
 HHC00131A
-~~~~~~~~~
+---------
 
 HHC00131A is not yet documented
 
@@ -1228,7 +1151,7 @@ Severity …
 Action …
 
 HHC00135E
-~~~~~~~~~
+---------
 
 HHC00135E is not yet documented
 
@@ -1239,7 +1162,7 @@ Severity …
 Action …
 
 HHC00136E
-~~~~~~~~~
+---------
 
 HHC00136E is not yet documented
 
@@ -1250,7 +1173,7 @@ Severity …
 Action …
 
 HHC00137E
-~~~~~~~~~
+---------
 
 HHC00137E is not yet documented
 
@@ -1261,7 +1184,7 @@ Severity …
 Action …
 
 HHC00138E
-~~~~~~~~~
+---------
 
 HHC00138E is not yet documented
 
@@ -1272,7 +1195,7 @@ Severity …
 Action …
 
 HHC00139E
-~~~~~~~~~
+---------
 
 HHC00139E is not yet documented
 
@@ -1283,7 +1206,7 @@ Severity …
 Action …
 
 HHC00140E
-~~~~~~~~~
+---------
 
 HHC00140E is not yet documented
 
@@ -1294,7 +1217,7 @@ Severity …
 Action …
 
 HHC00141E
-~~~~~~~~~
+---------
 
 HHC00141E is not yet documented
 
@@ -1305,7 +1228,7 @@ Severity …
 Action …
 
 HHC00142E
-~~~~~~~~~
+---------
 
 HHC00142E is not yet documented
 
@@ -1316,7 +1239,7 @@ Severity …
 Action …
 
 HHC00143E
-~~~~~~~~~
+---------
 
 HHC00143E is not yet documented
 
@@ -1327,7 +1250,7 @@ Severity …
 Action …
 
 HHC00144E
-~~~~~~~~~
+---------
 
 HHC00144E is not yet documented
 
@@ -1338,7 +1261,7 @@ Severity …
 Action …
 
 HHC00145E
-~~~~~~~~~
+---------
 
 HHC00145E is not yet documented
 
@@ -1349,7 +1272,7 @@ Severity …
 Action …
 
 HHC00146I
-~~~~~~~~~
+---------
 
 HHC00146I is not yet documented
 
@@ -1360,7 +1283,7 @@ Severity …
 Action …
 
 HHC00147I
-~~~~~~~~~
+---------
 
 HHC00147I is not yet documented
 
@@ -1371,7 +1294,7 @@ Severity …
 Action …
 
 HHC00148I
-~~~~~~~~~
+---------
 
 HHC00148I is not yet documented
 
@@ -1382,7 +1305,7 @@ Severity …
 Action …
 
 HHC00149I
-~~~~~~~~~
+---------
 
 HHC00149I is not yet documented
 
@@ -1393,7 +1316,7 @@ Severity …
 Action …
 
 HHC00150I
-~~~~~~~~~
+---------
 
 HHC00150I modname module loaded [info]
 
@@ -1406,7 +1329,7 @@ Severity Information.
 Action None. This is an informational message.
 
 HHC00151I
-~~~~~~~~~
+---------
 
 HHC00151I is not yet documented
 
@@ -1417,7 +1340,7 @@ Severity …
 Action …
 
 HHC00152E
-~~~~~~~~~
+---------
 
 HHC00152E is not yet documented
 
@@ -1428,7 +1351,7 @@ Severity …
 Action …
 
 HHC00153E
-~~~~~~~~~
+---------
 
 HHC00153E is not yet documented
 
@@ -1439,7 +1362,7 @@ Severity …
 Action …
 
 HHC00154E
-~~~~~~~~~
+---------
 
 HHC00154E is not yet documented
 
@@ -1450,7 +1373,7 @@ Severity …
 Action …
 
 HHC00160I
-~~~~~~~~~
+---------
 
 HHC00160I is not yet documented
 
@@ -1461,7 +1384,7 @@ Severity …
 Action …
 
 HHC00161E
-~~~~~~~~~
+---------
 
 HHC00161E is not yet documented
 
@@ -1475,7 +1398,7 @@ Action …
 ---------------------------------------------------------
 
 HHC00201I
-~~~~~~~~~
+---------
 
 HHC00201I is not yet documented
 
@@ -1486,7 +1409,7 @@ Severity …
 Action …
 
 HHC00202E
-~~~~~~~~~
+---------
 
 HHC00202E is not yet documented
 
@@ -1497,7 +1420,7 @@ Severity …
 Action …
 
 HHC00203E
-~~~~~~~~~
+---------
 
 HHC00203E is not yet documented
 
@@ -1508,7 +1431,7 @@ Severity …
 Action …
 
 HHC00204E
-~~~~~~~~~
+---------
 
 HHC00204E is not yet documented
 
@@ -1519,7 +1442,7 @@ Severity …
 Action …
 
 HHC00205E
-~~~~~~~~~
+---------
 
 HHC00205E is not yet documented
 
@@ -1530,7 +1453,7 @@ Severity …
 Action …
 
 HHC00206E
-~~~~~~~~~
+---------
 
 HHC00206E is not yet documented
 
@@ -1541,7 +1464,7 @@ Severity …
 Action …
 
 HHC00207E
-~~~~~~~~~
+---------
 
 HHC00207E is not yet documented
 
@@ -1552,7 +1475,7 @@ Severity …
 Action …
 
 HHC00208I
-~~~~~~~~~
+---------
 
 HHC00208I is not yet documented
 
@@ -1563,7 +1486,7 @@ Severity …
 Action …
 
 HHC00209I
-~~~~~~~~~
+---------
 
 HHC00209I is not yet documented
 
@@ -1574,7 +1497,7 @@ Severity …
 Action …
 
 HHC00210I
-~~~~~~~~~
+---------
 
 HHC00210I is not yet documented
 
@@ -1585,7 +1508,7 @@ Severity …
 Action …
 
 HHC00211I
-~~~~~~~~~
+---------
 
 HHC00211I is not yet documented
 
@@ -1596,7 +1519,7 @@ Severity …
 Action …
 
 HHC00212E
-~~~~~~~~~
+---------
 
 HHC00212E is not yet documented
 
@@ -1607,7 +1530,7 @@ Severity …
 Action …
 
 HHC00213E
-~~~~~~~~~
+---------
 
 HHC00213E is not yet documented
 
@@ -1618,7 +1541,7 @@ Severity …
 Action …
 
 HHC00214E
-~~~~~~~~~
+---------
 
 HHC00214E is not yet documented
 
@@ -1629,7 +1552,7 @@ Severity …
 Action …
 
 HHC00215I
-~~~~~~~~~
+---------
 
 HHC00215I is not yet documented
 
@@ -1640,7 +1563,7 @@ Severity …
 Action …
 
 HHC00216I
-~~~~~~~~~
+---------
 
 HHC00216I is not yet documented
 
@@ -1651,7 +1574,7 @@ Severity …
 Action …
 
 HHC00217I
-~~~~~~~~~
+---------
 
 HHC00217I is not yet documented
 
@@ -1662,7 +1585,7 @@ Severity …
 Action …
 
 HHC00218I
-~~~~~~~~~
+---------
 
 HHC00218I is not yet documented
 
@@ -1673,7 +1596,7 @@ Severity …
 Action …
 
 HHC00219I
-~~~~~~~~~
+---------
 
 HHC00219I is not yet documented
 
@@ -1684,7 +1607,7 @@ Severity …
 Action …
 
 HHC00220W
-~~~~~~~~~
+---------
 
 HHC00220W is not yet documented
 
@@ -1695,7 +1618,7 @@ Severity …
 Action …
 
 HHC00221I
-~~~~~~~~~
+---------
 
 HHC00221I is not yet documented
 
@@ -1706,7 +1629,7 @@ Severity …
 Action …
 
 HHC00222I
-~~~~~~~~~
+---------
 
 HHC00222I is not yet documented
 
@@ -1717,7 +1640,7 @@ Severity …
 Action …
 
 HHC00223E
-~~~~~~~~~
+---------
 
 HHC00223E is not yet documented
 
@@ -1728,7 +1651,7 @@ Severity …
 Action …
 
 HHC00224I
-~~~~~~~~~
+---------
 
 HHC00224I is not yet documented
 
@@ -1739,7 +1662,7 @@ Severity …
 Action …
 
 HHC00225E
-~~~~~~~~~
+---------
 
 HHC00225E is not yet documented
 
@@ -1750,7 +1673,7 @@ Severity …
 Action …
 
 HHC00226I
-~~~~~~~~~
+---------
 
 HHC00226I is not yet documented
 
@@ -1761,7 +1684,7 @@ Severity …
 Action …
 
 HHC00227I
-~~~~~~~~~
+---------
 
 HHC00227I is not yet documented
 
@@ -1772,7 +1695,7 @@ Severity …
 Action …
 
 HHC00228I
-~~~~~~~~~
+---------
 
 HHC00228I is not yet documented
 
@@ -1783,7 +1706,7 @@ Severity …
 Action …
 
 HHC00229I
-~~~~~~~~~
+---------
 
 HHC00229I is not yet documented
 
@@ -1794,7 +1717,7 @@ Severity …
 Action …
 
 HHC00235I
-~~~~~~~~~
+---------
 
 HHC00235I is not yet documented
 
@@ -1805,7 +1728,7 @@ Severity …
 Action …
 
 HHC00243W
-~~~~~~~~~
+---------
 
 HHC00243W is not yet documented
 
@@ -1819,7 +1742,7 @@ Action …
 ----------------------------------------------------------------
 
 HHC00300E
-~~~~~~~~~
+---------
 
 HHC00300E is not yet documented
 
@@ -1830,7 +1753,7 @@ Severity …
 Action …
 
 HHC00301E
-~~~~~~~~~
+---------
 
 HHC00301E is not yet documented
 
@@ -1841,7 +1764,7 @@ Severity …
 Action …
 
 HHC00302E
-~~~~~~~~~
+---------
 
 HHC00302E is not yet documented
 
@@ -1852,7 +1775,7 @@ Severity …
 Action …
 
 HHC00303E
-~~~~~~~~~
+---------
 
 HHC00303E is not yet documented
 
@@ -1863,7 +1786,7 @@ Severity …
 Action …
 
 HHC00304E
-~~~~~~~~~
+---------
 
 HHC00304E is not yet documented
 
@@ -1874,7 +1797,7 @@ Severity …
 Action …
 
 HHC00305E
-~~~~~~~~~
+---------
 
 HHC00305E is not yet documented
 
@@ -1885,7 +1808,7 @@ Severity …
 Action …
 
 HHC00306E
-~~~~~~~~~
+---------
 
 HHC00306E is not yet documented
 
@@ -1896,7 +1819,7 @@ Severity …
 Action …
 
 HHC00307E
-~~~~~~~~~
+---------
 
 HHC00307E is not yet documented
 
@@ -1907,7 +1830,7 @@ Severity …
 Action …
 
 HHC00308E
-~~~~~~~~~
+---------
 
 HHC00308E is not yet documented
 
@@ -1918,7 +1841,7 @@ Severity …
 Action …
 
 HHC00309E
-~~~~~~~~~
+---------
 
 HHC00309E is not yet documented
 
@@ -1929,7 +1852,7 @@ Severity …
 Action …
 
 HHC00310E
-~~~~~~~~~
+---------
 
 HHC00310E is not yet documented
 
@@ -1940,7 +1863,7 @@ Severity …
 Action …
 
 HHC00311E
-~~~~~~~~~
+---------
 
 HHC00311E is not yet documented
 
@@ -1951,7 +1874,7 @@ Severity …
 Action …
 
 HHC00312E
-~~~~~~~~~
+---------
 
 HHC00312E is not yet documented
 
@@ -1962,7 +1885,7 @@ Severity …
 Action …
 
 HHC00313E
-~~~~~~~~~
+---------
 
 HHC0033E1 is not yet documented
 
@@ -1973,7 +1896,7 @@ Severity …
 Action …
 
 HHC00314E
-~~~~~~~~~
+---------
 
 HHC00314E is not yet documented
 
@@ -1984,7 +1907,7 @@ Severity …
 Action …
 
 HHC00315I
-~~~~~~~~~
+---------
 
 HHC00315I is not yet documented
 
@@ -1995,7 +1918,7 @@ Severity …
 Action …
 
 HHC00316I
-~~~~~~~~~
+---------
 
 HHC00316I is not yet documented
 
@@ -2006,7 +1929,7 @@ Severity …
 Action …
 
 HHC00317E
-~~~~~~~~~
+---------
 
 HHC00317E is not yet documented
 
@@ -2017,7 +1940,7 @@ Severity …
 Action …
 
 HHC00318W
-~~~~~~~~~
+---------
 
 HHC00318W is not yet documented
 
@@ -2028,7 +1951,7 @@ Severity …
 Action …
 
 HHC00319E
-~~~~~~~~~
+---------
 
 HHC00319E is not yet documented
 
@@ -2039,7 +1962,7 @@ Severity …
 Action …
 
 HHC00320I
-~~~~~~~~~
+---------
 
 HHC00320I is not yet documented
 
@@ -2050,7 +1973,7 @@ Severity …
 Action …
 
 HHC00321I
-~~~~~~~~~
+---------
 
 HHC00321I is not yet documented
 
@@ -2061,7 +1984,7 @@ Severity …
 Action …
 
 HHC00322W
-~~~~~~~~~
+---------
 
 HHC00322W is not yet documented
 
@@ -2072,7 +1995,7 @@ Severity …
 Action …
 
 HHC00323E
-~~~~~~~~~
+---------
 
 HHC00323E is not yet documented
 
@@ -2083,7 +2006,7 @@ Severity …
 Action …
 
 HHC00324E
-~~~~~~~~~
+---------
 
 HHC00324E is not yet documented
 
@@ -2094,7 +2017,7 @@ Severity …
 Action …
 
 HHC00325I
-~~~~~~~~~
+---------
 
 HHC00325I is not yet documented
 
@@ -2105,7 +2028,7 @@ Severity …
 Action …
 
 HHC00326E
-~~~~~~~~~
+---------
 
 HHC00326E is not yet documented
 
@@ -2116,7 +2039,7 @@ Severity …
 Action …
 
 HHC00327E
-~~~~~~~~~
+---------
 
 HHC00327E is not yet documented
 
@@ -2127,7 +2050,7 @@ Severity …
 Action …
 
 HHC00328I
-~~~~~~~~~
+---------
 
 HHC00328I is not yet documented
 
@@ -2138,7 +2061,7 @@ Severity …
 Action …
 
 HHC00329W
-~~~~~~~~~
+---------
 
 HHC00329W is not yet documented
 
@@ -2149,7 +2072,7 @@ Severity …
 Action …
 
 HHC00330I
-~~~~~~~~~
+---------
 
 HHC00330I is not yet documented
 
@@ -2160,7 +2083,7 @@ Severity …
 Action …
 
 HHC00331W
-~~~~~~~~~
+---------
 
 HHC00331W is not yet documented
 
@@ -2171,7 +2094,7 @@ Severity …
 Action …
 
 HHC00332I
-~~~~~~~~~
+---------
 
 HHC00332I is not yet documented
 
@@ -2182,7 +2105,7 @@ Severity …
 Action …
 
 HHC00333I
-~~~~~~~~~
+---------
 
 HHC00333I is not yet documented
 
@@ -2193,7 +2116,7 @@ Severity …
 Action …
 
 HHC00334I
-~~~~~~~~~
+---------
 
 HHC00334I is not yet documented
 
@@ -2204,7 +2127,7 @@ Severity …
 Action …
 
 HHC00335I
-~~~~~~~~~
+---------
 
 HHC00335I is not yet documented
 
@@ -2215,7 +2138,7 @@ Severity …
 Action …
 
 HHC00336I
-~~~~~~~~~
+---------
 
 HHC00336I is not yet documented
 
@@ -2226,7 +2149,7 @@ Severity …
 Action …
 
 HHC00337I
-~~~~~~~~~
+---------
 
 HHC00337I is not yet documented
 
@@ -2237,7 +2160,7 @@ Severity …
 Action …
 
 HHC00338I
-~~~~~~~~~
+---------
 
 HHC00338I is not yet documented
 
@@ -2248,7 +2171,7 @@ Severity …
 Action …
 
 HHC00339I
-~~~~~~~~~
+---------
 
 HHC00339I is not yet documented
 
@@ -2259,7 +2182,7 @@ Severity …
 Action …
 
 HHC00340I
-~~~~~~~~~
+---------
 
 HHC00340I is not yet documented
 
@@ -2270,7 +2193,7 @@ Severity …
 Action …
 
 HHC00341I
-~~~~~~~~~
+---------
 
 HHC00341I is not yet documented
 
@@ -2281,7 +2204,7 @@ Severity …
 Action …
 
 HHC00342E
-~~~~~~~~~
+---------
 
 HHC00342E is not yet documented
 
@@ -2292,7 +2215,7 @@ Severity …
 Action …
 
 HHC00343E
-~~~~~~~~~
+---------
 
 HHC00343E is not yet documented
 
@@ -2303,7 +2226,7 @@ Severity …
 Action …
 
 HHC00344E
-~~~~~~~~~
+---------
 
 HHC00344E is not yet documented
 
@@ -2314,7 +2237,7 @@ Severity …
 Action …
 
 HHC00345I
-~~~~~~~~~
+---------
 
 HHC0 03 45I is not yet documented
 
@@ -2325,7 +2248,7 @@ Severity …
 Action …
 
 HHC00346I
-~~~~~~~~~
+---------
 
 HHC00346I is not yet documented
 
@@ -2336,7 +2259,7 @@ Severity …
 Action …
 
 HHC00347I
-~~~~~~~~~
+---------
 
 HHC00347I is not yet documented
 
@@ -2347,7 +2270,7 @@ Severity …
 Action …
 
 HHC00348E
-~~~~~~~~~
+---------
 
 HHC00348E is not yet documented
 
@@ -2358,7 +2281,7 @@ Severity …
 Action …
 
 HHC00349E
-~~~~~~~~~
+---------
 
 HHC00349E is not yet documented
 
@@ -2369,7 +2292,7 @@ Severity …
 Action …
 
 HHC00352E
-~~~~~~~~~
+---------
 
 HHC0 0352 E is not yet documented
 
@@ -2380,7 +2303,7 @@ Severity …
 Action …
 
 HHC00353E
-~~~~~~~~~
+---------
 
 HHC00353E is not yet documented
 
@@ -2391,7 +2314,7 @@ Severity …
 Action …
 
 HHC00354E
-~~~~~~~~~
+---------
 
 HHC00354E is not yet documented
 
@@ -2402,7 +2325,7 @@ Severity …
 Action …
 
 HHC00355E
-~~~~~~~~~
+---------
 
 HHC00355E is not yet documented
 
@@ -2413,7 +2336,7 @@ Severity …
 Action …
 
 HHC00356E
-~~~~~~~~~
+---------
 
 HHC00356E is not yet documented
 
@@ -2424,7 +2347,7 @@ Severity …
 Action …
 
 HHC00357I
-~~~~~~~~~
+---------
 
 HHC00357I is not yet documented
 
@@ -2435,7 +2358,7 @@ Severity …
 Action …
 
 HHC00358I
-~~~~~~~~~
+---------
 
 HHC00358I is not yet documented
 
@@ -2446,7 +2369,7 @@ Severity …
 Action …
 
 HHC00359I
-~~~~~~~~~
+---------
 
 HHC00359I is not yet documented
 
@@ -2457,7 +2380,7 @@ Severity …
 Action …
 
 HHC00360I
-~~~~~~~~~
+---------
 
 HHC00360I is not yet documented
 
@@ -2468,7 +2391,7 @@ Severity …
 Action …
 
 HHC00361E
-~~~~~~~~~
+---------
 
 HHC00361E is not yet documented
 
@@ -2479,7 +2402,7 @@ Severity …
 Action …
 
 HHC00362E
-~~~~~~~~~
+---------
 
 HHC00362E is not yet documented
 
@@ -2490,7 +2413,7 @@ Severity …
 Action …
 
 HHC00363W
-~~~~~~~~~
+---------
 
 HHC00363W is not yet documented
 
@@ -2501,7 +2424,7 @@ Severity …
 Action …
 
 HHC00364W
-~~~~~~~~~
+---------
 
 HHC00364W is not yet documented
 
@@ -2512,7 +2435,7 @@ Severity …
 Action …
 
 HHC00365W
-~~~~~~~~~
+---------
 
 HHC00365W is not yet documented
 
@@ -2523,7 +2446,7 @@ Severity …
 Action …
 
 HHC00366W
-~~~~~~~~~
+---------
 
 HHC00366W is not yet documented
 
@@ -2534,7 +2457,7 @@ Severity …
 Action …
 
 HHC00367W
-~~~~~~~~~
+---------
 
 HHC00367W is not yet documented
 
@@ -2545,7 +2468,7 @@ Severity …
 Action …
 
 HHC00368W
-~~~~~~~~~
+---------
 
 HHC00368W is not yet documented
 
@@ -2556,7 +2479,7 @@ Severity …
 Action …
 
 HHC00369W
-~~~~~~~~~
+---------
 
 HHC00369W is not yet documented
 
@@ -2567,7 +2490,7 @@ Severity …
 Action …
 
 HHC00370W
-~~~~~~~~~
+---------
 
 HHC00370W is not yet documented
 
@@ -2578,7 +2501,7 @@ Severity …
 Action …
 
 HHC00371W
-~~~~~~~~~
+---------
 
 HHC00371W is not yet documented
 
@@ -2589,7 +2512,7 @@ Severity …
 Action …
 
 HHC00372I
-~~~~~~~~~
+---------
 
 HHC00372I is not yet documented
 
@@ -2600,7 +2523,7 @@ Severity …
 Action …
 
 HHC00373I
-~~~~~~~~~
+---------
 
 HHC00373I is not yet documented
 
@@ -2611,7 +2534,7 @@ Severity …
 Action …
 
 HHC00374E
-~~~~~~~~~
+---------
 
 HHC00374E is not yet documented
 
@@ -2622,7 +2545,7 @@ Severity …
 Action …
 
 HHC00375W
-~~~~~~~~~
+---------
 
 HHC00375W is not yet documented
 
@@ -2633,7 +2556,7 @@ Severity …
 Action …
 
 HHC00376W
-~~~~~~~~~
+---------
 
 HHC00376W is not yet documented
 
@@ -2644,7 +2567,7 @@ Severity …
 Action …
 
 HHC00377I
-~~~~~~~~~
+---------
 
 HHC00377I is not yet documented
 
@@ -2655,7 +2578,7 @@ Severity …
 Action …
 
 HHC00378E
-~~~~~~~~~
+---------
 
 HHC00378E is not yet documented
 
@@ -2666,7 +2589,7 @@ Severity …
 Action …
 
 HHC00396I
-~~~~~~~~~
+---------
 
 HHC00396I is not yet documented
 
@@ -2677,7 +2600,7 @@ Severity …
 Action …
 
 HHC00397I
-~~~~~~~~~
+---------
 
 HHC00397I is not yet documented
 
@@ -2688,7 +2611,7 @@ Severity …
 Action …
 
 HHC00398I
-~~~~~~~~~
+---------
 
 HHC00398I is not yet documented
 
@@ -2699,7 +2622,7 @@ Severity …
 Action …
 
 HHC00399I
-~~~~~~~~~
+---------
 
 HHC00399I is not yet documented
 
@@ -2713,7 +2636,7 @@ Action …
 ----------------------------------------------------------------
 
 HHC00400E
-~~~~~~~~~
+---------
 
 HHC00400E is not yet documented
 
@@ -2724,7 +2647,7 @@ Severity …
 Action …
 
 HHC00401E
-~~~~~~~~~
+---------
 
 HHC00401E is not yet documented
 
@@ -2735,7 +2658,7 @@ Severity …
 Action …
 
 HHC00402E
-~~~~~~~~~
+---------
 
 HHC00402E is not yet documented
 
@@ -2746,7 +2669,7 @@ Severity …
 Action …
 
 HHC00403I
-~~~~~~~~~
+---------
 
 HHC00403I is not yet documented
 
@@ -2757,7 +2680,7 @@ Severity …
 Action …
 
 HHC00404E
-~~~~~~~~~
+---------
 
 HHC00404E is not yet documented
 
@@ -2768,7 +2691,7 @@ Severity …
 Action …
 
 HHC00405E
-~~~~~~~~~
+---------
 
 HHC00405E is not yet documented
 
@@ -2779,7 +2702,7 @@ Severity …
 Action …
 
 HHC00406E
-~~~~~~~~~
+---------
 
 HHC00406E is not yet documented
 
@@ -2790,7 +2713,7 @@ Severity …
 Action …
 
 HHC00407E
-~~~~~~~~~
+---------
 
 HHC00407E is not yet documented
 
@@ -2801,7 +2724,7 @@ Severity …
 Action …
 
 HHC00408E
-~~~~~~~~~
+---------
 
 HHC00408E is not yet documented
 
@@ -2812,7 +2735,7 @@ Severity …
 Action …
 
 HHC00409I
-~~~~~~~~~
+---------
 
 HHC00409I is not yet documented
 
@@ -2823,7 +2746,7 @@ Severity …
 Action …
 
 HHC00410E
-~~~~~~~~~
+---------
 
 HHC00410E is not yet documented
 
@@ -2834,7 +2757,7 @@ Severity …
 Action …
 
 HHC00411E
-~~~~~~~~~
+---------
 
 HHC00411E is not yet documented
 
@@ -2845,7 +2768,7 @@ Severity …
 Action …
 
 HHC00412E
-~~~~~~~~~
+---------
 
 HHC00412E is not yet documented
 
@@ -2856,7 +2779,7 @@ Severity …
 Action …
 
 HHC00413E
-~~~~~~~~~
+---------
 
 HHC00413E is not yet documented
 
@@ -2867,7 +2790,7 @@ Severity …
 Action …
 
 HHC00414I
-~~~~~~~~~
+---------
 
 HHC00414I is not yet documented
 
@@ -2878,7 +2801,7 @@ Severity …
 Action …
 
 HHC00415E
-~~~~~~~~~
+---------
 
 HHC00415E is not yet documented
 
@@ -2889,7 +2812,7 @@ Severity …
 Action …
 
 HHC00416E
-~~~~~~~~~
+---------
 
 HHC00416E is not yet documented
 
@@ -2900,7 +2823,7 @@ Severity …
 Action …
 
 HHC00417I
-~~~~~~~~~
+---------
 
 HHC00417I is not yet documented
 
@@ -2911,7 +2834,7 @@ Severity …
 Action …
 
 HHC00418E
-~~~~~~~~~
+---------
 
 HHC00418E is not yet documented
 
@@ -2922,7 +2845,7 @@ Severity …
 Action …
 
 HHC00419E
-~~~~~~~~~
+---------
 
 HHC00419E is not yet documented
 
@@ -2933,7 +2856,7 @@ Severity …
 Action …
 
 HHC00420E
-~~~~~~~~~
+---------
 
 HHC00420E is not yet documented
 
@@ -2944,7 +2867,7 @@ Severity …
 Action …
 
 HHC00421E
-~~~~~~~~~
+---------
 
 HHC00421E is not yet documented
 
@@ -2955,7 +2878,7 @@ Severity …
 Action …
 
 HHC00422E
-~~~~~~~~~
+---------
 
 HHC00422E is not yet documented
 
@@ -2966,7 +2889,7 @@ Severity …
 Action …
 
 HHC00423I
-~~~~~~~~~
+---------
 
 HHC00423I is not yet documented
 
@@ -2977,7 +2900,7 @@ Severity …
 Action …
 
 HHC00424I
-~~~~~~~~~
+---------
 
 HHC00424I is not yet documented
 
@@ -2988,7 +2911,7 @@ Severity …
 Action …
 
 HHC00425I
-~~~~~~~~~
+---------
 
 HHC00425I is not yet documented
 
@@ -2999,7 +2922,7 @@ Severity …
 Action …
 
 HHC00426I
-~~~~~~~~~
+---------
 
 HHC00426I is not yet documented
 
@@ -3010,7 +2933,7 @@ Severity …
 Action …
 
 HHC00427I
-~~~~~~~~~
+---------
 
 HHC00427I is not yet documented
 
@@ -3021,7 +2944,7 @@ Severity …
 Action …
 
 HHC00428I
-~~~~~~~~~
+---------
 
 HHC00428I is not yet documented
 
@@ -3032,7 +2955,7 @@ Severity …
 Action …
 
 HHC00429I
-~~~~~~~~~
+---------
 
 HHC00429I is not yet documented
 
@@ -3043,7 +2966,7 @@ Severity …
 Action …
 
 HHC00430I
-~~~~~~~~~
+---------
 
 HHC00430I is not yet documented
 
@@ -3054,7 +2977,7 @@ Severity …
 Action …
 
 HHC00431I
-~~~~~~~~~
+---------
 
 HHC00431I is not yet documented
 
@@ -3065,7 +2988,7 @@ Severity …
 Action …
 
 HHC00432E
-~~~~~~~~~
+---------
 
 HHC00432E is not yet documented
 
@@ -3076,7 +2999,7 @@ Severity …
 Action …
 
 HHC00433I
-~~~~~~~~~
+---------
 
 HHC00433I is not yet documented
 
@@ -3087,7 +3010,7 @@ Severity …
 Action …
 
 HHC00434I
-~~~~~~~~~
+---------
 
 HHC00434I is not yet documented
 
@@ -3098,7 +3021,7 @@ Severity …
 Action …
 
 HHC00435I
-~~~~~~~~~
+---------
 
 HHC00435I is not yet documented
 
@@ -3109,7 +3032,7 @@ Severity …
 Action …
 
 HHC00436I
-~~~~~~~~~
+---------
 
 HHC00436I is not yet documented
 
@@ -3120,7 +3043,7 @@ Severity …
 Action …
 
 HHC00437I
-~~~~~~~~~
+---------
 
 HHC00437I is not yet documented
 
@@ -3131,7 +3054,7 @@ Severity …
 Action …
 
 HHC00438I
-~~~~~~~~~
+---------
 
 HHC00438I is not yet documented
 
@@ -3142,7 +3065,7 @@ Severity …
 Action …
 
 HHC00439I
-~~~~~~~~~
+---------
 
 HHC00439I is not yet documented
 
@@ -3153,7 +3076,7 @@ Severity …
 Action …
 
 HHC00440I
-~~~~~~~~~
+---------
 
 HHC00440I is not yet documented
 
@@ -3164,7 +3087,7 @@ Severity …
 Action …
 
 HHC00441I
-~~~~~~~~~
+---------
 
 HHC00441I is not yet documented
 
@@ -3175,7 +3098,7 @@ Severity …
 Action …
 
 HHC00442I
-~~~~~~~~~
+---------
 
 HHC00442I is not yet documented
 
@@ -3186,7 +3109,7 @@ Severity …
 Action …
 
 HHC00443E
-~~~~~~~~~
+---------
 
 HHC00443E is not yet documented
 
@@ -3197,7 +3120,7 @@ Severity …
 Action …
 
 HHC00445I
-~~~~~~~~~
+---------
 
 HHC00445I is not yet documented
 
@@ -3208,7 +3131,7 @@ Severity …
 Action …
 
 HHC00446E
-~~~~~~~~~
+---------
 
 HHC00446E is not yet documented
 
@@ -3219,7 +3142,7 @@ Severity …
 Action …
 
 HHC00447I
-~~~~~~~~~
+---------
 
 HHC00447I is not yet documented
 
@@ -3230,7 +3153,7 @@ Severity …
 Action …
 
 HHC00448E
-~~~~~~~~~
+---------
 
 HHC00448E is not yet documented
 
@@ -3241,7 +3164,7 @@ Severity …
 Action …
 
 HHC00449I
-~~~~~~~~~
+---------
 
 HHC00449I is not yet documented
 
@@ -3252,7 +3175,7 @@ Severity …
 Action …
 
 HHC00450E
-~~~~~~~~~
+---------
 
 HHC00450E is not yet documented
 
@@ -3263,7 +3186,7 @@ Severity …
 Action …
 
 HHC00451E
-~~~~~~~~~
+---------
 
 HHC00451E is not yet documented
 
@@ -3274,7 +3197,7 @@ Severity …
 Action …
 
 HHC00452E
-~~~~~~~~~
+---------
 
 HHC00452E is not yet documented
 
@@ -3285,7 +3208,7 @@ Severity …
 Action …
 
 HHC00453I
-~~~~~~~~~
+---------
 
 HHC00453I is not yet documented
 
@@ -3296,7 +3219,7 @@ Severity …
 Action …
 
 HHC00454I
-~~~~~~~~~
+---------
 
 HHC00454I is not yet documented
 
@@ -3307,7 +3230,7 @@ Severity …
 Action …
 
 HHC00455E
-~~~~~~~~~
+---------
 
 HHC00455E is not yet documented
 
@@ -3318,7 +3241,7 @@ Severity …
 Action …
 
 HHC00456I
-~~~~~~~~~
+---------
 
 HHC00456I is not yet documented
 
@@ -3329,7 +3252,7 @@ Severity …
 Action …
 
 HHC00457I
-~~~~~~~~~
+---------
 
 HHC00457I is not yet documented
 
@@ -3340,7 +3263,7 @@ Severity …
 Action …
 
 HHC00458E
-~~~~~~~~~
+---------
 
 HHC00458E is not yet documented
 
@@ -3351,7 +3274,7 @@ Severity …
 Action …
 
 HHC00459I
-~~~~~~~~~
+---------
 
 HHC00459I is not yet documented
 
@@ -3362,7 +3285,7 @@ Severity …
 Action …
 
 HHC00460I
-~~~~~~~~~
+---------
 
 HHC00460I is not yet documented
 
@@ -3373,7 +3296,7 @@ Severity …
 Action …
 
 HHC00461E
-~~~~~~~~~
+---------
 
 HHC00461E is not yet documented
 
@@ -3384,7 +3307,7 @@ Severity …
 Action …
 
 HHC00462I
-~~~~~~~~~
+---------
 
 HHC00462I is not yet documented
 
@@ -3395,7 +3318,7 @@ Severity …
 Action …
 
 HHC00463I
-~~~~~~~~~
+---------
 
 HHC00463I is not yet documented
 
@@ -3406,7 +3329,7 @@ Severity …
 Action …
 
 HHC00464E
-~~~~~~~~~
+---------
 
 HHC00464E is not yet documented
 
@@ -3417,7 +3340,7 @@ Severity …
 Action …
 
 HHC00465I
-~~~~~~~~~
+---------
 
 HHC00465I is not yet documented
 
@@ -3428,7 +3351,7 @@ Severity …
 Action …
 
 HHC00466I
-~~~~~~~~~
+---------
 
 HHC00466I is not yet documented
 
@@ -3439,7 +3362,7 @@ Severity …
 Action …
 
 HHC00467I
-~~~~~~~~~
+---------
 
 HHC00467I is not yet documented
 
@@ -3450,7 +3373,7 @@ Severity …
 Action …
 
 HHC00468I
-~~~~~~~~~
+---------
 
 HHC00468I is not yet documented
 
@@ -3464,7 +3387,7 @@ Action …
 ----------------------------------------------------------------
 
 HHC00500E
-~~~~~~~~~
+---------
 
 HHC00500E is not yet documented
 
@@ -3475,7 +3398,7 @@ Severity …
 Action …
 
 HHC00501E
-~~~~~~~~~
+---------
 
 HHC00501E is not yet documented
 
@@ -3486,7 +3409,7 @@ Severity …
 Action …
 
 HHC00502E
-~~~~~~~~~
+---------
 
 HHC0052E0 is not yet documented
 
@@ -3497,7 +3420,7 @@ Severity …
 Action …
 
 HHC00503E
-~~~~~~~~~
+---------
 
 HHC00503E is not yet documented
 
@@ -3508,7 +3431,7 @@ Severity …
 Action …
 
 HHC00504I
-~~~~~~~~~
+---------
 
 HHC00504I is not yet documented
 
@@ -3519,7 +3442,7 @@ Severity …
 Action …
 
 HHC00505E
-~~~~~~~~~
+---------
 
 HHC00505E is not yet documented
 
@@ -3530,7 +3453,7 @@ Severity …
 Action …
 
 HHC00506E
-~~~~~~~~~
+---------
 
 HHC00506E is not yet documented
 
@@ -3541,7 +3464,7 @@ Severity …
 Action …
 
 HHC00507I
-~~~~~~~~~
+---------
 
 HHC00507I is not yet documented
 
@@ -3552,7 +3475,7 @@ Severity …
 Action …
 
 HHC00508E
-~~~~~~~~~
+---------
 
 HHC00508E is not yet documented
 
@@ -3563,7 +3486,7 @@ Severity …
 Action …
 
 HHC00509E
-~~~~~~~~~
+---------
 
 HHC00509E is not yet documented
 
@@ -3574,7 +3497,7 @@ Severity …
 Action …
 
 HHC00510E
-~~~~~~~~~
+---------
 
 HHC00510E is not yet documented
 
@@ -3585,7 +3508,7 @@ Severity …
 Action …
 
 HHC00511E
-~~~~~~~~~
+---------
 
 HHC00511E is not yet documented
 
@@ -3596,7 +3519,7 @@ Severity …
 Action …
 
 HHC00512E
-~~~~~~~~~
+---------
 
 HHC00512E is not yet documented
 
@@ -3607,7 +3530,7 @@ Severity …
 Action …
 
 HHC00513E
-~~~~~~~~~
+---------
 
 HHC00513E is not yet documented
 
@@ -3618,7 +3541,7 @@ Severity …
 Action …
 
 HHC00514E
-~~~~~~~~~
+---------
 
 HHC00514E is not yet documented
 
@@ -3629,7 +3552,7 @@ Severity …
 Action …
 
 HHC00515E
-~~~~~~~~~
+---------
 
 HHC00515E is not yet documented
 
@@ -3640,7 +3563,7 @@ Severity …
 Action …
 
 HHC00516I
-~~~~~~~~~
+---------
 
 HHC00516I is not yet documented
 
@@ -3651,7 +3574,7 @@ Severity …
 Action …
 
 HHC00517I
-~~~~~~~~~
+---------
 
 HHC00517I is not yet documented
 
@@ -3662,7 +3585,7 @@ Severity …
 Action …
 
 HHC00 518 I
-~~~~~~~~~~~
+---------~~
 
 HHC00518I is not yet documented
 
@@ -3673,7 +3596,7 @@ Severity …
 Action …
 
 HHC00519I
-~~~~~~~~~
+---------
 
 HHC00519I is not yet documented
 
@@ -3684,7 +3607,7 @@ Severity …
 Action …
 
 HHC00520I
-~~~~~~~~~
+---------
 
 HHC00520I is not yet documented
 
@@ -3695,7 +3618,7 @@ Severity …
 Action …
 
 HHC00521I
-~~~~~~~~~
+---------
 
 HHC00521I is not yet documented
 
@@ -3709,7 +3632,7 @@ Action …
 ----------------------------------------------------------------
 
 HHC00600E
-~~~~~~~~~
+---------
 
 HHC00600E is not yet documented
 
@@ -3720,7 +3643,7 @@ Severity …
 Action …
 
 HHC00601E
-~~~~~~~~~
+---------
 
 HHC00601E is not yet documented
 
@@ -3731,7 +3654,7 @@ Severity …
 Action …
 
 HHC00602E
-~~~~~~~~~
+---------
 
 HHC00602E is not yet documented
 
@@ -3742,7 +3665,7 @@ Severity …
 Action …
 
 HHC00603W
-~~~~~~~~~
+---------
 
 HHC00603W is not yet documented
 
@@ -3753,7 +3676,7 @@ Severity …
 Action …
 
 HHC00604E
-~~~~~~~~~
+---------
 
 HHC00604E is not yet documented
 
@@ -3764,7 +3687,7 @@ Severity …
 Action …
 
 HHC00605E
-~~~~~~~~~
+---------
 
 HHC00605E is not yet documented
 
@@ -3778,7 +3701,7 @@ Action …
 ---------------------------------------------------------
 
 HHC00700S
-~~~~~~~~~
+---------
 
 HHC00700S is not yet documented
 
@@ -3789,7 +3712,7 @@ Severity …
 Action …
 
 HHC00701W
-~~~~~~~~~
+---------
 
 HHC00701W is not yet documented
 
@@ -3800,7 +3723,7 @@ Severity …
 Action …
 
 HHC00702S
-~~~~~~~~~
+---------
 
 HHC00702S is not yet documented
 
@@ -3811,7 +3734,7 @@ Severity …
 Action …
 
 HHC00703S
-~~~~~~~~~
+---------
 
 HHC00703S is not yet documented
 
@@ -3822,7 +3745,7 @@ Severity …
 Action …
 
 HHC00704S
-~~~~~~~~~
+---------
 
 HHC00704S is not yet documented
 
@@ -3833,7 +3756,7 @@ Severity …
 Action …
 
 HHC00705S
-~~~~~~~~~
+---------
 
 HHC00705S is not yet documented
 
@@ -3844,7 +3767,7 @@ Severity …
 Action …
 
 HHC00706S
-~~~~~~~~~
+---------
 
 HHC00706S is not yet documented
 
@@ -3855,7 +3778,7 @@ Severity …
 Action …
 
 HHC00707S
-~~~~~~~~~
+---------
 
 HHC00707S is not yet documented
 
@@ -3866,7 +3789,7 @@ Severity …
 Action …
 
 HHC00708I
-~~~~~~~~~
+---------
 
 HHC00708I is not yet documented
 
@@ -3877,7 +3800,7 @@ Severity …
 Action …
 
 HHC00709S
-~~~~~~~~~
+---------
 
 HHC00709S is not yet documented
 
@@ -3888,7 +3811,7 @@ Severity …
 Action …
 
 HHC00710S
-~~~~~~~~~
+---------
 
 HHC00710S is not yet documented
 
@@ -3899,7 +3822,7 @@ Severity …
 Action …
 
 HHC00711S
-~~~~~~~~~
+---------
 
 HHC00711S is not yet documented
 
@@ -3910,7 +3833,7 @@ Severity …
 Action …
 
 HHC00712I
-~~~~~~~~~
+---------
 
 HHC00712I is not yet documented
 
@@ -3921,7 +3844,7 @@ Severity …
 Action …
 
 HHC00713E
-~~~~~~~~~
+---------
 
 HHC00713E is not yet documented
 
@@ -3932,7 +3855,7 @@ Severity …
 Action …
 
 HHC00714E
-~~~~~~~~~
+---------
 
 HHC00714E is not yet documented
 
@@ -3943,7 +3866,7 @@ Severity …
 Action …
 
 HHC00715E
-~~~~~~~~~
+---------
 
 HHC00715E is not yet documented
 
@@ -3954,7 +3877,7 @@ Severity …
 Action …
 
 HHC00716E
-~~~~~~~~~
+---------
 
 HHC00716E is not yet documented
 
@@ -3965,7 +3888,7 @@ Severity …
 Action …
 
 HHC00717E
-~~~~~~~~~
+---------
 
 HHC00717E is not yet documented
 
@@ -3976,7 +3899,7 @@ Severity …
 Action …
 
 HHC00718E
-~~~~~~~~~
+---------
 
 HHC00718E is not yet documented
 
@@ -3987,7 +3910,7 @@ Severity …
 Action …
 
 HHC00719E
-~~~~~~~~~
+---------
 
 HHC00719E is not yet documented
 
@@ -3998,7 +3921,7 @@ Severity …
 Action …
 
 HHC00720E
-~~~~~~~~~
+---------
 
 HHC00720E is not yet documented
 
@@ -4009,7 +3932,7 @@ Severity …
 Action …
 
 HHC00721I
-~~~~~~~~~
+---------
 
 HHC00721I is not yet documented
 
@@ -4020,7 +3943,7 @@ Severity …
 Action …
 
 HHC00722E
-~~~~~~~~~
+---------
 
 HHC00722E is not yet documented
 
@@ -4031,7 +3954,7 @@ Severity …
 Action …
 
 HHC00723E
-~~~~~~~~~
+---------
 
 HHC00723E is not yet documented
 
@@ -4042,7 +3965,7 @@ Severity …
 Action …
 
 HHC00724E
-~~~~~~~~~
+---------
 
 HHC00724E is not yet documented
 
@@ -4053,7 +3976,7 @@ Severity …
 Action …
 
 HHC00725E
-~~~~~~~~~
+---------
 
 HHC00725E is not yet documented
 
@@ -4064,7 +3987,7 @@ Severity …
 Action …
 
 HHC00726E
-~~~~~~~~~
+---------
 
 HHC0 0726 E is not yet documented
 
@@ -4075,7 +3998,7 @@ Severity …
 Action …
 
 HHC00727E
-~~~~~~~~~
+---------
 
 HHC0 0727 E is not yet documented
 
@@ -4086,7 +4009,7 @@ Severity …
 Action …
 
 HHC00728E
-~~~~~~~~~
+---------
 
 HHC0 0728 E is not yet documented
 
@@ -4097,7 +4020,7 @@ Severity …
 Action …
 
 HHC00729E
-~~~~~~~~~
+---------
 
 HHC0 0729 E is not yet documented
 
@@ -4108,7 +4031,7 @@ Severity …
 Action …
 
 HHC00730W
-~~~~~~~~~
+---------
 
 HHC0 07 30W is not yet documented
 
@@ -4119,7 +4042,7 @@ Severity …
 Action …
 
 HHC00731I
-~~~~~~~~~
+---------
 
 HHC00731I is not yet documented
 
@@ -4130,7 +4053,7 @@ Severity …
 Action …
 
 HHC00732E
-~~~~~~~~~
+---------
 
 HHC00732E is not yet documented
 
@@ -4141,7 +4064,7 @@ Severity …
 Action …
 
 HHC00733I
-~~~~~~~~~
+---------
 
 HHC00733I is not yet documented
 
@@ -4152,7 +4075,7 @@ Severity …
 Action …
 
 HHC00734E
-~~~~~~~~~
+---------
 
 HHC00734E is not yet documented
 
@@ -4163,7 +4086,7 @@ Severity …
 Action …
 
 HHC00735E
-~~~~~~~~~
+---------
 
 HHC00735E is not yet documented
 
@@ -4174,7 +4097,7 @@ Severity …
 Action …
 
 HHC00736W
-~~~~~~~~~
+---------
 
 HHC00736W is not yet documented
 
@@ -4185,7 +4108,7 @@ Severity …
 Action …
 
 HHC00737I
-~~~~~~~~~
+---------
 
 HHC00737I is not yet documented
 
@@ -4196,7 +4119,7 @@ Severity …
 Action …
 
 HHC00738E
-~~~~~~~~~
+---------
 
 HHC00738E is not yet documented
 
@@ -4207,7 +4130,7 @@ Severity …
 Action …
 
 HHC00739E
-~~~~~~~~~
+---------
 
 HHC00739E is not yet documented
 
@@ -4218,7 +4141,7 @@ Severity …
 Action …
 
 HHC00740E
-~~~~~~~~~
+---------
 
 HHC00740E is not yet documented
 
@@ -4229,7 +4152,7 @@ Severity …
 Action …
 
 HHC00741E
-~~~~~~~~~
+---------
 
 HHC00741E is not yet documented
 
@@ -4240,7 +4163,7 @@ Severity …
 Action …
 
 HHC00742E
-~~~~~~~~~
+---------
 
 HHC00742E is not yet documented
 
@@ -4251,7 +4174,7 @@ Severity …
 Action …
 
 HHC00743I
-~~~~~~~~~
+---------
 
 HHC00743I is not yet documented
 
@@ -4265,7 +4188,7 @@ Action …
 --------------------------------------------------
 
 HHC00800I
-~~~~~~~~~
+---------
 
 HHC00800I is not yet documented
 
@@ -4276,7 +4199,7 @@ Severity …
 Action …
 
 HHC00801I
-~~~~~~~~~
+---------
 
 HHC00801I is not yet documented
 
@@ -4287,7 +4210,7 @@ Severity …
 Action …
 
 HHC00802I
-~~~~~~~~~
+---------
 
 HHC00802I is not yet documented
 
@@ -4298,7 +4221,7 @@ Severity …
 Action …
 
 HHC00803I
-~~~~~~~~~
+---------
 
 HHC00803I is not yet documented
 
@@ -4309,7 +4232,7 @@ Severity …
 Action …
 
 HHC00804I
-~~~~~~~~~
+---------
 
 HHC00804I is not yet documented
 
@@ -4320,7 +4243,7 @@ Severity …
 Action …
 
 HHC00805I
-~~~~~~~~~
+---------
 
 HHC00805I is not yet documented
 
@@ -4331,7 +4254,7 @@ Severity …
 Action …
 
 HHC00806I
-~~~~~~~~~
+---------
 
 HHC00806I is not yet documented
 
@@ -4342,7 +4265,7 @@ Severity …
 Action …
 
 HHC00807I
-~~~~~~~~~
+---------
 
 HHC00807I is not yet documented
 
@@ -4353,7 +4276,7 @@ Severity …
 Action …
 
 HHC00808I
-~~~~~~~~~
+---------
 
 HHC00808I is not yet documented
 
@@ -4364,7 +4287,7 @@ Severity …
 Action …
 
 HHC00809I
-~~~~~~~~~
+---------
 
 HHC00809I is not yet documented
 
@@ -4375,7 +4298,7 @@ Severity …
 Action …
 
 HHC00810E
-~~~~~~~~~
+---------
 
 HHC00810E Processor nn: ipl failed: device dev not found
 
@@ -4390,7 +4313,7 @@ Action Reissue the IPL command specifying a device that is attached to
 the system.
 
 HHC00811I
-~~~~~~~~~
+---------
 
 HHC00811I is not yet documented
 
@@ -4401,7 +4324,7 @@ Severity …
 Action …
 
 HHC00812I
-~~~~~~~~~
+---------
 
 HHC00812I is not yet documented
 
@@ -4412,7 +4335,7 @@ Severity …
 Action …
 
 HHC00813E
-~~~~~~~~~
+---------
 
 HHC00813E is not yet documented
 
@@ -4423,7 +4346,7 @@ Severity …
 Action …
 
 HHC00814I
-~~~~~~~~~
+---------
 
 HHC00814I is not yet documented
 
@@ -4434,7 +4357,7 @@ Severity …
 Action …
 
 HHC00815I
-~~~~~~~~~
+---------
 
 HHC00815I is not yet documented
 
@@ -4445,7 +4368,7 @@ Severity …
 Action …
 
 HHC00816W
-~~~~~~~~~
+---------
 
 HHC00816W is not yet documented
 
@@ -4456,7 +4379,7 @@ Severity …
 Action …
 
 HHC00817I
-~~~~~~~~~
+---------
 
 HHC00817I is not yet documented
 
@@ -4467,7 +4390,7 @@ Severity …
 Action …
 
 HHC00818E
-~~~~~~~~~
+---------
 
 HHC00818E is not yet documented
 
@@ -4478,7 +4401,7 @@ Severity …
 Action …
 
 HHC00819I
-~~~~~~~~~
+---------
 
 HHC00819I is not yet documented
 
@@ -4489,7 +4412,7 @@ Severity …
 Action …
 
 HHC00820I
-~~~~~~~~~
+---------
 
 HHC00820I is not yet documented
 
@@ -4500,7 +4423,7 @@ Severity …
 Action …
 
 HHC00821I
-~~~~~~~~~
+---------
 
 HHC00821I is not yet documented
 
@@ -4511,7 +4434,7 @@ Severity …
 Action …
 
 HHC00822I
-~~~~~~~~~
+---------
 
 HHC00822I is not yet documented
 
@@ -4522,7 +4445,7 @@ Severity …
 Action …
 
 HHC00823I
-~~~~~~~~~
+---------
 
 HHC00823I is not yet documented
 
@@ -4533,7 +4456,7 @@ Severity …
 Action …
 
 HHC00824I
-~~~~~~~~~
+---------
 
 HHC00824I is not yet documented
 
@@ -4544,7 +4467,7 @@ Severity …
 Action …
 
 HHC00825E
-~~~~~~~~~
+---------
 
 HHC00825E is not yet documented
 
@@ -4555,7 +4478,7 @@ Severity …
 Action …
 
 HHC00826E
-~~~~~~~~~
+---------
 
 HHC00826E is not yet documented
 
@@ -4566,7 +4489,7 @@ Severity …
 Action …
 
 HHC00827I
-~~~~~~~~~
+---------
 
 HHC00827I is not yet documented
 
@@ -4577,7 +4500,7 @@ Severity …
 Action …
 
 HHC00828E
-~~~~~~~~~
+---------
 
 HHC00828E Processor nn: ipl failed: architecture mode mode, csw status
 cswstat, sense sense
@@ -4597,7 +4520,7 @@ Action Correct the cause of the IPL device I/O problem and reissue the
 IPL command.
 
 HHC00832I
-~~~~~~~~~
+---------
 
 HHC00832I is not yet documented
 
@@ -4608,7 +4531,7 @@ Severity …
 Action …
 
 HHC00834I
-~~~~~~~~~
+---------
 
 HHC0 08 34I is not yet documented
 
@@ -4619,7 +4542,7 @@ Severity …
 Action …
 
 HHC00838I
-~~~~~~~~~
+---------
 
 HHC00838I is not yet documented
 
@@ -4630,7 +4553,7 @@ Severity …
 Action …
 
 HHC00839E
-~~~~~~~~~
+---------
 
 HHC00839E Processor nn: ipl failed: architecture mode mode, invalid ipl
 psw psw
@@ -4655,7 +4578,7 @@ consistently, or change the system architecture mode to one that allows
 the IPL device initial PSW to be used, or IPL from a different device.
 
 HHC00840I
-~~~~~~~~~
+---------
 
 HHC00840I is not yet documented
 
@@ -4666,7 +4589,7 @@ Severity …
 Action …
 
 HHC00841I
-~~~~~~~~~
+---------
 
 HHC00841I is not yet documented
 
@@ -4677,7 +4600,7 @@ Severity …
 Action …
 
 HHC00842I
-~~~~~~~~~
+---------
 
 HHC00842I is not yet documented
 
@@ -4688,7 +4611,7 @@ Severity …
 Action …
 
 HHC00843I
-~~~~~~~~~
+---------
 
 HHC00843I is not yet documented
 
@@ -4699,7 +4622,7 @@ Severity …
 Action …
 
 HHC00844I
-~~~~~~~~~
+---------
 
 HHC00844I is not yet documented
 
@@ -4710,7 +4633,7 @@ Severity …
 Action …
 
 HHC00845I
-~~~~~~~~~
+---------
 
 HHC00845I is not yet documented
 
@@ -4721,7 +4644,7 @@ Severity …
 Action …
 
 HHC00846I
-~~~~~~~~~
+---------
 
 HHC00846I is not yet documented
 
@@ -4732,7 +4655,7 @@ Severity …
 Action …
 
 HHC00850I
-~~~~~~~~~
+---------
 
 HHC0 0850 I is not yet documented
 
@@ -4743,7 +4666,7 @@ Severity …
 Action …
 
 HHC00851I
-~~~~~~~~~
+---------
 
 HHC00851I is not yet documented
 
@@ -4754,7 +4677,7 @@ Severity …
 Action …
 
 HHC00852I
-~~~~~~~~~
+---------
 
 HHC00852I is not yet documented
 
@@ -4765,7 +4688,7 @@ Severity …
 Action …
 
 HHC00853I
-~~~~~~~~~
+---------
 
 HHC00853I is not yet documented
 
@@ -4776,7 +4699,7 @@ Severity …
 Action …
 
 HHC00854I
-~~~~~~~~~
+---------
 
 HHC00854I is not yet documented
 
@@ -4787,7 +4710,7 @@ Severity …
 Action …
 
 HHC00855I
-~~~~~~~~~
+---------
 
 HHC00855I is not yet documented
 
@@ -4798,7 +4721,7 @@ Severity …
 Action …
 
 HHC00856I
-~~~~~~~~~
+---------
 
 HHC00856I is not yet documented
 
@@ -4809,7 +4732,7 @@ Severity …
 Action …
 
 HHC00857I
-~~~~~~~~~
+---------
 
 HHC00857I is not yet documented
 
@@ -4820,7 +4743,7 @@ Severity …
 Action …
 
 HHC00858I
-~~~~~~~~~
+---------
 
 HHC00858I is not yet documented
 
@@ -4831,7 +4754,7 @@ Severity …
 Action …
 
 HHC00859I
-~~~~~~~~~
+---------
 
 HHC00859I is not yet documented
 
@@ -4842,7 +4765,7 @@ Severity …
 Action …
 
 HHC00860I
-~~~~~~~~~
+---------
 
 HHC00860I is not yet documented
 
@@ -4853,7 +4776,7 @@ Severity …
 Action …
 
 HHC00861I
-~~~~~~~~~
+---------
 
 HHC00861I is not yet documented
 
@@ -4864,7 +4787,7 @@ Severity …
 Action …
 
 HHC00862I
-~~~~~~~~~
+---------
 
 HHC00862I is not yet documented
 
@@ -4875,7 +4798,7 @@ Severity …
 Action …
 
 HHC00863I
-~~~~~~~~~
+---------
 
 HHC00863I is not yet documented
 
@@ -4886,7 +4809,7 @@ Severity …
 Action …
 
 HHC00864I
-~~~~~~~~~
+---------
 
 HHC00864I is not yet documented
 
@@ -4897,7 +4820,7 @@ Severity …
 Action …
 
 HHC00865I
-~~~~~~~~~
+---------
 
 HHC00865I is not yet documented
 
@@ -4908,7 +4831,7 @@ Severity …
 Action …
 
 HHC00866I
-~~~~~~~~~
+---------
 
 HHC00866I is not yet documented
 
@@ -4919,7 +4842,7 @@ Severity …
 Action …
 
 HHC00867I
-~~~~~~~~~
+---------
 
 HHC00867I is not yet documented
 
@@ -4930,7 +4853,7 @@ Severity …
 Action …
 
 HHC00868I
-~~~~~~~~~
+---------
 
 HHC00868I is not yet documented
 
@@ -4941,7 +4864,7 @@ Severity …
 Action …
 
 HHC00869I
-~~~~~~~~~
+---------
 
 HHC00869I is not yet documented
 
@@ -4952,7 +4875,7 @@ Severity …
 Action …
 
 HHC00870I
-~~~~~~~~~
+---------
 
 HHC00870I is not yet documented
 
@@ -4963,7 +4886,7 @@ Severity …
 Action …
 
 HHC00871I
-~~~~~~~~~
+---------
 
 HHC00871I is not yet documented
 
@@ -4974,7 +4897,7 @@ Severity …
 Action …
 
 HHC00872I
-~~~~~~~~~
+---------
 
 HHC00872I is not yet documented
 
@@ -4985,7 +4908,7 @@ Severity …
 Action …
 
 HHC00873I
-~~~~~~~~~
+---------
 
 HHC00873I is not yet documented
 
@@ -4996,7 +4919,7 @@ Severity …
 Action …
 
 HHC00874I
-~~~~~~~~~
+---------
 
 HHC00874I is not yet documented
 
@@ -5007,7 +4930,7 @@ Severity …
 Action …
 
 HHC00875I
-~~~~~~~~~
+---------
 
 HHC00875I is not yet documented
 
@@ -5018,7 +4941,7 @@ Severity …
 Action …
 
 HHC00876I
-~~~~~~~~~
+---------
 
 HHC00876I is not yet documented
 
@@ -5029,7 +4952,7 @@ Severity …
 Action …
 
 HHC00877I
-~~~~~~~~~
+---------
 
 HHC00877I is not yet documented
 
@@ -5040,7 +4963,7 @@ Severity …
 Action …
 
 HHC00880I
-~~~~~~~~~
+---------
 
 HHC00880I is not yet documented
 
@@ -5051,7 +4974,7 @@ Severity …
 Action …
 
 HHC00881I
-~~~~~~~~~
+---------
 
 HHC00881I is not yet documented
 
@@ -5062,7 +4985,7 @@ Severity …
 Action …
 
 HHC00882I
-~~~~~~~~~
+---------
 
 HHC00882I is not yet documented
 
@@ -5073,7 +4996,7 @@ Severity …
 Action …
 
 HHC00890I
-~~~~~~~~~
+---------
 
 HHC00890I is not yet documented
 
@@ -5084,7 +5007,7 @@ Severity …
 Action …
 
 HHC00891E
-~~~~~~~~~
+---------
 
 HHC00891E is not yet documented
 
@@ -5095,7 +5018,7 @@ Severity …
 Action …
 
 HHC00892E
-~~~~~~~~~
+---------
 
 HHC00892E is not yet documented
 
@@ -5106,7 +5029,7 @@ Severity …
 Action …
 
 HHC00893E
-~~~~~~~~~
+---------
 
 HHC00893E is not yet documented
 
@@ -5117,7 +5040,7 @@ Severity …
 Action …
 
 HHC00895E
-~~~~~~~~~
+---------
 
 HHC00895E is not yet documented
 
@@ -5128,7 +5051,7 @@ Severity …
 Action …
 
 HHC00896E
-~~~~~~~~~
+---------
 
 HHC00896E is not yet documented
 
@@ -5139,7 +5062,7 @@ Severity …
 Action …
 
 HHC00898I
-~~~~~~~~~
+---------
 
 HHC00898I is not yet documented
 
@@ -5153,7 +5076,7 @@ Action …
 ----------------------------------------------------------
 
 HHC00900E
-~~~~~~~~~
+---------
 
 HHC00900E is not yet documented
 
@@ -5164,7 +5087,7 @@ Severity …
 Action …
 
 HHC00901I
-~~~~~~~~~
+---------
 
 HHC00901I is not yet documented
 
@@ -5175,7 +5098,7 @@ Severity …
 Action …
 
 HHC00902W
-~~~~~~~~~
+---------
 
 HHC00902W is not yet documented
 
@@ -5186,7 +5109,7 @@ Severity …
 Action …
 
 HHC00904I
-~~~~~~~~~
+---------
 
 HHC00904I is not yet documented
 
@@ -5197,7 +5120,7 @@ Severity …
 Action …
 
 HHC00905I
-~~~~~~~~~
+---------
 
 HHC00905I is not yet documented
 
@@ -5208,7 +5131,7 @@ Severity …
 Action …
 
 HHC00906E
-~~~~~~~~~
+---------
 
 HHC00906E is not yet documented
 
@@ -5219,7 +5142,7 @@ Severity …
 Action …
 
 HHC00907I
-~~~~~~~~~
+---------
 
 HHC00907I is not yet documented
 
@@ -5230,7 +5153,7 @@ Severity …
 Action …
 
 HHC00908E
-~~~~~~~~~
+---------
 
 HHC00908E is not yet documented
 
@@ -5241,7 +5164,7 @@ Severity …
 Action …
 
 HHC00909E
-~~~~~~~~~
+---------
 
 HHC00909E is not yet documented
 
@@ -5252,7 +5175,7 @@ Severity …
 Action …
 
 HHC00910I
-~~~~~~~~~
+---------
 
 HHC00910I is not yet documented
 
@@ -5263,7 +5186,7 @@ Severity …
 Action …
 
 HHC00911E
-~~~~~~~~~
+---------
 
 HHC00911E is not yet documented
 
@@ -5274,7 +5197,7 @@ Severity …
 Action …
 
 HHC00912E
-~~~~~~~~~
+---------
 
 HHC00912E is not yet documented
 
@@ -5285,7 +5208,7 @@ Severity …
 Action …
 
 HHC00913I
-~~~~~~~~~
+---------
 
 HHC00913I is not yet documented
 
@@ -5296,7 +5219,7 @@ Severity …
 Action …
 
 HHC00914W
-~~~~~~~~~
+---------
 
 HHC00914W is not yet documented
 
@@ -5307,7 +5230,7 @@ Severity …
 Action …
 
 HHC00915E
-~~~~~~~~~
+---------
 
 HHC00915E is not yet documented
 
@@ -5318,7 +5241,7 @@ Severity …
 Action …
 
 HHC00916E
-~~~~~~~~~
+---------
 
 HHC00916E is not yet documented
 
@@ -5329,7 +5252,7 @@ Severity …
 Action …
 
 HHC00918E
-~~~~~~~~~
+---------
 
 HHC00918E is not yet documented
 
@@ -5340,7 +5263,7 @@ Severity …
 Action …
 
 HHC00920E
-~~~~~~~~~
+---------
 
 HHC00920E is not yet documented
 
@@ -5351,7 +5274,7 @@ Severity …
 Action …
 
 HHC00921I
-~~~~~~~~~
+---------
 
 HHC00921I is not yet documented
 
@@ -5362,7 +5285,7 @@ Severity …
 Action …
 
 HHC00922I
-~~~~~~~~~
+---------
 
 HHC00922I is not yet documented
 
@@ -5373,7 +5296,7 @@ Severity …
 Action …
 
 HHC00933I
-~~~~~~~~~
+---------
 
 HHC00933I is not yet documented
 
@@ -5384,7 +5307,7 @@ Severity …
 Action …
 
 HHC00934I
-~~~~~~~~~
+---------
 
 HHC00934I is not yet documented
 
@@ -5395,7 +5318,7 @@ Severity …
 Action …
 
 HHC00936E
-~~~~~~~~~
+---------
 
 HHC00936E is not yet documented
 
@@ -5406,7 +5329,7 @@ Severity …
 Action …
 
 HHC00937E
-~~~~~~~~~
+---------
 
 HHC00937E is not yet documented
 
@@ -5417,7 +5340,7 @@ Severity …
 Action …
 
 HHC00938I
-~~~~~~~~~
+---------
 
 HHC00938I is not yet documented
 
@@ -5428,7 +5351,7 @@ Severity …
 Action …
 
 HHC00939W
-~~~~~~~~~
+---------
 
 HHC00939W is not yet documented
 
@@ -5439,7 +5362,7 @@ Severity …
 Action …
 
 HHC00940E
-~~~~~~~~~
+---------
 
 HHC00940E is not yet documented
 
@@ -5450,7 +5373,7 @@ Severity …
 Action …
 
 HHC00941E
-~~~~~~~~~
+---------
 
 HHC00941E is not yet documented
 
@@ -5461,7 +5384,7 @@ Severity …
 Action …
 
 HHC00942I
-~~~~~~~~~
+---------
 
 HHC00942I is not yet documented
 
@@ -5472,7 +5395,7 @@ Severity …
 Action …
 
 HHC00943W
-~~~~~~~~~
+---------
 
 HHC00943W is not yet documented
 
@@ -5483,7 +5406,7 @@ Severity …
 Action …
 
 HHC00944E
-~~~~~~~~~
+---------
 
 HHC00944E is not yet documented
 
@@ -5494,7 +5417,7 @@ Severity …
 Action …
 
 HHC00945I
-~~~~~~~~~
+---------
 
 HHC00945I is not yet documented
 
@@ -5505,7 +5428,7 @@ Severity …
 Action …
 
 HHC00946I
-~~~~~~~~~
+---------
 
 HHC00946I is not yet documented
 
@@ -5516,7 +5439,7 @@ Severity …
 Action …
 
 HHC00947I
-~~~~~~~~~
+---------
 
 HHC00947I is not yet documented
 
@@ -5527,7 +5450,7 @@ Severity …
 Action …
 
 HHC00948I
-~~~~~~~~~
+---------
 
 HHC00948I is not yet documented
 
@@ -5538,7 +5461,7 @@ Severity …
 Action …
 
 HHC00949I
-~~~~~~~~~
+---------
 
 HHC00949I is not yet documented
 
@@ -5549,7 +5472,7 @@ Severity …
 Action …
 
 HHC00950I
-~~~~~~~~~
+---------
 
 HHC00950I is not yet documented
 
@@ -5560,7 +5483,7 @@ Severity …
 Action …
 
 HHC00951I
-~~~~~~~~~
+---------
 
 HHC00951I is not yet documented
 
@@ -5571,7 +5494,7 @@ Severity …
 Action …
 
 HHC00952I
-~~~~~~~~~
+---------
 
 HHC00952I is not yet documented
 
@@ -5582,7 +5505,7 @@ Severity …
 Action …
 
 HHC00953W
-~~~~~~~~~
+---------
 
 HHC00953W is not yet documented
 
@@ -5593,7 +5516,7 @@ Severity …
 Action …
 
 HHC00954E
-~~~~~~~~~
+---------
 
 HHC00954E is not yet documented
 
@@ -5604,7 +5527,7 @@ Severity …
 Action …
 
 HHC00955E
-~~~~~~~~~
+---------
 
 HHC00955E is not yet documented
 
@@ -5615,7 +5538,7 @@ Severity …
 Action …
 
 HHC00956E
-~~~~~~~~~
+---------
 
 HHC00956E is not yet documented
 
@@ -5626,7 +5549,7 @@ Severity …
 Action …
 
 HHC00957E
-~~~~~~~~~
+---------
 
 HHC00957E is not yet documented
 
@@ -5637,7 +5560,7 @@ Severity …
 Action …
 
 HHC00958E
-~~~~~~~~~
+---------
 
 HHC00958E is not yet documented
 
@@ -5648,7 +5571,7 @@ Severity …
 Action …
 
 HHC00959E
-~~~~~~~~~
+---------
 
 HHC00959E is not yet documented
 
@@ -5659,7 +5582,7 @@ Severity …
 Action …
 
 HHC00960E
-~~~~~~~~~
+---------
 
 HHC00960E is not yet documented
 
@@ -5670,7 +5593,7 @@ Severity …
 Action …
 
 HHC00961E
-~~~~~~~~~
+---------
 
 HHC00961E is not yet documented
 
@@ -5681,7 +5604,7 @@ Severity …
 Action …
 
 HHC00962E
-~~~~~~~~~
+---------
 
 HHC00962E is not yet documented
 
@@ -5692,7 +5615,7 @@ Severity …
 Action …
 
 HHC00963E
-~~~~~~~~~
+---------
 
 HHC00963E is not yet documented
 
@@ -5703,7 +5626,7 @@ Severity …
 Action …
 
 HHC00964I
-~~~~~~~~~
+---------
 
 HHC00964I is not yet documented
 
@@ -5714,7 +5637,7 @@ Severity …
 Action …
 
 HHC00970E
-~~~~~~~~~
+---------
 
 HHC00970E is not yet documented
 
@@ -5725,7 +5648,7 @@ Severity …
 Action …
 
 HHC00971I
-~~~~~~~~~
+---------
 
 HHC00971I is not yet documented
 
@@ -5736,7 +5659,7 @@ Severity …
 Action …
 
 HHC00972I
-~~~~~~~~~
+---------
 
 HHC00972I is not yet documented
 
@@ -5747,7 +5670,7 @@ Severity …
 Action …
 
 HHC00973E
-~~~~~~~~~
+---------
 
 HHC00973E is not yet documented
 
@@ -5758,7 +5681,7 @@ Severity …
 Action …
 
 HHC00974E
-~~~~~~~~~
+---------
 
 HHC00974E is not yet documented
 
@@ -5769,7 +5692,7 @@ Severity …
 Action …
 
 HHC00975E
-~~~~~~~~~
+---------
 
 HHC00975E is not yet documented
 
@@ -5780,7 +5703,7 @@ Severity …
 Action …
 
 HHC00976E
-~~~~~~~~~
+---------
 
 HHC00960E is not yet documented
 
@@ -5794,7 +5717,7 @@ Action …
 -------------------------------------------------------------------------------
 
 HHC01000E
-~~~~~~~~~
+---------
 
 HHC01000E is not yet documented
 
@@ -5805,7 +5728,7 @@ Severity …
 Action …
 
 HHC01001I
-~~~~~~~~~
+---------
 
 HHC01001I is not yet documented
 
@@ -5816,7 +5739,7 @@ Severity …
 Action …
 
 HHC01002E
-~~~~~~~~~
+---------
 
 HHC01002E is not yet documented
 
@@ -5827,7 +5750,7 @@ Severity …
 Action …
 
 HHC01003W
-~~~~~~~~~
+---------
 
 HHC01003W is not yet documented
 
@@ -5838,7 +5761,7 @@ Severity …
 Action …
 
 HHC01004I
-~~~~~~~~~
+---------
 
 HHC01004I is not yet documented
 
@@ -5849,7 +5772,7 @@ Severity …
 Action …
 
 HHC01005W
-~~~~~~~~~
+---------
 
 HHC01005W is not yet documented
 
@@ -5860,7 +5783,7 @@ Severity …
 Action …
 
 HHC01006I
-~~~~~~~~~
+---------
 
 HHC01006I is not yet documented
 
@@ -5871,7 +5794,7 @@ Severity …
 Action …
 
 HHC01007E
-~~~~~~~~~
+---------
 
 HHC01007E is not yet documented
 
@@ -5882,7 +5805,7 @@ Severity …
 Action …
 
 HHC01008E
-~~~~~~~~~
+---------
 
 HHC01008E is not yet documented
 
@@ -5893,7 +5816,7 @@ Severity …
 Action …
 
 HHC01009W
-~~~~~~~~~
+---------
 
 HHC01009W is not yet documented
 
@@ -5904,7 +5827,7 @@ Severity …
 Action …
 
 HHC01010I
-~~~~~~~~~
+---------
 
 HHC01010I is not yet documented
 
@@ -5915,7 +5838,7 @@ Severity …
 Action …
 
 HHC01011I
-~~~~~~~~~
+---------
 
 HHC01011I is not yet documented
 
@@ -5926,7 +5849,7 @@ Severity …
 Action …
 
 HHC01012E
-~~~~~~~~~
+---------
 
 HHC01012E is not yet documented
 
@@ -5937,7 +5860,7 @@ Severity …
 Action …
 
 HHC01013E
-~~~~~~~~~
+---------
 
 HHC01013E is not yet documented
 
@@ -5948,7 +5871,7 @@ Severity …
 Action …
 
 HHC01014I
-~~~~~~~~~
+---------
 
 HHC01014I is not yet documented
 
@@ -5959,7 +5882,7 @@ Severity …
 Action …
 
 HHC01015E
-~~~~~~~~~
+---------
 
 HHC01015E is not yet documented
 
@@ -5970,7 +5893,7 @@ Severity …
 Action …
 
 HHC01016I
-~~~~~~~~~
+---------
 
 HHC01016I is not yet documented
 
@@ -5981,7 +5904,7 @@ Severity …
 Action …
 
 HHC01017E
-~~~~~~~~~
+---------
 
 HHC0 1017 E is not yet documented
 
@@ -5992,7 +5915,7 @@ Severity …
 Action …
 
 HHC01018I
-~~~~~~~~~
+---------
 
 HHC01018I devaddr COMM: client ipaddr devtype devtype: connected
 
@@ -6004,7 +5927,7 @@ Severity Information.
 Action None. This is an informational message.
 
 HHC01019E
-~~~~~~~~~
+---------
 
 HHC0 1019 E is not yet documented
 
@@ -6015,7 +5938,7 @@ Severity …
 Action …
 
 HHC01020E
-~~~~~~~~~
+---------
 
 HHC0 10 20E is not yet documented
 
@@ -6026,7 +5949,7 @@ Severity …
 Action …
 
 HHC01022I
-~~~~~~~~~
+---------
 
 HHC01022I devaddr COMM: client ipaddr devtype devtype: connection closed
 by client
@@ -6040,7 +5963,7 @@ Severity Information.
 Action None. This is an informational message.
 
 HHC01023W
-~~~~~~~~~
+---------
 
 HHC01023W Waiting for port port to become free for console connections
 
@@ -6055,7 +5978,7 @@ Action If this message persists, some other program has control of the
 TCP port listed. Determine the program involved and terminate it.
 
 HHC01024I
-~~~~~~~~~
+---------
 
 HHC01024I Waiting for console connections on port port.
 
@@ -6067,7 +5990,7 @@ Severity Information.
 Action None. This is an informational message.
 
 HHC01025E
-~~~~~~~~~
+---------
 
 HHC01025E is not yet documented
 
@@ -6078,7 +6001,7 @@ Severity …
 Action …
 
 HHC01026A
-~~~~~~~~~
+---------
 
 HHC01026A is not yet documented
 
@@ -6089,7 +6012,7 @@ Severity …
 Action …
 
 HHC01027I
-~~~~~~~~~
+---------
 
 HHC01027I is not yet documented
 
@@ -6100,7 +6023,7 @@ Severity …
 Action …
 
 HHC01028E
-~~~~~~~~~
+---------
 
 HHC01028E is not yet documented
 
@@ -6111,7 +6034,7 @@ Severity …
 Action …
 
 HHC01029E
-~~~~~~~~~
+---------
 
 HHC01029E is not yet documented
 
@@ -6122,7 +6045,7 @@ Severity …
 Action …
 
 HHC01030I
-~~~~~~~~~
+---------
 
 HHC01030I is not yet documented
 
@@ -6133,7 +6056,7 @@ Severity …
 Action …
 
 HHC01031I
-~~~~~~~~~
+---------
 
 HHC01031I is not yet documented
 
@@ -6144,7 +6067,7 @@ Severity …
 Action …
 
 HHC01032E
-~~~~~~~~~
+---------
 
 HHC01032E is not yet documented
 
@@ -6155,7 +6078,7 @@ Severity …
 Action …
 
 HHC01033E
-~~~~~~~~~
+---------
 
 HHC01033E is not yet documented
 
@@ -6166,7 +6089,7 @@ Severity …
 Action …
 
 HHC01034E
-~~~~~~~~~
+---------
 
 HHC01034E is not yet documented
 
@@ -6177,7 +6100,7 @@ Severity …
 Action …
 
 HHC01035E
-~~~~~~~~~
+---------
 
 HHC01035E is not yet documented
 
@@ -6188,7 +6111,7 @@ Severity …
 Action …
 
 HHC01036E
-~~~~~~~~~
+---------
 
 HHC01036E is not yet documented
 
@@ -6199,7 +6122,7 @@ Severity …
 Action …
 
 HHC01037E
-~~~~~~~~~
+---------
 
 HHC01037E is not yet documented
 
@@ -6210,7 +6133,7 @@ Severity …
 Action …
 
 HHC01038E
-~~~~~~~~~
+---------
 
 HHC01038E is not yet documented
 
@@ -6221,7 +6144,7 @@ Severity …
 Action …
 
 HHC01039E
-~~~~~~~~~
+---------
 
 HHC01039E is not yet documented
 
@@ -6232,7 +6155,7 @@ Severity …
 Action …
 
 HHC01040I
-~~~~~~~~~
+---------
 
 HHC01040I is not yet documented
 
@@ -6243,7 +6166,7 @@ Severity …
 Action …
 
 HHC01041E
-~~~~~~~~~
+---------
 
 HHC01041E is not yet documented
 
@@ -6254,7 +6177,7 @@ Severity …
 Action …
 
 HHC01042I
-~~~~~~~~~
+---------
 
 HHC01042I is not yet documented
 
@@ -6265,7 +6188,7 @@ Severity …
 Action …
 
 HHC01043E
-~~~~~~~~~
+---------
 
 HHC01043E is not yet documented
 
@@ -6276,7 +6199,7 @@ Severity …
 Action …
 
 HHC01044I
-~~~~~~~~~
+---------
 
 HHC01044I is not yet documented
 
@@ -6287,7 +6210,7 @@ Severity …
 Action …
 
 HHC01045E
-~~~~~~~~~
+---------
 
 HHC01045E is not yet documented
 
@@ -6298,7 +6221,7 @@ Severity …
 Action …
 
 HHC01046I
-~~~~~~~~~
+---------
 
 HHC01046I is not yet documented
 
@@ -6309,7 +6232,7 @@ Severity …
 Action …
 
 HHC01047I
-~~~~~~~~~
+---------
 
 HHC01047I is not yet documented
 
@@ -6320,7 +6243,7 @@ Severity …
 Action …
 
 HHC01048D
-~~~~~~~~~
+---------
 
 HHC01048D is not yet documented
 
@@ -6331,7 +6254,7 @@ Severity …
 Action …
 
 HHC01049D
-~~~~~~~~~
+---------
 
 HHC01049D is not yet documented
 
@@ -6342,7 +6265,7 @@ Severity …
 Action …
 
 HHC01050D
-~~~~~~~~~
+---------
 
 HHC01050D is not yet documented
 
@@ -6353,7 +6276,7 @@ Severity …
 Action …
 
 HHC01051D
-~~~~~~~~~
+---------
 
 HHC01051D is not yet documented
 
@@ -6364,7 +6287,7 @@ Severity …
 Action …
 
 HHC01052D
-~~~~~~~~~
+---------
 
 HHC01052D is not yet documented
 
@@ -6375,7 +6298,7 @@ Severity …
 Action …
 
 HHC01053D
-~~~~~~~~~
+---------
 
 HHC01053D is not yet documented
 
@@ -6386,7 +6309,7 @@ Severity …
 Action …
 
 HHC01054D
-~~~~~~~~~
+---------
 
 HHC01054D is not yet documented
 
@@ -6397,7 +6320,7 @@ Severity …
 Action …
 
 HHC01055D
-~~~~~~~~~
+---------
 
 HHC01055D is not yet documented
 
@@ -6408,7 +6331,7 @@ Severity …
 Action …
 
 HHC01056D
-~~~~~~~~~
+---------
 
 HHC01056D is not yet documented
 
@@ -6419,7 +6342,7 @@ Severity …
 Action …
 
 HHC01057D
-~~~~~~~~~
+---------
 
 HHC01057D is not yet documented
 
@@ -6430,7 +6353,7 @@ Severity …
 Action …
 
 HHC01058D
-~~~~~~~~~
+---------
 
 HHC01058D is not yet documented
 
@@ -6441,7 +6364,7 @@ Severity …
 Action …
 
 HHC01059D
-~~~~~~~~~
+---------
 
 HHC01059D is not yet documented
 
@@ -6452,7 +6375,7 @@ Severity …
 Action …
 
 HHC01060D
-~~~~~~~~~
+---------
 
 HHC01060D is not yet documented
 
@@ -6463,7 +6386,7 @@ Severity …
 Action …
 
 HHC01061D
-~~~~~~~~~
+---------
 
 HHC01061D is not yet documented
 
@@ -6474,7 +6397,7 @@ Severity …
 Action …
 
 HHC01062D
-~~~~~~~~~
+---------
 
 HHC01062D is not yet documented
 
@@ -6485,7 +6408,7 @@ Severity …
 Action …
 
 HHC01063D
-~~~~~~~~~
+---------
 
 HHC01063D is not yet documented
 
@@ -6496,7 +6419,7 @@ Severity …
 Action …
 
 HHC01064D
-~~~~~~~~~
+---------
 
 HHC01064D is not yet documented
 
@@ -6507,7 +6430,7 @@ Severity …
 Action …
 
 HHC01065D
-~~~~~~~~~
+---------
 
 HHC01065D is not yet documented
 
@@ -6518,7 +6441,7 @@ Severity …
 Action …
 
 HHC01066D
-~~~~~~~~~
+---------
 
 HHC01066D is not yet documented
 
@@ -6529,7 +6452,7 @@ Severity …
 Action …
 
 HHC01067D
-~~~~~~~~~
+---------
 
 HHC01067D is not yet documented
 
@@ -6540,7 +6463,7 @@ Severity …
 Action …
 
 HHC01068D
-~~~~~~~~~
+---------
 
 HHC01068D is not yet documented
 
@@ -6551,7 +6474,7 @@ Severity …
 Action …
 
 HHC01069D
-~~~~~~~~~
+---------
 
 HHC01069D is not yet documented
 
@@ -6562,7 +6485,7 @@ Severity …
 Action …
 
 HHC01070D
-~~~~~~~~~
+---------
 
 HHC01070D is not yet documented
 
@@ -6573,7 +6496,7 @@ Severity …
 Action …
 
 HHC01071D
-~~~~~~~~~
+---------
 
 HHC01071D is not yet documented
 
@@ -6584,7 +6507,7 @@ Severity …
 Action …
 
 HHC01072D
-~~~~~~~~~
+---------
 
 HHC01072D is not yet documented
 
@@ -6595,7 +6518,7 @@ Severity …
 Action …
 
 HHC01073I
-~~~~~~~~~
+---------
 
 HHC01073I is not yet documented
 
@@ -6606,7 +6529,7 @@ Severity …
 Action …
 
 HHC01074D
-~~~~~~~~~
+---------
 
 HHC01074D is not yet documented
 
@@ -6617,7 +6540,7 @@ Severity …
 Action …
 
 HHC01075D
-~~~~~~~~~
+---------
 
 HHC01075D is not yet documented
 
@@ -6628,7 +6551,7 @@ Severity …
 Action …
 
 HHC01076D
-~~~~~~~~~
+---------
 
 HHC01076D is not yet documented
 
@@ -6639,7 +6562,7 @@ Severity …
 Action …
 
 HHC01077D
-~~~~~~~~~
+---------
 
 HHC01077D is not yet documented
 
@@ -6650,7 +6573,7 @@ Severity …
 Action …
 
 HHC01078D
-~~~~~~~~~
+---------
 
 HHC01078D is not yet documented
 
@@ -6661,7 +6584,7 @@ Severity …
 Action …
 
 HHC01079D
-~~~~~~~~~
+---------
 
 HHC01079D is not yet documented
 
@@ -6672,7 +6595,7 @@ Severity …
 Action …
 
 HHC01080D
-~~~~~~~~~
+---------
 
 HHC01080D is not yet documented
 
@@ -6683,7 +6606,7 @@ Severity …
 Action …
 
 HHC01081D
-~~~~~~~~~
+---------
 
 HHC01081D is not yet documented
 
@@ -6694,7 +6617,7 @@ Severity …
 Action …
 
 HHC01082D
-~~~~~~~~~
+---------
 
 HHC01082D is not yet documented
 
@@ -6705,7 +6628,7 @@ Severity …
 Action …
 
 HHC01083D
-~~~~~~~~~
+---------
 
 HHC01083D is not yet documented
 
@@ -6716,7 +6639,7 @@ Severity …
 Action …
 
 HHC01084D
-~~~~~~~~~
+---------
 
 HHC01084D is not yet documented
 
@@ -6727,7 +6650,7 @@ Severity …
 Action …
 
 HHC01090D
-~~~~~~~~~
+---------
 
 HHC01090D is not yet documented
 
@@ -6738,7 +6661,7 @@ Severity …
 Action …
 
 HHC01091D
-~~~~~~~~~
+---------
 
 HHC01091D is not yet documented
 
@@ -6752,7 +6675,7 @@ Action …
 ------------------------------------------------------
 
 HHC01100I
-~~~~~~~~~
+---------
 
 HHC01100I is not yet documented
 
@@ -6763,7 +6686,7 @@ Severity …
 Action …
 
 HHC01101E
-~~~~~~~~~
+---------
 
 HHC01101E is not yet documented
 
@@ -6774,7 +6697,7 @@ Severity …
 Action …
 
 HHC01102E
-~~~~~~~~~
+---------
 
 HHC01102E is not yet documented
 
@@ -6785,7 +6708,7 @@ Severity …
 Action …
 
 HHC01103E
-~~~~~~~~~
+---------
 
 HHC01103E is not yet documented
 
@@ -6796,7 +6719,7 @@ Severity …
 Action …
 
 HHC01104E
-~~~~~~~~~
+---------
 
 HHC01104E is not yet documented
 
@@ -6807,7 +6730,7 @@ Severity …
 Action …
 
 HHC01105E
-~~~~~~~~~
+---------
 
 HHC01105E is not yet documented
 
@@ -6818,7 +6741,7 @@ Severity …
 Action …
 
 HHC01106I
-~~~~~~~~~
+---------
 
 HHC01106I is not yet documented
 
@@ -6829,7 +6752,7 @@ Severity …
 Action …
 
 HHC01107I
-~~~~~~~~~
+---------
 
 HHC01107I is not yet documented
 
@@ -6840,7 +6763,7 @@ Severity …
 Action …
 
 HHC01108E
-~~~~~~~~~
+---------
 
 HHC01108E is not yet documented
 
@@ -6854,7 +6777,7 @@ Action …
 -----------------------------------------------------------------------
 
 HHC01200E
-~~~~~~~~~
+---------
 
 HHC01200E is not yet documented
 
@@ -6865,7 +6788,7 @@ Severity …
 Action …
 
 HHC01201E
-~~~~~~~~~
+---------
 
 HHC01201E is not yet documented
 
@@ -6876,7 +6799,7 @@ Severity …
 Action …
 
 HHC01202E
-~~~~~~~~~
+---------
 
 HHC01202E is not yet documented
 
@@ -6887,7 +6810,7 @@ Severity …
 Action …
 
 HHC01203E
-~~~~~~~~~
+---------
 
 HHC01203E is not yet documented
 
@@ -6898,7 +6821,7 @@ Severity …
 Action …
 
 HHC01204I
-~~~~~~~~~
+---------
 
 HHC01204I is not yet documented
 
@@ -6909,7 +6832,7 @@ Severity …
 Action …
 
 HHC01205W
-~~~~~~~~~
+---------
 
 HHC01205W is not yet documented
 
@@ -6920,7 +6843,7 @@ Severity …
 Action …
 
 HHC01206I
-~~~~~~~~~
+---------
 
 HHC01206I is not yet documented
 
@@ -6931,7 +6854,7 @@ Severity …
 Action …
 
 HHC01207E
-~~~~~~~~~
+---------
 
 HHC01207E is not yet documented
 
@@ -6942,7 +6865,7 @@ Severity …
 Action …
 
 HHC01208E
-~~~~~~~~~
+---------
 
 HHC01208E is not yet documented
 
@@ -6953,7 +6876,7 @@ Severity …
 Action …
 
 HHC01209E
-~~~~~~~~~
+---------
 
 HHC01209E is not yet documented
 
@@ -6967,7 +6890,7 @@ Action …
 -------------------------------------------------------------------------
 
 HHC0 1300 I
-~~~~~~~~~~~
+---------~~
 
 HHC01300I is not yet documented
 
@@ -6978,7 +6901,7 @@ Severity …
 Action …
 
 HHC01301I
-~~~~~~~~~
+---------
 
 HHC01301I is not yet documented
 
@@ -6989,7 +6912,7 @@ Severity …
 Action …
 
 HHC01302I
-~~~~~~~~~
+---------
 
 HHC01302I is not yet documented
 
@@ -7000,7 +6923,7 @@ Severity …
 Action …
 
 HHC01303I
-~~~~~~~~~
+---------
 
 HHC01303I is not yet documented
 
@@ -7011,7 +6934,7 @@ Severity …
 Action …
 
 HHC01304I
-~~~~~~~~~
+---------
 
 HHC01304I is not yet documented
 
@@ -7022,7 +6945,7 @@ Severity …
 Action …
 
 HHC01305I
-~~~~~~~~~
+---------
 
 HHC01305I is not yet documented
 
@@ -7033,7 +6956,7 @@ Severity …
 Action …
 
 HHC01306I
-~~~~~~~~~
+---------
 
 HHC01306I is not yet documented
 
@@ -7044,7 +6967,7 @@ Severity …
 Action …
 
 HHC01307I
-~~~~~~~~~
+---------
 
 HHC01307I is not yet documented
 
@@ -7055,7 +6978,7 @@ Severity …
 Action …
 
 HHC01308I
-~~~~~~~~~
+---------
 
 HHC01308I is not yet documented
 
@@ -7066,7 +6989,7 @@ Severity …
 Action …
 
 HHC01309I
-~~~~~~~~~
+---------
 
 HHC01300I is not yet documented
 
@@ -7077,7 +7000,7 @@ Severity …
 Action …
 
 HHC01310I
-~~~~~~~~~
+---------
 
 HHC01310I is not yet documented
 
@@ -7088,7 +7011,7 @@ Severity …
 Action …
 
 HHC01311I
-~~~~~~~~~
+---------
 
 HHC01311I is not yet documented
 
@@ -7099,7 +7022,7 @@ Severity …
 Action …
 
 HHC01312I
-~~~~~~~~~
+---------
 
 HHC01312I is not yet documented
 
@@ -7110,7 +7033,7 @@ Severity …
 Action …
 
 HHC01313I
-~~~~~~~~~
+---------
 
 HHC01313I is not yet documented
 
@@ -7121,7 +7044,7 @@ Severity …
 Action …
 
 HHC01314I
-~~~~~~~~~
+---------
 
 HHC01314I is not yet documented
 
@@ -7132,7 +7055,7 @@ Severity …
 Action …
 
 HHC01315I
-~~~~~~~~~
+---------
 
 HHC01315I is not yet documented
 
@@ -7143,7 +7066,7 @@ Severity …
 Action …
 
 HHC01316I
-~~~~~~~~~
+---------
 
 HHC01316I is not yet documented
 
@@ -7154,7 +7077,7 @@ Severity …
 Action …
 
 HHC01317I
-~~~~~~~~~
+---------
 
 HHC01317I is not yet documented
 
@@ -7165,7 +7088,7 @@ Severity …
 Action …
 
 HHC01318I
-~~~~~~~~~
+---------
 
 HHC01318I is not yet documented
 
@@ -7176,7 +7099,7 @@ Severity …
 Action …
 
 HHC01319I
-~~~~~~~~~
+---------
 
 HHC01319I is not yet documented
 
@@ -7187,7 +7110,7 @@ Severity …
 Action …
 
 HHC01329I
-~~~~~~~~~
+---------
 
 HHC01329I is not yet documented
 
@@ -7198,7 +7121,7 @@ Severity …
 Action …
 
 HHC01330I
-~~~~~~~~~
+---------
 
 HHC01330I is not yet documented
 
@@ -7209,7 +7132,7 @@ Severity …
 Action …
 
 HHC01332I
-~~~~~~~~~
+---------
 
 HHC01332I is not yet documented
 
@@ -7220,7 +7143,7 @@ Severity …
 Action …
 
 HHC01333I
-~~~~~~~~~
+---------
 
 HHC01333I is not yet documented
 
@@ -7231,7 +7154,7 @@ Severity …
 Action …
 
 HHC01334I
-~~~~~~~~~
+---------
 
 HHC01334I is not yet documented
 
@@ -7242,7 +7165,7 @@ Severity …
 Action …
 
 HHC01335I
-~~~~~~~~~
+---------
 
 HHC01335I is not yet documented
 
@@ -7253,7 +7176,7 @@ Severity …
 Action …
 
 HHC01350E
-~~~~~~~~~
+---------
 
 HHC01350E is not yet documented
 
@@ -7264,7 +7187,7 @@ Severity …
 Action …
 
 HHC01351E
-~~~~~~~~~
+---------
 
 HHC01351E is not yet documented
 
@@ -7275,7 +7198,7 @@ Severity …
 Action …
 
 HHC01352T
-~~~~~~~~~
+---------
 
 HHC01352T is not yet documented
 
@@ -7286,7 +7209,7 @@ Severity …
 Action …
 
 HHC01353W
-~~~~~~~~~
+---------
 
 HHC01353W is not yet documented
 
@@ -7300,7 +7223,7 @@ Action …
 -------------------------------------------------------------------------
 
 HHC01400I
-~~~~~~~~~
+---------
 
 HHC01400I is not yet documented
 
@@ -7311,7 +7234,7 @@ Severity …
 Action …
 
 HHC01401I
-~~~~~~~~~
+---------
 
 HHC01401I is not yet documented
 
@@ -7322,7 +7245,7 @@ Severity …
 Action …
 
 HHC01402I
-~~~~~~~~~
+---------
 
 HHC01402I is not yet documented
 
@@ -7333,7 +7256,7 @@ Severity …
 Action …
 
 HHC01403W
-~~~~~~~~~
+---------
 
 HHC01403W is not yet documented
 
@@ -7344,7 +7267,7 @@ Severity …
 Action …
 
 HHC01404S
-~~~~~~~~~
+---------
 
 HHC01404S is not yet documented
 
@@ -7355,7 +7278,7 @@ Severity …
 Action …
 
 HHC01405E
-~~~~~~~~~
+---------
 
 HHC01405E is not yet documented
 
@@ -7366,7 +7289,7 @@ Severity …
 Action …
 
 HHC01406W
-~~~~~~~~~
+---------
 
 HHC01406W is not yet documented
 
@@ -7377,7 +7300,7 @@ Severity …
 Action …
 
 HHC01407S
-~~~~~~~~~
+---------
 
 HHC01407S is not yet documented
 
@@ -7388,7 +7311,7 @@ Severity …
 Action …
 
 HHC01408S
-~~~~~~~~~
+---------
 
 HHC01408S is not yet documented
 
@@ -7399,7 +7322,7 @@ Severity …
 Action …
 
 HHC01409S
-~~~~~~~~~
+---------
 
 HHC01409S is not yet documented
 
@@ -7410,7 +7333,7 @@ Severity …
 Action …
 
 HHC01410S
-~~~~~~~~~
+---------
 
 HHC01410S is not yet documented
 
@@ -7421,7 +7344,7 @@ Severity …
 Action …
 
 HHC01411E
-~~~~~~~~~
+---------
 
 HHC01411E is not yet documented
 
@@ -7432,7 +7355,7 @@ Severity …
 Action …
 
 HHC01412I
-~~~~~~~~~
+---------
 
 HHC01412I Hercules terminated
 
@@ -7446,7 +7369,7 @@ Action
 None.
 
 HHC01413I
-~~~~~~~~~
+---------
 
 HHC01413I Hercules version v.rr.m HHC01413I Hercules version v.rr.m-git
 -xxxx-xxxxxxxx
@@ -7462,7 +7385,7 @@ Severity Information.
 Action None.
 
 HHC01414I
-~~~~~~~~~
+---------
 
 HHC01414I (c) Copyright 1999-yyyy by Roger Bowler, Jan Jaeger, and
 others
@@ -7475,7 +7398,7 @@ Severity Information.
 Action None.
 
 HHC01415I
-~~~~~~~~~
+---------
 
 HHC01415I Built on Mon dd yyyy at hh:mm:ss
 
@@ -7490,7 +7413,7 @@ Action
 None.
 
 HHC01416I
-~~~~~~~~~
+---------
 
 HHC01416I Build information:
 
@@ -7503,7 +7426,7 @@ Severity Information.
 Action None.
 
 HHC01417I
-~~~~~~~~~
+---------
 
 HHC01417I is not yet documented
 
@@ -7514,7 +7437,7 @@ Severity …
 Action …
 
 HHC01418E
-~~~~~~~~~
+---------
 
 HHC01418E is not yet documented
 
@@ -7525,7 +7448,7 @@ Severity …
 Action …
 
 HHC01419E
-~~~~~~~~~
+---------
 
 HHC01419E is not yet documented
 
@@ -7536,7 +7459,7 @@ Severity …
 Action …
 
 HHC01420I
-~~~~~~~~~
+---------
 
 HHC01420I Begin Hercules shutdown
 
@@ -7548,7 +7471,7 @@ Severity Information.
 Action None.
 
 HHC01422I
-~~~~~~~~~
+---------
 
 HHC01422I Configuration released
 
@@ -7560,7 +7483,7 @@ Severity Information.
 Action None.
 
 HHC01423I
-~~~~~~~~~
+---------
 
 HHC01423I Calling termination routines
 
@@ -7572,7 +7495,7 @@ Severity Information.
 Action None.
 
 HHC01424I
-~~~~~~~~~
+---------
 
 HHC01424I All termination routines complete
 
@@ -7584,7 +7507,7 @@ Severity Information.
 Action None.
 
 HHC01425I
-~~~~~~~~~
+---------
 
 HHC01425I Hercules shutdown complete
 
@@ -7595,7 +7518,7 @@ Severity Information.
 Action None.
 
 HHC01426I
-~~~~~~~~~
+---------
 
 HHC01426I Shutdown initiated
 
@@ -7607,7 +7530,7 @@ Severity Information.
 Action None.
 
 HHC01427I
-~~~~~~~~~
+---------
 
 HHC01427I type storage released
 
@@ -7619,7 +7542,7 @@ Severity Information.
 Action None.
 
 HHC01430S
-~~~~~~~~~
+---------
 
 HHC01430S is not yet documented
 
@@ -7630,7 +7553,7 @@ Severity …
 Action …
 
 HHC01431I
-~~~~~~~~~
+---------
 
 HHC01431I is not yet documented
 
@@ -7641,7 +7564,7 @@ Severity …
 Action …
 
 HHC01432S
-~~~~~~~~~
+---------
 
 HHC01432S is not yet documented
 
@@ -7652,7 +7575,7 @@ Severity …
 Action …
 
 HHC01433S
-~~~~~~~~~
+---------
 
 HHC01433S is not yet documented
 
@@ -7663,7 +7586,7 @@ Severity …
 Action …
 
 HHC01435I
-~~~~~~~~~
+---------
 
 HHC01435I is not yet documented
 
@@ -7674,7 +7597,7 @@ Severity …
 Action …
 
 HHC01436S
-~~~~~~~~~
+---------
 
 HHC01436S is not yet documented
 
@@ -7685,7 +7608,7 @@ Severity …
 Action …
 
 HHC01437I
-~~~~~~~~~
+---------
 
 HHC01437I is not yet documented
 
@@ -7696,7 +7619,7 @@ Severity …
 Action …
 
 HHC01438W
-~~~~~~~~~
+---------
 
 HHC01438W is not yet documented
 
@@ -7707,7 +7630,7 @@ Severity …
 Action …
 
 HHC01439S
-~~~~~~~~~
+---------
 
 HHC0 1439 S is not yet documented
 
@@ -7718,7 +7641,7 @@ Severity …
 Action …
 
 HHC01441E
-~~~~~~~~~
+---------
 
 HHC0 14 41E is not yet documented
 
@@ -7729,7 +7652,7 @@ Severity …
 Action …
 
 HHC01443S
-~~~~~~~~~
+---------
 
 HHC0 14 43S is not yet documented
 
@@ -7740,7 +7663,7 @@ Severity …
 Action …
 
 HHC01447I
-~~~~~~~~~
+---------
 
 HHC01447I is not yet documented
 
@@ -7751,7 +7674,7 @@ Severity …
 Action …
 
 HHC01448S
-~~~~~~~~~
+---------
 
 HHC01448S is not yet documented
 
@@ -7762,7 +7685,7 @@ Severity …
 Action …
 
 HHC01451E
-~~~~~~~~~
+---------
 
 HHC01451E is not yet documented
 
@@ -7773,7 +7696,7 @@ Severity …
 Action …
 
 HHC01452W
-~~~~~~~~~
+---------
 
 HHC01452W is not yet documented
 
@@ -7784,7 +7707,7 @@ Severity …
 Action …
 
 HHC01453S
-~~~~~~~~~
+---------
 
 HHC01453S is not yet documented
 
@@ -7795,7 +7718,7 @@ Severity …
 Action …
 
 HHC01454S
-~~~~~~~~~
+---------
 
 HHC01454S is not yet documented
 
@@ -7806,7 +7729,7 @@ Severity …
 Action …
 
 HHC01455E
-~~~~~~~~~
+---------
 
 HHC01455E is not yet documented
 
@@ -7817,7 +7740,7 @@ Severity …
 Action …
 
 HHC01456E
-~~~~~~~~~
+---------
 
 HHC01456E is not yet documented
 
@@ -7828,7 +7751,7 @@ Severity …
 Action …
 
 HHC01457E
-~~~~~~~~~
+---------
 
 HHC01457E is not yet documented
 
@@ -7839,7 +7762,7 @@ Severity …
 Action …
 
 HHC01458W
-~~~~~~~~~
+---------
 
 HHC01458W is not yet documented
 
@@ -7850,7 +7773,7 @@ Severity …
 Action …
 
 HHC01459I
-~~~~~~~~~
+---------
 
 HHC01459I is not yet documented
 
@@ -7861,7 +7784,7 @@ Severity …
 Action …
 
 HHC01460E
-~~~~~~~~~
+---------
 
 HHC01460E is not yet documented
 
@@ -7872,7 +7795,7 @@ Severity …
 Action …
 
 HHC01461E
-~~~~~~~~~
+---------
 
 HHC01461E is not yet documented
 
@@ -7883,7 +7806,7 @@ Severity …
 Action …
 
 HHC01462E
-~~~~~~~~~
+---------
 
 HHC01462E is not yet documented
 
@@ -7894,7 +7817,7 @@ Severity …
 Action …
 
 HHC01463E
-~~~~~~~~~
+---------
 
 HHC01463E is not yet documented
 
@@ -7905,7 +7828,7 @@ Severity …
 Action …
 
 HHC01464E
-~~~~~~~~~
+---------
 
 HHC01464E is not yet documented
 
@@ -7916,7 +7839,7 @@ Severity …
 Action …
 
 HHC01465I
-~~~~~~~~~
+---------
 
 HHC01465I is not yet documented
 
@@ -7927,7 +7850,7 @@ Severity …
 Action …
 
 HHC01466E
-~~~~~~~~~
+---------
 
 HHC01466E is not yet documented
 
@@ -7938,7 +7861,7 @@ Severity …
 Action …
 
 HHC01467E
-~~~~~~~~~
+---------
 
 HHC01467E is not yet documented
 
@@ -7949,7 +7872,7 @@ Severity …
 Action …
 
 HHC01468E
-~~~~~~~~~
+---------
 
 HHC01468E is not yet documented
 
@@ -7960,7 +7883,7 @@ Severity …
 Action …
 
 HHC01469E
-~~~~~~~~~
+---------
 
 HHC01469E is not yet documented
 
@@ -7971,7 +7894,7 @@ Severity …
 Action …
 
 HHC01470E
-~~~~~~~~~
+---------
 
 HHC01470E is not yet documented
 
@@ -7982,7 +7905,7 @@ Severity …
 Action …
 
 HHC01471E
-~~~~~~~~~
+---------
 
 HHC01471E is not yet documented
 
@@ -7993,7 +7916,7 @@ Severity …
 Action …
 
 HHC01472E
-~~~~~~~~~
+---------
 
 HHC01472E is not yet documented
 
@@ -8004,7 +7927,7 @@ Severity …
 Action …
 
 HHC01473E
-~~~~~~~~~
+---------
 
 HHC01473E is not yet documented
 
@@ -8015,7 +7938,7 @@ Severity …
 Action …
 
 HHC01474I
-~~~~~~~~~
+---------
 
 HHC01474I is not yet documented
 
@@ -8026,7 +7949,7 @@ Severity …
 Action …
 
 HHC01475E
-~~~~~~~~~
+---------
 
 HHC01475E is not yet documented
 
@@ -8037,7 +7960,7 @@ Severity …
 Action …
 
 HHC01476I
-~~~~~~~~~
+---------
 
 HHC01476I is not yet documented
 
@@ -8048,7 +7971,7 @@ Severity …
 Action …
 
 HHC01477W
-~~~~~~~~~
+---------
 
 HHC01477W is not yet documented
 
@@ -8059,7 +7982,7 @@ Severity …
 Action …
 
 HHC01478I
-~~~~~~~~~
+---------
 
 HHC01478I is not yet documented
 
@@ -8070,7 +7993,7 @@ Severity …
 Action …
 
 HHC01479I
-~~~~~~~~~
+---------
 
 HHC01479I is not yet documented
 
@@ -8081,7 +8004,7 @@ Severity …
 Action …
 
 HHC01480E
-~~~~~~~~~
+---------
 
 HHC0 14 80E is not yet documented
 
@@ -8092,7 +8015,7 @@ Severity …
 Action …
 
 HHC01481I
-~~~~~~~~~
+---------
 
 HHC01481I is not yet documented
 
@@ -8103,7 +8026,7 @@ Severity …
 Action …
 
 HHC01482I
-~~~~~~~~~
+---------
 
 HHC01482I is not yet documented
 
@@ -8114,7 +8037,7 @@ Severity …
 Action …
 
 HHC01483E
-~~~~~~~~~
+---------
 
 HHC01483E is not yet documented
 
@@ -8125,7 +8048,7 @@ Severity …
 Action …
 
 HHC01484I
-~~~~~~~~~
+---------
 
 HHC01484I is not yet documented
 
@@ -8136,7 +8059,7 @@ Severity …
 Action …
 
 HHC01485I
-~~~~~~~~~
+---------
 
 HHC01485I is not yet documented
 
@@ -8147,7 +8070,7 @@ Severity …
 Action …
 
 HHC01486I
-~~~~~~~~~
+---------
 
 HHC01486I is not yet documented
 
@@ -8158,7 +8081,7 @@ Severity …
 Action …
 
 HHC01487I
-~~~~~~~~~
+---------
 
 HHC01487I is not yet documented
 
@@ -8169,7 +8092,7 @@ Severity …
 Action …
 
 HHC01488I
-~~~~~~~~~
+---------
 
 HHC01488I is not yet documented
 
@@ -8180,7 +8103,7 @@ Severity …
 Action …
 
 HHC01489E
-~~~~~~~~~
+---------
 
 HHC01489E is not yet documented
 
@@ -8191,7 +8114,7 @@ Severity …
 Action …
 
 HHC01490I
-~~~~~~~~~
+---------
 
 HHC01490I is not yet documented
 
@@ -8202,7 +8125,7 @@ Severity …
 Action …
 
 HHC01491I
-~~~~~~~~~
+---------
 
 HHC01491I is not yet documented
 
@@ -8213,7 +8136,7 @@ Severity …
 Action …
 
 HHC01492I
-~~~~~~~~~
+---------
 
 HHC01492I is not yet documented
 
@@ -8224,7 +8147,7 @@ Severity …
 Action …
 
 HHC01493I
-~~~~~~~~~
+---------
 
 HHC01493I is not yet documented
 
@@ -8238,7 +8161,7 @@ Action …
 ---------------------------------------------------
 
 HHC01500I
-~~~~~~~~~
+---------
 
 HHC01500I is not yet documented
 
@@ -8249,7 +8172,7 @@ Severity …
 Action …
 
 HHC01501I
-~~~~~~~~~
+---------
 
 HHC01501I is not yet documented
 
@@ -8260,7 +8183,7 @@ Severity …
 Action …
 
 HHC01502I
-~~~~~~~~~
+---------
 
 HHC01502I is not yet documented
 
@@ -8271,7 +8194,7 @@ Severity …
 Action …
 
 HHC01504I
-~~~~~~~~~
+---------
 
 HHC01504I is not yet documented
 
@@ -8282,7 +8205,7 @@ Severity …
 Action …
 
 HHC01505E
-~~~~~~~~~
+---------
 
 HHC01505E is not yet documented
 
@@ -8293,7 +8216,7 @@ Severity …
 Action …
 
 HHC01506W
-~~~~~~~~~
+---------
 
 HHC01506W is not yet documented
 
@@ -8304,7 +8227,7 @@ Severity …
 Action …
 
 HHC01507W
-~~~~~~~~~
+---------
 
 HHC01507W is not yet documented
 
@@ -8315,7 +8238,7 @@ Severity …
 Action …
 
 HHC01508I
-~~~~~~~~~
+---------
 
 HHC01508I is not yet documented
 
@@ -8326,7 +8249,7 @@ Severity …
 Action …
 
 HHC01509I
-~~~~~~~~~
+---------
 
 HHC01509I is not yet documented
 
@@ -8337,7 +8260,7 @@ Severity …
 Action …
 
 HHC01510I
-~~~~~~~~~
+---------
 
 HHC01510I is not yet documented
 
@@ -8348,7 +8271,7 @@ Severity …
 Action …
 
 HHC01511S
-~~~~~~~~~
+---------
 
 HHC01511S is not yet documented
 
@@ -8359,7 +8282,7 @@ Severity …
 Action …
 
 HHC01512I
-~~~~~~~~~
+---------
 
 HHC01512I is not yet documented
 
@@ -8370,7 +8293,7 @@ Severity …
 Action …
 
 HHC01513I
-~~~~~~~~~
+---------
 
 HHC01513I is not yet documented
 
@@ -8381,7 +8304,7 @@ Severity …
 Action …
 
 HHC01514I
-~~~~~~~~~
+---------
 
 HHC01514I is not yet documented
 
@@ -8392,7 +8315,7 @@ Severity …
 Action …
 
 HHC01515I
-~~~~~~~~~
+---------
 
 HHC01515I is not yet documented
 
@@ -8403,7 +8326,7 @@ Severity …
 Action …
 
 HHC01516E
-~~~~~~~~~
+---------
 
 HHC01516E is not yet documented
 
@@ -8414,7 +8337,7 @@ Severity …
 Action …
 
 HHC01517E
-~~~~~~~~~
+---------
 
 HHC01517E is not yet documented
 
@@ -8425,7 +8348,7 @@ Severity …
 Action …
 
 HHC01518E
-~~~~~~~~~
+---------
 
 HHC0 15 18E is not yet documented
 
@@ -8436,7 +8359,7 @@ Severity …
 Action …
 
 HHC01519E
-~~~~~~~~~
+---------
 
 HHC01519E is not yet documented
 
@@ -8447,7 +8370,7 @@ Severity …
 Action …
 
 HHC01520E
-~~~~~~~~~
+---------
 
 HHC01520E is not yet documented
 
@@ -8458,7 +8381,7 @@ Severity …
 Action …
 
 HHC01521E
-~~~~~~~~~
+---------
 
 HHC01521E is not yet documented
 
@@ -8469,7 +8392,7 @@ Severity …
 Action …
 
 HHC01522E
-~~~~~~~~~
+---------
 
 HHC01522E is not yet documented
 
@@ -8480,7 +8403,7 @@ Severity …
 Action …
 
 HHC01523E
-~~~~~~~~~
+---------
 
 HHC0 1523 E is not yet documented
 
@@ -8491,7 +8414,7 @@ Severity …
 Action …
 
 HHC01524E
-~~~~~~~~~
+---------
 
 HHC01524E is not yet documented
 
@@ -8502,7 +8425,7 @@ Severity …
 Action …
 
 HHC01525E
-~~~~~~~~~
+---------
 
 HHC01525E is not yet documented
 
@@ -8513,7 +8436,7 @@ Severity …
 Action …
 
 HHC01526I
-~~~~~~~~~
+---------
 
 HHC01526I is not yet documented
 
@@ -8524,7 +8447,7 @@ Severity …
 Action …
 
 HHC01527I
-~~~~~~~~~
+---------
 
 HHC01527I is not yet documented
 
@@ -8535,7 +8458,7 @@ Severity …
 Action …
 
 HHC01528I
-~~~~~~~~~
+---------
 
 HHC01528I is not yet documented
 
@@ -8546,7 +8469,7 @@ Severity …
 Action …
 
 HHC01529I
-~~~~~~~~~
+---------
 
 HHC01529I is not yet documented
 
@@ -8557,7 +8480,7 @@ Severity …
 Action …
 
 HHC01530E
-~~~~~~~~~
+---------
 
 HHC01530E is not yet documented
 
@@ -8568,7 +8491,7 @@ Severity …
 Action …
 
 HHC01531I
-~~~~~~~~~
+---------
 
 HHC01531I is not yet documented
 
@@ -8579,7 +8502,7 @@ Severity …
 Action …
 
 HHC01532I
-~~~~~~~~~
+---------
 
 HHC01532I is not yet documented
 
@@ -8590,7 +8513,7 @@ Severity …
 Action …
 
 HHC01533I
-~~~~~~~~~
+---------
 
 HHC01533I is not yet documented
 
@@ -8601,7 +8524,7 @@ Severity …
 Action …
 
 HHC01534I
-~~~~~~~~~
+---------
 
 HHC01534I is not yet documented
 
@@ -8612,7 +8535,7 @@ Severity …
 Action …
 
 HHC01535I
-~~~~~~~~~
+---------
 
 HHC01535I is not yet documented
 
@@ -8623,7 +8546,7 @@ Severity …
 Action …
 
 HHC01540E
-~~~~~~~~~
+---------
 
 HHC01540E is not yet documented
 
@@ -8634,7 +8557,7 @@ Severity …
 Action …
 
 HHC01541I
-~~~~~~~~~
+---------
 
 HHC01541I HDL: dyngui.dll initiated
 
@@ -8646,7 +8569,7 @@ Severity Information.
 Action None. This is an informational message.
 
 HHC01542I
-~~~~~~~~~
+---------
 
 HHC01542I HDL: dyngui.dll terminated
 
@@ -8660,7 +8583,7 @@ Action None. This is an informational message.
 --------------------------------------------------------
 
 HHC01600E
-~~~~~~~~~
+---------
 
 HHC01600E is not yet documented
 
@@ -8671,7 +8594,7 @@ Severity …
 Action …
 
 HHC01602I
-~~~~~~~~~
+---------
 
 HHC01602I is not yet documented
 
@@ -8682,7 +8605,7 @@ Severity …
 Action …
 
 HHC01603I
-~~~~~~~~~
+---------
 
 HHC01603I cmd
 
@@ -8694,7 +8617,7 @@ Severity Information.
 Action None. This is an informational message.
 
 HHC01604I
-~~~~~~~~~
+---------
 
 HHC01604I is not yet documented
 
@@ -8705,7 +8628,7 @@ Severity …
 Action …
 
 HHC01605E
-~~~~~~~~~
+---------
 
 HHC01605E is not yet documented
 
@@ -8716,7 +8639,7 @@ Severity …
 Action …
 
 HHC01606I
-~~~~~~~~~
+---------
 
 HHC01606I is not yet documented
 
@@ -8727,7 +8650,7 @@ Severity …
 Action …
 
 HHC01607I
-~~~~~~~~~
+---------
 
 HHC01607I is not yet documented
 
@@ -8738,7 +8661,7 @@ Severity …
 Action …
 
 HHC01608W
-~~~~~~~~~
+---------
 
 HHC01608W is not yet documented
 
@@ -8749,7 +8672,7 @@ Severity …
 Action …
 
 HHC01609E
-~~~~~~~~~
+---------
 
 HHC01609E is not yet documented
 
@@ -8760,7 +8683,7 @@ Severity …
 Action …
 
 HHC01610I
-~~~~~~~~~
+---------
 
 HHC01610I is not yet documented
 
@@ -8774,7 +8697,7 @@ Action …
 -----------------------------------------------------------------------
 
 HHC01700W
-~~~~~~~~~
+---------
 
 HHC01700W is not yet documented
 
@@ -8785,7 +8708,7 @@ Severity …
 Action …
 
 HHC01701I
-~~~~~~~~~
+---------
 
 HHC01701I is not yet documented
 
@@ -8796,7 +8719,7 @@ Severity …
 Action …
 
 HHC01702I
-~~~~~~~~~
+---------
 
 HHC01702I is not yet documented
 
@@ -8807,7 +8730,7 @@ Severity …
 Action …
 
 HHC01703I
-~~~~~~~~~
+---------
 
 HHC01703I is not yet documented
 
@@ -8818,7 +8741,7 @@ Severity …
 Action …
 
 HHC01704I
-~~~~~~~~~
+---------
 
 HHC01704I is not yet documented
 
@@ -8829,7 +8752,7 @@ Severity …
 Action …
 
 HHC01705I
-~~~~~~~~~
+---------
 
 HHC01705I is not yet documented
 
@@ -8840,7 +8763,7 @@ Severity …
 Action …
 
 HHC01706I
-~~~~~~~~~
+---------
 
 HHC01706I is not yet documented
 
@@ -8851,7 +8774,7 @@ Severity …
 Action …
 
 HHC01707I
-~~~~~~~~~
+---------
 
 HHC01707I ECPS:VM {VM \| CP} ASSIST feature xxxxxxxx {Disabled \|
 Enabled}
@@ -8864,7 +8787,7 @@ Severity Information.
 Action None. This is an informational message.
 
 HHC01708I
-~~~~~~~~~
+---------
 
 HHC01708I All ECPS:VM {VM \| CP} ASSIST features {Disabled \| Enabled}
 
@@ -8876,7 +8799,7 @@ Severity Information.
 Action None. This is an informational message.
 
 HHC01709I
-~~~~~~~~~
+---------
 
 HHC01709I is not yet documented
 
@@ -8887,7 +8810,7 @@ Severity …
 Action …
 
 HHC01710I
-~~~~~~~~~
+---------
 
 HHC01710I is not yet documented
 
@@ -8898,7 +8821,7 @@ Severity …
 Action …
 
 HHC01711I
-~~~~~~~~~
+---------
 
 HHC01711I is not yet documented
 
@@ -8909,7 +8832,7 @@ Severity …
 Action …
 
 HHC01712I
-~~~~~~~~~
+---------
 
 HHC01712I is not yet documented
 
@@ -8920,7 +8843,7 @@ Severity …
 Action …
 
 HHC01713I
-~~~~~~~~~
+---------
 
 HHC01713I is not yet documented
 
@@ -8931,7 +8854,7 @@ Severity …
 Action …
 
 HHC01714I
-~~~~~~~~~
+---------
 
 HHC01714I is not yet documented
 
@@ -8942,7 +8865,7 @@ Severity …
 Action …
 
 HHC01715W
-~~~~~~~~~
+---------
 
 HHC01715W is not yet documented
 
@@ -8953,7 +8876,7 @@ Severity …
 Action …
 
 HHC01716I
-~~~~~~~~~
+---------
 
 HHC01716I is not yet documented
 
@@ -8964,7 +8887,7 @@ Severity …
 Action …
 
 HHC01717I
-~~~~~~~~~
+---------
 
 HHC01717I is not yet documented
 
@@ -8975,7 +8898,7 @@ Severity …
 Action …
 
 HHC01718E
-~~~~~~~~~
+---------
 
 HHC01718E is not yet documented
 
@@ -8986,7 +8909,7 @@ Severity …
 Action …
 
 HHC01719I
-~~~~~~~~~
+---------
 
 HHC01719I ECPS:VM Command processor invoked
 
@@ -8997,7 +8920,7 @@ Severity Information.
 Action None. This is an informational message.
 
 HHC01720E
-~~~~~~~~~
+---------
 
 HHC01720E is not yet documented
 
@@ -9008,7 +8931,7 @@ Severity …
 Action …
 
 HHC01721E
-~~~~~~~~~
+---------
 
 HHC01721E is not yet documented
 
@@ -9019,7 +8942,7 @@ Severity …
 Action …
 
 HHC01722I
-~~~~~~~~~
+---------
 
 HHC01722I ECPS:VM Command processor complete
 
@@ -9030,7 +8953,7 @@ Severity Information.
 Action None. This is an informational message.
 
 HHC01723W
-~~~~~~~~~
+---------
 
 HHC01723W is not yet documented
 
@@ -9044,7 +8967,7 @@ Action …
 ------------------------------------------------
 
 HHC01800E
-~~~~~~~~~
+---------
 
 HHC01800E is not yet documented
 
@@ -9055,7 +8978,7 @@ Severity …
 Action …
 
 HHC01801E
-~~~~~~~~~
+---------
 
 HHC01801E is not yet documented
 
@@ -9066,7 +8989,7 @@ Severity …
 Action …
 
 HHC01802I
-~~~~~~~~~
+---------
 
 HHC01802I HTTP server using root directory path
 
@@ -9078,7 +9001,7 @@ Severity Information.
 Action None. This is an informational message.
 
 HHC01803I
-~~~~~~~~~
+---------
 
 HHC01803I is not yet documented
 
@@ -9089,7 +9012,7 @@ Severity …
 Action …
 
 HHC01804W
-~~~~~~~~~
+---------
 
 HHC01804W is not yet documented
 
@@ -9100,7 +9023,7 @@ Severity …
 Action …
 
 HHC01805I
-~~~~~~~~~
+---------
 
 HHC01805I is not yet documented
 
@@ -9111,7 +9034,7 @@ Severity …
 Action …
 
 HHC01806W
-~~~~~~~~~
+---------
 
 HHC01806W is not yet documented
 
@@ -9122,7 +9045,7 @@ Severity …
 Action …
 
 HHC01807I
-~~~~~~~~~
+---------
 
 HHC01807I is not yet documented
 
@@ -9133,7 +9056,7 @@ Severity …
 Action …
 
 HHC01808I
-~~~~~~~~~
+---------
 
 HHC01808I is not yet documented
 
@@ -9144,7 +9067,7 @@ Severity …
 Action …
 
 HHC01809I
-~~~~~~~~~
+---------
 
 HHC01809I is not yet documented
 
@@ -9155,7 +9078,7 @@ Severity …
 Action …
 
 HHC01810I
-~~~~~~~~~
+---------
 
 HHC01810I is not yet documented
 
@@ -9166,7 +9089,7 @@ Severity …
 Action …
 
 HHC01811I
-~~~~~~~~~
+---------
 
 HHC01811I is not yet documented
 
@@ -9177,7 +9100,7 @@ Severity …
 Action …
 
 HHC01812E
-~~~~~~~~~
+---------
 
 HHC01812E is not yet documented
 
@@ -9188,7 +9111,7 @@ Severity …
 Action …
 
 HHC01814E
-~~~~~~~~~
+---------
 
 HHC01814E is not yet documented
 
@@ -9199,7 +9122,7 @@ Severity …
 Action …
 
 HHC01815E
-~~~~~~~~~
+---------
 
 HHC01815E is not yet documented
 
@@ -9213,7 +9136,7 @@ Action …
 ---------------------------------------------------
 
 HHC01900I
-~~~~~~~~~
+---------
 
 HHC0 19 00I is not yet documented
 
@@ -9224,7 +9147,7 @@ Severity …
 Action …
 
 HHC01901I
-~~~~~~~~~
+---------
 
 HHC01901I is not yet documented
 
@@ -9235,7 +9158,7 @@ Severity …
 Action …
 
 HHC01902I
-~~~~~~~~~
+---------
 
 HHC01902I is not yet documented
 
@@ -9246,7 +9169,7 @@ Severity …
 Action …
 
 HHC01905I
-~~~~~~~~~
+---------
 
 HHC01905I is not yet documented
 
@@ -9257,7 +9180,7 @@ Severity …
 Action …
 
 HHC01906I
-~~~~~~~~~
+---------
 
 HHC01906I is not yet documented
 
@@ -9268,7 +9191,7 @@ Severity …
 Action …
 
 HHC01907I
-~~~~~~~~~
+---------
 
 HHC01907I is not yet documented
 
@@ -9279,7 +9202,7 @@ Severity …
 Action …
 
 HHC01908E
-~~~~~~~~~
+---------
 
 HHC01908E is not yet documented
 
@@ -9290,7 +9213,7 @@ Severity …
 Action …
 
 HHC01909I
-~~~~~~~~~
+---------
 
 HHC01909I is not yet documented
 
@@ -9301,7 +9224,7 @@ Severity …
 Action …
 
 HHC01920I
-~~~~~~~~~
+---------
 
 HHC01920I is not yet documented
 
@@ -9312,7 +9235,7 @@ Severity …
 Action …
 
 HHC01921I
-~~~~~~~~~
+---------
 
 HHC01920I is not yet documented
 
@@ -9323,7 +9246,7 @@ Severity …
 Action …
 
 HHC01922I
-~~~~~~~~~
+---------
 
 HHC01922I is not yet documented
 
@@ -9334,7 +9257,7 @@ Severity …
 Action …
 
 HHC01923I
-~~~~~~~~~
+---------
 
 HHC01923I is not yet documented
 
@@ -9345,7 +9268,7 @@ Severity …
 Action …
 
 HHC01924I
-~~~~~~~~~
+---------
 
 HHC01924I is not yet documented
 
@@ -9356,7 +9279,7 @@ Severity …
 Action …
 
 HHC01925I
-~~~~~~~~~
+---------
 
 HHC01925I is not yet documented
 
@@ -9367,7 +9290,7 @@ Severity …
 Action …
 
 HHC01926I
-~~~~~~~~~
+---------
 
 HHC01926I is not yet documented
 
@@ -9378,7 +9301,7 @@ Severity …
 Action …
 
 HHC01927I
-~~~~~~~~~
+---------
 
 HHC01927I is not yet documented
 
@@ -9389,7 +9312,7 @@ Severity …
 Action …
 
 HHC01928I
-~~~~~~~~~
+---------
 
 HHC01928I is not yet documented
 
@@ -9400,7 +9323,7 @@ Severity …
 Action …
 
 HHC01929I
-~~~~~~~~~
+---------
 
 HHC01929I is not yet documented
 
@@ -9411,7 +9334,7 @@ Severity …
 Action …
 
 HHC01930I
-~~~~~~~~~
+---------
 
 HHC01930I is not yet documented
 
@@ -9422,7 +9345,7 @@ Severity …
 Action …
 
 HHC01931I
-~~~~~~~~~
+---------
 
 HHC01931I is not yet documented
 
@@ -9433,7 +9356,7 @@ Severity …
 Action …
 
 HHC01932I
-~~~~~~~~~
+---------
 
 HHC01932I is not yet documented
 
@@ -9444,7 +9367,7 @@ Severity …
 Action …
 
 HHC01933I
-~~~~~~~~~
+---------
 
 HHC01933I is not yet documented
 
@@ -9455,7 +9378,7 @@ Severity …
 Action …
 
 HHC01934I
-~~~~~~~~~
+---------
 
 HHC01934I is not yet documented
 
@@ -9466,7 +9389,7 @@ Severity …
 Action …
 
 HHC01935I
-~~~~~~~~~
+---------
 
 HHC01935I is not yet documented
 
@@ -9477,7 +9400,7 @@ Severity …
 Action …
 
 HHC01936I
-~~~~~~~~~
+---------
 
 HHC01936I is not yet documented
 
@@ -9488,7 +9411,7 @@ Severity …
 Action …
 
 HHC01937I
-~~~~~~~~~
+---------
 
 HHC01937I is not yet documented
 
@@ -9499,7 +9422,7 @@ Severity …
 Action …
 
 HHC01938E
-~~~~~~~~~
+---------
 
 HHC01938E is not yet documented
 
@@ -9510,7 +9433,7 @@ Severity …
 Action …
 
 HHC01939I
-~~~~~~~~~
+---------
 
 HHC01939I is not yet documented
 
@@ -9521,7 +9444,7 @@ Severity …
 Action …
 
 HHC01940I
-~~~~~~~~~
+---------
 
 HHC01940I is not yet documented
 
@@ -9532,7 +9455,7 @@ Severity …
 Action …
 
 HHC01941I
-~~~~~~~~~
+---------
 
 HHC01941I is not yet documented
 
@@ -9543,7 +9466,7 @@ Severity …
 Action …
 
 HHC01942I
-~~~~~~~~~
+---------
 
 HHC01942I is not yet documented
 
@@ -9554,7 +9477,7 @@ Severity …
 Action …
 
 HHC01943I
-~~~~~~~~~
+---------
 
 HHC01943I is not yet documented
 
@@ -9565,7 +9488,7 @@ Severity …
 Action …
 
 HHC01944I
-~~~~~~~~~
+---------
 
 HHC01944I is not yet documented
 
@@ -9576,7 +9499,7 @@ Severity …
 Action …
 
 HHC01945I
-~~~~~~~~~
+---------
 
 HHC01945I is not yet documented
 
@@ -9587,7 +9510,7 @@ Severity …
 Action …
 
 HHC01950I
-~~~~~~~~~
+---------
 
 HHC01950I Panel command ‘cmd’ issued by guest started HHC01950I Panel
 command ‘cmd’ issued by guest completed
@@ -9604,7 +9527,7 @@ however, the DIAG8CMD configuration statement should either be ommited
 or specified with the DISABLED argument.
 
 HHC01951W
-~~~~~~~~~
+---------
 
 HHC01951W is not yet documented
 
@@ -9615,7 +9538,7 @@ Severity …
 Action …
 
 HHC01952I
-~~~~~~~~~
+---------
 
 HHC01952I is not yet documented
 
@@ -9626,7 +9549,7 @@ Severity …
 Action …
 
 HHC01953E
-~~~~~~~~~
+---------
 
 HHC01953E Host command processing disabled by configuration statement
 
@@ -9642,7 +9565,7 @@ DIAGNOSE 8 commands to issue panel commands, the DIAG8CMD with the
 ENABLE argument should be specified in the configuration file.
 
 HHC01954E
-~~~~~~~~~
+---------
 
 HHC01954E Host command processing not included in engine build
 
@@ -9663,7 +9586,7 @@ with the ENABLE parameter.
 ----------------------------------------------------------------
 
 HHC02000E
-~~~~~~~~~
+---------
 
 HHC02000E is not yet documented
 
@@ -9674,7 +9597,7 @@ Severity …
 Action …
 
 HHC02001E
-~~~~~~~~~
+---------
 
 HHC02001E is not yet documented
 
@@ -9685,7 +9608,7 @@ Severity …
 Action …
 
 HHC02002W
-~~~~~~~~~
+---------
 
 HHC02002W is not yet documented
 
@@ -9696,7 +9619,7 @@ Severity …
 Action …
 
 HHC02003W
-~~~~~~~~~
+---------
 
 HHC02003W is not yet documented
 
@@ -9707,7 +9630,7 @@ Severity …
 Action …
 
 HHC02004E
-~~~~~~~~~
+---------
 
 HHC02004E is not yet documented
 
@@ -9718,7 +9641,7 @@ Severity …
 Action …
 
 HHC02005E
-~~~~~~~~~
+---------
 
 HHC02005E is not yet documented
 
@@ -9729,7 +9652,7 @@ Severity …
 Action …
 
 HHC02006E
-~~~~~~~~~
+---------
 
 HHC02006E is not yet documented
 
@@ -9740,7 +9663,7 @@ Severity …
 Action …
 
 HHC02007E
-~~~~~~~~~
+---------
 
 HHC02007E is not yet documented
 
@@ -9751,7 +9674,7 @@ Severity …
 Action …
 
 HHC02008E
-~~~~~~~~~
+---------
 
 HHC02008E is not yet documented
 
@@ -9762,7 +9685,7 @@ Severity …
 Action …
 
 HHC02009E
-~~~~~~~~~
+---------
 
 HHC02009E is not yet documented
 
@@ -9773,7 +9696,7 @@ Severity …
 Action …
 
 HHC02010E
-~~~~~~~~~
+---------
 
 HHC02010E is not yet documented
 
@@ -9784,7 +9707,7 @@ Severity …
 Action …
 
 HHC02011E
-~~~~~~~~~
+---------
 
 HHC02011E is not yet documented
 
@@ -9795,7 +9718,7 @@ Severity …
 Action …
 
 HHC02012E
-~~~~~~~~~
+---------
 
 HHC02012E is not yet documented
 
@@ -9806,7 +9729,7 @@ Severity …
 Action …
 
 HHC02013E
-~~~~~~~~~
+---------
 
 HHC02013E is not yet documented
 
@@ -9817,7 +9740,7 @@ Severity …
 Action …
 
 HHC02014E
-~~~~~~~~~
+---------
 
 HHC02014E is not yet documented
 
@@ -9828,7 +9751,7 @@ Severity …
 Action …
 
 HHC02015E
-~~~~~~~~~
+---------
 
 HHC02015E is not yet documented
 
@@ -9839,7 +9762,7 @@ Severity …
 Action …
 
 HHC02016E
-~~~~~~~~~
+---------
 
 HHC02016E is not yet documented
 
@@ -9850,7 +9773,7 @@ Severity …
 Action …
 
 HHC02017E
-~~~~~~~~~
+---------
 
 HHC02017E is not yet documented
 
@@ -9861,7 +9784,7 @@ Severity …
 Action …
 
 HHC02018E
-~~~~~~~~~
+---------
 
 HHC02018E is not yet documented
 
@@ -9872,7 +9795,7 @@ Severity …
 Action …
 
 HHC02019E
-~~~~~~~~~
+---------
 
 HHC02019E is not yet documented
 
@@ -9883,7 +9806,7 @@ Severity …
 Action …
 
 HHC0 2020 E
-~~~~~~~~~~~
+---------~~
 
 HHC02020E is not yet documented
 
@@ -9894,7 +9817,7 @@ Severity …
 Action …
 
 HHC02021E
-~~~~~~~~~
+---------
 
 HHC02021E is not yet documented
 
@@ -9908,7 +9831,7 @@ Action …
 --------------------------------------------------
 
 HHC02100E
-~~~~~~~~~
+---------
 
 HHC02100E is not yet documented
 
@@ -9919,7 +9842,7 @@ Severity …
 Action …
 
 HHC02101I
-~~~~~~~~~
+---------
 
 HHC02101I is not yet documented
 
@@ -9930,7 +9853,7 @@ Severity …
 Action …
 
 HHC02102E
-~~~~~~~~~
+---------
 
 HHC02102E is not yet documented
 
@@ -9941,7 +9864,7 @@ Severity …
 Action …
 
 HHC02103I
-~~~~~~~~~
+---------
 
 HHC02103I Logger: logger thread terminating
 
@@ -9953,7 +9876,7 @@ Severity Information.
 Action None.
 
 HHC02104I
-~~~~~~~~~
+---------
 
 HHC02104I is not yet documented
 
@@ -9964,7 +9887,7 @@ Severity …
 Action …
 
 HHC02105I
-~~~~~~~~~
+---------
 
 HHC02105I is not yet documented
 
@@ -9975,7 +9898,7 @@ Severity …
 Action …
 
 HHC02106I
-~~~~~~~~~
+---------
 
 HHC02106I is not yet documented
 
@@ -9986,7 +9909,7 @@ Severity …
 Action …
 
 HHC02197E
-~~~~~~~~~
+---------
 
 HHC02197E is not yet documented
 
@@ -9997,7 +9920,7 @@ Severity …
 Action …
 
 HHC02198I
-~~~~~~~~~
+---------
 
 HHC02198I is not yet documented
 
@@ -10008,7 +9931,7 @@ Severity …
 Action …
 
 HHC02199I
-~~~~~~~~~
+---------
 
 HHC02199I is not yet documented
 
@@ -10022,7 +9945,7 @@ Action …
 -------------------------------------------------------
 
 HHC02200E
-~~~~~~~~~
+---------
 
 HHC02200E is not yet documented
 
@@ -10033,7 +9956,7 @@ Severity …
 Action …
 
 HHC02201E
-~~~~~~~~~
+---------
 
 HHC02201E is not yet documented
 
@@ -10044,7 +9967,7 @@ Severity …
 Action …
 
 HHC02202E
-~~~~~~~~~
+---------
 
 HHC02202E is not yet documented
 
@@ -10055,7 +9978,7 @@ Severity …
 Action …
 
 HHC02203I
-~~~~~~~~~
+---------
 
 HHC02203I is not yet documented
 
@@ -10066,7 +9989,7 @@ Severity …
 Action …
 
 HHC02204I
-~~~~~~~~~
+---------
 
 HHC02204I cmdsep set to x
 
@@ -10078,7 +10001,7 @@ Severity Information.
 Action None. This is an informational message.
 
 HHC02205E
-~~~~~~~~~
+---------
 
 HHC02205E is not yet documented
 
@@ -10089,7 +10012,7 @@ Severity …
 Action …
 
 HHC02206I
-~~~~~~~~~
+---------
 
 HHC02206I is not yet documented
 
@@ -10100,7 +10023,7 @@ Severity …
 Action …
 
 HHC02207I
-~~~~~~~~~
+---------
 
 HHC02207I is not yet documented
 
@@ -10111,7 +10034,7 @@ Severity …
 Action …
 
 HHC02208I
-~~~~~~~~~
+---------
 
 HHC02208I is not yet documented
 
@@ -10122,7 +10045,7 @@ Severity …
 Action …
 
 HHC02209E
-~~~~~~~~~
+---------
 
 HHC02209E is not yet documented
 
@@ -10133,7 +10056,7 @@ Severity …
 Action …
 
 HHC02210I
-~~~~~~~~~
+---------
 
 HHC02210I is not yet documented
 
@@ -10144,7 +10067,7 @@ Severity …
 Action …
 
 HHC02211E
-~~~~~~~~~
+---------
 
 HHC02211E is not yet documented
 
@@ -10155,7 +10078,7 @@ Severity …
 Action …
 
 HHC02212E
-~~~~~~~~~
+---------
 
 HHC02212E is not yet documented
 
@@ -10166,7 +10089,7 @@ Severity …
 Action …
 
 HHC02213E
-~~~~~~~~~
+---------
 
 HHC02213E is not yet documented
 
@@ -10177,7 +10100,7 @@ Severity …
 Action …
 
 HHC02214I
-~~~~~~~~~
+---------
 
 HHC02214I is not yet documented
 
@@ -10188,7 +10111,7 @@ Severity …
 Action …
 
 HHC02215W
-~~~~~~~~~
+---------
 
 HHC02215W is not yet documented
 
@@ -10199,7 +10122,7 @@ Severity …
 Action …
 
 HHC02216E
-~~~~~~~~~
+---------
 
 HHC02216E is not yet documented
 
@@ -10210,7 +10133,7 @@ Severity …
 Action …
 
 HHC02217I
-~~~~~~~~~
+---------
 
 HHC02217I is not yet documented
 
@@ -10221,7 +10144,7 @@ Severity …
 Action …
 
 HHC02218E
-~~~~~~~~~
+---------
 
 HHC02218E is not yet documented
 
@@ -10232,7 +10155,7 @@ Severity …
 Action …
 
 HHC02219E
-~~~~~~~~~
+---------
 
 HHC02219E is not yet documented
 
@@ -10243,7 +10166,7 @@ Severity …
 Action …
 
 HHC02220I
-~~~~~~~~~
+---------
 
 HHC02220I is not yet documented
 
@@ -10254,7 +10177,7 @@ Severity …
 Action …
 
 HHC02221E
-~~~~~~~~~
+---------
 
 HHC02221E is not yet documented
 
@@ -10265,7 +10188,7 @@ Severity …
 Action …
 
 HHC02222E
-~~~~~~~~~
+---------
 
 HHC02222E is not yet documented
 
@@ -10276,7 +10199,7 @@ Severity …
 Action …
 
 HHC02223I
-~~~~~~~~~
+---------
 
 HHC02223I is not yet documented
 
@@ -10287,7 +10210,7 @@ Severity …
 Action …
 
 HHC02224E
-~~~~~~~~~
+---------
 
 HHC02224E is not yet documented
 
@@ -10298,7 +10221,7 @@ Severity …
 Action …
 
 HHC02226I
-~~~~~~~~~
+---------
 
 HHC02226I is not yet documented
 
@@ -10309,7 +10232,7 @@ Severity …
 Action …
 
 HHC02227E
-~~~~~~~~~
+---------
 
 HHC02227E is not yet documented
 
@@ -10320,7 +10243,7 @@ Severity …
 Action …
 
 HHC02228I
-~~~~~~~~~
+---------
 
 HHC02228I is not yet documented
 
@@ -10331,7 +10254,7 @@ Severity …
 Action …
 
 HHC02229I
-~~~~~~~~~
+---------
 
 HHC02229I is not yet documented
 
@@ -10342,7 +10265,7 @@ Severity …
 Action …
 
 HHC02230I
-~~~~~~~~~
+---------
 
 HHC02230I is not yet documented
 
@@ -10353,7 +10276,7 @@ Severity …
 Action …
 
 HHC02231E
-~~~~~~~~~
+---------
 
 HHC02231E is not yet documented
 
@@ -10364,7 +10287,7 @@ Severity …
 Action …
 
 HHC02232E
-~~~~~~~~~
+---------
 
 HHC02232E is not yet documented
 
@@ -10375,7 +10298,7 @@ Severity …
 Action …
 
 HHC02233E
-~~~~~~~~~
+---------
 
 HHC02233E is not yet documented
 
@@ -10386,7 +10309,7 @@ Severity …
 Action …
 
 HHC02234W
-~~~~~~~~~
+---------
 
 HHC02234W is not yet documented
 
@@ -10397,7 +10320,7 @@ Severity …
 Action …
 
 HHC02235E
-~~~~~~~~~
+---------
 
 HHC02235E is not yet documented
 
@@ -10408,7 +10331,7 @@ Severity …
 Action …
 
 HHC0 223 6E
-~~~~~~~~~~~
+---------~~
 
 HHC02236E is not yet documented
 
@@ -10419,7 +10342,7 @@ Severity …
 Action …
 
 HHC02237W
-~~~~~~~~~
+---------
 
 HHC02237W is not yet documented
 
@@ -10430,7 +10353,7 @@ Severity …
 Action …
 
 HHC02238E
-~~~~~~~~~
+---------
 
 HHC02238E is not yet documented
 
@@ -10441,7 +10364,7 @@ Severity …
 Action …
 
 HHC02239I
-~~~~~~~~~
+---------
 
 HHC02239I is not yet documented
 
@@ -10452,7 +10375,7 @@ Severity …
 Action …
 
 HHC02240I
-~~~~~~~~~
+---------
 
 HHC02240I is not yet documented
 
@@ -10463,7 +10386,7 @@ Severity …
 Action …
 
 HHC02241I
-~~~~~~~~~
+---------
 
 HHC02241I is not yet documented
 
@@ -10474,7 +10397,7 @@ Severity …
 Action …
 
 HHC02242I
-~~~~~~~~~
+---------
 
 HHC02242I is not yet documented
 
@@ -10485,7 +10408,7 @@ Severity …
 Action …
 
 HHC02243E
-~~~~~~~~~
+---------
 
 HHC02243E is not yet documented
 
@@ -10496,7 +10419,7 @@ Severity …
 Action …
 
 HHC02244E
-~~~~~~~~~
+---------
 
 HHC02244E is not yet documented
 
@@ -10507,7 +10430,7 @@ Severity …
 Action …
 
 HHC02245I
-~~~~~~~~~
+---------
 
 HHC02245I is not yet documented
 
@@ -10518,7 +10441,7 @@ Severity …
 Action …
 
 HHC02246E
-~~~~~~~~~
+---------
 
 HHC02246E is not yet documented
 
@@ -10529,7 +10452,7 @@ Severity …
 Action …
 
 HHC02247E
-~~~~~~~~~
+---------
 
 HHC02247E is not yet documented
 
@@ -10540,7 +10463,7 @@ Severity …
 Action …
 
 HHC02248I
-~~~~~~~~~
+---------
 
 HHC02248I is not yet documented
 
@@ -10551,7 +10474,7 @@ Severity …
 Action …
 
 HHC02249I
-~~~~~~~~~
+---------
 
 HHC02249I is not yet documented
 
@@ -10562,7 +10485,7 @@ Severity …
 Action …
 
 HHC02250I
-~~~~~~~~~
+---------
 
 HHC02250I is not yet documented
 
@@ -10573,7 +10496,7 @@ Severity …
 Action …
 
 HHC02251E
-~~~~~~~~~
+---------
 
 HHC02251E is not yet documented
 
@@ -10584,7 +10507,7 @@ Severity …
 Action …
 
 HHC02252E
-~~~~~~~~~
+---------
 
 HHC02252E is not yet documented
 
@@ -10595,7 +10518,7 @@ Severity …
 Action …
 
 HHC02253E
-~~~~~~~~~
+---------
 
 HHC02253E is not yet documented
 
@@ -10606,7 +10529,7 @@ Severity …
 Action …
 
 HHC02254I
-~~~~~~~~~
+---------
 
 HHC02254I is not yet documented
 
@@ -10617,7 +10540,7 @@ Severity …
 Action …
 
 HHC02255I
-~~~~~~~~~
+---------
 
 HHC02255I is not yet documented
 
@@ -10628,7 +10551,7 @@ Severity …
 Action …
 
 HHC02256W
-~~~~~~~~~
+---------
 
 HHC02256W is not yet documented
 
@@ -10639,7 +10562,7 @@ Severity …
 Action …
 
 HHC02257I
-~~~~~~~~~
+---------
 
 HHC02257I is not yet documented
 
@@ -10650,7 +10573,7 @@ Severity …
 Action …
 
 HHC02259E
-~~~~~~~~~
+---------
 
 HHC02259E is not yet documented
 
@@ -10661,7 +10584,7 @@ Severity …
 Action …
 
 HHC02260I
-~~~~~~~~~
+---------
 
 HHC02260I is not yet documented
 
@@ -10672,7 +10595,7 @@ Severity …
 Action …
 
 HHC02261W
-~~~~~~~~~
+---------
 
 HHC02261W is not yet documented
 
@@ -10683,7 +10606,7 @@ Severity …
 Action …
 
 HHC02262I
-~~~~~~~~~
+---------
 
 HHC02262I is not yet documented
 
@@ -10694,7 +10617,7 @@ Severity …
 Action …
 
 HHC02263I
-~~~~~~~~~
+---------
 
 HHC02263I is not yet documented
 
@@ -10705,7 +10628,7 @@ Severity …
 Action …
 
 HHC02264I
-~~~~~~~~~
+---------
 
 HHC02264I is not yet documented
 
@@ -10716,7 +10639,7 @@ Severity …
 Action …
 
 HHC02265I
-~~~~~~~~~
+---------
 
 HHC02265I is not yet documented
 
@@ -10727,7 +10650,7 @@ Severity …
 Action …
 
 HHC02266A
-~~~~~~~~~
+---------
 
 HHC02266A is not yet documented
 
@@ -10738,7 +10661,7 @@ Severity …
 Action …
 
 HHC02267I
-~~~~~~~~~
+---------
 
 HHC02267I is not yet documented
 
@@ -10749,7 +10672,7 @@ Severity …
 Action …
 
 HHC02268I
-~~~~~~~~~
+---------
 
 HHC02268I is not yet documented
 
@@ -10760,7 +10683,7 @@ Severity …
 Action …
 
 HHC02269I
-~~~~~~~~~
+---------
 
 HHC02269I is not yet documented
 
@@ -10771,7 +10694,7 @@ Severity …
 Action …
 
 HHC02270I
-~~~~~~~~~
+---------
 
 HHC02270I is not yet documented
 
@@ -10782,7 +10705,7 @@ Severity …
 Action …
 
 HHC02271I
-~~~~~~~~~
+---------
 
 HHC02271I is not yet documented
 
@@ -10793,7 +10716,7 @@ Severity …
 Action …
 
 HHC02272I
-~~~~~~~~~
+---------
 
 HHC02272I Highest observed MIPS and IO/s rates: HHC02272I From
 begin_last_interval to end_last_interval HHC02272I MIPS: nnn.nnnnnn
@@ -10816,7 +10739,7 @@ Severity Information.
 Action None. This is an informational message.
 
 HHC02273I
-~~~~~~~~~
+---------
 
 HHC02273I is not yet documented
 
@@ -10827,7 +10750,7 @@ Severity …
 Action …
 
 HHC02274I
-~~~~~~~~~
+---------
 
 HHC02274I is not yet documented
 
@@ -10838,7 +10761,7 @@ Severity …
 Action …
 
 HHC02275I
-~~~~~~~~~
+---------
 
 HHC02275I is not yet documented
 
@@ -10849,7 +10772,7 @@ Severity …
 Action …
 
 HHC02276I
-~~~~~~~~~
+---------
 
 HHC02276I is not yet documented
 
@@ -10860,7 +10783,7 @@ Severity …
 Action …
 
 HHC02277I
-~~~~~~~~~
+---------
 
 HHC02277I is not yet documented
 
@@ -10871,7 +10794,7 @@ Severity …
 Action …
 
 HHC02278I
-~~~~~~~~~
+---------
 
 HHC02280I is not yet documented
 
@@ -10882,7 +10805,7 @@ Severity …
 Action …
 
 HHC02279I
-~~~~~~~~~
+---------
 
 HHC02279I is not yet documented
 
@@ -10893,7 +10816,7 @@ Severity …
 Action …
 
 HHC02280I
-~~~~~~~~~
+---------
 
 HHC02280I is not yet documented
 
@@ -10904,7 +10827,7 @@ Severity …
 Action …
 
 HHC02281I
-~~~~~~~~~
+---------
 
 HHC02281I is not yet documented
 
@@ -10915,7 +10838,7 @@ Severity …
 Action …
 
 HHC02282I
-~~~~~~~~~
+---------
 
 HHC02282I is not yet documented
 
@@ -10926,7 +10849,7 @@ Severity …
 Action …
 
 HHC02283I
-~~~~~~~~~
+---------
 
 HHC02283I is not yet documented
 
@@ -10937,7 +10860,7 @@ Severity …
 Action …
 
 HHC02284I
-~~~~~~~~~
+---------
 
 HHC02284I is not yet documented
 
@@ -10948,7 +10871,7 @@ Severity …
 Action …
 
 HHC02285I
-~~~~~~~~~
+---------
 
 HHC02285I is not yet documented
 
@@ -10959,7 +10882,7 @@ Severity …
 Action …
 
 HHC02286I
-~~~~~~~~~
+---------
 
 HHC02286I is not yet documented
 
@@ -10970,7 +10893,7 @@ Severity …
 Action …
 
 HHC02287I
-~~~~~~~~~
+---------
 
 HHC02287I is not yet documented
 
@@ -10981,7 +10904,7 @@ Severity …
 Action …
 
 HHC02288I
-~~~~~~~~~
+---------
 
 HHC02288I is not yet documented
 
@@ -10992,7 +10915,7 @@ Severity …
 Action …
 
 HHC02289I
-~~~~~~~~~
+---------
 
 HHC02289I is not yet documented
 
@@ -11003,7 +10926,7 @@ Severity …
 Action …
 
 HHC02290I
-~~~~~~~~~
+---------
 
 HHC02290I is not yet documented
 
@@ -11014,7 +10937,7 @@ Severity …
 Action …
 
 HHC02291I
-~~~~~~~~~
+---------
 
 HHC02291I is not yet documented
 
@@ -11025,7 +10948,7 @@ Severity …
 Action …
 
 HHC02292I
-~~~~~~~~~
+---------
 
 HHC02292I is not yet documented
 
@@ -11036,7 +10959,7 @@ Severity …
 Action …
 
 HHC02293I
-~~~~~~~~~
+---------
 
 HHC02293I is not yet documented
 
@@ -11047,7 +10970,7 @@ Severity …
 Action …
 
 HHC02294I
-~~~~~~~~~
+---------
 
 HHC02294I is not yet documented
 
@@ -11058,7 +10981,7 @@ Severity …
 Action …
 
 HHC02298E
-~~~~~~~~~
+---------
 
 HHC02298E is not yet documented
 
@@ -11069,7 +10992,7 @@ Severity …
 Action …
 
 HHC02299E
-~~~~~~~~~
+---------
 
 HHC02299E is not yet documented
 
@@ -11083,7 +11006,7 @@ Action …
 ---------------------------------------------------
 
 HHC02300I
-~~~~~~~~~
+---------
 
 HHC02300I is not yet documented
 
@@ -11094,7 +11017,7 @@ Severity …
 Action …
 
 HHC02301E
-~~~~~~~~~
+---------
 
 HHC02301E is not yet documented
 
@@ -11105,7 +11028,7 @@ Severity …
 Action …
 
 HHC02302W
-~~~~~~~~~
+---------
 
 HHC02302W is not yet documented
 
@@ -11116,7 +11039,7 @@ Severity …
 Action …
 
 HHC02303E
-~~~~~~~~~
+---------
 
 HHC02303E is not yet documented
 
@@ -11127,7 +11050,7 @@ Severity …
 Action …
 
 HHC02304W
-~~~~~~~~~
+---------
 
 HHC02304W is not yet documented
 
@@ -11138,7 +11061,7 @@ Severity …
 Action …
 
 HHC02305E
-~~~~~~~~~
+---------
 
 HHC02305E is not yet documented
 
@@ -11149,7 +11072,7 @@ Severity …
 Action …
 
 HHC02306E
-~~~~~~~~~
+---------
 
 HHC02306E is not yet documented
 
@@ -11160,7 +11083,7 @@ Severity …
 Action …
 
 HHC02307E
-~~~~~~~~~
+---------
 
 HHC02307E is not yet documented
 
@@ -11171,7 +11094,7 @@ Severity …
 Action …
 
 HHC02308W
-~~~~~~~~~
+---------
 
 HHC02308W is not yet documented
 
@@ -11182,7 +11105,7 @@ Severity …
 Action …
 
 HHC02309W
-~~~~~~~~~
+---------
 
 HHC02309W is not yet documented
 
@@ -11193,7 +11116,7 @@ Severity …
 Action …
 
 HHC02310S
-~~~~~~~~~
+---------
 
 HHC0 23 10S is not yet documented
 
@@ -11204,7 +11127,7 @@ Severity …
 Action …
 
 HHC02311I
-~~~~~~~~~
+---------
 
 HHC02311I is not yet documented
 
@@ -11215,7 +11138,7 @@ Severity …
 Action …
 
 HHC02312W
-~~~~~~~~~
+---------
 
 HHC02312W is not yet documented
 
@@ -11226,7 +11149,7 @@ Severity …
 Action …
 
 HHC02313I
-~~~~~~~~~
+---------
 
 HHC02313I is not yet documented
 
@@ -11237,7 +11160,7 @@ Severity …
 Action …
 
 HHC02314I
-~~~~~~~~~
+---------
 
 HHC02314I is not yet documented
 
@@ -11248,7 +11171,7 @@ Severity …
 Action …
 
 HHC02315I
-~~~~~~~~~
+---------
 
 HHC02315I is not yet documented
 
@@ -11259,7 +11182,7 @@ Severity …
 Action …
 
 HHC02316E
-~~~~~~~~~
+---------
 
 HHC02316E is not yet documented
 
@@ -11270,7 +11193,7 @@ Severity …
 Action …
 
 HHC02318I
-~~~~~~~~~
+---------
 
 HHC02318I is not yet documented
 
@@ -11281,7 +11204,7 @@ Severity …
 Action …
 
 HHC02319I
-~~~~~~~~~
+---------
 
 HHC02319I is not yet documented
 
@@ -11292,7 +11215,7 @@ Severity …
 Action …
 
 HHC02386E
-~~~~~~~~~
+---------
 
 HHC02386E is not yet documented
 
@@ -11303,7 +11226,7 @@ Severity …
 Action …
 
 HHC02389E
-~~~~~~~~~
+---------
 
 HHC02389E is not yet documented
 
@@ -11317,7 +11240,7 @@ Action …
 ---------------------------------------------------
 
 HHC02400E
-~~~~~~~~~
+---------
 
 HHC02400E is not yet documented
 
@@ -11328,7 +11251,7 @@ Severity …
 Action …
 
 HHC02401E
-~~~~~~~~~
+---------
 
 HHC02401E is not yet documented
 
@@ -11339,7 +11262,7 @@ Severity …
 Action …
 
 HHC02402E
-~~~~~~~~~
+---------
 
 HHC02402E is not yet documented
 
@@ -11350,7 +11273,7 @@ Severity …
 Action …
 
 HHC02403E
-~~~~~~~~~
+---------
 
 HHC02403E is not yet documented
 
@@ -11361,7 +11284,7 @@ Severity …
 Action …
 
 HHC02404E
-~~~~~~~~~
+---------
 
 HHC02404E is not yet documented
 
@@ -11372,7 +11295,7 @@ Severity …
 Action …
 
 HHC02405I
-~~~~~~~~~
+---------
 
 HHC02405I is not yet documented
 
@@ -11383,7 +11306,7 @@ Severity …
 Action …
 
 HHC02410I
-~~~~~~~~~
+---------
 
 HHC02410I is not yet documented
 
@@ -11394,7 +11317,7 @@ Severity …
 Action …
 
 HHC02411E
-~~~~~~~~~
+---------
 
 HHC02411E is not yet documented
 
@@ -11405,7 +11328,7 @@ Severity …
 Action …
 
 HHC02412E
-~~~~~~~~~
+---------
 
 HHC02412E is not yet documented
 
@@ -11416,7 +11339,7 @@ Severity …
 Action …
 
 HHC02413E
-~~~~~~~~~
+---------
 
 HHC02413E is not yet documented
 
@@ -11427,7 +11350,7 @@ Severity …
 Action …
 
 HHC02414I
-~~~~~~~~~
+---------
 
 HHC02414I is not yet documented
 
@@ -11438,7 +11361,7 @@ Severity …
 Action …
 
 HHC02415E
-~~~~~~~~~
+---------
 
 HHC02415E is not yet documented
 
@@ -11449,7 +11372,7 @@ Severity …
 Action …
 
 HHC02416E
-~~~~~~~~~
+---------
 
 HHC02416E is not yet documented
 
@@ -11460,7 +11383,7 @@ Severity …
 Action …
 
 HHC02417E
-~~~~~~~~~
+---------
 
 HHC02417E is not yet documented
 
@@ -11471,7 +11394,7 @@ Severity …
 Action …
 
 HHC02418E
-~~~~~~~~~
+---------
 
 HHC02418E is not yet documented
 
@@ -11482,7 +11405,7 @@ Severity …
 Action …
 
 HHC02419E
-~~~~~~~~~
+---------
 
 HHC02419E is not yet documented
 
@@ -11493,7 +11416,7 @@ Severity …
 Action …
 
 HHC02420I
-~~~~~~~~~
+---------
 
 HHC02420I is not yet documented
 
@@ -11504,7 +11427,7 @@ Severity …
 Action …
 
 HHC02421E
-~~~~~~~~~
+---------
 
 HHC02421E is not yet documented
 
@@ -11515,7 +11438,7 @@ Severity …
 Action …
 
 HHC02422I
-~~~~~~~~~
+---------
 
 HHC02422I is not yet documented
 
@@ -11526,7 +11449,7 @@ Severity …
 Action …
 
 HHC02423I
-~~~~~~~~~
+---------
 
 HHC02420I is not yet documented
 
@@ -11537,7 +11460,7 @@ Severity …
 Action …
 
 HHC02430E
-~~~~~~~~~
+---------
 
 HHC02430E is not yet documented
 
@@ -11548,7 +11471,7 @@ Severity …
 Action …
 
 HHC02431E
-~~~~~~~~~
+---------
 
 HHC02431E is not yet documented
 
@@ -11559,7 +11482,7 @@ Severity …
 Action …
 
 HHC02432E
-~~~~~~~~~
+---------
 
 HHC02432E is not yet documented
 
@@ -11570,7 +11493,7 @@ Severity …
 Action …
 
 HHC02433E
-~~~~~~~~~
+---------
 
 HHC02433E is not yet documented
 
@@ -11581,7 +11504,7 @@ Severity …
 Action …
 
 HHC02434E
-~~~~~~~~~
+---------
 
 HHC02434E is not yet documented
 
@@ -11592,7 +11515,7 @@ Severity …
 Action …
 
 HHC02435I
-~~~~~~~~~
+---------
 
 HHC02435I is not yet documented
 
@@ -11603,7 +11526,7 @@ Severity …
 Action …
 
 HHC02436I
-~~~~~~~~~
+---------
 
 HHC02436I is not yet documented
 
@@ -11614,7 +11537,7 @@ Severity …
 Action …
 
 HHC02437I
-~~~~~~~~~
+---------
 
 HHC02437I is not yet documented
 
@@ -11625,7 +11548,7 @@ Severity …
 Action …
 
 HHC02438I
-~~~~~~~~~
+---------
 
 HHC02438I is not yet documented
 
@@ -11636,7 +11559,7 @@ Severity …
 Action …
 
 HHC02439I
-~~~~~~~~~
+---------
 
 HHC02439I is not yet documented
 
@@ -11647,7 +11570,7 @@ Severity …
 Action …
 
 HHC02444E
-~~~~~~~~~
+---------
 
 HHC02444E is not yet documented
 
@@ -11658,7 +11581,7 @@ Severity …
 Action …
 
 HHC02445E
-~~~~~~~~~
+---------
 
 HHC02445E is not yet documented
 
@@ -11669,7 +11592,7 @@ Severity …
 Action …
 
 HHC02446E
-~~~~~~~~~
+---------
 
 HHC02446E is not yet documented
 
@@ -11680,7 +11603,7 @@ Severity …
 Action …
 
 HHC02447E
-~~~~~~~~~
+---------
 
 HHC02447E is not yet documented
 
@@ -11691,7 +11614,7 @@ Severity …
 Action …
 
 HHC02448I
-~~~~~~~~~
+---------
 
 HHC02448I is not yet documented
 
@@ -11702,7 +11625,7 @@ Severity …
 Action …
 
 HHC02449I
-~~~~~~~~~
+---------
 
 HHC02449I is not yet documented
 
@@ -11713,7 +11636,7 @@ Severity …
 Action …
 
 HHC02450I
-~~~~~~~~~
+---------
 
 HHC02450I is not yet documented
 
@@ -11724,7 +11647,7 @@ Severity …
 Action …
 
 HHC02451I
-~~~~~~~~~
+---------
 
 HHC02451I is not yet documented
 
@@ -11735,7 +11658,7 @@ Severity …
 Action …
 
 HHC02452E
-~~~~~~~~~
+---------
 
 HHC02452E is not yet documented
 
@@ -11746,7 +11669,7 @@ Severity …
 Action …
 
 HHC02453W
-~~~~~~~~~
+---------
 
 HHC02453W is not yet documented
 
@@ -11757,7 +11680,7 @@ Severity …
 Action …
 
 HHC02454W
-~~~~~~~~~
+---------
 
 HHC02454W is not yet documented
 
@@ -11768,7 +11691,7 @@ Severity …
 Action …
 
 HHC02455W
-~~~~~~~~~
+---------
 
 HHC02455W is not yet documented
 
@@ -11779,7 +11702,7 @@ Severity …
 Action …
 
 HHC02456E
-~~~~~~~~~
+---------
 
 HHC02456E is not yet documented
 
@@ -11790,7 +11713,7 @@ Severity …
 Action …
 
 HHC02457I
-~~~~~~~~~
+---------
 
 HHC02457I is not yet documented
 
@@ -11801,7 +11724,7 @@ Severity …
 Action …
 
 HHC02458E
-~~~~~~~~~
+---------
 
 HHC02458E is not yet documented
 
@@ -11812,7 +11735,7 @@ Severity …
 Action …
 
 HHC02459E
-~~~~~~~~~
+---------
 
 HHC02459E is not yet documented
 
@@ -11823,7 +11746,7 @@ Severity …
 Action …
 
 HHC02460E
-~~~~~~~~~
+---------
 
 HHC02460E is not yet documented
 
@@ -11834,7 +11757,7 @@ Severity …
 Action …
 
 HHC02461E
-~~~~~~~~~
+---------
 
 HHC02461E is not yet documented
 
@@ -11845,7 +11768,7 @@ Severity …
 Action …
 
 HHC02462I
-~~~~~~~~~
+---------
 
 HHC02462I is not yet documented
 
@@ -11856,7 +11779,7 @@ Severity …
 Action …
 
 HHC02463I
-~~~~~~~~~
+---------
 
 HHC02463I is not yet documented
 
@@ -11867,7 +11790,7 @@ Severity …
 Action …
 
 HHC02464I
-~~~~~~~~~
+---------
 
 HHC02464I is not yet documented
 
@@ -11878,7 +11801,7 @@ Severity …
 Action …
 
 HHC02465E
-~~~~~~~~~
+---------
 
 HHC02465E is not yet documented
 
@@ -11889,7 +11812,7 @@ Severity …
 Action …
 
 HHC02466I
-~~~~~~~~~
+---------
 
 HHC02466I is not yet documented
 
@@ -11900,7 +11823,7 @@ Severity …
 Action …
 
 HHC02467I
-~~~~~~~~~
+---------
 
 HHC02467I is not yet documented
 
@@ -11911,7 +11834,7 @@ Severity …
 Action …
 
 HHC02468E
-~~~~~~~~~
+---------
 
 HHC02468E is not yet documented
 
@@ -11922,7 +11845,7 @@ Severity …
 Action …
 
 HHC02469I
-~~~~~~~~~
+---------
 
 HHC02469I is not yet documented
 
@@ -11933,7 +11856,7 @@ Severity …
 Action …
 
 HHC02470E
-~~~~~~~~~
+---------
 
 HHC02470E is not yet documented
 
@@ -11944,7 +11867,7 @@ Severity …
 Action …
 
 HHC02471E
-~~~~~~~~~
+---------
 
 HHC02471E is not yet documented
 
@@ -11955,7 +11878,7 @@ Severity …
 Action …
 
 HHC02472E
-~~~~~~~~~
+---------
 
 HHC02472E is not yet documented
 
@@ -11966,7 +11889,7 @@ Severity …
 Action …
 
 HHC02473E
-~~~~~~~~~
+---------
 
 HHC02473E is not yet documented
 
@@ -11977,7 +11900,7 @@ Severity …
 Action …
 
 HHC02474E
-~~~~~~~~~
+---------
 
 HHC02474E is not yet documented
 
@@ -11988,7 +11911,7 @@ Severity …
 Action …
 
 HHC02475I
-~~~~~~~~~
+---------
 
 HHC02475I is not yet documented
 
@@ -11999,7 +11922,7 @@ Severity …
 Action …
 
 HHC02476E
-~~~~~~~~~
+---------
 
 HHC0 24 76E is not yet documented
 
@@ -12010,7 +11933,7 @@ Severity …
 Action …
 
 HHC02477E
-~~~~~~~~~
+---------
 
 HHC02477E is not yet documented
 
@@ -12021,7 +11944,7 @@ Severity …
 Action …
 
 HHC02478E
-~~~~~~~~~
+---------
 
 HHC02478E is not yet documented
 
@@ -12032,7 +11955,7 @@ Severity …
 Action …
 
 HHC02479E
-~~~~~~~~~
+---------
 
 HHC02479E is not yet documented
 
@@ -12043,7 +11966,7 @@ Severity …
 Action …
 
 HHC02480E
-~~~~~~~~~
+---------
 
 HHC02480E is not yet documented
 
@@ -12054,7 +11977,7 @@ Severity …
 Action …
 
 HHC02481I
-~~~~~~~~~
+---------
 
 HHC02481I is not yet documented
 
@@ -12065,7 +11988,7 @@ Severity …
 Action …
 
 HHC02482I
-~~~~~~~~~
+---------
 
 HHC02482I is not yet documented
 
@@ -12076,7 +11999,7 @@ Severity …
 Action …
 
 HHC02483I
-~~~~~~~~~
+---------
 
 HHC02483I is not yet documented
 
@@ -12087,7 +12010,7 @@ Severity …
 Action …
 
 HHC02485I
-~~~~~~~~~
+---------
 
 HHC02485I is not yet documented
 
@@ -12098,7 +12021,7 @@ Severity …
 Action …
 
 HHC02486I
-~~~~~~~~~
+---------
 
 HHC02486I is not yet documented
 
@@ -12109,7 +12032,7 @@ Severity …
 Action …
 
 HHC02487I
-~~~~~~~~~
+---------
 
 HHC02487I is not yet documented
 
@@ -12120,7 +12043,7 @@ Severity …
 Action …
 
 HHC02488I
-~~~~~~~~~
+---------
 
 HHC02488I is not yet documented
 
@@ -12131,7 +12054,7 @@ Severity …
 Action …
 
 HHC02489E
-~~~~~~~~~
+---------
 
 HHC02489E is not yet documented
 
@@ -12142,7 +12065,7 @@ Severity …
 Action …
 
 HHC02490E
-~~~~~~~~~
+---------
 
 HHC02490E is not yet documented
 
@@ -12153,7 +12076,7 @@ Severity …
 Action …
 
 HHC02491E
-~~~~~~~~~
+---------
 
 HHC02491E is not yet documented
 
@@ -12164,7 +12087,7 @@ Severity …
 Action …
 
 HHC02494I
-~~~~~~~~~
+---------
 
 HHC02494I is not yet documented
 
@@ -12175,7 +12098,7 @@ Severity …
 Action …
 
 HHC02495I
-~~~~~~~~~
+---------
 
 HHC02495I is not yet documented
 
@@ -12186,7 +12109,7 @@ Severity …
 Action …
 
 HHC02496I
-~~~~~~~~~
+---------
 
 HHC02496I is not yet documented
 
@@ -12197,7 +12120,7 @@ Severity …
 Action …
 
 HHC02499I
-~~~~~~~~~
+---------
 
 HHC02499I is not yet documented
 
@@ -12211,7 +12134,7 @@ Action …
 ---------------------------------------------------
 
 HHC02500E
-~~~~~~~~~
+---------
 
 HHC02500E is not yet documented
 
@@ -12222,7 +12145,7 @@ Severity …
 Action …
 
 HHC02501E
-~~~~~~~~~
+---------
 
 HHC02501E is not yet documented
 
@@ -12233,7 +12156,7 @@ Severity …
 Action …
 
 HHC02502E
-~~~~~~~~~
+---------
 
 HHC02502E is not yet documented
 
@@ -12244,7 +12167,7 @@ Severity …
 Action …
 
 HHC02503E
-~~~~~~~~~
+---------
 
 HHC02503E is not yet documented
 
@@ -12255,7 +12178,7 @@ Severity …
 Action …
 
 HHC02504E
-~~~~~~~~~
+---------
 
 HHC02504E is not yet documented
 
@@ -12266,7 +12189,7 @@ Severity …
 Action …
 
 HHC02505E
-~~~~~~~~~
+---------
 
 HHC02505E is not yet documented
 
@@ -12277,7 +12200,7 @@ Severity …
 Action …
 
 HHC02506E
-~~~~~~~~~
+---------
 
 HHC02506E is not yet documented
 
@@ -12288,7 +12211,7 @@ Severity …
 Action …
 
 HHC02507E
-~~~~~~~~~
+---------
 
 HHC02507E is not yet documented
 
@@ -12299,7 +12222,7 @@ Severity …
 Action …
 
 HHC02508E
-~~~~~~~~~
+---------
 
 HHC02508E is not yet documented
 
@@ -12310,7 +12233,7 @@ Severity …
 Action …
 
 HHC02509E
-~~~~~~~~~
+---------
 
 HHC02509E is not yet documented
 
@@ -12321,7 +12244,7 @@ Severity …
 Action …
 
 HHC02510E
-~~~~~~~~~
+---------
 
 HHC02510E is not yet documented
 
@@ -12332,7 +12255,7 @@ Severity …
 Action …
 
 HHC02511E
-~~~~~~~~~
+---------
 
 HHC02511E is not yet documented
 
@@ -12343,7 +12266,7 @@ Severity …
 Action …
 
 HHC02512E
-~~~~~~~~~
+---------
 
 HHC02512E is not yet documented
 
@@ -12354,7 +12277,7 @@ Severity …
 Action …
 
 HHC02513E
-~~~~~~~~~
+---------
 
 HHC02513E is not yet documented
 
@@ -12365,7 +12288,7 @@ Severity …
 Action …
 
 HHC02514E
-~~~~~~~~~
+---------
 
 HHC02514E is not yet documented
 
@@ -12376,7 +12299,7 @@ Severity …
 Action …
 
 HHC02515E
-~~~~~~~~~
+---------
 
 HHC02515E is not yet documented
 
@@ -12387,7 +12310,7 @@ Severity …
 Action …
 
 HHC02516E
-~~~~~~~~~
+---------
 
 HHC02516E is not yet documented
 
@@ -12398,7 +12321,7 @@ Severity …
 Action …
 
 HHC02517E
-~~~~~~~~~
+---------
 
 HHC02517E is not yet documented
 
@@ -12409,7 +12332,7 @@ Severity …
 Action …
 
 HHC02518E
-~~~~~~~~~
+---------
 
 HHC02518E is not yet documented
 
@@ -12420,7 +12343,7 @@ Severity …
 Action …
 
 HHC02519E
-~~~~~~~~~
+---------
 
 HHC02519E is not yet documented
 
@@ -12431,7 +12354,7 @@ Severity …
 Action …
 
 HHC02520I
-~~~~~~~~~
+---------
 
 HHC02520I is not yet documented
 
@@ -12442,7 +12365,7 @@ Severity …
 Action …
 
 HHC02521I
-~~~~~~~~~
+---------
 
 HHC02521I is not yet documented
 
@@ -12453,7 +12376,7 @@ Severity …
 Action …
 
 HHC02522I
-~~~~~~~~~
+---------
 
 HHC02522I is not yet documented
 
@@ -12464,7 +12387,7 @@ Severity …
 Action …
 
 HHC02523I
-~~~~~~~~~
+---------
 
 HHC02523I is not yet documented
 
@@ -12475,7 +12398,7 @@ Severity …
 Action …
 
 HHC02524I
-~~~~~~~~~
+---------
 
 HHC02524I is not yet documented
 
@@ -12486,7 +12409,7 @@ Severity …
 Action …
 
 HHC02525I
-~~~~~~~~~
+---------
 
 HHC02525I is not yet documented
 
@@ -12497,7 +12420,7 @@ Severity …
 Action …
 
 HHC02526I
-~~~~~~~~~
+---------
 
 HHC02526I is not yet documented
 
@@ -12508,7 +12431,7 @@ Severity …
 Action …
 
 HHC02527I
-~~~~~~~~~
+---------
 
 HHC02527I is not yet documented
 
@@ -12519,7 +12442,7 @@ Severity …
 Action …
 
 HHC02528I
-~~~~~~~~~
+---------
 
 HHC02528I is not yet documented
 
@@ -12530,7 +12453,7 @@ Severity …
 Action …
 
 HHC02529I
-~~~~~~~~~
+---------
 
 HHC02529I is not yet documented
 
@@ -12541,7 +12464,7 @@ Severity …
 Action …
 
 HHC02530E
-~~~~~~~~~
+---------
 
 HHC02530E is not yet documented
 
@@ -12552,7 +12475,7 @@ Severity …
 Action …
 
 HHC02531E
-~~~~~~~~~
+---------
 
 HHC02531E is not yet documented
 
@@ -12563,7 +12486,7 @@ Severity …
 Action …
 
 HHC02532E
-~~~~~~~~~
+---------
 
 HHC02532E is not yet documented
 
@@ -12574,7 +12497,7 @@ Severity …
 Action …
 
 HHC02533E
-~~~~~~~~~
+---------
 
 HHC02533E is not yet documented
 
@@ -12585,7 +12508,7 @@ Severity …
 Action …
 
 HHC02534E
-~~~~~~~~~
+---------
 
 HHC02534E is not yet documented
 
@@ -12596,7 +12519,7 @@ Severity …
 Action …
 
 HHC02535E
-~~~~~~~~~
+---------
 
 HHC02535E is not yet documented
 
@@ -12607,7 +12530,7 @@ Severity …
 Action …
 
 HHC02536E
-~~~~~~~~~
+---------
 
 HHC02536E is not yet documented
 
@@ -12618,7 +12541,7 @@ Severity …
 Action …
 
 HHC02537E
-~~~~~~~~~
+---------
 
 HHC02537E is not yet documented
 
@@ -12629,7 +12552,7 @@ Severity …
 Action …
 
 HHC02538E
-~~~~~~~~~
+---------
 
 HHC02538E is not yet documented
 
@@ -12640,7 +12563,7 @@ Severity …
 Action …
 
 HHC02539E
-~~~~~~~~~
+---------
 
 HHC02539E is not yet documented
 
@@ -12651,7 +12574,7 @@ Severity …
 Action …
 
 HHC02540E
-~~~~~~~~~
+---------
 
 HHC02540E is not yet documented
 
@@ -12662,7 +12585,7 @@ Severity …
 Action …
 
 HHC02541E
-~~~~~~~~~
+---------
 
 HHC02541E is not yet documented
 
@@ -12673,7 +12596,7 @@ Severity …
 Action …
 
 HHC02542E
-~~~~~~~~~
+---------
 
 HHC02542E is not yet documented
 
@@ -12684,7 +12607,7 @@ Severity …
 Action …
 
 HHC02543E
-~~~~~~~~~
+---------
 
 HHC02543E is not yet documented
 
@@ -12695,7 +12618,7 @@ Severity …
 Action …
 
 HHC02544E
-~~~~~~~~~
+---------
 
 HHC02544E is not yet documented
 
@@ -12706,7 +12629,7 @@ Severity …
 Action …
 
 HHC02545E
-~~~~~~~~~
+---------
 
 HHC02545E is not yet documented
 
@@ -12717,7 +12640,7 @@ Severity …
 Action …
 
 HHC02546E
-~~~~~~~~~
+---------
 
 HHC02546E is not yet documented
 
@@ -12728,7 +12651,7 @@ Severity …
 Action …
 
 HHC02547E
-~~~~~~~~~
+---------
 
 HHC02547E is not yet documented
 
@@ -12739,7 +12662,7 @@ Severity …
 Action …
 
 HHC02548E
-~~~~~~~~~
+---------
 
 HHC02548E is not yet documented
 
@@ -12750,7 +12673,7 @@ Severity …
 Action …
 
 HHC02549E
-~~~~~~~~~
+---------
 
 HHC02549E is not yet documented
 
@@ -12761,7 +12684,7 @@ Severity …
 Action …
 
 HHC02550I
-~~~~~~~~~
+---------
 
 HHC02550I is not yet documented
 
@@ -12772,7 +12695,7 @@ Severity …
 Action …
 
 HHC02551I
-~~~~~~~~~
+---------
 
 HHC02551I is not yet documented
 
@@ -12783,7 +12706,7 @@ Severity …
 Action …
 
 HHC02552I
-~~~~~~~~~
+---------
 
 HHC02552I is not yet documented
 
@@ -12794,7 +12717,7 @@ Severity …
 Action …
 
 HHC02553I
-~~~~~~~~~
+---------
 
 HHC02553I is not yet documented
 
@@ -12805,7 +12728,7 @@ Severity …
 Action …
 
 HHC02554I
-~~~~~~~~~
+---------
 
 HHC02554I is not yet documented
 
@@ -12816,7 +12739,7 @@ Severity …
 Action …
 
 HHC02555I
-~~~~~~~~~
+---------
 
 HHC02555I is not yet documented
 
@@ -12827,7 +12750,7 @@ Severity …
 Action …
 
 HHC02556I
-~~~~~~~~~
+---------
 
 HHC02556I is not yet documented
 
@@ -12838,7 +12761,7 @@ Severity …
 Action …
 
 HHC02557I
-~~~~~~~~~
+---------
 
 HHC02557I is not yet documented
 
@@ -12849,7 +12772,7 @@ Severity …
 Action …
 
 HHC02558I
-~~~~~~~~~
+---------
 
 HHC02558I is not yet documented
 
@@ -12860,7 +12783,7 @@ Severity …
 Action …
 
 HHC02559E
-~~~~~~~~~
+---------
 
 HHC02559E is not yet documented
 
@@ -12871,7 +12794,7 @@ Severity …
 Action …
 
 HHC02560I
-~~~~~~~~~
+---------
 
 HHC02560I is not yet documented
 
@@ -12882,7 +12805,7 @@ Severity …
 Action …
 
 HHC02561I
-~~~~~~~~~
+---------
 
 HHC02561I is not yet documented
 
@@ -12893,7 +12816,7 @@ Severity …
 Action …
 
 HHC02562I
-~~~~~~~~~
+---------
 
 HHC02562I is not yet documented
 
@@ -12904,7 +12827,7 @@ Severity …
 Action …
 
 HHC02563I
-~~~~~~~~~
+---------
 
 HHC02563I is not yet documented
 
@@ -12915,7 +12838,7 @@ Severity …
 Action …
 
 HHC02564I
-~~~~~~~~~
+---------
 
 HHC02564I is not yet documented
 
@@ -12926,7 +12849,7 @@ Severity …
 Action …
 
 HHC02565I
-~~~~~~~~~
+---------
 
 HHC02565I is not yet documented
 
@@ -12937,7 +12860,7 @@ Severity …
 Action …
 
 HHC02566I
-~~~~~~~~~
+---------
 
 HHC02566I is not yet documented
 
@@ -12948,7 +12871,7 @@ Severity …
 Action …
 
 HHC02567I
-~~~~~~~~~
+---------
 
 HHC02567I is not yet documented
 
@@ -12959,7 +12882,7 @@ Severity …
 Action …
 
 HHC02568I
-~~~~~~~~~
+---------
 
 HHC02568I is not yet documented
 
@@ -12970,7 +12893,7 @@ Severity …
 Action …
 
 HHC02569E
-~~~~~~~~~
+---------
 
 HHC02569E is not yet documented
 
@@ -12981,7 +12904,7 @@ Severity …
 Action …
 
 HHC02570E
-~~~~~~~~~
+---------
 
 HHC02570E is not yet documented
 
@@ -12992,7 +12915,7 @@ Severity …
 Action …
 
 HHC02571E
-~~~~~~~~~
+---------
 
 HHC02571E is not yet documented
 
@@ -13003,7 +12926,7 @@ Severity …
 Action …
 
 HHC02572W
-~~~~~~~~~
+---------
 
 HHC02572W is not yet documented
 
@@ -13014,7 +12937,7 @@ Severity …
 Action …
 
 HHC02573E
-~~~~~~~~~
+---------
 
 HHC02573E is not yet documented
 
@@ -13025,7 +12948,7 @@ Severity …
 Action …
 
 HHC02574E
-~~~~~~~~~
+---------
 
 HHC02574E is not yet documented
 
@@ -13036,7 +12959,7 @@ Severity …
 Action …
 
 HHC02575E
-~~~~~~~~~
+---------
 
 HHC02575E is not yet documented
 
@@ -13047,7 +12970,7 @@ Severity …
 Action …
 
 HHC02576E
-~~~~~~~~~
+---------
 
 HHC02576E is not yet documented
 
@@ -13058,7 +12981,7 @@ Severity …
 Action …
 
 HHC02577E
-~~~~~~~~~
+---------
 
 HHC02577E is not yet documented
 
@@ -13069,7 +12992,7 @@ Severity …
 Action …
 
 HHC02578E
-~~~~~~~~~
+---------
 
 HHC02578E is not yet documented
 
@@ -13080,7 +13003,7 @@ Severity …
 Action …
 
 HHC02579E
-~~~~~~~~~
+---------
 
 HHC02579E is not yet documented
 
@@ -13091,7 +13014,7 @@ Severity …
 Action …
 
 HHC02580E
-~~~~~~~~~
+---------
 
 HHC02580E is not yet documented
 
@@ -13102,7 +13025,7 @@ Severity …
 Action …
 
 HHC02581E
-~~~~~~~~~
+---------
 
 HHC02581E is not yet documented
 
@@ -13113,7 +13036,7 @@ Severity …
 Action …
 
 HHC02582E
-~~~~~~~~~
+---------
 
 HHC02582E is not yet documented
 
@@ -13124,7 +13047,7 @@ Severity …
 Action …
 
 HHC02583E
-~~~~~~~~~
+---------
 
 HHC02583E is not yet documented
 
@@ -13135,7 +13058,7 @@ Severity …
 Action …
 
 HHC02584E
-~~~~~~~~~
+---------
 
 HHC02584E is not yet documented
 
@@ -13146,7 +13069,7 @@ Severity …
 Action …
 
 HHC02585E
-~~~~~~~~~
+---------
 
 HHC02585E is not yet documented
 
@@ -13157,7 +13080,7 @@ Severity …
 Action …
 
 HHC02586E
-~~~~~~~~~
+---------
 
 HHC02586E is not yet documented
 
@@ -13168,7 +13091,7 @@ Severity …
 Action …
 
 HHC02587E
-~~~~~~~~~
+---------
 
 HHC02587E is not yet documented
 
@@ -13179,7 +13102,7 @@ Severity …
 Action …
 
 HHC02588E
-~~~~~~~~~
+---------
 
 HHC02588E is not yet documented
 
@@ -13190,7 +13113,7 @@ Severity …
 Action …
 
 HHC02589I
-~~~~~~~~~
+---------
 
 HHC02589I is not yet documented
 
@@ -13201,7 +13124,7 @@ Severity …
 Action …
 
 HHC02590W
-~~~~~~~~~
+---------
 
 HHC02590W is not yet documented
 
@@ -13212,7 +13135,7 @@ Severity …
 Action …
 
 HHC02591I
-~~~~~~~~~
+---------
 
 HHC02591I is not yet documented
 
@@ -13223,7 +13146,7 @@ Severity …
 Action …
 
 HHC02592I
-~~~~~~~~~
+---------
 
 HHC02592I is not yet documented
 
@@ -13234,7 +13157,7 @@ Severity …
 Action …
 
 HHC02593E
-~~~~~~~~~
+---------
 
 HHC02593E is not yet documented
 
@@ -13248,7 +13171,7 @@ Action …
 ------------------------------------------------------
 
 HHC02600I
-~~~~~~~~~
+---------
 
 HHC02600I is not yet documented
 
@@ -13259,7 +13182,7 @@ Severity …
 Action …
 
 HHC02601I
-~~~~~~~~~
+---------
 
 HHC02601I is not yet documented
 
@@ -13270,7 +13193,7 @@ Severity …
 Action …
 
 HHC02602E
-~~~~~~~~~
+---------
 
 HHC02602E is not yet documented
 
@@ -13281,7 +13204,7 @@ Severity …
 Action …
 
 HHC02603E
-~~~~~~~~~
+---------
 
 HHC02603E is not yet documented
 
@@ -13292,7 +13215,7 @@ Severity …
 Action …
 
 HHC02604E
-~~~~~~~~~
+---------
 
 HHC02604E is not yet documented
 
@@ -13303,7 +13226,7 @@ Severity …
 Action …
 
 HHC02605I
-~~~~~~~~~
+---------
 
 HHC02605I is not yet documented
 
@@ -13314,7 +13237,7 @@ Severity …
 Action …
 
 HHC02606I
-~~~~~~~~~
+---------
 
 HHC02606I is not yet documented
 
@@ -13325,7 +13248,7 @@ Severity …
 Action …
 
 HHC02607I
-~~~~~~~~~
+---------
 
 HHC02607I is not yet documented
 
@@ -13336,7 +13259,7 @@ Severity …
 Action …
 
 HHC02608I
-~~~~~~~~~
+---------
 
 HHC02608I is not yet documented
 
@@ -13350,7 +13273,7 @@ Action …
 ---------------------------------------------------
 
 HHC02700I
-~~~~~~~~~
+---------
 
 HHC02700I is not yet documented
 
@@ -13361,7 +13284,7 @@ Severity …
 Action …
 
 HHC02701E
-~~~~~~~~~
+---------
 
 HHC02701E is not yet documented
 
@@ -13372,7 +13295,7 @@ Severity …
 Action …
 
 HHC02702I
-~~~~~~~~~
+---------
 
 HHC02702I is not yet documented
 
@@ -13383,7 +13306,7 @@ Severity …
 Action …
 
 HHC02703E
-~~~~~~~~~
+---------
 
 HHC02703E is not yet documented
 
@@ -13394,7 +13317,7 @@ Severity …
 Action …
 
 HHC02704I
-~~~~~~~~~
+---------
 
 HHC02704I is not yet documented
 
@@ -13405,7 +13328,7 @@ Severity …
 Action …
 
 HHC02705E
-~~~~~~~~~
+---------
 
 HHC02705E is not yet documented
 
@@ -13416,7 +13339,7 @@ Severity …
 Action …
 
 HHC02706I
-~~~~~~~~~
+---------
 
 HHC02706I is not yet documented
 
@@ -13427,7 +13350,7 @@ Severity …
 Action …
 
 HHC02707E
-~~~~~~~~~
+---------
 
 HHC02707E is not yet documented
 
@@ -13438,7 +13361,7 @@ Severity …
 Action …
 
 HHC02708E
-~~~~~~~~~
+---------
 
 HHC02708E is not yet documented
 
@@ -13449,7 +13372,7 @@ Severity …
 Action …
 
 HHC02709E
-~~~~~~~~~
+---------
 
 HHC02709E is not yet documented
 
@@ -13460,7 +13383,7 @@ Severity …
 Action …
 
 HHC02710E
-~~~~~~~~~
+---------
 
 HHC02710E is not yet documented
 
@@ -13471,7 +13394,7 @@ Severity …
 Action …
 
 HHC02711E
-~~~~~~~~~
+---------
 
 HHC02711E is not yet documented
 
@@ -13482,7 +13405,7 @@ Severity …
 Action …
 
 HHC02712E
-~~~~~~~~~
+---------
 
 HHC02712E is not yet documented
 
@@ -13493,7 +13416,7 @@ Severity …
 Action …
 
 HHC02713E
-~~~~~~~~~
+---------
 
 HHC02713E is not yet documented
 
@@ -13504,7 +13427,7 @@ Severity …
 Action …
 
 HHC02714E
-~~~~~~~~~
+---------
 
 HHC02714E is not yet documented
 
@@ -13515,7 +13438,7 @@ Severity …
 Action …
 
 HHC02715E
-~~~~~~~~~
+---------
 
 HHC02715E is not yet documented
 
@@ -13526,7 +13449,7 @@ Severity …
 Action …
 
 HHC02716E
-~~~~~~~~~
+---------
 
 HHC02716E is not yet documented
 
@@ -13537,7 +13460,7 @@ Severity …
 Action …
 
 HHC02717E
-~~~~~~~~~
+---------
 
 HHC02717E is not yet documented
 
@@ -13548,7 +13471,7 @@ Severity …
 Action …
 
 HHC02718I
-~~~~~~~~~
+---------
 
 HHC02718I is not yet documented
 
@@ -13559,7 +13482,7 @@ Severity …
 Action …
 
 HHC02719I
-~~~~~~~~~
+---------
 
 HHC02719I is not yet documented
 
@@ -13570,7 +13493,7 @@ Severity …
 Action …
 
 HHC02720E
-~~~~~~~~~
+---------
 
 HHC02720E is not yet documented
 
@@ -13581,7 +13504,7 @@ Severity …
 Action …
 
 HHC02721I
-~~~~~~~~~
+---------
 
 HHC02721I is not yet documented
 
@@ -13592,7 +13515,7 @@ Severity …
 Action …
 
 HHC02722I
-~~~~~~~~~
+---------
 
 HHC02722I is not yet documented
 
@@ -13603,7 +13526,7 @@ Severity …
 Action …
 
 HHC02723I
-~~~~~~~~~
+---------
 
 HHC02723I is not yet documented
 
@@ -13614,7 +13537,7 @@ Severity …
 Action …
 
 HHC02724I
-~~~~~~~~~
+---------
 
 HHC02724I is not yet documented
 
@@ -13625,7 +13548,7 @@ Severity …
 Action …
 
 HHC02725I
-~~~~~~~~~
+---------
 
 HHC02725I is not yet documented
 
@@ -13636,7 +13559,7 @@ Severity …
 Action …
 
 HHC02726I
-~~~~~~~~~
+---------
 
 HHC02726I is not yet documented
 
@@ -13647,7 +13570,7 @@ Severity …
 Action …
 
 HHC02728I
-~~~~~~~~~
+---------
 
 HHC02728I is not yet documented
 
@@ -13658,7 +13581,7 @@ Severity …
 Action …
 
 HHC02729I
-~~~~~~~~~
+---------
 
 HHC02729I is not yet documented
 
@@ -13669,7 +13592,7 @@ Severity …
 Action …
 
 HHC02730I
-~~~~~~~~~
+---------
 
 HHC02730I is not yet documented
 
@@ -13680,7 +13603,7 @@ Severity …
 Action …
 
 HHC02740I
-~~~~~~~~~
+---------
 
 HHC02740I is not yet documented
 
@@ -13691,7 +13614,7 @@ Severity …
 Action …
 
 HHC02741E
-~~~~~~~~~
+---------
 
 HHC02741E is not yet documented
 
@@ -13702,7 +13625,7 @@ Severity …
 Action …
 
 HHC02742E
-~~~~~~~~~
+---------
 
 HHC02742E is not yet documented
 
@@ -13713,7 +13636,7 @@ Severity …
 Action …
 
 HHC02743E
-~~~~~~~~~
+---------
 
 HHC02743E is not yet documented
 
@@ -13724,7 +13647,7 @@ Severity …
 Action …
 
 HHC02744I
-~~~~~~~~~
+---------
 
 HHC02744I is not yet documented
 
@@ -13735,7 +13658,7 @@ Severity …
 Action …
 
 HHC02745I
-~~~~~~~~~
+---------
 
 HHC02745I is not yet documented
 
@@ -13746,7 +13669,7 @@ Severity …
 Action …
 
 HHC02750E
-~~~~~~~~~
+---------
 
 HHC02750E is not yet documented
 
@@ -13757,7 +13680,7 @@ Severity …
 Action …
 
 HHC02751I
-~~~~~~~~~
+---------
 
 HHC02751I is not yet documented
 
@@ -13768,7 +13691,7 @@ Severity …
 Action …
 
 HHC02752I
-~~~~~~~~~
+---------
 
 HHC02752I is not yet documented
 
@@ -13779,7 +13702,7 @@ Severity …
 Action …
 
 HHC02753E
-~~~~~~~~~
+---------
 
 HHC02753E is not yet documented
 
@@ -13790,7 +13713,7 @@ Severity …
 Action …
 
 HHC02754E
-~~~~~~~~~
+---------
 
 HHC02754E is not yet documented
 
@@ -13801,7 +13724,7 @@ Severity …
 Action …
 
 HHC02755I
-~~~~~~~~~
+---------
 
 HHC02755I is not yet documented
 
@@ -13812,7 +13735,7 @@ Severity …
 Action …
 
 HHC02756E
-~~~~~~~~~
+---------
 
 HHC02756E is not yet documented
 
@@ -13823,7 +13746,7 @@ Severity …
 Action …
 
 HHC02757I
-~~~~~~~~~
+---------
 
 HHC02757I is not yet documented
 
@@ -13837,7 +13760,7 @@ Action …
 ---------------------------------------------------
 
 HHC02800I
-~~~~~~~~~
+---------
 
 HHC02800I is not yet documented
 
@@ -13848,7 +13771,7 @@ Severity …
 Action …
 
 HHC02801E
-~~~~~~~~~
+---------
 
 HHC02801E is not yet documented
 
@@ -13859,7 +13782,7 @@ Severity …
 Action …
 
 HHC02802I
-~~~~~~~~~
+---------
 
 HHC02802I is not yet documented
 
@@ -13870,7 +13793,7 @@ Severity …
 Action …
 
 HHC02803I
-~~~~~~~~~
+---------
 
 HHC02803I is not yet documented
 
@@ -13881,7 +13804,7 @@ Severity …
 Action …
 
 HHC02804E
-~~~~~~~~~
+---------
 
 HHC02804E is not yet documented
 
@@ -13892,7 +13815,7 @@ Severity …
 Action …
 
 HHC02805I
-~~~~~~~~~
+---------
 
 HHC02805I is not yet documented
 
@@ -13903,7 +13826,7 @@ Severity …
 Action …
 
 HHC02806I
-~~~~~~~~~
+---------
 
 HHC02806I is not yet documented
 
@@ -13917,7 +13840,7 @@ Action …
 ----------------------------------------------------------
 
 HHC03901E
-~~~~~~~~~
+---------
 
 HHC03901E is not yet documented
 
@@ -13928,7 +13851,7 @@ Severity …
 Action …
 
 HHC03902E
-~~~~~~~~~
+---------
 
 HHC03902E is not yet documented
 
@@ -13939,7 +13862,7 @@ Severity …
 Action …
 
 HHC03903I
-~~~~~~~~~
+---------
 
 HHC03903I is not yet documented
 
@@ -13950,7 +13873,7 @@ Severity …
 Action …
 
 HHC03904I
-~~~~~~~~~
+---------
 
 HHC03904I is not yet documented
 
@@ -13961,7 +13884,7 @@ Severity …
 Action …
 
 HHC03905I
-~~~~~~~~~
+---------
 
 HHC03905I is not yet documented
 
@@ -13972,7 +13895,7 @@ Severity …
 Action …
 
 HHC03906I
-~~~~~~~~~
+---------
 
 HHC03906I is not yet documented
 
@@ -13983,7 +13906,7 @@ Severity …
 Action …
 
 HHC03907I
-~~~~~~~~~
+---------
 
 HHC03907I is not yet documented
 
@@ -13994,7 +13917,7 @@ Severity …
 Action …
 
 HHC03908I
-~~~~~~~~~
+---------
 
 HHC03908I is not yet documented
 
@@ -14005,7 +13928,7 @@ Severity …
 Action …
 
 HHC03909I
-~~~~~~~~~
+---------
 
 HHC03909I is not yet documented
 
@@ -14016,7 +13939,7 @@ Severity …
 Action …
 
 HHC03910I
-~~~~~~~~~
+---------
 
 HHC03910I is not yet documented
 
@@ -14027,7 +13950,7 @@ Severity …
 Action …
 
 HHC03911I
-~~~~~~~~~
+---------
 
 HHC03911I is not yet documented
 
@@ -14038,7 +13961,7 @@ Severity …
 Action …
 
 HHC03912E
-~~~~~~~~~
+---------
 
 HHC03912E is not yet documented
 
@@ -14049,7 +13972,7 @@ Severity …
 Action …
 
 HHC03913W
-~~~~~~~~~
+---------
 
 HHC03913W is not yet documented
 
@@ -14060,7 +13983,7 @@ Severity …
 Action …
 
 HHC03914W
-~~~~~~~~~
+---------
 
 HHC03914W is not yet documented
 
@@ -14071,7 +13994,7 @@ Severity …
 Action …
 
 HHC03915I
-~~~~~~~~~
+---------
 
 HHC03915I is not yet documented
 
@@ -14082,7 +14005,7 @@ Severity …
 Action …
 
 HHC03916I
-~~~~~~~~~
+---------
 
 HHC03916I is not yet documented
 
@@ -14093,7 +14016,7 @@ Severity …
 Action …
 
 HHC03917W
-~~~~~~~~~
+---------
 
 HHC03917W is not yet documented
 
@@ -14104,7 +14027,7 @@ Severity …
 Action …
 
 HHC03918W
-~~~~~~~~~
+---------
 
 HHC03918W is not yet documented
 
@@ -14115,7 +14038,7 @@ Severity …
 Action …
 
 HHC03921W
-~~~~~~~~~
+---------
 
 HHC03921W is not yet documented
 
@@ -14126,7 +14049,7 @@ Severity …
 Action …
 
 HHC03922W
-~~~~~~~~~
+---------
 
 HHC03922W is not yet documented
 
@@ -14137,7 +14060,7 @@ Severity …
 Action …
 
 HHC03923W
-~~~~~~~~~
+---------
 
 HHC03923W is not yet documented
 
@@ -14148,7 +14071,7 @@ Severity …
 Action …
 
 HHC03924W
-~~~~~~~~~
+---------
 
 HHC03924W is not yet documented
 
@@ -14159,7 +14082,7 @@ Severity …
 Action …
 
 HHC03931W
-~~~~~~~~~
+---------
 
 HHC03931W is not yet documented
 
@@ -14170,7 +14093,7 @@ Severity …
 Action …
 
 HHC03932W
-~~~~~~~~~
+---------
 
 HHC03932W is not yet documented
 
@@ -14181,7 +14104,7 @@ Severity …
 Action …
 
 HHC03933W
-~~~~~~~~~
+---------
 
 HHC03933W is not yet documented
 
@@ -14192,7 +14115,7 @@ Severity …
 Action …
 
 HHC03934W
-~~~~~~~~~
+---------
 
 HHC03934W is not yet documented
 
@@ -14203,7 +14126,7 @@ Severity …
 Action …
 
 HHC03935W
-~~~~~~~~~
+---------
 
 HHC03935W is not yet documented
 
@@ -14214,7 +14137,7 @@ Severity …
 Action …
 
 HHC03936W
-~~~~~~~~~
+---------
 
 HHC03936W is not yet documented
 
@@ -14225,7 +14148,7 @@ Severity …
 Action …
 
 HHC03937W
-~~~~~~~~~
+---------
 
 HHC03937W is not yet documented
 
@@ -14236,7 +14159,7 @@ Severity …
 Action …
 
 HHC03952I
-~~~~~~~~~
+---------
 
 HHC03952I is not yet documented
 
@@ -14247,7 +14170,7 @@ Severity …
 Action …
 
 HHC03953I
-~~~~~~~~~
+---------
 
 HHC03953I is not yet documented
 
@@ -14258,7 +14181,7 @@ Severity …
 Action …
 
 HHC03954I
-~~~~~~~~~
+---------
 
 HHC03954I is not yet documented
 
@@ -14269,7 +14192,7 @@ Severity …
 Action …
 
 HHC03983I
-~~~~~~~~~
+---------
 
 HHC03983I is not yet documented
 
@@ -14280,7 +14203,7 @@ Severity …
 Action …
 
 HHC03984I
-~~~~~~~~~
+---------
 
 HHC03984I is not yet documented
 
@@ -14291,7 +14214,7 @@ Severity …
 Action …
 
 HHC03985E
-~~~~~~~~~
+---------
 
 HHC03985E is not yet documented
 
@@ -14302,7 +14225,7 @@ Severity …
 Action …
 
 HHC03991I
-~~~~~~~~~
+---------
 
 HHC03991I is not yet documented
 
@@ -14313,7 +14236,7 @@ Severity …
 Action …
 
 HHC03992D
-~~~~~~~~~
+---------
 
 HHC03992D is not yet documented
 
@@ -14324,7 +14247,7 @@ Severity …
 Action …
 
 HHC03993D
-~~~~~~~~~
+---------
 
 HHC03993D is not yet documented
 
@@ -14335,7 +14258,7 @@ Severity …
 Action …
 
 HHC03995D
-~~~~~~~~~
+---------
 
 HHC03995D is not yet documented
 
@@ -14349,7 +14272,7 @@ Action …
 ----------------------------------------------------------------
 
 HHC04100I
-~~~~~~~~~
+---------
 
 HHC04100I is not yet documented
 
@@ -14360,7 +14283,7 @@ Severity …
 Action …
 
 HHC04101I
-~~~~~~~~~
+---------
 
 HHC04101I is not yet documented
 
@@ -14371,7 +14294,7 @@ Severity …
 Action …
 
 HHC04102E
-~~~~~~~~~
+---------
 
 HHC04102E is not yet documented
 
@@ -14382,7 +14305,7 @@ Severity …
 Action …
 
 HHC04110W
-~~~~~~~~~
+---------
 
 HHC04110W is not yet documented
 
@@ -14393,7 +14316,7 @@ Severity …
 Action …
 
 HHC04111E
-~~~~~~~~~
+---------
 
 HHC04111E is not yet documented
 
@@ -14404,7 +14327,7 @@ Severity …
 Action …
 
 HHC04112S
-~~~~~~~~~
+---------
 
 HHC04112S is not yet documented
 
@@ -14418,7 +14341,7 @@ Action …
 ---------------------------------------------------
 
 HHC17000E
-~~~~~~~~~
+---------
 
 HHC17000E is not yet documented
 
@@ -14429,7 +14352,7 @@ Severity …
 Action …
 
 HHC17001I
-~~~~~~~~~
+---------
 
 HHC17001I is not yet documented
 
@@ -14440,7 +14363,7 @@ Severity …
 Action …
 
 HHC17002I
-~~~~~~~~~
+---------
 
 HHC17002I is not yet documented
 
@@ -14451,7 +14374,7 @@ Severity …
 Action …
 
 HHC17003I
-~~~~~~~~~
+---------
 
 HHC17003I is not yet documented
 
@@ -14462,7 +14385,7 @@ Severity …
 Action …
 
 HHC17004I
-~~~~~~~~~
+---------
 
 HHC17004I is not yet documented
 
@@ -14473,7 +14396,7 @@ Severity …
 Action …
 
 HHC17005I
-~~~~~~~~~
+---------
 
 HHC17005I is not yet documented
 
@@ -14484,7 +14407,7 @@ Severity …
 Action …
 
 HHC17007I
-~~~~~~~~~
+---------
 
 HHC17007I is not yet documented
 
@@ -14495,7 +14418,7 @@ Severity …
 Action …
 
 HHC17008I
-~~~~~~~~~
+---------
 
 HHC17008I is not yet documented
 
@@ -14506,7 +14429,7 @@ Severity …
 Action …
 
 HHC17009I
-~~~~~~~~~
+---------
 
 HHC17009I is not yet documented
 
@@ -14517,7 +14440,7 @@ Severity …
 Action …
 
 HHC17010I
-~~~~~~~~~
+---------
 
 HHC17010I is not yet documented
 
@@ -14528,7 +14451,7 @@ Severity …
 Action …
 
 HHC17011I
-~~~~~~~~~
+---------
 
 HHC17011I is not yet documented
 
@@ -14539,7 +14462,7 @@ Severity …
 Action …
 
 HHC17012I
-~~~~~~~~~
+---------
 
 HHC17012I is not yet documented
 
@@ -14550,7 +14473,7 @@ Severity …
 Action …
 
 HHC17013I
-~~~~~~~~~
+---------
 
 HHC17013I is not yet documented
 
@@ -14564,7 +14487,7 @@ Action …
 -------------------------------------------------
 
 HHC17500I
-~~~~~~~~~
+---------
 
 HHC17500I is not yet documented
 
@@ -14575,7 +14498,7 @@ Severity …
 Action …
 
 HHC17501I
-~~~~~~~~~
+---------
 
 HHC17501I is not yet documented
 
@@ -14586,7 +14509,7 @@ Severity …
 Action …
 
 HHC17502E
-~~~~~~~~~
+---------
 
 HHC17502E is not yet documented
 
@@ -14597,7 +14520,7 @@ Severity …
 Action …
 
 HHC17503E
-~~~~~~~~~
+---------
 
 HHC17503E is not yet documented
 
@@ -14608,7 +14531,7 @@ Severity …
 Action …
 
 HHC17504E
-~~~~~~~~~
+---------
 
 HHC17504E is not yet documented
 
@@ -14619,7 +14542,7 @@ Severity …
 Action …
 
 HHC17505E
-~~~~~~~~~
+---------
 
 HHC17505E is not yet documented
 
@@ -14630,7 +14553,7 @@ Severity …
 Action …
 
 HHC17506E
-~~~~~~~~~
+---------
 
 HHC17506E is not yet documented
 
@@ -14641,7 +14564,7 @@ Severity …
 Action …
 
 HHC17507W
-~~~~~~~~~
+---------
 
 HHC17507W is not yet documented
 
@@ -14652,7 +14575,7 @@ Severity …
 Action …
 
 HHC17508W
-~~~~~~~~~
+---------
 
 HHC17508W is not yet documented
 
@@ -14663,7 +14586,7 @@ Severity …
 Action …
 
 HHC17509W
-~~~~~~~~~
+---------
 
 HHC17509W is not yet documented
 
@@ -14674,7 +14597,7 @@ Severity …
 Action …
 
 HHC17510W
-~~~~~~~~~
+---------
 
 HHC17510W is not yet documented
 
@@ -14685,7 +14608,7 @@ Severity …
 Action …
 
 HHC17521I
-~~~~~~~~~
+---------
 
 HHC17521I is not yet documented
 
@@ -14696,7 +14619,7 @@ Severity …
 Action …
 
 HHC17522I
-~~~~~~~~~
+---------
 
 HHC17522I is not yet documented
 
@@ -14707,7 +14630,7 @@ Severity …
 Action …
 
 HHC17523I
-~~~~~~~~~
+---------
 
 HHC17523I is not yet documented
 
@@ -14718,7 +14641,7 @@ Severity …
 Action …
 
 HHC17524I
-~~~~~~~~~
+---------
 
 HHC17524I is not yet documented
 
@@ -14729,7 +14652,7 @@ Severity …
 Action …
 
 HHC17525I
-~~~~~~~~~
+---------
 
 HHC17525I is not yet documented
 
@@ -14740,7 +14663,7 @@ Severity …
 Action …
 
 HHC17526I
-~~~~~~~~~
+---------
 
 HHC17521I is not yet documented
 
@@ -14751,7 +14674,7 @@ Severity …
 Action …
 
 HHC17527I
-~~~~~~~~~
+---------
 
 HHC17527I is not yet documented
 
@@ -14762,7 +14685,7 @@ Severity …
 Action …
 
 HHC17530E
-~~~~~~~~~
+---------
 
 HHC17530E is not yet documented
 
@@ -14773,7 +14696,7 @@ Severity …
 Action …
 
 HHC17531E
-~~~~~~~~~
+---------
 
 HHC17531E is not yet documented
 
@@ -14784,7 +14707,7 @@ Severity …
 Action …
 
 HHC17532E
-~~~~~~~~~
+---------
 
 HHC17532E is not yet documented
 
@@ -14795,7 +14718,7 @@ Severity …
 Action …
 
 HHC17533E
-~~~~~~~~~
+---------
 
 HHC17533E is not yet documented
 
@@ -14806,7 +14729,7 @@ Severity …
 Action …
 
 HHC17534E
-~~~~~~~~~
+---------
 
 HHC17534E is not yet documented
 
@@ -14820,7 +14743,7 @@ Action …
 -----------------------------------------------------------
 
 HHC90000D
-~~~~~~~~~
+---------
 
 HHC90000D is not yet documented
 
@@ -14831,7 +14754,7 @@ Severity …
 Action …
 
 HHC90010E
-~~~~~~~~~
+---------
 
 HHC90010E is not yet documented
 
@@ -14842,7 +14765,7 @@ Severity …
 Action …
 
 HHC90011E
-~~~~~~~~~
+---------
 
 HHC90011E is not yet documented
 
@@ -14853,7 +14776,7 @@ Severity …
 Action …
 
 HHC90012I
-~~~~~~~~~
+---------
 
 HHC90012I is not yet documented
 
@@ -14864,7 +14787,7 @@ Severity …
 Action …
 
 HHC90013E
-~~~~~~~~~
+---------
 
 HHC90012I is not yet documented
 
@@ -14875,7 +14798,7 @@ Severity …
 Action …
 
 HHC90014I
-~~~~~~~~~
+---------
 
 HHC90012I is not yet documented
 
@@ -14886,7 +14809,7 @@ Severity …
 Action …
 
 HHC90015E
-~~~~~~~~~
+---------
 
 HHC90012I is not yet documented
 
@@ -14897,7 +14820,7 @@ Severity …
 Action …
 
 HHC90016E
-~~~~~~~~~
+---------
 
 HHC90012I is not yet documented
 
@@ -14908,7 +14831,7 @@ Severity …
 Action …
 
 HHC90017I
-~~~~~~~~~
+---------
 
 HHC90012I is not yet documented
 
@@ -14919,7 +14842,7 @@ Severity …
 Action …
 
 HHC90018I
-~~~~~~~~~
+---------
 
 HHC90012I is not yet documented
 
@@ -14930,7 +14853,7 @@ Severity …
 Action …
 
 HHC90019W
-~~~~~~~~~
+---------
 
 HHC90012I is not yet documented
 
@@ -14944,7 +14867,7 @@ Action …
 ------------------------------------------------------------
 
 HHC90100D
-~~~~~~~~~
+---------
 
 HHC90100D is not yet documented
 
@@ -14955,7 +14878,7 @@ Severity …
 Action …
 
 HHC90101D
-~~~~~~~~~
+---------
 
 HHC90101D is not yet documented
 
@@ -14966,7 +14889,7 @@ Severity …
 Action …
 
 HHC90102D
-~~~~~~~~~
+---------
 
 HHC90102D is not yet documented
 
@@ -14977,7 +14900,7 @@ Severity …
 Action …
 
 HHC90103D
-~~~~~~~~~
+---------
 
 HHC90103D is not yet documented
 
@@ -14988,7 +14911,7 @@ Severity …
 Action …
 
 HHC90104D
-~~~~~~~~~
+---------
 
 HHC90104D is not yet documented
 
@@ -14999,7 +14922,7 @@ Severity …
 Action …
 
 HHC90105D
-~~~~~~~~~
+---------
 
 HHC90105D is not yet documented
 
@@ -15010,7 +14933,7 @@ Severity …
 Action …
 
 HHC90106D
-~~~~~~~~~
+---------
 
 HHC90106D is not yet documented
 
@@ -15021,7 +14944,7 @@ Severity …
 Action …
 
 HHC90107D
-~~~~~~~~~
+---------
 
 HHC90107D is not yet documented
 
@@ -15032,7 +14955,7 @@ Severity …
 Action …
 
 HHC90108D
-~~~~~~~~~
+---------
 
 HHC90108D is not yet documented
 
@@ -15043,7 +14966,7 @@ Severity …
 Action …
 
 HHC90109D
-~~~~~~~~~
+---------
 
 HHC90109D is not yet documented
 
@@ -15054,7 +14977,7 @@ Severity …
 Action …
 
 HHC90110D
-~~~~~~~~~
+---------
 
 HHC90110D is not yet documented
 
@@ -15065,7 +14988,7 @@ Severity …
 Action …
 
 HHC90111D
-~~~~~~~~~
+---------
 
 HHC90111D is not yet documented
 
@@ -15076,7 +14999,7 @@ Severity …
 Action …
 
 HHC90112D
-~~~~~~~~~
+---------
 
 HHC90112D is not yet documented
 
@@ -15087,7 +15010,7 @@ Severity …
 Action …
 
 HHC90190D
-~~~~~~~~~
+---------
 
 HHC90190D is not yet documented
 
@@ -15101,7 +15024,7 @@ Action …
 ------------------------------------------------------------
 
 HHC90205D
-~~~~~~~~~
+---------
 
 HHC90205D is not yet documented
 
@@ -15115,7 +15038,7 @@ Action …
 ---------------------------------------------------------
 
 HHC90300D
-~~~~~~~~~
+---------
 
 HHC90300D is not yet documented
 
@@ -15126,7 +15049,7 @@ Severity …
 Action …
 
 HHC90301D
-~~~~~~~~~
+---------
 
 HHC90301D is not yet documented
 
@@ -15137,7 +15060,7 @@ Severity …
 Action …
 
 HHC90302D
-~~~~~~~~~
+---------
 
 HHC90302D is not yet documented
 
@@ -15148,7 +15071,7 @@ Severity …
 Action …
 
 HHC90303D
-~~~~~~~~~
+---------
 
 HHC90303D is not yet documented
 
@@ -15159,7 +15082,7 @@ Severity …
 Action …
 
 HHC90304D
-~~~~~~~~~
+---------
 
 HHC90304D is not yet documented
 
@@ -15170,7 +15093,7 @@ Severity …
 Action …
 
 HHC90305D
-~~~~~~~~~
+---------
 
 HHC90305D is not yet documented
 
@@ -15181,7 +15104,7 @@ Severity …
 Action …
 
 HHC90306D
-~~~~~~~~~
+---------
 
 HHC90306D is not yet documented
 
@@ -15192,7 +15115,7 @@ Severity …
 Action …
 
 HHC90307D
-~~~~~~~~~
+---------
 
 HHC90307D is not yet documented
 
@@ -15203,7 +15126,7 @@ Severity …
 Action …
 
 HHC90308D
-~~~~~~~~~
+---------
 
 HHC90308D is not yet documented
 
@@ -15214,7 +15137,7 @@ Severity …
 Action …
 
 HHC90309D
-~~~~~~~~~
+---------
 
 HHC90309D is not yet documented
 
@@ -15225,7 +15148,7 @@ Severity …
 Action …
 
 HHC90310D
-~~~~~~~~~
+---------
 
 HHC90310D is not yet documented
 
@@ -15236,7 +15159,7 @@ Severity …
 Action …
 
 HHC90311D
-~~~~~~~~~
+---------
 
 HHC90311D is not yet documented
 
@@ -15247,7 +15170,7 @@ Severity …
 Action …
 
 HHC90312D
-~~~~~~~~~
+---------
 
 HHC90312D is not yet documented
 
@@ -15258,7 +15181,7 @@ Severity …
 Action …
 
 HHC90313D
-~~~~~~~~~
+---------
 
 HHC90313D is not yet documented
 
@@ -15269,7 +15192,7 @@ Severity …
 Action …
 
 HHC90314D
-~~~~~~~~~
+---------
 
 HHC90314D is not yet documented
 
@@ -15280,7 +15203,7 @@ Severity …
 Action …
 
 HHC90315D
-~~~~~~~~~
+---------
 
 HHC90315D is not yet documented
 
@@ -15291,7 +15214,7 @@ Severity …
 Action …
 
 HHC90316D
-~~~~~~~~~
+---------
 
 HHC90316D is not yet documented
 
@@ -15302,7 +15225,7 @@ Severity …
 Action …
 
 HHC90317D
-~~~~~~~~~
+---------
 
 HHC90317D is not yet documented
 
@@ -15313,7 +15236,7 @@ Severity …
 Action …
 
 HHC90318D
-~~~~~~~~~
+---------
 
 HHC90318D is not yet documented
 
@@ -15324,7 +15247,7 @@ Severity …
 Action …
 
 HHC90319D
-~~~~~~~~~
+---------
 
 HHC90319D is not yet documented
 
@@ -15335,7 +15258,7 @@ Severity …
 Action …
 
 HHC90320D
-~~~~~~~~~
+---------
 
 HHC90320D is not yet documented
 
@@ -15346,7 +15269,7 @@ Severity …
 Action …
 
 HHC90321D
-~~~~~~~~~
+---------
 
 HHC90321D is not yet documented
 
@@ -15357,7 +15280,7 @@ Severity …
 Action …
 
 HHC90322D
-~~~~~~~~~
+---------
 
 HHC90322D is not yet documented
 
@@ -15368,7 +15291,7 @@ Severity …
 Action …
 
 HHC90323D
-~~~~~~~~~
+---------
 
 HHC90323D is not yet documented
 
@@ -15379,7 +15302,7 @@ Severity …
 Action …
 
 HHC90324D
-~~~~~~~~~
+---------
 
 HHC90324D is not yet documented
 
@@ -15390,7 +15313,7 @@ Severity …
 Action …
 
 HHC90325D
-~~~~~~~~~
+---------
 
 HHC90325D is not yet documented
 
@@ -15401,7 +15324,7 @@ Severity …
 Action …
 
 HHC90326D
-~~~~~~~~~
+---------
 
 HHC90326D is not yet documented
 
@@ -15412,7 +15335,7 @@ Severity …
 Action …
 
 HHC90327D
-~~~~~~~~~
+---------
 
 HHC90327D is not yet documented
 
@@ -15423,7 +15346,7 @@ Severity …
 Action …
 
 HHC90328D
-~~~~~~~~~
+---------
 
 HHC90328D is not yet documented
 
@@ -15434,7 +15357,7 @@ Severity …
 Action …
 
 HHC90329D
-~~~~~~~~~
+---------
 
 HHC90329D is not yet documented
 
@@ -15445,7 +15368,7 @@ Severity …
 Action …
 
 HHC90330D
-~~~~~~~~~
+---------
 
 HHC90330D is not yet documented
 
@@ -15456,7 +15379,7 @@ Severity …
 Action …
 
 HHC90331D
-~~~~~~~~~
+---------
 
 HHC90331D is not yet documented
 
@@ -15467,7 +15390,7 @@ Severity …
 Action …
 
 HHC90332D
-~~~~~~~~~
+---------
 
 HHC90332D is not yet documented
 
@@ -15478,7 +15401,7 @@ Severity …
 Action …
 
 HHC90333D
-~~~~~~~~~
+---------
 
 HHC90333D is not yet documented
 
@@ -15489,7 +15412,7 @@ Severity …
 Action …
 
 HHC90334D
-~~~~~~~~~
+---------
 
 HHC90334D is not yet documented
 
@@ -15500,7 +15423,7 @@ Severity …
 Action …
 
 HHC90335D
-~~~~~~~~~
+---------
 
 HHC90335D is not yet documented
 
@@ -15511,7 +15434,7 @@ Severity …
 Action …
 
 HHC90336D
-~~~~~~~~~
+---------
 
 HHC90336D is not yet documented
 
@@ -15522,7 +15445,7 @@ Severity …
 Action …
 
 HHC90337D
-~~~~~~~~~
+---------
 
 HHC90337D is not yet documented
 
@@ -15533,7 +15456,7 @@ Severity …
 Action …
 
 HHC90338D
-~~~~~~~~~
+---------
 
 HHC90338D is not yet documented
 
@@ -15544,7 +15467,7 @@ Severity …
 Action …
 
 HHC90339D
-~~~~~~~~~
+---------
 
 HHC90339D is not yet documented
 
@@ -15555,7 +15478,7 @@ Severity …
 Action …
 
 HHC90340D
-~~~~~~~~~
+---------
 
 HHC90340D is not yet documented
 
@@ -15566,7 +15489,7 @@ Severity …
 Action …
 
 HHC90341D
-~~~~~~~~~
+---------
 
 HHC90341D is not yet documented
 
@@ -15577,7 +15500,7 @@ Severity …
 Action …
 
 HHC90342D
-~~~~~~~~~
+---------
 
 HHC90342D is not yet documented
 
@@ -15588,7 +15511,7 @@ Severity …
 Action …
 
 HHC90343D
-~~~~~~~~~
+---------
 
 HHC90343D is not yet documented
 
@@ -15599,7 +15522,7 @@ Severity …
 Action …
 
 HHC90344D
-~~~~~~~~~
+---------
 
 HHC90344D is not yet documented
 
@@ -15610,7 +15533,7 @@ Severity …
 Action …
 
 HHC90345D
-~~~~~~~~~
+---------
 
 HHC90345D is not yet documented
 
@@ -15621,7 +15544,7 @@ Severity …
 Action …
 
 HHC90346D
-~~~~~~~~~
+---------
 
 HHC90346D is not yet documented
 
@@ -15632,7 +15555,7 @@ Severity …
 Action …
 
 HHC90347D
-~~~~~~~~~
+---------
 
 HHC90347D is not yet documented
 
@@ -15643,7 +15566,7 @@ Severity …
 Action …
 
 HHC90349D
-~~~~~~~~~
+---------
 
 HHC90349D is not yet documented
 
@@ -15654,7 +15577,7 @@ Severity …
 Action …
 
 HHC90350D
-~~~~~~~~~
+---------
 
 HHC90350D is not yet documented
 
@@ -15665,7 +15588,7 @@ Severity …
 Action …
 
 HHC90351D
-~~~~~~~~~
+---------
 
 HHC90351D is not yet documented
 
@@ -15676,7 +15599,7 @@ Severity …
 Action …
 
 HHC90352D
-~~~~~~~~~
+---------
 
 HHC90352D is not yet documented
 
@@ -15687,7 +15610,7 @@ Severity …
 Action …
 
 HHC90353D
-~~~~~~~~~
+---------
 
 HHC90353D is not yet documented
 
@@ -15698,7 +15621,7 @@ Severity …
 Action …
 
 HHC90354D
-~~~~~~~~~
+---------
 
 HHC90354D is not yet documented
 
@@ -15709,7 +15632,7 @@ Severity …
 Action …
 
 HHC90355D
-~~~~~~~~~
+---------
 
 HHC90355D is not yet documented
 
@@ -15720,7 +15643,7 @@ Severity …
 Action …
 
 HHC90356D
-~~~~~~~~~
+---------
 
 HHC90356D is not yet documented
 
@@ -15731,7 +15654,7 @@ Severity …
 Action …
 
 HHC90357D
-~~~~~~~~~
+---------
 
 HHC90357D is not yet documented
 
@@ -15742,7 +15665,7 @@ Severity …
 Action …
 
 HHC90358D
-~~~~~~~~~
+---------
 
 HHC90358D is not yet documented
 
@@ -15753,7 +15676,7 @@ Severity …
 Action …
 
 HHC90359D
-~~~~~~~~~
+---------
 
 HHC90359D is not yet documented
 
@@ -15764,7 +15687,7 @@ Severity …
 Action …
 
 HHC90360D
-~~~~~~~~~
+---------
 
 HHC90360D is not yet documented
 
@@ -15775,7 +15698,7 @@ Severity …
 Action …
 
 HHC90361D
-~~~~~~~~~
+---------
 
 HHC90361D is not yet documented
 
@@ -15786,7 +15709,7 @@ Severity …
 Action …
 
 HHC90362D
-~~~~~~~~~
+---------
 
 HHC90362D is not yet documented
 
@@ -15797,7 +15720,7 @@ Severity …
 Action …
 
 HHC90363D
-~~~~~~~~~
+---------
 
 HHC90363D is not yet documented
 
@@ -15808,7 +15731,7 @@ Severity …
 Action …
 
 HHC90364D
-~~~~~~~~~
+---------
 
 HHC90364D is not yet documented
 
@@ -15825,7 +15748,7 @@ Part II: Old Messages
 ----------------------------------------------------
 
 HHCAOnnns
-~~~~~~~~~
+---------
 
 Messages HHCAOnnns are not yet documented.
 
@@ -15833,7 +15756,7 @@ Messages HHCAOnnns are not yet documented.
 --------------------------------------------------------
 
 HHCCA001I
-~~~~~~~~~
+---------
 
 HHCCA001I CCUU:Connect out to ipaddr:port failed during initial status :
 System Cause Text
@@ -15853,7 +15776,7 @@ the configuration file. If this message occured during a program
 initiated DIAL, correct the dial data.
 
 HHCCA002I
-~~~~~~~~~
+---------
 
 HHCCA002I CCUU:Line Communication thread thread id started
 
@@ -15867,7 +15790,7 @@ Operator Action None. This is an informational message.
 Programmer Action None. This is an informational message.
 
 HHCCA003E
-~~~~~~~~~
+---------
 
 HHCCA003E CCUU:Cannot obtain socket for incoming calls : System Cause
 Text
@@ -15883,7 +15806,7 @@ Programmer Action Check the System Cause Text for any information
 relating to the host system. Notify support.
 
 HHCCA004W
-~~~~~~~~~
+---------
 
 HHCCA004W CCUU:Waiting 5 seconds for port port to become available
 
@@ -15898,7 +15821,7 @@ Programmer Action Determine the program holding the specified port. If
 the port cannot be made available, use a different port.
 
 HHCCA005I
-~~~~~~~~~
+---------
 
 HHCCA005I CCUU:Listening on port port for incoming TCP connections
 
@@ -15912,7 +15835,7 @@ Operator Action None. This is an informational message.
 Programmer Action None. This is an informational message.
 
 HHCCA006T
-~~~~~~~~~
+---------
 
 HHCCA006T CCUU:Select failed : System Cause Text
 
@@ -15926,7 +15849,7 @@ Programmer Action Check the System Cause Text for any indication of
 where the error might come from. Notify Support.
 
 HHCCA007W
-~~~~~~~~~
+---------
 
 HHCCA007W CCUU:Outgoing call failed during ENABLE|DIAL command : System
 Cause Text
@@ -15945,7 +15868,7 @@ configured. If the operation was a DIAL attempt, check in the
 application configuration or operation data.
 
 HHCCA008I
-~~~~~~~~~
+---------
 
 HHCCA008I CCUU:cthread - Incoming Call
 
@@ -15960,7 +15883,7 @@ Operator Action None. This is an informational message.
 Programmer Action None. This is an informational message.
 
 HHCCA009I
-~~~~~~~~~
+---------
 
 HHCCA009I CCUU:BSC utility thread terminated
 
@@ -15975,7 +15898,7 @@ Programmer Action Refer to any previous error message to determine if
 this message was not unexpected.
 
 HHCCA010I
-~~~~~~~~~
+---------
 
 HHCCA010I CCUU:initialization not performed
 
@@ -15989,7 +15912,7 @@ Operator Action Refer to any previous error message.
 Programmer Action Refer to any previous error message.
 
 HHCCA011E
-~~~~~~~~~
+---------
 
 HHCCA011E CCUU:Error parsing Keyword
 
@@ -16006,7 +15929,7 @@ Programmer Action For an engine initialization, correct the device
 configuration parameters in the configuration file.
 
 HHCCA012E
-~~~~~~~~~
+---------
 
 HHCCA012E CCUU:Unrecognized parameter Keyword
 
@@ -16023,7 +15946,7 @@ Programmer Action For an engine initialization, correct the device
 configuration parameters in the configuration file.
 
 HHCCA013E
-~~~~~~~~~
+---------
 
 HHCCA013E CCUU:Incorrect local port|remote port|local host|remote host
 specification value
@@ -16041,7 +15964,7 @@ Programmer Action For an engine initialization, correct the device
 configuration parameters in the configuration file.
 
 HHCCA014E
-~~~~~~~~~
+---------
 
 HHCCA014E CCUU:Incorrect switched/dial specification value; defaulting
 to DIAL=OUT
@@ -16059,7 +15982,7 @@ Programmer Action For an engine initialization, correct the device
 configuration parameters in the configuration file.
 
 HHCCA015E
-~~~~~~~~~
+---------
 
 HHCCA015E CCUU:Missing parameter : DIAL=NO|IN|OUT|INOUT and
 LPORT|RPORT|LHOST|RHOST not specified
@@ -16083,7 +16006,7 @@ For DIAL=OUT None of LPORT,LHOST,RPORT,RHOST are required For
 DIAL=INOUT, LPORT is required
 
 HHCCA016W
-~~~~~~~~~
+---------
 
 HHCCA016W CCUU:Conflicting parameter : DIAL=NO|IN|OUT|INOUT and
 LPORT|RPORT|LHOST|RHOST=value specified
@@ -16104,7 +16027,7 @@ LHOST, RPORT and RHOST are ignored For DIAL=INOUT, RPORT and RHOST are
 ignored
 
 HHCCA017I
-~~~~~~~~~
+---------
 
 HHCCA017I CCUU:LPORT|RPORT|LHOST|RHOST parameter ignored
 
@@ -16118,7 +16041,7 @@ Operator Action None. This is an informational message.
 Programmer Action None. This is an informational message.
 
 HHCCA018E
-~~~~~~~~~
+---------
 
 HHCCA018E CCUU:Bind failed : System Cause Text
 
@@ -16133,7 +16056,7 @@ Programmer Action Check that the LHOST parameter for this device is
 indeed a local IP address, otherwise notify support.
 
 HHCCA019E
-~~~~~~~~~
+---------
 
 HHCCA019E CCUU:BSC comm thread did not initialise
 
@@ -16147,7 +16070,7 @@ Operator Action Check for any previously issued error message.
 Programmer Action Check for any previously issued error message.
 
 HHCCA020E
-~~~~~~~~~
+---------
 
 HHCCA020E CCUU:Memory allocation failure for main control block
 
@@ -16161,7 +16084,7 @@ Operator Action None.
 Programmer Action Contact support.
 
 HHCCA021I
-~~~~~~~~~
+---------
 
 HHCCA021I CCUU:Initialization failed due to previous errors
 
@@ -16175,7 +16098,7 @@ Operator Action None.
 Programmer Action Refer to any previous error message.
 
 HHCCA300D
-~~~~~~~~~
+---------
 
 HHCCA300D Debug Message
 
@@ -16194,7 +16117,7 @@ Programmer Action None.
 ------------------------------------------------------
 
 HHCCF001S
-~~~~~~~~~
+---------
 
 HHCCF001S Error reading file filename line lineno: error
 
@@ -16204,7 +16127,7 @@ named filename at line number lineno. The error is described by error.
 Action Correct the error and restart Hercules.
 
 HHCCF002S
-~~~~~~~~~
+---------
 
 HHCCF002S File filename line lineno is too long
 
@@ -16214,7 +16137,7 @@ filename is too long and cannot be processed.
 Action Correct the line and restart Hercules.
 
 HHCCF003S
-~~~~~~~~~
+---------
 
 HHCCF003S Cannot open file filename: error
 
@@ -16224,7 +16147,7 @@ The error is described by error.
 Action Correct the error and restart Hercules.
 
 HHCCF004S
-~~~~~~~~~
+---------
 
 HHCCF004S No device records in file filename
 
@@ -16236,7 +16159,7 @@ Action Specify one or more device definitions in the configuration file
 and restart Hercules.
 
 HHCCF005S
-~~~~~~~~~
+---------
 
 HHCCF005S Unrecognized argument argument
 
@@ -16247,7 +16170,7 @@ lineno. Only the arguments auth and noauth are valid.
 Action Correct the invalid argument and restart Hercules.
 
 HHCCF006S
-~~~~~~~~~
+---------
 
 HHCCF006S Error in filename line lineno: Userid, but no password given
 userid
@@ -16261,7 +16184,7 @@ Action Either remove the userid, or specify a password, and restart
 Hercules.
 
 HHCCF007S
-~~~~~~~~~
+---------
 
 HHCCF007S Error in filename line lineno: Missing argument
 
@@ -16273,7 +16196,7 @@ Action Specify the directory where the Hercules web server will find its
 HTML files and restart Hercules.
 
 HHCCF008E
-~~~~~~~~~
+---------
 
 HHCCF008E Error in filename line lineno: Unrecognized keyword keyword
 
@@ -16283,7 +16206,7 @@ named filename at line number lineno. The invalid keyword was keyword.
 Action Correct the invalid statement and restart Hercules.
 
 HHCCF009S
-~~~~~~~~~
+---------
 
 HHCCF009S Error in filename line lineno: Incorrect number of operands
 
@@ -16294,7 +16217,7 @@ statement exactly one operand is required.
 Action Correct the invalid statement and restart Hercules.
 
 HHCCF010S
-~~~~~~~~~
+---------
 
 HHCCF010S Error in filename line lineno: Unknown or unsupported ARCHMODE
 specification mode
@@ -16310,7 +16233,7 @@ was issued because support for the desired architecture was excluded,
 then recompile Hercules.
 
 HHCCF011S
-~~~~~~~~~
+---------
 
 HHCCF011S Error in filename line lineno: serialno is not a valid serial
 number
@@ -16322,7 +16245,7 @@ must be exactly six digits long and must be a valid hexadecimal number.
 Action Correct the serial number and restart Hercules.
 
 HHCCF012S
-~~~~~~~~~
+---------
 
 HHCCF012S Error in filename line lineno: modelno is not a valid CPU
 model
@@ -16335,7 +16258,7 @@ number.
 Action Correct the model number and restart Hercules.
 
 HHCCF013S
-~~~~~~~~~
+---------
 
 HHCCF013S Error in filename line lineno: Invalid main storage size size
 
@@ -16347,7 +16270,7 @@ platforms the value must not exceed 4095.
 Action Correct the main storage size and restart Hercules.
 
 HHCCF014S
-~~~~~~~~~
+---------
 
 HHCCF014S Error in filename line lineno: Invalid expanded storage size
 size
@@ -16359,7 +16282,7 @@ must be a valid decimal number between 0 and 16777215.
 Action Correct the expanded storage size and restart Hercules.
 
 HHCCF015S
-~~~~~~~~~
+---------
 
 HHCCF015S Error in filename line lineno: Invalid console port number
 port
@@ -16371,7 +16294,7 @@ must be a valid nonzero decimal number.
 Action Correct the console port number and restart Hercules.
 
 HHCCF016S
-~~~~~~~~~
+---------
 
 HHCCF016S Error in filename line lineno: Invalid threadname thread
 priority priority
@@ -16383,7 +16306,7 @@ must be a valid decimal number.
 Action Correct the priority on the statement and restart Hercules.
 
 HHCCF017W
-~~~~~~~~~
+---------
 
 HHCCF017W Hercules is not running as setuid root, cannot raise
 threadname priority
@@ -16400,7 +16323,7 @@ zero to not alter the priority, or omit the statement entirely to use
 the Hercules default CPU thread priority of 15.
 
 HHCCF018S
-~~~~~~~~~
+---------
 
 HHCCF018S Error in filename line lineno: Invalid number of CPUs number
 
@@ -16413,7 +16336,7 @@ S/370 mode, or 16 for ESA/390 or ESAME mode).
 Action Correct the number of emulated CPUs and restart Hercules.
 
 HHCCF019S
-~~~~~~~~~
+---------
 
 HHCCF019S Error in filename line lineno: Invalid number of VFs number
 
@@ -16426,7 +16349,7 @@ Action Correct the number of emulated Vector Facility engines and
 restart Hercules.
 
 HHCCF020W
-~~~~~~~~~
+---------
 
 HHCCF020W Vector Facility support not configured
 
@@ -16438,7 +16361,7 @@ Action If Vector Facility support is desired, recompile Hercules. If
 not, remove the NUMVEC configuration statement.
 
 HHCCF021S
-~~~~~~~~~
+---------
 
 HHCCF021S Error in filename line lineno: Invalid maximum number of CPUs
 number
@@ -16451,7 +16374,7 @@ number (MAX_CPU_ENGINES) defined when Hercules was built.
 Action Correct the MAXCPU parameter and restart Hercules.
 
 HHCCF022S
-~~~~~~~~~
+---------
 
 HHCCF022S Error in filename line lineno: epoch is not a valid system
 epoch
@@ -16465,7 +16388,7 @@ epoch is desired, a change must be made to the Hercules source file
 config.c and Hercules rebuilt.
 
 HHCCF023S
-~~~~~~~~~
+---------
 
 HHCCF023S Error in filename line lineno: offset is not a valid timezone
 offset
@@ -16479,7 +16402,7 @@ must be five characters long and a valid decimal number of the form
 Action Correct the time zone offset and restart Hercules.
 
 HHCCF024S
-~~~~~~~~~
+---------
 
 HHCCF024S Error in filename line lineno: Invalid TOD clock drag factor
 drag
@@ -16491,7 +16414,7 @@ must be a valid decimal number between 1 and 10000.
 Action Correct the TOD clock drag factor and restart Hercules.
 
 HHCCF025S
-~~~~~~~~~
+---------
 
 HHCCF025S Error in filename line lineno: Invalid panel refresh rate rate
 
@@ -16502,7 +16425,7 @@ must be either F, S, or a valid decimal number between 1 and 5000.
 Action Correct the control panel refresh rate and restart Hercules.
 
 HHCCF026S
-~~~~~~~~~
+---------
 
 HHCCF026S Error in filename line lineno: Unknown OS tailor specification
 tailor
@@ -16514,7 +16437,7 @@ must be either OS/390, VSE, VM, LINUX, NULL, or QUIET.
 Action Correct the OS tailoring value and restart Hercules.
 
 HHCCF027S
-~~~~~~~~~
+---------
 
 HHCCF027S Error in filename line lineno: Invalid maximum device threads
 threads
@@ -16526,7 +16449,7 @@ must be a valid decimal number greater than -1.
 Action Correct the maximum device threads and restart Hercules.
 
 HHCCF028S
-~~~~~~~~~
+---------
 
 HHCCF028S Invalid program product OS permission permission
 
@@ -16537,7 +16460,7 @@ RESTRICTED. The alternative spelling LICENCED is also accepted.
 Action Correct the program product OS permission and restart Hercules.
 
 HHCCF029S
-~~~~~~~~~
+---------
 
 HHCCF029S Invalid HTTP port number port
 
@@ -16548,7 +16471,7 @@ greater than 1024.
 Action Correct the HTTP server port number and restart Hercules.
 
 HHCCF030S
-~~~~~~~~~
+---------
 
 HHCCF030S Error in filename line lineno: Invalid I/O delay value delay
 
@@ -16559,7 +16482,7 @@ must be a valid decimal number.
 Action Correct the I/O delay value and restart Hercules.
 
 HHCCF031S
-~~~~~~~~~
+---------
 
 HHCCF031S Cannot obtain sizeMB main storage: error
 
@@ -16569,7 +16492,7 @@ MAINSTOR failed for the reason described by error.
 Action Correct the error and restart Hercules.
 
 HHCCF032S
-~~~~~~~~~
+---------
 
 HHCCF032S Cannot obtain storage key array: error
 
@@ -16579,7 +16502,7 @@ failed for the reason described by error.
 Action Correct the error and restart Hercules.
 
 HHCCF033S
-~~~~~~~~~
+---------
 
 HHCCF033S Cannot obtain sizeMB expanded storage: error
 
@@ -16589,7 +16512,7 @@ specified by XPNDSTOR failed for the reason described by error.
 Action Correct the error and restart Hercules.
 
 HHCCF034W
-~~~~~~~~~
+---------
 
 HHCCF034W Expanded storage support not installed
 
@@ -16601,7 +16524,7 @@ Action Either remove the XPNDSTOR configuration parameter or recompile
 Hercules with expanded storage support included.
 
 HHCCF035S
-~~~~~~~~~
+---------
 
 HHCCF035S Error in filename line lineno: Missing device number or device
 type
@@ -16613,7 +16536,7 @@ type.
 Action Supply the missing value and restart Hercules.
 
 HHCCF036S
-~~~~~~~~~
+---------
 
 HHCCF036S Error in filename line lineno: number is not a valid device
 number(s) specification
@@ -16625,7 +16548,7 @@ device number must be one to four hexadecimal digits.
 Action Correct the device number and restart Hercules.
 
 HHCCF037S
-~~~~~~~~~
+---------
 
 HHCCF037S Message pipe creation failed: error
 
@@ -16635,7 +16558,7 @@ control panel failed. The error is described by error.
 Action Correct the error and restart Hercules.
 
 HHCCF038S
-~~~~~~~~~
+---------
 
 HHCCF038S Message pipe open failed: error
 
@@ -16645,7 +16568,7 @@ control panel failed. The error is described by error.
 Action Correct the error and restart Hercules.
 
 HHCCF039W
-~~~~~~~~~
+---------
 
 HHCCF039W PGMPRDOS LICENSED specified. A licensed program product
 operating systems is running. You are responsible for meeting all
@@ -16660,7 +16583,7 @@ responsibility.
 Action Be sure you know what you are doing.
 
 HHCCF040E
-~~~~~~~~~
+---------
 
 HHCCF040E Cannot create CPU number thread: error
 
@@ -16671,7 +16594,7 @@ added to the configuration.
 Action Correct the error and retry the operation.
 
 HHCCF041E
-~~~~~~~~~
+---------
 
 HHCCF041E Device address already exists
 
@@ -16682,7 +16605,7 @@ Action Either choose another device address or use the detach command to
 remove the existing device.
 
 HHCCF042E
-~~~~~~~~~
+---------
 
 HHCCF042E Device type type not recognized
 
@@ -16697,7 +16620,7 @@ operations. Either use the LD_LIBRARY_PATH environment variable or use
 ldconfig(8) to customize the library search path.
 
 HHCCF043E
-~~~~~~~~~
+---------
 
 HHCCF043E Cannot obtain device block for device address: error
 
@@ -16708,7 +16631,7 @@ described by error. The device has not been defined.
 Action Correct the error and retry the operation.
 
 HHCCF044E
-~~~~~~~~~
+---------
 
 HHCCF044E Initialization failed for device address
 
@@ -16719,7 +16642,7 @@ problem in further detail; refer to that message for more information.
 Action Correct the error and retry the operation.
 
 HHCCF045E
-~~~~~~~~~
+---------
 
 HHCCF045E Cannot obtain buffer for device address: error
 
@@ -16730,7 +16653,7 @@ device has not been defined.
 Action Correct the error and retry the operation.
 
 HHCCF046E
-~~~~~~~~~
+---------
 
 HHCCF046E Device address does not exist
 
@@ -16740,7 +16663,7 @@ There is no device at that address.
 Action Choose another device address to remove, if desired.
 
 HHCCF047I
-~~~~~~~~~
+---------
 
 HHCCF047I Device address detached
 
@@ -16750,7 +16673,7 @@ from the system.
 Action None. This is an informational message.
 
 HHCCF048E
-~~~~~~~~~
+---------
 
 HHCCF048E Device address does not exist
 
@@ -16760,7 +16683,7 @@ There is no device at that address.
 Action Choose another device address to rename, if desired.
 
 HHCCF049E
-~~~~~~~~~
+---------
 
 HHCCF049E Device address already exists
 
@@ -16771,7 +16694,7 @@ Action Either choose another device address or use the detach command to
 remove the existing device.
 
 HHCCF050I
-~~~~~~~~~
+---------
 
 HHCCF050I Device oldaddr defined as newaddr
 
@@ -16781,7 +16704,7 @@ oldaddr has been changed to the address newaddr.
 Action None. This is an informational message.
 
 HHCCF051S
-~~~~~~~~~
+---------
 
 HHCCF051S Error in filename line lineno: verid is not a valid CPU
 version code
@@ -16793,7 +16716,7 @@ must be exactly two digits long and must be a valid hexadecimal number.
 Action Correct the model number and restart Hercules.
 
 HHCCF052S
-~~~~~~~~~
+---------
 
 HHCCF052S DIAG8CMD invalid option: option
 
@@ -16803,7 +16726,7 @@ options are enable, disable, echo, and noecho.
 Action Correct the statement and restart Hercules.
 
 HHCCF053E
-~~~~~~~~~
+---------
 
 HHCCF053E Incorrect second device number in device range near character
 c
@@ -16814,7 +16737,7 @@ device number
 Action Correct the statement and restart Hercules.
 
 HHCCF054E
-~~~~~~~~~
+---------
 
 HHCCF054E Incorrect Device count near character c
 
@@ -16823,7 +16746,7 @@ Explanation The count field in a device count specification is invalid
 Action Correct the statement and restart Hercules.
 
 HHCCF055E
-~~~~~~~~~
+---------
 
 HHCCF055E Incorrect device address specification near character c
 
@@ -16833,7 +16756,7 @@ invalid
 Action Correct the statement and restart Hercules.
 
 HHCCF056E
-~~~~~~~~~
+---------
 
 HHCCF056E Incorrect device address range. CUU1>CUU2
 
@@ -16843,7 +16766,7 @@ device number
 Action Correct the statement and restart Hercules.
 
 HHCCF057E
-~~~~~~~~~
+---------
 
 HHCCF057E CUU is on wrong channel (1st device defined on channel CC)
 
@@ -16855,7 +16778,7 @@ line must be on a single channel (Group of 256 devices)
 Action Correct the statement and restart Hercules.
 
 HHCCF058E
-~~~~~~~~~
+---------
 
 HHCCF058E Some or all devices in CUU-CUU duplicate devices already
 defined
@@ -16867,7 +16790,7 @@ statement.
 Action Correct the statement and restart Hercules.
 
 HHCCF061W
-~~~~~~~~~
+---------
 
 HHCCF061W ECPS:VM Statement deprecated. Use ECPSVM instead
 
@@ -16878,7 +16801,7 @@ Action The configuration statement is still carried out but the
 statement syntax should be changed as soon as possible.
 
 HHCCF062W
-~~~~~~~~~
+---------
 
 HHCCF062W Missing ECPSVM level value. 20 Assumed
 
@@ -16889,7 +16812,7 @@ Action The default level of 20 is used and the ECPS:VM feature is made
 available. The statement should be corrected as soon as possible.
 
 HHCCF063W
-~~~~~~~~~
+---------
 
 HHCCF063W Specifying ECPSVM level directly is deprecated. Use the
 ‘LEVEL’ keyword instead
@@ -16902,7 +16825,7 @@ configuration statement should be updated to include the “LEVEL”
 keyword.
 
 HHCCF064W
-~~~~~~~~~
+---------
 
 HHCCF064W Hercules set priority priority failed: error
 
@@ -16915,7 +16838,7 @@ Action If performance problems are noted, correct the error and restart
 Hercules.
 
 HHCCF065I
-~~~~~~~~~
+---------
 
 HHCCF065I Hercules: tid=threadid, pid=processid, pgid=processgroupid,
 priority=priority
@@ -16927,7 +16850,7 @@ priority.
 Action None. This is an informational message.
 
 HHCCF066E
-~~~~~~~~~
+---------
 
 HHCCF066E Invalid HTTPROOT: error
 
@@ -16937,7 +16860,7 @@ invalid. The error is described by error.
 Action Correct the error and restart Hercules.
 
 HHCCF067S
-~~~~~~~~~
+---------
 
 HHCCF067S Incorrect keyword keyword for the ASN_AND_LX_REUSE statement
 
@@ -16947,7 +16870,7 @@ not ENABLE or DISABLE.
 Action Correct the error and restart Hercules.
 
 HHCCF068E
-~~~~~~~~~
+---------
 
 HHCCF068E Invalid value: value; Enter “help scsimount” for help.
 
@@ -16957,7 +16880,7 @@ between 1 and 99 seconds inclusive.
 Action Reissue the SCSIMOUNT command.
 
 HHCCF069I
-~~~~~~~~~
+---------
 
 HHCCF069I Run-options enabled for this run: NUMCPU: n ASN-and-LX-reuse:
 Enabled/Disabled DIAG8CMD: Enabled/Disabled
@@ -16968,7 +16891,7 @@ options specified in the configuration file at startup time.
 Action None. This is an informational message.
 
 HHCCF074E
-~~~~~~~~~
+---------
 
 HHCCF074E Unspecified error occured while parsing Logical Channel
 Subsystem Identification
@@ -16981,7 +16904,7 @@ Action Notify Hercules support. This is an error in the Hercules parsing
 routines.
 
 HHCCF075E
-~~~~~~~~~
+---------
 
 HHCCF075E No more than 1 Logical Channel Subsystem Identification may be
 specified
@@ -16998,7 +16921,7 @@ on whether the error occured while issuing a command or while starting
 the engine.
 
 HHCCF076E
-~~~~~~~~~
+---------
 
 HHCCF076E Non numeric Logical Channel Subsystem Identification XX
 
@@ -17014,7 +16937,7 @@ on whether the error occured while issuing a command or while starting
 the engine.
 
 HHCCF077E
-~~~~~~~~~
+---------
 
 HHCCF077E Logical Channel Subsystem Identification NN exceeds maximum of
 3
@@ -17031,7 +16954,7 @@ on whether the error occured while issuing a command or while starting
 the engine.
 
 HHCCF079A
-~~~~~~~~~
+---------
 
 HHCCF079A A licensed program product operating system has been detected.
 All processors have been stopped.
@@ -17048,7 +16971,7 @@ system on your machine, you must use another operating system (such as
 MVS 3.8J or Linux for System z) which does not require a license.
 
 HHCCF081I
-~~~~~~~~~
+---------
 
 HHCCF081I fname will ignore include errors.
 
@@ -17061,7 +16984,7 @@ error.
 Action Processing continues. This is an informational-only message.
 
 HHCCF082S
-~~~~~~~~~
+---------
 
 HHCCF082S Error in fname line nnn: Maximum nesting level (nn) reached
 
@@ -17073,7 +16996,7 @@ immediately terminated and Hercules startup is abor- ted. Correct the
 error and restart Hercules.
 
 HHCCF083I
-~~~~~~~~~
+---------
 
 HHCCF083I fname1 Including fname2 at nnn.
 
@@ -17087,7 +17010,7 @@ processing will then return to statement nnn+1 of file fname1. This is
 an informational-only message.
 
 HHCCF084W
-~~~~~~~~~
+---------
 
 HHCCF084W fname1 Open error ignored file fname2: error
 
@@ -17099,7 +17022,7 @@ to make sure the filename specified by fname2 was spelled correctly and
 restart Hercules if desired.
 
 HHCCF085S
-~~~~~~~~~
+---------
 
 HHCCF085S fname1 Open error file fname2: error
 
@@ -17111,7 +17034,7 @@ immediately terminated and Hercules startup is abor- ted. Correct any
 misspelling of filename fname2 and restart Hercules.
 
 HHCCF086S
-~~~~~~~~~
+---------
 
 HHCCF086S Error in filename: NUMCPU nn must not exceed MAXCPU mm
 
@@ -17124,7 +17047,7 @@ Action Either decrease the NUMCPU parameter, or increase the MAXCPU
 parameter, and restart Hercules.
 
 HHCCF089S
-~~~~~~~~~
+---------
 
 HHCCF089S Error in fname line linenum: Invalid log option keyword val
 
@@ -17138,7 +17061,7 @@ Hercules.
 --------------------------------------
 
 HHCCP001W
-~~~~~~~~~
+---------
 
 HHCCP001W CPU thread set priority priority failed: error
 
@@ -17151,7 +17074,7 @@ Action If performance problems are noted, correct the error and restart
 Hercules.
 
 HHCCP002I
-~~~~~~~~~
+---------
 
 HHCCP002I CPU number thread started: tid=threadid, pid=processid,
 priority=priority
@@ -17163,7 +17086,7 @@ priority is priority.
 Action None. This is an informational message.
 
 HHCCP003I
-~~~~~~~~~
+---------
 
 HHCCP003I CPU number architecture mode mode
 
@@ -17175,7 +17098,7 @@ If a different architecture mode is desired, it may be changed with the
 ARCHMODE configuration statement or the archmode control panel command.
 
 HHCCP004I
-~~~~~~~~~
+---------
 
 HHCCP004I CPU number Vector Facility online
 
@@ -17185,7 +17108,7 @@ for use.
 Action None. This is an informational message.
 
 HHCCP005E
-~~~~~~~~~
+---------
 
 HHCCP005E CPU number thread already started
 
@@ -17196,7 +17119,7 @@ Action If another CPU is desired in the configuration, select a
 different number.
 
 HHCCP006S
-~~~~~~~~~
+---------
 
 HHCCP006S Cannot create timer thread: error
 
@@ -17207,7 +17130,7 @@ and successful continuation of Hercules is not possible.
 Action Correct the error and restart Hercules.
 
 HHCCP007I
-~~~~~~~~~
+---------
 
 HHCCP007I CPU number architecture mode set to mode
 
@@ -17217,7 +17140,7 @@ mode.
 Action None. This is an informational message.
 
 HHCCP008I
-~~~~~~~~~
+---------
 
 HHCCP008I CPU number thread ended: tid=threadid, pid=processid
 
@@ -17227,7 +17150,7 @@ thread id was threadid, and its process id was processid.
 Action None. This is an informational message.
 
 HHCCP009E
-~~~~~~~~~
+---------
 
 HHCCP009E CPU MASK MISMATCH: prevmask - currmask. Last instruction:
 instruction.
@@ -17240,7 +17163,7 @@ Action Report this message and the circumstances to the Hercules
 developers.
 
 HHCCP010I
-~~~~~~~~~
+---------
 
 HHCCP010I CPU number store status completed.
 
@@ -17249,7 +17172,7 @@ Explanation CPU number number has completed a store status operation.
 Action None. This is an informational message.
 
 HHCCP011I
-~~~~~~~~~
+---------
 
 HHCCP011I CPU number: Disabled wait state
 
@@ -17261,7 +17184,7 @@ operating system.
 Action Correct the error denoted by the wait state code if applicable.
 
 HHCCP023I
-~~~~~~~~~
+---------
 
 HHCCP0 23 I External interrupt: Interrupt key
 
@@ -17271,7 +17194,7 @@ pressed the interrupt key or issued the panel command ext.
 Action None. This is an informational message.
 
 HHCCP024I
-~~~~~~~~~
+---------
 
 HHCCP0 24 I External interrupt: Clock comparator
 
@@ -17283,7 +17206,7 @@ Action None. This is an informational message. External interrupts are
 part of normal system operation.
 
 HHCCP025I
-~~~~~~~~~
+---------
 
 HHCCP0 25 I External interrupt: CPU timer=xx…xx
 
@@ -17295,7 +17218,7 @@ Action None. This is an informational message. External interrupts are
 part of normal system operation.
 
 HHCCP026I
-~~~~~~~~~
+---------
 
 HHCCP0 26 I External interrupt: Interval timer
 
@@ -17307,7 +17230,7 @@ Action None. This is an informational message. External interrupts are
 part of normal system operation.
 
 HHCCP027I
-~~~~~~~~~
+---------
 
 HHCCP0 27 I External interrupt: Service signal intparm
 
@@ -17319,7 +17242,7 @@ Action None. This is an informational message. External interrupts are
 part of normal system operation.
 
 HHCCP090W
-~~~~~~~~~
+---------
 
 HHCCP090W The configuration has been placed into a system check-stop
 state because of an incompatible service call
@@ -17335,7 +17258,7 @@ restart the program.
 -------------------------------------------------------------
 
 HHCCTnnns
-~~~~~~~~~
+---------
 
 Messages HHCCTnnns are not yet documented.
 
@@ -17343,7 +17266,7 @@ Messages HHCCTnnns are not yet documented.
 ---------------------------------------
 
 48.1 Format of the CCKD utilities messages
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------------~~~~~~
 
 Messages generated by the CCKD utilities are in the format message_id
 file message_text. The format of the message ID is the same as with all
@@ -17354,7 +17277,7 @@ shadow file number when called by Hercules. The file portion of the
 message is omitted in the sections below for brevity.
 
 HHCCU101I
-~~~~~~~~~
+---------
 
 HHCCU101I converting to endian-format
 
@@ -17365,7 +17288,7 @@ endian-format.
 Action None. This is an informational message.
 
 HHCCU102I
-~~~~~~~~~
+---------
 
 HHCCU102I compress successful, n bytes released
 
@@ -17376,7 +17299,7 @@ repositioned to the beginning of the file in order.
 Action None. This is an informational message.
 
 HHCCU103I
-~~~~~~~~~
+---------
 
 HHCCU103I file already compressed
 
@@ -17386,7 +17309,7 @@ compressed. The file is not updated.
 Action None. This is an informational message.
 
 HHCCU104I
-~~~~~~~~~
+---------
 
 HHCCU104I free space rebuilt
 
@@ -17396,7 +17319,7 @@ successfully rebuilt.
 Action None. This is an informational message.
 
 HHCCU300I
-~~~~~~~~~
+---------
 
 HHCCU300I number space images recovered
 
@@ -17406,7 +17329,7 @@ or blkgrps).
 Action None. This is an informational message.
 
 HHCCU301I
-~~~~~~~~~
+---------
 
 HHCCU301I space[id] recovered offset offset len length
 
@@ -17416,7 +17339,7 @@ offset and length length. id is the trk or blkgrp number.
 Action None. This is an informational message.
 
 HHCCU500W
-~~~~~~~~~
+---------
 
 HHCCU500W recovery not completed, file opened read-only
 
@@ -17427,7 +17350,7 @@ Action Omit the -ro option for cckdcdsk or change the file permissions
 to enable the file to be opened for read- write for Hercules.
 
 HHCCU501W
-~~~~~~~~~
+---------
 
 HHCCU501W recovery not completed, missing compression
 
@@ -17439,7 +17362,7 @@ Action Processing terminates. The file has not been updated. Build
 Hercules with the missing compression libraries.
 
 HHCCU502W
-~~~~~~~~~
+---------
 
 HHCCU502W free space not rebuilt, file opened read-only
 
@@ -17450,7 +17373,7 @@ Action Omit the -ro option for cckdcdsk or change the file permissions
 to enable the file to be opened for read- write by Hercules.
 
 HHCCU600W
-~~~~~~~~~
+---------
 
 HHCCU600W forcing check level level[; reason]
 
@@ -17461,7 +17384,7 @@ explanation reason may be supplied.
 Action At a minimum, free space will be rebuilt.
 
 HHCCU601W
-~~~~~~~~~
+---------
 
 HHCCU601W cdevhdr inconsistencies found code=code
 
@@ -17473,7 +17396,7 @@ settings.
 Action At a minimum, free space will be rebuilt.
 
 HHCCU602W
-~~~~~~~~~
+---------
 
 HHCCU602W space offset offset len length is out of bounds
 
@@ -17486,7 +17409,7 @@ all tracks or block groups associated with the table will also be
 recovered.
 
 HHCCU603W
-~~~~~~~~~
+---------
 
 HHCCU603W space1 offset offset1 len length overlaps space2 offset
 offset2
@@ -17498,7 +17421,7 @@ then all tracks or block groups associated with that table will also be
 recovered.
 
 HHCCU604W
-~~~~~~~~~
+---------
 
 HHCCU604W space l2 inconsistency: len length, size size
 
@@ -17509,7 +17432,7 @@ the size size.
 Action The space will be recovered.
 
 HHCCU610W
-~~~~~~~~~
+---------
 
 HHCCU610W free space errors detected
 
@@ -17518,7 +17441,7 @@ Explanation Free space is not consistent.
 Action Free space will be rebuilt.
 
 HHCCU620W
-~~~~~~~~~
+---------
 
 HHCCU620W space[id] hdr error offset offset: xxxxxxxxxx
 
@@ -17543,7 +17466,7 @@ the header has been overlaid.
 Action The space will be recovered.
 
 HHCCU621W
-~~~~~~~~~
+---------
 
 HHCCU621W space[id] compressed using compression, not supported
 
@@ -17556,7 +17479,7 @@ Action Processing continues. However no recovery will take place. Build
 Hercules with the specified compres- sion library.
 
 HHCCU622W
-~~~~~~~~~
+---------
 
 HHCCU622W space[id] offset offset len length validation error
 
@@ -17568,7 +17491,7 @@ of error. This error is detected during check level 3 validation.
 Action The space will be recovered.
 
 HHCCU700E
-~~~~~~~~~
+---------
 
 HHCCU700E open error: error text
 
@@ -17578,7 +17501,7 @@ number is displayed.
 Action Processing for the file terminates.
 
 HHCCU701E
-~~~~~~~~~
+---------
 
 HHCCU701E fstat error: error text
 
@@ -17589,7 +17512,7 @@ Action Function processing terminates. Probable Hercules logic error.
 Contact the Hercules mailing list for assistance.
 
 HHCCU702E
-~~~~~~~~~
+---------
 
 HHCCU702E lseek error offset offset: error text
 
@@ -17600,7 +17523,7 @@ Action Function processing terminates. Probable Hercules logic error.
 Contact the Hercules mailing list for assistance.
 
 HHCCU703E
-~~~~~~~~~
+---------
 
 HHCCU703E read error rc=retcode offset offset len length: error text
 
@@ -17614,7 +17537,7 @@ Possible hardware error. Contact the hercules mailing list for
 assistance.
 
 HHCCU704E
-~~~~~~~~~
+---------
 
 HHCCU704E write error rc=retcode offset offset len length: error text
 
@@ -17628,7 +17551,7 @@ Possible hardware error. Contact the hercules mailing list for
 assistance.
 
 HHCCU705E
-~~~~~~~~~
+---------
 
 HHCCU705E malloc error, size size: error text
 
@@ -17638,7 +17561,7 @@ Action Function processing terminates. Try reducing Hercules storage
 requirements (e.g. mainsize).
 
 HHCCU706E
-~~~~~~~~~
+---------
 
 HHCCU706E calloc error, size size: error text
 
@@ -17648,7 +17571,7 @@ Action Function processing terminates. Try reducing Hercules storage
 requirements (eg mainsize).
 
 HHCCU707E
-~~~~~~~~~
+---------
 
 HHCCU707E OPENED bit is on, use -f
 
@@ -17659,7 +17582,7 @@ Action File processing terminates. Make sure the file is not in use. If
 it is not, try the command again specifying the -f option.
 
 HHCCU708E
-~~~~~~~~~
+---------
 
 HHCCU708E chkdsk errors
 
@@ -17670,7 +17593,7 @@ Action File processing terminates. Perform the actions suggested by the
 preceding cckd_chkdsk errors.
 
 HHCCU900E
-~~~~~~~~~
+---------
 
 HHCCU900E dasd lookup error type=type cyls=cyls
 
@@ -17683,7 +17606,7 @@ Action Function processing terminates. Specify the correct file name or
 manually correct the device header.
 
 HHCCU901E
-~~~~~~~~~
+---------
 
 HHCCU901E bad trksize: size1, expecting size2
 
@@ -17694,7 +17617,7 @@ Action Function processing terminates. Specify the correct file name or
 manually correct the device header.
 
 HHCCU902E
-~~~~~~~~~
+---------
 
 HHCCU902E bad number of heads: heads1, expecting heads2
 
@@ -17705,7 +17628,7 @@ Action Function processing terminates. Specify the correct file name or
 manually correct the device header.
 
 HHCCU903E
-~~~~~~~~~
+---------
 
 HHCCU903E bad \`numl1tab’: nbr1, expecting nbr2
 
@@ -17718,7 +17641,7 @@ Action Function processing terminates. Specify the correct file name or
 manually correct the device headers.
 
 HHCCU904E
-~~~~~~~~~
+---------
 
 HHCCU904E file too small to contain L1 table: %size1, need size2
 
@@ -17729,7 +17652,7 @@ cckd file is 512 + 512 + ( 4 \* number of L1 entries).
 Action Function processing terminates. Specify the correct file name.
 
 HHCCU905E
-~~~~~~~~~
+---------
 
 HHCCU905E not enough file space for recovery
 
@@ -17741,7 +17664,7 @@ Action Function processing terminates. The file has not been updated.
 Contact the hercules mailing list for assistance.
 
 HHCCU910E
-~~~~~~~~~
+---------
 
 HHCCU910E error during swap
 
@@ -17750,7 +17673,7 @@ Explanation Error occurred during cckd_swap().
 Action See the preceding error messages.
 
 HHCCU999E
-~~~~~~~~~
+---------
 
 HHCCU999E not a compressed file
 
@@ -17765,7 +17688,7 @@ Action Function processing terminates. Specify the correct file name.
 -----------------------------------------------------------
 
 HHCDAnnns
-~~~~~~~~~
+---------
 
 Messages HHCDAnnns are not yet documented.
 
@@ -17773,7 +17696,7 @@ Messages HHCDAnnns are not yet documented.
 -----------------------------------------
 
 HHCDC001E
-~~~~~~~~~
+---------
 
 HHCDC001E progname: filename open error: error
 
@@ -17783,7 +17706,7 @@ named filename to determine its type. The error is described by error.
 Action Correct the error and retry the operation.
 
 HHCDC002E
-~~~~~~~~~
+---------
 
 HHCDC002E progname: filename read error: error
 
@@ -17793,7 +17716,7 @@ named filename to determine its type. The error is described by error.
 Action Correct the error and retry the operation.
 
 HHCDC003E
-~~~~~~~~~
+---------
 
 HHCDC003E progname: filename open failed
 
@@ -17803,7 +17726,7 @@ named filename for copying. A previous message described the error.
 Action Correct the error and retry the operation.
 
 HHCDC004E
-~~~~~~~~~
+---------
 
 HHCDC004E progname: ckd lookup failed for size cyls
 
@@ -17814,7 +17737,7 @@ how much data to copy.
 Action Correct the error and retry the operation.
 
 HHCDC005E
-~~~~~~~~~
+---------
 
 HHCDC005E progname: fba lookup failed, blks size
 
@@ -17825,7 +17748,7 @@ much data to copy.
 Action Correct the error and retry the operation.
 
 HHCDC006E
-~~~~~~~~~
+---------
 
 HHCDC006E progname: filename create failed
 
@@ -17835,7 +17758,7 @@ file named filename. A previous message described the error.
 Action Correct the error and retry the operation.
 
 HHCDC007E
-~~~~~~~~~
+---------
 
 HHCDC007E progname: filename open failed
 
@@ -17846,7 +17769,7 @@ error.
 Action Correct the error and retry the operation.
 
 HHCDC008E
-~~~~~~~~~
+---------
 
 HHCDC008E progname: filename read error (track|block) number stat=status
 
@@ -17857,7 +17780,7 @@ number. The status returned is shown as status.
 Action Correct the error and retry the operation.
 
 HHCDC009E
-~~~~~~~~~
+---------
 
 HHCDC009E progname: filename write error (track|block) number
 stat=status
@@ -17869,7 +17792,7 @@ number. The status returned is shown as status.
 Action Correct the error and retry the operation.
 
 HHCDC010I
-~~~~~~~~~
+---------
 
 HHCDC010I Copy successful !!!
 
@@ -17881,7 +17804,7 @@ Action None. This is an informational message.
 -----------------------------------
 
 HHCDG001I
-~~~~~~~~~
+---------
 
 HHCDG001I dyngui.dll - name - version vers initiated
 
@@ -17891,7 +17814,7 @@ initiated.
 Action None. This is an informational message.
 
 HHCDG002I
-~~~~~~~~~
+---------
 
 HHCDG002I dyngui.dll terminated
 
@@ -17900,7 +17823,7 @@ Explanation The dyngui loadable module was successfully terminated.
 Action None. This is an informational message.
 
 HHCDG003S
-~~~~~~~~~
+---------
 
 HHCDG003S select failed on input stream: errmsg
 
@@ -17911,7 +17834,7 @@ Action None; this is a fatal error, the system is immediately
 terminated.
 
 HHCDG004S
-~~~~~~~~~
+---------
 
 HHCDG004S read failed on input stream: errmsg
 
@@ -17922,7 +17845,7 @@ Action None; this is a fatal error; the system is immediately
 terminated.
 
 HHCDG005E
-~~~~~~~~~
+---------
 
 HHCDG005E Device query buffer overflow! (device=xxxx)
 
@@ -17938,7 +17861,7 @@ is an unloadable module you will need to restart Hercules in order to
 begin using the newly fixed version of dyngui.dll.
 
 HHCDG006S
-~~~~~~~~~
+---------
 
 HHCDG006S malloc pszInputBuff failed: errmsg
 
@@ -17953,7 +17876,7 @@ decrease the amount of memory that Hercules needs in order to run
 (e.g. decrease your MAINSIZE value).
 
 HHCDG007S
-~~~~~~~~~
+---------
 
 HHCDG007S malloc pszCommandBuff failed: errmsg
 
@@ -17971,7 +17894,7 @@ decrease the amount of memory that Hercules needs in order to run
 -----------------------------------------
 
 HHCDI001I
-~~~~~~~~~
+---------
 
 HHCDI001I DASD initialization successfully completed.
 
@@ -17981,7 +17904,7 @@ and is ready for use.
 Action None. This is an informational message.
 
 HHCDI002I
-~~~~~~~~~
+---------
 
 HHCDI002I DASD initialization unsuccessful.
 
@@ -17995,7 +17918,7 @@ messages to determine the cause.
 -----------------------------------------
 
 HHCDL001E
-~~~~~~~~~
+---------
 
 HHCDL001E Cannot open filename: error
 
@@ -18005,7 +17928,7 @@ is described by error.
 Action Correct the error and rerun dasdload.
 
 HHCDL002E
-~~~~~~~~~
+---------
 
 HHCDL002E Volume serial statement missing from filename
 
@@ -18015,7 +17938,7 @@ serial statement. A volume serial is required.
 Action Supply a volume serial statement and rerun dasdload.
 
 HHCDL003E
-~~~~~~~~~
+---------
 
 HHCDL003E Volume serial serial in filename line lineno is not valid
 
@@ -18026,7 +17949,7 @@ characters long.
 Action Supply a valid volume serial and rerun dasdload.
 
 HHCDL004E
-~~~~~~~~~
+---------
 
 HHCDL004E Device type type in filename line lineno is not recognized
 
@@ -18036,7 +17959,7 @@ file named filename is not a supported CKD device.
 Action Specify a supported CKD device type and rerun dasdload.
 
 HHCDL005E
-~~~~~~~~~
+---------
 
 HHCDL005E count in filename line lineno is not a valid cylinder count
 
@@ -18047,7 +17970,7 @@ decimal number.
 Action Supply a valid cylinder count and rerun dasdload.
 
 HHCDL006I
-~~~~~~~~~
+---------
 
 HHCDL006I Creating type volume serial: tracks trks/cyl, length
 bytes/track
@@ -18060,7 +17983,7 @@ Message Level 0.
 Action None. This is an informational message.
 
 HHCDL007E
-~~~~~~~~~
+---------
 
 HHCDL007E Cannot create filename
 
@@ -18070,7 +17993,7 @@ previous message described the problem.
 Action Correct the reported error and rerun dasdload.
 
 HHCDL008E
-~~~~~~~~~
+---------
 
 HHCDL008E Cannot open filename
 
@@ -18080,7 +18003,7 @@ previous message described the problem.
 Action Correct the reported error and rerun dasdload.
 
 HHCDL009I
-~~~~~~~~~
+---------
 
 HHCDL009I Loading type volume serial
 
@@ -18092,7 +18015,7 @@ Message Level 0.
 Action None. This is an informational message.
 
 HHCDL010E
-~~~~~~~~~
+---------
 
 HHCDL010E Cannot obtain storage for DSCB pointer array: error
 
@@ -18102,7 +18025,7 @@ which will populate the VTOC, failed. The error is described by error.
 Action Correct the error and rerun dasdload.
 
 HHCDL011E
-~~~~~~~~~
+---------
 
 HHCDL011E Invalid statement in filename line lineno
 
@@ -18112,7 +18035,7 @@ control file named filename.
 Action Correct the invalid statement and rerun dasdload.
 
 HHCDL012I
-~~~~~~~~~
+---------
 
 HHCDL012I Creating dataset dsn at cyl cylinder head head
 
@@ -18124,7 +18047,7 @@ Message level 1
 Action None. This is an informational message.
 
 HHCDL013I
-~~~~~~~~~
+---------
 
 HHCDL013I Dataset dsn contains size tracks
 
@@ -18135,7 +18058,7 @@ Message level 2
 Action None. This is an informational message.
 
 HHCDL014I
-~~~~~~~~~
+---------
 
 HHCDL014I Free space starts at cyl cylinder head head
 
@@ -18147,7 +18070,7 @@ Message level 1
 Action None. This is an informational message.
 
 HHCDL015W
-~~~~~~~~~
+---------
 
 HHCDL015W Volume exceeds cylinders
 
@@ -18161,7 +18084,7 @@ Action Specify more cylinders in the control file or allow the number to
 default.
 
 HHCDL016I
-~~~~~~~~~
+---------
 
 HHCDL016I Total of count cylinders written to filename
 
@@ -18173,7 +18096,7 @@ Message level 0
 Action None. This is an informational message.
 
 HHCDL017I
-~~~~~~~~~
+---------
 
 HHCDL017I Updating VTOC pointer pointer
 
@@ -18185,7 +18108,7 @@ Message level 5
 Action None. This is an informational message.
 
 HHCDL018E
-~~~~~~~~~
+---------
 
 HHCDL018E Cannot read VOL1 record
 
@@ -18195,7 +18118,7 @@ message described the error.
 Action Correct the error and rerun dasdload.
 
 HHCDL019E
-~~~~~~~~~
+---------
 
 HHCDL019E Cannot read filename line lineno: error
 
@@ -18206,7 +18129,7 @@ described by error.
 Action Correct the error and rerun dasdload.
 
 HHCDL020E
-~~~~~~~~~
+---------
 
 HHCDL020E Line too long in filename line lineno
 
@@ -18217,7 +18140,7 @@ failing to terminate the last line with an end-of-line marker.
 Action Correct the error and rerun dasdload.
 
 HHCDL021E
-~~~~~~~~~
+---------
 
 HHCDL021E DSNAME or initialization method missing
 
@@ -18227,7 +18150,7 @@ initialize it is missing from the control file. Both are required.
 Action Supply the missing value and rerun dasdload.
 
 HHCDL022E
-~~~~~~~~~
+---------
 
 HHCDL022E Invalid initialization method: method
 
@@ -18237,7 +18160,7 @@ invalid. It must be one of xmit, vs, empty, dip, cvol, vtoc, or seq.
 Action Correct the initialization method and rerun dasdload.
 
 HHCDL023E
-~~~~~~~~~
+---------
 
 HHCDL023E Initialization file name missing
 
@@ -18249,7 +18172,7 @@ Action Specify a source file name or specify the empty dataset
 initialization method if the dataset is not to be loaded.
 
 HHCDL024E
-~~~~~~~~~
+---------
 
 HHCDL024E Invalid allocation units: units
 
@@ -18259,7 +18182,7 @@ either cyl or trk.
 Action Specify a valid allocation unit and rerun dasdload.
 
 HHCDL025E
-~~~~~~~~~
+---------
 
 HHCDL025E Invalid primary space: space
 
@@ -18269,7 +18192,7 @@ number greater than 0.
 Action Specify a valid space request and rerun dasdload.
 
 HHCDL026E
-~~~~~~~~~
+---------
 
 HHCDL026E Invalid secondary space: space
 
@@ -18279,7 +18202,7 @@ number greater than 0.
 Action Specify a valid space request and rerun dasdload.
 
 HHCDL027E
-~~~~~~~~~
+---------
 
 HHCDL027E Invalid directory space: space
 
@@ -18289,7 +18212,7 @@ decimal number greater than 0.
 Action Specify a valid space request and rerun dasdload.
 
 HHCDL028E
-~~~~~~~~~
+---------
 
 HHCDL028E Invalid dataset organization: dsorg
 
@@ -18299,7 +18222,7 @@ be one of is, ps, da, or po.
 Action Specify a valid dataset organization and rerun dasdload.
 
 HHCDL029E
-~~~~~~~~~
+---------
 
 HHCDL029E Invalid record format: recfm
 
@@ -18309,7 +18232,7 @@ of f, fb, fbs, v, vb, vbs, or u.
 Action Specify a valid record format and rerun dasdload.
 
 HHCDL030E
-~~~~~~~~~
+---------
 
 HHCDL030E Invalid logical record length: lrecl
 
@@ -18319,7 +18242,7 @@ must be a decimal number between 0 and 32767.
 Action Specify a valid logical record length and rerun dasdload.
 
 HHCDL031E
-~~~~~~~~~
+---------
 
 HHCDL031E Invalid block size: blksize
 
@@ -18329,7 +18252,7 @@ decimal number between 0 and 32767.
 Action Specify a valid block size and rerun dasdload.
 
 HHCDL032E
-~~~~~~~~~
+---------
 
 HHCDL032E Invalid key length: keylen
 
@@ -18339,7 +18262,7 @@ decimal number between 0 and 255.
 Action Specify a valid key length and rerun dasdload.
 
 HHCDL033E
-~~~~~~~~~
+---------
 
 HHCDL033E CCHH=cchh not found in extent table
 
@@ -18350,7 +18273,7 @@ likely a problem with the input file.
 Action Correct the input file and rerun dasdload.
 
 HHCDL034E
-~~~~~~~~~
+---------
 
 HHCDL034E Cannot open filename: error
 
@@ -18361,7 +18284,7 @@ is described by error.
 Action Correct the error and rerun dasdload.
 
 HHCDL035E
-~~~~~~~~~
+---------
 
 HHCDL035E Cannot read filename: error
 
@@ -18374,7 +18297,7 @@ Action Correct the reported error or supply a valid IPL text file
 consisting of 80-byte card images and rerun dasdload.
 
 HHCDL036E
-~~~~~~~~~
+---------
 
 HHCDL036E filename is not a valid object file
 
@@ -18385,7 +18308,7 @@ first byte.
 Action Supply a valid object file and rerun dasdload.
 
 HHCDL037I
-~~~~~~~~~
+---------
 
 HHCDL037I IPL text address=addr length=length
 
@@ -18397,7 +18320,7 @@ Message level 5
 Action None. This is an informational message.
 
 HHCDL038E
-~~~~~~~~~
+---------
 
 HHCDL038E TXT record in filename has invalid count length
 
@@ -18407,7 +18330,7 @@ invalid length length. The length cannot exceed 56.
 Action Supply a valid IPL text file and rerun dasdload.
 
 HHCDL039E
-~~~~~~~~~
+---------
 
 HHCDL039E IPL text in filename exceeds buflen bytes
 
@@ -18419,7 +18342,7 @@ Action Supply a shorter IPL text file or specify a volume with a larger
 track size and rerun dasdload.
 
 HHCDL040E
-~~~~~~~~~
+---------
 
 HHCDL040E Input record CCHHR=cchhr exceeds output device track size
 
@@ -18429,7 +18352,7 @@ large to fit on a track on the disk being loaded.
 Action Specify a device with a larger track size and rerun dasdload.
 
 HHCDL041E
-~~~~~~~~~
+---------
 
 HHCDL041E Dataset exceeds extent size: reltrk=track, maxtrk=maxtrk
 
@@ -18442,7 +18365,7 @@ space. If the request was defaulted, supply a valid input file. Rerun
 dasdload.
 
 HHCDL042E
-~~~~~~~~~
+---------
 
 HHCDL042E Input record CCHHR=cchhr exceeds virtual device track size
 
@@ -18456,7 +18379,7 @@ Action Specify a device with a larger track size and rerun dasdload.
 Report the inconsistenct to the Hercules development team.
 
 HHCDL043E
-~~~~~~~~~
+---------
 
 HHCDL043E filename cyl cylinder head head read error
 
@@ -18467,7 +18390,7 @@ message described the error.
 Action Correct the previously reported error and rerun dasdload.
 
 HHCDL044E
-~~~~~~~~~
+---------
 
 HHCDL044E filename cyl cylinder head head invalid track header header
 
@@ -18479,7 +18402,7 @@ Action Rerun dasdload. If the error persists, report it to the Hercules
 development team.
 
 HHCDL045E
-~~~~~~~~~
+---------
 
 HHCDL045E filename cyl cylinder head head record record record not found
 
@@ -18490,7 +18413,7 @@ Action Rerun dasdload. If the error persists, report it to the Hercules
 development team.
 
 HHCDL046E
-~~~~~~~~~
+---------
 
 HHCDL046E Cannot update cyl cylinder head head rec record: Unmatched
 KL/DL
@@ -18504,7 +18427,7 @@ Action Rerun dasdload. If the error persists, report it to the Hercules
 development team.
 
 HHCDL047E
-~~~~~~~~~
+---------
 
 HHCDL047E filename cyl cylinder head head read error
 
@@ -18516,7 +18439,7 @@ Action Correct the error reported by the previous message and rereun
 dasdload.
 
 HHCDL048I
-~~~~~~~~~
+---------
 
 HHCDL048I Updating cyl cylinder head head rec record kl keylen dl
 datalen
@@ -18529,7 +18452,7 @@ Message level 4
 Action None. This is an informational message.
 
 HHCDL049E
-~~~~~~~~~
+---------
 
 HHCDL049E Cannot obtain storage for DSCB: error
 
@@ -18540,7 +18463,7 @@ error.
 Action Correct the error and rerun dasdload.
 
 HHCDL050E
-~~~~~~~~~
+---------
 
 HHCDL050E DSCB count exceeds maximum, increase MAXDSCB
 
@@ -18551,7 +18474,7 @@ Action Increase the value of the symbol MAXDSCB in the source program
 and recompile dasdload, then rerun the program.
 
 HHCDL051E
-~~~~~~~~~
+---------
 
 HHCDL051E Cannot obtain storage for DSCB: error
 
@@ -18561,7 +18484,7 @@ VTOC on the volume being loaded failed. The error is described by error.
 Action Correct the error and rerun dasdload.
 
 HHCDL052E
-~~~~~~~~~
+---------
 
 HHCDL052E DSCB count exceeds maximum, increase MAXDSCB
 
@@ -18572,7 +18495,7 @@ Action Increase the value of the symbol MAXDSCB in the source program
 and recompile dasdload, then rerun the program.
 
 HHCDL053E
-~~~~~~~~~
+---------
 
 HHCDL053E Cannot obtain storage for DSCB: error
 
@@ -18583,7 +18506,7 @@ error.
 Action Correct the error and rerun dasdload.
 
 HHCDL054E
-~~~~~~~~~
+---------
 
 HHCDL054E DSCB count exceeds maximum, increase MAXDSCB
 
@@ -18594,7 +18517,7 @@ Action Increase the value of the symbol MAXDSCB in the source program
 and recompile dasdload, then rerun the program.
 
 HHCDL055E
-~~~~~~~~~
+---------
 
 HHCDL055E VTOC too small, tracks tracks required
 
@@ -18603,7 +18526,7 @@ Explanation The VTOC allocation of tracks is too small to hold the VTOC.
 Action Specify at least tracks tracks for the VTOC and rerun dasdload.
 
 HHCDL056E
-~~~~~~~~~
+---------
 
 HHCDL056E Error reading VTOC cyl cylinder head head
 
@@ -18614,7 +18537,7 @@ Action Correct the error reported by the previous message and rerun
 dasdload.
 
 HHCDL057I
-~~~~~~~~~
+---------
 
 HHCDL057I VTOC starts at cyl cylinder head head and is tracks tracks
 
@@ -18626,7 +18549,7 @@ Message level 1
 Action None. This is an informational message.
 
 HHCDL058I
-~~~~~~~~~
+---------
 
 HHCDL058I Format format DSCB CCHHR=cchhr (TTR=ttr) dsname
 
@@ -18639,7 +18562,7 @@ Message level 4
 Action None. This is an informational message.
 
 HHCDL059I
-~~~~~~~~~
+---------
 
 HHCDL059I Format 0 DSCB CCHHR cchhr (TTR=ttr)
 
@@ -18651,7 +18574,7 @@ Message level 4
 Action None. This is an informational message.
 
 HHCDL060E
-~~~~~~~~~
+---------
 
 HHCDL060E Error reading track cyl cylinder head head
 
@@ -18662,7 +18585,7 @@ Action Correct the error reported by the previous message and rerun
 dasdload.
 
 HHCDL061E
-~~~~~~~~~
+---------
 
 HHCDL061E Incomplete text unit
 
@@ -18672,7 +18595,7 @@ contain a valid header. The input data is probably corrupt.
 Action Supply a valid input file and rerun dasdload.
 
 HHCDL062I
-~~~~~~~~~
+---------
 
 HHCDL062I position tuname key fields
 
@@ -18685,7 +18608,7 @@ Message level 4
 Action None. This is an informational message.
 
 HHCDL063E
-~~~~~~~~~
+---------
 
 HHCDL063E Too many fields in text unit
 
@@ -18696,7 +18619,7 @@ probably corrupt.
 Action Supply a valid input file and rerun dasdload.
 
 HHCDL064E
-~~~~~~~~~
+---------
 
 HHCDL064E Incomplete text unit
 
@@ -18706,7 +18629,7 @@ contain a valid field length. The input data is probably corrupt.
 Action Supply a valid input file and rerun dasdload.
 
 HHCDL065E
-~~~~~~~~~
+---------
 
 HHCDL065E Incomplete text unit
 
@@ -18716,7 +18639,7 @@ length in the field header. The input data is probably corrupt.
 Action Supply a valid input file and rerun dasdload.
 
 HHCDL066E
-~~~~~~~~~
+---------
 
 HHCDL066E filename read error: error
 
@@ -18726,7 +18649,7 @@ filename. The error is described by error.
 Action Correct the error and rerun dasdload.
 
 HHCDL067E
-~~~~~~~~~
+---------
 
 HHCDL067E filename invalid segment header: header
 
@@ -18736,7 +18659,7 @@ header header. The input file is probably corrupt.
 Action Supply a valid input file and rerun dasdload.
 
 HHCDL068E
-~~~~~~~~~
+---------
 
 HHCDL068E filename first segment indicator expected
 
@@ -18747,7 +18670,7 @@ corrupt.
 Action Supply a valid input file and rerun dasdload.
 
 HHCDL069E
-~~~~~~~~~
+---------
 
 HHCDL069E filename first segment indicator not expected
 
@@ -18758,7 +18681,7 @@ corrupt.
 Action Supply a valid input file and rerun dasdload.
 
 HHCDL070E
-~~~~~~~~~
+---------
 
 HHCDL070E filename control record indicator mismatch
 
@@ -18768,7 +18691,7 @@ control record. The input file is probably corrupt.
 Action Supply a valid input file and rerun dasdload.
 
 HHCDL071E
-~~~~~~~~~
+---------
 
 HHCDL071E filename read error: error
 
@@ -18778,7 +18701,7 @@ input file named filename. The error is described by error.
 Action Correct the error and rerun dasdload.
 
 HHCDL072E
-~~~~~~~~~
+---------
 
 HHCDL072E filename read error: error
 
@@ -18788,7 +18711,7 @@ the input file named filename. The error is described by error.
 Action Correct the error and rerun dasdload.
 
 HHCDL073E
-~~~~~~~~~
+---------
 
 HHCDL073E filename read error: error
 
@@ -18798,7 +18721,7 @@ the input file named filename. The error is described by error.
 Action Correct the error and rerun dasdload.
 
 HHCDL074E
-~~~~~~~~~
+---------
 
 HHCDL074E filename read error: error
 
@@ -18808,7 +18731,7 @@ from the input file named filename. The error is described by error.
 Action Correct the error and rerun dasdload.
 
 HHCDL075E
-~~~~~~~~~
+---------
 
 HHCDL075E filename read error: error
 
@@ -18818,7 +18741,7 @@ input file named filename. The error is described by error.
 Action Correct the error and rerun dasdload.
 
 HHCDL076I
-~~~~~~~~~
+---------
 
 HHCDL076I File number: number
 
@@ -18829,7 +18752,7 @@ Message level 4
 Action None. This is an informational message.
 
 HHCDL077E
-~~~~~~~~~
+---------
 
 HHCDL077E Invalid text unit at offset offset
 
@@ -18840,7 +18763,7 @@ corrupt.
 Action Supply a valid input file and rerun dasdload.
 
 HHCDL078I
-~~~~~~~~~
+---------
 
 HHCDL078I File filenum: DSNAME=dsname
 
@@ -18851,7 +18774,7 @@ Message level 2
 Action None. This is an informational message.
 
 HHCDL079I
-~~~~~~~~~
+---------
 
 HHCDL079I DSORG=dsorg RECFM=recfm LRECL=lrecl BLKSIZE=blksize
 KEYLEN=keylen DIRBLKS=dirblks
@@ -18866,7 +18789,7 @@ Message level 2
 Action None. This is an informational message.
 
 HHCDL080E
-~~~~~~~~~
+---------
 
 HHCDL080E Invalid text unit at offset offset
 
@@ -18877,7 +18800,7 @@ corrupt.
 Action Supply a valid input file and rerun dasdload.
 
 HHCDL081E
-~~~~~~~~~
+---------
 
 HHCDL081E COPYR1 record length is invalid
 
@@ -18887,7 +18810,7 @@ is probably corrupt.
 Action Supply a valid input file and rerun dasdload.
 
 HHCDL082E
-~~~~~~~~~
+---------
 
 HHCDL082E COPYR1 header identifier not correct
 
@@ -18897,7 +18820,7 @@ input file is probably corrupt.
 Action Supply a valid input file and rerun dasdload.
 
 HHCDL083E
-~~~~~~~~~
+---------
 
 HHCDL083E COPYR1 unload format is unsupported
 
@@ -18909,7 +18832,7 @@ dasdload.
 Action Supply a supported input file and rerun dasdload.
 
 HHCDL084I
-~~~~~~~~~
+---------
 
 HHCDL084I Original dataset: DSORG=dsorg RECFM=recfm LRECL=lrecl
 BLKSIZE=blksize KEYLEN=keylen
@@ -18924,7 +18847,7 @@ Message level 2
 Action None. This is an informational message.
 
 HHCDL085I
-~~~~~~~~~
+---------
 
 HHCDL085I Dataset was unloaded from device type ucbtype (device)
 
@@ -18936,7 +18859,7 @@ Message level 2
 Action None. This is an informational message.
 
 HHCDL086I
-~~~~~~~~~
+---------
 
 HHCDL086I Original device has cylinders cyls and heads heads
 
@@ -18948,7 +18871,7 @@ Message level 2
 Action None. This is an informational message.
 
 HHCDL087E
-~~~~~~~~~
+---------
 
 HHCDL087E COPYR2 record length is invalid
 
@@ -18958,7 +18881,7 @@ input file is probably corrupt.
 Action Supply a valid input file and rerun dasdload.
 
 HHCDL088E
-~~~~~~~~~
+---------
 
 HHCDL088E Invalid number of extents extents
 
@@ -18969,7 +18892,7 @@ corrupt.
 Action Supply a valid input file and rerun dasdload.
 
 HHCDL089I
-~~~~~~~~~
+---------
 
 HHCDL089I Extent extent: Begin CCHH=begcchh End CCHH=endcchh
 Tracks=tracks
@@ -18982,7 +18905,7 @@ Message level 4
 Action None. This is an informational message.
 
 HHCDL090I
-~~~~~~~~~
+---------
 
 HHCDL090I End of directory
 
@@ -18993,7 +18916,7 @@ Message level 3
 Action None. This is an informational message.
 
 HHCDL091E
-~~~~~~~~~
+---------
 
 HHCDL091E Directory block record length is invalid
 
@@ -19003,7 +18926,7 @@ length. It must be 276 bytes long. The input file is probably corrupt.
 Action Supply a valid input file and rerun dasdload.
 
 HHCDL092E
-~~~~~~~~~
+---------
 
 HHCDL092E Cannot obtain storage for directory block: error
 
@@ -19013,7 +18936,7 @@ processed failed. The error is described by error.
 Action Correct the error and rerun dasdload.
 
 HHCDL093E
-~~~~~~~~~
+---------
 
 HHCDL093E Number of directory blocks exceeds maxdblk, increase MAXDBLK
 
@@ -19025,7 +18948,7 @@ Action Increase the value of the constant MAXDBLK in the program source
 and recompile dasdload.
 
 HHCDL094E
-~~~~~~~~~
+---------
 
 HHCDL094E Directory block byte count is invalid
 
@@ -19035,7 +18958,7 @@ input file is probably corrupt.
 Action Supply a valid input file and rerun dasdload.
 
 HHCDL095I
-~~~~~~~~~
+---------
 
 HHCDL095I (Alias|Member) memname TTR=ttr Userdata=userdata
 
@@ -19047,7 +18970,7 @@ Message level 3
 Action None. This is an informational message.
 
 HHCDL096I
-~~~~~~~~~
+---------
 
 HHCDL096I Member name TTR=oldttr replaced by newttr
 
@@ -19060,7 +18983,7 @@ Message level 4
 Action None. This is an informational message.
 
 HHCDL097E
-~~~~~~~~~
+---------
 
 HHCDL097E Member name TTR=ttrnot found in dataset
 
@@ -19071,7 +18994,7 @@ Action This is likely an internal logic error. Report the error to the
 Hercules development team.
 
 HHCDL098I
-~~~~~~~~~
+---------
 
 HHCDL098I Updating note list for member name at TTR=ttr CCHHR=cchhr
 
@@ -19083,7 +19006,7 @@ Message level 4
 Action None. This is an informational message.
 
 HHCDL099E
-~~~~~~~~~
+---------
 
 HHCDL099E filename cyl cylinder head head read error
 
@@ -19095,7 +19018,7 @@ Action Correct the error reported by the previous message and rerun
 dasdload.
 
 HHCDL100E
-~~~~~~~~~
+---------
 
 HHCDL100E filename cyl cylinder head head invalid track header header
 
@@ -19106,7 +19029,7 @@ address of the track. This is probably an internal logic error.
 Action Report the error to the Hercules development team.
 
 HHCDL101E
-~~~~~~~~~
+---------
 
 HHCDL101E filename cyl cylinder head head rec record note list record
 not found
@@ -19118,7 +19041,7 @@ input dataset may be corrupt.
 Action Supply a valid input dataset and rerun dasdload.
 
 HHCDL102E
-~~~~~~~~~
+---------
 
 HHCDL102E Member member note list at cyl cylinder head head rec record
 dlen datalen is too short for numttrs TTRs
@@ -19131,7 +19054,7 @@ dataset is probably corrupt.
 Action Supply a valid input dataset and rerun dasdload.
 
 HHCDL103E
-~~~~~~~~~
+---------
 
 HHCDL103E filename track read error cyl cylinder head head
 
@@ -19143,7 +19066,7 @@ Action Correct the error reported by the previous message and rerun
 dasdload.
 
 HHCDL104I
-~~~~~~~~~
+---------
 
 HHCDL104I Updating cyl cylinder head head rec record kl keylen dl
 datalen
@@ -19156,7 +19079,7 @@ Message level 4
 Action None. This is an informational message.
 
 HHCDL105E
-~~~~~~~~~
+---------
 
 HHCDL105E Directory block byte count is invalid
 
@@ -19166,7 +19089,7 @@ input file is probably corrupt.
 Action Supply a valid input file and rerun dasdload.
 
 HHCDL106E
-~~~~~~~~~
+---------
 
 HHCDL106E Cannot open file filename: error
 
@@ -19176,7 +19099,7 @@ failed. The error is described by error.
 Action Correct the error and rerun dasdload.
 
 HHCDL107E
-~~~~~~~~~
+---------
 
 HHCDL107E Cannot obtain input buffer: error
 
@@ -19186,7 +19109,7 @@ the IEBCOPY input file failed. The error is described by error.
 Action Correct the error and rerun dasdload.
 
 HHCDL108E
-~~~~~~~~~
+---------
 
 HHCDL108E Cannot obtain storage for directory block array:error
 
@@ -19196,7 +19119,7 @@ store directory blocks failed. The error is described by error.
 Action Correct the error and rerun dasdload.
 
 HHCDL109E
-~~~~~~~~~
+---------
 
 HHCDL109E Cannot obtain storage for TTR table: error
 
@@ -19207,7 +19130,7 @@ by error.
 Action Correct the error and rerun dasdload.
 
 HHCDL110I
-~~~~~~~~~
+---------
 
 HHCDL110I Processing file filename
 
@@ -19218,7 +19141,7 @@ Message level 1
 Action None. This is an informational message.
 
 HHCDL111I
-~~~~~~~~~
+---------
 
 HHCDL111I Control record: recname length length
 
@@ -19230,7 +19153,7 @@ Message level 4
 Action None. This is an informational message.
 
 HHCDL112I
-~~~~~~~~~
+---------
 
 HHCDL112I File number: filenum ((not) selected)
 
@@ -19242,7 +19165,7 @@ Message level 4
 Action None. This is an informational message.
 
 HHCDL113I
-~~~~~~~~~
+---------
 
 HHCDL113I Data record: length length
 
@@ -19253,7 +19176,7 @@ Message level 4
 Action None. This is an informational message.
 
 HHCDL114E
-~~~~~~~~~
+---------
 
 HHCDL114E write error: input record CCHHR=cchhr (TTR=ttr) KL=keylen
 DL=datalen
@@ -19266,7 +19189,7 @@ Action Correct the error described by the previous message and rerun
 dasdload.
 
 HHCDL115I
-~~~~~~~~~
+---------
 
 HHCDL115I CCHHR=incchhr (TTR=inttr) KL=keylen DL=datalen ->
 CCHHR=outcchhr (TTR=outttr)
@@ -19281,7 +19204,7 @@ Message level 4
 Action None. This is an informational message.
 
 HHCDL116E
-~~~~~~~~~
+---------
 
 HHCDL116E TTR count exceeds maxttr, increase MAXTTR
 
@@ -19292,7 +19215,7 @@ Action Increase the constant MAXTTR in the program source and recompile
 dasdload.
 
 HHCDL117I
-~~~~~~~~~
+---------
 
 HHCDL117I Catalog block at cyl cylinder head head rec record
 
@@ -19304,7 +19227,7 @@ Message level 4
 Action None. This is an informational message.
 
 HHCDL118I
-~~~~~~~~~
+---------
 
 HHCDL118I Catalog block at cyl cylinder head head rec record
 
@@ -19316,7 +19239,7 @@ Message level 4
 Action None. This is an informational message.
 
 HHCDL119I
-~~~~~~~~~
+---------
 
 HHCDL119I Catalog block at cyl cylinder head head rec record
 
@@ -19328,7 +19251,7 @@ Message level 4
 Action None. This is an informational message.
 
 HHCDL120I
-~~~~~~~~~
+---------
 
 HHCDL120I DIP complete at cyl cylinder head head record record
 
@@ -19340,7 +19263,7 @@ Message level 3
 Action None. This is an informational message.
 
 HHCDL121E
-~~~~~~~~~
+---------
 
 HHCDL121E SEQ dsorg must be PS or DA: dsorg=dsorg
 
@@ -19352,7 +19275,7 @@ processing or specify the correct processing option for the file being
 loaded and rerun dasdload.
 
 HHCDL122E
-~~~~~~~~~
+---------
 
 HHCDL122E SEQ recfm must be F or FB: recfm=recfm
 
@@ -19363,7 +19286,7 @@ Action Specify a valid record format for sequential file processing and
 rerun dasdload.
 
 HHCDL123E
-~~~~~~~~~
+---------
 
 HHCDL123E SEQ invalid lrecl or blksz: lrecl=lrecl blksz=blksz
 
@@ -19377,7 +19300,7 @@ Action Specify a valid logical record length and block size for
 sequential file processing and rerun dasdload.
 
 HHCDL124E
-~~~~~~~~~
+---------
 
 HHCDL124E SEQ keyln must be 0 for blocked files
 
@@ -19388,7 +19311,7 @@ Action If a key is required, specify a record format of F. If no key is
 required, specify a key length of 0. Rerun dasdload.
 
 HHCDL125E
-~~~~~~~~~
+---------
 
 HHCDL125E Cannot open filename: error
 
@@ -19398,7 +19321,7 @@ file named filename. The error is described by error.
 Action Correct the error and rerun dasdload.
 
 HHCDL126E
-~~~~~~~~~
+---------
 
 HHCDL126E Cannot stat filename: error
 
@@ -19408,7 +19331,7 @@ of the file named filename. The error is described by error.
 Action Correct the error and rerun dasdload.
 
 HHCDL127E
-~~~~~~~~~
+---------
 
 HHCDL127E filename cyl cylinder head head read error
 
@@ -19420,7 +19343,7 @@ Action Correct the error reported by the previous message and rerun
 dasdload.
 
 HHCDL128E
-~~~~~~~~~
+---------
 
 HHCDL128E filename read error: error
 
@@ -19430,7 +19353,7 @@ filename. The error is described by error.
 Action Correct the error and rerun dasdload.
 
 HHCDL130W
-~~~~~~~~~
+---------
 
 HHCDL130W WARNING – XMIT file utility is not IEBCOPY; file filename not
 loaded
@@ -19442,7 +19365,7 @@ Action If filename is an unloaded sequential file, rerun DASDLOAD
 specifying XMSEQ instead of XMIT.
 
 HHCDL131I
-~~~~~~~~~
+---------
 
 HHCDL131I Control record: recname length length
 
@@ -19452,7 +19375,7 @@ read.
 Action None.
 
 HHCDL132I
-~~~~~~~~~
+---------
 
 HHCDL132I File number: filenum ((not) selected)
 
@@ -19462,7 +19385,7 @@ processing.
 Action None.
 
 HHCDL133I
-~~~~~~~~~
+---------
 
 HHCDL133I Data record: length length
 
@@ -19471,7 +19394,7 @@ Explanation A data record of length length has been read.
 Action None.
 
 HHCDL135I
-~~~~~~~~~
+---------
 
 HHCDL135I CCHHR=outcchhr (TTR=outttr) KL=keylen DL=datalen
 
@@ -19482,7 +19405,7 @@ relative address outttr.
 Action None.
 
 HHCDL136E
-~~~~~~~~~
+---------
 
 HHCDL136E Cannot open file filename: error
 
@@ -19492,7 +19415,7 @@ filename failed. The error is described by error.
 Action Correct the error and rerun DASDLOD.
 
 HHCDL137E
-~~~~~~~~~
+---------
 
 HHCDL137E Cannot obtain input buffer: error
 
@@ -19502,7 +19425,7 @@ sequential XMIT input file failed. The error is described by error.
 Action Correct the error and rerun DASDLOD.
 
 HHCDL138W
-~~~~~~~~~
+---------
 
 HHCDL130W WARNING – XMIT file utility is not INMCOPY; file filename not
 loaded
@@ -19514,7 +19437,7 @@ Action If filename is an unloaded PDS file, rerun DASDLOAD specifying
 XMIT.
 
 HHCDL139I
-~~~~~~~~~
+---------
 
 HHCDL139I Processinf file filename
 
@@ -19527,7 +19450,7 @@ Action None.
 -----------------------------------------
 
 HHCDS001E
-~~~~~~~~~
+---------
 
 HHCDS001E Cannot obtain storage for member array: error
 
@@ -19537,7 +19460,7 @@ members failed. The error is described by error.
 Action Correct the error and rerun dasdisup.
 
 HHCDS002I
-~~~~~~~~~
+---------
 
 HHCDS002I End of directory: count members selected
 
@@ -19547,7 +19470,7 @@ members have been selected for processing.
 Action None. This is an informational message.
 
 HHCDS003E
-~~~~~~~~~
+---------
 
 HHCDS003E Directory block byte count is invalid
 
@@ -19557,7 +19480,7 @@ SYS1.SVCLIB directory is probably corrupt.
 Action Rebuild SYS1.SVCLIB and rerun dasdisup.
 
 HHCDS004E
-~~~~~~~~~
+---------
 
 HHCDS004E Number of members exceeds MAX_MEMBERS
 
@@ -19568,7 +19491,7 @@ Action Increase the value of MAX_MEMBERS in dasdisup.c and recompile the
 program, then run it again.
 
 HHCDS005E
-~~~~~~~~~
+---------
 
 HHCDS005E Member member TTR count is zero
 
@@ -19579,7 +19502,7 @@ directory is corrupt.
 Action Rebuild SYS1.SVCLIB and run dasdisup again.
 
 HHCDS006W
-~~~~~~~~~
+---------
 
 HHCDS006W Member member is not single text record
 
@@ -19591,7 +19514,7 @@ Action If this member must be processed, rebuild SYS1.SVCLIB and rerun
 dasdisup.
 
 HHCDS007W
-~~~~~~~~~
+---------
 
 HHCDS007W Member member size size exceeds X’7F8’ bytes
 
@@ -19602,7 +19525,7 @@ will be processed but OS/360 may not process it correctly.
 Action Correct the member in SYS1.SVCLIB and rerun dasdisup.
 
 HHCDS008W
-~~~~~~~~~
+---------
 
 HHCDS008W Member member size size is not a multiple of 8
 
@@ -19613,7 +19536,7 @@ OS/360 will issue an ABEND when an attempt is made to load the module.
 Action Correct the member in SYS1.SVCLIB and rerun dasdisup.
 
 HHCDS009I
-~~~~~~~~~
+---------
 
 HHCDS009I Alias alias skipped
 
@@ -19623,7 +19546,7 @@ is necessary for it.
 Action None. This is an informational message.
 
 HHCDS010I
-~~~~~~~~~
+---------
 
 HHCDS010I Member member skipped
 
@@ -19634,7 +19557,7 @@ Action None. This is an informational message. If the member should have
 an XCTL table, rebuild it in SYS1.SVCLIB and rerun dasdisup.
 
 HHCDS011E
-~~~~~~~~~
+---------
 
 HHCDS011E Member member has multiple text records
 
@@ -19646,7 +19569,7 @@ Action If this member must be processed, rebuild it in SYS1.SVCLIB and
 rerun dasdisup.
 
 HHCDS012E
-~~~~~~~~~
+---------
 
 HHCDS012E Member member has invalid TTR ttr
 
@@ -19657,7 +19580,7 @@ processed. The SYS1.SVCLIB directory is probably corrupt.
 Action Rebuild SYS1.SVCLIB and rerun dasdisup.
 
 HHCDS013I
-~~~~~~~~~
+---------
 
 HHCDS013I Processing member member text record TTR=ttr CCHHR=cchhr
 
@@ -19667,7 +19590,7 @@ location is ttr and its absolute location is cchhr.
 Action None. This is an informational message.
 
 HHCDS014E
-~~~~~~~~~
+---------
 
 HHCDS014E Member member error reading TTR ttr
 
@@ -19678,7 +19601,7 @@ Action Rebuild SYS1.SVCLIB and rerun dasdisup. If this is unsuccessful,
 rebuild the entire DASD volume.
 
 HHCDS015E
-~~~~~~~~~
+---------
 
 HHCDS015E Member member TTR ttr text record length length is not valid
 
@@ -19690,7 +19613,7 @@ The member is probably corrupt.
 Action Rebuild the member in SYS1.SVCLIB and rerun dasdisup.
 
 HHCDS016E
-~~~~~~~~~
+---------
 
 HHCDS016E Member member TTR ttr text record length textlength does not
 match length dirlength in directory
@@ -19703,7 +19626,7 @@ Action Rebuild the member in SYS1.SVCLIB and rerun dasdisup. If this
 does not correct the problem, rebuild SYS1.SVCLIB in its entirety.
 
 HHCDS017E
-~~~~~~~~~
+---------
 
 HHCDS017E Member member TTR ttr XCTL table improperly terminated
 
@@ -19713,7 +19636,7 @@ the end of the text record. The member is probably corrupt.
 Action Rebuild the member and rerun dasdisup.
 
 HHCDS018I
-~~~~~~~~~
+---------
 
 HHCDS018I member (Alias|Member) skipped
 
@@ -19724,7 +19647,7 @@ It has been skipped.
 Action None. This is an informational message.
 
 HHCDS019I
-~~~~~~~~~
+---------
 
 HHCDS019I In member member: reference TTRL=ttrl status
 
@@ -19746,7 +19669,7 @@ Action None. This is an informational message.
 ----------------------------------------
 
 HHCDT001E
-~~~~~~~~~
+---------
 
 HHCDT001E failed to open image filename
 
@@ -19756,7 +19679,7 @@ named filename. A previous message described the error.
 Action Correct the error and rerun dasdcat.
 
 HHCDT002E
-~~~~~~~~~
+---------
 
 HHCDT002E Can’t make 80 column card images from block length length
 
@@ -19768,7 +19691,7 @@ Action Select a different member, or omit the c flag from the member
 specification.
 
 HHCDT003E
-~~~~~~~~~
+---------
 
 HHCDT003E Directory block byte count is invalid
 
@@ -19779,7 +19702,7 @@ Action Make sure the dataset specified is a PDS (partitioned dataset).
 If it is, then the dataset is corrupt.
 
 HHCDT004E
-~~~~~~~~~
+---------
 
 HHCDT004E non-PDS-members not yet supported
 
@@ -19789,7 +19712,7 @@ datasets.
 Action Specify a PDS as input to dasdcat.
 
 HHCDT005E
-~~~~~~~~~
+---------
 
 HHCDT005E unknown dataset name option: ‘option’
 
@@ -19803,7 +19726,7 @@ rerun dasdcat.
 --------------------------------------------------------
 
 HHCDU001I
-~~~~~~~~~
+---------
 
 HHCDU001I Updating cyl cylinder head head
 
@@ -19814,7 +19737,7 @@ verbose message reporting has been selected.
 Action None. This is an informational message.
 
 HHCDU002E
-~~~~~~~~~
+---------
 
 HHCDU002E filename write track error: stat=status
 
@@ -19824,7 +19747,7 @@ filename failed. The status returned was status.
 Action Correct the error and retry the operation.
 
 HHCDU003I
-~~~~~~~~~
+---------
 
 HHCDU003I Reading cyl cylinder head head
 
@@ -19835,7 +19758,7 @@ has been selected.
 Action None. This is an informational message.
 
 HHCDU004E
-~~~~~~~~~
+---------
 
 HHCDU004E filename read track error: stat=status
 
@@ -19845,7 +19768,7 @@ filename failed. The status returned was status.
 Action Correct the error and retry the operation.
 
 HHCDU005I
-~~~~~~~~~
+---------
 
 HHCDU005I Searching extent 0 begin (begcyl,beghead) end (endcyl,endhead)
 
@@ -19857,7 +19780,7 @@ issued if verbose message reporting has been selected.
 Action None. This is an informational message.
 
 HHCDU006I
-~~~~~~~~~
+---------
 
 HHCDU006I Searching extent extent begin (begcyl,beghead) end
 (endcyl,endhead)
@@ -19870,7 +19793,7 @@ only issued if verbose message reporting has been selected.
 Action None. This is an informational message.
 
 HHCDU007E
-~~~~~~~~~
+---------
 
 HHCDU007E Track track not found in extent table
 
@@ -19882,7 +19805,7 @@ Action Correct the error and retry the operation. The dataset, the VTOC,
 or the DASD image may be corrupt.
 
 HHCDU008E
-~~~~~~~~~
+---------
 
 HHCDU008E Cannot obtain storage for device descriptor buffer: error
 
@@ -19892,7 +19815,7 @@ CKD DASD image description failed. The error is described by error.
 Action Correct the error and retry the operation.
 
 HHCDU009E
-~~~~~~~~~
+---------
 
 HHCDU009E Cannot open filename: error
 
@@ -19902,7 +19825,7 @@ error is described by error.
 Action Correct the error and retry the operation.
 
 HHCDU010E
-~~~~~~~~~
+---------
 
 HHCDU010E filename read error: error
 
@@ -19912,7 +19835,7 @@ from the file named filename. The error is described by error.
 Action Correct the error and retry the operation.
 
 HHCDU011E
-~~~~~~~~~
+---------
 
 HHCDU011E filename CKD header invalid
 
@@ -19924,7 +19847,7 @@ Action Supply the name of a valid CKD DASD image file and retry the
 operation.
 
 HHCDU012E
-~~~~~~~~~
+---------
 
 HHCDU012E DASD table entry not found for devtype type
 
@@ -19936,7 +19859,7 @@ Action Supply the name of a supported CKD DASD image file and retry the
 operation.
 
 HHCDU013E
-~~~~~~~~~
+---------
 
 HHCDU013E CKD initialization failed for filename
 
@@ -19946,7 +19869,7 @@ named filename failed. Another message describes the specific failure.
 Action See the specific message for the action needed.
 
 HHCDU014I
-~~~~~~~~~
+---------
 
 HHCDU014I filename heads=heads trklen=trklen
 
@@ -19957,7 +19880,7 @@ is only issued if verbose message reporting has been selected.
 Action None. This is an informational message.
 
 HHCDU015I
-~~~~~~~~~
+---------
 
 HHCDU015I Updating cyl cylinder head head
 
@@ -19969,7 +19892,7 @@ verbose message reporting has been selected.
 Action None. This is an informational message.
 
 HHCDU016E
-~~~~~~~~~
+---------
 
 HHCDU016E filename write track error: stat=status
 
@@ -19980,7 +19903,7 @@ The status returned was status.
 Action Correct the error and retry the operation.
 
 HHCDU017E
-~~~~~~~~~
+---------
 
 HHCDU017E Cannot obtain storage for device descriptor buffer: error
 
@@ -19990,7 +19913,7 @@ FBA DASD image description failed. The error is described by error.
 Action Correct the error and retry the operation.
 
 HHCDU018E
-~~~~~~~~~
+---------
 
 HHCDU018E DASD table entry not found for devtype type
 
@@ -20000,7 +19923,7 @@ DASD device. This is likely an internal programming error.
 Action Report the bug to the Hercules development team.
 
 HHCDU019E
-~~~~~~~~~
+---------
 
 HHCDU019E FBA initialization failed for filename
 
@@ -20010,7 +19933,7 @@ named filename failed. Another message describes the specific failure.
 Action See the specific message for the action needed.
 
 HHCDU020I
-~~~~~~~~~
+---------
 
 HHCDU020I filename sectors=sectors size=size
 
@@ -20021,7 +19944,7 @@ issued if verbose message reporting has been selected.
 Action None. This is an informational message.
 
 HHCDU021E
-~~~~~~~~~
+---------
 
 HHCDU021E VOL1 record not found
 
@@ -20032,7 +19955,7 @@ Action Format the volume or specify a formatted volume and retry the
 operation.
 
 HHCDU022I
-~~~~~~~~~
+---------
 
 HHCDU022I VOLSER=serial VTOC=cchhr
 
@@ -20043,7 +19966,7 @@ only issued if verbose message reporting has been selected.
 Action None. This is an informational message.
 
 HHCDU023I
-~~~~~~~~~
+---------
 
 HHCDU023I VTOC start begcchh end endcchh
 
@@ -20054,7 +19977,7 @@ only issued if verbose message reporting has been selected.
 Action None. This is an informational message.
 
 HHCDU024E
-~~~~~~~~~
+---------
 
 HHCDU024E Dataset dsn not found in VTOC
 
@@ -20065,7 +19988,7 @@ Action Specify the correct dataset name or select the volume on which it
 appears.
 
 HHCDU025I
-~~~~~~~~~
+---------
 
 HHCDU025I DSNAME=dsn F1DSCB CCHHR=cchhr
 
@@ -20076,7 +19999,7 @@ reporting has been selected.
 Action None. This is an informational message.
 
 HHCDU026E
-~~~~~~~~~
+---------
 
 HHCDU026E F1DSCB record not found
 
@@ -20087,7 +20010,7 @@ may be corrupt.
 Action Recreate the dataset and retry the operation.
 
 HHCDU027E
-~~~~~~~~~
+---------
 
 HHCDU027E F3DSCB record not found
 
@@ -20098,7 +20021,7 @@ when an attempt was made to read it. The VTOC may be corrupt.
 Action Recreate the dataset and retry the operation.
 
 HHCDU028E
-~~~~~~~~~
+---------
 
 HHCDU028E filename open error: error
 
@@ -20108,7 +20031,7 @@ failed. The error is described by error.
 Action Correct the error and retry the operation.
 
 HHCDU029E
-~~~~~~~~~
+---------
 
 HHCDU029E filename device header write error: error
 
@@ -20118,7 +20041,7 @@ file named filename failed. The error is described by error.
 Action Correct the error and retry the operation.
 
 HHCDU030E
-~~~~~~~~~
+---------
 
 HHCDU030E filename compressed device header write error: error
 
@@ -20128,7 +20051,7 @@ DASD image file named filename failed. The error is described by error.
 Action Correct the error and retry the operation.
 
 HHCDU031E
-~~~~~~~~~
+---------
 
 HHCDU031E Cannot obtain l1tab buffer: error
 
@@ -20138,7 +20061,7 @@ buffer failed. The error is described by error.
 Action Correct the error and retry the operation.
 
 HHCDU032E
-~~~~~~~~~
+---------
 
 HHCDU032E filename primary lookup table write error: error
 
@@ -20148,7 +20071,7 @@ image file named filename failed. The error is described by error.
 Action Correct the error and retry the operation.
 
 HHCDU033E
-~~~~~~~~~
+---------
 
 HHCDU033E filename secondary lookup table write error: error
 
@@ -20158,7 +20081,7 @@ DASD image file named filename failed. The error is described by error.
 Action Correct the error and retry the operation.
 
 HHCDU034E
-~~~~~~~~~
+---------
 
 HHCDU034E filename dasdcopy ftruncate error: error
 
@@ -20168,7 +20091,7 @@ filename failed. The error is described by error.
 Action Correct the error and retry the operation.
 
 HHCDU035E
-~~~~~~~~~
+---------
 
 HHCDU035E filename cylinder cyl head head write error: error
 
@@ -20179,7 +20102,7 @@ error.
 Action Correct the error and retry the operation.
 
 HHCDU036E
-~~~~~~~~~
+---------
 
 HHCDU036E filename compressed device header lseek error: error
 
@@ -20189,7 +20112,7 @@ image file named filename failed. The error is described by error.
 Action Correct the error and retry the operation.
 
 HHCDU037E
-~~~~~~~~~
+---------
 
 HHCDU037E filename compressed device header write error: error
 
@@ -20200,7 +20123,7 @@ error.
 Action Correct the error and retry the operation.
 
 HHCDU038E
-~~~~~~~~~
+---------
 
 HHCDU038E filename secondary lookup table lseek error: error
 
@@ -20211,7 +20134,7 @@ error.
 Action Correct the error and retry the operation.
 
 HHCDU039E
-~~~~~~~~~
+---------
 
 HHCDU039E filename secondary lookup table write error: error
 
@@ -20221,7 +20144,7 @@ DASD image file named filename failed. The error is described by error.
 Action Correct the error and retry the operation.
 
 HHCDU040E
-~~~~~~~~~
+---------
 
 HHCDU040E filename close error: error
 
@@ -20231,7 +20154,7 @@ failed. The error is described by error.
 Action Correct the error and retry the operation.
 
 HHCDU041I
-~~~~~~~~~
+---------
 
 HHCDU041I count cylinders successfully written to file filename
 
@@ -20241,7 +20164,7 @@ created. It contains count cylinders.
 Action None. This is an informational message.
 
 HHCDU042E
-~~~~~~~~~
+---------
 
 HHCDU042E Cylinder count count is outside range min-max
 
@@ -20251,7 +20174,7 @@ range from min to max.
 Action Specify a valid number of cylinders and retry the operation.
 
 HHCDU043E
-~~~~~~~~~
+---------
 
 HHCDU043E Cannot obtain track buffer: error
 
@@ -20261,7 +20184,7 @@ The error is described by error.
 Action Correct the error and retry the operation.
 
 HHCDU044I
-~~~~~~~~~
+---------
 
 HHCDU044I Creating type volume serial: cylinders cyls, tracks trks/cyl,
 length bytes/track
@@ -20273,7 +20196,7 @@ cylinder and length bytes per track.
 Action None. This is an informational message.
 
 HHCDU045E
-~~~~~~~~~
+---------
 
 HHCDU045E Sector count count is outside range min-max
 
@@ -20283,7 +20206,7 @@ range from min to max.
 Action Specify a valid number of cylinders and retry the operation.
 
 HHCDU046E
-~~~~~~~~~
+---------
 
 HHCDU046E Cannot obtain sector buffer: error
 
@@ -20293,7 +20216,7 @@ The error is described by error.
 Action Correct the error and retry the operation.
 
 HHCDU047I
-~~~~~~~~~
+---------
 
 HHCDU047I Creating type volume serial: sectors sectors, length
 bytes/sector
@@ -20305,7 +20228,7 @@ sector.
 Action None. This is an informational message.
 
 HHCDU048E
-~~~~~~~~~
+---------
 
 HHCDU048E filename open error: error
 
@@ -20315,7 +20238,7 @@ failed. The error is described by error.
 Action Correct the error and retry the operation.
 
 HHCDU049E
-~~~~~~~~~
+---------
 
 HHCDU049E filename dasdcopy ftruncate error: error
 
@@ -20325,7 +20248,7 @@ filename failed. The error is described by error.
 Action Correct the error and retry the operation.
 
 HHCDU050E
-~~~~~~~~~
+---------
 
 HHCDU050E filename sector sector write error: error
 
@@ -20335,7 +20258,7 @@ image file named filename failed. The error is described by error.
 Action Correct the error and retry the operation.
 
 HHCDU051E
-~~~~~~~~~
+---------
 
 HHCDU051E filename close error: error
 
@@ -20345,7 +20268,7 @@ failed. The error is described by error.
 Action Correct the error and retry the operation.
 
 HHCDU052I
-~~~~~~~~~
+---------
 
 HHCDU052I count sectors successfully written to file filename
 
@@ -20355,7 +20278,7 @@ created. It contains count sectors.
 Action None. This is an informational message.
 
 HHCDU053E
-~~~~~~~~~
+---------
 
 HHCDU053E File size too large: size [l1tab]
 
@@ -20367,7 +20290,7 @@ Action Either specify fewer sectors or create the DASD image
 uncompressed.
 
 HHCDU054E
-~~~~~~~~~
+---------
 
 HHCDU054E filename open error: error
 
@@ -20377,7 +20300,7 @@ named filename failed. The error is described by error.
 Action Correct the error and retry the operation.
 
 HHCDU055I
-~~~~~~~~~
+---------
 
 HHCDU055I Creating type compressed volume serial: sectors sectors,
 length bytes/sector
@@ -20389,7 +20312,7 @@ bytes per sector.
 Action None. This is an informational message.
 
 HHCDU056E
-~~~~~~~~~
+---------
 
 HHCDU056E filename devhdr write error: error
 
@@ -20399,7 +20322,7 @@ DASD image file named filename failed. The error is described by error.
 Action Correct the error and retry the operation.
 
 HHCDU057E
-~~~~~~~~~
+---------
 
 HHCDU057E filename cdevhdr write error: error
 
@@ -20410,7 +20333,7 @@ described by error.
 Action Correct the error and retry the operation.
 
 HHCDU058E
-~~~~~~~~~
+---------
 
 HHCDU058E filename l1tab write error: error
 
@@ -20421,7 +20344,7 @@ described by error.
 Action Correct the error and retry the operation.
 
 HHCDU059E
-~~~~~~~~~
+---------
 
 HHCDU059E filename l2tab write error: error
 
@@ -20432,7 +20355,7 @@ described by error.
 Action Correct the error and retry the operation.
 
 HHCDU060E
-~~~~~~~~~
+---------
 
 HHCDU060E filename block header write error: error
 
@@ -20443,7 +20366,7 @@ described by error.
 Action Correct the error and retry the operation.
 
 HHCDU061E
-~~~~~~~~~
+---------
 
 HHCDU061E filename block write error: error
 
@@ -20453,7 +20376,7 @@ DASD image file named filename failed. The error is described by error.
 Action Correct the error and retry the operation.
 
 HHCDU062E
-~~~~~~~~~
+---------
 
 HHCDU062E filename block write error: error
 
@@ -20464,7 +20387,7 @@ error.
 Action Correct the error and retry the operation.
 
 HHCDU063E
-~~~~~~~~~
+---------
 
 HHCDU063E filename cdevhdr lseek error: error
 
@@ -20475,7 +20398,7 @@ error.
 Action Correct the error and retry the operation.
 
 HHCDU064E
-~~~~~~~~~
+---------
 
 HHCDU064E filename cdevhdr rewrite error: error
 
@@ -20486,7 +20409,7 @@ described by error.
 Action Correct the error and retry the operation.
 
 HHCDU065E
-~~~~~~~~~
+---------
 
 HHCDU065E filename l2tab lseek error: error
 
@@ -20497,7 +20420,7 @@ described by error.
 Action Correct the error and retry the operation.
 
 HHCDU066E
-~~~~~~~~~
+---------
 
 HHCDU066E filename l2tab rewrite error: error
 
@@ -20508,7 +20431,7 @@ described by error.
 Action Correct the error and retry the operation.
 
 HHCDU067E
-~~~~~~~~~
+---------
 
 HHCDU067E filename close error: error
 
@@ -20518,7 +20441,7 @@ filename failed. The error is described by error.
 Action Correct the error and retry the operation.
 
 HHCDU068I
-~~~~~~~~~
+---------
 
 HHCDU068I count sectors successfully written to file filename
 
@@ -20531,7 +20454,7 @@ Action None. This is an informational message.
 ------------------------------------------------
 
 HHCHD001E
-~~~~~~~~~
+---------
 
 HHCHD001E registration alloc failed for entry
 
@@ -20540,7 +20463,7 @@ Explanation Storage could not be obtained to register entrypoint entry
 Action Correct the error and restart Hercules.
 
 HHCHD002E
-~~~~~~~~~
+---------
 
 HHCHD002E cannot allocate memory for DLL descriptor: error
 
@@ -20550,7 +20473,7 @@ to the error described by error.
 Action Correct the error and restart Hercules.
 
 HHCHD003E
-~~~~~~~~~
+---------
 
 HHCHD003E unable to open Hercules as DLL: error
 
@@ -20560,7 +20483,7 @@ dynamic loader. The dynamic loader error is described by error
 Action Correct the error and restart Hercules.
 
 HHCHD004I
-~~~~~~~~~
+---------
 
 HHCHD004I No initializer in module: error
 
@@ -20570,7 +20493,7 @@ error is described by error
 Action Correct the error and restart Hercules.
 
 HHCHD005E
-~~~~~~~~~
+---------
 
 HHCHD005E module already loaded.
 
@@ -20579,7 +20502,7 @@ Explanation An attempt was made to load an already loaded module.
 Action Unload to module first.
 
 HHCHD006S
-~~~~~~~~~
+---------
 
 HHCHD006S cannot allocate memory for DLL descriptor: error
 
@@ -20589,7 +20512,7 @@ to the error described by error.
 Action Correct the error and restart Hercules.
 
 HHCHD007E
-~~~~~~~~~
+---------
 
 HHCHD007E unable to open DLL module: error
 
@@ -20599,7 +20522,7 @@ described by error.
 Action Ensure that the correct module is specified and is accessible.
 
 HHCHD008I
-~~~~~~~~~
+---------
 
 HHCHD008I No initializer in module: error
 
@@ -20609,7 +20532,7 @@ error is described by error
 Action Correct the error and restart Hercules.
 
 HHCHD009E
-~~~~~~~~~
+---------
 
 HHCHD009E module not found
 
@@ -20618,7 +20541,7 @@ Explanation An attempt was made to unload a module that was not loaded.
 Action No action required.
 
 HHCHD010I
-~~~~~~~~~
+---------
 
 HHCHD010I Dependency check failed for module, version(vers_actual)
 expected(vers_exp)
@@ -20630,7 +20553,7 @@ dependency.
 Action No action required.
 
 HHCHD011I
-~~~~~~~~~
+---------
 
 HHCHD011I Dependency check failed for module, size(size_actual)
 expected(size_exp)
@@ -20641,7 +20564,7 @@ the size of the dependency in the module that contains the dependency.
 Action No action required.
 
 HHCHD012E
-~~~~~~~~~
+---------
 
 HHCHD012E No depency section in module: error
 
@@ -20652,7 +20575,7 @@ Action Rebuild the module with the required HDL_DEPENDENCY_SECTION
 defined.
 
 HHCHD013E
-~~~~~~~~~
+---------
 
 HHCHD013E No depency section in module: error
 
@@ -20663,7 +20586,7 @@ Action Rebuild the module with the required HDL_DEPENDENCY_SECTION
 defined.
 
 HHCHD014E
-~~~~~~~~~
+---------
 
 HHCHD014E Dependency check failed for module module
 
@@ -20676,7 +20599,7 @@ version of the required dependency as the module that contains the
 dependency and try again.
 
 HHCHD015E
-~~~~~~~~~
+---------
 
 HHCHD015E Unloading of module not allowed
 
@@ -20686,7 +20609,7 @@ to be unloaded.
 Action No action required.
 
 HHCHD018I
-~~~~~~~~~
+---------
 
 HHCHD018I Loadable module directory is dir
 
@@ -20697,7 +20620,7 @@ the -d command line option.
 Action No action required.
 
 HHCHD100I
-~~~~~~~~~
+---------
 
 HHCHD100I Loading module …
 
@@ -20706,7 +20629,7 @@ Explanation Module module is being loaded.
 Action No action required.
 
 HHCHD101I
-~~~~~~~~~
+---------
 
 HHCHD101I Module module loaded
 
@@ -20715,7 +20638,7 @@ Explanation Module module has been loaded.
 Action No action required
 
 HHCHD102I
-~~~~~~~~~
+---------
 
 HHCHD102I Unloading module …
 
@@ -20724,7 +20647,7 @@ Explanation Module module is being unloaded.
 Action No action required
 
 HHCHD103I
-~~~~~~~~~
+---------
 
 HHCHD103I Module module unloaded
 
@@ -20736,7 +20659,7 @@ Action No action required
 ---------------------------------------------------------------------
 
 HHCHEnnns
-~~~~~~~~~
+---------
 
 Messages HHCHEnnns are not yet documented.
 
@@ -20744,7 +20667,7 @@ Messages HHCHEnnns are not yet documented.
 ---------------------------------------------------------------------
 
 HHCHGnnns
-~~~~~~~~~
+---------
 
 Messages HHCHGnnns are not yet documented.
 
@@ -20752,7 +20675,7 @@ Messages HHCHGnnns are not yet documented.
 ---------------------------------------
 
 HHCHMnnns
-~~~~~~~~~
+---------
 
 Messages HHCHMnnns are not yet documented.
 
@@ -20760,7 +20683,7 @@ Messages HHCHMnnns are not yet documented.
 ------------------------------------------------------------------
 
 HHCHT001I
-~~~~~~~~~
+---------
 
 HHCHT001I HTTP listener thread started: tid=threadid, pid=processid
 
@@ -20771,7 +20694,7 @@ is processid.
 Action No action required.
 
 HHCHT002E
-~~~~~~~~~
+---------
 
 HHCHT002E socket: error
 
@@ -20781,7 +20704,7 @@ failed. The error is described by error.
 Action Correct the error and restart Hercules.
 
 HHCHT003W
-~~~~~~~~~
+---------
 
 HHCHT003W Waiting for port port to become free
 
@@ -20792,7 +20715,7 @@ Action If this message persists, some other program has control of the
 TCP port listed. Find out which one it is and terminate it.
 
 HHCHT004E
-~~~~~~~~~
+---------
 
 HHCHT004E bind: error
 
@@ -20802,7 +20725,7 @@ HTTP requests failed. The error is described by error.
 Action Correct the error and restart Hercules.
 
 HHCHT005E
-~~~~~~~~~
+---------
 
 HHCHT005E listen: error
 
@@ -20812,7 +20735,7 @@ requests failed. The error is described by error.
 Action Correct the error and restart Hercules.
 
 HHCHT006I
-~~~~~~~~~
+---------
 
 HHCHT006I Waiting for HTTP requests on port port pid=num
 
@@ -20821,7 +20744,7 @@ Explanation Hercules is ready to accept HTTP requests on port port.
 Action No action required.
 
 HHCHT007E
-~~~~~~~~~
+---------
 
 HHCHT007E select: error
 
@@ -20831,7 +20754,7 @@ error is described by error.
 Action Correct the error and restart Hercules.
 
 HHCHT008E
-~~~~~~~~~
+---------
 
 HHCHT008E accept: error
 
@@ -20841,7 +20764,7 @@ failed. The error is described by error.
 Action Correct the error and restart Hercules.
 
 HHCHT009E
-~~~~~~~~~
+---------
 
 HHCHT009E fdopen: error
 
@@ -20851,7 +20774,7 @@ failed. The error is described by error.
 Action Correct the error and restart Hercules.
 
 HHCHT010E
-~~~~~~~~~
+---------
 
 HHCHT010E http_request create_thread: error
 
@@ -20861,7 +20784,7 @@ failed. The error is described by error.
 Action Correct the error and restart Hercules.
 
 HHCHT011E
-~~~~~~~~~
+---------
 
 HHCHT011E html_include: Cannot open filename: error
 
@@ -20871,7 +20794,7 @@ file, could not be opened. The error is described by error.
 Action Correct the error and retry the operation.
 
 HHCHT014I
-~~~~~~~~~
+---------
 
 HHCHT014I HTTPROOT = pathname
 
@@ -20883,7 +20806,7 @@ Action No action required.
 ---------------------------------------------------------------------
 
 HHCHUnnns
-~~~~~~~~~
+---------
 
 Messages HHCHUnnns are not yet documented.
 
@@ -20891,7 +20814,7 @@ Messages HHCHUnnns are not yet documented.
 --------------------------------------------------------------------------
 
 HHCIF001E
-~~~~~~~~~
+---------
 
 HHCIF001E programname: Must be called from within Hercules.
 
@@ -20902,7 +20825,7 @@ the name programname.
 Action Don’t do that.
 
 HHCIF002E
-~~~~~~~~~
+---------
 
 HHCIF002E programname: Cannot obtain socket: error
 
@@ -20913,7 +20836,7 @@ program was executed using the name programname.
 Action Correct the error and retry the operation.
 
 HHCIF003E
-~~~~~~~~~
+---------
 
 HHCIF003E programname: I/O error on read: error
 
@@ -20924,7 +20847,7 @@ programname.
 Action Correct the error and retry the operation.
 
 HHCIF004W
-~~~~~~~~~
+---------
 
 HHCIF004W programname: Unknown request: request.
 
@@ -20936,7 +20859,7 @@ Action Make sure that the hercifc program is the same version as the
 running copy of Hercules. If so, this is an internal error. Report it.
 
 HHCIF005E
-~~~~~~~~~
+---------
 
 HHCIF005E programname: ioctl error doing operation on interface: error
 
@@ -20950,7 +20873,7 @@ Action Correct the error and retry the operation.
 ------------------------------------------------
 
 HHCIN001S
-~~~~~~~~~
+---------
 
 HHCIN001S Cannot register SIGINT handler: error
 
@@ -20960,7 +20883,7 @@ failed. The error is described by error.
 Action Correct the error and restart Hercules.
 
 HHCIN002E
-~~~~~~~~~
+---------
 
 HHCIN002E Cannot suppress SIGPIPE signal: error
 
@@ -20973,7 +20896,7 @@ Action Correct the error and restart Hercules. Do not print to a pipe
 until you have corrected the error.
 
 HHCIN003S
-~~~~~~~~~
+---------
 
 HHCIN003S Cannot register SIGILL/FPE/SEGV/BUS/USR handler: error
 
@@ -20983,7 +20906,7 @@ signals failed. The error is described by error.
 Action Correct the error and restart Hercules.
 
 HHCIN004S
-~~~~~~~~~
+---------
 
 HHCIN004S Cannot create watchdog thread: error
 
@@ -20993,7 +20916,7 @@ execution failed. The error is described by error.
 Action Correct the error and restart Hercules.
 
 HHCIN005S
-~~~~~~~~~
+---------
 
 HHCIN005S Cannot create http_server thread: error
 
@@ -21003,7 +20926,7 @@ error is described by error.
 Action Correct the error and restart Hercules.
 
 HHCIN006S
-~~~~~~~~~
+---------
 
 HHCIN006S Cannot create panel thread: error
 
@@ -21013,7 +20936,7 @@ failed. The error is described by error.
 Action Correct the error and restart Hercules.
 
 HHCIN007S
-~~~~~~~~~
+---------
 
 HHCIN007S Cannot create devnum connection thread: error
 
@@ -21023,7 +20946,7 @@ meant to manage remote device devnum. The error is described by error.
 Action Correct the error and restart Hercules.
 
 HHCIN008S
-~~~~~~~~~
+---------
 
 HHCIN008S DYNGUI.DLL load failed; Hercules terminated.
 
@@ -21037,7 +20960,7 @@ Windows PATH setting and/or your MODPATH control statement to ensure one
 or both of them includes the directory where Hercules is executing from.
 
 HHCIN099I
-~~~~~~~~~
+---------
 
 HHCIN099I Hercules terminated
 
@@ -21049,7 +20972,7 @@ Action No action required.
 --------------------------------------
 
 HHCLC001E
-~~~~~~~~~
+---------
 
 HHCLC001E nnnn unable to allocate LCSBLK
 
@@ -21059,7 +20982,7 @@ for LCS device number nnnn.
 Action Correct the error and restart Hercules.
 
 HHCLC017E
-~~~~~~~~~
+---------
 
 HHCLC017E nnnn invalid device name devname
 
@@ -21069,7 +20992,7 @@ statement for LCS device number nnnn is missing or too long.
 Action Correct the parameter and reinitialize the device.
 
 HHCLC018E
-~~~~~~~~~
+---------
 
 HHCLC018E nnnn invalid MAC address macaddr
 
@@ -21079,7 +21002,7 @@ statement for LCS device number nnnn is not a valid MAC address.
 Action Correct the parameter and reinitialize the device.
 
 HHCLC019E
-~~~~~~~~~
+---------
 
 HHCLC019E nnnn too many arguments in statement
 
@@ -21089,7 +21012,7 @@ contains too many positional parameters.
 Action Correct the statement and restart Hercules.
 
 HHCLC020E
-~~~~~~~~~
+---------
 
 HHCLC020E nnnn invalid IP address ipaddr
 
@@ -21099,7 +21022,7 @@ statement for LCS device number nnnn is not a valid IP address.
 Action Correct the statement and reinitialize the device.
 
 HHCLC021E
-~~~~~~~~~
+---------
 
 HHCLC021E Invalid HWADD statement in filename: stmt
 
@@ -21109,7 +21032,7 @@ file filename is not numeric.
 Action Correct the statement and reinitialize the device.
 
 HHCLC022E
-~~~~~~~~~
+---------
 
 HHCLC022E Invalid MAC in HWADD statement in filename: stmt (macaddr)
 
@@ -21119,7 +21042,7 @@ in OAT file filename is not a valid MAC address.
 Action Correct the parameter and reinitialize the device.
 
 HHCLC023E
-~~~~~~~~~
+---------
 
 HHCLC023E Invalid ROUTE statement in filename: stmt
 
@@ -21129,7 +21052,7 @@ file filename is not numeric.
 Action Correct the statement and reinitialize the device.
 
 HHCLC024E
-~~~~~~~~~
+---------
 
 HHCLC024E Invalid net address in ROUTE filename: stmt (netaddr)
 
@@ -21139,7 +21062,7 @@ in OAT file filename is not a valid IP network address.
 Action Correct the parameter and reinitialize the device.
 
 HHCLC025E
-~~~~~~~~~
+---------
 
 HHCLC025E Invalid net mask in ROUTE filename: stmt (netaddr)
 
@@ -21149,7 +21072,7 @@ in OAT file filename is not a valid IP network mask.
 Action Correct the parameter and reinitialize the device.
 
 HHCLC026E
-~~~~~~~~~
+---------
 
 HHCLC026E Error in filename: Missing device number or mode
 
@@ -21159,7 +21082,7 @@ identified.
 Action Correct the statement and reinitialize the device.
 
 HHCLC027E
-~~~~~~~~~
+---------
 
 HHCLC027E Error in filename: devnum: Invalid device number
 
@@ -21169,7 +21092,7 @@ is not a valid hexadecimal number.
 Action Correct the statement and reinitialize the device.
 
 HHCLC028E
-~~~~~~~~~
+---------
 
 HHCLC028E Error in filename: stmt: Missing PORT number
 
@@ -21179,7 +21102,7 @@ LCS device does not contain a port number.
 Action Correct the statement and reinitialize the device.
 
 HHCLC029E
-~~~~~~~~~
+---------
 
 HHCLC029E Error in filename: port: Invalid PORT number
 
@@ -21189,7 +21112,7 @@ the IP port of an LCS device is not a valid decimal number.
 Action Correct the statement and reinitialize the device.
 
 HHCLC031E
-~~~~~~~~~
+---------
 
 HHCLC031E Error in filename: stmt: Invalid entry starting at text
 
@@ -21199,7 +21122,7 @@ file filename should be PRI, SEC, or NO.
 Action Correct the statement and reinitialize the device.
 
 HHCLC032E
-~~~~~~~~~
+---------
 
 HHCLC032E Error in filename: stmt: Invalid IP address (ipaddr)
 
@@ -21209,7 +21132,7 @@ file filename is not a valid IP address.
 Action Correct the statement and reinitialize the device.
 
 HHCLC033E
-~~~~~~~~~
+---------
 
 HHCLC033E Error in filename: stmt: Missing PORT number
 
@@ -21219,7 +21142,7 @@ LCS device does not contain a port number.
 Action Correct the statement and reinitialize the device.
 
 HHCLC034E
-~~~~~~~~~
+---------
 
 HHCLC034E Error in filename: port: Invalid PORT number
 
@@ -21229,7 +21152,7 @@ the SNA port of an LCS device is not a valid decimal number.
 Action Correct the statement and reinitialize the device.
 
 HHCLC035E
-~~~~~~~~~
+---------
 
 HHCLC035E Error in filename: stmt: SNA does not accept any arguments
 
@@ -21240,7 +21163,7 @@ ports.
 Action Correct the statement and reinitialize the device.
 
 HHCLC036E
-~~~~~~~~~
+---------
 
 HHCLC036E Error in filename: mode: Invalid MODE
 
@@ -21250,7 +21173,7 @@ filename should be IP or SNA.
 Action Correct the statement and reinitialize the device.
 
 HHCLC037E
-~~~~~~~~~
+---------
 
 HHCLC037E Error reading file filename line nnnn: description
 
@@ -21262,7 +21185,7 @@ Action Check that the correct OAT file name is specified in the
 configuration file.
 
 HHCLC038E
-~~~~~~~~~
+---------
 
 HHCLC038E File filename line nnnn is too long
 
@@ -21273,7 +21196,7 @@ exceeds 255 characters, or there is no linefeed at the end of the file.
 Action Correct the OAT file.
 
 HHCLC039E
-~~~~~~~~~
+---------
 
 HHCLC039E Cannot open file filename: description
 
@@ -21284,7 +21207,7 @@ Action Check that the correct OAT file name is specified in the
 configuration file.
 
 HHCLC040E
-~~~~~~~~~
+---------
 
 HHCLC040E nnnn LCSDEV mmmm not in configuration
 
@@ -21294,7 +21217,7 @@ match the LCS device number nnnn in the configuration file.
 Action None.
 
 HHCLC055I
-~~~~~~~~~
+---------
 
 HHCLC055I tapn using MAC hh:hh:hh:hh:hh:hh
 
@@ -21304,7 +21227,7 @@ hh:hh:hh:hh:hh:hh.
 Action None. This is an informational message.
 
 HHCLC056W
-~~~~~~~~~
+---------
 
 HHCLC056W tapn NOT using MAC hh:hh:hh:hh:hh:hh
 
@@ -21317,7 +21240,7 @@ Action The device will use the MAC address shown in the preceding
 HHCLC055I message.
 
 HHCLC073I
-~~~~~~~~~
+---------
 
 HHCLC073I nnnn: TAP device tapn opened
 
@@ -21330,7 +21253,7 @@ Action None. This is an informational message.
 ---------------------------------------------
 
 HHCLG001E
-~~~~~~~~~
+---------
 
 HHCLG001E Error redirecting stdout: error
 
@@ -21338,7 +21261,7 @@ Explanation The stdout stream could not be redirected to the system
 logger. The error is described by error.
 
 HHCLG002E
-~~~~~~~~~
+---------
 
 HHCLG002E Error reading syslog pipe: error
 
@@ -21346,7 +21269,7 @@ Explanation An error occurred while reading the syslog pipe. The error
 is described by error.
 
 HHCLG003E
-~~~~~~~~~
+---------
 
 HHCLG003E Error writing hardcopy log: error
 
@@ -21354,7 +21277,7 @@ Explanation The error as indicated by error occurred while writing the
 hardcopy log.
 
 HHCLG004E
-~~~~~~~~~
+---------
 
 HHCLG004E Error duplicating stderr: error
 
@@ -21362,7 +21285,7 @@ Explanation Stdout could not be redirected to stderr. The error is
 described by error.
 
 HHCLG005E
-~~~~~~~~~
+---------
 
 HHCLG005E Error duplicating stdout: error
 
@@ -21370,7 +21293,7 @@ Explanation Stderr could not be redirected to stdout. The error is
 described by error.
 
 HHCLG006E
-~~~~~~~~~
+---------
 
 HHCLG006E Duplicate error redirecting hardcopy log: error
 
@@ -21378,7 +21301,7 @@ Explanation The error described by error occurred whilst redirecting the
 hardcopy log.
 
 HHCLG007S
-~~~~~~~~~
+---------
 
 HHCLG007S Hardcopy log fdopen failed: error
 
@@ -21386,7 +21309,7 @@ Explanation An attempt to open a stream for the hardcopy log failed. The
 error is described by error.
 
 HHCLG008S
-~~~~~~~~~
+---------
 
 HHCLG008S logbuffer malloc failed: error
 
@@ -21394,7 +21317,7 @@ Explanation An instorage buffer for the system log could not be
 obtained. The error is described by error.
 
 HHCLG009S
-~~~~~~~~~
+---------
 
 HHCLG009S Syslog message pipe creation failed: error
 
@@ -21405,7 +21328,7 @@ Action Check that your firewall is not preventing Hercules from opening
 a listening pipe.
 
 HHCLG012E
-~~~~~~~~~
+---------
 
 HHCLG012E Cannot create logger thread: error
 
@@ -21416,7 +21339,7 @@ Action If the error is “No error” ensure that Hercules has been
 correctly linked with the pthread library.
 
 HHCLG014E
-~~~~~~~~~
+---------
 
 HHCLG014E Log not active
 
@@ -21426,7 +21349,7 @@ file.
 Action None.
 
 HHCLG015I
-~~~~~~~~~
+---------
 
 HHCLG015I Log closed
 
@@ -21436,7 +21359,7 @@ command.
 Action None. This is an informational message.
 
 HHCLG016E
-~~~~~~~~~
+---------
 
 HHCLG016E Error opening log file filename: error
 
@@ -21447,7 +21370,7 @@ call.
 Action Reissue the log command with the correct filename.
 
 HHCLG017S
-~~~~~~~~~
+---------
 
 HHCLG017S Log file fdopen failed for filename: error
 
@@ -21458,7 +21381,7 @@ error code returned by the fdopen call.
 Action Reissue the log command with the correct filename.
 
 HHCLG018I
-~~~~~~~~~
+---------
 
 HHCLG018I Log switched to filename
 
@@ -21471,7 +21394,7 @@ Action None. This is an informational message.
 -------------------------------------------------------
 
 HHCPN001I
-~~~~~~~~~
+---------
 
 HHCPN001I Control panel thread started: tid=threadid, pid=processid
 
@@ -21481,7 +21404,7 @@ threadid and its process id is processid.
 Action No action required.
 
 HHCPN002S
-~~~~~~~~~
+---------
 
 HHCPN002S Cannot obtain keyboard buffer: error
 
@@ -21491,7 +21414,7 @@ hold operator input, failed. The error is described by error.
 Action Correct the error and restart Hercules.
 
 HHCPN003S
-~~~~~~~~~
+---------
 
 HHCPN003S Cannot obtain message buffer: error
 
@@ -21501,7 +21424,7 @@ hold operator output, failed. The error is described by error.
 Action Correct the error and restart Hercules.
 
 HHCPN004E
-~~~~~~~~~
+---------
 
 HHCPN004E select: error
 
@@ -21511,7 +21434,7 @@ console. The error is described by error.
 Action Correct the error and retry the operation.
 
 HHCPN005E
-~~~~~~~~~
+---------
 
 HHCPN005E keyboard read: error
 
@@ -21521,7 +21444,7 @@ input. The error is described by error.
 Action Correct the error and retry the operation.
 
 HHCPN006E
-~~~~~~~~~
+---------
 
 HHCPN006E message pipe read: error
 
@@ -21532,7 +21455,7 @@ Hercules. The error is described by error.
 Action Correct the error and retry the operation.
 
 HHCPN007E
-~~~~~~~~~
+---------
 
 HHCPN007E RC file filename open failed: error
 
@@ -21544,7 +21467,7 @@ Action Correct the error and restart Hercules if necessary. The commands
 contained in the file may be issued manually.
 
 HHCPN008I
-~~~~~~~~~
+---------
 
 HHCPN008I RC file processing thread started using file filename
 
@@ -21554,7 +21477,7 @@ filename has begun.
 Action No action required.
 
 HHCPN009E
-~~~~~~~~~
+---------
 
 HHCPN009E RC file buffer malloc failed: error
 
@@ -21566,7 +21489,7 @@ Action Correct the error and restart Hercules, if needed. The comands
 contained in the file may be issued manually.
 
 HHCPN010W
-~~~~~~~~~
+---------
 
 HHCPN010W Ignoring invalid RC file pause statement: argument
 
@@ -21577,7 +21500,7 @@ Processing will continue without any pause.
 Action Correct the invalid argument and restart Hercules, if desired.
 
 HHCPN011I
-~~~~~~~~~
+---------
 
 HHCPN011I Pausing RC file processing for delay seconds…
 
@@ -21587,7 +21510,7 @@ delay seconds because of a pause statement in the file.
 Action No action required.
 
 HHCPN012I
-~~~~~~~~~
+---------
 
 HHCPN012I Resuming RC file processing…
 
@@ -21597,7 +21520,7 @@ expiration of the delay interval.
 Action No action required.
 
 HHCPN013I
-~~~~~~~~~
+---------
 
 HHCPN013I EOF reached on RC file. Processing complete.
 
@@ -21607,7 +21530,7 @@ processing of the file is complete.
 Action No action required.
 
 HHCPN014E
-~~~~~~~~~
+---------
 
 HHCPN014E I/O error reading RC file: error
 
@@ -21619,7 +21542,7 @@ Action Correct the error and restart Hercules if desired. Any
 unprocessed commands may be issued manually.
 
 HHCPN052E
-~~~~~~~~~
+---------
 
 HHCPN052E Target CPU nnnn type cputype does not allow ipl
 
@@ -21631,7 +21554,7 @@ Action Use the CPU command to set the target CPU to a processor of type
 CP, IFL, or ICF, then re-issue the IPL command.
 
 HHCPN162I
-~~~~~~~~~
+---------
 
 HHCPN162I Hercules instruction trace displayed in { regsfirst \| noregs
 \| traditional } mode
@@ -21641,7 +21564,7 @@ Explanation This message shows the current setting of the traceopt mode.
 Action None. This is an informational message.
 
 HHCPN180E
-~~~~~~~~~
+---------
 
 HHCPN180E ‘sh’ commands are disabled
 
@@ -21653,7 +21576,7 @@ Action Remove or modify the SHCMDOPT configuration file statement and
 restart Hercules.
 
 HHCPN181E
-~~~~~~~~~
+---------
 
 HHCPN181E Device number s:CCUU not found
 
@@ -21663,7 +21586,7 @@ was not found in the configuration.
 Action Reissue the command with an existing device number.
 
 HHCPN195I
-~~~~~~~~~
+---------
 
 HHCPN195I Log options: val
 
@@ -21674,7 +21597,7 @@ TIMESTAMP or NOTIMESTAMP.
 Action None. This is an informational message.
 
 HHCPN196E
-~~~~~~~~~
+---------
 
 HHCPN196E Invalid logopt value val
 
@@ -21684,7 +21607,7 @@ is an invalid value. Valid values for val are TIMESTAMP or NOTIMESTAMP.
 Action Reenter the LOGOPT command with a valid operand.
 
 HHCPN197I
-~~~~~~~~~
+---------
 
 HHCPN197I Log option set: val
 
@@ -21697,7 +21620,7 @@ Action None. This is an informational message.
 ------------------------------------------
 
 HHCPR001E
-~~~~~~~~~
+---------
 
 HHCPR001E File name missing or invalid for printer address
 
@@ -21708,7 +21631,7 @@ Action Correct the error in the Hercules configuration file. The device
 may be made available by specifying a filename with the devinit command.
 
 HHCPR002E
-~~~~~~~~~
+---------
 
 HHCPR002E Invalid argument for printer address: argument
 
@@ -21718,7 +21641,7 @@ printer at address address.
 Action Correct or remove the invalid argument.
 
 HHCPR003E
-~~~~~~~~~
+---------
 
 HHCPR003E address Error writing to filename: error
 
@@ -21729,7 +21652,7 @@ error.
 Action Correct the error and retry the operation.
 
 HHCPR004E
-~~~~~~~~~
+---------
 
 HHCPR004E Error opening file filename: error
 
@@ -21739,7 +21662,7 @@ filename. The error is described by error.
 Action Correct the error and retry the operation.
 
 HHCPR005E
-~~~~~~~~~
+---------
 
 HHCPR005E address device initialization error: pipe: error
 
@@ -21749,7 +21672,7 @@ at address address. The error is described by error.
 Action Correct the error and retry the operation.
 
 HHCPR006E
-~~~~~~~~~
+---------
 
 HHCPR006E address device initialization error: fork: error
 
@@ -21760,7 +21683,7 @@ described by error.
 Action Correct the error and retry the operation.
 
 HHCPR007I
-~~~~~~~~~
+---------
 
 HHCPR007I pipe receiver (pid=processid) starting for address
 
@@ -21770,7 +21693,7 @@ address address is starting. Its process id is processid.
 Action No action required.
 
 HHCPR008E
-~~~~~~~~~
+---------
 
 HHCPR008E address dup2 error: error
 
@@ -21781,7 +21704,7 @@ The error is described by error.
 Action Correct the error and retry the operation.
 
 HHCPR009E
-~~~~~~~~~
+---------
 
 HHCPR009E address dup2 error: error
 
@@ -21792,7 +21715,7 @@ The error is described by error.
 Action Correct the error and retry the operation.
 
 HHCPR010E
-~~~~~~~~~
+---------
 
 HHCPR010E address dup2 error: error
 
@@ -21803,7 +21726,7 @@ The error is described by error.
 Action Correct the error and retry the operation.
 
 HHCPR011I
-~~~~~~~~~
+---------
 
 HHCPR011I pipe receiver (pid=processid) terminating for address
 
@@ -21813,7 +21736,7 @@ address address has ended sucessfully. Its process id was processid.
 Action No action required.
 
 HHCPR012E
-~~~~~~~~~
+---------
 
 HHCPR012E address Unable to execute program: error
 
@@ -21827,7 +21750,7 @@ Action Correct the error and retry the operation.
 ---------------------------------------------
 
 HHCPU001E
-~~~~~~~~~
+---------
 
 HHCPU001E File name missing or invalid
 
@@ -21837,7 +21760,7 @@ file name is given.
 Action Correct the error and retry the operation.
 
 HHCPU002E
-~~~~~~~~~
+---------
 
 HHCPU002E Invalid argument: argument
 
@@ -21847,7 +21770,7 @@ punch. Valid arguments are ascii, ebcdic, and crlf.
 Action Correct the invalid argument and retry the operation.
 
 HHCPU003E
-~~~~~~~~~
+---------
 
 HHCPU003E Error opening file filename: error
 
@@ -21857,7 +21780,7 @@ card punch data. The error is described by error.
 Action Correct the error and retry the operation.
 
 HHCPU004E
-~~~~~~~~~
+---------
 
 HHCPU004E Error writing to filename: error
 
@@ -21870,7 +21793,7 @@ Action Correct the error and retry the operation.
 ----------------------------------------------
 
 HHCRD001E
-~~~~~~~~~
+---------
 
 HHCRD001E Out of memory
 
@@ -21880,7 +21803,7 @@ read failed.
 Action Correct the error and retry the operation.
 
 HHCRD002E
-~~~~~~~~~
+---------
 
 HHCRD002E File name too long (max=max): “filename”
 
@@ -21890,7 +21813,7 @@ length is max.
 Action Specify a shorter name.
 
 HHCRD003E
-~~~~~~~~~
+---------
 
 HHCRD003E Unable to access file “filename”: error
 
@@ -21900,7 +21823,7 @@ error is described by error.
 Action Correct the error and retry the operation.
 
 HHCRD004E
-~~~~~~~~~
+---------
 
 HHCRD004E Out of memory
 
@@ -21910,7 +21833,7 @@ read failed.
 Action Correct the error and retry the operation.
 
 HHCRD005E
-~~~~~~~~~
+---------
 
 HHCRD005E Specify ‘ascii’ or ‘ebcdic’ (or neither) but not both
 
@@ -21920,7 +21843,7 @@ ebcdic were specified. At most one is allowed.
 Action Select only one character set translation option.
 
 HHCRD006E
-~~~~~~~~~
+---------
 
 HHCRD006E Only one filename (sock_spec) allowed for socket devices
 
@@ -21932,7 +21855,7 @@ Action Remove the extraneous filenames or correct the misspelled
 options.
 
 HHCRD007I
-~~~~~~~~~
+---------
 
 HHCRD007I Defaulting to ‘ascii’ for socket device address
 
@@ -21945,7 +21868,7 @@ Action If you wish to read cards without translation from ASCII to
 EBCDIC, you must specify the ebcdic option on the reader definition.
 
 HHCRD008W
-~~~~~~~~~
+---------
 
 HHCRD008W ‘multifile’ option ignored: only one file specified
 
@@ -21959,7 +21882,7 @@ all be specified on the same reader definition. If you only wish to
 process one file, omit the multifile option.
 
 HHCRD009E
-~~~~~~~~~
+---------
 
 HHCRD009E File name too long (max=max): “filename”
 
@@ -21969,7 +21892,7 @@ length is max.
 Action Specify a shorter name.
 
 HHCRD010E
-~~~~~~~~~
+---------
 
 HHCRD010E Unable to access file “filename”: error
 
@@ -21979,7 +21902,7 @@ error is described by error.
 Action Correct the error and retry the operation.
 
 HHCRD011E
-~~~~~~~~~
+---------
 
 HHCRD011E Close error on file “filename”: error
 
@@ -21989,7 +21912,7 @@ The error is described by error.
 Action Correct the error and retry the operation.
 
 HHCRD012I
-~~~~~~~~~
+---------
 
 HHCRD012I ipaddr (hostname) disconnected from device address
 (socketspec)
@@ -22001,7 +21924,7 @@ address, specified by socketspec.
 Action No action required.
 
 HHCRD013E
-~~~~~~~~~
+---------
 
 HHCRD013E Error opening file filename: error
 
@@ -22011,7 +21934,7 @@ error is described by error.
 Action Correct the error and retry the operation.
 
 HHCRD014E
-~~~~~~~~~
+---------
 
 HHCRD014E Error reading file filename: error
 
@@ -22022,7 +21945,7 @@ set. The error is described by error.
 Action Correct the error and retry the operation.
 
 HHCRD015E
-~~~~~~~~~
+---------
 
 HHCRD015E Seek error in file filename: error
 
@@ -22033,7 +21956,7 @@ The error is described by error.
 Action Correct the error and retry the operation.
 
 HHCRD016E
-~~~~~~~~~
+---------
 
 HHCRD016E Error reading file filename: error
 
@@ -22044,7 +21967,7 @@ error.
 Action Correct the error and retry the operation.
 
 HHCRD017E
-~~~~~~~~~
+---------
 
 HHCRD017E Unexpected end of file on filename
 
@@ -22055,7 +21978,7 @@ Action Either ensure that all records in the file are 80 bytes long, or
 specify the autopad option on the reader definition.
 
 HHCRD018E
-~~~~~~~~~
+---------
 
 HHCRD018E Error reading file filename: error
 
@@ -22066,7 +21989,7 @@ error.
 Action Correct the error and retry the operation.
 
 HHCRD019E
-~~~~~~~~~
+---------
 
 HHCRD019E Card image exceeds size bytes in file filename
 
@@ -22081,7 +22004,7 @@ long or specify the trunc option on the reader definition.
 --------------------------------------------------------
 
 HHCSDnnns
-~~~~~~~~~
+---------
 
 Messages HHCSDnnns are not yet documented.
 
@@ -22089,7 +22012,7 @@ Messages HHCSDnnns are not yet documented.
 ----------------------------------------------
 
 HHCTAnnns
-~~~~~~~~~
+---------
 
 Messages HHCTAnnns are not yet documented.
 
@@ -22097,7 +22020,7 @@ Messages HHCTAnnns are not yet documented.
 -----------------------------------------
 
 HHCTCnnns
-~~~~~~~~~
+---------
 
 Messages HHCTCnnns are not yet documented.
 
@@ -22105,7 +22028,7 @@ Messages HHCTCnnns are not yet documented.
 -------------------------------------------
 
 HHCTE001I
-~~~~~~~~~
+---------
 
 HHCTE001I Console connection thread started: tid=threadid, pid=processid
 
@@ -22115,7 +22038,7 @@ devices has been started.
 Action No action required.
 
 HHCTE002W
-~~~~~~~~~
+---------
 
 HHCTE002W Waiting for port port to become free
 
@@ -22127,7 +22050,7 @@ Action If this message persists, some other program has control of the
 TCP port listed. Determine the program involved and terminate it.
 
 HHCTE003I
-~~~~~~~~~
+---------
 
 HHCTE003I Waiting for console connection on port port pid=num
 
@@ -22137,7 +22060,7 @@ port.
 Action No action required.
 
 HHCTE004I
-~~~~~~~~~
+---------
 
 HHCTE004I Console connection thread terminated
 
@@ -22147,7 +22070,7 @@ devices has been terminated.
 Action No action required.
 
 HHCTE005E
-~~~~~~~~~
+---------
 
 HHCTE005E Cannot create console thread: reason
 
@@ -22157,7 +22080,7 @@ devices could not be started. The reason is shown as reason.
 Action Correct the reason listed and restart Hercules.
 
 HHCTE006A
-~~~~~~~~~
+---------
 
 HHCTE006A Enter input for console device address
 
@@ -22168,7 +22091,7 @@ If you do not wish to get this message when input is requested, define
 the console with the option noprompt.
 
 HHCTE007I
-~~~~~~~~~
+---------
 
 HHCTE007I Device address closed by client ipaddr
 
@@ -22179,7 +22102,7 @@ no longer available for use.
 Action No action required.
 
 HHCTE008I
-~~~~~~~~~
+---------
 
 HHCTE008I Device address closed by client ipaddr
 
@@ -22190,7 +22113,7 @@ no longer available for use.
 Action No action required.
 
 HHCTE009I
-~~~~~~~~~
+---------
 
 HHCTE009I Client ipaddr connected to type device address
 
@@ -22200,7 +22123,7 @@ a type device and is now available at address address.
 Action No action required.
 
 HHCTE010E
-~~~~~~~~~
+---------
 
 HHCTE010E CNSLPORT statement invalid: statement
 
@@ -22211,7 +22134,7 @@ Action Correct the CNLSPORT statement in the configuration file and
 restart Hercules.
 
 HHCTE011E
-~~~~~~~~~
+---------
 
 HHCTE011E Device devn: Invalid IP address: ipaddr
 
@@ -22221,7 +22144,7 @@ Action Correct the IP address in the configuration file and restart
 Hercules.
 
 HHCTE012E
-~~~~~~~~~
+---------
 
 HHCTE012E Device devn: Invalid mask value: ipmask
 
@@ -22231,7 +22154,7 @@ Action Correct the mask value in the configuration file and restart
 Hercules.
 
 HHCTE013E
-~~~~~~~~~
+---------
 
 HHCTE013E Device devn: Extraneous argument(s): xxx…
 
@@ -22242,7 +22165,7 @@ Action Correct the arguments in the configuration file and restart
 Hercules.
 
 HHCTE014I
-~~~~~~~~~
+---------
 
 HHCTE014I type device devn disconnected.
 
@@ -22252,7 +22175,7 @@ the connection (ECONNRESET).
 Action No action required.
 
 HHCTE017E
-~~~~~~~~~
+---------
 
 HHCTE017E Device devn: Duplicate SYSG console definition.
 
@@ -22267,7 +22190,7 @@ Hercules.
 ----------------------------------------
 
 HHCTMnnns
-~~~~~~~~~
+---------
 
 Messages HHCTMnnns are not yet documented.
 
@@ -22275,7 +22198,7 @@ Messages HHCTMnnns are not yet documented.
 -----------------------------------------
 
 HHCTSnnns
-~~~~~~~~~
+---------
 
 Messages HHCTSnnns are not yet documented.
 
@@ -22283,7 +22206,7 @@ Messages HHCTSnnns are not yet documented.
 -----------------------------------------------------
 
 HHCTT001W
-~~~~~~~~~
+---------
 
 HHCTT001W Timer thread set priority priority failed: error
 
@@ -22296,7 +22219,7 @@ Action If performance problems are noted, correct the error and restart
 Hercules.
 
 HHCTT002I
-~~~~~~~~~
+---------
 
 HHCTT002I Timer thread started: tid=threadid, pid=processid,
 priority=priority
@@ -22308,7 +22231,7 @@ priority.
 Action No action required.
 
 HHCTT003I
-~~~~~~~~~
+---------
 
 HHCTT003I Timer thread ended
 
@@ -22320,7 +22243,7 @@ Action No action required.
 -------------------------------------------------
 
 HHCTUnnns
-~~~~~~~~~
+---------
 
 Messages HHCTUnnns are not yet documented.
 
@@ -22328,7 +22251,7 @@ Messages HHCTUnnns are not yet documented.
 ------------------------------------------
 
 HHCVM001I
-~~~~~~~~~
+---------
 
 HHCVM001I *panel_command* panel command Module guest
 
@@ -22347,7 +22270,7 @@ statement should either be ommited or specified with the disabled
 argument.
 
 HHCVM002I
-~~~~~~~~~
+---------
 
 HHCVM002I \*panel_command command complete
 
@@ -22363,7 +22286,7 @@ Operator Action None. This is an informational message
 Programmer Action None. This is an informational message
 
 HHCVM003I
-~~~~~~~~~
+---------
 
 HHCVM003I Host command processing disabled by configuration statement
 
@@ -22381,7 +22304,7 @@ DIAG8CMD with the enable argument should be specified in the
 configuration file.
 
 HHCVM004E
-~~~~~~~~~
+---------
 
 HHCVM004E Host command processing not included in engine build
 
@@ -22405,7 +22328,7 @@ format followed by the related message ID in the old message format.
 There are five possible cases for the index entries.
 
 A.1 Replacement
-~~~~~~~~~~~~~~~
+---------~~~~~~
 
 This is the normal case, where a new message ID replaces exactly one old
 message ID.
@@ -22414,7 +22337,7 @@ Example: HHC01303I – HHCCP064I The new message “HHC01303I” replaces the
 old message “HHCCP064I”.
 
 A.2 New message
-~~~~~~~~~~~~~~~
+---------~~~~~~
 
 New messages, that have not existed before, have no related old message
 ID.
@@ -22423,7 +22346,7 @@ Example: HHC00069I – none Message “HHC00069I” is a new message that did
 not exist before.
 
 A3. Removed message
-~~~~~~~~~~~~~~~~~~~
+------------------~
 
 Old messages that have been deleted do not have a relaed new message ID.
 
@@ -22431,7 +22354,7 @@ Example: None – HHCPR019E Message “HHCPR019E” is an old message that has
 been deleted and therefore has no new message ID.
 
 A.4 Consolidation
-~~~~~~~~~~~~~~~~~
+---------~~~~~~~~
 
 There are cases where one new message ID replaces several old message
 IDs. This can happen, if there have been several old messages that had
@@ -22443,7 +22366,7 @@ HHCPN034E The old messages “HHCPN017E”, “HHCPN024E” and “HHCPN034E” 
 been consolidated and replaced through the new message “HHC02209E”.
 
 A.5 Split
-~~~~~~~~~
+---------
 
 In some rare cases an old message has been split into two or more new
 messages.
@@ -22453,7 +22376,7 @@ with ID “HHCPN053E” has been split into two new messages with IDs
 “HHC02235E” and “HHC02236E”.
 
 A.5 Message Index (New → Old)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------~~
 
 ::
 
@@ -24866,7 +24789,7 @@ format followed by the related message ID in the new message format.
 There are four possible cases for the index entries.
 
 B.1 Replacement
-~~~~~~~~~~~~~~~
+---------~~~~~~
 
 This is the normal case, where a new message ID replaces exactly one old
 message ID.
@@ -24875,7 +24798,7 @@ Example: HHCCP064I - HHC01303I The new message “HHC01303I” replaces the
 old message “HHCCP064I”.
 
 B.2 New message
-~~~~~~~~~~~~~~~
+---------~~~~~~
 
 New messages, that have not existed before and have no related old
 message ID.
@@ -24884,7 +24807,7 @@ Example: none - HHC00069I Message “HHC00069I” is a new message that did
 not exist before.
 
 B3. Removed message
-~~~~~~~~~~~~~~~~~~~
+------------------~
 
 Old messages, that have been deleted do not have a related new message
 ID.
@@ -24892,7 +24815,7 @@ ID.
 Example: HHCPR09E - none Message “HHCPR019E” has been removed.
 
 B.4 Consolidation
-~~~~~~~~~~~~~~~~~
+---------~~~~~~~~
 
 There are cases where one new message ID replaces several old message
 IDs. This can happen, if there have been several old messages that had
@@ -24906,7 +24829,7 @@ been consolidated and replaced through the new message “HHC02209E”.
 Hercules Emulator – Messages and Codes Page 641
 
 B.5 Split
-~~~~~~~~~
+---------
 
 In some rare cases an old message has been split into two or more new
 messages.
@@ -24916,7 +24839,7 @@ with ID “HHCPN053E” has been split into two new messages with IDs
 “HHC02235E” and “HHC02236E”.
 
 B.5 Message Index (Old → New)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------~~
 
 ::
 
