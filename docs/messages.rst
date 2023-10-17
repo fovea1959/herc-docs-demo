@@ -1,6 +1,6 @@
-#############################
-Hercules – Messages and Codes
-#############################
+##################
+Messages and Codes
+##################
 
 Version 4 Release 00
 First Edition, November 21, 2015
