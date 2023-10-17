@@ -1,18 +1,6 @@
 Hercules Dynamic Modules (on Windows)
 =====================================
 
-Contents
---------
-
-1. `Required Files <#Required-Files>`__
-2. `Required makefile format <#Required-makefile-format>`__
-3. `Building (making) <#Building-making>`__
-4. `Pre-Build event and Post-Build event
-   callbacks <#Pre-Build-event-and-Post-Build-event-callbacks>`__
-5. `Resource Compiler <#Resource-Compiler>`__
-6. `The Build Process <#The-Build-Process>`__
-7. `More Information <#More-Information>`__
-
 Required files
 --------------
 

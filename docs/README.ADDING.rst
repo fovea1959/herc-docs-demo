@@ -1,18 +1,6 @@
 Adding New Source Files to Hercules
 ===================================
 
-Contents
---------
-
-1. `Overview <#Overview>`__
-2. `Repository <#Repository>`__
-3. `Build Files <#Build-Files>`__
-4. `Visual Studio <#Visual-Studio>`__
-5. `Example commits <#Example-commits>`__
-
-Overview
---------
-
 Adding new files to the Hercules emulator project would certainly seem
 like a simple straightforward thing. Unfortunately there are some
 additional details which far too many Hercules developers frequently

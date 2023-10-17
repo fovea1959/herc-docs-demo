@@ -1,19 +1,6 @@
 Hercules Rexx Support
 =====================
 
-Contents
---------
-
-1. `About <#About>`__
-2. `Hercules Rexx Settings <#Hercules-Rexx-Settings>`__
-3. `rexx Command <#rexx-Command>`__
-4. `Running a Rexx Script <#Running-a-Rexx-Script>`__
-5. `SHCMDOPT and DIAG8CMD <#SHCMDOPT-and-DIAG8CMD>`__
-6. `Issuing Hercules Commands <#Issuing-Hercules-Commands>`__
-
-About
------
-
 Hercules’s Rexx support provides support for the following two Rexx
 packages:
 

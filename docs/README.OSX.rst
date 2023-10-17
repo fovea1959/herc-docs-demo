@@ -1,15 +1,6 @@
 Building Hercules for OSX
 =========================
 
-Contents
---------
-
-1. `About <#About>`__
-2. `Tun Tap Information <#Tun-Tap-Information>`__
-
-About
------
-
 To compile on OS X for another architecture than the one running, or
 another OS version, you have to supply several arguments to the
 configure command.

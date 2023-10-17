@@ -1,11 +1,6 @@
 TCPNJE - NJE over TCP/IP device implementation for VM/370 or MVS 3.8 running on Hercules
 ========================================================================================
 
-Version 1.00
-
-Introduction
-------------
-
 To a Hercules guest, this device looks like a 2703 bisync adapter. To
 the world outside Hercules, it looks like an NJE over TCP/IP
 implementation. VM/370 RSCS (modified to support the NJE protocol) and

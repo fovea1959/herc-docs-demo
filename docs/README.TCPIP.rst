@@ -1,17 +1,6 @@
 Guest Access To Host IP Stack - The TCPIP (X’75’) Instruction
 =============================================================
 
-Contents
---------
-
-1. `Introduction <#Introduction>`__
-2. `CAUTION <#CAUTION>`__
-3. `Usage <#Usage>`__
-4. `Copyright <#Copyright>`__
-
-Introduction
-------------
-
 Around 2002 Jason Winter developed a Hercules extension allowing the
 guest OS to access the IP stack of the host OS by means of a special
 instruction that does not exist on real S/3x0, ESA/390 or z/Architecture

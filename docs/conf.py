@@ -266,7 +266,7 @@ html_context['downloads'].append( ('tarred HTML', '/' +REPO_NAME+ '/' +current_l
 # "EDIT ON GITHUB" LINKS #
 ##########################
  
-html_context['display_github'] = True
+html_context['display_github'] = False
 html_context['github_user'] = 'fovea1959'
 html_context['github_repo'] = 'herc-docs-demo'
 html_context['github_version'] = 'master/docs/'

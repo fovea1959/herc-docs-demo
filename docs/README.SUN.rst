@@ -1,14 +1,6 @@
 How to build Hercules from SVN under Solaris
 ============================================
 
-Contents
---------
-
-1. `Download and Install <#Download-and-Install>`__
-2. `Download Source <#Download-Source>`__
-3. `Tool Versions <#Tool-Versions>`__
-4. `Build Hercules <#Build-Hercules>`__
-
 Download and Install
 --------------------
 

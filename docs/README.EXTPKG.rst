@@ -1,20 +1,6 @@
 Hercules “External Packages”
 ============================
 
-Contents
---------
-
-1. `Overview <#Overview>`__
-2. `Linux <#Linux>`__
-3. `Building the External Packages for a Windows-based
-   Hyperion <#Building-the-External-Packages-for-a-Windows-based-Hyperion>`__\ 
-   3a. `Summary of the steps
-   involved <#Summary-of-the-steps-involved>`__\  3b. `Detailed
-   Instructions <#Detailed-Instructions>`__\ 
-
-Overview
---------
-
 This version of Hercules 4.x Hyperion links with several “external
 package” static libraries.
 

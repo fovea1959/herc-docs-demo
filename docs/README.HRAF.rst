@@ -1,19 +1,6 @@
 Host Resource Access Facility
 =============================
 
-Contents
---------
-
-1. `About <#About>`__
-2. `General Register Usage <#General-Register-Usage>`__
-3. `Enabling the Host Resouce Access
-   Facility <#Enabling-the-Host-Resouce-Access-Facility>`__
-4. `DIAGNOSE X’F18’ Subcodes <#DIAGNOSE-XF18-Subcodes>`__
-5. `Documentation <#Documentation>`__
-
-About
------
-
 The Host Resource Access Facility (HRAF) provides direct access to host
 resources by a Hercules guest program operating in privileged operation
 state via a Hercules supplied DIAGNOSE code X’F18’.

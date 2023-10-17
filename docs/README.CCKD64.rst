@@ -1,17 +1,6 @@
 Hercules CCKD64 Support
 =======================
 
-Contents
---------
-
-1. `About CCKD64 <#About-CCKD64>`__
-2. `Conversion to CCKD64 <#Conversion-to-CCKD64>`__
-3. `Procedure <#Procedure>`__
-4. `Additional Information <#Additional-Information>`__
-
-About CCKD64
-------------
-
 Version 4.2 of SDL Hercules Hyperion introduced support for very large
 Compressed CKD (CCKD) dasd image files, called CCKD64, which can be much
 larger than 4GB in size.

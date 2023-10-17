@@ -1,20 +1,6 @@
 Hercules Dynamic Loader
 =======================
 
-Contents
---------
-
-1. `About <#About>`__
-2. `Commands <#Commands>`__
-3. `Module load and unload <#Module-load-and-unload>`__
-4. `Resolving Symbols <#Resolving-Symbols>`__
-5. `Some additional notes <#Some-additional-notes>`__
-6. `Important Hercules internals build information relating to
-   HDL <#Important-Hercules-internals-build-information-relating-to-HDL>`__
-
-About
------
-
 The dynamic loader is intended to supply a loading and linking
 mechanism, whereby routines, commands, instructions and functions can be
 dynamically added to Hercules, without the need to rebuild or even

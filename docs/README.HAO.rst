@@ -1,20 +1,6 @@
 Hercules Automatic Operator
 ===========================
 
-Contents
---------
-
-1. `About <#About>`__
-2. `Defining a rule <#Defining-a-rule>`__
-3. `Substituting substrings in the
-   command <#Substituting-substrings-in-the-command>`__
-4. `Other commands and limitations <#Other-commands-and-limitations>`__
-5. `Giving credit where credit is
-   due <#Giving-credit-where-credit-is-due>`__
-
-About
------
-
 The Hercules Automatic Operator (HAO) feature is a facility that allows
 one to automatically issue panel commands in response to certain
 messages being issued.

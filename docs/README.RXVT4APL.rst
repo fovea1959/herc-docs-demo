@@ -1,24 +1,12 @@
 RXVT4APL Mods
 =============
 
-Contents
---------
-
-1. `About <#About>`__
-2. `Notes <#Notes>`__
-
-About
------
-
 Max H. Parke ikj1234i@yahoo.com has modified the commadpt driver so APL
 works properly with ``rxvt4apl``.
 
 ``rxvt4apl`` is an 8-bit clean, colour xterm replacement that has been
 optimised for use with openAPL. Here is Max’s README regarding his
 rxvt4apl mods:
-
-Notes
------
 
 1. The rxvt4apl package provides a set of extensions to enable both
    entry and display of the complete APL character set including the

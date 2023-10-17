@@ -1,17 +1,6 @@
 MAKETAPE – Create an .AWS Tape File from Data Utility
 =====================================================
 
-Contents
---------
-
-1. `Description <#Description>`__
-2. `Synopsis <#Synopsis>`__
-3. `Arguments <#Arguments>`__
-4. `Bug Reports <#Bug-Reports>`__
-
-Description
------------
-
 The ``MAKETAPE`` utility reads binary or ASCII line sequential files and
 builds either a Standard Labeled or unlabeled .AWS tape output file.
 

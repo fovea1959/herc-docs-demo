@@ -1,16 +1,6 @@
 Hercules Networking
 ===================
 
-Contents
---------
-
-1. `About <#About>`__
-2. `Details <#Details>`__
-3. `Emulation Modes <#Emulation-Modes>`__
-
-About
------
-
 *(Please read*
 `herctcp.html <https://sdl-hercules-390.github.io/html/herctcp.html>`__
 *as Roger explains how to set up TCP/IP networking with Hercules.)*

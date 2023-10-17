@@ -1,15 +1,6 @@
 Hercules Tape Support Enhancements SPE/Fixes
 ============================================
 
-Contents
---------
-
-1. `Version History <#Version-History>`__
-2. `Basic ACF support <#Basic-ACF-support>`__
-3. `Multivolume support <#Multivolume-support>`__
-4. `Other changes and corrections <#Other-changes-and-corrections>`__
-5. `AUTOMOUNT support <#AUTOMOUNT-support>`__
-
 Version History
 ---------------
 

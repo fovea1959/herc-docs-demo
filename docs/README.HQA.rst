@@ -1,17 +1,6 @@
 HQA Build Scenarios (Hercules Quality Assurance)
 ================================================
 
-Contents
---------
-
-1. `Introduction <#Introduction>`__
-2. `How to use HQA <#How-to-use-HQA>`__
-3. `Creating new build scenarios <#Creating-new-build-scenarios>`__
-4. `Samples <#Samples>`__
-
-Introduction
-------------
-
 The “Hercules Quality Assurance” Build Scenarios feature is designed to
 make it easier for Hercules developers to build Hercules using different
 predefined build settings called “Build Scenarios”. Each predefined

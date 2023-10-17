@@ -1,18 +1,7 @@
 Customizable Hercules 3270 Logo
 ===============================
 
-Contents
---------
-
-1. `Customizable Hercules 3270
-   Logo <#Customizable-hercules-3270-Logo>`__
-2. `How to specify the logo file <#How-to-specify-the-logo-file>`__
-3. `How to create the logo file <#How-to-create-the-logo-file>`__
-
 .. _customizable-hercules-3270-logo-1:
-
-Customizable Hercules 3270 Logo
--------------------------------
 
 The initial welcome screen presented when a TN 3270 terminal connects to
 a Hercules 3270 device can now be customized. The customized logo is

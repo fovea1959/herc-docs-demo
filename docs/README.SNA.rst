@@ -1,22 +1,6 @@
 Hercules SNA support
 ====================
 
-Contents
---------
-
-1. `Introduction <#LCS-Device,-SNA-enhanced>`__
-2. `Physical connection to the outside
-   world <#Physical-connection-to-the-outside-world>`__
-3. `Hercules Configuration <#Hercules-Configuration>`__
-4. `Guest OS <#Guest-OS>`__
-5. `VTAM configuration <#VTAM-configuration>`__
-6. `Making it run <#Making-it-run>`__
-7. `Reporting Bugs <#Reporting-Bugs>`__
-8. `Acknowledgements <#Acknowledgements>`__
-
-LCS Device, SNA enhanced
-------------------------
-
 The current implementation of the LCS device has been enhanced to handle
 SNA 802.2 DLC frames. This support is not 100% finished. It is known
 that the implementation of packet pacing - being a mandatory requirement

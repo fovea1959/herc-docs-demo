@@ -1,22 +1,6 @@
 VMFPLC2 (VM) Formatted Tape Utility
 ===================================
 
-Contents
---------
-
-1. `Description <#Description>`__
-2. `Synopsis <#Synopsis>`__
-3. `Arguments <#Arguments>`__
-4. `Options <#Options>`__
-5. `Control File <#Control-File>`__
-6. `Examples <#Examples>`__
-7. `Bug Reports <#Bug-Reports>`__
-8. `See Also <#See-Also>`__
-9. `History <#History>`__
-
-Description
------------
-
 Hercules command to manipulate (create or read) VMFPLC2 formatted tapes
 for VM/CMS use.
 

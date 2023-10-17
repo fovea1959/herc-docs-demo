@@ -1,16 +1,6 @@
 Hercifc and Hercules as setuid root programs
 ============================================
 
-Contents
---------
-
-1. `Rationale <#Rationale>`__
-2. `Building Hercules with capabilities
-   feature <#Building-Hercules-with-capabilities-feature>`__
-
-Rationale
----------
-
 Historically, ``hercifc`` (Hercules Network Interface Configuration
 utility) is usually setuid root so that it can make changes to the tun
 and tap interfaces on the system.

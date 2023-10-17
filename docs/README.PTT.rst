@@ -1,16 +1,6 @@
 Hercules PTT Tracing
 ====================
 
-Contents
---------
-
-1. `History <#History>`__
-2. `Using PTT <#Using-PTT>`__
-3. `Future Direction <#Future-Direction>`__
-
-History
--------
-
 **``PTT``** is a misnomer.
 
 The Hercules “Threading and locking trace debugger” is not just for

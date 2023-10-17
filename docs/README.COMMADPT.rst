@@ -1,18 +1,6 @@
 Preliminary 2703 BSC Support
 ============================
 
-Contents
---------
-
-1. `Notes <#Notes>`__
-2. `Hercules device statement <#Hercules-device-statement>`__
-3. `The communication protocol <#The-communication-protocol>`__
-4. `Dial data format <#Dial-data-format>`__
-5. `Bugs, Caveats <#Bugs-Caveats>`__
-
-Notes
------
-
 Only allows Point to Point connection.
 
 Hercules device statement

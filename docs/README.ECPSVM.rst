@@ -4,22 +4,6 @@ ECPS:VM : Extended Control Program Support : VM/370
 and # Extended VM Assists - Partial Privop Simulation And Virtual
 Interval Timer
 
-Contents
---------
-
-1.  `Change Log <#Change-Log>`__
-2.  `Supported Systems <#Supported-Systems>`__
-3.  `How to enable/disable VM
-    Assists <#How-to-enabledisable-VM-Assists>`__
-4.  `New panel command <#New-panel-command>`__
-5.  `Determining if the assist is used by
-    VM <#Determining-if-the-assist-is-used-by-VM>`__
-6.  `Technical information <#Technical-information>`__
-7.  `Troubleshooting <#Troubleshooting>`__
-8.  `Implemented Assists <#Implemented-Assists>`__
-9.  `Special Situations <#Special-Situations>`__
-10. `Example ‘ecpsvm stat’ report <#Example-ecpsvm-stat-report>`__
-
 Change Log
 ----------
 

@@ -1,14 +1,6 @@
 APL\\360 mods by Max H. Parke
 =============================
 
-Contents
---------
-
-1. `About <#About>`__
-
-About
-=====
-
 Max H. Parke (ikj1234i@yahoo.com) has modified the commadpt driver to
 work for APL\\360. This is Max’s README regarding his APL\\360 mods:
 

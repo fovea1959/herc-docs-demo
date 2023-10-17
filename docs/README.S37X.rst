@@ -1,9 +1,6 @@
 S/370 Backport of select ESA/390 and z/Architecture instructions
 ================================================================
 
-About
------
-
 Some ESA/390 and z/Architecture features and their instructions are
 architecturally compatible with the S/370 architecture. Although they
 are not present in the S/370 Principle of Operations (GA22-7000), they

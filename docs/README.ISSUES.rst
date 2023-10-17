@@ -1,18 +1,6 @@
 Unresolved Issues
 =================
 
-Contents
---------
-
-1. `About <#About>`__
-2. `Tape Device Handler <#Tape-Device-Handler>`__
-3. `I/O Subsystem <#IO-Subsystem>`__
-4. `Device Handlers <#Device-Handlers>`__
-5. `Hardware Panel <#Hardware-Panel>`__
-
-About
------
-
 For a current list of known issues refer to the `GitHub Issues web
 page <https://github.com/SDL-Hercules-390/hyperion/issues>`__.
 

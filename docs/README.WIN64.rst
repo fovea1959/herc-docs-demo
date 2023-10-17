@@ -1,17 +1,6 @@
 Building Hercules under 64-bit Windows
 ======================================
 
-Contents
---------
-
-1. `Command Line Method <#Command-Line-Method>`__
-2. `The Fish “Visual Studio 2008”
-   method <#The-Fish-Visual-Studio-2008-method>`__
-3. `The Windows batch file method <#The-Windows-batch-file-method>`__
-
-About
------
-
 There is only one 64-bit architecture supported by 64-bit Windows: the
 x64 architecture also known as x86_64 (for AMD64 processors).
 

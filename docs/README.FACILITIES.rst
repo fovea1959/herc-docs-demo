@@ -1,34 +1,6 @@
 Adding New z/Architecture Facilities to Hercules
 ================================================
 
-Contents
---------
-
-1. `Introduction <#1-Introduction>`__
-2. `Defining the STFLE feature
-   bits <#2-Defining-the-STFLE-feature-bits>`__
-3. `Defining the feat900 ``FEATURE`` build
-   macros <#3-Defining-the-feat900-FEATURE-build-macros>`__
-4. `Verifying ``FEATURE`` build macro
-   sanity <#4-Verifying-FEATURE-build-macro-sanity>`__
-5. `Defining the facility.c run-time tables and
-   functions <#5-Defining-the-facility-c-run-time-tables-and-functions>`__\ 
-   5a. `The ``FT`` table <#5a-The-FT-table>`__\  5b. `The ``FT2``
-   table <#5b-The-FT2-table>`__\  5c. ```modnnn`` Modification Check
-   functions <#5c-modnnn-Modification-Check-functions>`__\  5d.
-   ```instrxxx`` Update Opcode Table
-   functions <#5d-instrxxx-Update-Opcode-Table-functions>`__\ 
-6. `Coding the facility instructions
-   themselves <#6-Coding-the-facility-instructions-themselves>`__\  6a.
-   ```DEF_INST`` in ``opcode.h`` <#6a-DEF_INST-in-opcode-h>`__\  6b.
-   ```UNDEF_INST`` and ``GENx___x___x900`` in
-   ``opcode.c`` <#6b-UNDEF_INST-and-GENx___x___x900-in-opcode-c>`__\ 
-   6c. `The actual ``esame.c`` instruction function
-   itself <#6c-The-actual-esame-c-instruction-function-itself>`__\ 
-
-1. Introduction
----------------
-
 IBM’s z/Architecture supports the concept of Facilities, many of which
 have a corresponding facility list bit assigned to them, available to
 the program via the STORE FACILITY LIST EXTENDED (STFLE) instruction.
