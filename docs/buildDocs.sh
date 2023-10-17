@@ -91,7 +91,6 @@ EOF
       sphinx-build -b html docs/ docs/_build/html/${current_language}/${current_version} -D language="${current_language}"
       tar cfz "${docroot}/${current_language}/${current_version}/Hercules Documentation Demo-docs_${current_language}_${current_version}.html.tar.gz" \
 	      docs/_build/html/${current_language}/${current_version}
-      find "${docroot}/${current_language}/${current_version}/" -ls
  
       # HTML #
       sphinx-build -b html docs/ docs/_build/singlehtml/${current_language}/${current_version} -D language="${current_language}"
