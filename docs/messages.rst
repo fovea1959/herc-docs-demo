@@ -541,6 +541,7 @@ Figure 1: Sample Messages
 Part I: New Messages
 --------------------
 
+
 Messages HHC00001s – HHC00069s (General Messages)
 =================================================
 
@@ -770,8 +771,8 @@ Severity …
 
 Action …
 
-6. Messages HHC00070s – HHC00099s (Hercules Automatic Operator)
----------------------------------------------------------------
+Messages HHC00070s – HHC00099s (Hercules Automatic Operator)
+============================================================
 
 HHC00070E
 ---------
@@ -1068,8 +1069,8 @@ Severity Error.
 
 Action Define a HAO rule before using the “HAO LIST” command.
 
-7. Messages HHC00100s – HHC00199s (General Messages)
-----------------------------------------------------
+Messages HHC00100s – HHC00199s (General Messages)
+=================================================
 
 HHC00100I
 ---------
@@ -1394,8 +1395,8 @@ Severity …
 
 Action …
 
-8. Messages HHC00200s – HHC00299s (Tape Device Emulation)
----------------------------------------------------------
+Messages HHC00200s – HHC00299s (Tape Device Emulation)
+======================================================
 
 HHC00201I
 ---------
@@ -1738,8 +1739,8 @@ Severity …
 
 Action …
 
-9. Messages HHC00300s – HHC00399s (DASD Device Emulation (CCKD))
-----------------------------------------------------------------
+Messages HHC00300s – HHC00399s (DASD Device Emulation (CCKD))
+=============================================================
 
 HHC00300E
 ---------
@@ -2632,8 +2633,8 @@ Severity …
 
 Action …
 
-10. Messages HHC00400s – HHC00499s (DASD Device Emulation (CKD))
-----------------------------------------------------------------
+Messages HHC00400s – HHC00499s (DASD Device Emulation (CKD))
+============================================================
 
 HHC00400E
 ---------
@@ -3383,8 +3384,8 @@ Severity …
 
 Action …
 
-11. Messages HHC00500s – HHC00599s (DASD Device Emulation (FBA))
-----------------------------------------------------------------
+Messages HHC00500s – HHC00599s (DASD Device Emulation (FBA))
+============================================================
 
 HHC00500E
 ---------
@@ -3628,8 +3629,8 @@ Severity …
 
 Action …
 
-12. Messages HHC00600s – HHC00699s (DASD Device Emulation (SCE))
-----------------------------------------------------------------
+Messages HHC00600s – HHC00699s (DASD Device Emulation (SCE))
+============================================================
 
 HHC00600E
 ---------
@@ -3697,8 +3698,8 @@ Severity …
 
 Action …
 
-13. Messages HHC00700s – HHC00799s (Shared Device Server)
----------------------------------------------------------
+Messages HHC00700s – HHC00799s (Shared Device Server)
+=====================================================
 
 HHC00700S
 ---------
@@ -4184,8 +4185,8 @@ Severity …
 
 Action …
 
-14. Messages HHC00800s – HHC00899s (CPU Emulation)
---------------------------------------------------
+Messages HHC00800s – HHC00899s (CPU Emulation)
+==============================================
 
 HHC00800I
 ---------
@@ -5072,8 +5073,8 @@ Severity …
 
 Action …
 
-15. Messages HHC00900s – HHC00999s (CTC Adapter Emulation)
-----------------------------------------------------------
+Messages HHC00900s – HHC00999s (CTC Adapter Emulation)
+======================================================
 
 HHC00900E
 ---------
