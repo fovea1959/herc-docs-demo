@@ -13,14 +13,17 @@ Read more on reStructuredText `here <https://en.wikipedia.org/wiki/ReStructuredT
 This document is not intended to be a guide on RST - a basic familiarity with RST should be gained prior to working on documentation.
 
 *****************
-Section Standards
+Sections
 *****************
 
 One of the first and most basic standards any documenter will need to know is that of Sections, used to establish a heirarchy, and build a table of contents.
-There is no definitive standard in place, however we will adopt the following which is commonly used with Python documentation.
+There is no definitive standard in place, however we will adopt the below standards, commonly used with Python documentation.
 
 .. note::
 The number of punctuation characters should match the length of the section name.
+
+Standards
+=========
 
 **Top level 'part'**
 ::
@@ -53,3 +56,36 @@ Underlining using `-` symbols.
   Subsection 1
   ^^^^^^^^^^^^
 Underlining using `^` symbols.
+
+Examples
+========
+
+The first example:
+::
+  ######################
+  Hercules Document Name
+  ######################
+
+  ****************
+  1st Chapter Name
+  ****************
+  
+  Section 1
+  =========
+  
+  1st Subsection
+  --------------
+  
+  2nd Subsection
+  --------------
+  
+  1st subsubsection
+  ^^^^^^^^^^^^^^^^^
+  
+  Section 2
+  =========
+
+....would result in the following structure in the left hand TOC panel
+
+.. image:: doc_resources/images/appendix_a_001.png
+
