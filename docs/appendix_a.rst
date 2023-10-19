@@ -85,7 +85,25 @@ The first example:
   Section 2
   =========
 
-would result in the following structure in the left hand TOC panel
+...would result in the following structure in the left hand TOC panel of the generated HTML:
+
+.. image:: /doc_resources/images/appendix_a_tocsamp.png
 
 
-.. image:: /doc_resources/images/appendix_a_image001.png
+*****************
+Images
+*****************
+
+Occassionaly it is neccessary to include images in the documentation, such as screenshots.
+When this is required, the below standards should be applied.
+
+Standards
+=========
+
+* Any images files to be included in the documents should be placed in the /doc_resources/images/ folder.
+* image files should be named as follows:
+
+Examples
+========
+/doc_resources/images/configuration_scnshot1.jpg
+/doc_resources/images/configuration_exampleb.jpg
