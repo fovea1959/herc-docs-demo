@@ -85,7 +85,8 @@ The first example:
   Section 2
   =========
 
-....would result in the following structure in the left hand TOC panel
+would result in the following structure in the left hand TOC panel
+
 
 .. image:: doc_resources/images/appendix_a_image001.png
 
