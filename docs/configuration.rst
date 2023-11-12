@@ -996,15 +996,27 @@ Process Priorities
 ------------------
 For Windows, the following conversions are used for translating Unix process 'nice' values to Windows process priority classes:
 
-.. 
-   tabularcolumns:: |p{1cm}|p{7cm}|
+.. list-table::
+   :header-rows: 1
+   :widths: 20 20 60
 
-.. csv-table::
-  :header:  "'Nice' Value", "Windows Process Priority Class", "Foo Meaning"
-
-  "-20 to -16","Real-time","Process that has the highest possible priority. The threads of the process preempt the threads of all other processes, including operating system processes performing important tasks. For example, a real-time process that executes for more than a very brief interval can cause disk caches not to flush or cause the mouse to be unresponsive."
-  "-15 to -9","High","Process that performs time-critical tasks that must be executed immediately. The threads of the process preempt the threads of normal or idle priority class processes. An example is the Task List, which must respond quickly when called by the user, regardless of the load on the operating system. Use extreme care when using the high-priority class, because a high-priority class application can use nearly all available CPU time."
-  "-8 to -1","Above Normal","Process that has priority above the Normal class but below the High class."
+   * - 'Nice' Value
+     - Windows Process Priority Class
+     - Foo Meaning
+   * - \-20 to -16
+     - Real-time
+     - Process that has the highest possible priority. 
+       The threads of the process preempt the threads of all other processes, including operating system processes performing important tasks.
+       For example, a real-time process that executes for more than a very brief interval can cause disk caches not to flush or cause the mouse to be unresponsive.
+   * - \-15 to -9
+     - High
+     - Process that performs time-critical tasks that must be executed immediately.
+       The threads of the process preempt the threads of normal or idle priority class processes.
+       An example is the Task List, which must respond quickly when called by the user, regardless of the load on the operating system.
+       Use extreme care when using the high-priority class, because a high-priority class application can use nearly all available CPU time.
+   * - \-8 to -1
+     - Above Normal
+     - Process that has priority above the Normal class but below the High class.
 
 .. caution::  A high process priority (or low 'nice' value) could have a impact on how Hercules's internal thread priorities are interpreted, thereby impacting the overall performance of your host system.
 
@@ -1013,25 +1025,43 @@ Thread Priorities
 -----------------
 The following are the currently assigned internal relative thread priorities for Hercules:
 
-Relative
-priority	
-Thread
-Type	
-Description
- 	 	 	 
-1	 	(watchdog)	The "watch dog" thread is the internal Hercules thread that monitors all CPU threads for a malfunctioning CPU (i.e. one that, due to a bug, has stopped executing instructions). The watch dog thread is always set to a relative priority one less than the priority assigned to the CPU threads.
- 	 	 	 
-2	 	CPU	The CPU threads are those within Hercules that actually execute the emulated System/370, ESA/390, or z/Architecture instructions. There is one CPU thread for each defined ENGINE. Except for the watch dog thread, CPU threads are always assigned the lowest relative priority of any thread within Hercules. This allows, for example, I/O requests to be scheduled and completed in favour of CPU cycles being burned.
- 	 	 	 
-3	 	Device	Device threads within Hercules manage the I/O requests to emulated devices. Assigning the internal relative priority of device threads to be higher than that of the CPU threads ensures no compute-bound CPU thread impacts Hercules's ability to start and complete its I/O requests to its emulated devices.
- 	 	 	 
-4	 	Server	Server threads are those threads that provide a service to either the user or to other threads internal to Hercules. Threads that monitor for incoming emulated display terminal connection requests for example (or the internal logger thread that manages the passing of messages between threads) are two examples of server threads. Such threads must react to connection requests and/or internal messages quickly since other threads are waiting for them to complete their task before they themselves can proceed.
- 	 	 	 
-5	 	Panel	The main Hercules thread is the one that reads commands from the keyboard and displays messages on the screen. Except for the TOD Clock and Timer thread, it should normally be the highest priority of any thread within Hercules.
- 	 	 	 
-6	 	(unused)	---
- 	 	 	 
-7	 	Timer	TOD Clock and Timer thread is the thread which manages the internal emulated TOD Clock and CPU Timer components of your emulated mainframe. In order to ensure accurate time of day and elapsed time and/or CPU time measurement, it should always be the very highest priority thread within Hercules.
+.. list-table::
+   :header-rows: 1
+   :widths: 10 10 60
+
+   * - Relative priority	
+     - Thread Type	
+     - Description
+   * - 1
+     - (watchdog)
+     - The "watch dog" thread is the internal Hercules thread that monitors all CPU threads for a malfunctioning CPU (i.e. one that, due to a bug, has stopped executing instructions).
+       The watch dog thread is always set to a relative priority one less than the priority assigned to the CPU threads.
+   * - 2
+     - CPU
+     - The CPU threads are those within Hercules that actually execute the emulated System/370, ESA/390, or z/Architecture instructions. 
+       There is one CPU thread for each defined ENGINE. 
+       Except for the watch dog thread, CPU threads are always assigned the lowest relative priority of any thread within Hercules. 
+       This allows, for example, I/O requests to be scheduled and completed in favour of CPU cycles being burned.
+   * - 3
+     - Device
+     - Device threads within Hercules manage the I/O requests to emulated devices. 
+       Assigning the internal relative priority of device threads to be higher than that of the CPU threads ensures no compute-bound CPU thread impacts Hercules's ability to start and complete its I/O requests to its emulated devices.
+   * - 4
+     - Server
+     - Server threads are those threads that provide a service to either the user or to other threads internal to Hercules.
+       Threads that monitor for incoming emulated display terminal connection requests for example (or the internal logger thread that manages the passing of messages between threads) are two examples of server threads.
+       Such threads must react to connection requests and/or internal messages quickly since other threads are waiting for them to complete their task before they themselves can proceed.
+   * - 5
+     - Panel
+     - The main Hercules thread is the one that reads commands from the keyboard and displays messages on the screen.
+       Except for the TOD Clock and Timer thread, it should normally be the highest priority of any thread within Hercules.
+   * - 6
+     - (unused)
+     - \ \
+   * - 7
+     - Timer
+     - TOD Clock and Timer thread is the thread which manages the internal emulated TOD Clock and CPU Timer components of your emulated mainframe.
+       In order to ensure accurate time of day and elapsed time and/or CPU time measurement, it should always be the very highest priority thread within Hercules.
 
 .. caution:: Hercules's internal thread priorities could be interpreted differently based on its process priority (or 'nice' value), thereby impacting the overall performance of your host system.
 
