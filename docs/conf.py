@@ -121,8 +121,8 @@ latex_elements = {
     # 'pointsize': '10pt',
 
     # Additional stuff for the LaTeX preamble.
-    #
-    # 'preamble': '',
+    # see https://stackoverflow.com/q/20073309/17887564
+    'preamble': '\setcounter{tocdepth}{4}',
 
     # Latex figure (float) alignment
     #
@@ -270,7 +270,7 @@ html_context['downloads'].append( ('tarred single file HTML', '/' +REPO_NAME+ '/
 # "EDIT ON GITHUB" LINKS #
 ##########################
  
-html_context['display_github'] = True
+html_context['display_github'] = False
 html_context['github_user'] = 'fovea1959'
 html_context['github_repo'] = 'herc-docs-demo'
 html_context['github_version'] = 'master/docs/'

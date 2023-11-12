@@ -17,6 +17,7 @@ Welcome to the Hercules Documentation Demo site!
    hercsupp
    hercfaq
    messages
+   aa_auxdocs
    appendix_a
 
 
