@@ -1,0 +1,936 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Hercules Dynamic Loader &mdash; Hercules Documentation Demo 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link href="_static/herc_style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Hercules Documentation Demo
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                fovea1959
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="hercinst.html">Building and Installing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration File</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercdasd.html">Creating DASD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercoper.html">Operating Procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercsupp.html">Technical Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercfaq.html">Frequently-Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="messages.html">Messages and Codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aa_auxdocs.html">Supporting documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_a.html">Appendix A - Documentation Standards</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Hercules Documentation Demo</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Hercules Dynamic Loader</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/README.HDL.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="hercules-dynamic-loader">
+<h1>Hercules Dynamic Loader<a class="headerlink" href="#hercules-dynamic-loader" title="Permalink to this heading">¶</a></h1>
+<p>The dynamic loader is intended to supply a loading and linking
+mechanism, whereby routines, commands, instructions and functions can be
+dynamically added to Hercules, without the need to rebuild or even
+restart Hercules.</p>
+<section id="commands">
+<h2>Commands<a class="headerlink" href="#commands" title="Permalink to this heading">¶</a></h2>
+<p>The loader can be controlled by the following Hercules commands:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ldmod</span> <span class="o">&lt;</span><span class="n">module</span> <span class="nb">list</span><span class="o">&gt;</span>    <span class="o">-</span> <span class="n">Load</span> <span class="n">modules</span> <span class="n">named</span> <span class="ow">in</span> <span class="n">module</span> <span class="nb">list</span>
+<span class="n">rmmod</span> <span class="o">&lt;</span><span class="n">module</span> <span class="nb">list</span><span class="o">&gt;</span>    <span class="o">-</span> <span class="n">Unload</span> <span class="n">modules</span> <span class="n">named</span> <span class="ow">in</span> <span class="nb">list</span>
+<span class="n">lsmod</span>                  <span class="o">-</span> <span class="n">List</span> <span class="nb">all</span> <span class="n">modules</span> <span class="ow">and</span> <span class="n">entry</span> <span class="n">points</span>
+<span class="n">lsdep</span>                  <span class="o">-</span> <span class="n">List</span> <span class="nb">all</span> <span class="n">dependencies</span>
+</pre></div>
+</div>
+<p>The ldmod statement may also appear in the Hercules configuration file.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">configuration</span> <span class="n">statement</span><span class="p">:</span>
+<span class="n">modpath</span> <span class="o">&lt;</span><span class="n">pathname</span><span class="o">&gt;</span>     <span class="o">-</span> <span class="n">Specifies</span> <span class="n">where</span> <span class="n">modules</span> <span class="n">are</span> <span class="n">loaded</span> <span class="kn">from</span>
+</pre></div>
+</div>
+</section>
+<section id="module-load-and-unload">
+<h2>Module load and unload<a class="headerlink" href="#module-load-and-unload" title="Permalink to this heading">¶</a></h2>
+<p>The loader has two basic functions: module load and module unload.</p>
+<section id="module-load">
+<h3>Module load<a class="headerlink" href="#module-load" title="Permalink to this heading">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span> <span class="n">hdl_load</span><span class="p">(</span><span class="n">char</span> <span class="o">*</span><span class="n">name</span><span class="p">,</span> <span class="nb">int</span> <span class="n">flags</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Where name is the module name, this name may include the path. If no
+path is given then the module is loaded from the default library search
+order. Note that this is different from the standard search order.</p>
+<p>Flags may be one of the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">HDL_LOAD_DEFAULT</span> <span class="ow">or</span> <span class="mi">0</span>  <span class="o">-</span>  <span class="n">Default</span> <span class="n">load</span>
+<span class="n">HDL_LOAD_MAIN</span>          <span class="o">-</span>  <span class="n">Reserved</span> <span class="k">for</span> <span class="n">Hercules</span> <span class="n">use</span>
+<span class="n">HDL_LOAD_NOUNLOAD</span>      <span class="o">-</span>  <span class="n">Module</span> <span class="n">cannot</span> <span class="n">be</span> <span class="n">unloaded</span>
+<span class="n">HDL_LOAD_FORCE</span>         <span class="o">-</span>  <span class="n">Override</span> <span class="n">dependency</span> <span class="n">check</span>
+<span class="n">HDL_LOAD_NOMSG</span>         <span class="o">-</span>  <span class="n">Do</span> <span class="ow">not</span> <span class="n">issue</span> <span class="nb">any</span> <span class="n">error</span> <span class="n">messages</span>
+</pre></div>
+</div>
+<p>This function returns a zero value when the load is successful.</p>
+</section>
+<section id="module-unload">
+<h3>Module unload<a class="headerlink" href="#module-unload" title="Permalink to this heading">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span> <span class="n">hdl_dele</span><span class="p">(</span><span class="n">char</span> <span class="o">*</span><span class="n">name</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Where name is the name of the module that is to be unloaded. This
+function returns a zero value when the unload is successful.</p>
+</section>
+</section>
+<section id="resolving-symbols">
+<h2>Resolving Symbols<a class="headerlink" href="#resolving-symbols" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">void</span> <span class="o">*</span> <span class="n">HDL_FINDSYM</span><span class="p">(</span><span class="n">char</span> <span class="o">*</span><span class="n">symbolname</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>This function will return the entry point of symbolname or zero when the
+symbol cannot be resolved.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">void</span> <span class="o">*</span> <span class="n">HDL_FINDNXT</span><span class="p">(</span><span class="n">current_entry</span> <span class="n">point</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>This function will return the previous entry point. That is, the entry
+point which was current before the entry point as identified by
+current_entry point was registered.</p>
+<p>This function is intended to allow a module to call the original
+routine. An example of this is given in the <code class="docutils literal notranslate"><span class="pre">panel_command</span></code> entry as
+listed below.</p>
+<p>There are some special considerations for systems that do not support
+the concept of back-linking. Back-linking is the operating system
+support of dynamically resolving unresolved external references in a
+dynamic module, with the main module, or other loaded modules. Cygwin
+does not support back-linking and Cygwin specials are listed in this
+example with <code class="docutils literal notranslate"><span class="pre">#if</span> <span class="pre">defined(WIN32)</span></code>.</p>
+</section>
+<section id="some-additional-notes">
+<h2>Some additional notes<a class="headerlink" href="#some-additional-notes" title="Permalink to this heading">¶</a></h2>
+<p>Unload will remove all references to a specific module, but currently it
+will not actually remove the loaded module from memory. This is because
+there is no safe way (yet) to synchronize unloading of code and,
+besides, it may still be in use. This should however pose no practical
+limitations.</p>
+<p>When a module lists a new dependency, that dependency will be
+registered. Unloading the module does not remove the dependency, this is
+to be consistent with the previous note about unloading.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#include &quot;hercules.h&quot;</span>
+<span class="c1">#include &quot;devtype.h&quot;</span>
+<span class="c1">#include &quot;opcode.h&quot;</span>
+
+<span class="o">/*</span>   <span class="n">Local</span> <span class="n">definitions</span>   <span class="o">*/</span>
+
+<span class="n">static</span> <span class="n">void</span> <span class="o">*</span><span class="n">gui_cpu_state</span><span class="p">(</span><span class="n">REGS</span> <span class="o">*</span><span class="n">regs</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">void</span> <span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="n">prev_cpu_state</span><span class="p">)(</span><span class="n">REGS</span> <span class="o">*</span><span class="p">);</span>
+
+    <span class="o">/*</span> <span class="n">CPU</span> <span class="n">status</span> <span class="n">update</span> <span class="n">processing</span> <span class="o">*/</span>
+
+    <span class="o">/*</span> <span class="n">Call</span> <span class="n">higher</span> <span class="n">level</span> <span class="n">routine</span> <span class="k">if</span> <span class="n">one</span> <span class="n">exists</span> <span class="o">*/</span>
+    <span class="k">if</span><span class="p">((</span><span class="n">prev_cpu_state</span> <span class="o">=</span> <span class="n">HDL_FINDNXT</span><span class="p">(</span><span class="n">gui_cpu_state</span><span class="p">)))</span>
+        <span class="k">return</span> <span class="n">prev_cpu_state</span><span class="p">(</span><span class="n">regs</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="n">NULL</span><span class="p">;</span>
+<span class="p">}</span>
+
+
+<span class="n">void</span>  <span class="o">*</span><span class="n">ProcessCommand</span> <span class="p">(</span><span class="n">char</span> <span class="o">*</span><span class="n">command</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="n">void</span> <span class="o">*</span> <span class="p">(</span><span class="o">*</span><span class="n">prev_panel_command</span><span class="p">)(</span><span class="n">char</span> <span class="o">*</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">strncasecmp</span><span class="p">(</span><span class="n">command</span><span class="p">,</span><span class="s2">&quot;ourcmd&quot;</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">logmsg</span> <span class="p">(</span><span class="s2">&quot;This is our command</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+        <span class="o">/*</span> <span class="n">Call</span> <span class="n">higher</span> <span class="n">level</span> <span class="n">command</span> <span class="n">handler</span> <span class="o">*/</span>
+        <span class="k">if</span><span class="p">((</span><span class="n">prev_panel_command</span> <span class="o">=</span> <span class="n">HDL_FINDNXT</span><span class="p">(</span><span class="n">ProcessCommand</span><span class="p">)))</span>
+            <span class="k">return</span> <span class="n">prev_panel_command</span><span class="p">(</span><span class="n">command</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="n">NULL</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The dependency section is, for all intents and purposes, called before
+the module is loaded. Its purpose is to check that there are no
+incompatibilities between this module and the version of Hercules that
+we are running. Dependencies are identified by name, this name is given
+on the <code class="docutils literal notranslate"><span class="pre">HDL_DEPENDENCY</span></code> statement.</p>
+<p>Each dependency then has a version code, and a size code, where the
+version code is a character string, and the size code an integer value.
+If the version or size codes do not match with those in the Hercules
+main module, the module cannot be loaded. The version is usually a
+character string that identifies the version of the component, and the
+size is to be the size of the component in the case of structures or
+unions.</p>
+<p>Version and size should be coded as following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#define HDL_VERS_SOMETHING  &quot;1.0&quot;</span>
+<span class="c1">#define HDL_SIZE_SOMETHING  sizeof(SOMETHING)</span>
+</pre></div>
+</div>
+<p>where “SOMETHING” can be a structure or other component.</p>
+<p>The associated dependency statement:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">HDL_DEPENDENCY</span><span class="p">(</span><span class="n">SOMETHING</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>When a dependency is given that has not yet been registered, it will be
+registered, such that it can be checked in subsequent module loads.</p>
+<p><strong>The dependency section is mandatory</strong>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">HDL_DEPENDENCY_SECTION</span><span class="p">;</span>
+<span class="p">{</span>
+     <span class="o">/*</span> <span class="n">Define</span> <span class="n">version</span> <span class="n">dependencies</span> <span class="n">that</span> <span class="n">this</span> <span class="n">module</span> <span class="n">requires</span> <span class="o">*/</span>
+     <span class="n">HDL_DEPENDENCY</span> <span class="p">(</span> <span class="n">HERCULES</span> <span class="p">);</span>
+     <span class="n">HDL_DEPENDENCY</span> <span class="p">(</span> <span class="n">SYSBLK</span>   <span class="p">);</span>
+     <span class="n">HDL_DEPENDENCY</span> <span class="p">(</span> <span class="n">REGS</span>     <span class="p">);</span>
+     <span class="n">HDL_DEPENDENCY</span> <span class="p">(</span> <span class="n">DEVBLK</span>   <span class="p">);</span>
+<span class="p">}</span>
+<span class="n">END_DEPENDENCY_SECTION</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>The registration exports labels and their associated entry points to
+Hercules, such that the symbols and associated entry points may be known
+to Hercules and any other module that may have been loaded. The
+registration section is called once during module load.</p>
+<p>If we have registered a function that is also called from this DLL, then
+it must also be listed in the resolver section. This to ensure that the
+symbol is properly resolved when other modules are loaded.</p>
+<p>The registration section is optional.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">HDL_REGISTER_SECTION</span><span class="p">;</span>
+<span class="p">{</span>
+    <span class="o">/*</span> <span class="n">These</span> <span class="n">are</span> <span class="n">the</span> <span class="n">entry</span> <span class="n">points</span> <span class="n">we</span> <span class="n">export</span> <span class="n">to</span> <span class="n">Hercules</span>
+       <span class="n">All</span> <span class="n">functions</span> <span class="ow">and</span> <span class="n">labels</span> <span class="n">used</span> <span class="n">this</span> <span class="n">dll</span> <span class="n">must</span> <span class="n">be</span> <span class="n">static</span>
+       <span class="ow">and</span> <span class="n">non</span> <span class="n">exportable</span><span class="p">,</span> <span class="n">this</span> <span class="n">to</span> <span class="n">ensure</span> <span class="n">that</span> <span class="n">no</span> <span class="n">foreign</span>
+       <span class="n">names</span> <span class="n">are</span> <span class="n">included</span> <span class="n">by</span> <span class="n">the</span> <span class="n">system</span> <span class="n">loader</span> <span class="n">on</span> <span class="n">systems</span>
+       <span class="n">that</span> <span class="n">provide</span> <span class="n">back</span><span class="o">-</span><span class="n">link</span> <span class="n">support</span> <span class="p">(</span><span class="n">mostly</span> <span class="o">*</span><span class="n">nix</span> <span class="n">systems</span><span class="p">)</span>
+    <span class="o">*/</span>
+
+    <span class="n">HDL_REGISTER</span> <span class="p">(</span> <span class="n">daemon_task</span><span class="p">,</span> <span class="n">external_gui_interface</span> <span class="p">);</span>
+    <span class="n">HDL_REGISTER</span> <span class="p">(</span> <span class="n">debug_cpu_state</span><span class="p">,</span> <span class="n">gui_cpu_state</span> <span class="p">);</span>
+    <span class="n">HDL_REGISTER</span> <span class="p">(</span> <span class="n">panel_command</span><span class="p">,</span> <span class="n">ProcessCommand</span> <span class="p">);</span>
+<span class="p">}</span>
+<span class="n">END_REGISTER_SECTION</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>The resolver section imports the entry points of symbols that have been
+previously registered.</p>
+<p>When a symbol is requested that has not been previously registered then
+the resolve function will search the loaded modules for that symbol, and
+register it implicitly. This latter function is mainly provided to
+support systems that do not have back-link support (most notably
+Cygwin).</p>
+<p>Entry points that are resolved should be indirect pointers, for example
+the panel_command routine is defined as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">void</span> <span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="n">panel_command</span><span class="p">)(</span><span class="n">char</span> <span class="o">*</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The resolver may be called multiple times, the first time it is called
+is during module load, immediately after the registration section is
+called. It is subsequently called when other modules are loaded or
+unloaded.</p>
+<p>When a symbol cannot be resolved it will be set to NULL.</p>
+<p>The resolver section is optional.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">HDL_RESOLVER_SECTION</span><span class="p">;</span>
+<span class="p">{</span>
+    <span class="o">/*</span> <span class="n">These</span> <span class="n">are</span> <span class="n">Hercules</span><span class="s1">&#39;s entry points that we need access to</span>
+       <span class="n">these</span> <span class="n">may</span> <span class="n">be</span> <span class="n">updated</span> <span class="n">by</span> <span class="n">other</span> <span class="n">loadable</span> <span class="n">modules</span><span class="p">,</span> <span class="n">so</span> <span class="n">we</span> <span class="n">need</span>
+       <span class="n">to</span> <span class="n">resolve</span> <span class="n">them</span> <span class="n">here</span><span class="o">.</span>
+    <span class="o">*/</span>
+
+    <span class="n">HDL_RESOLVE</span> <span class="p">(</span> <span class="n">panel_command</span> <span class="p">);</span>
+    <span class="n">HDL_RESOLVE</span> <span class="p">(</span> <span class="n">debug_cpu_state</span> <span class="p">);</span>
+
+    <span class="n">HDL_RESOLVE_PTRVAR</span> <span class="p">(</span> <span class="n">my_sysblk_ptr</span><span class="p">,</span> <span class="n">sysblk</span> <span class="p">);</span>
+<span class="p">}</span>
+<span class="n">END_RESOLVER_SECTION</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>The device section is to register device drivers with Hercules. It
+associates device types with device handlers.</p>
+<p>If a device handler is not registered for a specific device type then
+and a loadable mode with the name of “hdtxxxx” exists (where xxxx is the
+device type), then that module is loaded.</p>
+<p><strong>Search order:</strong></p>
+<ol class="arabic simple">
+<li><p>The most recently registered (i.e. loaded) device of the requested
+device type.</p></li>
+<li><p>Device driver in external loadable module, where the module name is
+hdtxxxx (where xxxx is the device type i.e. module name <code class="docutils literal notranslate"><span class="pre">hdtlcs</span></code>
+for device type LCS or <code class="docutils literal notranslate"><span class="pre">hdt2703</span></code> for device type 2703)</p></li>
+<li><p>If the device is listed in the alias table <a class="reference external" href="../hdteq.c">hdteq.c</a>
+then external module hdtyyyy will be loaded, where yyyy is the base
+name as listed in hdteq.c.</p></li>
+</ol>
+<p>The device name is always mapped to lower case when searching for
+loadable modules.</p>
+<p>The device section is optional. */</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">HDL_DEVICE_SECTION</span><span class="p">;</span>
+<span class="p">{</span>
+    <span class="n">HDL_DEVICE</span><span class="p">(</span><span class="mi">1052</span><span class="p">,</span><span class="n">constty_device_hndinfo</span><span class="p">);</span>
+    <span class="n">HDL_DEVICE</span><span class="p">(</span><span class="mi">3215</span><span class="p">,</span><span class="n">constty_device_hndinfo</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="n">END_DEVICE_SECTION</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>The instruction section registers inserts optional instructions, or
+modifies existing instructions.</p>
+<p>Instructions are generally defined with <code class="docutils literal notranslate"><span class="pre">DEF_INST(instname)</span></code> which
+results in an external reference of <code class="docutils literal notranslate"><span class="pre">s370_instname</span></code>, <code class="docutils literal notranslate"><span class="pre">s390_instname</span></code>
+and <code class="docutils literal notranslate"><span class="pre">z900_instname</span></code>. If an instruction is not defined for a certain
+architecture mode then <code class="docutils literal notranslate"><span class="pre">UNDEF_INST(instname)</span></code> must be used for that
+given architecture mode.</p>
+<p>The instruction section is optional.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">HDL_INSTRUCTION_SECTION</span><span class="p">;</span>
+<span class="p">{</span>
+    <span class="n">HDL_DEF_INST</span><span class="p">(</span> <span class="n">HDL_INSTARCH_370</span><span class="p">,</span> <span class="mh">0xB2FE</span><span class="p">,</span> <span class="n">new_B2FE_inst_doing_something</span> <span class="p">);</span>
+    <span class="n">HDL_DEF_INST</span><span class="p">(</span> <span class="n">HDL_INSTARCH_390</span> <span class="o">|</span> <span class="n">HDL_INSTARCH_900</span><span class="p">,</span> <span class="mh">0xB2FD</span><span class="p">,</span> <span class="n">new_B2FD_inst_doing_something_else</span> <span class="p">);</span>
+<span class="p">}</span>
+<span class="n">END_INSTRUCTION_SECTION</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>The final section is called once, when the module is unloaded or when
+Hercules terminates.</p>
+<p>A dll can reject being unloaded by returning a non-zero value in the
+final section.</p>
+<p>The final section is intended to be used to perform cleanup or indicate
+cleanup action to be taken. It may set a shutdown flag that is used
+within this dll that all local functions must now terminate.</p>
+<p>The final section is optional.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">HDL_FINAL_SECTION</span><span class="p">;</span>
+<span class="p">{</span>
+
+<span class="p">}</span>
+<span class="n">END_FINAL_SECTION</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Below is Fish’s sample code…</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/*</span>   <span class="n">Define</span> <span class="n">version</span> <span class="n">dependencies</span> <span class="n">that</span> <span class="n">this</span> <span class="n">module</span> <span class="n">requires</span><span class="o">...</span>
+<span class="o">**</span>
+<span class="o">**</span> <span class="n">The</span> <span class="n">following</span> <span class="n">are</span> <span class="n">the</span> <span class="n">various</span> <span class="n">Hercules</span> <span class="n">structures</span> <span class="n">whose</span> <span class="n">layout</span> <span class="n">your</span>
+<span class="o">**</span> <span class="n">module</span> <span class="n">depends</span> <span class="n">on</span><span class="o">.</span> <span class="n">The</span> <span class="n">layout</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">structures</span> <span class="p">(</span><span class="n">size</span> <span class="ow">and</span>
+<span class="o">**</span> <span class="n">version</span><span class="p">)</span> <span class="n">MUST</span> <span class="n">match</span> <span class="n">the</span> <span class="n">layout</span> <span class="n">that</span> <span class="n">was</span> <span class="n">used</span> <span class="n">to</span> <span class="n">build</span> <span class="n">Hercules</span> <span class="k">with</span><span class="o">.</span>
+<span class="o">**</span> <span class="n">If</span> <span class="n">the</span> <span class="n">size</span><span class="o">/</span><span class="n">version</span> <span class="n">of</span> <span class="nb">any</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">structures</span> <span class="n">changes</span> <span class="p">(</span><span class="ow">and</span>
+<span class="o">**</span> <span class="n">a</span> <span class="n">new</span> <span class="n">version</span> <span class="n">of</span> <span class="n">Hercules</span> <span class="ow">is</span> <span class="n">built</span> <span class="n">using</span> <span class="n">the</span> <span class="n">new</span> <span class="n">layout</span><span class="p">),</span> <span class="n">then</span> <span class="n">YOUR</span>
+<span class="o">**</span> <span class="n">module</span> <span class="n">must</span> <span class="n">also</span> <span class="n">be</span> <span class="n">built</span> <span class="k">with</span> <span class="n">the</span> <span class="n">new</span> <span class="n">layout</span> <span class="k">as</span> <span class="n">well</span><span class="o">.</span> <span class="n">The</span> <span class="n">layout</span> <span class="n">of</span>
+<span class="o">**</span> <span class="n">the</span> <span class="n">structures</span> <span class="k">as</span> <span class="n">they</span> <span class="n">were</span> <span class="n">when</span> <span class="n">your</span> <span class="n">module</span> <span class="ow">is</span> <span class="n">built</span> <span class="n">MUST</span> <span class="n">MATCH</span> <span class="n">the</span>
+<span class="o">**</span> <span class="n">layout</span> <span class="k">as</span> <span class="n">it</span> <span class="n">was</span> <span class="n">when</span> <span class="n">the</span> <span class="n">version</span> <span class="n">of</span> <span class="n">Hercules</span> <span class="n">you</span><span class="s1">&#39;re using was built.</span>
+<span class="o">**</span> <span class="n">Further</span> <span class="n">note</span> <span class="n">that</span> <span class="n">the</span> <span class="n">below</span> <span class="n">HDL_DEPENDENCY_SECTION</span> <span class="ow">is</span> <span class="n">actually</span> <span class="n">just</span>
+<span class="o">**</span> <span class="n">a</span> <span class="n">function</span> <span class="n">that</span> <span class="n">the</span> <span class="n">hdl</span> <span class="n">logic</span> <span class="n">calls</span><span class="p">,</span> <span class="ow">and</span> <span class="n">thus</span> <span class="n">allows</span> <span class="n">you</span> <span class="n">to</span> <span class="n">insert</span>
+<span class="o">**</span> <span class="n">directly</span> <span class="n">into</span> <span class="n">the</span> <span class="n">below</span> <span class="n">section</span> <span class="nb">any</span> <span class="n">specialized</span> <span class="s1">&#39;C&#39;</span> <span class="n">code</span> <span class="n">you</span> <span class="n">need</span><span class="o">.</span>
+<span class="o">*/</span>
+<span class="n">HDL_DEPENDENCY_SECTION</span><span class="p">;</span>
+<span class="p">{</span>
+     <span class="n">HDL_DEPENDENCY</span><span class="p">(</span><span class="n">HERCULES</span><span class="p">);</span>
+     <span class="n">HDL_DEPENDENCY</span><span class="p">(</span><span class="n">REGS</span><span class="p">);</span>
+     <span class="n">HDL_DEPENDENCY</span><span class="p">(</span><span class="n">DEVBLK</span><span class="p">);</span>
+     <span class="n">HDL_DEPENDENCY</span><span class="p">(</span><span class="n">SYSBLK</span><span class="p">);</span>
+     <span class="n">HDL_DEPENDENCY</span><span class="p">(</span><span class="n">WEBBLK</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="n">END_DEPENDENCY_SECTION</span><span class="p">;</span>
+
+
+<span class="o">/*</span>  <span class="n">Register</span> <span class="n">re</span><span class="o">-</span><span class="n">bindable</span> <span class="n">entry</span> <span class="n">point</span> <span class="k">with</span> <span class="n">resident</span> <span class="n">version</span><span class="p">,</span> <span class="ow">or</span> <span class="n">UNRESOLVED</span>
+<span class="o">**</span>
+<span class="o">**</span> <span class="n">The</span> <span class="n">following</span> <span class="n">section</span> <span class="n">defines</span> <span class="n">the</span> <span class="n">entry</span> <span class="n">points</span> <span class="n">within</span> <span class="n">Hercules</span> <span class="n">that</span>
+<span class="o">**</span> <span class="n">your</span> <span class="n">module</span> <span class="ow">is</span> <span class="n">overriding</span> <span class="p">(</span><span class="n">replacing</span><span class="p">)</span><span class="o">.</span> <span class="n">Your</span> <span class="n">module</span><span class="s1">&#39;s functions will</span>
+<span class="o">**</span> <span class="n">be</span> <span class="n">called</span> <span class="n">by</span> <span class="n">Hercules</span> <span class="n">instead</span> <span class="n">of</span> <span class="n">the</span> <span class="n">normal</span> <span class="n">Hercules</span> <span class="n">function</span> <span class="p">(</span><span class="k">if</span> <span class="nb">any</span><span class="p">)</span><span class="o">.</span>
+<span class="o">**</span> <span class="n">The</span> <span class="n">functions</span> <span class="n">defined</span> <span class="n">below</span> <span class="n">thus</span> <span class="n">provide</span> <span class="n">additional</span><span class="o">/</span><span class="n">new</span> <span class="n">functionality</span>
+<span class="o">**</span> <span class="n">above</span><span class="o">/</span><span class="n">beyond</span> <span class="n">the</span> <span class="n">functionality</span> <span class="n">normally</span> <span class="n">provided</span> <span class="n">by</span> <span class="n">Hercules</span><span class="o">.</span> <span class="n">Be</span> <span class="n">aware</span>
+<span class="o">**</span> <span class="n">however</span> <span class="n">that</span> <span class="n">it</span> <span class="ow">is</span> <span class="n">entirely</span> <span class="n">possible</span> <span class="k">for</span> <span class="n">other</span> <span class="n">dlls</span> <span class="n">to</span> <span class="n">subsequently</span>
+<span class="o">**</span> <span class="n">override</span> <span class="n">the</span> <span class="n">same</span> <span class="n">functions</span> <span class="n">that</span> <span class="n">you</span><span class="s1">&#39;ve overridden such that they end</span>
+<span class="o">**</span> <span class="n">up</span> <span class="n">being</span> <span class="n">called</span> <span class="n">before</span> <span class="n">your</span> <span class="n">override</span> <span class="n">does</span> <span class="ow">and</span> <span class="n">your</span> <span class="n">override</span> <span class="n">may</span> <span class="n">thus</span>
+<span class="o">**</span> <span class="ow">not</span> <span class="n">get</span> <span class="n">called</span> <span class="n">at</span> <span class="nb">all</span> <span class="p">(</span><span class="n">depending</span> <span class="n">on</span> <span class="n">how</span> <span class="n">their</span> <span class="n">override</span> <span class="ow">is</span> <span class="n">written</span><span class="p">)</span><span class="o">.</span>
+<span class="o">**</span> <span class="n">Note</span> <span class="n">that</span> <span class="n">the</span> <span class="s2">&quot;entry-point name&quot;</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">need</span> <span class="n">to</span> <span class="n">correspond</span> <span class="n">to</span> <span class="nb">any</span>
+<span class="o">**</span> <span class="n">existing</span> <span class="n">variable</span> <span class="ow">or</span> <span class="n">function</span> <span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">e</span><span class="o">.</span> <span class="n">the</span> <span class="n">entry</span><span class="o">-</span><span class="n">point</span> <span class="n">name</span> <span class="ow">is</span> <span class="n">just</span> <span class="n">that</span><span class="p">:</span>
+<span class="o">**</span> <span class="n">a</span> <span class="n">name</span><span class="p">,</span> <span class="ow">and</span> <span class="n">nothing</span> <span class="n">more</span><span class="o">.</span> <span class="n">There</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">need</span> <span class="n">to</span> <span class="n">be</span> <span class="n">a</span> <span class="n">variable</span> <span class="n">defined</span>
+<span class="o">**</span> <span class="n">anywhere</span> <span class="ow">in</span> <span class="n">your</span> <span class="n">module</span> <span class="k">with</span> <span class="n">that</span> <span class="n">name</span><span class="p">)</span><span class="o">.</span> <span class="n">Further</span> <span class="n">note</span> <span class="n">that</span> <span class="n">the</span> <span class="n">below</span>
+<span class="o">**</span> <span class="n">HDL_REGISTER_SECTION</span> <span class="ow">is</span> <span class="n">actually</span> <span class="n">just</span> <span class="n">a</span> <span class="n">function</span> <span class="n">that</span> <span class="n">the</span> <span class="n">hdl</span> <span class="n">logic</span>
+<span class="o">**</span> <span class="n">calls</span><span class="p">,</span> <span class="n">thus</span> <span class="n">allowing</span> <span class="n">you</span> <span class="n">to</span> <span class="n">insert</span> <span class="n">directly</span> <span class="n">into</span> <span class="n">the</span> <span class="n">below</span> <span class="n">section</span>
+<span class="o">**</span> <span class="nb">any</span> <span class="n">specialized</span> <span class="s1">&#39;C&#39;</span> <span class="n">code</span> <span class="n">that</span> <span class="n">you</span> <span class="n">may</span> <span class="n">need</span><span class="o">.</span>
+<span class="o">*/</span>
+<span class="n">HDL_REGISTER_SECTION</span><span class="p">;</span>
+<span class="p">{</span>
+    <span class="o">/*</span>            <span class="n">register</span> <span class="n">this</span>       <span class="k">as</span> <span class="n">the</span> <span class="n">address</span> <span class="n">of</span>
+                  <span class="n">entry</span><span class="o">-</span><span class="n">point</span> <span class="n">name</span><span class="p">,</span>   <span class="n">this</span> <span class="n">var</span> <span class="ow">or</span> <span class="n">func</span>
+    <span class="o">*/</span>
+    <span class="n">HDL_REGISTER</span><span class="p">(</span> <span class="n">panel_command</span><span class="p">,</span>      <span class="n">my_panel_command</span> <span class="p">);</span>
+    <span class="n">HDL_REGISTER</span><span class="p">(</span> <span class="n">panel_display</span><span class="p">,</span>      <span class="n">my_panel_display</span> <span class="p">);</span>
+    <span class="n">HDL_REGISTER</span><span class="p">(</span> <span class="n">some_exitpoint</span><span class="p">,</span>     <span class="n">UNRESOLVED</span>       <span class="p">);</span>
+<span class="p">}</span>
+<span class="n">END_REGISTER_SECTION</span><span class="p">;</span>
+
+
+<span class="o">/*</span>   <span class="n">Resolve</span> <span class="n">re</span><span class="o">-</span><span class="n">bindable</span> <span class="n">entry</span> <span class="n">point</span> <span class="n">on</span> <span class="n">module</span> <span class="n">load</span> <span class="ow">or</span> <span class="n">unload</span><span class="o">...</span>
+<span class="o">**</span>
+<span class="o">**</span> <span class="n">The</span> <span class="n">following</span> <span class="n">entries</span> <span class="s2">&quot;resolve&quot;</span> <span class="n">entry</span> <span class="n">points</span> <span class="n">that</span> <span class="n">your</span> <span class="n">module</span>
+<span class="o">**</span> <span class="n">needs</span><span class="o">.</span> <span class="n">These</span> <span class="n">entries</span> <span class="n">define</span> <span class="n">the</span> <span class="n">names</span> <span class="n">of</span> <span class="n">registered</span> <span class="n">entry</span> <span class="n">points</span>
+<span class="o">**</span> <span class="n">that</span> <span class="n">you</span> <span class="n">need</span> <span class="s2">&quot;imported&quot;</span> <span class="n">into</span> <span class="n">your</span> <span class="n">dll</span> <span class="n">so</span> <span class="n">that</span> <span class="n">you</span> <span class="n">may</span> <span class="n">call</span> <span class="n">them</span>
+<span class="o">**</span> <span class="n">directly</span> <span class="n">yourself</span><span class="o">.</span> <span class="n">The</span> <span class="n">HDL_RESOLVE_PTRVAR</span> <span class="n">macro</span> <span class="ow">is</span> <span class="n">used</span> <span class="n">to</span> <span class="n">auto</span><span class="o">-</span>
+<span class="o">**</span> <span class="n">matically</span> <span class="nb">set</span> <span class="n">one</span> <span class="n">of</span> <span class="n">your</span> <span class="n">own</span> <span class="n">pointer</span> <span class="n">variables</span> <span class="n">to</span> <span class="n">the</span> <span class="n">registered</span>
+<span class="o">**</span> <span class="n">entry</span> <span class="n">point</span><span class="s1">&#39;s currently registered value (usually an address of</span>
+<span class="o">**</span> <span class="n">a</span> <span class="n">function</span> <span class="ow">or</span> <span class="n">variable</span><span class="p">)</span><span class="o">.</span> <span class="n">Note</span> <span class="n">that</span> <span class="n">the</span> <span class="n">HDL_RESOLVER_SECTION</span> <span class="ow">is</span>
+<span class="o">**</span> <span class="n">actually</span> <span class="n">just</span> <span class="n">a</span> <span class="n">function</span> <span class="n">that</span> <span class="n">the</span> <span class="n">hdl</span> <span class="n">logic</span> <span class="n">calls</span><span class="p">,</span> <span class="n">thus</span> <span class="n">allowing</span>
+<span class="o">**</span> <span class="n">you</span> <span class="n">to</span> <span class="n">insert</span> <span class="n">directly</span> <span class="n">into</span> <span class="n">the</span> <span class="n">below</span> <span class="n">section</span> <span class="nb">any</span> <span class="n">specialized</span> <span class="s1">&#39;C&#39;</span>
+<span class="o">**</span> <span class="n">code</span> <span class="n">that</span> <span class="n">you</span> <span class="n">may</span> <span class="n">need</span><span class="o">.</span>
+<span class="o">*/</span>
+<span class="n">HDL_RESOLVER_SECTION</span><span class="p">;</span>
+<span class="p">{</span>
+    <span class="o">/*</span>           <span class="n">Herc</span><span class="s1">&#39;s registered</span>
+                 <span class="n">entry</span> <span class="n">points</span> <span class="n">that</span>
+                 <span class="n">you</span> <span class="n">need</span> <span class="n">to</span> <span class="n">call</span>
+                 <span class="n">directly</span> <span class="n">yourself</span>
+    <span class="o">*/</span>
+    <span class="n">HDL_RESOLVE</span><span class="p">(</span> <span class="n">system_command</span>          <span class="p">);</span>
+    <span class="n">HDL_RESOLVE</span><span class="p">(</span> <span class="n">some_exitpoint</span>          <span class="p">);</span>
+    <span class="n">HDL_RESOLVE</span><span class="p">(</span> <span class="n">debug_cpu_state</span>         <span class="p">);</span>
+    <span class="n">HDL_RESOLVE</span><span class="p">(</span> <span class="n">debug_program_interrupt</span> <span class="p">);</span>
+    <span class="n">HDL_RESOLVE</span><span class="p">(</span> <span class="n">debug_diagnose</span>          <span class="p">);</span>
+
+    <span class="o">/*</span> <span class="n">The</span> <span class="n">following</span> <span class="n">illustrates</span> <span class="n">how</span> <span class="n">to</span> <span class="n">use</span> <span class="n">HDL_RESOLVE_PTRVAR</span>
+       <span class="n">macro</span> <span class="n">to</span> <span class="n">retrieve</span> <span class="n">the</span> <span class="n">address</span> <span class="n">of</span> <span class="n">one</span> <span class="n">of</span> <span class="n">Herc</span><span class="s1">&#39;s registered</span>
+       <span class="n">entry</span> <span class="n">points</span><span class="o">.</span>
+
+                         <span class="n">Your</span> <span class="n">pointer</span><span class="o">-</span>   <span class="n">Herc</span><span class="s1">&#39;s registered</span>
+                         <span class="n">variable</span> <span class="n">name</span>   <span class="n">entry</span><span class="o">-</span><span class="n">point</span> <span class="n">name</span>
+    <span class="o">*/</span>
+    <span class="n">HDL_RESOLVE_PTRVAR</span><span class="p">(</span>  <span class="n">my_sysblk_ptr</span><span class="p">,</span>  <span class="n">sysblk</span>         <span class="p">);</span>
+<span class="p">}</span>
+<span class="n">END_RESOLVER_SECTION</span><span class="p">;</span>
+
+
+<span class="o">/*</span> <span class="n">The</span> <span class="n">following</span> <span class="n">section</span> <span class="n">defines</span> <span class="n">what</span> <span class="n">should</span> <span class="n">be</span> <span class="n">done</span> <span class="n">just</span> <span class="n">before</span>
+<span class="o">**</span> <span class="n">your</span> <span class="n">module</span> <span class="ow">is</span> <span class="n">unloaded</span><span class="o">.</span> <span class="n">It</span> <span class="ow">is</span> <span class="n">nothing</span> <span class="n">more</span> <span class="n">than</span> <span class="n">a</span> <span class="n">function</span> <span class="n">that</span>
+<span class="o">**</span> <span class="ow">is</span> <span class="n">called</span> <span class="n">by</span> <span class="n">hdl</span> <span class="n">logic</span> <span class="n">just</span> <span class="n">before</span> <span class="n">your</span> <span class="n">module</span> <span class="ow">is</span> <span class="n">unloaded</span><span class="p">,</span> <span class="ow">and</span>
+<span class="o">**</span> <span class="n">nothing</span> <span class="n">more</span><span class="o">.</span> <span class="n">Thus</span> <span class="n">you</span> <span class="n">can</span> <span class="n">place</span> <span class="nb">any</span> <span class="s1">&#39;C&#39;</span> <span class="n">code</span> <span class="n">here</span> <span class="n">that</span> <span class="n">you</span> <span class="n">want</span><span class="o">.</span>
+<span class="o">*/</span>
+<span class="n">HDL_FINAL_SECTION</span><span class="p">;</span>
+<span class="p">{</span>
+    <span class="n">my_cleanup</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="n">END_FINAL_SECTION</span><span class="p">;</span>
+
+
+
+<span class="o">/*</span> <span class="n">DYNCGI</span><span class="o">.</span><span class="n">C</span>     <span class="p">(</span><span class="n">c</span><span class="p">)</span><span class="n">Copyright</span> <span class="n">Jan</span> <span class="n">Jaeger</span><span class="p">,</span> <span class="mi">2002</span><span class="o">-</span><span class="mi">2003</span>                   <span class="o">*/</span>
+<span class="o">/*</span>              <span class="n">HTTP</span> <span class="n">cgi</span><span class="o">-</span><span class="nb">bin</span> <span class="n">routines</span>                                <span class="o">*/</span>
+
+<span class="o">/*</span> <span class="n">This</span> <span class="n">file</span> <span class="n">contains</span> <span class="n">cgi</span> <span class="n">routines</span> <span class="n">that</span> <span class="n">may</span> <span class="n">be</span> <span class="n">executed</span> <span class="n">on</span> <span class="n">the</span>      <span class="o">*/</span>
+<span class="o">/*</span> <span class="n">server</span> <span class="p">(</span><span class="n">ie</span> <span class="n">under</span> <span class="n">control</span> <span class="n">of</span> <span class="n">a</span> <span class="n">Hercules</span> <span class="n">thread</span><span class="p">)</span>                    <span class="o">*/</span>
+<span class="o">/*</span>                                                                   <span class="o">*/</span>
+<span class="o">/*</span>                                                                   <span class="o">*/</span>
+<span class="o">/*</span> <span class="n">Dynamically</span> <span class="n">loaded</span> <span class="n">cgi</span> <span class="n">routines</span> <span class="n">must</span> <span class="n">be</span> <span class="n">registered</span> <span class="n">under</span> <span class="n">the</span>      <span class="o">*/</span>
+<span class="o">/*</span> <span class="n">pathname</span> <span class="n">that</span> <span class="n">they</span> <span class="n">are</span> <span class="n">accessed</span> <span class="k">with</span> <span class="p">(</span><span class="n">ie</span> <span class="o">/</span><span class="n">cgi</span><span class="o">-</span><span class="nb">bin</span><span class="o">/</span><span class="n">test</span><span class="p">)</span>           <span class="o">*/</span>
+<span class="o">/*</span> <span class="n">All</span> <span class="n">cgi</span> <span class="n">pathnames</span> <span class="n">must</span> <span class="n">start</span> <span class="k">with</span> <span class="o">/</span><span class="n">cgi</span><span class="o">-</span><span class="nb">bin</span><span class="o">/</span>                       <span class="o">*/</span>
+<span class="o">/*</span>                                                                   <span class="o">*/</span>
+<span class="o">/*</span>                                                                   <span class="o">*/</span>
+<span class="o">/*</span> <span class="n">The</span> <span class="n">cgi</span><span class="o">-</span><span class="nb">bin</span> <span class="n">routines</span> <span class="n">may</span> <span class="n">call</span> <span class="n">the</span> <span class="n">following</span> <span class="n">HTTP</span> <span class="n">service</span> <span class="n">routines</span> <span class="o">*/</span>
+<span class="o">/*</span>                                                                   <span class="o">*/</span>
+<span class="o">/*</span> <span class="n">char</span> <span class="o">*</span><span class="n">cgi_variable</span><span class="p">(</span><span class="n">WEBBLK</span> <span class="o">*</span><span class="n">webblk</span><span class="p">,</span> <span class="n">char</span> <span class="o">*</span><span class="n">name</span><span class="p">);</span>                   <span class="o">*/</span>
+<span class="o">/*</span>   <span class="n">This</span> <span class="n">call</span> <span class="n">returns</span> <span class="n">a</span> <span class="n">pointer</span> <span class="n">to</span> <span class="n">the</span> <span class="n">cgi</span> <span class="n">variable</span> <span class="n">requested</span>       <span class="o">*/</span>
+<span class="o">/*</span>   <span class="ow">or</span> <span class="n">a</span> <span class="n">NULL</span> <span class="n">pointer</span> <span class="k">if</span> <span class="n">the</span> <span class="n">variable</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">found</span>                  <span class="o">*/</span>
+<span class="o">/*</span>                                                                   <span class="o">*/</span>
+<span class="o">/*</span> <span class="n">char</span> <span class="o">*</span><span class="n">cgi_cookie</span><span class="p">(</span><span class="n">WEBBLK</span> <span class="o">*</span><span class="n">webblk</span><span class="p">,</span> <span class="n">char</span> <span class="o">*</span><span class="n">name</span><span class="p">);</span>                     <span class="o">*/</span>
+<span class="o">/*</span>   <span class="n">This</span> <span class="n">call</span> <span class="n">returns</span> <span class="n">a</span> <span class="n">pointer</span> <span class="n">to</span> <span class="n">the</span> <span class="n">cookie</span> <span class="n">requested</span>             <span class="o">*/</span>
+<span class="o">/*</span>   <span class="ow">or</span> <span class="n">a</span> <span class="n">NULL</span> <span class="n">pointer</span> <span class="k">if</span> <span class="n">the</span> <span class="n">cookie</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">found</span>                    <span class="o">*/</span>
+<span class="o">/*</span>                                                                   <span class="o">*/</span>
+<span class="o">/*</span> <span class="n">char</span> <span class="o">*</span><span class="n">cgi_username</span><span class="p">(</span><span class="n">WEBBLK</span> <span class="o">*</span><span class="n">webblk</span><span class="p">);</span>                               <span class="o">*/</span>
+<span class="o">/*</span>   <span class="n">Returns</span> <span class="n">the</span> <span class="n">username</span> <span class="k">for</span> <span class="n">which</span> <span class="n">the</span> <span class="n">user</span> <span class="n">has</span> <span class="n">been</span> <span class="n">authenticated</span>  <span class="o">*/</span>
+<span class="o">/*</span>   <span class="ow">or</span> <span class="n">NULL</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">authenticated</span> <span class="p">(</span><span class="n">refer</span> <span class="n">to</span> <span class="n">auth</span><span class="o">/</span><span class="n">noauth</span> <span class="n">parameter</span>    <span class="o">*/</span>
+<span class="o">/*</span>   <span class="n">on</span> <span class="n">the</span> <span class="n">HTTPPORT</span> <span class="n">configuration</span> <span class="n">statement</span><span class="p">)</span>                        <span class="o">*/</span>
+<span class="o">/*</span>                                                                   <span class="o">*/</span>
+<span class="o">/*</span> <span class="n">char</span> <span class="o">*</span><span class="n">cgi_baseurl</span><span class="p">(</span><span class="n">WEBBLK</span> <span class="o">*</span><span class="n">webblk</span><span class="p">);</span>                                <span class="o">*/</span>
+<span class="o">/*</span>   <span class="n">Returns</span> <span class="n">the</span> <span class="n">url</span> <span class="k">as</span> <span class="n">requested</span> <span class="n">by</span> <span class="n">the</span> <span class="n">user</span>                        <span class="o">*/</span>
+<span class="o">/*</span>                                                                   <span class="o">*/</span>
+<span class="o">/*</span> <span class="n">void</span> <span class="n">html_header</span><span class="p">(</span><span class="n">WEBBLK</span> <span class="o">*</span><span class="n">webblk</span><span class="p">);</span>                                 <span class="o">*/</span>
+<span class="o">/*</span>   <span class="n">Sets</span> <span class="n">up</span> <span class="n">the</span> <span class="n">standard</span> <span class="n">html</span> <span class="n">header</span><span class="p">,</span> <span class="ow">and</span> <span class="n">includes</span> <span class="n">the</span>              <span class="o">*/</span>
+<span class="o">/*</span>   <span class="n">html</span><span class="o">/</span><span class="n">header</span><span class="o">.</span><span class="n">htmlpart</span> <span class="n">file</span><span class="o">.</span>                                      <span class="o">*/</span>
+<span class="o">/*</span>                                                                   <span class="o">*/</span>
+<span class="o">/*</span> <span class="n">void</span> <span class="n">html_footer</span><span class="p">(</span><span class="n">WEBBLK</span> <span class="o">*</span><span class="n">webblk</span><span class="p">);</span>                                 <span class="o">*/</span>
+<span class="o">/*</span>   <span class="n">Sets</span> <span class="n">up</span> <span class="n">the</span> <span class="n">standard</span> <span class="n">html</span> <span class="n">footer</span><span class="p">,</span> <span class="ow">and</span> <span class="n">includes</span> <span class="n">the</span>              <span class="o">*/</span>
+<span class="o">/*</span>   <span class="n">html</span><span class="o">/</span><span class="n">footer</span><span class="o">.</span><span class="n">htmlpart</span> <span class="n">file</span><span class="o">.</span>                                      <span class="o">*/</span>
+<span class="o">/*</span>                                                                   <span class="o">*/</span>
+<span class="o">/*</span> <span class="nb">int</span> <span class="n">html_include</span><span class="p">(</span><span class="n">WEBBLK</span> <span class="o">*</span><span class="n">webblk</span><span class="p">,</span> <span class="n">char</span> <span class="o">*</span><span class="n">filename</span><span class="p">);</span>                 <span class="o">*/</span>
+<span class="o">/*</span>   <span class="n">Includes</span> <span class="n">an</span> <span class="n">html</span> <span class="n">file</span>                                           <span class="o">*/</span>
+<span class="o">/*</span>                                                                   <span class="o">*/</span>
+<span class="o">/*</span>                                                                   <span class="o">*/</span>
+<span class="o">/*</span>                                           <span class="n">Jan</span> <span class="n">Jaeger</span> <span class="o">-</span> <span class="mi">28</span><span class="o">/</span><span class="mi">03</span><span class="o">/</span><span class="mi">2002</span> <span class="o">*/</span>
+
+<span class="c1">#include &quot;hstdinc.h&quot;</span>
+<span class="c1">#include &quot;hercules.h&quot;</span>
+<span class="c1">#include &quot;devtype.h&quot;</span>
+<span class="c1">#include &quot;opcode.h&quot;</span>
+<span class="c1">#include &quot;httpmisc.h&quot;</span>
+
+<span class="c1">#if defined(OPTION_HTTP_SERVER)</span>
+
+<span class="n">void</span> <span class="n">cgibin_test</span><span class="p">(</span><span class="n">WEBBLK</span> <span class="o">*</span><span class="n">webblk</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">html_header</span><span class="p">(</span><span class="n">webblk</span><span class="p">);</span>
+    <span class="n">hprintf</span><span class="p">(</span><span class="n">webblk</span><span class="o">-&gt;</span><span class="n">hsock</span><span class="p">,</span> <span class="s2">&quot;&lt;H2&gt;Sample cgi routine&lt;/H2&gt;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span>
+    <span class="n">html_footer</span><span class="p">(</span><span class="n">webblk</span><span class="p">);</span>
+<span class="p">}</span>
+
+
+<span class="n">HDL_DEPENDENCY_SECTION</span><span class="p">;</span>
+<span class="p">{</span>
+     <span class="n">HDL_DEPENDENCY</span><span class="p">(</span><span class="n">HERCULES</span><span class="p">);</span>
+<span class="o">//</span>   <span class="n">HDL_DEPENDENCY</span><span class="p">(</span><span class="n">REGS</span><span class="p">);</span>
+<span class="o">//</span>   <span class="n">HDL_DEPENDENCY</span><span class="p">(</span><span class="n">DEVBLK</span><span class="p">);</span>
+<span class="o">//</span>   <span class="n">HDL_DEPENDENCY</span><span class="p">(</span><span class="n">SYSBLK</span><span class="p">);</span>
+     <span class="n">HDL_DEPENDENCY</span><span class="p">(</span><span class="n">WEBBLK</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="n">END_DEPENDENCY_SECTION</span><span class="p">;</span>
+
+
+<span class="n">HDL_REGISTER_SECTION</span><span class="p">;</span>
+<span class="p">{</span>
+    <span class="n">HDL_REGISTER</span><span class="p">(</span> <span class="o">/</span><span class="n">cgi</span><span class="o">-</span><span class="nb">bin</span><span class="o">/</span><span class="n">test</span><span class="p">,</span> <span class="n">cgibin_test</span> <span class="p">);</span>
+<span class="p">}</span>
+<span class="n">END_REGISTER_SECTION</span><span class="p">;</span>
+
+
+<span class="n">HDL_RESOLVER_SECTION</span><span class="p">;</span>
+<span class="p">{</span>
+<span class="p">}</span>
+<span class="n">END_RESOLVER_SECTION</span><span class="p">;</span>
+
+
+<span class="n">HDL_FINAL_SECTION</span><span class="p">;</span>
+<span class="p">{</span>
+<span class="p">}</span>
+<span class="n">END_FINAL_SECTION</span><span class="p">;</span>
+
+<span class="c1">#endif /*defined(OPTION_HTTP_SERVER)*/</span>
+
+
+
+<span class="o">/*</span> <span class="n">TESTINS</span><span class="o">.</span><span class="n">C</span>    <span class="n">Test</span> <span class="n">instruction</span>                                     <span class="o">*/</span>
+
+<span class="c1">#include &quot;hercules.h&quot;</span>
+
+<span class="c1">#include &quot;opcode.h&quot;</span>
+
+<span class="o">/*-------------------------------------------------------------------*/</span>
+<span class="o">/*</span> <span class="mi">0000</span> <span class="n">BARF</span>  <span class="o">-</span> <span class="n">Barf</span>                                            <span class="p">[</span><span class="n">RR</span><span class="p">]</span> <span class="o">*/</span>
+<span class="o">/*-------------------------------------------------------------------*/</span>
+<span class="n">DEF_INST</span><span class="p">(</span><span class="n">barf</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="nb">int</span> <span class="n">r1</span><span class="p">,</span> <span class="n">r2</span><span class="p">;</span>                                     <span class="o">/*</span> <span class="n">register</span> <span class="n">values</span>   <span class="o">*/</span>
+
+    <span class="n">RR</span><span class="p">(</span><span class="n">inst</span><span class="p">,</span> <span class="n">regs</span><span class="p">,</span> <span class="n">r1</span><span class="p">,</span> <span class="n">r2</span><span class="p">)</span>
+
+    <span class="n">logmsg</span><span class="p">(</span><span class="s2">&quot;Barf</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span>
+
+    <span class="n">ARCH_DEP</span><span class="p">(</span><span class="n">program_interrupt</span><span class="p">)(</span><span class="n">regs</span><span class="p">,</span> <span class="n">PGM_OPERATION_EXCEPTION</span><span class="p">);</span>
+<span class="p">}</span>
+
+
+<span class="c1">#if !defined(_GEN_ARCH)</span>
+
+<span class="c1">#if defined(_ARCH_NUM_1)</span>
+ <span class="c1">#define  _GEN_ARCH _ARCH_NUM_1</span>
+ <span class="c1">#include &quot;testins.c&quot;</span>
+<span class="c1">#endif</span>
+
+<span class="c1">#if defined(_ARCH_NUM_2)</span>
+ <span class="c1">#undef   _GEN_ARCH</span>
+ <span class="c1">#define  _GEN_ARCH _ARCH_NUM_2</span>
+ <span class="c1">#include &quot;testins.c&quot;</span>
+<span class="c1">#endif</span>
+
+
+<span class="n">HDL_DEPENDENCY_SECTION</span><span class="p">;</span>
+<span class="p">{</span>
+
+<span class="p">}</span> <span class="n">END_DEPENDENCY_SECTION</span><span class="p">;</span>
+
+
+<span class="n">HDL_INSTRUCTION_SECTION</span><span class="p">;</span>
+<span class="p">{</span>
+    <span class="n">HDL_DEF_INST</span><span class="p">(</span><span class="n">HDL_INSTARCH_ALL</span><span class="p">,</span><span class="mh">0x00</span><span class="p">,</span><span class="n">barf</span><span class="p">);</span>
+
+<span class="p">}</span> <span class="n">END_INSTRUCTION_SECTION</span><span class="p">;</span>
+
+<span class="c1">#endif /*!defined(_GEN_ARCH)*/</span>
+</pre></div>
+</div>
+<section id="important-hercules-internals-build-information-relating-to-hdl">
+<h3>IMPORTANT HERCULES INTERNALS BUILD INFORMATION RELATING TO HDL<a class="headerlink" href="#important-hercules-internals-build-information-relating-to-hdl" title="Permalink to this heading">¶</a></h3>
+<p>(our <code class="docutils literal notranslate"><span class="pre">DLL_EXPORT</span></code> and <code class="docutils literal notranslate"><span class="pre">DLL_IMPORT</span></code> design)</p>
+<p>Here’s the poop. Any function that needs to be exported/imported to
+another MODULE (i.e. ‘module’ is defined as .DLL or .SO, etc), <strong>MUST</strong>
+have its functon declaration defined in the
+<a class="reference external" href="../hexterns.h">hexterns.h</a> header and <em>ONLY</em> in the
+<a class="reference external" href="../hexterns.h">hexterns.h</a> header!</p>
+<p>That is to say, you <em>must</em> <strong>NOT</strong> declare the function in a separate
+header file! <em>(That might be the way you normally do things for a normal
+project, but that is NOT the way you do it with Hercules)</em></p>
+<section id="step-1">
+<h4><em>STEP 1:</em><a class="headerlink" href="#step-1" title="Permalink to this heading">¶</a></h4>
+<p>You need to ensure your .c <em>source</em> member always begins with the
+following very specific header file #include sequence:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/*</span>  <span class="n">XXXXXX</span><span class="o">.</span><span class="n">C</span>    <span class="p">(</span><span class="n">C</span><span class="p">)</span> <span class="n">Copyright</span> <span class="n">XXXXXXXXXXX</span> <span class="o">&amp;</span> <span class="n">Others</span><span class="p">,</span> <span class="n">yyyy</span><span class="o">-</span><span class="mi">2011</span>        <span class="o">*/</span>
+<span class="o">/*</span>              <span class="n">Module</span> <span class="n">description</span> <span class="n">goes</span> <span class="n">here</span><span class="o">...</span>                      <span class="o">*/</span>
+<span class="o">/*</span>                                                                   <span class="o">*/</span>
+<span class="o">/*</span>   <span class="n">Released</span> <span class="n">under</span> <span class="s2">&quot;The Q Public License Version 1&quot;</span>                 <span class="o">*/</span>
+<span class="o">/*</span>   <span class="p">(</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">hercules</span><span class="o">-</span><span class="mf">390.</span><span class="n">org</span><span class="o">/</span><span class="n">herclic</span><span class="o">.</span><span class="n">html</span><span class="p">)</span> <span class="k">as</span> <span class="n">modifications</span>     <span class="o">*/</span>
+<span class="o">/*</span>   <span class="n">to</span> <span class="n">Hercules</span><span class="o">.</span>                                                    <span class="o">*/</span>
+
+
+<span class="c1">#include &quot;hstdinc.h&quot;</span>
+
+<span class="c1">#define _XXXXXXX_C_</span>
+<span class="c1">#define _ZZZZZZZ_DLL_</span>
+
+<span class="c1">#include &quot;hercules.h&quot;</span>
+<span class="o">...</span><span class="p">(</span><span class="n">other</span> <span class="c1">#includes go here)...</span>
+
+
+<span class="n">DLL_EXPORT</span>  <span class="nb">int</span> <span class="n">myfunction1</span> <span class="p">(</span><span class="n">DEVBLK</span><span class="o">*</span><span class="p">,</span> <span class="nb">int</span> <span class="n">myarg</span><span class="p">,</span> <span class="nb">int</span> <span class="n">otherarg</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="o">...</span> <span class="n">function</span> <span class="n">body</span> <span class="o">...</span>
+<span class="p">}</span>
+
+
+<span class="n">DLL_EXPORT</span>  <span class="nb">int</span> <span class="n">myfunction2</span> <span class="p">(</span><span class="n">DEVBLK</span><span class="o">*</span><span class="p">,</span> <span class="nb">int</span> <span class="n">myarg</span><span class="p">,</span> <span class="nb">int</span> <span class="n">otherarg</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="o">...</span> <span class="n">function</span> <span class="n">body</span> <span class="o">...</span>
+<span class="p">}</span>
+
+
+<span class="n">DLL_EXPORT</span>  <span class="nb">int</span> <span class="n">myfunction3</span> <span class="p">(</span><span class="n">DEVBLK</span><span class="o">*</span><span class="p">,</span> <span class="nb">int</span> <span class="n">myarg</span><span class="p">,</span> <span class="nb">int</span> <span class="n">otherarg</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="o">...</span> <span class="n">function</span> <span class="n">body</span> <span class="o">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>where ‘XXXXX’ is the name of your source member, ‘ZZZZZ’ is the name of
+the MODULE (.dll or .so) that your code will be a part of, and
+<code class="docutils literal notranslate"><span class="pre">DLL_EXPORT</span></code> is added to the beginning of each function that needs to
+be exported.</p>
+<p>Refer to the <code class="docutils literal notranslate"><span class="pre">OBJ_CODE.msvc</span></code> and/or <a class="reference external" href="../Makefile.am">Makefile.am</a>
+members to see how all of Hercules code is divided into separate
+loadable modules (DLLs) so you know which module (DLL) your function
+should be a part of.</p>
+</section>
+<section id="step-2">
+<h4><em>STEP 2:</em><a class="headerlink" href="#step-2" title="Permalink to this heading">¶</a></h4>
+<p>Add a new entry at the <em>beginning</em> of <a class="reference external" href="../hexterns.h">hexterns.h</a> as
+follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#ifndef _XXXXXXX_C_</span>
+<span class="c1">#ifndef _ZZZZZZZ_DLL_</span>
+<span class="c1">#define MMMM_DLL_IMPORT  DLL_IMPORT</span>
+<span class="c1">#else</span>
+<span class="c1">#define MMMM_DLL_IMPORT  extern</span>
+<span class="c1">#endif</span>
+<span class="c1">#else</span>
+<span class="c1">#define MMMM_DLL_IMPORT  DLL_EXPORT</span>
+<span class="c1">#endif</span>
+</pre></div>
+</div>
+<p>where ‘MMMM’ is a unique 2-4 character prefix of your own choosing that
+identifies your source member export (e.g. <code class="docutils literal notranslate"><span class="pre">HUTL_DLL_IMPORT</span></code>).</p>
+</section>
+<section id="step-3">
+<h4><em>STEP 3:</em><a class="headerlink" href="#step-3" title="Permalink to this heading">¶</a></h4>
+<p>Add your exported function declarations to <em>end</em> of
+<a class="reference external" href="../hexterns.h">hexterns.h</a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/*</span> <span class="n">Functions</span> <span class="ow">in</span> <span class="n">module</span> <span class="n">xxxxxxx</span><span class="o">.</span><span class="n">c</span> <span class="o">*/</span>
+<span class="n">MMMM_DLL_IMPORT</span> <span class="nb">int</span> <span class="n">myfunction1</span> <span class="p">(</span><span class="n">DEVBLK</span><span class="o">*</span><span class="p">,</span> <span class="nb">int</span> <span class="n">myarg</span><span class="p">,</span> <span class="nb">int</span> <span class="n">otherarg</span><span class="p">);</span>
+<span class="n">MMMM_DLL_IMPORT</span> <span class="nb">int</span> <span class="n">myfunction2</span> <span class="p">(</span><span class="n">DEVBLK</span><span class="o">*</span><span class="p">,</span> <span class="nb">int</span> <span class="n">myarg</span><span class="p">,</span> <span class="nb">int</span> <span class="n">otherarg</span><span class="p">);</span>
+<span class="n">MMMM_DLL_IMPORT</span> <span class="nb">int</span> <span class="n">myfunction3</span> <span class="p">(</span><span class="n">DEVBLK</span><span class="o">*</span><span class="p">,</span> <span class="nb">int</span> <span class="n">myarg</span><span class="p">,</span> <span class="nb">int</span> <span class="n">otherarg</span><span class="p">);</span>
+<span class="o">...</span><span class="n">etc</span><span class="o">...</span>
+</pre></div>
+</div>
+</section>
+<section id="step-4">
+<h4><em>STEP 4:</em><a class="headerlink" href="#step-4" title="Permalink to this heading">¶</a></h4>
+<p>Update <em>both</em> the <code class="docutils literal notranslate"><span class="pre">OBJ_CODE.msvc</span></code> and <a class="reference external" href="../Makefile.am">Makefile.am</a>
+members with your new source member. Be sure to update <em>BOTH</em> files,
+e.g.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>---(Makefile.am)---
+
+
+  libhercu_la_SOURCES = version.c    \
+                        hscutl.c     \
+                        codepage.c   \
+                        logger.c     \
+                        logmsg.c     \
+                        hdl.c        \
+                        hostinfo.c   \
+                        hsocket.c    \
+                        memrchr.c    \
+                        parser.c     \
+                        pttrace.c    \
+                        xxxxxxxx.c   \
+                        $(FTHREADS)  \
+                        $(LTDL)
+
+
+---(OBJ_CODE.msvc)---
+
+
+    hutil_OBJ = \
+        $(O)codepage.obj \
+        $(O)fthreads.obj \
+        $(O)getopt.obj   \
+        $(O)hdl.obj      \
+        $(O)hostinfo.obj \
+        $(O)hscutl.obj   \
+        $(O)logger.obj   \
+        $(O)logmsg.obj   \
+        $(O)memrchr.obj  \
+        $(O)parser.obj   \
+        $(O)pttrace.obj  \
+        $(O)version.obj  \
+        $(O)hsocket.obj  \
+        $(O)w32util.obj  \
+        $(O)xxxxxxxx.obj
+</pre></div>
+</div>
+<p>That’s it. That’s all you should have to do.</p>
+<p>Again, you <em>may</em> use a separate #include header file for your new source
+member with <em>NON-EXPORTED</em> functions declared within it, but any
+function you need to export to another module <em>must</em> <strong>not</strong> be declared
+there. The function must instead be declared in
+<a class="reference external" href="../hexterns.h">hexterns.h</a> as described above.</p>
+</section>
+</section>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Read the Docs</span>
+      v: fovea1959
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+      <dl>
+        <dt>Languages</dt>
+        
+           <strong> 
+          <dd><a href="/herc-docs-demo/en/fovea1959/">en</a></dd>
+           </strong> 
+        
+      </dl>
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+           <strong> 
+          <dd><a href="/herc-docs-demo/en/fovea1959/">fovea1959</a></dd>
+           </strong> 
+        
+          
+          <dd><a href="/herc-docs-demo/en/master/">master</a></dd>
+          
+        
+          
+          <dd><a href="/herc-docs-demo/en/0.0/">0.0</a></dd>
+          
+        
+          
+          <dd><a href="/herc-docs-demo/en/1.0/">1.0</a></dd>
+          
+        
+      </dl>
+      
+      
+      <dl>
+        <dt>Downloads</dt>
+        
+          <dd><a href="/herc-docs-demo/en/fovea1959/Hercules Documentation Demo-docs_en_fovea1959.pdf">pdf</a></dd>
+        
+          <dd><a href="/herc-docs-demo/en/fovea1959/Hercules Documentation Demo-docs_en_fovea1959.epub">epub</a></dd>
+        
+          <dd><a href="/herc-docs-demo/en/fovea1959/Hercules Documentation Demo-docs_en_fovea1959.html.tar.gz">tarred HTML</a></dd>
+        
+          <dd><a href="/herc-docs-demo/en/fovea1959/Hercules Documentation Demo-docs_en_fovea1959.single.html.tar.gz">tarred single file HTML</a></dd>
+        
+      </dl>
+      
+      
+      <hr/>
+      <a href="https://tech.michaelaltfield.net/2020/07/18/sphinx-rtd-github-pages-1/">Continuous Documentation</a> hosting provided by <a href="https://pages.github.com/">GitHub Pages</a>.
+ 
+    </div>
+  </div>
+
+ 
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,372 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Guest Access To Host IP Stack - The TCPIP (X’75’) Instruction &mdash; Hercules Documentation Demo 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link href="_static/herc_style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Hercules Documentation Demo
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                master
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="hercinst.html">Building and Installing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration File</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercdasd.html">Creating DASD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercoper.html">Operating Procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercsupp.html">Technical Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercfaq.html">Frequently-Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="messages.html">Messages and Codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aa_auxdocs.html">Supporting documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_a.html">Appendix A - Documentation Standards</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Hercules Documentation Demo</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Guest Access To Host IP Stack - The TCPIP (X’75’) Instruction</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/README.TCPIP.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="guest-access-to-host-ip-stack-the-tcpip-x75-instruction">
+<h1>Guest Access To Host IP Stack - The TCPIP (X’75’) Instruction<a class="headerlink" href="#guest-access-to-host-ip-stack-the-tcpip-x75-instruction" title="Permalink to this heading">¶</a></h1>
+<p>Around 2002 Jason Winter developed a Hercules extension allowing the
+guest OS to access the IP stack of the host OS by means of a special
+instruction that does not exist on real S/3x0, ESA/390 or z/Architecture
+hardware. The instruction is in RX format, and its operation code is
+X’75’:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">75</span><span class="n">rxbddd</span> <span class="p">[</span><span class="n">RX</span><span class="o">-</span><span class="n">a</span><span class="p">]</span>    <span class="n">TCPIP</span>  <span class="n">r1</span><span class="p">,</span><span class="n">ddd</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span><span class="n">b2</span><span class="p">)</span>
+
+             <span class="n">r1</span><span class="p">:</span>  <span class="mi">0</span><span class="o">-</span><span class="mi">15</span>
+             <span class="n">x2</span><span class="p">:</span>  <span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="o">-</span><span class="mi">13</span>
+             <span class="n">b2</span><span class="p">:</span>  <span class="mi">5</span><span class="o">-</span><span class="mi">13</span>
+</pre></div>
+</div>
+<p>As opposed to “classic” instructions, the TCPIP (X’75’) instruction
+preserves a state between calls, an essential requirement to transfer IP
+traffic back and forth between the host and the guest. Due to this fact,
+setting up for native execution of the instruction is complex.</p>
+<p>To avoid having application programmers go through this complexity, at
+the time of this writing two higher-level interfaces are available,
+allowing easy and standardized access to the functionality provided by
+the TCPIP instruction:</p>
+<ul class="simple">
+<li><p>A socket API in Jason’s JCC-Library, which provides the well-known C
+socket programming functions. See the JCC-Library help in the JCC
+distribution (found in <code class="docutils literal notranslate"><span class="pre">TK4-.JASON.JCC.ZIP</span></code> on TK4- systems) for a
+description of the functions available.</p></li>
+<li><p>TCP/IP for MVS 3.8 Assembler by Shelby Beach, a programming interface
+that is source code compatible to IBM’s well-known EZASMI API.
+Comprehensive documentation of all available functions is part of the
+installer found at <code class="docutils literal notranslate"><span class="pre">TK4-.SHELBY.EZASMI.V100.ZIP</span></code> on TK4- systems.</p></li>
+</ul>
+<section id="caution">
+<h2>CAUTION<a class="headerlink" href="#caution" title="Permalink to this heading">¶</a></h2>
+<p>The TCPIP instruction gives a guest program the very same access to the
+host’s IP stack that the host process running the Hercules instance has.
+Allowing every guest program this type of access may be undesirable,
+particularly when the Hercules process runs with elevated privileges.</p>
+<p>In addition, one guest program can easily interfere with the IP
+communications of any other guest program by hijacking the other
+program’s socket identifiers.</p>
+<p>In sum, a malicious user with access to the TCPIP instruction could
+severely compromise the guest’s <em>and the host’s</em> integrity. A problem
+state instruction with this type of capability clearly does not comply
+with the specifications of the architectures emulated by Hercules.</p>
+<p>To allow users to overcome these weaknesses of the TCPIP instruction,
+its implementation on SDL Hyperion comes in two flavors: As a supervisor
+state instruction and as a problem state instruction, both of which are
+functionally identical. Enabling the TCPIP instruction will default to
+the supervisor state instruction. That way, only programs running in
+supervisor state can execute the instruction, which is considered being
+compliant with the emulated architectures.</p>
+<p>Note that both TCPIP APIs currently existing for S/370 operating systems
+(C socket library and EZASMI) rely on the instruction being available in
+problem state, which is not architecturally compliant. <strong>Using the
+problem state flavor of the instruction is at the Hercules user’s sole
+risk.</strong></p>
+<p>Note also, that currently no software exists that would be able to make
+use of the supervisor state flavor of the TCPIP instruction in a
+controlled manner.</p>
+</section>
+<section id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this heading">¶</a></h2>
+<p>The availability and flavor of the instruction is controlled by three
+elements:</p>
+<ol class="arabic simple">
+<li><p>The compile time FEATURE_TCPIP_EXTENSION definition: To allow
+enabling of the TCPIP instruction, the featxxx.h header files
+corresponding to the relevant architectures (feat370.h, feat390.h,
+feat900.h) must contain the statement:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#define  FEATURE_TCPIP_EXTENSION</span>
+</pre></div>
+</div>
+<p>As shipped, SDL Hyperion 4.2 has this feature defined <em>only</em> for the
+S/370 architecture (feat370.h).</p>
+<ol class="arabic simple" start="2">
+<li><p>By default, the TCPIP instruction is disabled at run time, regardless
+of whether the compile time FEATURE_TCPIP_EXTENSION was defined or
+not. If FEATURE_TCPIP_EXTENSION was defined for the architecture
+currently being used, the supervisor state flavor of the TCPIP
+instruction can only be enabled by issuing the command:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">facility</span> <span class="n">enable</span> <span class="n">HERC_TCPIP_EXTENSION</span>
+</pre></div>
+</div>
+<p>before IPLing the guest operating system.</p>
+<ol class="arabic simple" start="3">
+<li><p>If the problem state variation of the TCPIP instruction is desired,
+then after having enabled the supervisor state flavor as described
+above, the command:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">facility</span> <span class="n">enable</span> <span class="n">HERC_TCPIP_PROB_STATE</span>
+</pre></div>
+</div>
+<p>must then <em>also</em> be issued before IPLing the operating system.</p>
+</section>
+<section id="copyright">
+<h2>Copyright<a class="headerlink" href="#copyright" title="Permalink to this heading">¶</a></h2>
+<p>Refer to the opening comments in the “x75.c” and “tcpip.c” source file
+members for copyright information.</p>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Read the Docs</span>
+      v: master
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+      <dl>
+        <dt>Languages</dt>
+        
+           <strong> 
+          <dd><a href="/herc-docs-demo/en/master/">en</a></dd>
+           </strong> 
+        
+      </dl>
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+          
+          <dd><a href="/herc-docs-demo/en/fovea1959/">fovea1959</a></dd>
+          
+        
+           <strong> 
+          <dd><a href="/herc-docs-demo/en/master/">master</a></dd>
+           </strong> 
+        
+          
+          <dd><a href="/herc-docs-demo/en/0.0/">0.0</a></dd>
+          
+        
+          
+          <dd><a href="/herc-docs-demo/en/1.0/">1.0</a></dd>
+          
+        
+      </dl>
+      
+      
+      <dl>
+        <dt>Downloads</dt>
+        
+          <dd><a href="/herc-docs-demo/en/master/Hercules Documentation Demo-docs_en_master.pdf">pdf</a></dd>
+        
+          <dd><a href="/herc-docs-demo/en/master/Hercules Documentation Demo-docs_en_master.epub">epub</a></dd>
+        
+          <dd><a href="/herc-docs-demo/en/master/Hercules Documentation Demo-docs_en_master.html.tar.gz">tarred HTML</a></dd>
+        
+          <dd><a href="/herc-docs-demo/en/master/Hercules Documentation Demo-docs_en_master.single.html.tar.gz">tarred single file HTML</a></dd>
+        
+      </dl>
+      
+      
+      <hr/>
+      <a href="https://tech.michaelaltfield.net/2020/07/18/sphinx-rtd-github-pages-1/">Continuous Documentation</a> hosting provided by <a href="https://pages.github.com/">GitHub Pages</a>.
+ 
+    </div>
+  </div>
+
+ 
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,412 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Preliminary 2703 BSC Support &mdash; Hercules Documentation Demo 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link href="_static/herc_style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Hercules Documentation Demo
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                fovea1959
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="hercinst.html">Building and Installing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration File</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercdasd.html">Creating DASD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercoper.html">Operating Procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercsupp.html">Technical Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercfaq.html">Frequently-Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="messages.html">Messages and Codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aa_auxdocs.html">Supporting documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_a.html">Appendix A - Documentation Standards</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Hercules Documentation Demo</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Preliminary 2703 BSC Support</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/README.COMMADPT.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="preliminary-2703-bsc-support">
+<h1>Preliminary 2703 BSC Support<a class="headerlink" href="#preliminary-2703-bsc-support" title="Permalink to this heading">¶</a></h1>
+<p>Only allows Point to Point connection.</p>
+<section id="hercules-device-statement">
+<h2>Hercules device statement<a class="headerlink" href="#hercules-device-statement" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CCUU</span> <span class="mi">2703</span> <span class="n">lport</span><span class="o">=</span><span class="n">port</span> <span class="n">lhost</span><span class="o">=</span><span class="n">host</span> <span class="n">rhost</span><span class="o">=</span><span class="n">host</span> <span class="n">rport</span><span class="o">=</span><span class="n">port</span> <span class="n">dial</span><span class="o">=</span><span class="n">IN</span><span class="o">|</span><span class="n">OUT</span><span class="o">|</span><span class="n">INOUT</span><span class="o">|</span><span class="n">NO</span>
+          <span class="p">[</span><span class="n">pto</span><span class="o">=</span><span class="n">nnn</span><span class="o">|</span><span class="mi">0</span><span class="o">|-</span><span class="mi">1</span><span class="p">]</span> <span class="p">[</span><span class="n">rto</span><span class="o">=</span><span class="n">nnn</span><span class="o">|</span><span class="mi">0</span><span class="o">|-</span><span class="mi">1</span><span class="p">]</span> <span class="p">[</span><span class="n">eto</span><span class="o">=</span><span class="n">nnn</span><span class="o">|</span><span class="mi">0</span><span class="o">|-</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="n">lport</span><span class="p">:</span> <span class="n">the</span> <span class="n">local</span> <span class="n">TCP</span> <span class="n">port</span> <span class="n">number</span> <span class="ow">or</span> <span class="n">service</span> <span class="n">name</span> <span class="n">on</span> <span class="n">which</span> <span class="n">the</span> <span class="n">line</span> <span class="n">will</span> <span class="n">listen</span>
+        <span class="k">for</span> <span class="n">incoming</span> <span class="n">TCP</span> <span class="n">calls</span>
+        <span class="n">This</span> <span class="n">parameter</span> <span class="ow">is</span> <span class="n">irrelevant</span> <span class="ow">and</span> <span class="ow">is</span> <span class="n">ignored</span> <span class="k">for</span> <span class="n">DIAL</span><span class="o">=</span><span class="n">OUT</span>
+        <span class="k">for</span> <span class="n">DIAL</span><span class="o">=</span><span class="n">IN</span><span class="o">|</span><span class="n">INOUT</span><span class="o">|</span><span class="n">NO</span><span class="p">,</span> <span class="n">this</span> <span class="n">parameter</span> <span class="ow">is</span> <span class="n">mandatory</span>
+
+<span class="n">cwlhost</span><span class="p">:</span> <span class="n">The</span> <span class="n">local</span> <span class="n">interface</span> <span class="n">IP</span> <span class="n">address</span> <span class="n">on</span> <span class="n">which</span> <span class="n">to</span> <span class="n">listen</span><span class="o">.</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">specified</span><span class="p">,</span> <span class="nb">all</span> <span class="n">interfaces</span> <span class="n">will</span> <span class="n">be</span> <span class="n">used</span><span class="o">.</span>
+        <span class="n">ex</span><span class="p">:</span>
+        <span class="n">lhost</span><span class="o">=</span><span class="mf">127.0.0.1</span> <span class="p">:</span> <span class="n">Only</span> <span class="n">accept</span> <span class="n">calls</span> <span class="kn">from</span> <span class="nn">local</span> <span class="n">host</span>
+        <span class="n">lhost</span><span class="o">=</span><span class="mf">192.168.0.1</span> <span class="p">:</span> <span class="n">Only</span> <span class="n">accept</span> <span class="n">calls</span> <span class="kn">from</span> <span class="nn">hosts</span>
+                <span class="n">that</span> <span class="n">can</span> <span class="n">be</span> <span class="n">routed</span> <span class="n">through</span> <span class="n">the</span> <span class="n">interface</span>
+                <span class="n">that</span> <span class="n">has</span> <span class="n">an</span> <span class="n">IP</span> <span class="n">address</span> <span class="n">of</span> <span class="mf">192.168.0.1</span>
+                <span class="n">If</span> <span class="n">there</span> <span class="ow">is</span> <span class="n">no</span> <span class="mf">192.168.0.1</span> <span class="n">local</span> <span class="n">IP</span> <span class="n">address</span><span class="p">,</span>
+                <span class="n">this</span> <span class="n">will</span> <span class="n">fail</span><span class="o">.</span>
+        <span class="n">This</span> <span class="n">parameter</span> <span class="ow">is</span> <span class="n">irrelevant</span> <span class="ow">and</span> <span class="ow">is</span> <span class="n">ignored</span> <span class="k">for</span> <span class="n">DIAL</span><span class="o">=</span><span class="n">OUT</span>
+        <span class="k">for</span> <span class="n">DIAL</span><span class="o">=</span><span class="n">IN</span><span class="o">|</span><span class="n">INOUT</span><span class="o">|</span><span class="n">NO</span><span class="p">,</span> <span class="n">this</span> <span class="n">parameter</span> <span class="ow">is</span> <span class="n">mandatory</span>
+
+
+<span class="n">rhost</span><span class="p">:</span> <span class="n">the</span> <span class="n">remote</span> <span class="n">host</span> <span class="n">ip</span> <span class="n">address</span> <span class="ow">or</span> <span class="n">name</span>
+        <span class="n">This</span> <span class="n">parameter</span> <span class="ow">is</span> <span class="n">irrelevant</span> <span class="ow">and</span> <span class="ow">is</span> <span class="n">ignored</span> <span class="k">for</span> <span class="n">DIAL</span><span class="o">=</span><span class="n">IN</span>
+        <span class="k">for</span> <span class="n">DIAL</span><span class="o">=</span><span class="n">OUT</span><span class="o">|</span><span class="n">INOUT</span><span class="o">|</span><span class="n">NO</span><span class="p">,</span> <span class="n">this</span> <span class="n">parameter</span> <span class="ow">is</span> <span class="n">mandatory</span>
+
+<span class="n">rport</span><span class="p">:</span> <span class="n">the</span> <span class="n">remote</span> <span class="n">port</span> <span class="n">number</span> <span class="ow">or</span> <span class="n">service</span> <span class="n">name</span>
+        <span class="n">This</span> <span class="n">parameter</span> <span class="ow">is</span> <span class="n">irrelevant</span> <span class="ow">and</span> <span class="ow">is</span> <span class="n">ignored</span> <span class="k">for</span> <span class="n">DIAL</span><span class="o">=</span><span class="n">IN</span>
+        <span class="k">for</span> <span class="n">DIAL</span><span class="o">=</span><span class="n">OUT</span><span class="o">|</span><span class="n">INOUT</span><span class="o">|</span><span class="n">NO</span><span class="p">,</span> <span class="n">this</span> <span class="n">parameter</span> <span class="ow">is</span> <span class="n">mandatory</span>
+
+<span class="n">rto</span><span class="p">,</span> <span class="n">pto</span><span class="p">,</span> <span class="n">eto</span><span class="p">:</span> <span class="n">Read</span><span class="p">,</span> <span class="n">Poll</span> <span class="ow">and</span> <span class="n">Enable</span> <span class="n">Timeout</span> <span class="n">values</span> <span class="ow">in</span> <span class="n">miliseconds</span><span class="o">.</span>
+        <span class="n">specifying</span> <span class="mi">0</span> <span class="n">means</span> <span class="n">No</span> <span class="n">Timeout</span> <span class="p">(</span><span class="n">infinite</span> <span class="n">wait</span><span class="p">)</span><span class="o">.</span> <span class="o">-</span><span class="mi">1</span> <span class="n">Means</span> <span class="n">immediate</span>
+        <span class="n">timeout</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>The read timeout is how long the handler will wait for an ending
+character after the last character was received or the I/O initiated.
+The read timeout default is 3000 Miliseconds (3 Seconds)</p>
+<p>The poll timeout is how long the handler will wait for a polled station
+to respond to a poll request. The poll timeout default is 3000
+Miliseconds (3 Seconds)</p>
+<p>The enable timeout is how long the handler will wait for the TCP
+connection to be established. the enable timeout default is 10000
+Miliseconds (10 Seconds), except if DIAL=NO is also specified, in which
+case the enable timeout defaults to 0.</p>
+<p>Note: the ETO parameter is ignored if DIAL=NO is not specified. For a
+dialed line, there is no enable timeout. If the eto parameter is
+specified and DIAL is not “NO”, then a warning message is issued and the
+parameter is ignored.</p>
+<p><code class="docutils literal notranslate"><span class="pre">dial=IN</span></code>|<code class="docutils literal notranslate"><span class="pre">OUT</span></code>|<code class="docutils literal notranslate"><span class="pre">INOUT</span></code>|<code class="docutils literal notranslate"><span class="pre">NO</span></code> Indicate call
+direction (if any). This parameter also modifies the behaviour of
+certain CCWS as well as TCP incoming call handling :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ENABLE</span> <span class="p">:</span>
+        <span class="n">DIAL</span><span class="o">=</span><span class="n">IN</span><span class="o">|</span><span class="n">DIAL</span><span class="o">=</span><span class="n">INOUT</span>
+                <span class="n">Wait</span> <span class="n">forever</span> <span class="k">for</span> <span class="n">an</span> <span class="n">incoming</span> <span class="n">call</span>
+
+        <span class="n">DIAL</span><span class="o">=</span><span class="n">NO</span>
+                <span class="n">Completes</span> <span class="n">immediatelly</span> <span class="k">if</span> <span class="n">a</span> <span class="n">call</span>
+                <span class="ow">is</span> <span class="n">already</span> <span class="n">present</span>
+                <span class="n">Otherwise</span><span class="p">,</span> <span class="n">attemps</span> <span class="n">connecting</span> <span class="n">to</span> <span class="n">the</span>
+                <span class="n">remote</span> <span class="n">end</span>
+                <span class="k">if</span> <span class="n">the</span> <span class="n">call</span> <span class="n">fails</span><span class="p">,</span> <span class="n">ENABLE</span> <span class="n">exits</span> <span class="k">with</span>
+                <span class="n">Int</span> <span class="n">Req</span> <span class="n">status</span>
+        <span class="n">DIAL</span><span class="o">=</span><span class="n">OUT</span>
+                <span class="n">Enable</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">a</span> <span class="n">valid</span> <span class="n">CCW</span> <span class="k">for</span> <span class="n">a</span> <span class="n">DIALOUT</span>
+                <span class="n">only</span> <span class="n">line</span>
+<span class="n">DIAL</span> <span class="p">:</span>
+        <span class="n">DIAL</span><span class="o">=</span><span class="n">IN</span><span class="o">|</span><span class="n">DIAL</span><span class="o">=</span><span class="n">NO</span>
+                <span class="n">DIAL</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">a</span> <span class="n">valid</span> <span class="n">CCW</span> <span class="k">for</span> <span class="n">a</span> <span class="n">DIAL</span> <span class="n">IN</span>
+                <span class="ow">or</span> <span class="n">non</span><span class="o">-</span><span class="n">switched</span> <span class="n">line</span>
+        <span class="n">DIAL</span><span class="o">=</span><span class="n">OUT</span><span class="o">|</span><span class="n">DIAL</span><span class="o">=</span><span class="n">INOUT</span>
+                <span class="n">The</span> <span class="n">outgoing</span> <span class="n">call</span> <span class="ow">is</span> <span class="n">attempted</span>
+
+<span class="n">Incomming</span> <span class="n">TCP</span> <span class="n">call</span> <span class="p">:</span>
+        <span class="n">In</span> <span class="nb">any</span> <span class="n">case</span><span class="p">,</span> <span class="k">if</span> <span class="n">a</span> <span class="n">call</span> <span class="ow">is</span> <span class="n">already</span> <span class="n">present</span><span class="p">,</span> <span class="n">the</span>
+        <span class="n">call</span> <span class="ow">is</span> <span class="n">rejected</span><span class="o">.</span>
+
+        <span class="n">DIAL</span><span class="o">=</span><span class="n">NO</span> <span class="p">:</span>
+                <span class="n">The</span> <span class="n">call</span> <span class="ow">is</span> <span class="n">accepted</span><span class="p">,</span> <span class="n">even</span> <span class="k">if</span> <span class="n">no</span> <span class="n">CCW</span> <span class="ow">is</span>
+                <span class="n">currently</span> <span class="n">executing</span>
+
+        <span class="n">DIAL</span><span class="o">=</span><span class="n">OUT</span> <span class="p">:</span>
+                <span class="n">The</span> <span class="n">call</span> <span class="ow">is</span> <span class="n">rejected</span>
+
+        <span class="n">DIAL</span><span class="o">=</span><span class="n">IN</span><span class="o">|</span><span class="n">DIAL</span><span class="o">=</span><span class="n">INOUT</span>
+                <span class="n">The</span> <span class="n">call</span> <span class="ow">is</span> <span class="n">accepted</span> <span class="k">if</span> <span class="n">the</span> <span class="n">line</span> <span class="ow">is</span> <span class="n">currently</span>
+                <span class="n">executing</span> <span class="n">an</span> <span class="n">ENABLE</span> <span class="n">ccw</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+<section id="the-communication-protocol">
+<h2>The communication protocol<a class="headerlink" href="#the-communication-protocol" title="Permalink to this heading">¶</a></h2>
+<p>The communication protocol is basic. Every character written by the
+guest program with a WRITE CCW is transfered to the remote end,
+untranslated and untouched (except for Transparent BSC rules which deem
+that DLE characters are doubled when the program has previously written
+a DLE/STX sequence).</p>
+</section>
+<section id="dial-data-format">
+<h2>Dial data format<a class="headerlink" href="#dial-data-format" title="Permalink to this heading">¶</a></h2>
+<p>Dial data is originally as follows :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="n">x</span> <span class="n">x</span> <span class="n">x</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="p">:</span> <span class="n">Dial</span> <span class="c1"># 0</span>
+  <span class="o">.........</span>
+<span class="n">x</span> <span class="n">x</span> <span class="n">x</span> <span class="n">x</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span> <span class="p">:</span> <span class="n">Dial</span> <span class="c1"># 9</span>
+<span class="n">x</span> <span class="n">x</span> <span class="n">x</span> <span class="n">x</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="p">:</span> <span class="n">EON</span>
+<span class="n">x</span> <span class="n">x</span> <span class="n">x</span> <span class="n">x</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">1</span> <span class="p">:</span> <span class="n">SEP</span>
+</pre></div>
+</div>
+<p>In order to perform an outgoing call, the data must follow these
+specifications:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">N</span><span class="p">[</span><span class="n">N</span><span class="p">[</span><span class="n">N</span><span class="p">]]</span><span class="n">SEPN</span><span class="p">[</span><span class="n">N</span><span class="p">[</span><span class="n">N</span><span class="p">]]</span><span class="n">SEPN</span><span class="p">[</span><span class="n">N</span><span class="p">[</span><span class="n">N</span><span class="p">]]</span><span class="n">SEPN</span><span class="p">[</span><span class="n">N</span><span class="p">[</span><span class="n">N</span><span class="p">]]]</span><span class="n">SEPN</span><span class="p">[</span><span class="o">..</span><span class="p">[</span><span class="n">N</span><span class="p">]][</span><span class="n">EON</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Where N is any dialing number from 0 to 9 and SEP is the separator.</p>
+<p>The 4 first group of digits represent the IP address. The last group
+represent a TCP port number. For example (* is the SEP character
+representation):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">192</span><span class="o">*</span><span class="mi">168</span><span class="o">*</span><span class="mi">0</span><span class="o">*</span><span class="mi">1</span><span class="o">*</span><span class="mi">8888</span> <span class="p">:</span> <span class="n">will</span> <span class="n">issue</span> <span class="n">a</span> <span class="n">TCP</span> <span class="n">connection</span> <span class="n">to</span> <span class="mf">192.168.0.1</span> <span class="n">port</span> <span class="mi">8888</span>
+</pre></div>
+</div>
+<p>The EON is optional. If it is present, it must be the last character of
+the dial data.</p>
+</section>
+<section id="bugs-caveats">
+<h2>Bugs, Caveats<a class="headerlink" href="#bugs-caveats" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>The Address Prepare is not implemented</p></li>
+<li><p>The POLL CCW Has not been tested</p></li>
+<li><p>Group DIAL IN is not implemented</p></li>
+<li><p>DIAL CCW Not tested</p></li>
+<li><p>There is 1 thread per line, when there should be 1 thread for ALL
+lines.</p></li>
+<li><p>MAXDEVT may have to be adjusted under Windows to accomodate for a
+large number of lines (because some I/O may take an indefinite amount
+of time).</p></li>
+<li><p>There is no ‘REAL’ BSC line support yet.</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Read the Docs</span>
+      v: fovea1959
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+      <dl>
+        <dt>Languages</dt>
+        
+           <strong> 
+          <dd><a href="/herc-docs-demo/en/fovea1959/">en</a></dd>
+           </strong> 
+        
+      </dl>
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+           <strong> 
+          <dd><a href="/herc-docs-demo/en/fovea1959/">fovea1959</a></dd>
+           </strong> 
+        
+          
+          <dd><a href="/herc-docs-demo/en/master/">master</a></dd>
+          
+        
+          
+          <dd><a href="/herc-docs-demo/en/0.0/">0.0</a></dd>
+          
+        
+          
+          <dd><a href="/herc-docs-demo/en/1.0/">1.0</a></dd>
+          
+        
+      </dl>
+      
+      
+      <dl>
+        <dt>Downloads</dt>
+        
+          <dd><a href="/herc-docs-demo/en/fovea1959/Hercules Documentation Demo-docs_en_fovea1959.pdf">pdf</a></dd>
+        
+          <dd><a href="/herc-docs-demo/en/fovea1959/Hercules Documentation Demo-docs_en_fovea1959.epub">epub</a></dd>
+        
+          <dd><a href="/herc-docs-demo/en/fovea1959/Hercules Documentation Demo-docs_en_fovea1959.html.tar.gz">tarred HTML</a></dd>
+        
+          <dd><a href="/herc-docs-demo/en/fovea1959/Hercules Documentation Demo-docs_en_fovea1959.single.html.tar.gz">tarred single file HTML</a></dd>
+        
+      </dl>
+      
+      
+      <hr/>
+      <a href="https://tech.michaelaltfield.net/2020/07/18/sphinx-rtd-github-pages-1/">Continuous Documentation</a> hosting provided by <a href="https://pages.github.com/">GitHub Pages</a>.
+ 
+    </div>
+  </div>
+
+ 
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

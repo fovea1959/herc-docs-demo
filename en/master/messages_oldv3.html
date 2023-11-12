@@ -1,0 +1,1457 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>System Messages &mdash; Hercules Documentation Demo 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link href="_static/herc_style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Hercules Documentation Demo
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                master
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="hercinst.html">Building and Installing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration File</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercdasd.html">Creating DASD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercoper.html">Operating Procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercsupp.html">Technical Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercfaq.html">Frequently-Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="messages.html">Messages and Codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aa_auxdocs.html">Supporting documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_a.html">Appendix A - Documentation Standards</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Hercules Documentation Demo</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>System Messages</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/messages_oldv3.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="system-messages">
+<span id="autodoc"></span><h1>System Messages<a class="headerlink" href="#system-messages" title="Permalink to this heading">¶</a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">¶</a></h2>
+<p>This page describes the system messages for the Hercules S/370, ESA/390, and z/Architecture emulator.</p>
+</section>
+<section id="message-format">
+<h2>Message Format<a class="headerlink" href="#message-format" title="Permalink to this heading">¶</a></h2>
+<p>All Hercules-issued messages are of the form <code class="docutils literal notranslate"><span class="pre">HHCmmnnns</span> <span class="pre">text</span></code> where:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">HHC</span></code> is the message prefix for Hercules. All Hercules messages will have this prefix.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mm</span></code>  specifies the function that issued the message, from the below list</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">nnn</span></code> Specific message number, assigned more or less sequentially.</p></li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">s</span></code>  Message severity</dt><dd><ul>
+<li><p>S  Severe error. Causes immediate termination of Hercules.</p></li>
+<li><p>E  Error. The function being requested did not execute correctly, but Hercules should continue running.</p></li>
+<li><p>W  Warning. Not necessarily an error, but something to take note of and possibly correct.</p></li>
+<li><p>I  Information. General messages that do not require any further action.</p></li>
+<li><p>A  Action. You need to do something.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>text  Message text.</p></li>
+</ul>
+<section id="ca-communication-adapter-emulation">
+<h3>CA Communication Adapter emulation<a class="headerlink" href="#ca-communication-adapter-emulation" title="Permalink to this heading">¶</a></h3>
+<section id="hhcca001i">
+<h4>HHCCA001I<a class="headerlink" href="#hhcca001i" title="Permalink to this heading">¶</a></h4>
+<p>HHCCA001I CCUU:Connect out to ipaddr:port failed during initial status : System Cause Text
+Explanation
+HERCULES attempted to make an outgoing TCP connection to ipaddr:port, but the system indicated that there was an error while processing the request.
+System Action
+The DIAL or ENABLE CCW that caused the connection attempt ends with Unit Check and Intervention Required. The reason for the failure is indicated in the System Cause Text field
+Operator Action
+None
+Programmer Action
+Correct the RHOST/RPORT configuration statements in the configuration file. If this message occured during a program initiated DIAL, correct the dial data.
+Module
+commadpt.c
+Function
+commadpt_connout</p>
+</section>
+<section id="hhcca002i">
+<h4>HHCCA002I<a class="headerlink" href="#hhcca002i" title="Permalink to this heading">¶</a></h4>
+<p>HHCCA002I CCUU:Line Communication thread thread id started
+Explanation
+The thread responsible for asynchronous operations for the BSC emulated line CCUU has been started.
+System Action
+The system continues
+Operator Action
+None. This is an informational message
+Programmer Action
+None. This is an informational message
+Module
+commadpt.c
+Function
+commadpt_thread</p>
+</section>
+<section id="hhcca003e">
+<h4>HHCCA003E<a class="headerlink" href="#hhcca003e" title="Permalink to this heading">¶</a></h4>
+<p>HHCCA003E CCUU:Cannot obtain socket for incoming calls : System Cause Text
+Explanation
+A system error occured while attempting to create a socket to listen for incoming calls.
+System Action
+The device creation is aborted.
+Operator Action
+None.
+Programmer Action
+Check the System Cause Text for any information relating to the host system. Notify support.
+Module
+commadpt.c
+Function
+commadpt_thread</p>
+</section>
+<section id="hhcca004w">
+<h4>HHCCA004W<a class="headerlink" href="#hhcca004w" title="Permalink to this heading">¶</a></h4>
+<p>HHCCA004W CCUU:Waiting 5 seconds for port port to become available
+Explanation
+While attempting to reserve port port to listen to it, the system indicated the port was already being used.
+System Action
+The system waits 5 seconds and then retries the operation
+Operator Action
+Terminate the device if the port is in error
+Programmer Action
+Determine the program holding the specified port. If the port cannot be made available, use a different port.</p>
+</section>
+<section id="hhcca005i">
+<h4>HHCCA005I<a class="headerlink" href="#hhcca005i" title="Permalink to this heading">¶</a></h4>
+<p>HHCCA005I CCUU:Listening on port port for incoming TCP connections
+Explanation
+The system is now listening on port port for incoming a tcp connection.
+System Action
+The system continues
+Operator Action
+None. This is an informational message
+Programmer Action
+None. This is an informational message</p>
+</section>
+<section id="hhcca006t">
+<h4>HHCCA006T<a class="headerlink" href="#hhcca006t" title="Permalink to this heading">¶</a></h4>
+<p>HHCCA006T CCUU:Select failed : System Cause Text
+Explanation
+An error occured during a ‘select’ system call.
+System Action
+The BSC thread is terminated
+Operator Action
+None.
+Programmer Action
+Check the System Cause Text for any indication of where the error might come from. Notify Support.</p>
+</section>
+<section id="hhcca007w">
+<h4>HHCCA007W<a class="headerlink" href="#hhcca007w" title="Permalink to this heading">¶</a></h4>
+<p>HHCCA007W CCUU:Outgoing call failed during ENABLE|DIAL command : System Cause Text
+Explanation
+The system reported that a previously initiated TCP connection could not be completed
+System Action
+The I/O operation responsible for the TCP outgoing connection is ended with Unit Check and Intervention Required.
+Operator Action
+If the error indicates that the error is temporary, retry the operation.
+Programmer Action
+Check that the destination for this line is correctly configured. If the operation was a DIAL attempt, check in the application configuration or operation data.</p>
+</section>
+<section id="hhcca008i">
+<h4>HHCCA008I<a class="headerlink" href="#hhcca008i" title="Permalink to this heading">¶</a></h4>
+<p>HHCCA008I CCUU:cthread - Incoming Call
+Explanation
+The BSC thread has received an incoming call.
+System Action
+Depending on configuration and operational status, the call is either accepted or rejected. Eventually, an ongoign I/O operation may complete.
+Operator Action
+None. This is an informational message
+Programmer Action
+None. This is an informational message</p>
+</section>
+<section id="hhcca009i">
+<h4>HHCCA009I<a class="headerlink" href="#hhcca009i" title="Permalink to this heading">¶</a></h4>
+<p>HHCCA009I CCUU:BSC utility thread terminated
+Explanation
+The BSC thread has ended
+System Action
+the system continue.
+Operator Action
+Refer to any previous error message if this message was not unexpected
+Programmer Action
+Refer to any previous error message if this message was not unexpected</p>
+</section>
+<section id="hhcca010i">
+<h4>HHCCA010I<a class="headerlink" href="#hhcca010i" title="Permalink to this heading">¶</a></h4>
+<p>HHCCA010I CCUU:initialisation not performed
+Explanation
+The Device initialisation process has failed.
+System Action
+the system terminates or continues, depending on the reason for which the device was initialisation was initiated.
+Operator Action
+Refer to any previous error message
+Programmer Action
+Refer to any previous error message</p>
+</section>
+<section id="hhcca011e">
+<h4>HHCCA011E<a class="headerlink" href="#hhcca011e" title="Permalink to this heading">¶</a></h4>
+<p>HHCCA011E CCUU:Error parsing Keyword
+Explanation
+The device keyword parser found an error while parsing a known keyword.
+System Action
+The system continues. The device initialisation routine turns on a NOGO flag.
+Operator Action
+for a runtime initialisation, correct the device initialisation parameters, otherwise notify the programmer.
+Programmer Action
+For an engine initialisation, correct the device configuration parameters in the configuration file.</p>
+</section>
+<section id="hhcca012e">
+<h4>HHCCA012E<a class="headerlink" href="#hhcca012e" title="Permalink to this heading">¶</a></h4>
+<p>HHCCA012E CCUU:Unrecognized parameter Keyword
+Explanation
+The device keyword parser found an unknown keyword in the device parameter list.
+System Action
+The system continues. The device initialisation routine turns on a NOGO flag.
+Operator Action
+for a runtime initialisation, correct the device initialisation parameters, otherwise notify the programmer.
+Programmer Action
+For an engine initialisation, correct the device configuration parameters in the configuration file.</p>
+</section>
+<section id="hhcca013e">
+<h4>HHCCA013E<a class="headerlink" href="#hhcca013e" title="Permalink to this heading">¶</a></h4>
+<p>HHCCA013E CCUU:Incorrect local port|remote port|local host|remote host specification value
+Explanation
+The device initialisation routine could not correctly parse a parameter value.
+System Action
+The system continues. The device initialisation routine turns on a NOGO flag.
+Operator Action
+for a runtime initialisation, correct the device initialisation parameters, otherwise notify the programmer.
+Programmer Action
+For an engine initialisation, correct the device configuration parameters in the configuration file.</p>
+</section>
+<section id="hhcca014e">
+<h4>HHCCA014E<a class="headerlink" href="#hhcca014e" title="Permalink to this heading">¶</a></h4>
+<p>HHCCA014E CCUU:Incorrect switched/dial specification value; defaulting to DIAL=OUT
+Explanation
+The device initialisation routine found an incorrect DIAL value.
+System Action
+The system continues. The device initialisation routine turns on a NOGO flag.
+Operator Action
+for a runtime initialisation, correct the device initialisation parameters, otherwise notify the programmer.
+Programmer Action
+For an engine initialisation, correct the device configuration parameters in the configuration file.</p>
+</section>
+<section id="hhcca015e">
+<h4>HHCCA015E<a class="headerlink" href="#hhcca015e" title="Permalink to this heading">¶</a></h4>
+<p>HHCCA015E CCUU:Missing parameter : DIAL=NO|IN|OUT|INOUT and LPORT|RPORT|LHOST|RHOST not specified
+Explanation
+The device initialisation routine found that a mandatory parameter was not provided for a specific DIAL Value.
+System Action
+The system continues. The device initialisation routine turns on a NOGO flag.
+Operator Action
+for a runtime initialisation, correct the device initialisation parameters, otherwise notify the programmer.
+Programmer Action
+For an engine initialisation, correct the device configuration parameters in the configuration file.
+Note
+For DIAL=NO , LPORT, RPORT and RHOST are needed
+For DIAL=IN , LPORT is required
+For DIAL=OUT None of LPORT,LHOST,RPORT,RHOST are required
+For DIAL=INOUT, LPORT is required</p>
+</section>
+<section id="hhcca016w">
+<h4>HHCCA016W<a class="headerlink" href="#hhcca016w" title="Permalink to this heading">¶</a></h4>
+<p>HHCCA016W CCUU:Conflicting parameter : DIAL=NO|IN|OUT|INOUT and LPORT|RPORT|LHOST|RHOST=value specified
+Explanation
+The device initialisation routine found that a parameter was provided for a parameter that is not relevant for a specific DIAL Value.
+System Action
+The parameter is ignored. The system continues
+Operator Action
+for a runtime initialisation, correct the device initialisation parameters, otherwise notify the programmer.
+Programmer Action
+For an engine initialisation, correct the device configuration parameters in the configuration file.
+Note
+For DIAL=IN , RPORT and RHOST are ignored
+For DIAL=OUT , LPORT, LHOST, RPORT and RHOST are ignored
+For DIAL=INOUT, RPORT and RHOST are ignored</p>
+</section>
+<section id="hhcca017i">
+<h4>HHCCA017I<a class="headerlink" href="#hhcca017i" title="Permalink to this heading">¶</a></h4>
+<p>HHCCA017I CCUU:LPORT|RPORT|LHOST|RHOST parameter ignored
+Explanation
+The system indicates that the parameter specified is ignored. This message is preceeded by message HHCCA016W
+System Action
+The system continues
+Operator Action
+None
+Programmer Action
+None</p>
+</section>
+<section id="hhcca018e">
+<h4>HHCCA018E<a class="headerlink" href="#hhcca018e" title="Permalink to this heading">¶</a></h4>
+<p>HHCCA018E CCUU:Bind failed : System Cause Text
+Explanation
+While attempting to bind a socket to a specific host/port, the host system returned an uncorrectable error.
+System Action
+BSC Thread terminates
+Operator Action
+None
+Programmer Action
+Check that the LHOST parameter for this device is indeed a local IP address. Otherwise, notify support.</p>
+</section>
+<section id="hhcca019e">
+<h4>HHCCA019E<a class="headerlink" href="#hhcca019e" title="Permalink to this heading">¶</a></h4>
+<p>HHCCA019E CCUU:BSC comm thread did not initialise
+Explanation
+The BSC communication thread reported that it terminated while the device was initialising.
+System Action
+The device is not initialised.
+Operator Action
+Check for any previously issued error message.
+Programmer Action
+Check for any previously issued error message.</p>
+</section>
+<section id="hhcca020e">
+<h4>HHCCA020E<a class="headerlink" href="#hhcca020e" title="Permalink to this heading">¶</a></h4>
+<p>HHCCA020E CCUU:Memory allocation failure for main control block
+Explanation
+A memory allocation failure occured while attempting to reserve memory for the Communication Adapter control block
+System Action
+The device is not initialised.
+Operator Action
+None
+Programmer Action
+Contact support</p>
+</section>
+<section id="hhcca021i">
+<h4>HHCCA021I<a class="headerlink" href="#hhcca021i" title="Permalink to this heading">¶</a></h4>
+<p>HHCCA021I CCUU:Initialization failed due to previous errors
+Explanation
+The initialisation process for device CCUU did not complete succesfully
+System Action
+The device is not initialised
+Operator Action
+None
+Programmer Action
+Refer to any previous error message</p>
+</section>
+<section id="hhcca300d">
+<h4>HHCCA300D<a class="headerlink" href="#hhcca300d" title="Permalink to this heading">¶</a></h4>
+<p>HHCCA300D Debug Message
+Explanation
+This is a debug message. CCW Tracing has been turned on for this device and the Line Handler issues debug messages to help diagnose interface, conformance and protocol issues.
+System Action
+The system continues
+Operator Action
+If the debug messages are no longer necessary, turn off CCW tracing (panel command : ‘t-CCUU’).
+Programmer Action
+None</p>
+</section>
+</section>
+<section id="cf-configuration-file-processing">
+<h3>CF Configuration file processing<a class="headerlink" href="#cf-configuration-file-processing" title="Permalink to this heading">¶</a></h3>
+<section id="hhccf001s">
+<h4>HHCCF001S<a class="headerlink" href="#hhccf001s" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF001S Error reading file filename line lineno: error
+Meaning
+An error was encountered reading the configuration file named filename at line number lineno. The error is described by error.
+Action
+Correct the error and restart Hercules.
+Issued by
+bldcfg.c, function read_config</p>
+</section>
+<section id="hhccf002s">
+<h4>HHCCF002S<a class="headerlink" href="#hhccf002s" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF002S File filename line lineno is too long
+Meaning
+The line at line number lineno in the configuration file filename is too long and cannot be processed.
+Action
+Correct the line and restart Hercules.
+Issued by
+bldcfg.c, function read_config</p>
+</section>
+<section id="hhccf003s">
+<h4>HHCCF003S<a class="headerlink" href="#hhccf003s" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF003S Cannot open file filename: error
+Meaning
+The configuration file named filename could not be opened. The error is described by error.
+Action
+Correct the error and restart Hercules.
+Issued by
+bldcfg.c, function build_config</p>
+</section>
+<section id="hhccf004s">
+<h4>HHCCF004S<a class="headerlink" href="#hhccf004s" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF004S No device records in file filename
+Meaning
+The configuration file named filename does not contain any device definition records. Without them, Hercules cannot do any meaningful work.
+Action
+Specify one or more device definitions in the configuration file and restart Hercules.
+Issued by
+bldcfg.c, function build_config</p>
+</section>
+<section id="hhccf005s">
+<h4>HHCCF005S<a class="headerlink" href="#hhccf005s" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF005S Unrecognized argument argument
+Meaning
+An invalid argument, argument, was specified on the HTTPPORT configuration statement in the file named filename at line number lineno. Only the arguments auth and noauth are valid.
+Action
+Correct the invalid argument and restart Hercules.
+Issued by
+hsccmd.c, function httpport_cmd</p>
+</section>
+<section id="hhccf008s">
+<h4>HHCCF008S<a class="headerlink" href="#hhccf008s" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF008S Error in filename line lineno: Unrecognized keyword keyword
+Meaning
+An invalid configuration statement was specified in the file named filename at line number lineno. The invalid keyword was keyword.
+Action
+Correct the invalid statement and restart Hercules.
+Issued by
+bldcfg.c, function build_config</p>
+</section>
+<section id="hhccf009s">
+<h4>HHCCF009S<a class="headerlink" href="#hhccf009s" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF009S Error in filename line lineno: Incorrect number of operands
+Meaning
+The configuration statement at line lineno of the file named filename had an invalid number of operands. For all but the HTTPPORT statement, exactly one operand is required.
+Action
+Correct the invalid statement and restart Hercules.
+Issued by
+bldcfg.c, function build_config</p>
+</section>
+<section id="hhccf010s">
+<h4>HHCCF010S<a class="headerlink" href="#hhccf010s" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF010S Error in filename line lineno: Unknown or unsupported ARCHMODE specification mode
+Meaning
+The ARCHMODE configuration statement at line lineno of the file named filename specified an invalid architecture. Only S/370, ESA/390, or ESAME are valid. If one of these was specified, then support for that architecture was excluded when the copy of Hercules in use was compiled.
+Action
+Correct the specified value and restart Hercules. If the message was issued because support for the desired architecture was excluded, then recompile Hercules.
+Issued by
+bldcfg.c, function build_config</p>
+</section>
+<section id="hhccf011s">
+<h4>HHCCF011S<a class="headerlink" href="#hhccf011s" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF011S Error in filename line lineno: serialno is not a valid serial number
+Meaning
+The serial number serialno specified on the CPUSERIAL configuration statement at line number lineno of the file named filename must be exactly six digits long, and must be a valid hexadecimal number.
+Action
+Correct the serial number and restart Hercules.
+Issued by
+bldcfg.c, function build_config</p>
+</section>
+<section id="hhccf012s">
+<h4>HHCCF012S<a class="headerlink" href="#hhccf012s" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF012S Error in filename line lineno: modelno is not a valid CPU model
+Meaning
+The model number modelno specified on the CPUMODEL configuration statement at line number lineno of the file named filename must be exactly four digits long, and must be a valid hexadecimal number.
+Action
+Correct the model number and restart Hercules.
+Issued by
+bldcfg.c, function build_config</p>
+</section>
+<section id="hhccf013s">
+<h4>HHCCF013S<a class="headerlink" href="#hhccf013s" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF013S Error in filename line lineno: Invalid main storage size size
+Meaning
+The main storage size size specified on the MAINSIZE configuration statement at line number lineno of the file named filename must be a valid decimal number whose value is at least 2. For 32-bit platforms the value must not exceed 4095.
+Action
+Correct the main storage size and restart Hercules.
+Issued by
+bldcfg.c, function build_config</p>
+</section>
+<section id="hhccf014s">
+<h4>HHCCF014S<a class="headerlink" href="#hhccf014s" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF014S Error in filename line lineno: Invalid expanded storage size size
+Meaning
+The expanded storage size size specified on the XPNDSIZE configuration statement at line number lineno of the file named filename must be a valid decimal number between 0 and 16777215. For 32-bit platforms the value must not exceed 4095.
+Action
+Correct the expanded storage size and restart Hercules.
+Issued by
+bldcfg.c, function build_config</p>
+</section>
+<section id="hhccf015s">
+<h4>HHCCF015S<a class="headerlink" href="#hhccf015s" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF015S Error in filename line lineno: Invalid console port number port
+Meaning
+The console port number port specified on the CNSLPORT configuration statement at line number lineno of the file named filename must be a valid nonzero decimal number.
+Action
+Correct the console port number and restart Hercules.
+Issued by
+bldcfg.c, function build_config</p>
+</section>
+<section id="hhccf016s">
+<h4>HHCCF016S<a class="headerlink" href="#hhccf016s" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF016S Error in filename line lineno: Invalid threadname thread priority priority
+Meaning
+The thread priority priority specified on the xxxPRIO configuration statement at line number lineno of the file named filename must be a valid decimal number.
+Action
+Correct the priority on the statement and restart Hercules.
+Issued by
+bldcfg.c, function build_config</p>
+</section>
+<section id="hhccf017w">
+<h4>HHCCF017W<a class="headerlink" href="#hhccf017w" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF017W Hercules is not running as setuid root, cannot raise threadname priority
+Meaning
+A negative value for the threadname thread priority parameter xxxPRIO was specified, but Hercules is not running as the root user (either directly or via the setuid mechanism). This parameter value would cause the priority of the CPU execution thread to be raised above the normal level if Hercules were running as root. Since it is not, however, the parameter will have no effect.
+Action
+Either specify a positive value to lower the CPU thread priority, zero to not alter the priority, or omit the statement entirely to use the Hercules default CPU thread priority of 15.
+Issued by
+bldcfg.c, function build_config</p>
+</section>
+<section id="hhccf018s">
+<h4>HHCCF018S<a class="headerlink" href="#hhccf018s" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF018S Error in filename line lineno: Invalid number of CPUs number
+Meaning
+The number of emulated CPUs number specified on the NUMCPU configuration statement at line number lineno of the file named filename must be a valid decimal number between 1 and the maximum number (MAX_CPU_ENGS) defined when Hercules was built.
+Action
+Correct the number of emulated CPUs and restart Hercules.
+Issued by
+bldcfg.c, function build_config</p>
+</section>
+<section id="hhccf019s">
+<h4>HHCCF019S<a class="headerlink" href="#hhccf019s" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF019S Error in filename line lineno: Invalid number of VFs number
+Meaning
+The number of emulated Vector Facility engines number specified on the NUMVEC configuration statement at line number lineno of the file named filename must be a valid decimal number between 1 and the maximum number defined when Hercules was built (usually 2).
+Action
+Correct the number of emulated Vector Facility engines and restart Hercules.
+Issued by
+bldcfg.c, function build_config</p>
+</section>
+<section id="hhccf020w">
+<h4>HHCCF020W<a class="headerlink" href="#hhccf020w" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF020W Vector Facility support not configured
+Meaning
+A request for Vector Facility support was made by the NUMVEC configuration statement, but Hercules was built without the Vector Facility code. The request has been ignored.
+Action
+If Vector Facility support is desired, recompile Hercules. If not, remove the NUMVEC configuration statement.
+Issued by
+bldcfg.c, function build_config</p>
+</section>
+<section id="hhccf021s">
+<h4>HHCCF021S<a class="headerlink" href="#hhccf021s" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF021S Error in filename line lineno: Invalid maximum number of CPUs number
+Meaning
+The maximum number of emulated CPUs number specified on the MAXCPU configuration statement at line number lineno of the file named filename must be a valid decimal number. It must not exceed the maximum number (MAX_CPU_ENGS) defined when Hercules was built.
+Action
+Correct the MAXCPU parameter and restart Hercules.
+Issued by
+bldcfg.c, function build_config</p>
+</section>
+<section id="hhccf022s">
+<h4>HHCCF022S<a class="headerlink" href="#hhccf022s" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF022S Error in filename line lineno: epoch is not a valid system epoch
+Patch config.c to expand the table.
+Meaning
+The system epoch epoch specified on the SYSEPOCH configuration statement at line number lineno of the file named filename must be one of the following: 1900, 1928, 1960, 1988, or 1970.
+Action
+Correct the system epoch and restart Hercules. If a different epoch is desired, a change must be made to the Hercules source file config.c and Hercules rebuilt.
+Issued by
+bldcfg.c, function build_config</p>
+</section>
+<section id="hhccf023s">
+<h4>HHCCF023S<a class="headerlink" href="#hhccf023s" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF023S Error in filename line lineno: offset is not a valid timezone offset
+Meaning
+The system timezone offset offset specified on the TZOFFSET configuration statement at line number lineno of the file named filename must be five characters long, and a valid decimal number of the form (+|-)number, where number must be between zero and 2359 (representing 23 hours, 59 minutes).
+Action
+Correct the time zone offset and restart Hercules.
+Issued by
+bldcfg.c, function build_config</p>
+</section>
+<section id="hhccf024s">
+<h4>HHCCF024S<a class="headerlink" href="#hhccf024s" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF024S Error in filename line lineno: Invalid TOD clock drag factor drag
+Meaning
+The TOD clock drag factor drag specified on the TODDRAG configuration statement at line number lineno of the file named filename must be a valid decimal number between 1 and 10000.
+Action
+Correct the TOD clock drag factor and restart Hercules.
+Issued by
+bldcfg.c, function build_config</p>
+</section>
+<section id="hhccf025s">
+<h4>HHCCF025S<a class="headerlink" href="#hhccf025s" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF025S Error in filename line lineno: Invalid panel refresh rate rate
+Meaning
+The control panel refresh rate rate specified on the PANRATE configuration statement at line number lineno of the file named filename must be either F, S, or a valid decimal number between 1 and 5000.
+Action
+Correct the control panel refresh rate and restart Hercules.
+Issued by
+bldcfg.c, function build_config</p>
+</section>
+<section id="hhccf026s">
+<h4>HHCCF026S<a class="headerlink" href="#hhccf026s" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF026S Error in filename line lineno: Unknown OS tailor specification tailor
+Meaning
+The OS tailoring value tailor specified on the OSTAILOR configuration statement at line number lineno of the file named filename must be either OS/390, z/OS, VSE, VM, LINUX, NULL, or QUIET.
+Action
+Correct the OS tailoring value and restart Hercules.
+Issued by
+bldcfg.c, function build_config</p>
+</section>
+<section id="hhccf027s">
+<h4>HHCCF027S<a class="headerlink" href="#hhccf027s" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF027S Error in filename line lineno: Invalid maximum device threads threads
+Meaning
+The maximum device threads threads specified on the DEVTMAX configuration statement at line number lineno of the file named filename must be a valid decimal number greater than -1.
+Action
+Correct the maximum device threads and restart Hercules.
+Issued by
+bldcfg.c, function build_config</p>
+</section>
+<section id="hhccf028s">
+<h4>HHCCF028S<a class="headerlink" href="#hhccf028s" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF028S Invalid program product OS license setting permission
+Meaning
+The program product OS permission permission specified on the PGMPRDOS configuration statement must be either LICENSED or RESTRICTED. The alternative spelling LICENCED is also accepted.
+Action
+Correct the program product OS permission and restart Hercules.
+Issued by
+hsccmd.c, function pgmprdos_cmd</p>
+</section>
+<section id="hhccf029s">
+<h4>HHCCF029S<a class="headerlink" href="#hhccf029s" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF029S Invalid HTTP port number port
+Meaning
+The HTTP server port number port specified on the HTTPPORT configuration statement must be either 80, or a valid decimal number greater than 1024.
+Action
+Correct the HTTP server port number and restart Hercules.
+Issued by
+hsccmd.c, function httpport_cmd</p>
+</section>
+<section id="hhccf030s">
+<h4>HHCCF030S<a class="headerlink" href="#hhccf030s" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF030S Error in filename line lineno: Invalid I/O delay value delay
+Meaning
+The I/O delay value delay specified on the IODELAY configuration statement at line number lineno of the file named filename must be a valid decimal number.
+Action
+Correct the I/O delay value and restart Hercules.
+Issued by
+bldcfg.c, function build_config</p>
+</section>
+<section id="hhccf031s">
+<h4>HHCCF031S<a class="headerlink" href="#hhccf031s" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF031S Cannot obtain sizeMB main storage: error
+Meaning
+An attempt to obtain the amount of main storage specified by MAINSTOR failed for the reason described by error.
+Action
+Correct the error and restart Hercules.
+Issued by
+bldcfg.c, function build_config</p>
+</section>
+<section id="hhccf032s">
+<h4>HHCCF032S<a class="headerlink" href="#hhccf032s" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF032S Cannot obtain storage key array: error
+Meaning
+An attempt to obtain storage for the array of storage keys failed for the reason described by error.
+Action
+Correct the error and restart Hercules.
+Issued by
+bldcfg.c, function build_config</p>
+</section>
+<section id="hhccf033s">
+<h4>HHCCF033S<a class="headerlink" href="#hhccf033s" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF033S Cannot obtain sizeMB expanded storage: error
+Meaning
+An attempt to obtain the amount of expanded storage specified by XPNDSTOR failed for the reason described by error.
+Action
+Correct the error and restart Hercules.
+Issued by
+bldcfg.c, function build_config</p>
+</section>
+<section id="hhccf034w">
+<h4>HHCCF034W<a class="headerlink" href="#hhccf034w" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF034W Expanded storage support not installed
+Meaning
+A request was made for expanded storage by the XPNDSTOR configuration parameter, but Hercules was built without expanded storage support. The request was ignored.
+Action
+Either remove the XPNDSTOR configuration parameter, or recompile Hercules with expanded storage support included.
+Issued by
+bldcfg.c, function build_config</p>
+</section>
+<section id="hhccf035s">
+<h4>HHCCF035S<a class="headerlink" href="#hhccf035s" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF035S Error in filename line lineno: Missing device number or device type
+Meaning
+The I/O device definition statement at line number lineno of the file named filename did not contain a device number or a device type.
+Action
+Supply the missing value and restart Hercules.
+Issued by
+bldcfg.c, function build_config</p>
+</section>
+<section id="hhccf036s">
+<h4>HHCCF036S<a class="headerlink" href="#hhccf036s" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF036S Error in filename line lineno: number is not a valid device number(s) specification
+Meaning
+The I/O device definition statement at line number lineno of the file named filename specified an invalid device number number. The device number must be one to four hexadecimal digits.
+Action
+Correct the device number and restart Hercules.
+Issued by
+bldcfg.c, function build_config</p>
+</section>
+<section id="hhccf037s">
+<h4>HHCCF037S<a class="headerlink" href="#hhccf037s" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF037S Message pipe creation failed: error
+Meaning
+An attempt to create a pipe for communication with the control panel failed. The error is described by error.
+Action
+Correct the error and restart Hercules.
+Issued by
+bldcfg.c, function build_config</p>
+</section>
+<section id="hhccf038s">
+<h4>HHCCF038S<a class="headerlink" href="#hhccf038s" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF038S Message pipe open failed: error
+Meaning
+An attempt to open the pipe for communication with the control panel failed. The error is described by error.
+Action
+Correct the error and restart Hercules.
+Issued by
+bldcfg.c, function build_config</p>
+</section>
+<section id="hhccf039w">
+<h4>HHCCF039W<a class="headerlink" href="#hhccf039w" title="Permalink to this heading">¶</a></h4>
+<dl class="simple">
+<dt>HHCCF039W PGMPRDOS LICENSED specified.</dt><dd><p>A licensed program product operating system is running.
+You are responsible for meeting all conditions of your
+software licenses.</p>
+</dd>
+</dl>
+<p>Meaning
+The configuration parameter PGMPRDOS LICENSED was specified and Hercules has detected that the operating system is a licensed program product. This message is issued to remind you that compliance with the terms of the license for your system’s software is your responsibility.
+Action
+Be sure you know what you’re doing.
+Issued by
+losc.c, function losc_check</p>
+</section>
+<section id="hhccf040e">
+<h4>HHCCF040E<a class="headerlink" href="#hhccf040e" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF040E Cannot create CPU number thread: error
+Meaning
+An attempt to create a new thread for execution of CPU number failed. The error is described by error. The CPU has not been added to the configuration.
+Action
+Correct the error and retry the operation.
+Issued by
+config.c, function configure_cpu</p>
+</section>
+<section id="hhccf041e">
+<h4>HHCCF041E<a class="headerlink" href="#hhccf041e" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF041E Device address already exists
+Meaning
+An attempt was made to define a device at address address. There is already a device at that address.
+Action
+Either choose another device address, or use the detach command to remove the existing device.
+Issued by
+config.c, function attach_device</p>
+</section>
+<section id="hhccf042e">
+<h4>HHCCF042E<a class="headerlink" href="#hhccf042e" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF042E Device type type not recognized
+Meaning
+An attempt was made to define a device of type type. This device type is not supported by Hercules. It may also indicate that the system was unable to load the device handler for the specified device type.
+Action
+Specify a supported device type. If the device type is supported, make sure the the system can load the load modules necessary for device operations. Either use the LD_LIBRARY_PATH environment variable or use ldconfig(8) to customize the library search path.
+Issued by
+config.c, function attach_device</p>
+</section>
+<section id="hhccf043e">
+<h4>HHCCF043E<a class="headerlink" href="#hhccf043e" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF043E Cannot obtain device block for device address: error
+Meaning
+An attempt to allocate memory for the control block describing the device with address address failed. The error is described by error. The device has not been defined.
+Action
+Correct the error and retry the operation.
+Issued by
+config.c, function attach_device</p>
+</section>
+<section id="hhccf044e">
+<h4>HHCCF044E<a class="headerlink" href="#hhccf044e" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF044E Initialization failed for device address
+Meaning
+The device at address address could not be initialized. The device initialization routine has issued a message describing the problem in further detail; refer to that message for more information.
+Issued by
+config.c, function attach_device</p>
+</section>
+<section id="hhccf045e">
+<h4>HHCCF045E<a class="headerlink" href="#hhccf045e" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF045E Cannot obtain buffer for device address: error
+Meaning
+An attempt to allocate memory for the data buffer for the device with address address failed. The error is described by error. The device has not been defined.
+Action
+Correct the error and retry the operation.
+Issued by
+config.c, function attach_device</p>
+</section>
+<section id="hhccf046e">
+<h4>HHCCF046E<a class="headerlink" href="#hhccf046e" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF046E Device address does not exist
+Meaning
+An attempt was made to remove a device at address address. There is no device at that address.
+Action
+Choose another device address to remove, if desired.
+Issued by
+config.c, function detach_device</p>
+</section>
+<section id="hhccf047i">
+<h4>HHCCF047I<a class="headerlink" href="#hhccf047i" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF047I Device address detached
+Meaning
+The device at address address has been successfully removed from the system.
+Issued by
+config.c, function detach_device</p>
+</section>
+<section id="hhccf048e">
+<h4>HHCCF048E<a class="headerlink" href="#hhccf048e" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF048E Device address does not exist
+Meaning
+An attempt was made to rename a device at address address. There is no device at that address.
+Action
+Choose another device address to rename, if desired.
+Issued by
+config.c, function define_device</p>
+</section>
+<section id="hhccf049e">
+<h4>HHCCF049E<a class="headerlink" href="#hhccf049e" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF049E Device address already exists
+Meaning
+An attempt was made to rename a device to address address. There is already a device at that address.
+Action
+Either choose another device address, or use the detach command to remove the existing device.
+Issued by
+config.c, function define_device</p>
+</section>
+<section id="hhccf050i">
+<h4>HHCCF050I<a class="headerlink" href="#hhccf050i" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF050I Device oldaddr defined as newaddr
+Meaning
+The device which was previously defined with the address oldaddr has been changed to the address newaddr.
+Issued by
+config.c, function define_device</p>
+</section>
+<section id="hhccf051s">
+<h4>HHCCF051S<a class="headerlink" href="#hhccf051s" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF051S Error in filename line lineno: verid is not a valid CPU version code
+Meaning
+The version code verid specified on the CPUVERID configuration statement at line number lineno of the file named filename must be exactly two digits long, and must be a valid hexadecimal number.
+Action
+Correct the model number and restart Hercules.
+Issued by
+bldcfg.c, function build_config</p>
+</section>
+<section id="hhccf052s">
+<h4>HHCCF052S<a class="headerlink" href="#hhccf052s" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF052S DIAG8CMD invalid option: option
+Meaning
+The argument option on the DIAG8CMD is invalid. Valid options are enable, disable, echo, and noecho,
+Action
+Correct the statement and restart Hercules.
+Issued by
+hsccmd.c, function diag8_cmd</p>
+</section>
+<section id="hhccf053e">
+<h4>HHCCF053E<a class="headerlink" href="#hhccf053e" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF053E Incorrect second device number in device range near character c
+Meaning
+The 2nd argument of a device range contains an incorrect device number
+Action
+Correct the statement and restart Hercules.
+Issued by
+config.c, function parse_devnums</p>
+</section>
+<section id="hhccf054e">
+<h4>HHCCF054E<a class="headerlink" href="#hhccf054e" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF054E Incorrect Device count near character c
+Meaning
+The count field in a device count specification is invalid
+Action
+Correct the statement and restart Hercules.
+Issued by
+config.c, function parse_devnums</p>
+</section>
+<section id="hhccf055e">
+<h4>HHCCF055E<a class="headerlink" href="#hhccf055e" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF055E Incorrect device address specification near character c
+Meaning
+The first or only CUU in a device specification statement is invalid
+Action
+Correct the statement and restart Hercules.
+Issued by
+config.c, function parse_devnums</p>
+</section>
+<section id="hhccf056e">
+<h4>HHCCF056E<a class="headerlink" href="#hhccf056e" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF056E Incorrect device address range. CUU1&gt;CUU2
+Meaning
+The first device number of a range is greater than the last device number
+Action
+Correct the statement and restart Hercules.
+Issued by
+config.c, function parse_devnums</p>
+</section>
+<section id="hhccf057e">
+<h4>HHCCF057E<a class="headerlink" href="#hhccf057e" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF057E CUU is on wrong channel (1st device defined on channel CC)
+Meaning
+At least one of the devices in a device number specification is on a different channel than a previously defined device number within the same specification. All device numbers on a single configuration line must be on a single channel (Group of 256 devices)
+Action
+Correct the statement and restart Hercules.
+Issued by
+config.c, function parse_devnums</p>
+</section>
+<section id="hhccf058e">
+<h4>HHCCF058E<a class="headerlink" href="#hhccf058e" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF058E Some or all devices in CUU-CUU duplicate devices already defined
+Meaning
+At least one of the device numbers on a device specification statement defines a device number that is already specified on that same statement.
+Action
+Correct the statement and restart Hercules.
+Issued by
+config.c, function parse_devnums</p>
+</section>
+<section id="hhccf061w">
+<h4>HHCCF061W<a class="headerlink" href="#hhccf061w" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF061W ECPS:VM Statement deprecated. Use ECPSVM instead
+Meaning
+The “ECPS:VM” statement was encountered. This statement is deprecated in favor of the “ECPSVM” statement.
+Action
+The configuration statement is still carried out, but the statement syntax should be changed as soon as possible.
+Issued by
+config.c</p>
+</section>
+<section id="hhccf062w">
+<h4>HHCCF062W<a class="headerlink" href="#hhccf062w" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF062W Missing ECPSVM level value. 20 Assumed
+Meaning
+The “ECPSVM” statement keyword “LEVEL” was encountered, but no numeric level followed it
+Action
+The default level of 20 is used, and the ECPS:VM feature is made available. The statement should be corrected as soon as possible.
+Issued by
+config.c</p>
+</section>
+<section id="hhccf063w">
+<h4>HHCCF063W<a class="headerlink" href="#hhccf063w" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF063W Specifying ECPSVM level directly is deprecated. Use the ‘LEVEL’ keyword instead
+Meaning
+The deprecated “ECPSVM” level syntax form (without the LEVEL keyword) was found.
+Action
+The ECPS:VM Level is set to the specified value. The configuration statement should be updated to include the “LEVEL” keyword.
+Issued by
+config.c</p>
+</section>
+<section id="hhccf064w">
+<h4>HHCCF064W<a class="headerlink" href="#hhccf064w" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF064W Hercules set priority priority failed: error
+Meaning
+An attempt to change the priority of the Hercules process to priority failed. The error is described by error. The process priority has not been changed. Hercules overall performance may be impaired as a result.
+Action
+If performance problems are noted, correct the error and restart Hercules.
+Issued by
+bldcfg.c, function build_config</p>
+</section>
+<section id="hhccf065i">
+<h4>HHCCF065I<a class="headerlink" href="#hhccf065i" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF065I Hercules: tid=threadid, pid=processid, pgid=processgroupid, priority=priority
+Meaning
+Hercules thread id is threadid, its process id is processid, its process group id is processgroupid and its execution priority is priority.
+Issued by
+bldcfg.c, function build_config</p>
+</section>
+<section id="hhccf066e">
+<h4>HHCCF066E<a class="headerlink" href="#hhccf066e" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF066E Invalid HTTPROOT: error
+Meaning
+The pathname specified on your HTTPROOT statement is invalid. The error is described by error.
+Action
+Correct the error and restart Hercules.
+Issued by
+httpserv.c, function http_server</p>
+</section>
+<section id="hhccf067s">
+<h4>HHCCF067S<a class="headerlink" href="#hhccf067s" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF067S Incorrect keyword keyword for the ASN_AND_LX_REUSE statement
+Meaning
+The keyword specified for the ASN_AND_LX_REUSE statement is not ENABLE or DISABLE
+Action
+Correct the error and restart Hercules.
+Issued by
+hsccmd.c, function alrf_cmd</p>
+</section>
+<section id="hhccf068e">
+<h4>HHCCF068E<a class="headerlink" href="#hhccf068e" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF068E Invalid value: value; Enter “help scsimount” for help.
+Meaning
+The automatic SCSI tape mount value is not “NO” nor a value between 1 and 99 seconds inclusive.
+Action
+Reissue the SCSIMOUNT command.
+Issued by
+hsccmd.c, function scsimount_cmd</p>
+</section>
+<section id="hhccf069i">
+<h4>HHCCF069I<a class="headerlink" href="#hhccf069i" title="Permalink to this heading">¶</a></h4>
+<dl class="simple">
+<dt>HHCCF069I Run-options enabled for this run</dt><dd><p>NUMCPU:           n
+ASN-and-LX-reuse: Enabled/Disabled
+DIAG8CMD:         Enabled/Disabled</p>
+</dd>
+</dl>
+<p>Meaning
+This message confirms the setting of various run-time options specified in the configuration file at startup time.
+Action
+None.
+Issued by
+bldcfg.c, function build_config</p>
+</section>
+<section id="hhccf074e">
+<h4>HHCCF074E<a class="headerlink" href="#hhccf074e" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF074E Unspecified error occured while parsing Logical Channel Subsystem Identification
+Meaning
+A logic error occured while parsing the Logical Channel Subsystem Identification component of a device number or device number group.
+Action
+Notify hercules support. This is an error in the hercules parsing routines.
+Issued by
+config.c, function parse_lcss</p>
+</section>
+<section id="hhccf075e">
+<h4>HHCCF075E<a class="headerlink" href="#hhccf075e" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF075E No more than 1 Logical Channel Subsystem Identification may be specified
+Meaning
+While specifying a device number or device number group, more than 1 ‘:’ character was encountered while parsing the Logical Channel Subsystem Identification component. There can be only one Logical Channel Subsystem Identification for a device or group of devices.
+Action
+Correct the device number or device number group specification and either reissue the command or restart the hercules engine (depending on whether the error occured while issuing a command or while starting the engine).
+Issued by
+config.c, function parse_lcss</p>
+</section>
+<section id="hhccf076e">
+<h4>HHCCF076E<a class="headerlink" href="#hhccf076e" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF076E Non numeric Logical Channel Subsystem Identification XX
+Meaning
+While specifying a device number or device number group, a non decimal value was encountered while parsing the Logical Channel Subsystem Identification component. The Logical Channel Subsystem Identification for a device or group of devices must be specified as a numeric value.
+Action
+Correct the device number or device number group specification and either reissue the command or restart the hercules engine (depending on whether the error occured while issuing a command or while starting the engine).
+Issued by
+config.c, function parse_lcss</p>
+</section>
+<section id="hhccf077e">
+<h4>HHCCF077E<a class="headerlink" href="#hhccf077e" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF077E Logical Channel Subsystem Identification NN exceeds maximum of 3
+Meaning
+While specifying a device number or device number group, a Logical Channel Identification was encountered that exceeded the architecture maximum value of MM. The Logical Channel Subsystem Identification for a device or group of devices must be within 0 and 3 (inclusive).
+Action
+Correct the device number or device number group specification and either reissue the command or restart the hercules engine (depending on whether the error occured while issuing a command or while starting the engine).
+Issued by
+config.c, function parse_lcss</p>
+</section>
+<section id="hhccf079a">
+<h4>HHCCF079A<a class="headerlink" href="#hhccf079a" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF079A A licensed program product operating system has been detected. All processors have been stopped.
+Meaning
+Hercules has detected that the operating system is a licensed program product, but the PGMPRDOS LICENSED parameter was not specified in the Hercules configuration file.
+Action
+Hercules enters the stopped state. To run this operating system you must obtain a license from the operating system supplier and specify the PGMPRDOS LICENSED parameter in the configuration file. If you are unable to obtain a valid license allowing you to run this operating system on your machine, you must use another operating system (such as MVS3.8J or Linux for System z) which does not require a license.
+Issued by
+losc.c, function losc_check</p>
+</section>
+<section id="hhccf081i">
+<h4>HHCCF081I<a class="headerlink" href="#hhccf081i" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF081I fname Will ignore include errors .
+Meaning
+An ignore include_errors statement was encountered in file fname requesting that any include statements subsequently found within file fname which happen to reference include files which do not exist should simply cause a</p>
+</section>
+<section id="hhccf084w">
+<h4>HHCCF084W<a class="headerlink" href="#hhccf084w" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF084W warning instead of a HHCCF085S fatal error.
+Action
+Processing continues. This is an informational-only message.
+Issued by
+bldcfg.c, function build_config</p>
+</section>
+<section id="hhccf082s">
+<h4>HHCCF082S<a class="headerlink" href="#hhccf082s" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF082S Error in fname line nnn: Maximum nesting level (nn) reached
+Meaning
+The maximum number of nested include statements has been exceeded. The include statement which caused the maximum nesting level of nn to be exceeded is identified as statement number nnn of file fname.
+Action
+This is a fatal error. Configuration file processing is immediately terminated and Hercules startup is aborted. Correct the error and restart Hercules.
+Issued by
+bldcfg.c, function build_config</p>
+</section>
+<section id="hhccf083i">
+<h4>HHCCF083I<a class="headerlink" href="#hhccf083i" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF083I fname1 Including fname2 at nnn.
+Meaning
+An include statement for file fname2 was encountered on line nnn of file fname1.
+Action
+Configuration file processing switches immediately to processing the statements contained in file fname2. Once all of the ststements in file fname2 have been completely processed, configuration file processing will then return to statement nnn+1 of file fname1. This is an informational-only message.
+Issued by
+bldcfg.c, function build_config</p>
+</section>
+<section id="id1">
+<h4>HHCCF084W<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF084W fname1 Open error ignored file fname2: error
+Meaning
+File fname1 contained an include statement for file fname2 which could not be opened because of error.
+Action
+Processing continues. This is a informational warning only. Check to make sure the filename specified by fname2 was spelled correctly and restart Hercules if desired.
+Issued by
+bldcfg.c, function build_config</p>
+</section>
+<section id="hhccf085s">
+<h4>HHCCF085S<a class="headerlink" href="#hhccf085s" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF085S fname1 Open error file fname2: error
+Meaning
+File fname1 contained an include statement for file fname2 which could not be opened because of error.
+Action
+This is a fatal error. Configuration file processing is immediately terminated and Hercules startup is aborted. Correct the possible misspelling of filename fname2 and restart Hercules.
+Issued by
+bldcfg.c, function build_config</p>
+</section>
+<section id="hhccf086s">
+<h4>HHCCF086S<a class="headerlink" href="#hhccf086s" title="Permalink to this heading">¶</a></h4>
+<p>HHCCF086S Error in filename: NUMCPU nn must not exceed MAXCPU mm
+Meaning
+The number of online CPUs nn specified in the NUMCPU configuration statement in the file named filename cannot exceed the maximum number of CPUs mm specified in the MAXCPU configuration statement.
+Action
+Either decrease the NUMCPU parameter, or increase the MAXCPU parameter, and restart Hercules.
+Issued by
+bldcfg.c, function build_config</p>
+</section>
+</section>
+<section id="cp-cpu-emulation">
+<h3>CP CPU emulation<a class="headerlink" href="#cp-cpu-emulation" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="ct-channel-to-channel-adapter-emulation">
+<h3>CT Channel-to-channel adapter emulation<a class="headerlink" href="#ct-channel-to-channel-adapter-emulation" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="cu-cckd-utility">
+<h3>CU CCKD utility<a class="headerlink" href="#cu-cckd-utility" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="da-dasd-emulation-both-ckd-and-fba">
+<h3>DA DASD emulation (both CKD and FBA)<a class="headerlink" href="#da-dasd-emulation-both-ckd-and-fba" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="dc-dasdcopy">
+<h3>DC dasdcopy<a class="headerlink" href="#dc-dasdcopy" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="dg-dyngui-dll">
+<h3>DG dyngui.dll<a class="headerlink" href="#dg-dyngui-dll" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="di-dasdinit">
+<h3>DI dasdinit<a class="headerlink" href="#di-dasdinit" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="dl-dasdload">
+<h3>DL dasdload<a class="headerlink" href="#dl-dasdload" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="ds-dasdisup">
+<h3>DS dasdisup<a class="headerlink" href="#ds-dasdisup" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="dt-dasdcat">
+<h3>DT dasdcat<a class="headerlink" href="#dt-dasdcat" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="du-dasd-utilities-common-functions">
+<h3>DU DASD utilities common functions<a class="headerlink" href="#du-dasd-utilities-common-functions" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="hd-hercules-dynamic-loader">
+<h3>HD Hercules Dynamic Loader<a class="headerlink" href="#hd-hercules-dynamic-loader" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="he-hetinit">
+<h3>HE hetinit<a class="headerlink" href="#he-hetinit" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="hg-hetget">
+<h3>HG hetget<a class="headerlink" href="#hg-hetget" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="hm-hetmap">
+<h3>HM hetmap<a class="headerlink" href="#hm-hetmap" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="ht-http-server">
+<h3>HT HTTP server<a class="headerlink" href="#ht-http-server" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="hu-hetupd">
+<h3>HU hetupd<a class="headerlink" href="#hu-hetupd" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="if-hercifc-network-interface-configuration-handler">
+<h3>IF hercifc (Network interface configuration handler)<a class="headerlink" href="#if-hercifc-network-interface-configuration-handler" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="in-hercules-initialization">
+<h3>IN Hercules initialization<a class="headerlink" href="#in-hercules-initialization" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="lc-lcs-emulation">
+<h3>LC LCS emulation<a class="headerlink" href="#lc-lcs-emulation" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="lg-system-log-functions">
+<h3>LG System Log functions<a class="headerlink" href="#lg-system-log-functions" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="pn-hercules-control-panel-command-messages">
+<h3>PN Hercules control panel command messages<a class="headerlink" href="#pn-hercules-control-panel-command-messages" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="pr-printer-emulation">
+<h3>PR Printer emulation<a class="headerlink" href="#pr-printer-emulation" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="pu-card-punch-emulation">
+<h3>PU Card punch emulation<a class="headerlink" href="#pu-card-punch-emulation" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="rd-card-reader-emulation">
+<h3>RD Card reader emulation<a class="headerlink" href="#rd-card-reader-emulation" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="sd-socket-devices-common-functions">
+<h3>SD Socket devices common functions<a class="headerlink" href="#sd-socket-devices-common-functions" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="ta-tape-device-emulation">
+<h3>TA Tape device emulation<a class="headerlink" href="#ta-tape-device-emulation" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="tc-tapecopy">
+<h3>TC tapecopy<a class="headerlink" href="#tc-tapecopy" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="te-1052-and-3270-terminal-emulation">
+<h3>TE 1052 and 3270 terminal emulation<a class="headerlink" href="#te-1052-and-3270-terminal-emulation" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="tm-tapemap">
+<h3>TM tapemap<a class="headerlink" href="#tm-tapemap" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="ts-tapesplt">
+<h3>TS tapesplt<a class="headerlink" href="#ts-tapesplt" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="tt-tod-clock-and-timer-services">
+<h3>TT TOD Clock and Timer Services<a class="headerlink" href="#tt-tod-clock-and-timer-services" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="tu-tun-tap-driver-support">
+<h3>TU TUN/TAP driver support<a class="headerlink" href="#tu-tun-tap-driver-support" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="vm-vm-cp-emulation-facility">
+<h3>VM VM/CP emulation facility<a class="headerlink" href="#vm-vm-cp-emulation-facility" title="Permalink to this heading">¶</a></h3>
+</section>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Read the Docs</span>
+      v: master
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+      <dl>
+        <dt>Languages</dt>
+        
+           <strong> 
+          <dd><a href="/herc-docs-demo/en/master/">en</a></dd>
+           </strong> 
+        
+      </dl>
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+          
+          <dd><a href="/herc-docs-demo/en/fovea1959/">fovea1959</a></dd>
+          
+        
+           <strong> 
+          <dd><a href="/herc-docs-demo/en/master/">master</a></dd>
+           </strong> 
+        
+          
+          <dd><a href="/herc-docs-demo/en/0.0/">0.0</a></dd>
+          
+        
+          
+          <dd><a href="/herc-docs-demo/en/1.0/">1.0</a></dd>
+          
+        
+      </dl>
+      
+      
+      <dl>
+        <dt>Downloads</dt>
+        
+          <dd><a href="/herc-docs-demo/en/master/Hercules Documentation Demo-docs_en_master.pdf">pdf</a></dd>
+        
+          <dd><a href="/herc-docs-demo/en/master/Hercules Documentation Demo-docs_en_master.epub">epub</a></dd>
+        
+          <dd><a href="/herc-docs-demo/en/master/Hercules Documentation Demo-docs_en_master.html.tar.gz">tarred HTML</a></dd>
+        
+          <dd><a href="/herc-docs-demo/en/master/Hercules Documentation Demo-docs_en_master.single.html.tar.gz">tarred single file HTML</a></dd>
+        
+      </dl>
+      
+      
+      <hr/>
+      <a href="https://tech.michaelaltfield.net/2020/07/18/sphinx-rtd-github-pages-1/">Continuous Documentation</a> hosting provided by <a href="https://pages.github.com/">GitHub Pages</a>.
+ 
+    </div>
+  </div>
+
+ 
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

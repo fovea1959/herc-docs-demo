@@ -1,0 +1,2017 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="es" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="es" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Configuration File &mdash; documentación de Hercules Documentation Test - 1.0.0</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="next" title="Operation" href="operation.html" />
+    <link rel="prev" title="Installation Instructions" href="installation.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Hercules Documentation Test
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Contenidos:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation Instructions</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Configuration File</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#example-configuration-file">Example configuration file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#comment-lines">Comment lines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#system-parameters">System parameters</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#archlvl">ARCHLVL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#asn-and-lx-reuse">ASN_AND_LX_REUSE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#autoinit">AUTOINIT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#automount-directory">AUTOMOUNT   [±]directory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cckd">CCKD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cmdsep">CMDSEP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cmpscpad">CMPSCPAD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cnslport">CNSLPORT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#codepage">CODEPAGE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#conkpalv">CONKPALV</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cpuidfmt">CPUIDFMT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cpumodel">CPUMODEL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cpuserial">CPUSERIAL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cpuverid">CPUVERID</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#defsym">DEFSYM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#devtmax">DEVTMAX</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#diag8cmd">DIAG8CMD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ecpsvm">ECPSVM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#engines">ENGINES</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#facility">FACILITY</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hercprio">HERCPRIO</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#http-port">HTTP   PORT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#http-root">HTTP   ROOT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#http-start">HTTP   START</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ignore-include-errors">IGNORE INCLUDE_ERRORS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#include">INCLUDE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#iodelay">IODELAY</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ldmod">LDMOD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#legacysenseid">LEGACYSENSEID</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#loadparm">LOADPARM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#logopt">LOGOPT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lparname">LPARNAME</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lparnum">LPARNUM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mainsize">MAINSIZE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#manufacturer">MANUFACTURER</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#maxcpu">MAXCPU</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#model">MODEL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modpath">MODPATH</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mounted-tape-reinit">MOUNTED_TAPE_REINIT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#netdev">NETDEV</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#numcpu">NUMCPU</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ostailor">OSTAILOR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#panopt">PANOPT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#panrate">PANRATE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pantitle">PANTITLE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pgmprdos">PGMPRDOS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#plant">PLANT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#scsimount">SCSIMOUNT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#shcmdopt">SHCMDOPT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#shrdport">SHRDPORT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sysepoch">SYSEPOCH</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sysgport">SYSGPORT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#timerint">TIMERINT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#toddrag">TODDRAG</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#traceopt">TRACEOPT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tzoffset">TZOFFSET</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#xpndsize">XPNDSIZE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#yroffset">YROFFSET</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#symbol-substitutions">Symbol substitutions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#syntax">Syntax</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#special-symbols">Special symbols</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#device-group-symbols">Device group symbols</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#environment-variables">Environment variables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#undefined-symbols">Undefined symbols</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#escaping-substitution-recursion">Escaping substitution, recursion</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id5">Syntax</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#process-and-thread-priorities">Process and Thread Priorities</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#process-priorities">Process Priorities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#thread-priorities">Thread Priorities</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#device-statements">Device statements</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#arguments-required-for-each-device-type">Arguments required for each device type</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#local-non-sna-3270-devices">Local non-SNA 3270 devices</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#integrated-3270-console-device-sysg">Integrated 3270 console device   (SYSG)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#integrated-console-printer-keyboard-devices-c">Integrated Console printer-keyboard devices   (-C)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#console-printer-keyboard-devices">Console printer-keyboard devices</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#card-reader-devices">Card reader devices</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#card-punch-devices">Card punch devices</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#line-printer-devices">Line printer devices</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tape-devices">Tape devices</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#communication-and-channel-to-channel-devices">Communication and Channel-to-Channel devices</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ckd-dasd-devices">CKD DASD devices</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#fba-dasd-devices">FBA DASD devices</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#communication-line-bsc">Communication Line - BSC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#communication-line-tty">Communication Line - TTY</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#additional-2703-communication-line-options">Additional 2703 Communication Line options</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="operation.html">Operation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="messages.html">System Messages</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Hercules Documentation Test</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Configuration File</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/gsf600y/rtd-github-pages/blob/master/docs/configuration.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="configuration-file">
+<span id="autodoc"></span><h1>Configuration File<a class="headerlink" href="#configuration-file" title="Enlace permanente a este encabezado">¶</a></h1>
+<section id="example-configuration-file">
+<h2>Example configuration file<a class="headerlink" href="#example-configuration-file" title="Enlace permanente a este encabezado">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>####################################################################
+#                HERCULES EMULATOR CONTROL FILE                    #
+#             (Note: not all parameters are shown)                 #
+####################################################################
+
+
+#------------------------------------------------------------------
+#                       SYSTEM PARAMETERS
+#------------------------------------------------------------------
+
+##HERCPRIO   0                                        (deprecated; unsupported)
+##TODPRIO    -20                                      (deprecated; unsupported)
+##DEVPRIO    8                                        (deprecated; unsupported)
+##CPUPRIO    0                                        (deprecated; unsupported)
+
+##ARCHMODE   ESA/390                                  (deprecated; use ARCHLVL)
+##ASN_AND_LX_REUSE  disable                           (deprecated; use FACILITY)
+
+##PANRATE    FAST                                     (deprecated; use PANOPT)
+##PANTITLE   &quot;My own private MAINFRAME!&quot;              (deprecated; use PANOPT)
+
+ARCHLVL    ESA/390
+FACILITY   ENABLE 044_PFPO
+
+PGMPRDOS   restricted
+ECPSVM     no  notrap
+
+OSTAILOR   OS/390
+LOADPARM   0120....
+
+CPUSERIAL  000611
+CPUMODEL   3090
+CPUVERID   FD
+LPARNAME   HERCULES
+LPARNUM    01
+CPUIDFMT   1
+MODEL      EMULATOR
+PLANT      ZZ
+MANUFACTURER HRC
+
+MAINSIZE   1G
+XPNDSIZE   0
+NUMCPU     4
+MAXCPU     8
+ENGINES    CP,CP,AP,IP
+
+SYSEPOCH   1900
+YROFFSET   -28
+TZOFFSET   -0500
+
+HTTP       PORT   8081  NOAUTH
+HTTP       ROOT   /usr/local/share/hercules/
+HTTP       START
+
+MODPATH    /usr/local/hercules
+LDMOD      dyncrypt
+NETDEV     /dev/net/tun
+
+CCKD       NOSFD=1
+SHRDPORT   3990
+
+PANOPT     NAMEONLY RATE=FAST MSGCOLOR=DARK &quot;TITLE=My own private MAINFRAME!&quot;
+LOGOPT     TIMESTAMP NODATESTAMP
+
+CODEPAGE   819/1047
+CNSLPORT   3270
+SYSGPORT   3278
+CONKPALV   (3,1,10)
+LEGACYSENSEID   OFF
+
+TIMERINT   DEFAULT
+TODDRAG    1.0
+DEVTMAX    8
+
+SHCMDOPT   disable  nodiag8
+DIAG8CMD   disable  noecho
+CMDSEP     OFF
+
+DEFSYM     TAPEDIR   &quot;$(HOME)/tapes&quot;
+AUTOMOUNT  $(TAPEDIR)
+AUTOMOUNT  +/tapes
+AUTOMOUNT  -/tapes/vault
+
+MOUNTED_TAPE_REINIT  allow
+AUTOINIT   on
+SCSIMOUNT  no
+
+INCLUDE    mydevs.cfg
+IGNORE     INCLUDE_ERRORS
+INCLUDE    optdevs.cfg
+
+
+#------------------------------------------------------------------
+#                     DEVICE STATEMENTS
+#             (see supported device types table)
+#------------------------------------------------------------------
+
+0009      3215-C  /
+
+000A      1442    adrdmprs.rdr
+000C      3505    jcl.txt     ascii  trunc
+000D      3525    pch00d.txt  ascii
+000E      1403    prt00e.txt  append       cctape=legacy
+001E      3211    192.168.200.1:1403 sockdev  fcb=legacy
+
+001F      3270    * 192.168.0.1
+0200.4    3270    * 192.168.0.0  255.255.255.0
+0220.8    3270    GROUP1  192.168.100.0  255.255.255.0
+0228.8    3270    GROUP2
+0230.16   3270
+
+0000      SYSG    SYSGCONS
+
+0100      3390    disks/linux.dsk  sf=shadows/linux_*.dsk  ser=000000000001
+
+0120      3380    ${DASD_PATH=dasd/}mvsv5r.120
+0121      3380    ${DASD_PATH=dasd/}mvsv5d.121
+0122      3380    ${DASD_PATH=dasd/}mvswk1.122
+0123      3380    192.168.1.100
+
+0140      3370    dosres.140
+0141      3370    syswk1.141
+0300      3370    sysres.300
+
+0A00.3    QETH    chpid F0  iface /dev/net/tun  ipaddr 192.168.0.4  netmask 255.255.0.0
+0440.2    LCS     -n   /dev/net/tun   192.168.200.2
+0420.2    CTCI    192.168.200.1  192.168.200.2
+0430.2    CTCI    tun0
+#0E40      LCS     -e SNA  tap0
+0E40      CTCE    31880  192.168.1.202  32880
+0E41      CTCE    31882  192.168.1.202  32882
+
+0E42.2    CTCE         1=192.168.1.202
+0460.2    PTP     192.168.200.1  192.168.200.2/24
+0470.2    PTP     tun0
+
+0580      3420    ickdsf.aws  noautomount
+0581      3420    /cdrom/tapes/uaa196.tdf
+0582-0587 3420    $(TAPEDIR)/volumes.$(CUU) maxsizeM=170 eotmargin=131072
+
+0590      3590    \\.\Tape0   # SCSI  (Windows only)
+0591      3590    /dev/nst0   # SCSI  (Linux or Windows)
+0592      3490    /dev/nst1 --no-erg --blkid-32   # Quantum DLT SCSI
+
+0020      2703    lport=32003 dial=IN lnctl=tele2 uctrans=yes term=tty skip=88C9DF iskip=0A
+0023      2703    lport=3780 rhost=localhost rport=3781 dial=no
+0045      2703    lport=32003 dial=IN lnctl=ibm1 term=2741 skip=5EDE code=ebcd
+</pre></div>
+</div>
+</section>
+<section id="comment-lines">
+<h2>Comment lines<a class="headerlink" href="#comment-lines" title="Enlace permanente a este encabezado">¶</a></h2>
+<p>Blank lines, and lines beginning with a # sign or an asterisk, are treated as comments.</p>
+</section>
+<section id="system-parameters">
+<h2>System parameters<a class="headerlink" href="#system-parameters" title="Enlace permanente a este encabezado">¶</a></h2>
+<p>Except for the ARCHLVL and LPARNUM statements, system parameter statements may appear in any order but must precede any device statements. Each system parameter must be on a separate line.
+The following system parameters may be specified:</p>
+<section id="archlvl">
+<h3>ARCHLVL<a class="headerlink" href="#archlvl" title="Enlace permanente a este encabezado">¶</a></h3>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">ARCHLVL</span> <span class="pre">S/370</span> <span class="pre">|</span> <span class="pre">ESA/390</span> <span class="pre">|</span> <span class="pre">ESAME</span> <span class="pre">|</span> <span class="pre">z/Arch</span></code></p>
+</div></blockquote>
+<p>Specifies the initial architecture mode.</p>
+<ul class="simple">
+<li><p>use <code class="docutils literal notranslate"><span class="pre">S/370</span></code> for OS/360, VM/370, and MVS 3.8.</p></li>
+<li><p>use <code class="docutils literal notranslate"><span class="pre">ESA/390</span></code> for MVS/XA, MVS/ESA, OS/390, VM/ESA, VSE/ESA, Linux/390, and ZZSA.</p></li>
+<li><p>use <code class="docutils literal notranslate"><span class="pre">z/Arch</span></code> or <cite>ESAME</cite> for z/OS and zLinux. This is the default.</p></li>
+</ul>
+<p>When <code class="docutils literal notranslate"><span class="pre">z/Arch</span></code> or <code class="docutils literal notranslate"><span class="pre">ESAME</span></code> is specified, the machine will always IPL in ESA/390 mode, but is capable of being switched into z/Architecture mode after IPL. This is handled automatically by all z/Architecture operating systems.</p>
+<p>When <code class="docutils literal notranslate"><span class="pre">ARCHLVL</span> <span class="pre">S/370</span></code> is set, the current <code class="docutils literal notranslate"><span class="pre">LPARNUM</span></code> and <code class="docutils literal notranslate"><span class="pre">CPUIDFMT</span></code> settings will be automatically changed to <code class="docutils literal notranslate"><span class="pre">BASIC</span></code>. When <code class="docutils literal notranslate"><span class="pre">ARCHLVL</span> <span class="pre">z/Arch</span></code> is set, <code class="docutils literal notranslate"><span class="pre">LPARNUM</span></code> and <code class="docutils literal notranslate"><span class="pre">CPUIDFMT</span></code> will be reset back to <code class="docutils literal notranslate"><span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">0</span></code> respectively (if needed). Refer to the <em>«Limited automatic LPARNUM updating when setting certain architecture modes»</em> section of the Release Notes document for more information.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">ARCHLVL</span></code> statement used to be called <code class="docutils literal notranslate"><span class="pre">ARCHMODE</span></code> in previous versions of Hercules but the use of <code class="docutils literal notranslate"><span class="pre">ARCHMODE</span></code> has been deprecated in favor of the new <code class="docutils literal notranslate"><span class="pre">ARCHLVL</span></code> statement. Existing <code class="docutils literal notranslate"><span class="pre">ARCHMODE</span></code> statements should be changed to <code class="docutils literal notranslate"><span class="pre">ARCHLVL</span></code> instead. For the time being however, <code class="docutils literal notranslate"><span class="pre">ARCHMODE</span></code> is still accepted and is treated as simply a synonym for the <code class="docutils literal notranslate"><span class="pre">ARCHLVL</span></code> statement.</p>
+</section>
+<section id="asn-and-lx-reuse">
+<h3>ASN_AND_LX_REUSE<a class="headerlink" href="#asn-and-lx-reuse" title="Enlace permanente a este encabezado">¶</a></h3>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">ASN_AND_LX_REUSE</span>&#160;&#160; <span class="pre">ENABLE</span> <span class="pre">|</span> <span class="pre">DISABLE</span></code> (deprecated; use <code class="docutils literal notranslate"><span class="pre">FACILITY</span></code>)</p>
+</div></blockquote>
+</section>
+<section id="autoinit">
+<h3>AUTOINIT<a class="headerlink" href="#autoinit" title="Enlace permanente a este encabezado">¶</a></h3>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">AUTOINIT</span>&#160;&#160; <span class="pre">ON</span> <span class="pre">|</span> <span class="pre">OFF</span></code></p>
+</div></blockquote>
+<p>The <cite>AUTOINIT</cite> option controls whether device files for emulated tape volumes should be automatically created or not.</p>
+<p>When <code class="docutils literal notranslate"><span class="pre">AUTOINIT</span></code> is <code class="docutils literal notranslate"><span class="pre">ON</span></code>, a <code class="docutils literal notranslate"><span class="pre">devinit</span></code> command specifying a file that does not yet exist causes the tape driver to automatically create an empty unlabeled tape volume consisting of just two tapemarks when it discovers the specified file does not exist yet. When <code class="docutils literal notranslate"><span class="pre">AUTOINIT</span></code> is <code class="docutils literal notranslate"><span class="pre">OFF</span></code> a <code class="docutils literal notranslate"><span class="pre">devinit</span></code> command instead fails with an expected «file not found» error. For convenience the default setting is <code class="docutils literal notranslate"><span class="pre">ON</span></code>.</p>
+</section>
+<section id="automount-directory">
+<h3>AUTOMOUNT   [±]directory<a class="headerlink" href="#automount-directory" title="Enlace permanente a este encabezado">¶</a></h3>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">AUTOMOUNT</span>&#160;&#160; <span class="pre">[±]directory</span></code></p>
+</div></blockquote>
+<p>Specifies the host system directory where the guest is allowed or not allowed to automatically load virtual tape volumes from. Prefix allowable directories with a <code class="docutils literal notranslate"><span class="pre">+</span></code> plus sign and unallowable directories with a <code class="docutils literal notranslate"><span class="pre">-</span></code> minus sign. The default prefix if neither is specified is the <code class="docutils literal notranslate"><span class="pre">+</span></code> plus sign (i.e. an allowable directory).</p>
+<div class="admonition caution">
+<p class="admonition-title">Prudencia</p>
+<p>Enabling this feature may have security consequences depending on which allowable host system directories you specify as well as how your guest operating system enforces authorized use of the Set Diagnose (X’4B”) channel command code.</p>
+</div>
+<p>All host system virtual tape volumes to be «automounted» by the guest must reside within one of the specified allowable host system directories or any of its subdirectories while not also being within any of the specified unallowable directories or any of their subdirectories, in order for the guest-invoked automount to be accepted.</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Specifying a disallowed automount directory does not preclude the Hercules operator from manually mounting any desired file via the <code class="docutils literal notranslate"><span class="pre">devinit</span></code> panel command – even one in a currently defined «disallowed» automount directory. The <cite>AUTOMOUNT</cite> statement only controls guest-invoked automatic tape mounts and not manual tape mounts performed by the Hercules operator.</p>
+</div>
+<p>All directories must be specified on separate statements, but as many statements as needed may be specified in order to describe the desired allowable/unallowable directories layout. For convenience, an automount panel command is also provided to dynamically add/remove new/existing allowable/unallowable automount directories at any time.</p>
+<p>The automount feature is activated whenever you specify at least one allowable or unallowable directory. If only unallowable directories are specified, then the current directory becomes the only defined allowable automount directory by default.</p>
+<p>All specified directories are always resolved to fully-qualified absolute directory paths before being saved.</p>
+<p>Refer to the description of the virtual tape device <code class="docutils literal notranslate"><span class="pre">noautomount</span></code> option for more information.</p>
+</section>
+<section id="cckd">
+<h3>CCKD<a class="headerlink" href="#cckd" title="Enlace permanente a este encabezado">¶</a></h3>
+<p>Syntax: <code class="docutils literal notranslate"><span class="pre">CCKD</span> <span class="pre">cckd-parameters</span></code></p>
+<p>The CCKD command and initialization statement can be used to affect cckd processing. The CCKD initialization statement is specified as a Hercules configuration file statement and supports the same options as the cckd panel command. Refer to the Compressed Dasd Emulation web page for more information.</p>
+</section>
+<section id="cmdsep">
+<h3>CMDSEP<a class="headerlink" href="#cmdsep" title="Enlace permanente a este encabezado">¶</a></h3>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">CMDSEP</span>&#160;&#160; <span class="pre">OFF</span> <span class="pre">|</span> <span class="pre">c</span></code></p>
+</div></blockquote>
+<p>A command line separator character allows multiple commands to be entered on a single line. The character <code class="docutils literal notranslate"><span class="pre">c</span></code> defines the command separator character. The values “.” (period or dot), “!” (exclamation mark or bang) and “-” (dash or hypen) are reserved and cannot be used. The default value is “OFF” indicating command separation is disabled.</p>
+<div class="admonition warning">
+<p class="admonition-title">Advertencia</p>
+<p>Choose your separator character carefully. Setting it to an alphabetic value for example disables all commands containing that character. Setting it to <code class="docutils literal notranslate"><span class="pre">e</span></code> for example will disable the <code class="docutils literal notranslate"><span class="pre">exit</span></code> command making it impossible to exit the emulator. Similarly, setting it to <code class="docutils literal notranslate"><span class="pre">o</span></code> or <code class="docutils literal notranslate"><span class="pre">f</span></code> will make it impossible to disable command separation once enabled, and setting it to <code class="docutils literal notranslate"><span class="pre">#</span></code> (hash) will prevent lines with comments from being processed correctly.</p>
+</div>
+</section>
+<section id="cmpscpad">
+<h3>CMPSCPAD<a class="headerlink" href="#cmpscpad" title="Enlace permanente a este encabezado">¶</a></h3>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">CMPSCPAD</span>&#160;&#160; <span class="pre">alignment</span></code></p>
+</div></blockquote>
+<p>The CMPSCPAD command and initialization statement is used to define the zero padding storage alignment boundary for the CMPSC-Enhancement Facility. It must be a power of 2 value ranging anywhere from 1 to 12.</p>
+</section>
+<section id="cnslport">
+<h3>CNSLPORT<a class="headerlink" href="#cnslport" title="Enlace permanente a este encabezado">¶</a></h3>
+<p>CNSLPORT   3270  -or-  nnnn  -or-  host:port
+Specifies (typically) the port number (in decimal) to which tn3270 and telnet clients should connect. If an invalid value is specified Hercules defaults to port number 3270. See also the SYSGPORT statement.</p>
+<p>The CNSLPORT statement may also be specified as host:port, where host identifies the IP address of the host interface the telnet console server should bind to (listen for connections on). If not specified the server will accept connections on the port from any host interface.</p>
+<p>See the Telnet/tn3270 Console How-To for additional information about setting up a telnet or tn3270 client.</p>
+</section>
+<section id="codepage">
+<h3>CODEPAGE<a class="headerlink" href="#codepage" title="Enlace permanente a este encabezado">¶</a></h3>
+<p>CODEPAGE   mapping
+Specifies the codepage conversion mapping table used for ASCII/EBCDIC translation.</p>
+<p>default specifies traditional Hercules codepage mapping, which is non-transparent.</p>
+<p>Other supported predefined codepage mappings are:</p>
+<p>Mapping Description     Transparent?
+ASCII   EBCDIC
+437/037 437 PC United States    037 United States/Canada
+no
+437/500 437 PC United States    500 International
+no
+437/1047        437 PC United States    1047 Open Systems Latin 1
+no
+819/037 819 ISO-8859-1  037 United States/Canada
+YES
+819/037v2       819 ISO-8859-1  037 United States/Canada version 2
+YES
+819/273 819 ISO-8859-1  273 Austria/Germany
+YES
+819/277 819 ISO-8859-1  277 Denmark/Norway
+YES
+819/278 819 ISO-8859-1  278 Finland/Sweden
+YES
+819/280 819 ISO-8859-1  280 Italy
+YES
+819/284 819 ISO-8859-1  284 Spain
+YES
+819/285 819 ISO-8859-1  285 United Kingdom
+YES
+819/297 819 ISO-8859-1  297 France
+YES
+819/500 819 ISO-8859-1  500 International
+YES
+819/1047        819 ISO-8859-1  1047 Open Systems Latin 1
+YES
+850/273 850 PC Latin 1  273 Austria/Germany
+YES
+850/1047        850 PC Latin 1  1047 Open Systems Latin 1
+no
+1252/037        1252 Windows Latin 1    037 United States/Canada
+no
+1252/037v2      1252 Windows Latin 1    037 United States/Canada version 2
+no
+1252/1047       1252 Windows Latin 1    1047 Open Systems Latin 1
+no
+1252/1140       1252 Windows Latin 1    1140 United States/Canada with Euro
+YES
+ISOANSI/037     ISO ANSI        037 United States/Canada
+YES
+The transparency column indicates whether translating from ASCII to EBCDIC (or vice versa) and back again yields results identical to the original text.</p>
+<p>If no codepage is specified then the environment variable HERCULES_CP will be inspected. If the environment variable is not found then the traditional non-transparent default codepage mapping is used.</p>
+<p>Other codepages can be defined by means of the cp_updt panel command (which is supported as a configuration file statement as well). Enter the panel command help cp_updt for more information.</p>
+<p>The recommended code page for Linux guests is «819/500», as it is both transparent and appears to be the code page that s390x Linux actually uses, thus allowing boot/startup messages to be parsed and displayed properly.</p>
+<p>The recommended code page for non-Linux guests (e.g. z/OS, etc) is «819/1047», as it is both transparent and properly translates all ASCII characters to their EBCDIC equivalents, including all extended ASCII characters too, such as:</p>
+<p>!           exclamation point
+[           left square bracket
+]           right square bracket
+{           left curly bracket
+}           right curly bracket
+|           solid vertical bar
+¦           broken vertical bar
+          backslash
+¬           logical not
+^           caret / circumflex
+_           underscore
+`           grave accent
+~           tilde
+¢           cent
+£           pound
+¤           currency sign
+¥           yen
+§           section sign
+¶           pilcrow/paragraph
+©           copyright symbol
+®           registered trademark
+ª           feminine ordinal indicator
+°           degree
+º           masculine ordinal indicator
+±           plus-minus
+µ           mu/micro
+¿           inverted question mark
+×           multiplication sign
+÷           obelus/divide sign</p>
+</section>
+<section id="conkpalv">
+<h3>CONKPALV<a class="headerlink" href="#conkpalv" title="Enlace permanente a este encabezado">¶</a></h3>
+<p>CONKPALV   (idle,intv,count)
+Specifies the tn3270 console and telnet clients keepalive option values that control automatic detection of disconnected tn3270/telnet client sessions.</p>
+<p>idle  specifies the number of seconds of inactivity until the first keepalive probe is sent (idle time until first probe, or probe frequency).
+intv   specifies the interval in seconds between when successive keepalive packets are sent if no acknowledgement is received from the previous one (i.e. the timeout value of the probes themselves).
+count  specifies the number of unacknowledged keepalive packets sent before the connection is considered to have failed.</p>
+<p>The default values for Windows are 3, 1, and 10. For non-Windows systems it is 3, 1, and 9. That is, send the initial probe 3 seconds after the connection goes idle and then wait no more than one second for it to be responded to. If it is not responded to within one second, then send up to 9 more probes (for a total of 10), each of which must also timeout without being responded to before the client is considered as having died and the connection thus automatically closed.</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>This is a built-in feature of TCP/IP and allows detection of unresponsive TCP/IP connections and not idle clients. That is to say, your connection will not be terminated after 3 seconds of idle time. Your 3270 session can remain idle for many minutes or hours or days without any data being transmitted. If the TCP/IP stack at the other end of the connection – not your 3270 client itself – fails to respond to the internal keepalive probe packets however, then it means that the TCP/IP stack itself is down or there has been a physical break in the connection.</p>
+</div>
+<p>Thus, even if your 3270 client is completely idle, your system’s TCP/IP stack itself should still respond to the keepalive probes sent by the TCP/IP stack at the Hercules end of the link. If it doesn’t, then TCP/IP will terminate the tn3270/telnet session which will cause Hercules to disconnect the terminal.</p>
+<p>The three values can also be modified on-demand via the conkpalv panel command, which has the exact same syntax. Note that the syntax is very unforgiving: no spaces are allowed anywhere within the parentheses and each value must be separated from the other with a single comma.</p>
+<p>Please also note that not all systems support being able to modify all three values. That is, not all values may be modifiable. It is operating system dependent which values you can change and which values you cannot. On Windows for example, the count value is ignored and cannot be changed from its default value of 10. Other systems may ignore one or more or all three values and use platform defaults instead. This is entirely system dependent. Check your system’s documentation for details regarding which values can be changed and which cannot as well as how to adjust your system’s default values.</p>
+</section>
+<section id="cpuidfmt">
+<h3>CPUIDFMT<a class="headerlink" href="#cpuidfmt" title="Enlace permanente a este encabezado">¶</a></h3>
+<p>CPUIDFMT   0 | 1 | BASIC
+Specifies the format of the CPU ID the STIDP instruction should store. Refer to the LPARNUM statement for more information.</p>
+</section>
+<section id="cpumodel">
+<h3>CPUMODEL<a class="headerlink" href="#cpumodel" title="Enlace permanente a este encabezado">¶</a></h3>
+<p>CPUMODEL   0586 | xxxx | $(symbol)
+Specifies the 4 hexadecimal digit CPU machine type number (known prior to ESA/390 as the model number) stored by the STIDP instruction.</p>
+<p>To make it easier to specify the model number for certain known models, the following symbols are now automatically predefined starting with Hercules version 4.4:</p>
+<p>Symbol  Model
+zPDT    1090
+EC12    2827
+BC12    2828
+z13     2964
+z13s    2965
+z14     3906
+z14ZR1  3907
+z15     8561
+z15T02  8562
+z16     3931
+Note: Hercules makes no attempt to emulate all aspects of, or features of, a given CPU model. The CPUMODEL statement defines a purely cosmetic value only. It defines only the value that the STIDP (Store CPU ID) instruction stores, and nothing more.</p>
+</section>
+<section id="cpuserial">
+<h3>CPUSERIAL<a class="headerlink" href="#cpuserial" title="Enlace permanente a este encabezado">¶</a></h3>
+<p>CPUSERIAL   000001 | xxxxxx
+Specifies the 6 hexadecimal digit CPU serial number stored by the STIDP instruction. In BASIC mode, the high-order digit may be replaced with the processor number when MAXCPU &gt; 1; in LPAR mode, the two high-order digits are replaced with either the LPAR number or the CPU number and LPAR number with the full serial number available via the STSI instruction. The default serial number is 000001.</p>
+</section>
+<section id="cpuverid">
+<h3>CPUVERID<a class="headerlink" href="#cpuverid" title="Enlace permanente a este encabezado">¶</a></h3>
+<p>CPUVERID   FD | xx   [FORCE]
+Specifies the 2 hexadecimal digit CPU version code stored by the STIDP instruction.</p>
+<p>The default cpuverid version code at startup is FD, and that value will be stored by the STIDP instruction – even for z/Arch – unless and UNTIL you set it to a different value via the cpuverid command/statement.</p>
+<p>If you try using the cpuverid command/statement to set a non-zero cpuverid value when the architecture mode is currently set to z/Arch, the version code stored by the STIDP instruction will still be stored as 00 anyway, unless … the FORCE option is used. For z/Arch, the FORCE option is the only way to cause the cpuverid command to force the STIDP instruction to store a non-zero version code. (But as explained, at startup, the value stored will still be FD even for z/Arch, since that is Hercules’s default version code value. This means if you want your STIDP version code to be 00 for z/Arch, then you must use a cpuverid command/statement in your configuration file to set it to that value.)</p>
+</section>
+<section id="defsym">
+<h3>DEFSYM<a class="headerlink" href="#defsym" title="Enlace permanente a este encabezado">¶</a></h3>
+<p>DEFSYM   symbol value
+Defines symbol symbol as to contain value value. The symbol can then be the object of a substitution later in the configuration file or for panel commands. If value contains blanks or spaces, then it should be enclosed in double quotation marks («). See substitutions for a more in-depth discussion on this feature.</p>
+<p>Substitution is available even in configuration statements, meaning it is possible to perform substitution in the DEFSYM statement itself. However, symbols are always defined as the last step in the process, so attempting to self define a symbol will result in an empty string:</p>
+<blockquote>
+<div><p>DEFSYM FOO $(FOO)</p>
+</div></blockquote>
+<p>Will set symbol FOO to «»</p>
+</section>
+<section id="devtmax">
+<h3>DEVTMAX<a class="headerlink" href="#devtmax" title="Enlace permanente a este encabezado">¶</a></h3>
+<p>DEVTMAX   -1 | 0 | nnn
+Specifies the maximum number of device threads allowed.</p>
+<p>Specify -1 to cause “one time only” temporary threads to be created to service each I/O request to a device. Once the I/O request is complete, the thread exits. Subsequent I/O to the same device will cause another worker thread to be created again.</p>
+<p>Specify 0 to cause an unlimited number of “semi-permanent” threads to be created on an “as-needed” basis. With this option, a thread is created to service an I/O request for a device if one doesn’t already exist, but once the I/O is complete, the thread enters an idle state waiting for new work. If a new I/O request for the device arrives before the timeout period expires, the existing thread will be reused. The timeout value is currently hard coded at 5 minutes. Note that this option can cause one thread (or possibly more) to be created for each device defined in your configuration. Specifying 0 means there is no limit to the number of threads that can be created.</p>
+<p>Specify a value from 1 to nnn  to set an upper limit to the number of threads that can be created to service any I/O request to any device. Like the 0 option, each thread, once done servicing an I/O request, enters an idle state. If a new request arrives before the timeout period expires, the thread is reused. If all threads are busy when a new I/O request arrives however, a new thread is created only if the specified maximum has not yet been reached. If the specified maximum number of threads has already been reached, then the I/O request is placed in a queue and will be serviced by the first available thread (i.e. by whichever thread becomes idle first). This option was created to address a threading issue (possibly related to the cygwin Pthreads implementation) on Windows systems.</p>
+<p>The default for Windows is 8. The default for all other systems is 0.</p>
+</section>
+<section id="diag8cmd">
+<h3>DIAG8CMD<a class="headerlink" href="#diag8cmd" title="Enlace permanente a este encabezado">¶</a></h3>
+<p>DIAG8CMD   DISABLE | ENABLE   [ECHO | NOECHO]
+When ENABLE is specified the Hercules Diagnose 8 instruction command interface is enabled, allowing the guest to directly issue Hercules commands via the Diagnose 8 instruction. When set to DISABLE all Diagnose 8 instructions cause a Specification Exception program interrupt to occur instead.</p>
+<p>An optional second argument can be given to request whether an audit trail of such commands should be created or not. When ECHO is specified, a message is issued when the command is about to be issued, when the command is redisplayed (as is normally done when entered from the command line), as well as a final message indicating the command has finished executing. When NOECHO is specified no such audit trail messages are displayed and the command instead completes silently (except for whatever messages the command itself may issue).</p>
+<p>Security Alert:  Enabling this feature has security consequences. When this feature is enabled it is possible for guest operating systems running under Hercules to issue commands directly to the host operating system by means of the sh (host shell command) and exec (execute Rexx script) commands. This ability may be disabled via the SHCMDOPT statement’s NODIAG8 option.</p>
+<p>The value of ECHO or NOECHO has no effect on whether or not command output will be placed into the Diagnose 8 instruction’s response buffer if the instruction requested one, nor does it cause the resulting audit trail messages from being placed into the response buffer either. The ECHO option only impacts what is displayed on the hardware console (and what appears in the hardcopy logfile) but does not otherwise impact what is placed into the instruction’s response buffer.</p>
+<p>The default is DISABLE NOECHO</p>
+</section>
+<section id="ecpsvm">
+<h3>ECPSVM<a class="headerlink" href="#ecpsvm" title="Enlace permanente a este encabezado">¶</a></h3>
+<p>ECPSVM   YES | NO | LEVEL nn    [ TRAP | NOTRAP ]
+Specifies whether ECPS:VM (Extended Control Program Support : Virtual Machine) support is to be enabled.</p>
+<p>If YES is specified, then the support level reported to the operating system is 20. The purpose of ECPS:VM is to provide to the VM/370 Operating system a set of shortcut facilities to perform hypervisor functions (CP Assists) and virtual machine simulation (VM Assists).</p>
+<p>Although this feature does not affect VM Operating system products operating in XA, ESA or z/Architecture mode, it will affect VM/370 and VM/SP products running under VM/XA, VM/ESA or z/VM.</p>
+<p>Running VM/370 and VM/SP products under VM/XA, VM/ESA or z/VM should be done with ECPS:VM disabled. ECPS:VM should not be enabled in an AP or MP environment either. ECPS:VM has no effect on non-VM operating systems. It is however recommended to disable ECPS:VM when running native non-VM operating systems.</p>
+<p>If a specific LEVEL is specified, this value will be reported to the operating system when it issues a Store ECPS:VM level, but it doesn’t otherwise alter the ECPS:VM facility operations.</p>
+<p>This is a partial (but mostly complete) implementation.</p>
+<p>It is however not a 100% complete implementation.</p>
+<p>Please refer to the README.ECPSVM document for more detailed information, including an explanation of the TRAP and NOTRAP options.</p>
+</section>
+<section id="engines">
+<h3>ENGINES<a class="headerlink" href="#engines" title="Enlace permanente a este encabezado">¶</a></h3>
+<p>ENGINES   [nn*]CP|IL|AP|IP[,…]
+Specifies the type of engine for each installed processor. The default engine type is CP.</p>
+<p>nn* is an optional repeat count. Spaces are not permitted.</p>
+<p>Examples:</p>
+<p>ENGINES CP,CP,AP,IP
+specifies that processor engines 0 and 1 are of type CP, engine 2 is type AP, and engine 3 is type IP.</p>
+<p>ENGINES 4*CP,2*AP,2*IP
+specifies that the first four processor engines (engines 0-3) are of type CP, the next two (engines 4-5) are of type AP, and the next two (engines 6-7) are of type IP.</p>
+<p>The number of installed processor engines is determined by the MAXCPU statement. If the ENGINES statement specifies more than MAXCPU engines, the excess engines are ignored. If fewer than MAXCPU engines are specified, the remaining engines are set to type CP.</p>
+</section>
+<section id="facility">
+<h3>FACILITY<a class="headerlink" href="#facility" title="Enlace permanente a este encabezado">¶</a></h3>
+<p>FACILITY   ENABLE | DISABLE | QUERY  facility  [archlvl]
+Specifies a particular STFL/STFLE facility to be enabled or disabled, or a request to query of the current settings. Use QUERY ALL to obtain a list of valid facility  names that may be used for the given archlvl. Enter help facility for detailed FACILITY command/statement use.</p>
+<p>Alternatively, you can also specify the actual STFL/STFLE bit number to be turned off or on (disabled or enabled) using the format BITnn  where “nn” corresponds to the exact STFL/STFLE facility bit you wish to be forced on or off. A popular one among the VM crowd is ENABLE BIT44 to force the PFPO (Perform Floating-Point Operation Facility) bit on, since the facility is not enabled by default in SDL Hyperion version 4.1 or earlier. The facility is only enabled by default starting with SDL Hyperion version 4.2 or later. Specifying ENABLE BIT44 allows z/VM guests running on SDL Hyperion 4.1 or earlier to IPL.</p>
+<p>The optional archlvl  argument limits the enable, disable or query function to a specific architecture. It should be noted that attempts to enable or disable a facility that a given architecture does not support are accepted without error. The default value is the value that was set by a preceding ARCHLVL statement or the default mode if there was no preceding ARCHLVL statement.</p>
+</section>
+<section id="hercprio">
+<h3>HERCPRIO<a class="headerlink" href="#hercprio" title="Enlace permanente a este encabezado">¶</a></h3>
+<p>HERCPRIO  nn             (deprecated; unsupported)
+TODPRIO   nn             (deprecated; unsupported)
+DEVPRIO   nn             (deprecated; unsupported)
+CPUPRIO   nn             (deprecated; unsupported)
+The ability to define process and thread priorities has been removed from SDL Hyperion as of version 4.1. You should remove all such statements from your configuration file.</p>
+</section>
+<section id="http-port">
+<h3>HTTP   PORT<a class="headerlink" href="#http-port" title="Enlace permanente a este encabezado">¶</a></h3>
+<p>HTTP   PORT   nnnn [[NOAUTH] | [AUTH userid password]]
+Specifies the port number (in decimal) on which the HTTP server will listen. The port number must either be 80 or within the range 1024 - 65535 inclusive. The server is not started until a subsequent HTTP START statement is found.</p>
+<p>AUTH indictates that a userid and password are required to access the HTTP server, whereas NOAUTH indicates that a userid and password are not required. The userid and password may be any valid string.</p>
+<p>Security Alert!  When AUTH is specified (and specifying a userid and password is thus required), one must exercise due diligence to prevent unauthorized access to Hercules’s configuration file that contains those userids and passwords.</p>
+<p>Security Alert!  The HTTP Server currently utilizes the insecure «http» protocol, not the more secure «https» protocol. All commands and responses are transmitted over the network in the clear, allowing anyone sniffing network traffic to see everything you do and possibly inject unauthorized commands of their own. Exercise caution when using the HTTP Server feature.</p>
+</section>
+<section id="http-root">
+<h3>HTTP   ROOT<a class="headerlink" href="#http-root" title="Enlace permanente a este encabezado">¶</a></h3>
+<p>HTTP   ROOT   directory
+Specifies the root directory where the HTTP server’s files reside. If not specified, the default value for Win32 builds of Hercules is the directory where the Hercules executable itself is executing out of, and for non-Win32 builds it is the directory specified as the default package installation directory when the Hercules executable was built (which can vary depending on how the Hercules package was built, but is usually /usr/local/share/hercules/).</p>
+</section>
+<section id="http-start">
+<h3>HTTP   START<a class="headerlink" href="#http-start" title="Enlace permanente a este encabezado">¶</a></h3>
+<p>HTTP   START
+Starts the HTTP server. (Note: The server is no longer started by default.)</p>
+</section>
+<section id="ignore-include-errors">
+<h3>IGNORE INCLUDE_ERRORS<a class="headerlink" href="#ignore-include-errors" title="Enlace permanente a este encabezado">¶</a></h3>
+<p>IGNORE   INCLUDE_ERRORS
+Indicates that errors caused by subsequent INCLUDE statements for files which do not exist should instead be ignored rather than causing startup to be aborted (as would otherwise normally occur).</p>
+</section>
+<section id="include">
+<h3>INCLUDE<a class="headerlink" href="#include" title="Enlace permanente a este encabezado">¶</a></h3>
+<p>INCLUDE   filepath
+An INCLUDE statement tells Hercules configuration file processing to treat the contents of the file specified by filepath as if its contents had appeared in the configuration file at the point where the INCLUDE statement appears.</p>
+<p>Note that the included file may itself contain yet another INCLUDE statement as long as the maximum nesting depth (current 8) is not exceeded.</p>
+</section>
+<section id="iodelay">
+<h3>IODELAY<a class="headerlink" href="#iodelay" title="Enlace permanente a este encabezado">¶</a></h3>
+<p>IODELAY   usec
+Specifies the amount of time (in microseconds) to wait after an I/O interrupt is ready to be set pending. This value can also be set using the Hercules console. The purpose of this parameter is to bypass a bug in the Linux/390 and zLinux dasd.c device driver. The problem is more apt to happen under Hercules than on a real machine because we may present an I/O interrupt sooner than a real machine.</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>OSTAILOR LINUX no longer sets IODELAY to 800 since the problem described above is no longer present in recent versions of the Linux kernel.</p>
+</div>
+</section>
+<section id="ldmod">
+<h3>LDMOD<a class="headerlink" href="#ldmod" title="Enlace permanente a este encabezado">¶</a></h3>
+<p>LDMOD   module list
+Specifies additional modules that are to be loaded by the Hercules dynamic loader. The default search order is with the Hercules directory in the default DLL search path. Most systems also support absolute filenames (ie names starting with “/” or “.”) in which case the default search path is not taken.</p>
+<p>Multiple LDMOD statements may be used.</p>
+</section>
+<section id="legacysenseid">
+<h3>LEGACYSENSEID<a class="headerlink" href="#legacysenseid" title="Enlace permanente a este encabezado">¶</a></h3>
+<p>LEGACYSENSEID   OFF | DISABLE | ON | ENABLE
+Specifies whether the SENSE ID CCW (X’E4”) will be honored for the devices that originally didn’t support that feature. This includes (but may not be limited to) 3410 and 3420 tape drives, 2311 and 2314 direct access storage devices, and 2703 communication controllers.</p>
+<p>Specify ON or ENABLE if your guest operating system needs the Sense ID support to dynamically detect those devices. Note that most current operating systems will not detect those devices even though Sense ID is enabled because those devices never supported the Sense ID in the first place. So this mainly applies to custom built or modified versions of guest operating systems that are aware of this specific Hercules capability.</p>
+<p>Because those legacy devices didn’t originally support this command, and for compatibility reasons, the default is OFF or DISABLE.</p>
+</section>
+<section id="loadparm">
+<h3>LOADPARM<a class="headerlink" href="#loadparm" title="Enlace permanente a este encabezado">¶</a></h3>
+<p>LOADPARM   xxxxxxxx
+Specifies the default eight-character IPL parameter used by some operating systems to select system parameters.</p>
+<p>The specified value is used as the IPL command’s default LOADPARM option parameter when the IPL command is issued without the LOADPARM option. Regardless of the value specified for this setting, the value can alway be overridden by specifying a different value for the LOADPARM option on the IPL command itself. The LOADPARM configuration file option simply specifies a default value that will be used unless overridden with a different value on the IPL command itself.</p>
+</section>
+<section id="logopt">
+<h3>LOGOPT<a class="headerlink" href="#logopt" title="Enlace permanente a este encabezado">¶</a></h3>
+<p>LOGOPT   TIMESTAMP | NOTIMESTAMP | DATESTAMP | NODATESTAMP |
+Sets logfile options. TIMESTAMP inserts a time stamp in front of each log message. NOTIMESTAMP logs messages without time stamps. Similarly, DATESTAMP and NODATESTAMP prefixes logfile messages with or without the current date. The current resolution of the stamp is one second.</p>
+<p>The default is TIMESTAMP NODATESTAMP.</p>
+</section>
+<section id="lparname">
+<h3>LPARNAME<a class="headerlink" href="#lparname" title="Enlace permanente a este encabezado">¶</a></h3>
+<p>LPARNAME   name
+Specifies the LPAR name returned by DIAG X’204”. The default is HERCULES.</p>
+</section>
+<section id="lparnum">
+<h3>LPARNUM<a class="headerlink" href="#lparnum" title="Enlace permanente a este encabezado">¶</a></h3>
+<p>LPARNUM   BASIC | 1 | xx
+Specifies the one- or two-digit hexadecimal LPAR identification number stored by the STIDP instruction, or BASIC.</p>
+<p>If a one-digit number from 1 to F (hexadecimal) is specified, then STIDP stores a format-0 CPU ID unless a subsequent CPUIDFMT 1 statement is specified.</p>
+<p>If 0 or a two-digit hexadecimal number (except 10 hexadecimal) is specified, then STIDP stores a format-1 CPU ID. For LPARNUM 10 the current CPUIDFMT is not changed.</p>
+<p>When LPARNUM is BASIC, then STIDP stores a basic-mode CPU ID (6-hexadecimal digit serial number when MAXCPU = 1, or a one-hexadeciaml digit CPU number and 5-hexadecimal digit serial number when MAXCPU &gt; 1).</p>
+<p>The LPARNUM setting will be automatically changed if needed to BASIC when ARCHLVL S/370 is set (which also changes the CPUIDFMT setting to BASIC too), and is automatically set to LPARNUM 1 (and CPUIDFMT 0) if needed when ARCHLVL z/Arch is set. Refer to the «Limited automatic LPARNUM updating when setting certain architecture modes» section of the Release Notes document for more information.</p>
+<p>The default is LPARNUM 1 with a format-0 CPU ID.</p>
+</section>
+<section id="mainsize">
+<h3>MAINSIZE<a class="headerlink" href="#mainsize" title="Enlace permanente a este encabezado">¶</a></h3>
+<p>MAINSIZE   nnnn | nnnK | nnnM | nnnG | nnnT | nnnP | nnnE
+Specifies the main storage size in megabytes, where nnnn  is a decimal number. Or, nnnM  where M  is K - Kilobytes, M - Megabytes, G - Gigabytes, T - Terabytes, P - Petabytes, E - Exabytes. The default on startup is 2M.</p>
+<p>For storage sizes less than 16M, sizes not on a 4K boundary are rounded up to the next 4K boundary. Otherwise, storage sizes not on a 1M boundary are rounded up to the next 1M boundary.</p>
+<p>The minimum size is 4K for S/370 and ESA/390, and 8K for z/Arch. A maximum of 64M may be specified for S/370, 2048M (2G) for ESA/390, and 16E for z/Arch.</p>
+<p>Notes:</p>
+<p>The actual upper limit is determined by your host system’s architecture and operating system, the guest operating system, and the amount of physical memory and available paging space. The total of mainsize and xpndsize on host systems with a 32-bit architecture will be limited to less than 4G; host systems with a 64-bit architecture will be limited to less than 16E.
+.. caution:: Using minimum storage sizes, storage sizes less than 64K or a size that is not a multiple of 64K for S/370, or a size less than 1M or is not a multiple of 1M for z/Arch is not recommended as it could generate error conditions which are not covered by the Principles of Operations.
+Use of storage sizes greater than supported by the guest operating system may generate incorrect results or error conditions within the guest operating system.</p>
+</section>
+<section id="manufacturer">
+<h3>MANUFACTURER<a class="headerlink" href="#manufacturer" title="Enlace permanente a este encabezado">¶</a></h3>
+<p>MANUFACTURER   name
+Specifies the 1-16 character MANUFACTURER name returned the STSI instruction. Valid characters are 0-9 and uppercase A-Z only. The default is HRC.</p>
+</section>
+<section id="maxcpu">
+<h3>MAXCPU<a class="headerlink" href="#maxcpu" title="Enlace permanente a este encabezado">¶</a></h3>
+<p>MAXCPU   nn
+Specifies the number of installed processor engines. The NUMCPU statement specifies the number of engines which will be configured online at startup time. All processors are CP engines unless otherwise specified by the ENGINES statement.</p>
+<p>The value of MAXCPU cannot exceed the value of MAX_CPU_ENGS. If MAXCPU is not specified in the Hercules configuration file, then its initial value is equal to NUMCPU. If MAXCPU and NUMCPU are both omitted, MAXCPU is set to 1.</p>
+<p>MAX_CPU_ENGS is a compile-time variable which sets an upper limit on the value of MAXCPU. The value of MAX_CPU_ENGS is displayed in the Build information message on the Hercules control panel at startup time. To change the value of MAX_CPU_ENGS you must rebuild Hercules. For Unix builds, specify ./configure –enable-multi-cpu=nn before performing make. For Windows builds, specify SET MAX_CPU_ENGS=nn before performing nmake.</p>
+<p>MAX_CPU_ENGS cannot exceed 64. For performance reasons, values above 32 are not recommended for 32-bit platforms. If MAX_CPU_ENGS is set to 1 then multiprocessing is disabled. See also NUMCPU for a discussion of the performance implications of MAX_CPU_ENGS.</p>
+</section>
+<section id="model">
+<h3>MODEL<a class="headerlink" href="#model" title="Enlace permanente a este encabezado">¶</a></h3>
+<p>MODEL   hardware_model [ capacity_model ] [ perm_capacity_model ] [ temp_capacity_model ]
+Specifies the 1-16 character MODEL names returned the STSI instruction. Valid characters are 0-9 and uppercase A-Z only. The default is EMULATOR.</p>
+<p>If two operands are supplied, the first is the hardware model name (CPC ND model) and the second is the capacity model name (CPC SI model). If only one operand is supplied, it is used as both the hardware model name and the capacity model name. The optional third and fourth operands specify the permanent capacity model name and the temporary capacity model name respectively.</p>
+</section>
+<section id="modpath">
+<h3>MODPATH<a class="headerlink" href="#modpath" title="Enlace permanente a este encabezado">¶</a></h3>
+<p>MODPATH   path
+Specifies the relative or absolute path of the directory where dynamic modules should be loaded from. Only one directory may be specified. The path should be enclosed within double quotes if it contains any blanks.</p>
+<p>When a modpath statement is specified, the path on the modpath statement is searched before the default path is searched. The system default varies depending on the host platform where Hercules is being run.</p>
+</section>
+<section id="mounted-tape-reinit">
+<h3>MOUNTED_TAPE_REINIT<a class="headerlink" href="#mounted-tape-reinit" title="Enlace permanente a este encabezado">¶</a></h3>
+<p>MOUNTED_TAPE_REINIT   DISALLOW | DISABLE | ALLOW | ENABLE
+Specifies whether reinitialization of tape drive devices (via the devinit command, in order to mount a new tape) should be allowed if there is already a tape mounted on the drive.</p>
+<p>Specifying ALLOW|ENABLE (default) indicates new tapes may be mounted (via “devinit nnnn new-tape-filename”) irrespective of whether or not there is already a tape mounted on the drive.</p>
+<p>Specifying DISALLOW|DISABLE prevents new tapes from being mounted if one is already mounted. When DISALLOW is specified and a tape is already mounted on the drive, it must first be unmounted (via the command “devinit nnnn <a href="#id1"><span class="problematic" id="id2">*</span></a>”) before the new tape can be mounted. Otherwise the devinit attempt to mount the new tape is rejected.</p>
+<p>This option is meant as a safety mechanism to protect against accidentally dismounting a tape from the wrong drive as a result of a simple typo (thereby cancelling a potentially important tape job) and was added by user request.</p>
+<p>Also note that for SCSI tape drives the “devinit nnnn <a href="#id3"><span class="problematic" id="id4">*</span></a>” command has no effect as the tape must be unmounted manually (since it is a real physical device and not one emulated via a disk file like .AWS tapes).</p>
+</section>
+<section id="netdev">
+<h3>NETDEV<a class="headerlink" href="#netdev" title="Enlace permanente a este encabezado">¶</a></h3>
+<p>NETDEV   devname
+Specifies the name (or for Windows, the IP or MAC address) of the underlying default host network adapter to be used for Hercules communications devices unless overridden on the device statement itself.</p>
+<p>The default for Linux (except Apple and FreeBSD) is /dev/net/tun. The default for Apple and FreeBSD is /dev/tun.</p>
+<p>The default for Windows is whichever host adapter that SoftDevLab’s CTCI-WIN product returns as its «default host network adapter», which for older versions of CTCI-WIN (3.5.0 and earlier) is the first network adapter in the Windows host’s binding order (which may not be desirable for some users). The NETDEV statement allows you to override this.</p>
+<p>Refer to the “Help” file included in newer versions of CTCI-WIN (version 3.6.0 or greater) for information regarding modifying Windows’s «Adapter Binding Order» and/or defining a preferred CTCI-WIN default host network adapter.</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Hercules’s networking support requires privileged access to your host’s networking devices. If Hercules is not started with Administrative (root) privileges then initialization of your networking devices will fail and your guest’s networking will not work.</p>
+</div>
+</section>
+<section id="numcpu">
+<h3>NUMCPU<a class="headerlink" href="#numcpu" title="Enlace permanente a este encabezado">¶</a></h3>
+<p>NUMCPU   nn
+Specifies the number of emulated processor engines which will be configured online at startup time. NUMCPU cannot exceed the value of MAXCPU. If NUMCPU is less than MAXCPU then the remaining engines can be configured online later. The default NUMCPU value is 1. The minimum value is 0.</p>
+<p>Multiprocessor emulation works best if your host system actually has more than one physical CPU, but you can still emulate multiple CPUs nervertheless even on a uniprocessor system (and you might even achieve a small performance benefit when you do). There is little point, however, in specifying NUMCPU greater than 1 unless your guest operating system (running under Hercules) is actually able to support multiple CPUs (and if you do not actually need multiprocessor emulation, then setting MAX_CPU_ENGS to 1 at compile time might even produce a slight performance advantage too).</p>
+</section>
+<section id="ostailor">
+<h3>OSTAILOR<a class="headerlink" href="#ostailor" title="Enlace permanente a este encabezado">¶</a></h3>
+<p>OSTAILOR   DEFAULT | OS/390 | z/OS | VM | z/VM | VSE | z/VSE | LINUX | OpenSolaris | QUIET | NULL
+Specifies the intended operating system. The effect of this parameter is to reduce control panel message traffic by selectively suppressing trace messages for program checks which are considered normal in the specified environment. QUIET suppresses all exception messages. NULL displays all exception messages.</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Neither QUIET nor NULL should ever be used in normal circumstances! QUIET hides what otherwise might be important messages needed to diagnose incorrect Hercules and/or guest functionality. Only use QUIET under the guidance of Hercules product support personnel. Instead, please specify an OSTAILOR value that is appropriate for the guest operating system you intend to run under Hercules, or else let it default by not specifying it at all.</p>
+</div>
+<p>If no OSTAILOR statement is specified at all, then DEFAULT is used, which suppresses only program check messages for interruption codes 10 (segment-translation exception), 11 (page-translation exception), 16 (trace-table exception) and 1C (space-switch event), which are considered to be completely normal and unremarkable for virtually all known mainframe operating systems.</p>
+<p>Optionally prefix any value (except QUIET or NULL) with “+” to cause the suppressions for that environment to be combined (added) to those already specified, or with “-” to remove such suppressions (i.e. to allow them).</p>
+<p>This allows you to, for example, suppress messages for both z/VM as well as for z/OS too (for situations where you intend to run z/OS as a guest under z/VM) by specifying two OSTAILOR statements as follows:</p>
+<p>OSTAILOR  z/VM
+OSTAILOR  +Z/OS
+Use the «pgmtrace» panel command to fine tune the current settings.</p>
+</section>
+<section id="panopt">
+<h3>PANOPT<a class="headerlink" href="#panopt" title="Enlace permanente a este encabezado">¶</a></h3>
+<p>PANOPT   FULLPATH|NAMEONLY RATE=SLOW|FAST|nnn MSGCOLOR=NO|DARK|LIGHT TITLE=xxx
+Defines panel display options. NAMEONLY requests the extended panel screen (that displays the list of devices and is reached by pressing the ESC key) to display only the emulated device’s base filename. The default is FULLPATH which displays the file’s full path filename.</p>
+<p>RATE=nnn specifies the panel refresh rate in milliseconds between screen refreshes. RATE=SLOW is the same as 500. RATE=FAST is the same as 50. A value less than the system clock tick interval or greater than 5000 will be rejected. SLOW is the default.</p>
+<p>MSGCOLOR=DARK displays colorized panel messages meant for “dark” panels (such as white text on black background) whereas MSGCOLOR=LIGHT is obviously meant for panels using dark text on light backgrounds. Only “E” (error), “W” (warning), “D” (debug) and “I” (informational) messages are colorized. Any message not detected as a Hercules «HHCnnnnnX» format message are not colorized. The colors are currently hard coded and cannot be changed. NO is the default, but DARK or LIGHT (as appropriate for your system) is strongly encouraged as it makes error and warning messages more noticeable and less likely to be missed.</p>
+<p>TITLE=xxx defines an optional console window title-bar string to be used in place of the default supplied by the windowing system, and allows you to distinguish between different Hercules sessions (instances) running on the same machine. If the value contains any blanks, the entire option specification should be enclosed within double-quotes (e.g. «TITLE=my title», not  TITLE=»my title» which is an error).</p>
+<p>The TITLE= option takes effect only when the Hercules console is displayed on either an xterm terminal (commonly used on Unix systems) or in a Command Prompt window on Windows systems.</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Neither the MSGCOLOR= nor the TITLE= option has any effect when Hercules is run under the control of an external GUI since since Hercules’s console window is hidden in favor of using the external GUI’s window instead (and the GUI is in control of its own colors). The RATE= option however, controls how often the external GUI will refresh its own window and other user-interface controls. Similarly, the FULLPATH and NAMEONLY option controls how the external GUI displays your list of emulated devices.</p>
+</div>
+</section>
+<section id="panrate">
+<h3>PANRATE<a class="headerlink" href="#panrate" title="Enlace permanente a este encabezado">¶</a></h3>
+<p>PANRATE   SLOW | FAST | nn             (deprecated; use PANOPT instead)
+This statement has been deprecated in favor of the PANOPT statement instead.</p>
+</section>
+<section id="pantitle">
+<h3>PANTITLE<a class="headerlink" href="#pantitle" title="Enlace permanente a este encabezado">¶</a></h3>
+<p>PANTITLE   «title-string»             (deprecated; use PANOPT instead)
+This statement has been deprecated in favor of the PANOPT statement instead.</p>
+</section>
+<section id="pgmprdos">
+<h3>PGMPRDOS<a class="headerlink" href="#pgmprdos" title="Enlace permanente a este encabezado">¶</a></h3>
+<p>PGMPRDOS   RESTRICTED | LICENSED
+Specifies whether or not Hercules will run licensed program product ESA or z/Architecture operating systems. If RESTRICTED is specified, Hercules will stop all CPUs when a licensed program product operating system is detected. Specify LICENSED to allow these operating systems to run normally. This parameter has no effect on Linux/390, Linux for z/Series, or any 370-mode OS.</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>It is YOUR responsibility to comply with the terms of the license for the operating system you intend to run on Hercules. If you specify LICENSED and run a licensed operating system in violation of that license, then don’t come after the Hercules developers when the vendor sends their lawyers after you!</p>
+</div>
+<p>RESTRICTED is the default. Specifying LICENSED will produce a message when a licensed operating system is detected to remind you of your responsibility to comply with software license terms.</p>
+</section>
+<section id="plant">
+<h3>PLANT<a class="headerlink" href="#plant" title="Enlace permanente a este encabezado">¶</a></h3>
+<p>PLANT   name
+Specifies the 1-4 character PLANT name returned the STSI instruction. Valid characters are 0-9 and uppercase A-Z only. The default is ZZ.</p>
+</section>
+<section id="scsimount">
+<h3>SCSIMOUNT<a class="headerlink" href="#scsimount" title="Enlace permanente a este encabezado">¶</a></h3>
+<p>SCSIMOUNT   NO | YES | nn
+Specifies whether automatic detection of SCSI tape mounts are to be enabled or not.</p>
+<p>Specifying NO or 0 seconds (the default) indicates the option is disabled, forcing all SCSI tape mounts to be done manually via an appropriate devinit command.</p>
+<p>A value from 1 to 99 seconds inclusive enables the option and causes periodic queries of the SCSI tape drive to automatically detect when a new tape is mounted. Specifying YES  is the same as specifying 5 seconds.</p>
+<p>The scsimount panel command may also be used to display and/or modify this value on demand once Hercules has been started. Note too that the scsimount panel command also lists any mounts and/or dismounts that may still be pending on the drive, as long as you’ve defined your tape drive as a model that has an LCD «display» (such as a model 3480, 3490 or 3590).</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Enabling this option may cause Hercules to take longer to shutdown depending on the value specified for this option as well as how the host operating system (Windows, Linux, etc) and associated hardware (SCSI adapter) behaves to drive status queries for drives which do not have any media currently mounted on them.</p>
+</div>
+</section>
+<section id="shcmdopt">
+<h3>SHCMDOPT<a class="headerlink" href="#shcmdopt" title="Enlace permanente a este encabezado">¶</a></h3>
+<p>SHCMDOPT   DISABLE | ENABLE   [DIAG8 | NODIAG8]
+When set to DISABLE, the sh (host shell command) and exec (Rexx execute script) commands are globally disabled and will result in an error if entered either directly via the hardware console or programmatically via the DIAG8CMD interface.</p>
+<p>If the optional NODIAG8 option is specified, then only the programmatic execution of commands via the the Diagnose 8 interface are disabled, but shell and Rexx commands entered directly via the Hercules command line still work. This includes commands entered via the HTTP server facility as well as commands issued by .rc «run command» scripts too (automatically at startup or directly or indirectly via the script command).</p>
+<p>Security Alert:  Enabling this feature has security consequences. When ENABLE DIAG8 is specified it is possible for guest operating systems running under Hercules to issue commands directly to the host operating system.</p>
+</section>
+<section id="shrdport">
+<h3>SHRDPORT<a class="headerlink" href="#shrdport" title="Enlace permanente a este encabezado">¶</a></h3>
+<p>SHRDPORT   nnnn
+Specifies the port number (in decimal) on which the Shared Device server will listen. Specifying SHRDPORT will allow other Hercules instances to access devices on this instance. (Currently only DASD devices may be shared). By default, the other Hercules instances (clients) will use port 3990. If you specify a different port number, then you will have to specify this port number on the device statement for the other Hercules clients. If no SHRDPORT statement is present then the Shared Device server thread will not be activated.</p>
+</section>
+<section id="sysepoch">
+<h3>SYSEPOCH<a class="headerlink" href="#sysepoch" title="Enlace permanente a este encabezado">¶</a></h3>
+<p>SYSEPOCH   yyyy [±years]
+Specifies the base date for the TOD clock. Use the default value (1900) for all systems except OS/360. Use 1960 for OS/360. Values other than these were formerly used to offset the TOD clock by a number of years to move the date before the year 2000 for non-Y2K-compliant operating systems. This use is deprecated, and support will be removed in a future release; at that time, only values of 1900 or 1960 will be accepted. Other values will produce a warning message with the equivalent values to specify in the SYSEPOCH statement.
+An optional year offset may be specified, and will be treated as though it had been specified on a YROFFSET statement.</p>
+</section>
+<section id="sysgport">
+<h3>SYSGPORT<a class="headerlink" href="#sysgport" title="Enlace permanente a este encabezado">¶</a></h3>
+<p>SYSGPORT   NO  -or-  3278  -or-  nnnn  -or-  host:port
+Specifies (typically) the port number (in decimal) to which tn3270 and telnet clients should use to connect to a SYSG console device or the value NO. The default is NO, meaning no separate listening socket will be created for SYSG console connections. If an invalid value is specified Hercules defaults to port number 3278. See also the CNSLPORT statement.</p>
+<p>The SYSGPORT statement may also be specified as host:port, where host identifies the IP address of the host interface the telnet console server should bind to (listen for connections on). If not specified the server will accept connections on the port from any host interface.</p>
+<p>See the Telnet/tn3270 Console How-To for additional information about setting up a telnet or tn3270 client.</p>
+</section>
+<section id="timerint">
+<h3>TIMERINT<a class="headerlink" href="#timerint" title="Enlace permanente a este encabezado">¶</a></h3>
+<p>TIMERINT   DEFAULT | nnnn
+Specifies the internal timers update interval, in microseconds. This parameter specifies how frequently Hercules’s internal timers-update thread updates the TOD Clock, CPU Timer, and other architectural related clock/timer values.</p>
+<p>When the z/Architecure Transactional-Execution Facility (073_TRANSACT_EXEC) is not installed or enabled, the minimum and default intervals are 1 and 50 microseconds respectively, which strikes a reasonable balance between clock accuracy and overall host performance.</p>
+<p>When the z/Architecure Transactional-Execution Facility is installed and enabled, the minimum and default intervals are 200 and 400 microseconds.</p>
+<p>The maximum allowed interval is 999999 microseconds (one microsecond less than one second).</p>
+<p>Also note that due to host system limitations and/or design, some hosts may round up and/or coalesce short microsecond intervals to a much longer millisecond interval instead.</p>
+<div class="admonition caution">
+<p class="admonition-title">Prudencia</p>
+<p>While lower TIMERINT values may help increase the accuracy of your guest’s TOD Clock and CPU Timer values, it could also have a severe negative impact on host operating system performance as well. You should exercise extreme caution when choosing your TIMERINT value in relationship to the actual process priority (nice value) of the Hercules process itself.</p>
+</div>
+</section>
+<section id="toddrag">
+<h3>TODDRAG<a class="headerlink" href="#toddrag" title="Enlace permanente a este encabezado">¶</a></h3>
+<p>TODDRAG   n.nn
+Specifies the TOD clock drag factor. This parameter can be used to slow down or speed up the TOD clock by a factor of nn. A significant slowdown can improve the performance of some operating systems which consume significant amounts of CPU time processing timer interrupts. A drag factor of 2.0 slows down the clock by 50%. A drag factor of 0.5 doubles the speed of the clock. A drag factor of 1.01 slows down the clock by 1%, and 0.99 speeds up the clock by 1%.</p>
+</section>
+<section id="traceopt">
+<h3>TRACEOPT<a class="headerlink" href="#traceopt" title="Enlace permanente a este encabezado">¶</a></h3>
+<p>TRACEOPT   [TRADITIONAL | REGSFIRST | NOREGS]  [NOCH9OFLOW]
+Sets the Hercules instruction and device tracing option(s).</p>
+<p>TRADITIONAL (the default), displays the instruction about to be executed followed by the current register values such that pressing the ENTER key (to execute the displayed instruction) then shows the next instruction to be executed followed by a display of the updated registers.</p>
+<p>REGSFIRST displays the current register values first, followed by the instruction about to be executed, such that pressing the ENTER key (to execute the displayed instruction) then shows the newly updated register values (that the instruction just updated) followed by the next instruction about to be executed.</p>
+<p>NOREGS suppresses the registers display altogether and shows just the instruction about to be executed.</p>
+<p>NOCH9OFLOW suppresses CCW tracing of printer channel-9 overflow unit checks which are considered completely normal and not true device errors. The unit checks still occur, they are simply not traced unless CCW tracing is explicitly enabled on the device.</p>
+</section>
+<section id="tzoffset">
+<h3>TZOFFSET<a class="headerlink" href="#tzoffset" title="Enlace permanente a este encabezado">¶</a></h3>
+<p>TZOFFSET   ±hhmm
+Specifies the hours and minutes by which the TOD clock will be offset from the current system time. For GMT, use the default value (0000). For timezones west of Greenwich, specify a negative value (example: -0500 for US Eastern Standard Time, -0800 for US Pacific Standard Time). For timezones east of Greenwich, specify a positive value (example: +0100 for Central European Time, +0930 for South Australian Time).</p>
+</section>
+<section id="xpndsize">
+<h3>XPNDSIZE<a class="headerlink" href="#xpndsize" title="Enlace permanente a este encabezado">¶</a></h3>
+<p>XPNDSIZE   nnnn | nnnM | nnnG | nnnT | nnnP | nnnE
+Specifies the expanded storage size in megabytes, where nnnn is a decimal number. Or, nnnM  where M  is K - Kilobytes, M - Megabytes, G - Gigabytes, T - Terabytes, P - Petabytes, E - Exabytes.</p>
+<p>Storage sizes not on a 1M boundary are rounded up to the next 1M boundary. The lower limit and default is 0.</p>
+<p>Notes:</p>
+<p>The actual upper limit is determined by your host system’s architecture and operating system, the guest operating system, and the amount of physical memory and available paging space. The total of mainsize and xpndsize on host systems with a 32-bit architecture will be limited to less than 4G; host systems with a 64-bit architecture will be limited to less than 16E.
+Use of storage sizes greater than supported by the guest operating system may generate incorrect results or error conditions within the guest operating system.</p>
+</section>
+<section id="yroffset">
+<h3>YROFFSET<a class="headerlink" href="#yroffset" title="Enlace permanente a este encabezado">¶</a></h3>
+<p>YROFFSET   ±years
+Specifies a number of years to offset the TOD clock from the actual date. Positive numbers will move the clock forward in time, while negative numbers will move it backward. A common value for non-Y2K-compliant operating systems is YROFFSET -28, which has the advantage that the day of the week and the presence or absence of February 29 is the same as the current year. This value may not be specified as greater than ±142 years, the total range of the TOD clock. Specifying a value that causes the computed TOD clock year to be earlier than the value of SYSEPOCH or more than 142 years later than that value will produce unexpected results.</p>
+<p>A comment preceded by a # sign may be appended to any system parameter statement.</p>
+</section>
+</section>
+<section id="symbol-substitutions">
+<h2>Symbol substitutions<a class="headerlink" href="#symbol-substitutions" title="Enlace permanente a este encabezado">¶</a></h2>
+<p>In configuration and device statements, as well as in panel commands and OAT files, symbols may be substituted for text.</p>
+<section id="syntax">
+<h3>Syntax<a class="headerlink" href="#syntax" title="Enlace permanente a este encabezado">¶</a></h3>
+<p>To substitute symbol symbol with its contents, the symbol should be enclosed within parenthesis and preceded by a $ sign. For example, if symbol FOO contains the text string «BAR» then $(FOO) will be substituted with the string «BAR»;. Symbol names are case sensitive.</p>
+<section id="example">
+<h4>Example<a class="headerlink" href="#example" title="Enlace permanente a este encabezado">¶</a></h4>
+<blockquote>
+<div><p>DEFSYM  TAPEDIR  «/home/hercules/tapes»</p>
+<p>…</p>
+<p>0380  3420  $(TAPEDIR)/scratch.aws</p>
+<p>…</p>
+</div></blockquote>
+<p>In this example, device 0380 will be a 3420 loaded with the AWS tape file in /home/hercules/tapes/scratch.aws</p>
+</section>
+</section>
+<section id="special-symbols">
+<h3>Special symbols<a class="headerlink" href="#special-symbols" title="Enlace permanente a este encabezado">¶</a></h3>
+<section id="device-group-symbols">
+<h4>Device group symbols<a class="headerlink" href="#device-group-symbols" title="Enlace permanente a este encabezado">¶</a></h4>
+<p>When multiple devices are defined with a single device definition statement, then the symbols</p>
+<blockquote>
+<div><p>CUU
+(3 digits device number, upper case hexadecimal digits)
+CCUU
+(4 digits device number, upper case hexadecimal digits)
+DEVN
+(4 digits device number, upper case hexadecimal digits)</p>
+</div></blockquote>
+<p>are defined to contain for each device the relevant device address. For example:</p>
+<blockquote>
+<div><p>0200,0201  3340  /home/hercules/dasds/myvols.$(CUU)</p>
+</div></blockquote>
+<p>will define two 3340 packs, with device 0200 being loaded with the file myvols.200 and device 0201 defined with myvols.201.</p>
+</section>
+<section id="environment-variables">
+<h4>Environment variables<a class="headerlink" href="#environment-variables" title="Enlace permanente a este encabezado">¶</a></h4>
+<p>If a symbol is not explicitly defined by a DEFSYM statement and an environment variable by the same name exists, the string contents of that environment variable will be used for substitution.</p>
+</section>
+<section id="undefined-symbols">
+<h4>Undefined symbols<a class="headerlink" href="#undefined-symbols" title="Enlace permanente a este encabezado">¶</a></h4>
+<p>If a symbol is not defined by an explicit DEFSYM, is not an automatically generated symbol and is not an environment variable, an empty string will be substituted.</p>
+</section>
+</section>
+</section>
+<section id="escaping-substitution-recursion">
+<h2>Escaping substitution, recursion<a class="headerlink" href="#escaping-substitution-recursion" title="Enlace permanente a este encabezado">¶</a></h2>
+<p>To be able to specify the “$(” string without incurring substitution, an additional “$” sign should be used. For example, $$(FOO) will not be substituted. If substitution is required but the preceding text is to contain a “$” sign as the very last character, then $$$(FOO) should be specified. Thus, if symbol FOO contains «BAR», then $$(FOO) will remain «$$(FOO)» while $$$(FOO) will become «$BAR».</p>
+<p>Substitution is not recursive (only one substitution pass is made).</p>
+<p>Enhanced symbol substitutions
+Enhanced symbol substitution differs from the above normal symbol substitution in several very important ways:</p>
+<p>First, the syntax is different. Enhanced substitution symbol names are specified using ${var} (dollar + brace) rather than $(var) (dollar + parenthesis).</p>
+<p>Second, the enhanced syntax supports specifying a default value that is to be used instead whenever the name symbol is otherwise not defined. The default value is placed within the opening and closing braces just as the symbol name is, but separated from it by either a single equal sign “=” or a colon-equal-sign “:=”.</p>
+<p>For example, specifying «${DASD_PATH=dasd/}» in your configuration file requests that the value of the «DASD_PATH» symbol or environment variable be substituted, or, if the variable is undefined, to use the value «dasd/» instead. If no default value is specified then an empty string is used instead.</p>
+<p>Finally, enhanced symbol substitution occurs only from host defined environment variables and not from any identically named DEFSYM symbol should one exist. For example, if environment variable “FOO” is defined with the value «bar», then the configuration file statement «DEFSYM FOO myfoo» followed immediately by the statement «${FOO}» causes the value «bar» to be substituted and not “myfoo” as might otherwise be believed, whereas the statement «$(FOO)», since it is a normal symbol substitution sequence does get replaced with «myfoo» (since that was the value defined to it via the preceding DEFSYM statement).</p>
+<p>In other words each symbol substitution technique is supported completely separately from one another. DEFSYM allows one to define/undefine/use private (internally defined) symbols separate from the host operating system’s environment variable pool, whereas the enhanced symbol substitution does not and instead only allows read-only access to the host’s environment variable pool with no support for modifying an already defined symbol (environment variable) but a nonethless convenient means of defining a default value to be used should the specified host environment variable be currently undefined.</p>
+<p>Further note that symbol names, being the names of environment variables, are subject to whatever case sensitivity or case insensitivity that the host operating system happens to enforce/allow. On Windows, environment variables are not case sensitive, whereas on other operating systems they may be. Thus «${FOO}», «${foo}», «${Foo}», etc, all cause the same value to be substituted on Windows, whereas the DEFSYM symbols $(FOO) and $(foo), being two completely different and unique symbols, could be substituted with two completely different values (since DEFSYM is case sensitive across all supported platforms, including Windows).</p>
+<section id="id5">
+<h3>Syntax<a class="headerlink" href="#id5" title="Enlace permanente a este encabezado">¶</a></h3>
+<p>To substitute symbol symbol with the current environment variable value, the symbol should be enclosed within braces and preceded by a $ sign. For example, if an environment variable named FOO holds the value «BAR», then ${FOO} will be substituted with the string «BAR». If the environment variable «FOO» is not defined then a null (empty) string is substituted instead.</p>
+<p>If the string «${FOO:=myfoo}» is used instead, then the value «BAR» will still be substituted if the value «BAR» was indeed previously assigned to FOO, but will be substituted with the value «myfoo» instead if the environment variable FOO is currently undefined.</p>
+<p>Note too that the default value is a literal string and no substitution is applied to it. Thus attempting to use the syntax «${foo=${bar}}» will not yield the expected results. It will not be substituted with the currently defined value of the «bar» environment variable, but rather will always be substituted with the literal string «${bar» followed immediately by the literal character “}”.</p>
+<p>Symbol names (environment variable names) are not case sensitive on Windows whereas they might be on other host operating systems.</p>
+</section>
+</section>
+<section id="process-and-thread-priorities">
+<h2>Process and Thread Priorities<a class="headerlink" href="#process-and-thread-priorities" title="Enlace permanente a este encabezado">¶</a></h2>
+<section id="process-priorities">
+<h3>Process Priorities<a class="headerlink" href="#process-priorities" title="Enlace permanente a este encabezado">¶</a></h3>
+<p>For Windows, the following conversions are used for translating Unix process “nice” values to Windows process priority classes:</p>
+<p>“Nice”
+value
+Windows Process
+Priority Class
+Meaning</p>
+<p>-20 to -16              Real-time       Process that has the highest possible priority. The threads of the process preempt the threads of all other processes, including operating system processes performing important tasks. For example, a real-time process that executes for more than a very brief interval can cause disk caches not to flush or cause the mouse to be unresponsive.</p>
+<p>-15 to -9               High    Process that performs time-critical tasks that must be executed immediately. The threads of the process preempt the threads of normal or idle priority class processes. An example is the Task List, which must respond quickly when called by the user, regardless of the load on the operating system. Use extreme care when using the high-priority class, because a high-priority class application can use nearly all available CPU time.</p>
+<p>-8 to -1                Above Normal    Process that has priority above the Normal class but below the High class.</p>
+<p>0 to +7         Normal  Process with no special scheduling needs.</p>
+<p>+8 to +14               Below Normal    Process that has priority above the Idle class but below the Normal class.</p>
+<p>+15 to +19              Idle    Process whose threads run only when the system is idle. The threads of the process are preempted by the threads of any process running in a higher priority class. An example is a screen saver. The idle-priority class is inherited by child processes.
+.. caution::  A high process priority (or low “nice” value) could have a impact on how Hercules’s internal thread priorities are interpreted, thereby impacting the overall performance of your host system.</p>
+</section>
+<section id="thread-priorities">
+<h3>Thread Priorities<a class="headerlink" href="#thread-priorities" title="Enlace permanente a este encabezado">¶</a></h3>
+<p>The following are the currently assigned internal relative thread priorities for Hercules:</p>
+<p>Relative
+priority
+Thread
+Type
+Description</p>
+<p>1               (watchdog)      The «watch dog» thread is the internal Hercules thread that monitors all CPU threads for a malfunctioning CPU (i.e. one that, due to a bug, has stopped executing instructions). The watch dog thread is always set to a relative priority one less than the priority assigned to the CPU threads.</p>
+<p>2               CPU     The CPU threads are those within Hercules that actually execute the emulated System/370, ESA/390, or z/Architecture instructions. There is one CPU thread for each defined ENGINE. Except for the watch dog thread, CPU threads are always assigned the lowest relative priority of any thread within Hercules. This allows, for example, I/O requests to be scheduled and completed in favour of CPU cycles being burned.</p>
+<p>3               Device  Device threads within Hercules manage the I/O requests to emulated devices. Assigning the internal relative priority of device threads to be higher than that of the CPU threads ensures no compute-bound CPU thread impacts Hercules’s ability to start and complete its I/O requests to its emulated devices.</p>
+<p>4               Server  Server threads are those threads that provide a service to either the user or to other threads internal to Hercules. Threads that monitor for incoming emulated display terminal connection requests for example (or the internal logger thread that manages the passing of messages between threads) are two examples of server threads. Such threads must react to connection requests and/or internal messages quickly since other threads are waiting for them to complete their task before they themselves can proceed.</p>
+<p>5               Panel   The main Hercules thread is the one that reads commands from the keyboard and displays messages on the screen. Except for the TOD Clock and Timer thread, it should normally be the highest priority of any thread within Hercules.</p>
+<p>6               (unused)        —</p>
+<p>7               Timer   TOD Clock and Timer thread is the thread which manages the internal emulated TOD Clock and CPU Timer components of your emulated mainframe. In order to ensure accurate time of day and elapsed time and/or CPU time measurement, it should always be the very highest priority thread within Hercules.
+.. caution:: Hercules’s internal thread priorities could be interpreted differently based on its process priority (or “nice” value), thereby impacting the overall performance of your host system.</p>
+</section>
+</section>
+<section id="device-statements">
+<h2>Device statements<a class="headerlink" href="#device-statements" title="Enlace permanente a este encabezado">¶</a></h2>
+<p>The remaining statements in the configuration file are device statements. There must be one device statement for each I/O device or group of identical I/O devices. The format of the device statement is:</p>
+<p>devnum(s)   devtype   [ arguments ]   [ # comments… ]
+where the generic syntax for device numbers is   [n:]CCUU[,CCUU][-CCUU][.nn][…]   as explained below:</p>
+<p>devnum(s)
+is either a single devnum, a range of devnums (separated by a “-” (dash)), a count of devnums (separated by a “.” (dot/period/stop)), or a comma separated list of devnums. Examples would be 200-210 or 0300.10 or 0400,0403 or 0100,0110-011F.</p>
+<p>All devices defined when devnums specifies more than one device have identical characteristics (except for the device number itself). All devices defined as a group must be defined on a single channel. A channel is defined as a contiguous group of 256 (or hexadecimal 100) devices. 0010 and 0020 are on the same channels. 0100 and 0210 are not.</p>
+<p>See devnum immediately below for an explanation of how each device number is specified.</p>
+<p>The 4 special subtitution symbols CUU, CCUU, cuu and ccuu are also defined for each device in a device group. See substitutions for details.</p>
+<p>devnum
+is either a 1 to 4 digit hexadecimal number in the range 0000 to FFFF for ESA/390, or 0000 to 0FFF for S/370. The device number uniquely identifies each device to the operating system.</p>
+<p>Channel Set / Logical Channel Subsystem
+An optional Channel Set or Logical Channel Subsystem Identification can be specified for a device number or group of devices. The Identification number is specified at the beginning of the definition, followed by a “:” character. For example :</p>
+<p>1:0400-040F 3270</p>
+<p>defines 3270 devices 400 to 40F to be on S/370 Channel Set 1 or on S/390 or z/Architecture Logical Channel Subsystem # 1.</p>
+<p>Since each Logical Channel Subsystem defines its own device numbering space, care should be taken in S/370 mode as to define a coherent set of device numbers.</p>
+<p>Not all S/390 or z/Architecture operating systems support Multiple Logical Channel Subsystems (this feature was introduced with the z9-109).</p>
+<p>If no Channel Set or Logical Channel Subsystem Identification is specified, then it is assumed to be 0.</p>
+<p>devtype
+is the device type. Valid device types are shown in the table just below.</p>
+<p>arguments
+is a list of parameters whose meaning depends on the device type. The arguments required for each class of device are shown further below.</p>
+<p># comments…
+A comment preceded by a # sign may be appended to any device definition statement.</p>
+<p>Device type     Description     Emulated by
+3270, 3287      Local non-SNA 3270 display or printer   TN3270 client connection
+SYSG    Integrated 3270 console TN3270 client connection
+1052, 3215      Console printer-keyboards       Telnet client connection
+1052-C, 3215-C  Integrated console printer-keyboards    Integrated on Hercules console
+1442, 2501, 3505        Card readers    Disk file(s) (ASCII or EBCDIC)
+3525    Card punch      Disk file (ASCII or EBCDIC)
+1403, 3203, 3211        Line printers   Disk file (ASCII)
+3410, 3420, 3422, 3430, 3480, 3490, 3590, 9347, 8809    Tape drives     Disk file, CDROM, or SCSI tape</p>
+<blockquote>
+<div><p>many Communication and Channel-to-Channel devices          many</p>
+</div></blockquote>
+<p>(( OSA ))       OSA Express adapter operating on QDIO mode. Both layer-2 and layer-3 modes are supported.       «QETH» (OSA/QDIO Ethernet Adapter)
+Tun/Tap Driver
+(( LCS ))       IBM 8232 LCS device, LCS3172 driver of a P/390, IBM 2216 router, IBM 3172 running ICP.  «LCS» (LAN Channel Station)
+Tun/Tap Driver
+(( CTCI ))      Channel-to-Channel link to host TCP/IP stack    «CTCI» Tun/Tap Driver
+(( CTCE ))      Enhanced Channel-to-Channel Emulation
+via TCP connection (true 3088 CTCA)     «CTCE» driver
+(( PTP ))       MPCPTP/MPCPTP6 Channel to Channel link  «PTP» Tun/Tap Driver
+3310, 3370, 9332, 9335, 9336, 0671      FBA direct access storage devices       Disk file
+2305, 2311, 2314, 3330, 3340, 3350, 3375, 3380, 3390, 9345      CKD direct access storage devices       Disk file
+2703    Communication Line, Remote Teletype, etc.       TCP Socket</p>
+<section id="arguments-required-for-each-device-type">
+<h3>Arguments required for each device type<a class="headerlink" href="#arguments-required-for-each-device-type" title="Enlace permanente a este encabezado">¶</a></h3>
+<section id="local-non-sna-3270-devices">
+<h4>Local non-SNA 3270 devices<a class="headerlink" href="#local-non-sna-3270-devices" title="Enlace permanente a este encabezado">¶</a></h4>
+<p>There are no required arguments for this particular device type, but there are however several optional arguments which are discussed below.</p>
+<p>To use this device, a tn3270 client must connect to the host machine via the port number specified on the CNSLPORT statement. A valid tn3270 device type, such as IBM-3278, must be used. See the Telnet/tn3270 Console How-To for additional information about setting up a tn3270 client.</p>
+<p>If your tn3270 client software allows you to specify a device type suffix (e.g. <a class="reference external" href="mailto:IBM-3278&#37;&#52;&#48;001F">IBM-3278<span>&#64;</span>001F</a> ), then you can use the suffix to connect to that specific device number, if eligible. If no suffix is specified, then your client will be connected to the first available 3270 device for which it is eligible, if any.</p>
+<p>If you specify a specific terminal device address (via the device type suffix of your tn3270 client software), then you must be eligible to connect at that device address or your connection is immediately rejected; an alternative terminal device for which you might be eligible is not automatically selected instead.</p>
+<p>Optional arguments:</p>
+<p>groupname
+If a terminal group name is given on the device statement, a device type suffix with this group name can be used to indicate that a device in this group is to be used. If a group name is specified as a terminal type suffix (e.g. <a class="reference external" href="mailto:IBM-3278&#37;&#52;&#48;GROUPNAME">IBM-3278<span>&#64;</span>GROUPNAME</a> ) and there are no devices defined for that group (or there are no more available devices remaining in that group), then the connection is rejected. If no group name is specified as a terminal type suffix, then the connection will only be eligible for any terminal devices which do not have a group name specified on their device statements. The terminal group name, if specified, should be 1 to 8 alphanumeric characters, the first character being alphabetic, and it should not be a hexadecimal number. Upper and lower case letters in the group name are considered to be equivalent.</p>
+<p>ipaddr [ mask ]
+The optional IP address and optional subnet mask specify the IP address(es) of which client(s) are allowed to connect at the device address identified by the device statement on which they appear. This provides an alternative and/or additional means of specifying to which device(s) a client tn3270 session may, or should, connect.</p>
+<p>If the IP address of the tn3270 client trying to connect, when “and’ed with the optional subnet mask (which defaults to 255.255.255.255 if not specified), matches the IP address entered on the device statement, then the client is eligible to connect at that device address. Otherwise the client is ineligible to connect at that address and the next available device, if any, for which the client is eligible to connect (if any) is selected instead.</p>
+<p>If no permissible terminal devices remain (i.e. terminal devices for which the client is eligible to connect), or there are no more available terminal devices remaining, then the client connection is rejected.</p>
+<p>The optional IP address and subnet mask may also be specified in conjunction with the previously mentioned terminal group argument, but the terminal group argument, if specified, must be specified ahead of (i.e. before) the optional IP address and subnet mask arguments. To specify an IP address and subnet mask without also specifying a terminal group, simply use “*” as the group name instead.</p>
+<p>If an IP address / subnet mask are not specified, then any client tn3270 session is allowed to connect to the device (provided they are also a member of the specified terminal group, if any).</p>
+<p>The terminal group name argument, if specified, always takes precedence over any optional IP address and subnet mask which may also be specified.</p>
+<p>To summarize, the device number suffix always takes precedence over any group name which may also be specified, and any group name, if specified, always takes precedence over any IP address / subnet mask value which may also be specified.</p>
+</section>
+<section id="integrated-3270-console-device-sysg">
+<h4>Integrated 3270 console device   (SYSG)<a class="headerlink" href="#integrated-3270-console-device-sysg" title="Enlace permanente a este encabezado">¶</a></h4>
+<p>The integrated 3270 (SYSG) console is similar to a local non-SNA 3270 device, except that it is not addressed by subchannel number and it is supported only by certain system control programs. The SYSG console is defined like a 3270 device except that the device number is ignored (but is usually specified as 0000) and the device type is specified as «SYSG». Only one SYSG console device may be defined in a configuration.</p>
+<p>Use tn3270 client software to connect to the SYSG console device via the port number specified on the SYSGPORT statement if specified (or to the port number specified on the CNSLPORT statement if not specified), just as you would connect to a regular local non-SNA 3270 device. See the Telnet/tn3270 Console How-To for additional information about setting up a tn3270 client.</p>
+<p>The SYSG console device configuration statement recognizes optional arguments which specify group name and IP address in the same way as previously described for a local non-SNA 3270 devices. When the SYSGPORT statement is not specified, these optional arguments provide an alternate way to ensure that a given tn3270 client can connect directly to the SYSG device. If the group name and IP address arguments are not specified (and no SYSGPORT statement is specified), then the SYSG console is considered to be a member of the general pool of devices eligible for connection by any incoming tn3270 client.</p>
+</section>
+<section id="integrated-console-printer-keyboard-devices-c">
+<h4>Integrated Console printer-keyboard devices   (-C)<a class="headerlink" href="#integrated-console-printer-keyboard-devices-c" title="Enlace permanente a este encabezado">¶</a></h4>
+<p>There are two optional arguments: the command prefix argument and the optional noprompt argument.</p>
+<p>Since integrated console printer-keyboard devices use the Hercules HMC panel (Hardware Management Console) for all input and output, the command prefix is needed so Hercules can distinguish between input meant for the device and normal Hercules panel command input.</p>
+<p>All integrated console devices must use a different command prefix and must not be a subset or superset of any other device’s command prefix. If one is not specified then the next available default is chosen from the following list:</p>
+<blockquote>
+<div><p>Hex     Glyph    Description</p>
+<p>0x2F      /       slash (default)
+0x60      `       backtick
+0x3D      =       equals
+0x7E      ~       tilde
+0x40      &#64;       at sign
+0x24      $       dollar
+0x25      %       percent
+0x5E      ^       caret
+0x26      &amp;       ampersand
+0x5F      _       underline
+0x3A      :       colon
+0x3F      ?       question
+0x30      0       zero
+0x31      1       one
+0x32      2       two
+0x33      3       three
+0x34      4       four
+0x35      5       five
+0x36      6       six
+0x37      7       seven
+0x38      8       eight
+0x39      9       nine</p>
+</div></blockquote>
+<p>If your command prefix was the “/” slash character for example, then to send a logon command to a 1052-C or 3215-C device, you would enter «/logon» on the Hercules console. Or, if your command prefix was «foo=» then you would enter «foo=logon», etc.</p>
+<p>When your guest operating system writes a message to an integrated console printer-keyboard device, the message displayed on the Hercules console is always prefixed with the device’s command prefix string so you can distinguish it from messages written by other integrated console devices and/or Hercules itself.</p>
+<p>The second optional argument for integrated console printer-keyboard devices is the noprompt keyword. If not specified, then whenever the system is awaiting input on that device, the prompting message «Enter input for console device nnnn» is displayed on the Hercules console. The noprompt option suppresses this prompting message.</p>
+</section>
+<section id="console-printer-keyboard-devices">
+<h4>Console printer-keyboard devices<a class="headerlink" href="#console-printer-keyboard-devices" title="Enlace permanente a este encabezado">¶</a></h4>
+<p>There are no required arguments for this particular device type, but there are however several optional arguments discussed below.</p>
+<p>To use this device, a telnet client must connect to the host machine via the port number specified on the CNSLPORT statement. See the Telnet/tn3270 Console How-To for additional information about setting up a telnet or tn3270 client.</p>
+<p>If your telnet client software allows you to specify a device type suffix (for example: <a class="reference external" href="mailto:ansi&#37;&#52;&#48;0009">ansi<span>&#64;</span>0009</a> ), then you can use that suffix to specify the specific 1052 or 3215 device to which you wish to connect. If you do not specify a suffix in your telnet client software (or your software does not allow it), then your client will be connected to the first available 1052 or 3215 device for which it is eligible.</p>
+<p>An optional noprompt argument may be specified on the device statement to cause suppression of the «Enter input for console device nnnn» prompt message which is otherwise normally issued to the device whenever the system is awaiting input on that device.</p>
+<p>Additionally, a terminal group name, IP address and subnet mask may all also be optionally specified in the exact same manner as discussed in the previous Local non-SNA 3270 devices section with the exception that the «noprompt» option, if specified, must precede the other arguments.</p>
+</section>
+<section id="card-reader-devices">
+<h4>Card reader devices<a class="headerlink" href="#card-reader-devices" title="Enlace permanente a este encabezado">¶</a></h4>
+<p>The argument specifies a list of file names containing card images. Additional arguments may be specified after the file names:</p>
+<p>sockdev
+Indicates the card reader is a socket device wherein the filename is actually a socket specification instead of a device filename. When used, there must only be one filename specified in the form: port or host:port or sockpath/sockname. The device then accepts remote connections on the given TCP/IP port or Unix Domain Socket, and reads data from the socket instead of from a device file. This allows automatic remote submission of card reader data. See the Hercules Socket Reader page for more details.</p>
+<p>eof
+Specifies that unit exception status is presented after reading the last card in the file. This option is persistent, and will remain in effect until the reader is reinitialized with the intrq option.</p>
+<p>intrq
+Specifies that unit check status with intervention required sense bytes is presented after reading the last card in the file. This option is persistent, and will remain in effect until the reader is reinitialized with the eof option.</p>
+<p>multifile
+Specifies, when multiple input files are entered, to automatically open the next input file and continue reading whenever EOF is encountered on a given file. If not specified, then reading stops once EOF is reached on a given file and an attention interrupt is then required to open and begin reading the next file.</p>
+<p>ebcdic
+Specifies that the file contains fixed length 80-byte EBCDIC records with no line-end delimiters.</p>
+<p>ascii
+Specifies that the file contains variable length lines of ASCII characters delimited by LF (line feed) sequences or CRLF (carraige return line feed) sequences at the end of each line.</p>
+<p>If neither EBCDIC nor ASCII is specified, then the device handler attempts to detect the format of the card image file when the device is first accessed. Auto-detection is not supported for socket devices, and the default is ASCII if sockdev is specified.</p>
+<p>trunc
+Specifies, for ASCII files, that lines longer than 80 characters are truncated instead of producing a unit check error.</p>
+<p>autopad
+Specifies, for EBCDIC files, that the file is automatically padded to a multiple of 80 bytes if necessary.</p>
+</section>
+<section id="card-punch-devices">
+<h4>Card punch devices<a class="headerlink" href="#card-punch-devices" title="Enlace permanente a este encabezado">¶</a></h4>
+<p>The argument specifies the name of a file to which the punched output will be written. Additional arguments may be specified after the file name:</p>
+<p>append
+Specifies that the output file, if it already exists, will not be cleared to zero bytes when it is opened. Instead, output will be appended to the end of the existing data. If the noclear argument is not specified, then any previous contents of the file is destroyed when the file is opened (i.e. the file is set to empty (truncated to zero bytes) as soon as it is opened).</p>
+<p>ascii
+Specifies that the file will be written as variable length lines of ASCII characters delimited by line feeds or carriage return line feed sequences at the end of each line. Trailing blanks are removed from each line. This is the opposite of the ebcdic option.</p>
+<p>crlf
+Specifies, for ASCII files, that carriage return line feed sequences are written at the end of each line. If the crlf argument is not specified, then line-feeds only are written at the end of each line.</p>
+<p>ebcdic
+Specifies the file is written as fixed length 80-byte EBCDIC records with no line-end delimiters (the opposite of the ascii option). This is the default.</p>
+<p>noclear             (deprecated)
+This option is deprecated and will be removed in a future release. Please use the more aptly named append option instead.</p>
+<p>sockdev
+Indicates the card punch is a socket device wherein the filename is actually a socket specification instead of a device filename. When used, there must only be one filename specified in the form: port or host:port. The device then accepts remote connections on the given TCP/IP port, and writes data to the socket instead of to a device file. This allows automatic remote spooling of card punch data. The sockdev option is mutually exclusive with the crlf and append options.</p>
+</section>
+<section id="line-printer-devices">
+<h4>Line printer devices<a class="headerlink" href="#line-printer-devices" title="Enlace permanente a este encabezado">¶</a></h4>
+<p>The argument specifies the name of a file to which the printer output will be written. The output is written in the form of variable length lines of ASCII characters delimited by line feeds or by carriage return line feed sequences. Trailing blanks are removed from each line. Carriage control characters are translated to blank lines or ASCII form feed characters. If the file exists it will be overwritten.</p>
+<p>Additional arguments may be specified after the file name:</p>
+<p>append
+Specifies that the output file, if it already exists, will not be cleared to zero bytes when it is opened. Instead, output will be appended to the end of the existing data. If the append argument is not specified, then any previous contents of the file is destroyed when the file is opened (i.e. the file is set to empty (truncated to zero bytes) as soon as it is opened).</p>
+<p>cctape=  (lll=cc[,lll=cc]…) | name
+This option defines the carriage control tape to use for this printer. It is only valid for 1403 printer devices.</p>
+<p>The option can be specified as either a series of lll=cc values surrounded by parentheses where lll identifies the carriage control tape’s line number (1-255) and cc indicates the channel punch for that line (1-12), or as a predefined carriage control tape name.</p>
+<p>More than one channel punch may be specified for a line by either specifying the desired list of channel punches for that line within parentheses or by simply specifying the same line number again in your list but with a different channel number each time.</p>
+<p>The name format specifies the name of a predefined carriage control tape. Valid predefined cctape names are: legacy, fcb2std2 or fcb2id1. The default if not specified is legacy.</p>
+<p>legacy:     cctape=(1=1,7=2,13=3,19=4,25=5,31=6,37=7,43=8,63=9,49=10,55=11,61=12)
+fcb2std2:   cctape=(1=1,7=2,13=3,19=4,25=5,31=6,37=7,43=8,49=9,55=10,61=11,63=12)
+fcb2id1:    cctape=(1=1,8=2,15=3,22=4,29=5,36=6,43=7,50=8,57=9,64=10,71=11,78=12)
+Note that the lines per page value is not supported by the cctape option. Instead, you must specify your desired lines per page value separately via the lpp option.
+crlf
+Specifies that carriage return line feed sequences should be written at the end of each line. If the crlf argument is not specified then the default behavior is to only write line-feeds at the end of each line.</p>
+<p>fcb=  ppnnnnnnnnnnnnnnnnnnnnnnnn | cc:lll[,cc:lll]… | name
+This option is only valid for 3203 or 3211 printer devices. It specifies an initial FCB image to use for this printer.</p>
+<p>This option supports three different formats: old, new and name.</p>
+<p>The old format argument must be exactly 26 digits long, and consist of digits from 0 to 9. The first pair of digits (pp) specifies the number of lines on a printed page (01-99). It is followed by 12 pairs of digits (nn) which specify the line number on the page (00-99) corresponding to each of the 12 possible FCB channels. Specify the line number as 00 for those channels you wish to leave undefined.</p>
+<p>The new format is specified as a series of semicolon-delimited channel and line number pairs (cc:lll), each successive pair separated from the previous pair with a single comma, where cc indicates the channel number and lll indicates the line number for that channel (0-255). To leave a particular FCB channel undefined either specify 0 for the line number or simply don’t specify that channel anywhere in your list.</p>
+<p>The name format specifies the name of a predefined fcb image. Valid predefined fcb image names are: legacy, fcb2std2, fcb2id1 or hardware. The default if not specified is legacy.</p>
+<p>legacy:     fcb=01:01,02:07,03:13,04:19,05:25,06:31,07:37,08:43,09:63,10:49,11:55,12:61
+fcb2std2:   fcb=01:01,02:07,03:13,04:19,05:25,06:31,07:37,08:43,09:49,10:55,11:61,12:63
+fcb2id1:    fcb=01:01,02:08,03:15,04:22,05:29,06:36,07:43,08:50,09:57,10:64,11:71,12:78
+hardware:   fcb=01:01
+Note that the lines per page value is not supported by the new or name formats of the fcb option. Instead, you must specify your desired lines per page value separately via the lpp option.
+fcbcheck             (deprecated)
+This option is only valid for 3203 or 3211 printer devices. It requests that an attempt to skip to a FCB channel for which no line number has been set should cause a Unit Check to occur. This is the default. This option is deprecated and will be removed in a future release.</p>
+<p>index=  [-]nn | 0
+Specifies the column number of the form (-31 to +31) where each print line should begin. This option is only valid for 3211 printer devices. For 3203 printer devices the option is accepted but is otherwise ignored.</p>
+<p>Positive values prepend each print line with a number of blanks equal to one less than the index value, thus «indenting» the print line to reach the desired form column. An index value of 1 means flush-left. A negative value causes the first nn columns of each print line to be chopped off. A value of -1 will thus cause the first character of each print line to be dropped, thereby causing the first column of the page to begin with the second character of each printed line.</p>
+<p>The default is 0 meaning to print normally (i.e. indexing is disabled).</p>
+<p>lpi=  6 | 8
+Specifies the number of vertical lines per inch. The only valid values are either 6 or 8. The default is 6.</p>
+<p>lpp=  nnn | 66
+Specifies the number of vertical lines per page (1-255). The default is 66.</p>
+<p>noclear             (deprecated)
+This option is deprecated and will be removed in a future release. Please use the more aptly named append option instead.</p>
+<p>nofcbcheck         (deprecated)
+This option is only valid for 3203 or 3211 printer devices. It requests that an attempt to skip to a FCB channel for which no line number has been set should suppress the Unit Check that would normally occur and to instead simply print the next line of output on the next line instead. It is the opposite of the fcbcheck option.</p>
+<p>This option is deprecated and will be removed in a future release. The option will continue to be accepted for the time being if specified, but is otherwise completely ignored. Skips to non-existent FCB channels will always cause a Unit Check regardless of this option.</p>
+<p>sockdev
+Indicates the line printer is a socket device wherein the filename is actually a socket specification instead of a device filename. When used, there must only be one filename specified in the form: port or host:port. The device then accepts remote connections on the given TCP/IP port, and writes data to the socket instead of to a device file. This allows automatic remote spooling of line printer data. The sockdev option is mutually exclusive with the crlf and append options.</p>
+<p>If the printer filename begins with a vertical bar “|” pipe character, then it is removed and the remainder of the filename is interpreted as a command line (the name of a program or batch file followed by any necessary arguments) to which to «pipe» the printer output to. This is known as the «print-to-pipe» feature. All printer output is then sent to the piped program’s stdin input, and all of the piped program’s stdout and stderr output is piped back to Hercules for displaying on the hardware console.</p>
+<p>If the «print-to-pipe» command line contains arguments, then quotes must be placed around the entire filename, including the vertical bar, since any tokens following the filename are parsed as Hercules printer device options:</p>
+<blockquote>
+<div><p>000E 1403 «<a href="#id6"><span class="problematic" id="id7">|</span></a>/usr/bin/lpr -Phplj»               (for Unix)
+000E 1403 «<a href="#id8"><span class="problematic" id="id9">|</span></a>c:utilspr -s -PLPT1:» crlf       (for Windows)</p>
+</div></blockquote>
+<p>If the «print-to-pipe» command line itself contains quotes, then the command line must be enclosed in apostrophes instead of quotes, for example:</p>
+<blockquote>
+<div><p>000E 1403 “<a href="#id10"><span class="problematic" id="id11">|</span></a>»c:Program FilesMy Utilspr» -s -PLPT1:” crlf</p>
+</div></blockquote>
+<p>Tim Pinkawa has an example which shows how the print-to-pipe feature can be used to create output in PDF format. For Windows users, SoftDevLabs provides a very nice PDF spooler for Hercules called «HercPrt».</p>
+</section>
+<section id="tape-devices">
+<h4>Tape devices<a class="headerlink" href="#tape-devices" title="Enlace permanente a este encabezado">¶</a></h4>
+<p>Five types of tape emulation are supported (see further below):   AWS,   HET,   FakeTape,   Optical Media Attach (OMA),   and   real SCSI .</p>
+<p>The only required parameter is the device filename. All other parameters are optional and must follow the filename. Use * (asterisk) for the filename to specify an empty (unmounted) tape drive.</p>
+<p>If the specified device filename does not exist then either an unlabeled empty tape volume will be created for you automatically or a «file not found» error will occur depending on the setting of the AUTOINIT option. Refer to the AUTOINIT option for more information.</p>
+<p>If the file name starts with the &#64; (at sign) character the file instead describes an Automatic Cartridge Feeder (ACF) file containing a list of tape emulation files to be automatically loaded in succession. The syntax of each line is identical to the information that can be specified in the configuration file after the device type. If the emulation file filename in the file list is the * (asterisk) character however, then the set of options which follow it apply to all of the remaining emulation files in the list.</p>
+<p>Parameters are appended in succession. In all cases, if the same parameter is specified more than once, the last instance takes precedence. Therefore, it is possible to specify a set of parameters in the base configuration file, another set on a * line, and another set for each individual line. Parameters are then appended in that order: options specified on the base device statement itself first, followed by those options specified on the * statement, and finally those specified on each individual file list statement last.</p>
+<p>A device filename identifying a SCSI tape device cannot be specified in an Automatic Cartridge Feeder (ACF) file list.</p>
+<p>Refer to the distributed source-code’s README.TAPE document for additional information regarding system and application programming for tape devices and instructions regarding use of the emulated ACF (Automatic Cartridge Feeder) and AUTOMOUNT features for virtual (non-SCSI) tape devices.</p>
+<p>AWSTAPE virtual tape files
+These contain a complete tape in one file. AWSTAPE files consist of variable length EBCDIC blocks. Each block is preceded by a 6-byte header. Filemarks are represented by a 6-byte header with no data. This is the same format as is used by the P/390. The argument specifies the location of the AWSTAPE file (for example ickdsf.aws)</p>
+<p>FakeTape virtual tape files
+These contain a complete tape in one file. FakeTape files consist of variable length EBCDIC blocks. Each block is preceded by a 12-ASCII-hex-character header. Filemarks are represented by a 12-character header with no data. The FakeTape format is used by the Flex-ES system from Fundamental Software Inc (FSI). The argument specifies the location of the FakeTape file (for example ickdsf.fkt). Note: «FLEX-ES» and «FakeTape» are trademarks of Fundamental Software, Inc.</p>
+<p>HET virtual tape files    (Hercules Emulated Tape)
+These contain a complete tape in one file and have the same structure as the AWSTAPE format with the added ability to have compressed data. The first argument specifies the location of the HET file. The filename must end with «.het» to be recognized by Hercules as an HET file. (for example 023178.het)</p>
+<p>Additional arguments that allow you to control various HET settings are:</p>
+<p>AWSTAPE
+The AWSTAPE argument causes HET files to be written in AWSTAPE format. This basically, disables the additional features provided by the HET format.</p>
+<p>COMPRESS=n
+IDRC=n
+COMPRESS and IDRC control whether compression should be used when writing to HET files. The value n  can be 1 to turn on compression (the default) or 0 to turn it off. IDRC is currently a synonym for COMPRESS, but may be used in the future to control other emulated tape drive features.</p>
+<p>METHOD=n
+The METHOD option allows you to specify which compression method to use. You may specify 1 for ZLIB compression or 2 for BZIP2 compression. The default is 1.</p>
+<p>LEVEL=n
+The LEVEL option controls the level of compression. It ranges from 1 for fastest compression to 9  for best compression. The default is 4.</p>
+<p>CHUNKSIZE=nnnnn
+The CHUNKSIZE option allows you to create HET files that contain different chunk sizes. The AWSTAPE (and therefore the HET) format allows each tape block to be logically broken up into smaller chunks. For instance, if your S/3x0 application creates tapes with a block size of 27998, those blocks would be broken down into nnnnn  sized chunks. The range is from 4096 to 65535, the latter being the default. Decreasing the value from its default may reduce compression performance. For compatibility with AWSTAPE files created by the P/390, specify AWSTAPE with CHUNKSIZE=4096.</p>
+<p>The following additional parameters apply to AWS, HET and FakeTape virtual tape files:
+MAXSIZE=n[s]  |  MAXSIZEK=n  |  MAXSIZEM=n
+Specifies the maximum size (in bytes, Kilobytes or Megabytes) that the emulated file is allowed to grow to.</p>
+<p>Or, nnns where s is either K - KILO, M - MEGA, G - GIGA, or T - TERA - BYTES</p>
+<p>Specifying zero for this parameter means «unlimited» (i.e. there is no limit).  Note: «T» is not available on all platforms.</p>
+<p>EOTMARGIN=n[s]
+Specifies the number of bytes remaining before reaching maxsize at which point the tape device will signal the presence of the «End of Tape» marker (reflector), thus allowing the program to switch to the next tape.</p>
+<p>Value is either n = bytes, or ns where s is either a K, M, G, or T multiplier.</p>
+<p>READONLY=n
+Specifies whether the tape is mounted read-only (without a write ring or with the cartridge protect switch set to «write protect»). A parameter of 1 means read-only; a parameter of 0 means read-write. If READONLY=1, RO or NORING is not specified, the default is READONLY=0. Note that READONLY=0 does not override the host system file permission settings for the underlying AWS or HET file. If the AWS or HET file is marked read-only, the tape will be mounted read-only despite specification of READONLY=0.</p>
+<p>RO
+NORING
+Specifies that the tape is mounted read-only (without a write ring or with the cartridge protect switch set to «write protect»). RO and NORING are equivalent to READONLY=1.</p>
+<p>RW
+RING
+Specifies that the tape should be mounted read-write, if possible. RW and RING are equivalent to READONLY=0. This is the default if RO, NORING or READONLY=1 is not specified. Note that RW and RING do not override the host system file permission settings for the underlying AWS or HET file. If the AWS or HET file is marked read-only, the tape will be mounted read-only despite specification of RW or RING.</p>
+<p>DEONIRQ=n
+Specifies whether a device end is presented if intervention is required during tape motion. A parameter of 1 selects this option; a parameter of 0 turns it off.</p>
+<p>NOAUTOMOUNT
+Indicates support for guest-initiated automatic tape volume mounting is to always be disabled for this tape device.</p>
+<p>Automatic guest tape-mount support is automatically globally enabled for all virtual (non-SCSI) tape devices by default whenever an allowable automount directory is defined via the AUTOMOUNT configuration file statement or the automount panel command. The NOAUTOMOUNT option allows you to specifically disable such support for a given device.</p>
+<p>The automount feature enables software running in guest operating systems to automatically mount, unmount and/or query for themselves the host «virtual tape volume» filename mounted on a tape drive, via the use of special CCW opcodes (0x4B Set Diagnose and 0xE4 Sense Id) without any intervention on the part of the Hercules operator. An example of such a program for DOS/VSE called TMOUNT is provided in the util subdirectory of the distributed source code.</p>
+<p>This is a sticky option. When specified, automount support for the device remains disabled until the option is specifically removed via a devinit command without the option specified. This means if NOAUTOMOUNT is enabled for a device while global automount functionality is currently disabled (because no AUTOMOUNT statement was specified at Hercules startup), then automount functionality remains disabled for the device even should global automount functionality be later manually enabled via an automount panel command.</p>
+<p>When the 0x4B Set Diagnose CCW is used to auto-mount a virtual tape volume onto a given tape drive, an absolute (fully-qualified) pathname should normally always be specified, but need not be if a path relative to the currently defined «default allowable» automount directory is used instead.</p>
+<p>The default allowable automount directory is always the first «allowable» directory that was defined, or else the current directory if no allowable directories were specifically defined. (There is always a default allowable directory whenever any allowable or unallowable automount directories are defined.)</p>
+<p>Fully-resolved, absolute-full-path filenames are defined as being those which, for Windows, have a “:” (colon) in the second position or, for other host operating systems (e.g. Linux), have a “/” (slash) in the first position. Paths which start with a “.” (period) are considered relative paths and will always be appended to the currently defined default allowable automount directory, before being resolved into fully-qualified paths by the host system. (I.e. only fully-resolved absolute pathnames are used in the performance of the actual automatic tape volume mount.)</p>
+<p>For example, if more than one allowable automount directory is defined and the volume wishing to be mounted happens to reside in the second one, then a fully-qualified absolute pathname should of course be specified (or else one that is relative to the default directory which happens to resolve to the desired file).</p>
+<p>All attempts to automount host files in a «disallowed» directory or any of its subdirectories will be rejected. Similarly any attempt to automount a file which is not within any «allowable» directory or subdirectory will be rejected. An error message is always issued in such cases. A message is also issued whenever a successful mount or unmount is performed.</p>
+<p>A sample guest automount program called TMOUNT for the DOS/VSE operating system is provided in the util subdirectory of the distributed source code.</p>
+<p>Optical Media Attach (OMA) virtual tape files
+These are read-only files which usually (but do not necessarily have to) reside on CDROM. OMA virtual tapes consist of one file corresponding to each physical file of the emulated tape. An ASCII text file called the Tape Descriptor File (TDF) specifies the names of the files which make up the virtual tape. The argument specifies the name of the tape descriptor file (for example /cdrom/tapes/uaa196.tdf)</p>
+<p>The format of a Tape Descriptor File (TDF) looks like this:</p>
+<blockquote>
+<div><p>&#64;tdf
+/home/ivan/hercules/systems/DEB001/kernel.debian    FIXED RECSIZE 80
+/home/ivan/hercules/systems/DEB001/parmfile.debian  TEXT
+/home/ivan/hercules/systems/DEB001/initrd.debian    FIXED RECSIZE 80</p>
+</div></blockquote>
+<dl class="simple">
+<dt>or:</dt><dd><p>&#64;TDF
+«C:UsersFishHercGUI_ZzLinux Debian-9.11kernel.debian»    FIXED RECSIZE 80
+«C:UsersFishHercGUI_ZzLinux Debian-9.11parmfile.debian»  TEXT
+«C:UsersFishHercGUI_ZzLinux Debian-9.11initrd.debian»    FIXED RECSIZE 80
+TM
+TM
+EOT</p>
+</dd>
+<dt>or:</dt><dd><p>&#64;tdf
+kernel.debian    FIXED RECSIZE 80
+parmfile.debian  TEXT
+initrd.debian    FIXED RECSIZE 80</p>
+</dd>
+</dl>
+<p>The filename on each record can be either absolute or relative and must be enclosed within double quotes it it contains any spaces. If relative, the name is appended to the path of the primary OMA (TDF) to create the full path filename of the file being referenced.
+Each file record must be followed by a file format (and possibly some additional options) indicating how the file should be interpretted. Each file listed in the TDF file must be in one of four formats:</p>
+<p>UNDEFINED RECSIZE nnnnn
+UNDEFINED files are treated identically to FIXED files.</p>
+<p>FIXED RECSIZE nnnnn
+FIXED files consist of fixed length EBCDIC blocks of the specified length (nnnnn)</p>
+<p>TEXT
+TEXT files consist of variable length ASCII records delimited by carriage return line feed sequences at the end of each record. Each record is translated to EBCDIC and presented to the program as one physical tape block.</p>
+<p>HEADERS
+HEADERS files consist of variable length EBCDIC blocks. Each block is preceded by a 16-byte header.</p>
+<p>If you have any IBM manuals in Bookmanager format on CDROM, you can see some examples of TDF files in the TAPES directory on the CDROM. The offical OMA/2 format is described in manuals SC52-1200-00 «Optical Media Attach/2 User’s Guide» and SC52-1201-00 «Optical Media Attach/2 Technical Reference», but both are impossible to find.</p>
+<p>Real SCSI attached tape drives
+These are real tape drives attached to the host machine via a SCSI interface. Hercules emulation always makes the drive appear as a channel attached device such as 3420 or 3480, although the underlying physical drive may be any type of SCSI attached tape drive, including 4mm or 8mm DAT, DLT, SCSI attached 3480/3490/3590 cartridge drives, and SCSI attached 3420 open reel tape drives.</p>
+<p>Host-attached SCSI tapes are read and written using variable length EBCDIC blocks and filemarks exactly like a mainframe tape volume, and as a result can be freely used and/or exchanged on either one (i.e. SCSI tapes created on a real mainframe can subsequently be read by Hercules just fine, and a SCSI tape created by Hercules can be subsequently read on a mainframe just fine, thus providing a convenient means of exchanging data between the two).</p>
+<p>If you plan on using SCSI tapes with Hercules you might also be interested in the SCSIMOUNT configuration option.</p>
+<p>The only required device statement parameter for SCSI attached tape drives is the name of the device as it is known by the host operating system, usually  «/dev/nst0»  (for Linux or Windows) or  «\.Tape0»   (for Windows only), where “0” means tape drive number 0 (your first or only host-attached SCSI tape drive), “1” means your second host-attached SCSI tape drive, etc.</p>
+<p>Depending on what actual model of SCSI tape drive you actually have and how it behaves, you may need to specify one or more additional optional parameters for Hercules to provide proper emulation of the desired device type. For example: a Quantum “DLT” (Digital Linear Tape) SCSI tape drive does not return nor use a block-id format compatible with 3480/3490 drives (it instead uses a full 32-bit block-id just like the model 3590 does). It also does not support the Erase Gap command at all.</p>
+<p>Thus, in order to use, for example, a Quantum DLT drive with Hercules, you MUST specify some special additional options to prevent the Erase Gap command from being issued to the drive as well as to inform Hercules that the drive uses 32-bit block-ids.</p>
+<p>Please note that the below options define how the actual SCSI hardware device behaves, which is completely different from the way the emulated device will appear to behave to your guest. That is to say, if you define your tape drive to Hercules as a 3480 device, then Hercules will perform 3480 device type emulation such that the device appears to your guest o/s as if it were a 3480 device. If the actual SCSI device behaves as a 3590 device however (perhaps using/returning 32-bit block-ids instead of the expected 22-bit format block-ids that 3480’s use), then you MUST specify the –blkid-32 special option on your Hercules device statement so that Hercules’s emulation logic can know that it needs to translate 22-bit block-ids to 32-bit ones before sending them to the actual SCSI hardware (and vice versa: to translate 32-bit block-ids from the actual SCSI drive into 22-bit format block-ids that your guest expects from a 3480 device).</p>
+<p>Special options for SCSI tapes
+As explained just above, certain model SCSI tape drives such as the Quantum DLT series may require special handling in order to provide the desired proper device type emulation. These special options are:</p>
+<p>–blkid-22
+The complete opposite of the below –blkid-32 option. Use this option if your real SCSI tape drive behaves as a 3480/3490 and expects 22-bit block-ids, but you wish to define the drive to Hercules as a 3590 tape drive (which uses 32-bit block-ids).</p>
+<p>–blkid-32
+This option indicates that your SCSI attached tape drive only supports 32-bit block-ids (as used by 3590 drives) and not the 22-bit format used by 3480/3490 drives. You should only specify this option if you intend to define the drive as a model 3480 or 3490 device to Hercules, and then only if your actual real SCSI drive uses 32-bit block-ids.</p>
+<p>If you define your Hercules tape drive as a model 3590 device however, then this option is not needed since model 3590 drives are already presumed to use 32-bit block-ids.</p>
+<p>Specifying this option on a 3480/3490 device statement will cause Hercules device emulation logic to automatically translate the actual SCSI tape drive’s 32-bit block-id into 22-bit format before returning it back to the guest operating system (since that is the format the guest operating system expects it to be in for a model 3480/3490 drive), and to translate the guest’s 22-bit format block-id into 32-bit format before sending it to the actual SCSI hardware (since that is the format that the actual hardware requires it to be in).</p>
+<p>–no-erg
+This option is intended to prevent issuance of the Erase Gap command to those SCSI tape drives which do not support it (such as the Quantum DLT series). It causes Hercules’s device emulation logic to ignore any Erase Gap commands issued to the drive and to return immediate “success” instead.</p>
+<p>This option should only be used (specified) for drives such as the Quantum, which support switching from read mode to write mode in the middle of a data stream without the need of an intervening Erase Gap command. Specifying it for any other model SCSI drive may cause incorrect functioning as a result of the Erase Gap command not being issued to the actual SCSI hardware.</p>
+<p>Check the manufacturer information for your particular model of SCSI attached tape drive (and/or use SoftDevLabs’s «ftape» Windows utility) to determine whether or not this option is needed for your particular drive.</p>
+<p>–online
+Use this option if your host’s magtape device driver sets the GMT_ONLINE status flag to report when a tape is mounted instead of the more common behavior of clearing the GMT_DR_OPEN flag.</p>
+<p>Debian 8.3 Linux systems running on HP (Hewlett Packard) hardware using StorageTek 9840 fiber channel drives or DEC TSZ07 9-track drives (via a fc/SCSI bridge) for example, are known to not use the GMT_DR_OPEN flag at all. Rather, they set the GMT_ONLINE status flag to indicate when a tape is mounted, thus requiring the –online option to work properly with Hercules.</p>
+</section>
+<section id="communication-and-channel-to-channel-devices">
+<h4>Communication and Channel-to-Channel devices<a class="headerlink" href="#communication-and-channel-to-channel-devices" title="Enlace permanente a este encabezado">¶</a></h4>
+<p>The first argument defines the emulation type, and the remaining arguments depend on the chosen emulation type.</p>
+<p>The following are the emulation types that are currently supported:</p>
+<p>QETH     (OSA/QDIO Ethernet Adapter)
+Emulates an OSA Express card running in QDIO mode. Both layer-2 and layer-3 are currently supported. The mode of operation is selected by the emulated workload and cannot be configured from Hercules.</p>
+<p>The QETH device is a «grouped» device that requires 3 (three) device addresses (device numbers) to be defined per QETH group, with the first device of the group being an even numbered device:</p>
+<p>0600.3   QETH  [arguments…]
+You may also optionally use OSA or OSD as the device/emulation type instead of QETH if desired:
+0600.3   OSA   [arguments…]
+0600.3   OSD   [arguments…]
+.. note:: Hercules’s networking support requires privileged access to your host’s networking devices. The easiest way to do this on Linux is to enable setuid of hercifc using the –enable-setuid-hercifc configure option. If that’s not an option, or you’re not running under Linux, using Administrative (root) privileges when running Hercules will work as well.</p>
+<p>Please note that this is still considered to be an experimental driver still under development. Not all of the features or functionality that real OSA devices have are currently supported. For example, the current implementation only supports three devices: the read device, the write device and the datapath device. Real OSA devices support multiple datapath devices. Support for this feature is planned, but is not yet implemented.</p>
+<p>Arguments:
+ifname  interface
+Only available on <a href="#id12"><span class="problematic" id="id13">*</span></a>nix
+Specifies the interface name for the device to be created (e.g. tun, tun0, etc).</p>
+<p>ipaddr  address
+ipaddr  address/prefix
+Required on Windows
+Specifies the IPv4 address to be assigned to your virtual OSA Express card. This IP Address should match the IP address in your guest’s TCPIP PROFILE, although this is not a requirement; during guest initialization your guest should automatically assign the proper IP address to your OSA device.</p>
+<p>The address can be optionally followed by a prefix size expressed in CIDR notation, e.g. 192.168.1.1/24. For IPv4 the prefix size can have a value from 0 to 32. If not specified a value of 32 is assumed. The prefix size is used to produce an equivalent subnet mask. For example, a value of 24 produces a subnet mask of 255.255.255.0. Otherwise the subnet mask must be specify via the netmask parameter.</p>
+<p>netmask  mask
+Specifies the subnet mask to be used with your OSA card. On Windows, this value should be the same subnet mask that your Windows system is using (i.e. that the “iface” adapter is using).</p>
+<p>The netmask option may only be specified when the subnet mask is not already defined via the optional prefix size parameter of the ipaddr option.</p>
+<p>iface  device
+Specifies, on Linux, the name of the host tunnel device to use. On Windows, this required option identifies your Windows system’s actual network adapter. On Linux, the value should be specified by name (e.g. /dev/net/tun). On Windows, the value should be specified by either IP or MAC address.</p>
+<p>The default value for this option is the same value specified in your NETDEV configuration file statement (or the default value if not specified).</p>
+<p>ipaddr6  address
+ipaddr6  address/prefix
+Specifies the IPv6 address to be assigned to your OSA card.</p>
+<p>The address can be optionally followed by the prefix size expressed in CIDR notation, e.g. 2001:db8:3003:1::543:210f/48. For IPv6 the prefix size can have a value from 0 to 128. If not specified a value of 128 is assumed. The prefix size is used to produce an equivalent subnet mask.</p>
+<p>hwaddr  MAC
+Specifies the MAC address to be assigned to your OSA card.</p>
+<p>If not specified then one will be internally generated in the range 02:00:5E:80:00:00 - 02:00:5E:FF:FF:FF using the low order 23 bits of the IPv4 address. For example, if the ipv4 address is 10.1.2.3 the generated MAC address will be 02:00:5E:81:02:03.</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>The MAC address you specify for this option MUST have the 02 locally assigned MAC bit on in the first byte, must NOT have the 01 broadcast bit on in the first byte, and MUST be unique as seen by all other devices on your network segment. It should never, for example, be the same as the host adapter MAC address specified on the iface parameter.</p>
+</div>
+<p>mtu  bytes
+Specifies the Maximum Transmission Unit to be used. The maximum transmission unit (MTU) is the largest packet size, measured in bytes, that can be transmitted over a network.</p>
+<p>On Windows, if the value is not specified or is larger than what CTCI-WIN’s WinPCap driver can support for the specified iface host adapter, a warning is issued and the specified value is ignored and the maximum supported value is used instead.</p>
+<p>chpid  id
+Specifies the channel path identifier to be used with the device.</p>
+<p>This is mostly a cosmetic value, but some guest operating systems such as z/OS might require it to operate correctly.</p>
+<p>debug
+Enables debug logging for the device.</p>
+<p>When logging is enabled the Hercules driver logs extra progress and status messages used to help debug an incorrectly functioning driver. The Hercules qeth panel command can be used to limit the type of debug information that is logged. Enter the command help qeth for more information.</p>
+<p>LCS     (LAN Channel Station Emulation)
+An emulated Lan Channel Station Adapter. This emulation mode appears to the operating system running in the Hercules machine as either an IBM 8232 LCS device, the LCS3172 driver of a P/390, a 3172 running ICP (Interconnect Communications Program), or as a simple IBM 2216 router.</p>
+<p>Beginning with SDL Hyperion version 4.4, an LCS device is now also capable of providing SNA support as well. Refer to the README.SNA document for details.</p>
+<p>Except when defined as an SNA device, the LCS device is a «grouped» device that requires 2 (two) device addresses (device numbers) to be defined per LCS group, with the first device of the group being an even numbered device:</p>
+<p>0E20.2   LCS  [arguments]
+.. note:: Hercules’s networking support requires privileged access to your host’s networking devices. If Hercules is not started with Administrative (root) privileges then initialization of your networking devices will fail and your guest’s networking will not work.</p>
+<p>Rather than a point-to-point link, this emulation creates a virtual ethernet adapter through which the guest operating system running in the Hercules machine can communicate. As such, this mode is not limited to TCP/IP traffic, but in fact will handle any ethernet frame.</p>
+<p>There are no required parameters for the LCS emulation, however there are several options that can be specified on the device statement. Also note that on the MAC OS X platform, the long option format (–xxx) is not supported. On MAC, only the short option format (-x) should be used.</p>
+<p>The format of the configuration statement for LCS devices is as follows:</p>
+<dl class="option-list">
+<dt><kbd><span class="option">-n <var>devname</var></span></kbd></dt>
+<dd><p>or   –dev devname</p>
+</dd>
+</dl>
+<p>where devname is:</p>
+<p>(Linux/Unix)
+the name of the Tun/Tap special character device, normally /dev/net/tun.</p>
+<p>(Windows)
+either the IP or MAC address of the host system’s network card.</p>
+<p>The default for this option is the value specified by the NETDEV configuration file statement.
+-o filename    or   –oat filename
+where filename specifies the filename of the OSA Address Table (OAT). If this option is specified, the optional –mac and guestip entries are ignored in preference to statements in the OAT. (See further below for the syntax of the OAT)</p>
+<p>If no OAT is specified, the emulation module will create the following:</p>
+<p>An ethernet adapter (port 0) for TCP/IP traffic only.
+Two device addresses will be defined (devnum and devnum + 1).
+-m MAC Address    or   –mac MAC address
+where “MAC address” is the optional hardware address for your guest’s virtual adapter/interface in the format: hh:hh:hh:hh:hh:hh. The default value is “02:00:5E:nn:nn:nn” where the :nn:nn:nn portion is constructed from the last 3 octets of the specified guestip.</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>The MAC address you specify for this option MUST have the 02 locally assigned MAC bit on in the first byte, must NOT have the 01 broadcast bit on in the first byte, and MUST be unique as seen by all other devices on your network segment. It should never, for example, be the same as the host adapter MAC address specified on the -n parameter.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>If you use the –oat option, do not specify an address here. Instead, specify your desired guest adapter MAC address in your OAT file via the HWADD statement.</p>
+</div>
+<p>guestip
+is an optional IP address of the Hercules (guest OS) side. Note: This is only used to establish a point-to-point routing table entry on driving system. If you use the –oat option, do not specify an address here.</p>
+<p>OAT syntax
+The syntax for the OSA Address Table (OAT) is as follows:</p>
+<section id="dev-mode-port-entry-specific-information">
+<h5>* Dev    Mode   Port    Entry specific information  *<a class="headerlink" href="#dev-mode-port-entry-specific-information" title="Enlace permanente a este encabezado">¶</a></h5>
+<blockquote>
+<div><p>0400    IP     00     PRI  172.21.3.32
+0402    IP     00     SEC  172.21.3.33
+0404    IP     00     NO   172.21.3.38
+0406    IP     01     NO   172.21.2.16
+040E    SNA    00</p>
+</div></blockquote>
+<p>HWADD  00  02:00:FE:DF:00:42
+HWADD  01  02:00:FE:DF:00:43</p>
+<p>ROUTE  00  172.21.3.32  255.255.255.224
+where:
+Dev
+is the base device address
+Mode
+is the operation mode: IP or SNA.
+.. note:: the SNA operation mode is currently not implemented via the OAT file. Rather, a separate LCS device with the -e SNA device option must be specified instead. Refer to the README.SNA document for details.</p>
+<p>Port
+is the virtual (relative) adapter number (i.e. port number).
+The read/write devices can be swapped by coding the odd address of the even-odd pair in the OAT.</p>
+<p>Up to 4 virtual (relative) adapters (i.e. ports) 00-03 are currently supported.</p>
+<p>For IP modes, the entry specific information is as follows:</p>
+<p>PRI | SEC | NO
+Specifies where a packet with an unknown IP address is forwarded to. PRI is the primary default entry, SEC specifies the entry to use when the primary is not available, and NO specifies that this is not a default entry.</p>
+<p>nnn.nnn.nnn.nnn
+Specifies the home IP address</p>
+<p>When the operation mode is IP  specify only the read (even) device number for Dev. The write (odd) address will be created automatically.</p>
+<p>Additionally, a HWADD and/or ROUTE statement may also be included in the OAT:</p>
+<p>HWADD  pp  hh:hh:hh:hh:hh:hh
+Use the HWADD to specify a hardware (MAC) address for a virtual adapter (port). The first parameter after HWADD specifies the relative adapter (port) to which the address is applied.</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>The MAC address you specify for this option MUST have the 02 locally assigned MAC bit on in the first byte, must NOT have the 01 broadcast bit on in the first byte, and MUST be unique as seen by all other devices on your network segment. It should never, for example, be the same as the host adapter MAC address specified on the -n parameter, nor the same as the HWADD defined for any other port.</p>
+</div>
+<p>ROUTE  pp  nnn.nnn.nnn.nnn  …
+The ROUTE statement is included for convenience. This requests Hercules’s network configuration logic (hercifc utility on Linux or CTCI-WIN on Windows) to automatically create a network route for this specified virtual adapter. Please note that it is not necessary to include point-to-point routes for each IP address in the table since this is done automatically by the Hercules device driver’s emulation module.</p>
+<p>CTCI     (Channel to Channel link to TCP/IP stack)
+A point-to-point IP connection with the TCP/IP stack of the driving system on which Hercules is running. See the Hercules TCP/IP page for unix details, in particular the use of preconfigured interfaces.</p>
+<p>The CTCI device is a «grouped» device that requires 2 (two) device addresses (device numbers) to be defined per CTCI group, with the first device of the group being an even numbered device:</p>
+<p>0E20.2   CTCI  [arguments]
+.. note:: Hercules’s networking support requires privileged access to your host’s networking devices. If Hercules is not started with Administrative (root) privileges then initialization of your networking devices will fail and your guest’s networking will not work.</p>
+<p>The Windows implementation is different from the unix one. See SoftDevLab’s CTCI-WIN page for further details and information.</p>
+<p>For unix systems, such as Linux, BSD, and OSX, you may use preconfigured interfaces or you may request Hercules to configure the interface for you. In the first case you must know and supply the name of the interface to use; in the second case the kernel supplies an interface name.</p>
+<p>Required for Linux when using a preconfigured interface:
+ifname
+Specifies the interface name of an interface that is already configured. The flag –if may optionally be specified before the name.</p>
+<p>Specify no IP addresses or other arguments as the information is already configured into the interface.</p>
+<p>Required for Linux when not using a preconfigured interface, and for Windows:
+guestip
+Specifies the IP address of the guest operating system running under Hercules.</p>
+<p>hostip
+Specifies the IP address of the host (Linux or Windows) side of the point-to-point link. This may or may not be the same as your system’s regular IP address. For Windows, if the host system is configured with DHCP, this should instead be the MAC address of the Ethernet adapter you wish to use to have Hercules communicate with the outside world.</p>
+<p>Optional for Windows:
+If these arguments are specified, they must precede the required arguments.</p>
+<p>-m MAC address    or   –mac MAC address
+where “MAC address” is the optional hardware address for your guest’s virtual adapter/interface in the format: hh:hh:hh:hh:hh:hh. The default value is “02:00:5E:nn:nn:nn” where the :nn:nn:nn portion is constructed from the last 3 octets of the specified guestip.</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>The MAC address you specify for this option MUST have the 02 locally assigned MAC bit on in the first byte, must NOT have the 01 broadcast bit on in the first byte, and MUST be unique as seen by all other devices on your network segment. It should never, for example, be the same as the host adapter MAC address specified on the -n parameter.</p>
+</div>
+<dl class="option-list">
+<dt><kbd><span class="option">-k</span></kbd></dt>
+<dd><p>kernel-capture-buffer-size</p>
+</dd>
+<dt><kbd><span class="option">-i</span></kbd></dt>
+<dd><p>tuntap32-i/o-buffer-size</p>
+</dd>
+</dl>
+<p>See SoftDevLabs’s CTCI-WIN page for further details and information.</p>
+<p>Optional for both Linux and Windows:
+If these arguments are specified, they must precede the required arguments:</p>
+<dl class="option-list">
+<dt><kbd><span class="option">-n <var>name</var></span></kbd></dt>
+<dd><p>or   –dev name</p>
+</dd>
+</dl>
+<p>Specifies the name of the tunnel device to use. The default is the value specified by the NETDEV configuration file statement.</p>
+<p>-s netmask
+where netmask is the netmask to use for the automatically added point-to-point route in standard dotted internet noitation (e.g. 255.255.255.0)</p>
+<dl class="option-list">
+<dt><kbd><span class="option">-x <var>name</var></span></kbd></dt>
+<dd><p>or   –if name</p>
+</dd>
+</dl>
+<p>Specifies the name of the network interface to use.</p>
+<p>There is no default for this argument as the kernel assigns an interface name if none is provided.</p>
+<dl class="option-list">
+<dt><kbd><span class="option">-d</span></kbd></dt>
+<dd><p>or   –debug</p>
+</dd>
+</dl>
+<p>Specifies that debugging output is to be produced on the Hercules control panel. This should normally be left unspecified.</p>
+<p>CTCE     (Enhanced Channel-to-Channel Emulation via TCP connection (true 3088 CTCA))
+The CTCE device type emulates a true 3088 Channel to Channel Adapter. CTCE devices are emulated via TCP/IP connections between two or more Hercules instances.</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Hercules’s networking support requires privileged access to your host’s networking devices. If Hercules is not started with Administrative (root) privileges then initialization of your networking devices will fail and your guest’s networking will not work.</p>
+</div>
+<p>A Hercules CTCE device requires two even-odd pairs of devices, one for reading and the other for writing. In the previous CTCE version these had to be an even-odd pair of port numbers, whereby only the even port numbers had to be specified in the CTCE configuration. This restriction has now been removed. Any port number &gt; 1024 and &lt; 65534 is allowed. The CTCE configuration specifies the listening port number at the receiving end, the sender side port number is a free randomly chosen one.</p>
+<p>The socket connection pairs cross-connect, the arrows showing the send-&gt;receive direction :</p>
+<blockquote>
+<div><p>x-lport-random  –&gt;  y-rport-config
+x-lport-config  &lt;–  y-rport-random</p>
+</div></blockquote>
+<p>CTCE connected Hercules instances can be hosted on either Unix or Windows or MacOS platforms. Neither side needs to be the same as the other. Each side can be different from the other if needed. One side can be Windows and the other side can be Linux if so desired.</p>
+<p>The configuration statement for CTCE devices is in one of these 2 possible formats (noting that items between [] brackets are optional):</p>
+<p>ldevnum     CTCE [lport] [rdevnum=]raddress   rport [[mtu]sml] [ATTNDELAY delay] [FICON]
+ldevnum[.n] CTCE [lport] [rdevnum]=raddress [rport] [[mtu]sml] [ATTNDELAY delay] [FICON]
+There is only one or two required positional arguments in addition to the ldevnum:
+ldevnum
+The device number (CCUU) on the local system. Please note that this can optionally be followed by .n in which case multiple CTCE devices can be configured with one config statement.
+raddress
+The IP address of the remote system.
+rport
+The listening TCP/IP port number on the remote system. Please note that this parameter is only required when the rdevnum parameter and the following equal sign are not specified, or when the mtu parameter needs to be specified. When not required, the default is 3088.
+The remaining arguments are optional as per the shown [] brackets for the format chosen:
+lport
+The listening TCP/IP port number on the local system. The default value is 3088.
+rdevnum
+The device number (CCUU) on the remote system. The default is equal to the ldevnum on the local system. Please note that in case only one or two hexadecimal digits are given (i.e. a value up to 255 and thus not a complete device number CCUU), the effective rdevnum will be computed by exclusive-or of this value with the ldevnum specified. In case .n is given and &gt; 1, this will apply to all ldevnum - rdevnum pairs. Please see an example of this down below.
+mtu
+Maximum Transmission Unit buffer size. The default value is 62552 bytes. Please note that when this mtu parameter needs to be specified, also the rport parameter needs to be given (e.g. its default value of 3088).
+sml
+Small minimum for MTU. The default value is 16 bytes.
+delay
+The number of msec ATTN signals will be delayed for in order to circumvent a VM/SP bug causing SIO timeout errors. Override the default of 0, e.g. with 200 or or some smaller value for faster Hercules hosts, but only when needed.
+FICON
+The keyword FICON will cause a Fibre channel CTC (i.e. a FCTC device) to be emulated.
+A sample CTCE device configuration is shown below, using the previous CTCE version 1 format which is still fully supported:</p>
+<p>First Hercules PC Host with IP address 192.168.1.100:</p>
+<blockquote>
+<div><p>0E40   CTCE  30880  192.168.1.200  30880
+0E41   CTCE  30882  192.168.1.200  30882</p>
+</div></blockquote>
+<p>Second Hercules PC Host with IP address 192.168.1.200:</p>
+<blockquote>
+<div><p>0E40   CTCE  30880  192.168.1.100  30880
+0E41   CTCE  30882  192.168.1.100  30882</p>
+</div></blockquote>
+<p>Exploiting the new features of the newer CTCE version 2 format, this can be simplified omitting all port numbers</p>
+<p>First Hercules PC Host with IP address 192.168.1.100:</p>
+<blockquote>
+<div><p>0E40   CTCE    0E40=192.168.1.200
+0E41   CTCE    0E41=192.168.1.200</p>
+</div></blockquote>
+<p>Second Hercules PC Host with IP address 192.168.1.200:</p>
+<blockquote>
+<div><p>0E40   CTCE    0E40=192.168.1.100
+0E41   CTCE    0E41=192.168.1.100</p>
+</div></blockquote>
+<p>As there are 2 equal ldevnum - rdevnum pairs, this can be simplified further:</p>
+<p>First Hercules PC Host with IP address 192.168.1.100:</p>
+<blockquote>
+<div><p>0E40.2 CTCE        =192.168.1.200</p>
+</div></blockquote>
+<p>Second Hercules PC Host with IP address 192.168.1.200:</p>
+<blockquote>
+<div><p>0E40.2 CTCE        =192.168.1.100</p>
+</div></blockquote>
+<p>Showing an example of specifying a rdevnum using the exclusive-or operation with a small value:</p>
+<blockquote>
+<div><p>0E40.4 CTCE       1=192.168.1.200</p>
+</div></blockquote>
+<p>The above is axactly the same as this specification:</p>
+<blockquote>
+<div><p>0E40   CTCE    0E41=192.168.1.200
+0E41   CTCE    0E40=192.168.1.200
+0E42   CTCE    0E43=192.168.1.200
+0E43   CTCE    0E42=192.168.1.200</p>
+</div></blockquote>
+<p>The above example could be used to establish a redundant pair of read/write CTC links, where each Hercules side uses the even devnum addresses for reading, and the odd ones for writing (or the other way around). That way, the operating system definitions on each side can be identical, e.g. for a VTAM MPC CTC link :</p>
+<blockquote>
+<div><p>CTCATRL  VBUILD TYPE=TRL
+C0E40TRL TRLE  LNCTL=MPC,READ=(0E40,0E42),WRITE=(0E41,0E43)</p>
+<p>CTCALCL  VBUILD TYPE=LOCAL
+C0E40LCL PU    TRLE=C0E40TRL,XID=YES,CONNTYPE=APPN,CPCP=YES,TGP=CHANNEL</p>
+</div></blockquote>
+<p>PTP     (MPCPTP/MPCPTP6 Channel to Channel link)
+A point-to-point IP connection with the TCP/IP stack of the host system on which Hercules is running. From the point of view of the guest image running in the Hercules machine it appears to be an MPCPTP and/or MPCPTP6 ESCON CTC link to another image.</p>
+<p>The PTP device is a «grouped» device that requires 2 (two) device addresses (device numbers) to be defined per PTP group, with the first device of the group being an even numbered device:</p>
+<p>0460.2   PTP  [arguments]
+.. note:: Hercules’s networking support requires privileged access to your host’s networking devices. If Hercules is not started with Administrative (root) privileges then initialization of your networking devices will fail and your guest’s networking will not work.</p>
+<p>For <a href="#id14"><span class="problematic" id="id15">*</span></a>nix systems, such as Linux, BSD, and OSX, you may use preconfigured interfaces or you may request Hercules to configure the interface for you. In the first case you must know and supply the name of the interface to use; in the second case the kernel supplies an interface name. See the Hercules TCP/IP page for more details.</p>
+<p>Required for <a href="#id16"><span class="problematic" id="id17">*</span></a>nix when using a preconfigured interface:
+[-x/–if] ifname
+Specifies the interface name of a TUN interface that is already configured.</p>
+<p>Specify no host names or IP addresses or other arguments as the information is already configured into the interface.</p>
+<p>Required for <a href="#id18"><span class="problematic" id="id19">*</span></a>nix when not using a preconfigured interface, and for Windows:
+guest1
+Specifies the host name or IP address of the guest operating system running under Hercules.</p>
+<p>host1
+Specifies the host name or IP address of the host (Linux or Windows) side of the point-to-point link.</p>
+<p>guest2
+Specifies the host name or IP address of the guest operating system running under Hercules.</p>
+<p>host2
+Specifies the host name or IP address of the host (Linux or Windows) side of the point-to-point link.</p>
+<p>guest1 and host1 must both be of the same address family, i.e. both IPv4 or both IPv6.
+guest2 and host2, if specified, must both be of the same address family, i.e. both IPv4 or both IPv6, and must not be of the same address family as guest1 and host1.
+If a host name is specified for guest1, and the host name can be resolved to both an IPv4 and an IPv6 address, use either the -4/–inet or the -6/–inet6 option to specify which address family should be used; if neither the -4/–inet nor the -6/–inet6 option is specified, whichever address family the resolver returns first will be used.
+host1 or host2 can be followed by the prefix size expressed in CIDR notation, e.g. 192.168.1.1/24 or 2001:db8:3003:1::543:210f/48. For IPv4 the prefix size can have a value from 0 to 32; if not specified a value of 32 is assumed. For IPv6 the prefix size can have a value from 0 to 128; if not specified a value of 128 is assumed. For IPv4 the prefix size is used to produce the equivalent subnet mask; for example, a value of 24 produces a subnet mask of 255.255.255.0.
+If guest1, host1, guest2 or host2 are numeric IPv6 addresses, they can be between braces, e.g. [2001:db8:3003:1::543:210f].
+Optional for <a href="#id20"><span class="problematic" id="id21">*</span></a>nix:
+If these arguments are specified, they must precede the required arguments.</p>
+<dl class="option-list">
+<dt><kbd><span class="option">-t <var>size</var></span></kbd></dt>
+<dd><p>or   –mtu size</p>
+</dd>
+</dl>
+<p>where size is the maximum transmission unit size. The default size is 1500.</p>
+<dl class="option-list">
+<dt><kbd><span class="option">-x <var>name</var></span></kbd></dt>
+<dd><p>or   –if name</p>
+</dd>
+</dl>
+<p>Specifies the name of the TUN interface to use. There is no default for name.</p>
+<p>Optional for Windows:
+If these arguments are specified, they must precede the required arguments.</p>
+<p>-m MAC address    or   –mac MAC address
+where “MAC address” is the optional hardware address for the virtual interface in the format: hh:hh:hh:hh:hh:hh. The default value is “02:00:5E:nn:nn:nn” where the :nn:nn:nn portion is constructed from the last 3 octets of the specified guestip.</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>The MAC address you specify for this option MUST have the 02 locally assigned MAC bit on in the first byte, must NOT have the 01 broadcast bit on in the first byte, and MUST be unique as seen by all other devices on your network segment. It should never, for example, be the same as the host adapter MAC address specified on the -n parameter.</p>
+</div>
+<dl class="option-list">
+<dt><kbd><span class="option">-k</span></kbd></dt>
+<dd><p>kernel-capture-buffer-size</p>
+</dd>
+<dt><kbd><span class="option">-i</span></kbd></dt>
+<dd><p>tuntap32-i/o-buffer-size</p>
+</dd>
+</dl>
+<p>Refer to the Help file included with SoftDevLabs’s CTCI-WIN product for further details and information.</p>
+<p>Optional for both <a href="#id22"><span class="problematic" id="id23">*</span></a>nix and Windows:
+If these arguments are specified, they must precede the required arguments:</p>
+<dl class="option-list">
+<dt><kbd><span class="option">-n <var>name</var></span></kbd></dt>
+<dd><p>or   –dev name</p>
+</dd>
+</dl>
+<p>Specifies the name of the tunnel device to use. The default for this option is the value specified by the NETDEV configuration file statement.</p>
+<dl class="option-list">
+<dt><kbd><span class="option">-4</span></kbd></dt>
+<dd><p>or   –inet</p>
+</dd>
+</dl>
+<p>Indicates that when a host name is specified for guest1, the host name must resolve to an IPv4 address.</p>
+<dl class="option-list">
+<dt><kbd><span class="option">-6</span></kbd></dt>
+<dd><p>or   –inet6</p>
+</dd>
+</dl>
+<p>Indicates that when a host name is specified for guest1, the host name must resolve to an IPv6 address.</p>
+<dl class="option-list">
+<dt><kbd><span class="option">-d</span></kbd></dt>
+<dd><p>or   –debug</p>
+</dd>
+</dl>
+<p>Specifies that debugging output is to be produced on the Hercules control panel. This should normally be left unspecified.</p>
+</section>
+</section>
+<section id="ckd-dasd-devices">
+<h4>CKD DASD devices<a class="headerlink" href="#ckd-dasd-devices" title="Enlace permanente a este encabezado">¶</a></h4>
+<p>The argument specifies the name of a file containing the disk CKD DASD image or the INET address of a Hercules Shared Device server.</p>
+<p>The file consists of a 512-byte device header record followed by fixed length track images. The length of each track image depends on the emulated device type, and is always rounded up to the next multiple of 512 bytes.</p>
+<p>Volumes larger than 2GB (for example, the 3390 model 3) can be supported by spreading the data across more than one file. Each file contains a whole number of cylinders. The first file (which contains cylinders 0-2518 in the case of a 3390) usually has _1 as the last two characters of its name. The ckddasd driver allocates the remaining files by replacing the last character of the file name by the characters 2, 3, etc.</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>When CKD DASD images are spread across multiple files, you must specify only the first file name (the file with suffix _1) in the configuration statement.</p>
+</div>
+<p>If your host operating system supports large file sizes (or 64-bit offsets) then volumes larger than 2G can be kept in a single file.</p>
+<p>Alternatively, the argument may specify the name of a file containing a compressed CCKD DASD image. The CKD driver will automatically detect whether the file contains a regular CKD image or a compressed CCKD image.</p>
+<p>Refer to «Creating an empty DASD volume» in the «Creating, formatting, and loading DASD volumes» section of the Creating DASD web page for information on using the “dasdinit” command/utility to create compressed dasd files. Refer to the Compressed Dasd Emulation page for details on the actual CCKD emulation itself and additional information on the “CCKD” initialization/tuning control file statement, as well as information regarding the use of shadow files.</p>
+<p>If you specify an INET address, the format is:</p>
+<p>ip-name-or-addr:port:devnum
+ip-name-or-addr specifies the internet name or address where the Hercules Shared Device server is running.</p>
+<p>port specifies the port number the Shared Device server is listening on. If omitted, the default is 3990.</p>
+<p>devnum specifies the device number on the Shared Device server. If omitted, the default is the current device number.</p>
+<p>In addition to the above, some additional optional arguments are also supported.</p>
+<p>sf=shadow-file-filename-template
+Shadow files are only supported for compressed dasd images.</p>
+<p>A shadow file contains all the changes made to the emulated dasd since it was created, until the next shadow file is created. The moment of the shadow file’s creation can be thought of as a snapshot of the current emulated dasd at that time, because if the shadow file is later removed, then the emulated dasd reverts back to the state it was at when the snapshot was taken.</p>
+<p>Using shadow files, you can keep the base file on a read-only device such as cdrom, or change the base file attributes to read-only, ensuring that this file can never be corrupted.</p>
+<p>Hercules console commands are provided to add a new shadow file, remove the current shadow file (with or without backward merge), compress the current shadow file, and display the shadow file status and statistics</p>
+<p>For detailed information regarding shadow files and their use, please see the «Shadow Files» section of the Compressed Dasd Emulation web page.</p>
+<p>readonly
+Readonly returns «write inhibited» sense when a write is attempted. Note that not all of the sense bits may be getting set absolutely correctly however. (Some people have reported getting different error messages under Hercules than a real machine, but it really hasn’t been an issue for a while now.)</p>
+<p>readonly may be abbreviated as rdonly or ro</p>
+<p>fakewrite
+Fakewrite is a kludge for the readonly sense problem mentioned above. Here the disk is not intended to be updated (MVS updates the DSCB last referenced field for a readonly file) and any writes appear to be successful even though nothing actually gets written.</p>
+<p>fakewrite may be abbreviated as fakewrt or fw</p>
+<p>[no]lazywrite
+[no]fulltrackio
+These options have been deprecated. They are still accepted, but they do absolutely nothing.</p>
+<p>fulltrackio may be abbreviated as fulltrkio or ftio</p>
+<p>cu=type
+Specifies the type of control unit to which this device is attached. The use of this parameter does not necessarily imply that all functions of the specified control unit are emulated, its only purpose is to force a particular control unit type to be indicated in the data returned by SENSE ID and similar CCW’s.</p>
+<p>The default value depends on the device type:</p>
+<p>Device type     Default CU type
+2311    2841
+2314    2314
+3330 3340
+3350 3375
+3380    3880
+3390    3990
+9345    9343
+Other values which may be specified are: 3990-3 and 3990-6.</p>
+<p>Normally the default value is appropriate and this parameter need not be specified.</p>
+<p>ser=nnnnnnnnnnnn
+Defines an optional overriding 12-digit serial number to be used for this device. The specified serial number will be used regardless of whatever permanent or randomly assigned serial number the device might have (if any).</p>
+</section>
+<section id="fba-dasd-devices">
+<h4>FBA DASD devices<a class="headerlink" href="#fba-dasd-devices" title="Enlace permanente a este encabezado">¶</a></h4>
+<p>The file consists of fixed length 512-byte records, each of which represents one physical block of the emulated disk.</p>
+<p>The first argument specifies the name of a file which contains the FBA DASD image or the INET address of a Hercules Shared Device server.</p>
+<p>If you specify a Shared Device server INET address, the format of the filename is:</p>
+<p>ip-name-or-addr:port:devnum
+ip-name-or-addr specifies the internet name or address where the Hercules Shared Device server is running.</p>
+<p>port specifies the port number the Shared Device server is listening on. If omitted, the default is 3990.</p>
+<p>devnum specifies the device number on the Shared Device server. If omitted, the default is the current device number.</p>
+<p>To allow access to a minidisk within a full-pack FBA DASD image file, normal NON-compressed FBA dasds also support two additional arguments after the file name:</p>
+<p>origin
+Specifies the relative block number within the DASD image file at which the minidisk begins. The number must be less than the number of blocks in the file. The default origin is zero.</p>
+<p>numblks
+Specifies the number of 512-byte blocks in the minidisk. This number must not exceed the number of blocks in the file minus the origin. If omitted, or if specified as an * asterisk, then the minidisk continues to the end of the DASD image file.</p>
+<p>Compressed CFBA dasds also support an additional optional argument:</p>
+<p>sf=shadow-file-name
+The handling of shadow files for compressed CFBA devices is identical as that for CCKD devices. Please refer to the preceding CKD section for information regarding use of the sf= shadow file option.</p>
+</section>
+<section id="communication-line-bsc">
+<h4>Communication Line - BSC<a class="headerlink" href="#communication-line-bsc" title="Enlace permanente a este encabezado">¶</a></h4>
+<p>(Preliminary 2703 BSC Support)</p>
+<p>Describes a BSC emulation line entry to either link 2 Hercules engines or a custom made program emulating a 2780, 3780 or 3x74, or a custom made program interfacing to a real BSC line. The line emulates a point-to-point BSC link. There is no point-to-multipoint handling.</p>
+<p>The communication is emulated over a TCP connection. All bytes are transfered as-is (except for doubling DLE in transparent mode) just like it would over a real BSC link. Emulated EIA (DCD, DTR, CTS, etc..) or X.21/V.11 leads (C, T, etc..) are treated differently depending on the DIAL option selected.</p>
+<p>The following options define the line emulation behaviour:</p>
+<p>DIAL=IN | OUT | INOUT | NO
+Specifies call direction (if any). If DIAL=NO is specified, the TCP outgoing connection is attempted as soon as an “ENABLE” CCW is executed. Also, in this mode, an incoming connection will always be accepted. If DIAL=IN|INOUT is specified, a TCP incoming call is accepted ONLY if an “ENABLE” CCW is currently executing on the device. If DIAL=OUT, the “ENABLE” CCW is rejected. When DIAL=IN|INOUT is specified, a DIAL CCW allows the application to establish a TCP connection to a specific host. For other DIAL values, the DIAL CCW is rejected.</p>
+<p>LHOST=hostname | ip address | *
+Specifies which IP address to listen on. This also conditions the network interface from which incoming calls will be accepted. Specifying “*” means all incoming TCP calls are accepted, regardless of the destination IP address or call origin. This is the default value. Specifying a specific IP address when DIAL=OUT is specified has no effect.</p>
+<p>LPORT=service name | port number
+Specifies the TCP port for which to listen to incoming TCP calls. This value is mandatory for DIAL=IN|INOUT|NO. It is ignored for DIAL=OUT.</p>
+<p>RHOST=hostname | ip address
+RPORT=service name | port number
+Specifies the remote host and port to which to direct a TCP connection on a DIAL=NO line when an “ENABLE” CCW is executed. This option is mandatory when DIAL=NO is specified. It is ignored for other DIAL values.</p>
+<p>The following options are tuning options. In most cases, using the default values give the best results
+RTO=0 | -1 | nnn | 3000
+Specifies the number of milliseconds before terminating a read on a timeout, when no read termination control character is received. Specifying 0 means the READ ends immediately. -1 specifies there is no timeout.</p>
+<p>PTO=0 | -1 | nnn | 3000
+Specifies the number of milliseconds before terminating a POLL on a timeout, when no ACK or NACK sequence is received. Specifying 0 means the POLL ends immediately. -1 specifies there is no timeout.</p>
+<p>ETO=0 | -1 | nnn | 10000
+Specifies the number of milliseconds before terminating an ENABLE operation on a timeout. the timeout applies when DIAL=NO|IN|INOUT is specified, the outgoing TCP call fails (DIAL=NO) and there is no previously or currently established TCP connection for this line. When DIAL=NO is specified, the timeout defaults to 10 seconds. For DIAL=IN|INOUT, the timeout defaults to -1.</p>
+</section>
+<section id="communication-line-tty">
+<h4>Communication Line - TTY<a class="headerlink" href="#communication-line-tty" title="Enlace permanente a este encabezado">¶</a></h4>
+<p>(Preliminary 2703 TELE2 TTY Support)</p>
+<p>Describes a 2703 Telegraph Terminal Control Type II (TTY 33/35) stop/start line, providing access to the Host OS via a standard TELNET client. To the host OS the line emulates an asynchronous TELE2 connection. The communication is emulated over a TELNET connection.</p>
+<p>The following options define the line emulation behaviour:</p>
+<p>LPORT=port number
+Specifies the TCPIP port to listen on for incoming TCP calls.</p>
+<p>DIAL=IN
+Specifies that this line is for in-bound calls. Required.</p>
+<p>TERM=TTY
+Specifies that this definition is for a TTY port. Required</p>
+</section>
+<section id="additional-2703-communication-line-options">
+<h4>Additional 2703 Communication Line options<a class="headerlink" href="#additional-2703-communication-line-options" title="Enlace permanente a este encabezado">¶</a></h4>
+<p>The following are some additional options that may also be specified for 2703 devices:</p>
+<p>APPEND=hh…
+PREPEND=hh…
+Specifies up to four bytes (in S/370 channel format, not ASCII) to be prepended or appended to input line data received from terminals before they are sent to the guest OS. Typical use is to add Circle D and C around each input transmission (2741’s for APL360).</p>
+<p>BINARY=NO | YES
+Negotiate to telnet binary mode if TERM=RXVT4APL.</p>
+<p>BS=DUMB
+BREAK=DUMB
+Backspace and break key handling option.</p>
+<p>When using windows telnet it is recommended to always use BS=DUMB and BREAK=DUMB.</p>
+<p>CODE=EBCD | CORR | NONE
+Specify code=ebcd for EBCD, code=corr for correspondence code, or code=none to disable all translation. The code= option applies to 2741 mode only.</p>
+<p>CRLF=YES | NO
+Option to map 2741 NL to TTY CRLF sequence.</p>
+<p>CRLF2CR=YES | NO
+Remove LF that immediately follow CR.</p>
+<p>EOL=hh
+Specifies the ASCII byte value that, when received, marks the end of the input line. The default is EOL=0D.</p>
+<p>ISKIP=hh…
+Specifies up to four ASCII bytes that are to be suppressed during input processing.</p>
+<p>KA=NO | (idle,intv,count)
+Defines the TCP/IP keepalive settings for this line’s connections. Refer the the CONKPALV statement for details.</p>
+<p>LNCTL=TELE2 | IBM1 | BSC
+Specifies the type of communications line being defined.</p>
+<p>For asynchronous communications lines specify LNCTL=TELE2 if TERM=TTY or LNCTL=IBM1 if TERM=2741. For binary synchronous (BSC) lines specify LNCTL=BSC.</p>
+<p>SKIP=hh…
+Specifies «garbage» code points (either byte-reversed ASCII for TERM=TTY or correspondence code/EBCD for TERM=2741) that are to be suppressed in output processing, thereby allowing distinct lists to be used for different terminal types.</p>
+<p>SENDCR=NO | YES
+Send CR back to terminal when input line received.</p>
+<p>SWITCHED=IN | OUT | INOUT | NO
+Switched is just a synonym for the DIAL option.</p>
+<p>TERM=TTY | 2741 | RXVT4APL
+Specifies the terminal type. Use RXVT4APL for 8-bit and character translation in 2741 mode.</p>
+<p>UCTRANS=YES | NO
+Enable automatic translation to uppercase.</p>
+</section>
+</section>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="operation.html" class="btn btn-neutral float-right" title="Operation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="installation.html" class="btn btn-neutral float-left" title="Installation Instructions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Read the Docs</span>
+      v: 1.0
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+      <dl>
+        <dt>Languages</dt>
+        
+          
+          <dd><a href="/herc-docs-demo/en/1.0/">en</a></dd>
+          
+        
+           <strong> 
+          <dd><a href="/herc-docs-demo/es/1.0/">es</a></dd>
+           </strong> 
+        
+      </dl>
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+          
+          <dd><a href="/herc-docs-demo/es/fovea1959/">fovea1959</a></dd>
+          
+        
+          
+          <dd><a href="/herc-docs-demo/es/master/">master</a></dd>
+          
+        
+      </dl>
+      
+      
+      <dl>
+        <dt>Downloads</dt>
+        
+          <dd><a href="/herc-docs-demo/es/1.0/Hercules Documentation Test-docs_es_1.0.pdf">pdf</a></dd>
+        
+          <dd><a href="/herc-docs-demo/es/1.0/Hercules Documentation Test-docs_es_1.0.epub">epub</a></dd>
+        
+      </dl>
+      
+      
+      <hr/>
+      <a href="https://tech.michaelaltfield.net/2020/07/18/sphinx-rtd-github-pages-1/">Continuous Documentation</a> hosting provided by <a href="https://pages.github.com/">GitHub Pages</a>.
+ 
+    </div>
+  </div>
+
+ 
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,347 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Unresolved Issues &mdash; Hercules Documentation Demo 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link href="_static/herc_style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Hercules Documentation Demo
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                master
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="hercinst.html">Building and Installing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration File</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercdasd.html">Creating DASD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercoper.html">Operating Procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercsupp.html">Technical Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercfaq.html">Frequently-Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="messages.html">Messages and Codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aa_auxdocs.html">Supporting documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_a.html">Appendix A - Documentation Standards</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Hercules Documentation Demo</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Unresolved Issues</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/README.ISSUES.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="unresolved-issues">
+<h1>Unresolved Issues<a class="headerlink" href="#unresolved-issues" title="Permalink to this heading">¶</a></h1>
+<p>For a current list of known issues refer to the <a class="reference external" href="https://github.com/SDL-Hercules-390/hyperion/issues">GitHub Issues web
+page</a>.</p>
+<section id="tape-device-handler">
+<h2>Tape Device Handler<a class="headerlink" href="#tape-device-handler" title="Permalink to this heading">¶</a></h2>
+<section id="ce-de-on-tape-rewind-unload">
+<h3>CE+DE on tape rewind-unload<a class="headerlink" href="#ce-de-on-tape-rewind-unload" title="Permalink to this heading">¶</a></h3>
+<p>Technically, they should be presented separately to the guest O/S: CE
+upon completion the actual rewind-unload CCW and then DE once the tape
+actually finishes unloading, but doing so is somewhat problematic
+especially for SCSI tapes. (Might be possible to do for AWS/HET tapes
+but I haven’t looked into it yet).</p>
+<section id="addendum-ivan-2004-10-02">
+<h4>Addendum (Ivan 2004/10/02)<a class="headerlink" href="#addendum-ivan-2004-10-02" title="Permalink to this heading">¶</a></h4>
+<p>Final DE on Rewind Unload must be accompanied by UC (Unit Check) (all
+device types) and possibly CUE (Control Unit End) for 3420 (3803 Control
+Unit Type, to indicate an end of Control Unit Busy condition). It is
+possible the CUE should only occur if a BUSY was presented at some
+point, but I am not 100% sure about that (and that’s not supported
+either, as we don’t support shared Control Units). However, VM/370 for
+example insists that CUE be presented.</p>
+<p>On the same line, VM/370 DDR is failing on Rewind unload. This could be
+part of the above problem.</p>
+</section>
+</section>
+<section id="aws-handler-fails-to-read-flex-generated-aws-files-ivan-2004-10-02">
+<h3>AWS handler fails to read FLEX Generated AWS files (Ivan 2004/10/02)<a class="headerlink" href="#aws-handler-fails-to-read-flex-generated-aws-files-ivan-2004-10-02" title="Permalink to this heading">¶</a></h3>
+<p>The current AWS handler is not capable of processing multi-segment
+blocks. However, this can be bypassed by forcing the use of the HET
+handler which is backward compatible.</p>
+</section>
+</section>
+<section id="i-o-subsystem">
+<h2>I/O Subsystem<a class="headerlink" href="#i-o-subsystem" title="Permalink to this heading">¶</a></h2>
+<section id="incorrect-channel-program-check-reporting-ivan-2004-10-02">
+<h3>Incorrect Channel Program Check reporting (Ivan 2004/10/02)<a class="headerlink" href="#incorrect-channel-program-check-reporting-ivan-2004-10-02" title="Permalink to this heading">¶</a></h3>
+<p>Because of the current I/O design, where we prefetch all write data
+prior to issuing the I/O, program check is presented unconditionally
+(except for immediate commands which are declared as such by the device
+handlers) even though, technically, it <em>should only</em> be presented if the
+Control Unit (device handler) attempts to consume data from the
+offending address.</p>
+</section>
+<section id="i-o-subsystem-reset-device-reset-not-always-effective-ivan-2004-10-02">
+<h3>I/O Subsystem Reset/Device Reset not always effective (Ivan 2004/10/02)<a class="headerlink" href="#i-o-subsystem-reset-device-reset-not-always-effective-ivan-2004-10-02" title="Permalink to this heading">¶</a></h3>
+<p>The I/O subsystem reset function does not actually send a reset signal
+to the device handlers as described in section 17.2.2.2 of the
+Principles of Operation. If an I/O is in progress when the reset occurs,
+it will <em>not</em> be terminated.</p>
+<p>Subsequently, if status is stacked after the I/O reset, the device may
+be left in an unusable state, with status pending and E bit off,
+effectivelly preventing an MSCH to be issued with the E bit on,
+requiring a Power On Reset (Hercules poweroff and restart of the
+emulator). Only ESA/390 and ESAME are affected.</p>
+</section>
+</section>
+<section id="device-handlers">
+<h2>Device Handlers<a class="headerlink" href="#device-handlers" title="Permalink to this heading">¶</a></h2>
+<section id="some-units-still-returning-ce-de-uc-on-not-ready-conditions-ivan-2004-10-02">
+<h3>Some units still returning CE+DE+UC on not-ready conditions (Ivan 2004/10/02)<a class="headerlink" href="#some-units-still-returning-ce-de-uc-on-not-ready-conditions-ivan-2004-10-02" title="Permalink to this heading">¶</a></h3>
+<p>I/O architecture requires non-ready units to return UC (Unit Check)
+only. This is done at the device handler lever and has not been
+implemented in all device handlers.</p>
+</section>
+</section>
+<section id="hardware-panel">
+<h2>Hardware Panel<a class="headerlink" href="#hardware-panel" title="Permalink to this heading">¶</a></h2>
+<section id="change-to-enter-key-function-ivan-2004-10-02">
+<h3>Change to Enter key function (Ivan 2004/10/02)<a class="headerlink" href="#change-to-enter-key-function-ivan-2004-10-02" title="Permalink to this heading">¶</a></h3>
+<p>Pressing enter while in single step mode used to be the equivalent of
+pressing the start button (which was quite handy for debugging). It now
+displays the last commands typed. Instead, the <code class="docutils literal notranslate"><span class="pre">start</span></code> command must be
+typed each time to execute the next instruction when in single step
+mode.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Read the Docs</span>
+      v: master
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+      <dl>
+        <dt>Languages</dt>
+        
+           <strong> 
+          <dd><a href="/herc-docs-demo/en/master/">en</a></dd>
+           </strong> 
+        
+      </dl>
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+          
+          <dd><a href="/herc-docs-demo/en/fovea1959/">fovea1959</a></dd>
+          
+        
+           <strong> 
+          <dd><a href="/herc-docs-demo/en/master/">master</a></dd>
+           </strong> 
+        
+          
+          <dd><a href="/herc-docs-demo/en/0.0/">0.0</a></dd>
+          
+        
+          
+          <dd><a href="/herc-docs-demo/en/1.0/">1.0</a></dd>
+          
+        
+      </dl>
+      
+      
+      <dl>
+        <dt>Downloads</dt>
+        
+          <dd><a href="/herc-docs-demo/en/master/Hercules Documentation Demo-docs_en_master.pdf">pdf</a></dd>
+        
+          <dd><a href="/herc-docs-demo/en/master/Hercules Documentation Demo-docs_en_master.epub">epub</a></dd>
+        
+          <dd><a href="/herc-docs-demo/en/master/Hercules Documentation Demo-docs_en_master.html.tar.gz">tarred HTML</a></dd>
+        
+          <dd><a href="/herc-docs-demo/en/master/Hercules Documentation Demo-docs_en_master.single.html.tar.gz">tarred single file HTML</a></dd>
+        
+      </dl>
+      
+      
+      <hr/>
+      <a href="https://tech.michaelaltfield.net/2020/07/18/sphinx-rtd-github-pages-1/">Continuous Documentation</a> hosting provided by <a href="https://pages.github.com/">GitHub Pages</a>.
+ 
+    </div>
+  </div>
+
+ 
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

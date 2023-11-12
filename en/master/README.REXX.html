@@ -1,0 +1,526 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Hercules Rexx Support &mdash; Hercules Documentation Demo 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link href="_static/herc_style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Hercules Documentation Demo
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                master
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="hercinst.html">Building and Installing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration File</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercdasd.html">Creating DASD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercoper.html">Operating Procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercsupp.html">Technical Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercfaq.html">Frequently-Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="messages.html">Messages and Codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aa_auxdocs.html">Supporting documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_a.html">Appendix A - Documentation Standards</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Hercules Documentation Demo</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Hercules Rexx Support</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/README.REXX.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="hercules-rexx-support">
+<h1>Hercules Rexx Support<a class="headerlink" href="#hercules-rexx-support" title="Permalink to this heading">¶</a></h1>
+<p>Hercules’s Rexx support provides support for the following two Rexx
+packages:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://www.oorexx.org/">Open Object Rexx</a></p></li>
+<li><p><a class="reference external" href="http://regina-rexx.sourceforge.net/">Regina Rexx</a></p></li>
+</ul>
+<p>Support for either package is not mutually exclusive of support for the
+other.</p>
+<p>Support for <strong>Open Object Rexx (ooRexx)</strong> is automatically provided as
+long as the package’s <code class="docutils literal notranslate"><span class="pre">rexx.h</span></code> and <code class="docutils literal notranslate"><span class="pre">oorexxapi.h</span></code> header files are
+found during build time. If the <code class="docutils literal notranslate"><span class="pre">rexx.h</span></code> and <code class="docutils literal notranslate"><span class="pre">oorexxapi.h</span></code> headers
+are found, then integrated OORexx support will be provided. If you wish
+to have ooRexx installed on your system but do not want Hercules to
+provide integrated support for it, you must explicitly request that such
+support be disabled via the <code class="docutils literal notranslate"><span class="pre">--disable-object-rexx</span></code> configure option.</p>
+<p>Support for integrated <strong>Regina Rexx</strong> however, is <em>not</em> automatically
+provided and must instead be explicitly requested via the
+<code class="docutils literal notranslate"><span class="pre">--enable-regina-rexx</span></code> configure option at build time. Even if the
+package’s <code class="docutils literal notranslate"><span class="pre">rexx.h</span></code> and <code class="docutils literal notranslate"><span class="pre">rexxsaa.h</span></code> headers are found, support for
+integrated Regina Rexx will still <em>not</em> be provided. Support is provided
+<em>only</em> if the headers are found <em>and</em> the <code class="docutils literal notranslate"><span class="pre">--enable-regina-rexx</span></code>
+option is specified.</p>
+<p>Support for either package can be enabled or disabled (Linux only) by
+simply specifying the appropriate</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">--disable-object-rexx</span></code> and/or</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--enable-regina-rexx</span></code></p></li>
+</ul>
+<p>configure option at build time. Note that enabling both packages
+requires them to be installed in different paths, for example ooRexx in
+/usr local and Regina Rexx in /usr. If both packages are installed in
+the same path, scripts transfering data from and to Rexx variables or
+stems may produce incorrect results or hang the whole Hercules system,
+particularly if they are executed in the background.</p>
+<p>On Windows, the only way to purposely disable support is to rename the
+header file(s) to prevent Hercules from finding them.</p>
+<section id="hercules-rexx-settings">
+<h2>Hercules Rexx Settings<a class="headerlink" href="#hercules-rexx-settings" title="Permalink to this heading">¶</a></h2>
+<p>Hercules runtime support for Rexx is completely dynamic based the
+availability of each package’s dynamic libraries which are automatically
+loaded at startup.</p>
+<p>When both packages are found to be available then <strong>OORexx</strong> will be
+chosen as the default Rexx interpreter unless overridden by the
+<code class="docutils literal notranslate"><span class="pre">HREXX_PACKAGE</span></code> environment variable. The only valid values for
+<code class="docutils literal notranslate"><span class="pre">HREXX_PACKAGE</span></code> are “none”, “auto”, “OORexx” or “Regina”. The default
+(preferred) Rexx package when “auto” is specified is <strong>Object Rexx
+(OORexx)</strong>. Use “none” to prevent Rexx support for either package from
+being automatically enabled at startup, thereby requiring you to
+manually enable (start) Rexx yourself via the Hercules <code class="docutils literal notranslate"><span class="pre">rexx</span></code>
+command’s “start” option (see just below).</p>
+<p>Other environment variables can be used to define your own defaults
+values for some of Hercules Rexx’s runtime options. The <code class="docutils literal notranslate"><span class="pre">HREXX_PATH</span></code>
+environment variable for example defines a default value for the
+<code class="docutils literal notranslate"><span class="pre">rexx</span></code> command’s “rexxpath” option. Similarly the <code class="docutils literal notranslate"><span class="pre">HREXX_MODE</span></code> and
+<code class="docutils literal notranslate"><span class="pre">HREXX_EXTENSIONS</span></code> environment variables define default values for the
+<code class="docutils literal notranslate"><span class="pre">rexx</span></code> comamnd’s “mode” and “extensions” options.</p>
+</section>
+<section id="rexx-command">
+<h2>rexx Command<a class="headerlink" href="#rexx-command" title="Permalink to this heading">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">rexx</span>&#160; <span class="pre">[option</span> <span class="pre">value]</span> <span class="pre">...</span></code></p>
+<p>Entering the <code class="docutils literal notranslate"><span class="pre">rexx</span></code> command without any arguments displays the current
+settings. Otherwise an option/value pair must be specified to set the
+specified option to the specified value. More than one option/value pair
+can be specified on the same command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Ena</span><span class="p">[</span><span class="n">ble</span><span class="p">]</span><span class="o">/</span><span class="n">Sta</span><span class="p">[</span><span class="n">rt</span><span class="p">]</span>    <span class="n">Enable</span><span class="o">/</span><span class="n">Start</span> <span class="n">a</span> <span class="n">Rexx</span> <span class="n">Package</span><span class="p">,</span> <span class="n">where</span> <span class="n">package</span>
+                    <span class="ow">is</span> <span class="n">either</span> <span class="s1">&#39;OORexx&#39;</span> <span class="p">(</span><span class="n">the</span> <span class="n">default</span><span class="p">)</span> <span class="ow">or</span> <span class="s1">&#39;Regina&#39;</span><span class="o">.</span>
+                    <span class="n">Use</span> <span class="n">the</span> <span class="n">HREXX_PACKAGE</span> <span class="n">environment</span> <span class="n">variable</span>
+                    <span class="n">to</span> <span class="n">define</span> <span class="n">a</span> <span class="n">preferred</span> <span class="n">default</span> <span class="n">value</span><span class="o">.</span> <span class="s2">&quot;auto&quot;</span>
+                    <span class="n">will</span> <span class="n">automatically</span> <span class="n">start</span> <span class="n">the</span> <span class="n">default</span> <span class="n">package</span><span class="o">.</span>
+                    <span class="n">Use</span> <span class="s2">&quot;none&quot;</span> <span class="n">to</span> <span class="n">prevent</span> <span class="n">automatic</span> <span class="n">enablement</span><span class="o">.</span>
+
+<span class="n">Disa</span><span class="p">[</span><span class="n">ble</span><span class="p">]</span><span class="o">/</span><span class="n">Sto</span><span class="p">[</span><span class="n">p</span><span class="p">]</span>    <span class="n">Disable</span><span class="o">/</span><span class="n">Stop</span> <span class="n">the</span> <span class="n">Rexx</span> <span class="n">package</span><span class="o">.</span> <span class="n">Any</span> <span class="n">attempt</span> <span class="n">to</span>
+                    <span class="n">execute</span> <span class="n">a</span> <span class="n">Rexx</span> <span class="n">script</span> <span class="n">via</span> <span class="n">the</span> <span class="s1">&#39;exec&#39;</span> <span class="n">command</span>
+                    <span class="n">will</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">an</span> <span class="n">error</span><span class="o">.</span>
+
+<span class="n">RexxP</span><span class="p">[</span><span class="n">ath</span><span class="p">]</span><span class="o">/</span><span class="n">Path</span>     <span class="n">List</span> <span class="n">of</span> <span class="n">directories</span> <span class="n">to</span> <span class="n">search</span> <span class="k">for</span> <span class="n">scripts</span><span class="o">.</span>
+                    <span class="n">No</span> <span class="n">default</span><span class="o">.</span> <span class="n">Use</span> <span class="n">the</span> <span class="n">HREXX_PATH</span> <span class="n">environment</span>
+                    <span class="n">variable</span> <span class="n">to</span> <span class="n">define</span> <span class="n">your</span> <span class="n">preferred</span> <span class="n">default</span><span class="o">.</span>
+
+<span class="n">SysP</span><span class="p">[</span><span class="n">ath</span><span class="p">]</span>           <span class="n">Extend</span> <span class="n">the</span> <span class="n">search</span> <span class="n">to</span> <span class="n">the</span> <span class="n">System</span> <span class="n">Paths</span> <span class="n">too</span><span class="o">.</span>
+                    <span class="s1">&#39;On&#39;</span> <span class="p">(</span><span class="n">default</span><span class="p">)</span> <span class="ow">or</span> <span class="s1">&#39;Off&#39;</span><span class="o">.</span>
+
+<span class="n">Ext</span><span class="p">[</span><span class="n">ensions</span><span class="p">]</span>        <span class="n">List</span> <span class="n">of</span> <span class="n">extensions</span> <span class="n">to</span> <span class="n">use</span> <span class="n">when</span> <span class="n">searching</span> <span class="k">for</span>
+                    <span class="n">scripts</span><span class="o">.</span> <span class="n">A</span> <span class="n">search</span> <span class="k">with</span> <span class="n">no</span> <span class="n">extension</span> <span class="ow">is</span> <span class="n">always</span>
+                    <span class="n">done</span> <span class="n">first</span><span class="o">.</span> <span class="n">The</span> <span class="n">HREXX_EXTENSIONS</span> <span class="n">environment</span>
+                    <span class="n">can</span> <span class="n">be</span> <span class="n">used</span> <span class="n">to</span> <span class="nb">set</span> <span class="n">a</span> <span class="n">different</span> <span class="n">default</span> <span class="nb">list</span><span class="o">.</span>
+
+<span class="n">Suf</span><span class="p">[</span><span class="n">fixes</span><span class="p">]</span>          <span class="n">Alias</span> <span class="k">for</span> <span class="s1">&#39;Ext[ensions]&#39;</span><span class="o">.</span>
+
+<span class="n">Resolv</span><span class="p">[</span><span class="n">er</span><span class="p">]</span>          <span class="s1">&#39;On&#39;</span> <span class="p">(</span><span class="n">default</span><span class="p">):</span> <span class="n">Hercules</span> <span class="n">will</span> <span class="n">resolve</span> <span class="n">the</span>
+                    <span class="n">script</span><span class="s1">&#39;s full path. &#39;</span><span class="n">Off</span><span class="s1">&#39;: the scriptname</span>
+                    <span class="ow">is</span> <span class="n">used</span> <span class="k">as</span><span class="o">-</span><span class="ow">is</span><span class="o">.</span>
+
+<span class="n">MsgL</span><span class="p">[</span><span class="n">evel</span><span class="p">]</span>          <span class="s1">&#39;Off&#39;</span> <span class="p">(</span><span class="n">default</span><span class="p">)</span> <span class="ow">or</span> <span class="s1">&#39;On&#39;</span> <span class="n">to</span> <span class="n">disable</span> <span class="ow">or</span> <span class="n">enable</span>
+                    <span class="n">Hercules</span> <span class="n">messages</span> <span class="n">HHC17503I</span> <span class="ow">and</span> <span class="n">HHC17504I</span>
+                    <span class="n">that</span> <span class="n">display</span> <span class="n">a</span> <span class="n">script</span><span class="s1">&#39;s return code and return</span>
+                    <span class="n">value</span> <span class="n">when</span> <span class="n">it</span> <span class="n">finishes</span> <span class="n">executing</span><span class="o">.</span>
+
+<span class="n">MsgP</span><span class="p">[</span><span class="n">refix</span><span class="p">]</span>         <span class="s1">&#39;Off&#39;</span> <span class="p">(</span><span class="n">default</span><span class="p">)</span> <span class="ow">or</span> <span class="s1">&#39;On&#39;</span> <span class="n">to</span> <span class="n">disable</span> <span class="ow">or</span> <span class="n">enable</span>
+                    <span class="n">prefixing</span> <span class="n">Rexx</span> <span class="n">script</span> <span class="s1">&#39;say&#39;</span> <span class="n">messages</span> <span class="k">with</span>
+                    <span class="n">Hercules</span> <span class="n">message</span> <span class="n">number</span> <span class="n">HHC17540I</span><span class="o">.</span>
+
+<span class="n">ErrP</span><span class="p">[</span><span class="n">refix</span><span class="p">]</span>         <span class="s1">&#39;Off&#39;</span> <span class="p">(</span><span class="n">default</span><span class="p">)</span> <span class="ow">or</span> <span class="s1">&#39;On&#39;</span> <span class="n">to</span> <span class="n">disable</span> <span class="ow">or</span> <span class="n">enable</span>
+                    <span class="n">prefixing</span> <span class="n">Rexx</span> <span class="n">script</span> <span class="s1">&#39;TRACE&#39;</span> <span class="n">messages</span> <span class="k">with</span>
+                    <span class="n">Hercules</span> <span class="n">message</span> <span class="n">number</span> <span class="n">HHC17541D</span><span class="o">.</span>
+
+<span class="n">Mode</span>                <span class="n">Define</span> <span class="n">the</span> <span class="n">preferred</span> <span class="n">argument</span> <span class="n">passing</span> <span class="n">style</span><span class="o">.</span>
+                    <span class="s1">&#39;Com[mand]&#39;</span> <span class="p">(</span><span class="n">default</span><span class="p">)</span> <span class="ow">or</span> <span class="s1">&#39;Sub[routine]&#39;</span><span class="o">.</span> <span class="n">Use</span>
+                    <span class="n">the</span> <span class="n">HREXX_MODE</span> <span class="n">environment</span> <span class="n">variable</span> <span class="n">to</span> <span class="n">define</span>
+                    <span class="n">your</span> <span class="n">preferred</span> <span class="n">default</span> <span class="n">mode</span><span class="o">.</span> <span class="n">See</span> <span class="n">further</span> <span class="n">below</span>
+                    <span class="k">for</span> <span class="n">the</span> <span class="n">difference</span> <span class="n">between</span> <span class="n">the</span> <span class="n">two</span><span class="o">.</span>
+
+<span class="n">List</span>                <span class="n">Lists</span> <span class="n">currently</span> <span class="n">running</span> <span class="n">asynchronous</span> <span class="n">scripts</span><span class="o">.</span>
+                    <span class="n">See</span> <span class="nb">next</span> <span class="n">section</span> <span class="n">below</span><span class="o">.</span>
+
+<span class="n">Cancel</span>              <span class="o">&lt;</span><span class="n">tid</span><span class="o">&gt;</span> <span class="n">to</span> <span class="n">halt</span> <span class="n">a</span> <span class="n">running</span> <span class="n">asynchronous</span> <span class="n">script</span><span class="o">.</span>
+                    <span class="n">See</span> <span class="nb">next</span> <span class="n">section</span> <span class="n">below</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+<section id="running-a-rexx-script">
+<h2>Running a Rexx Script<a class="headerlink" href="#running-a-rexx-script" title="Permalink to this heading">¶</a></h2>
+<p>The format of the <code class="docutils literal notranslate"><span class="pre">exec</span></code> command is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">exec</span> <span class="p">[</span><span class="n">mode</span><span class="p">]</span> <span class="n">scriptname</span> <span class="p">[[</span><span class="n">args</span><span class="o">...</span><span class="p">][</span><span class="o">&amp;&amp;</span><span class="p">]]</span>
+</pre></div>
+</div>
+<p>Where <code class="docutils literal notranslate"><span class="pre">scriptname</span></code> is the name of the Rexx script, <code class="docutils literal notranslate"><span class="pre">args</span></code> is an
+optional list of arguments to be passed to the script and <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code> as the
+last argument requests that the script be run asynchronously in the
+background. The rexx command’s <code class="docutils literal notranslate"><span class="pre">list</span></code> and <code class="docutils literal notranslate"><span class="pre">cancel</span></code> options can be
+used to list/cancel any currently running asynchronous scripts.</p>
+<p><strong>TAKE SPECIAL CARE</strong> when using the <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code> option to run a script
+asynchronously! Be careful to <strong>not</strong> accidentally enter a single <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>
+instead, which invokes the Hercules <code class="docutils literal notranslate"><span class="pre">exec</span></code> command asynchronously, but
+<em>not</em> the rexx script, leaving you with no way to cancel it! Always use
+two ampersands <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code> to cause the script itself to run in the
+background. Of course, if the script ends quickly then there is no need
+to run it asynchronously in the background. The ability to run scripts
+in the background is designed for never-ending ‘monitoring’ type scripts
+that monitor and report such things as Hercules status.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">mode</span></code> setting determines how arguments are passed to your Rexx
+script. In <code class="docutils literal notranslate"><span class="pre">command</span></code> mode (the default) there is only one argument
+passed, with that single argument being the string of characters which
+immediately follows the script’s name. This allows your script to parse
+the string into individual arguments however it may decide, potentially
+contrary to the way command line arguments are normally parsed.</p>
+<p>In <code class="docutils literal notranslate"><span class="pre">subroutine</span></code> mode, Hercules parses the string normally and passes
+each argument individually as shown in the examples just below.</p>
+<p>The argument passing style is determined by the <code class="docutils literal notranslate"><span class="pre">rexx</span></code> command’s
+current <code class="docutils literal notranslate"><span class="pre">Mode</span></code> setting, but can be temporarily overridden for the
+current execution by simply specifying the <code class="docutils literal notranslate"><span class="pre">mode</span></code> parameter on the
+command itself, immediately before the scriptname (e.g. <code class="docutils literal notranslate"><span class="pre">exec</span> <span class="pre">cmd</span> <span class="pre">...</span></code>
+for command style argument passing, or <code class="docutils literal notranslate"><span class="pre">exec</span> <span class="pre">sub</span> <span class="pre">...</span></code> for subroutine
+style argument passing).</p>
+<p>Contents of script <code class="docutils literal notranslate"><span class="pre">example.rexx</span></code>:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/* REXX */</span>
+<span class="n">parse</span><span class="w"> </span><span class="n">arg</span><span class="w"> </span><span class="n">str</span>
+<span class="n">say</span><span class="w"> </span><span class="s">&quot;parse arg str: &quot;</span><span class="w"> </span><span class="n">str</span>
+<span class="n">say</span><span class="w"> </span><span class="s">&quot;arg(1): &quot;</span><span class="n">arg</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">say</span><span class="w"> </span><span class="s">&quot;arg(2): &quot;</span><span class="n">arg</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">say</span><span class="w"> </span><span class="s">&quot;arg(3): &quot;</span><span class="n">arg</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">exit</span>
+</pre></div>
+</div>
+<p>Running the script from a <strong>command line</strong> (outside of Hercules) results
+in:</p>
+<pre>
+        <b>C:\> example.rexx  one,   Two   "Buckle    MY shoe"</b>
+        parse arg str:  one,   Two   "Buckle    MY shoe"
+        arg(1): one,   Two   "Buckle    MY shoe"
+        arg(2):
+        arg(3):
+</pre><p>Running the script from within Hercules via the <code class="docutils literal notranslate"><span class="pre">exec</span></code> command using
+the default <strong>``command``</strong> mode setting results in:</p>
+<pre>
+        <b>HHC01603I exec cmd example.rexx  one,   Two   "Buckle    MY shoe"</b>
+        parse arg str:  one,   Two   "Buckle    MY shoe"
+        arg(1): one,   Two   "Buckle    MY shoe"
+        arg(2):
+        arg(3):
+</pre><p>Running the script using <strong>``subroutine``</strong> mode results in:</p>
+<pre>
+        <b>HHC01603I exec sub example.rexx  one,   Two   "Buckle    MY shoe"</b>
+        parse arg str:  one,
+        arg(1): one,
+        arg(2): Two
+        arg(3): Buckle    MY shoe
+</pre></section>
+<section id="shcmdopt-and-diag8cmd">
+<h2>SHCMDOPT and DIAG8CMD<a class="headerlink" href="#shcmdopt-and-diag8cmd" title="Permalink to this heading">¶</a></h2>
+<p>The Hercules Rexx <code class="docutils literal notranslate"><span class="pre">exec</span></code> command is considered to be a “shell” command
+from Hercules’s point of view since both of the supported Rexx
+interpreters provide the ability to directly target the host operating
+system environment. Both of the <code class="docutils literal notranslate"><span class="pre">sh</span></code> and <code class="docutils literal notranslate"><span class="pre">exec</span></code> commands are thus
+disabled by default for security reasons.</p>
+<p>To enable the ability to <code class="docutils literal notranslate"><span class="pre">exec</span></code> Rexx scripts from the Hercules command
+line (or via the Hercules DIAG 8 instruction interface) use the
+<code class="docutils literal notranslate"><span class="pre">shcmdopt</span></code> and/or <code class="docutils literal notranslate"><span class="pre">diag8cmd</span></code> commands. For more information on each
+please refer to Hercules documentation describing configuration file
+statements.</p>
+</section>
+<section id="issuing-hercules-commands">
+<h2>Issuing Hercules Commands<a class="headerlink" href="#issuing-hercules-commands" title="Permalink to this heading">¶</a></h2>
+<p>Rexx scripts run from within Hercules (via the <code class="docutils literal notranslate"><span class="pre">exec</span></code> command) are
+able to issue Hercules commands via the Rexx “Address” keyword or via
+the Hercules “AWSCMD” special function:</p>
+<div class="highlight-rexx notranslate"><div class="highlight"><pre><span></span>Address &quot;HERCULES&quot; &quot;command...&quot;
+rc = AWSCMD( &quot;command...&quot; [, stemvar [, errmode]] )
+Call AWSCMD  &quot;command...&quot; [, stemvar [, errmode]]
+</pre></div>
+</div>
+<p>The Rexx variable “RC” contains the return code from the Hercules
+command. The specified stem variable “stemvar” will contain the response
+from Hercules with the usual convention of “stemvar.0” being set to the
+number of response lines and “stemvar.1” to “stemvar.n” holding the
+Hercules response lines themselves.</p>
+<p>A sample script called <code class="docutils literal notranslate"><span class="pre">hcommand.rexx</span></code> illustrating both techniques
+(“Address” and “AWSCMD”) can be found in the “scripts” subdirectory of
+the source code distribution.</p>
+<p>Note that when a response stemname is used, Hercules does <em>not</em> display
+the results of the command on the hardware console panel. Instead, the
+results are captured and returned in the specified Rexx stem variable,
+and it becomes your decision what to do with them (such as displaying
+them on the hardware console panel via the Rexx “Say” command).</p>
+<p>Since the Rexx “Address” keyword syntax does not provide any means of
+specifying additional parameters (such as the stem variable name and
+error handling option that the AWSCMD technique provides), options for
+the “Address” keyword syntax are passed to the Hercules Rexx subcommand
+environment via several predefined reserved Rexx variables. The
+predefined reserved Rexx variables:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">HREXX</span><span class="o">.</span><span class="n">RESPSTEMNAME</span>
+<span class="n">HREXX</span><span class="o">.</span><span class="n">PERSISTENTRESPSTEMNAME</span>
+</pre></div>
+</div>
+<p>define the stem variable names to be used to hold the Hercules response
+lines. <code class="docutils literal notranslate"><span class="pre">HREXX.RESPSTEMNAME</span></code> is dropped after every call so each
+“Address ‘HERCULES’” invocation finds an unbiased environment.
+<code class="docutils literal notranslate"><span class="pre">HREXX.PERSISTENTRESPSTEMNAME</span></code> provides the same functionality but is
+never dropped.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">HREXX</span><span class="o">.</span><span class="n">ERRORHANDER</span>
+</pre></div>
+</div>
+<p>defines how errors (non-zero RC) should be handled. Setting the variable
+to “SYSTEM” requests the Rexx interpreter itself handle any non-zero
+return code in the standard Rexx fashion.</p>
+<p>Setting it to the value “RETCODE” (the default if not specified)
+delegates all error handling to the caller, allowing your script to
+react to the “error” in whatever way it deems is appropriate.</p>
+<p>The ability to specify error handling is provided since some Hercules
+commands might return a non-zero return code (such as the <code class="docutils literal notranslate"><span class="pre">devlist</span></code>
+command when there are no devices defined in the configuration) and from
+the subcommand interface’s point of view such non-zero return codes
+should not be considered a subcommand error.</p>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Read the Docs</span>
+      v: master
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+      <dl>
+        <dt>Languages</dt>
+        
+           <strong> 
+          <dd><a href="/herc-docs-demo/en/master/">en</a></dd>
+           </strong> 
+        
+      </dl>
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+          
+          <dd><a href="/herc-docs-demo/en/fovea1959/">fovea1959</a></dd>
+          
+        
+           <strong> 
+          <dd><a href="/herc-docs-demo/en/master/">master</a></dd>
+           </strong> 
+        
+          
+          <dd><a href="/herc-docs-demo/en/0.0/">0.0</a></dd>
+          
+        
+          
+          <dd><a href="/herc-docs-demo/en/1.0/">1.0</a></dd>
+          
+        
+      </dl>
+      
+      
+      <dl>
+        <dt>Downloads</dt>
+        
+          <dd><a href="/herc-docs-demo/en/master/Hercules Documentation Demo-docs_en_master.pdf">pdf</a></dd>
+        
+          <dd><a href="/herc-docs-demo/en/master/Hercules Documentation Demo-docs_en_master.epub">epub</a></dd>
+        
+          <dd><a href="/herc-docs-demo/en/master/Hercules Documentation Demo-docs_en_master.html.tar.gz">tarred HTML</a></dd>
+        
+          <dd><a href="/herc-docs-demo/en/master/Hercules Documentation Demo-docs_en_master.single.html.tar.gz">tarred single file HTML</a></dd>
+        
+      </dl>
+      
+      
+      <hr/>
+      <a href="https://tech.michaelaltfield.net/2020/07/18/sphinx-rtd-github-pages-1/">Continuous Documentation</a> hosting provided by <a href="https://pages.github.com/">GitHub Pages</a>.
+ 
+    </div>
+  </div>
+
+ 
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

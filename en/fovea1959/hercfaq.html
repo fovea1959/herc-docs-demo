@@ -1,0 +1,1127 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Frequently-Asked Questions &mdash; Hercules Documentation Demo 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Messages and Codes" href="messages.html" />
+    <link rel="prev" title="Technical Support" href="hercsupp.html" />
+    <link href="_static/herc_style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Hercules Documentation Demo
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                fovea1959
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="hercinst.html">Building and Installing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration File</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercdasd.html">Creating DASD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercoper.html">Operating Procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercsupp.html">Technical Support</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Frequently-Asked Questions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#what-is-hercules">What is Hercules?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#so-what-exactly-does-that-mean">So what exactly does that mean?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#is-it-functional-enough-to-run-production-work">Is it functional enough to run production work?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-are-the-licensing-restrictions-for-hercules">What are the licensing restrictions for Hercules?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#can-it-run-z-os-z-vm-z-vse">Can it run z/OS, z/VM, z/VSE?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-operating-systems-can-i-run-legally">What operating systems can I run legally?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-other-programs-will-run-under-hercules">What other programs will run under Hercules?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#where-can-i-obtain-os-360">Where can I obtain OS/360 ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#where-can-i-obtain-mvs-3-8">Where can I obtain MVS 3.8 ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#where-can-i-obtain-vm-370">Where can I obtain VM/370 ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#where-can-i-obtain-dos-vs">Where can I obtain DOS/VS ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#where-can-i-obtain-linux-390">Where can I obtain Linux/390 ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#where-can-i-find-documentation">Where can I find documentation?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-pc-hardware-do-i-need-to-run-hercules">What PC hardware do I need to run Hercules?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-sort-of-mips-rate-can-i-expect">What sort of MIPS rate can I expect?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-pc-software-do-i-need-to-run-hercules">What PC software do I need to run Hercules?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-software-do-i-need-to-build-hercules-on-linux-and-unix">What software do I need to build Hercules on Linux and Unix?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-software-do-i-need-to-build-hercules-on-windows">What software do I need to build Hercules on Windows?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#can-hercules-be-ported-to-run-on-other-platforms">Can Hercules be ported to run on other platforms?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-can-i-create-a-virtual-dasd-volume">How can I create a virtual DASD volume?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#can-i-read-a-tape-which-was-created-on-a-mainframe">Can I read a tape which was created on a mainframe?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#can-i-attach-a-pc-tape-drive-to-hercules">Can I attach a PC tape drive to Hercules?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#can-i-process-mainframe-tapes-with-hercules">Can I process mainframe tapes with Hercules?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#can-i-create-assembler-programs-without-a-mainframe">Can I create Assembler programs without a mainframe?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-architectural-features-are-implemented">What architectural features are implemented?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#who-are-the-herculeans">Who are the Herculeans?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#where-can-i-obtain-technical-support">Where can I obtain technical support?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="messages.html">Messages and Codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aa_auxdocs.html">Supporting documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_a.html">Appendix A - Documentation Standards</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Hercules Documentation Demo</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Frequently-Asked Questions</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/hercfaq.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="frequently-asked-questions">
+<h1>Frequently-Asked Questions<a class="headerlink" href="#frequently-asked-questions" title="Permalink to this heading">¶</a></h1>
+<section id="what-is-hercules">
+<h2>What is Hercules?<a class="headerlink" href="#what-is-hercules" title="Permalink to this heading">¶</a></h2>
+<p>Hercules is a software implementation of the System/370, ESA/390 and
+z/Architecture mainframe architectures. Hercules runs under Windows and
+Linux, as well as under various other Unix or Unix-like systems on Intel
+Pentium and other hardware platforms including Alpha, Sparc, and Mac.</p>
+</section>
+<section id="so-what-exactly-does-that-mean">
+<h2>So what exactly does that mean?<a class="headerlink" href="#so-what-exactly-does-that-mean" title="Permalink to this heading">¶</a></h2>
+<p>It means that your PC can emulate an IBM mainframe processor. The
+mainframe can range from a System/360 to a z10 - running in “S/370”
+mode, “ESA/390” mode, or “z/Architecture” mode.</p>
+<p>Hercules executes S/370, ESA/390, and z/Architecture instructions and
+channel programs. It emulates mainframe I/O devices by using PC devices.
+For example, 3390 DASD devices are emulated by large files on your hard
+disk, and local 3270 screens are emulated by tn3270 sessions. (Note: Not
+all 370 and 390 features have been implemented in Hercules. See the list
+of particulars later in this document. Also, certain non-standard
+models, 360/20s, and the 360/67 virtual memory mode are not emulated.)</p>
+<p>Hercules implements only the raw S/370, ESA/390, and z/Architecture
+instruction set; it does not provide any operating system facilities.
+This means that you need to provide an operating system or standalone
+program which Hercules can load from an emulated disk or tape device.
+You will have to write the operating system or standalone program
+yourself, unless you can manage to obtain a license from IBM to run one
+of their operating systems on your PC, or use IBM programs and operating
+systems which have been placed in the public domain.</p>
+</section>
+<section id="is-it-functional-enough-to-run-production-work">
+<h2>Is it functional enough to run production work?<a class="headerlink" href="#is-it-functional-enough-to-run-production-work" title="Permalink to this heading">¶</a></h2>
+<p>Hercules has never claimed to be a production-capable system. It was
+always meant to be a system programmer’s toy. Having said that, it’s now
+become good enough to run a wide range of software without problems, and
+there are reports that it has been used to run production work in some
+parts of the world.</p>
+</section>
+<section id="what-are-the-licensing-restrictions-for-hercules">
+<h2>What are the licensing restrictions for Hercules?<a class="headerlink" href="#what-are-the-licensing-restrictions-for-hercules" title="Permalink to this heading">¶</a></h2>
+<p>Hercules is a copyright work which has been made generally available,
+subject to the terms of the <a class="reference external" href="herclic.html">Q Public License</a>. In
+essence this allows free use and distribution of the program for
+personal and commercial use. You may not distribute modified copies of
+the program, but you may distribute your own patches along with the
+program, provided that you also grant the maintainer permission to
+include those patches in future versions of the program. You may not
+copy any portion of the source code for use in any other program.</p>
+<p>Hercules is <em>not</em>, repeat, <em>not</em> GPL software! The GNU General Public
+License is a Unix/Linux software licensing agreement, which we, the
+authors, will not participate in. We believe that the QPL, which has
+been certified as compliant with the <a class="reference external" href="http://www.opensource.org">Open Source
+Definition</a>, provides the benefits and
+protections of open source for both users and developers, without the
+political baggage that has come to be associated with the GPL.</p>
+</section>
+<hr class="docutils" />
+<section id="can-it-run-z-os-z-vm-z-vse">
+<h2>Can it run z/OS, z/VM, z/VSE?<a class="headerlink" href="#can-it-run-z-os-z-vm-z-vse" title="Permalink to this heading">¶</a></h2>
+<p>Yes. Hercules is a software implementation of z/Architecture, and so it
+is capable of running z/OS, z/VM, and z/VSE. Hercules also implements
+ESA/390 (including SIE) and so it can run OS/390, VM/ESA, and VSE/ESA,
+as well as older versions of these operating systems such as MVS/ESA,
+MVS/XA, VM/SP, VSE/SP, etc.</p>
+<p><strong>But</strong> (and this is a big but), these operating systems are all IBM
+Licensed Program Products, whose conditions of use generally restrict
+their usage to specific IBM machine serial numbers. So you cannot just
+copy these systems from work and run them on your PC.</p>
+</section>
+<section id="what-operating-systems-can-i-run-legally">
+<h2>What operating systems can I run legally?<a class="headerlink" href="#what-operating-systems-can-i-run-legally" title="Permalink to this heading">¶</a></h2>
+<p>Most 3rd party operating systems like Linux/390, z/Linux and TELPAR are
+covered under their own <em>free</em> license and can therefore run under
+Hercules without any legal problems.</p>
+<p><em>OS/360</em> (PCP, MFT and MVT) is in the public domain, as far as we know.
+The status of OSes for which IBM did not charge a license fee is
+somewhat murky; these include <em>MVS</em> 3.8, <em>VM/370</em> release 6, and
+<em>DOS/VS</em> release 34.</p>
+<p>The legal status outside the USA, where something like public domain or
+software without copyright doesn’t exist, is “copyrighted software
+provided at no charge”. It is a known fact that vendors like <em>Amdahl</em>,
+<em>Hitachi</em>, <em>Nixdorf</em> and others modified those operating systems, and
+distributed them as their own OS for their own hardware, without asking
+IBM for permission. But law had been changed over that time, so its not
+clear if the same legal status applies in <strong>your</strong> country right now.</p>
+<p>Rick Fochtman managed to obtain a letter from IBM that he is allowed to
+distribute OS/360. Try to ask your salesdroid for a similar letter for
+VM/370, MVS 3.8j or DOS/VS next time they want to sell you a major
+upgrade.</p>
+<p>OS/390, z/OS, and other ESA or z/Architecture operating systems are
+definitely licensed to a particular machine. Therefore, in practice you
+cannot run any classic ESA or z/Architecture operating system on your PC
+unless you can obtain a license from IBM allowing you to do so. It is
+believed that there are, however, four ways you could run z/OS, z/VM,
+z/VSE, OS/390, VM/ESA, or VSE/ESA under Hercules using currently
+available licenses:</p>
+<ol class="arabic simple">
+<li><p>Running under Linux on the Pentium processor of a P/390 which is
+licensed to run the OS.</p></li>
+<li><p>Running under Linux/390 on a mainframe which is licensed to run the
+OS.</p></li>
+<li><p>Running under the terms of a disaster recovery provision of the OS
+license (but I really don’t recommend depending on Hercules to be
+your disaster recovery solution!).</p></li>
+<li><p>Using the IBM OS/390 or z/OS DemoPkg, which is available only to IBM
+employees and IBM Business Partners.</p></li>
+</ol>
+</section>
+<section id="what-other-programs-will-run-under-hercules">
+<h2>What other programs will run under Hercules?<a class="headerlink" href="#what-other-programs-will-run-under-hercules" title="Permalink to this heading">¶</a></h2>
+<p>Any program which uses the S/370, ESA/390, or z/Architecture instruction
+set, as implemented in Hercules. Some special utilities in the form of
+standalone programs are known to run well. I can particularly recommend
+Jan Jaeger’s excellent standalone editor (ZZSA) which is included in the
+Hercules distribution, or it can be downloaded from
+<a class="reference external" href="http://www.cbttape.org/~jjaeger">http://www.cbttape.org/~jjaeger</a>; I use it regularly to look at DASD
+while debugging an OS installation, which is just what it’s designed to
+do. Note: ZZSA runs in ESA/390 mode. See Jan Jaeger’s website for more
+information and special logon procedures.</p>
+</section>
+<section id="where-can-i-obtain-os-360">
+<h2>Where can I obtain OS/360 ?<a class="headerlink" href="#where-can-i-obtain-os-360" title="Permalink to this heading">¶</a></h2>
+<ol class="arabic">
+<li><p>Rick Fochtman’s OS/360 archive CD is now obtainable by download from
+<a class="reference external" href="https://cbttape.org/os360.htm">https://cbttape.org/os360.htm</a>.</p></li>
+<li><p>At the cbttape site, you can download the OS/360 Y2K Starter package
+from <a class="reference external" href="ftp://cbttape.org/pub/OS360/OS360RICK1.zip">ftp://cbttape.org/pub/OS360/OS360RICK1.zip</a>, which contains a
+full featured MVT system on a 3330 image with some minimal
+documentation. The configuration is that of a 370/158 with 4
+megabytes of main storage, running OS/MVT Release 21.0. The same site
+also offers a MVTDBL volume and a <em>Builder</em> package for those who
+like to participate in OS/360 nucleus hacking.</p>
+<p>Please note that the previously mentioned cbttape OS/360 download
+link is an “<a class="reference external" href="ftp://">ftp://</a>” protocol link, and some web browsers (most
+notably Google Chrome) no longer support the “<a class="reference external" href="ftp://">ftp://</a>” protocol. If
+such is the case for you, you will need to use a proper FTP client to
+download the mentioned OS/360 .zip file.</p>
+</li>
+<li><p>Jay Maynard’s “IBM Public Domain Software Collection” at
+<a class="reference external" href="http://www.ibiblio.org/jmaynard/">http://www.ibiblio.org/jmaynard/</a> contains copies of the OS/360
+Release 21.8 distribution tapes.</p></li>
+</ol>
+</section>
+<section id="where-can-i-obtain-mvs-3-8">
+<h2>Where can I obtain MVS 3.8 ?<a class="headerlink" href="#where-can-i-obtain-mvs-3-8" title="Permalink to this heading">¶</a></h2>
+<p>The Original MVS 3.8 distribution as it was first used came from</p>
+<ul class="simple">
+<li><p><a class="reference external" href="ftp://ftp.cbttape.org/pub/cbttape/mvs38/">ftp://ftp.cbttape.org/pub/cbttape/mvs38/</a></p></li>
+</ul>
+<p>who advise using the mirrors at</p>
+<ul class="simple">
+<li><p><a class="reference external" href="ftp://ftp.ox.ac.uk/pub/linux/mvs38j/">ftp://ftp.ox.ac.uk/pub/linux/mvs38j/</a></p></li>
+<li><p><a class="reference external" href="http://source.rfc822.org/pub/mirror/hercules/mvs38j/">http://source.rfc822.org/pub/mirror/hercules/mvs38j/</a></p></li>
+<li><p><a class="reference external" href="ftp://source.rfc822.org/pub/mirror/hercules/mvs38j/">ftp://source.rfc822.org/pub/mirror/hercules/mvs38j/</a></p></li>
+</ul>
+<p>Several people have generated a functional MVS system from this archive:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://www.jaymoseley.com/">Jay Moseley, CCP</a></p></li>
+<li><p><a class="reference external" href="http://www.bsp-gmbh.com/hercules/">Volker Bandke from BSP GmbH</a></p></li>
+<li><p><a class="reference external" href="http://www.schaefernet.de/hercules/">Wolfgang Schäfer from Schäfernet</a></p></li>
+</ul>
+</section>
+<section id="where-can-i-obtain-vm-370">
+<h2>Where can I obtain VM/370 ?<a class="headerlink" href="#where-can-i-obtain-vm-370" title="Permalink to this heading">¶</a></h2>
+<p>The VM/370 page at <a class="reference external" href="http://www.cbttape.org/vm6.htm">cbttape.org</a>
+contains download links for the Andy Norrie VM 4-pack system and the Bob
+Abeles VM/370 R6 distribution.</p>
+</section>
+<section id="where-can-i-obtain-dos-vs">
+<h2>Where can I obtain DOS/VS ?<a class="headerlink" href="#where-can-i-obtain-dos-vs" title="Permalink to this heading">¶</a></h2>
+<p>I’ve put the DOS/VS r34 install tape on my site. It’ll expand to a 21 MB
+AWSTAPE file, dosrel34.aws. You need the <em>Coverletter</em> to install it.
+Read the relevant postings of the Hercules mailing list first, as the
+install process is quite obscure.</p>
+<p>You can grab those files at :</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://www.hercules-390.org/dosrel34.zip">http://www.hercules-390.org/dosrel34.zip</a></p></li>
+<li><p><a class="reference external" href="http://www.hercules-390.org/dosrel34coverletter.pdf">http://www.hercules-390.org/dosrel34coverletter.pdf</a></p></li>
+<li><p><a class="reference external" href="http://open360.copyleft.de/DOS34/Installation.html">http://open360.copyleft.de/DOS34/Installation.html</a></p></li>
+</ul>
+</section>
+<section id="where-can-i-obtain-linux-390">
+<h2>Where can I obtain Linux/390 ?<a class="headerlink" href="#where-can-i-obtain-linux-390" title="Permalink to this heading">¶</a></h2>
+<p>The best starting point for information about Linux for S/390 and Linux
+for zSeries is <a class="reference external" href="http://www.linuxvm.org/">http://www.linuxvm.org/</a></p>
+</section>
+<section id="where-can-i-find-documentation">
+<h2>Where can I find documentation?<a class="headerlink" href="#where-can-i-find-documentation" title="Permalink to this heading">¶</a></h2>
+<p>The <a class="reference external" href="hercload.html">Creating Hercules DASD</a> document describes
+various methods of creating and loading virtual DASD volumes.</p>
+<p>I’ve produced a document describing how to build an OS/360 system on
+Hercules, called “OS/360 on Hercules”. It can be found at</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://www.conmicro.com/hercos360/">http://www.conmicro.com/hercos360/hercos360/</a>.</p></li>
+</ul>
+<p>This will build an MVT system without TCAM/TSO, but with two 3270
+consoles. You will need Malcolm Beattie’s “Guide to Using 3270 Consoles
+and Terminals for Hercules” with this MVT version.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://www.clueful.co.uk/mbeattie/hercules/3270.html">http://www.clueful.co.uk/mbeattie/hercules/3270.html</a></p></li>
+</ul>
+<p>The N.U.D.E guides can be found at :</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://www.kiyoinc.com/hercdoc.html">http://www.kiyoinc.com/hercdoc.html</a>.</p></li>
+</ul>
+<div class="line-block">
+<div class="line">IBM provides only current documentation, …</div>
+<div class="line">but many things haven’t changed since 1964 :</div>
+</div>
+<ul class="simple">
+<li><p><a class="reference external" href="http://www.s390.ibm.com/bookmgr-cgi/bookmgr.cmd/LIBRARY">IBM BookManager(r) BookServer
+Library</a></p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="what-pc-hardware-do-i-need-to-run-hercules">
+<h2>What PC hardware do I need to run Hercules?<a class="headerlink" href="#what-pc-hardware-do-i-need-to-run-hercules" title="Permalink to this heading">¶</a></h2>
+<p>Classic IBM operating systems (OS/360, MVS 3.8, VM/370) are very light
+by today’s standards and will run satisfactorily on a 300Mhz Pentium
+with as little as 32MB RAM.</p>
+<p>Anything more up-to-date, such as Linux/390 or OS/390, requires much
+more processing power. Hercules is CPU intensive, so you will want to
+use the fastest processor you can get. A 2GHz Pentium, preferably with
+hyperthreading, will probably provide acceptable performance for a light
+workload. If you can afford a multiprocessor system, so much the better.
+Hercules makes extensive use of multi-threading to overlap I/O with CPU
+activity, and to dispatch multiple emulated CPU’s in parallel.</p>
+<p>For the latest 64-bit operating systems such as zLinux and z/OS, be
+aware that there is a performance penalty when Hercules emulates
+z/Architecture on a 32-bit processor such as the Pentium. If you are
+serious about running 64-bit then you will probably want to build
+Hercules for a 64-bit processor such as Alpha (DEC/Compaq/HP), or AMD64
+(AMD Opteron, Athlon-64, Turion 64) together with a 64-bit version of
+Linux or PPC (Power Mac G5) with OS X.</p>
+<p>Hercules does not depend on the Pentium architecture. I’ve built and run
+it successfully on a 500 MHz Alpha 21164, and others have run it on
+SPARC and S/390 (!) Linux systems. One guy has even run OS/360 under
+Hercules under Linux/390 under Hercules under Linux/390 under VM/ESA!
+The prize for the world’s smallest mainframe probably goes to Ivan
+Warren, who claims to have run VM/370 under Hercules on an iPAQ 5450
+handheld PDA.</p>
+<p>You should provide enough RAM to accommodate your S/390 real storage
+(main storage plus expanded storage) in addition to the normal
+requirements of your PC’s operating system. For maximum throughput, you
+should set your main and expanded storage sizes high enough to eliminate
+S/390 paging. S/390 storage is allocated out of your PC’s virtual
+storage.</p>
+<p>You also need enough hard disk space to accommodate the emulated DASD. A
+virtual “3330 model 1” disk drive will need about 100 megabytes of space
+for emulation (a 3330-11 will need about 200 megabytes). A 3380 “single
+density” model will need about 650MB, a 3390 model 2 needs about 2GB,
+and a 3390 model 3 needs about 3GB. If you use the <a class="reference external" href="cckddasd.html">compressed CKD DASD
+feature</a>, these sizes will shrink dramatically,
+usually to about 20 to 30 percent of the original size.</p>
+</section>
+<section id="what-sort-of-mips-rate-can-i-expect">
+<h2>What sort of MIPS rate can I expect?<a class="headerlink" href="#what-sort-of-mips-rate-can-i-expect" title="Permalink to this heading">¶</a></h2>
+<p>Thanks to the cumulative work of many individuals, including Valery
+Pogonchenko, Juergen Dobrinski, Albert Louw, Gabor Hoffer, Jan Jaeger,
+Paul Leisy, Clem Clarke, and Greg Smith, the performance of Hercules
+today is vastly better than it was 5 years ago.</p>
+<p>Even on a Celeron 300 you should see an execution speed of 1 to 2 MIPS,
+which is enough to run OS/360 (MFT or MVT) or MVS 3.8 with a response
+time better than that of a 3033 from the 1970’s. It’s also fast enough
+to run VSE/ESA with an acceptable response time. On a more recent system
+with a 2GHz Pentium processor, you may see the system peak at around 30
+MIPS which is enough to run Linux/390 or z/OS with a light workload.</p>
+<p>Performance on server class machines is now fairly respectable. For
+example, on a dual-core Intel Xeon with hyperthreading (4 CPUs) running
+at 3.46GHz, you might expect to see a sustained MIPS rate of 40 to 60
+MIPS. A dual-processor quad-core Mac Pro (8 cores, 3 GHz) will sustain
+over 150 MIPS. For anyone who is prepared to spend a considerable amount
+of money on their Hercules system, there are reports that a sustained
+300+ MIPS has been achieved on an Intel Core i7 processor running at
+3.75GHz using all four cores plus hyperthreading (8 CPUs).</p>
+<p>Typical I/O rates of around 50 EXCP/second are reported on average
+hardware, with rates over 500/second achievable with hardware RAID.</p>
+</section>
+<section id="what-pc-software-do-i-need-to-run-hercules">
+<h2>What PC software do I need to run Hercules?<a class="headerlink" href="#what-pc-software-do-i-need-to-run-hercules" title="Permalink to this heading">¶</a></h2>
+<p>The following software platforms are supported:</p>
+<ul class="simple">
+<li><p>Linux (kernel 2.4 or later)</p></li>
+<li><p>Windows Vista or greater (Windows 7 preferred)</p></li>
+<li><p>Mac OS X 10.3 or later</p></li>
+<li><p>Solaris 2.9 or later (Sparc or Intel)</p></li>
+<li><p>FreeBSD</p></li>
+</ul>
+<p>You will also need tn3270 client software for the virtual 3270 console.
+The tn3270 client can run on the same machine as Hercules, or on any
+Unix or Windows box with a TCP/IP connection to the Hercules machine.</p>
+<p>The supported and recommended tn3270 clients for Hercules are:</p>
+<dl class="simple">
+<dt><strong>x3270 for Unix</strong></dt><dd><p>x3270 is included with most Linux distributions, or you can download
+it from <a class="reference external" href="http://x3270.bgp.nu/">http://x3270.bgp.nu/</a></p>
+</dd>
+<dt><strong>Vista tn3270 for Windows</strong></dt><dd><p>Vista tn3270 can be obtained from
+<a class="reference external" href="http://www.tombrennansoftware.com">www.tombrennansoftware.com</a>.
+The very modest license fee charged for this excellent 3270 emulator
+helps to support an independent software developer.</p>
+</dd>
+<dt><strong>Brown University tn3270 for Macintosh</strong></dt><dd><p>Brown University tn3270 is freely available. You can download it from
+<a class="reference external" href="http://www.brown.edu/Facilities/CIS/tn3270/">http://www.brown.edu/Facilities/CIS/tn3270/</a>. There is one setting
+that must be changed to use this program with some operating systems,
+especially MVS 3.8: Open a connection to Hercules, but before IPLing
+the system, go to the Session-&gt;Features menu and set “Change embedded
+nulls to blanks” to “No”. Click on “OK”. Now, click on File-&gt;Save
+default settings… to make the setting permanent.</p>
+</dd>
+</dl>
+<p>Other tn3270 clients, such as QWS3270, IBM Personal Communications,
+Attachmate Extra, or Dynacomm Elite should also work in most cases, but
+be aware that some tn3270 clients have bugs which make them unusable as
+OS/360 or MVS consoles.</p>
+</section>
+<section id="what-software-do-i-need-to-build-hercules-on-linux-and-unix">
+<h2>What software do I need to build Hercules on Linux and Unix?<a class="headerlink" href="#what-software-do-i-need-to-build-hercules-on-linux-and-unix" title="Permalink to this heading">¶</a></h2>
+<p>To build Hercules for Linux and other Unix-like environments (including
+Cygwin under Windows), you need to use the <a class="reference external" href="http://gcc.gnu.org">gcc</a>
+compiler, version 3.x or above. You will also need a full set of GNU
+development tools, including recent versions of autoconf, automake,
+flex, gawk, gcc, grep, m4, make, perl, and sed. Refer to the
+util/bldlvlck file in the Hercules distribution for details.</p>
+</section>
+<section id="what-software-do-i-need-to-build-hercules-on-windows">
+<h2>What software do I need to build Hercules on Windows?<a class="headerlink" href="#what-software-do-i-need-to-build-hercules-on-windows" title="Permalink to this heading">¶</a></h2>
+<p>To build Hercules for the Windows native environment (without Cygwin),
+you need to use the Microsoft C/C++ compiler (MSVC) version 15.x or
+later (i.e. Visual Studio 2008 or greater). The 32-bit compiler and SDK
+were packaged as Microsoft Visual C++ 2008 Express Edition at one point
+in the past, but unfortunately Microsoft no longer offers it for
+download from their web site.</p>
+<p>Fish’s <a class="reference external" href="http://www.softdevlabs.com">“Software Development
+Laboratories”</a> web site however, has a
+<a class="reference external" href="http://www.softdevlabs.com/hercules-msvc-build.html">“Hercules Windows Build
+Instructions”</a>
+web page that contains download links that are still working should you
+wish to use Visual Studio 2008 Express Edition.</p>
+<p>The good news is Microsoft’s latest offering of their <a class="reference external" href="https://www.visualstudio.com/downloads/">Visual
+Studio</a> product comes with a
+free “<strong>Community Edition</strong>” which <em>should</em> be able to successfully
+build Hercules.</p>
+<p>Which version of Visual Studio (Microsoft Visual C++) you use to build
+Hercules with is largely unimportant as long as it works. More recent
+versions may or may not provide better performance and may or may not
+successfully build Hercules. The only way to know is to try.</p>
+</section>
+<section id="can-hercules-be-ported-to-run-on-other-platforms">
+<h2>Can Hercules be ported to run on other platforms?<a class="headerlink" href="#can-hercules-be-ported-to-run-on-other-platforms" title="Permalink to this heading">¶</a></h2>
+<p>With the introduction of autotools, we do make efforts to ensure
+Hercules builds and run on several different operating system platforms
+(mostly Linux, Windows, MAC, Solaris, and FreeBSD right now), but we of
+course simply cannot guarantee that it will run on every operating
+system platform out there.</p>
+<p>If you want to make Hercules run on AS/400, OS/2, or whatever, then by
+all means go ahead. I welcome reports of any bugs or problems you find,
+but I probably won’t fix problems if it means introducing
+platform-specific code, and I will not be able to test new releases
+against other platforms. Folks who have gotten it compiled on the BSDs
+report that the hardest part is removing the Linux-specific tape
+support.</p>
+<p>The Hercules code is not intended to be specific to Intel hardware, so
+if you find any issues or faults related to running on other hardware
+(SPARC, Alpha, PPC, …) under Linux, then I’m likely to be receptive to
+fixing that sort of problem. Issues related to Unix variants are less
+likely to be fixed however.</p>
+</section>
+<hr class="docutils" />
+<section id="how-can-i-create-a-virtual-dasd-volume">
+<h2>How can I create a virtual DASD volume?<a class="headerlink" href="#how-can-i-create-a-virtual-dasd-volume" title="Permalink to this heading">¶</a></h2>
+<p>The <a class="reference external" href="hercload.html">Creating Hercules DASD</a> document describes
+various methods of creating and loading virtual DASD volumes.</p>
+</section>
+<section id="can-i-read-a-tape-which-was-created-on-a-mainframe">
+<h2>Can I read a tape which was created on a mainframe?<a class="headerlink" href="#can-i-read-a-tape-which-was-created-on-a-mainframe" title="Permalink to this heading">¶</a></h2>
+<p>Yes, indirectly. The mainframe tape must be converted to AWSTAPE format
+and then downloaded to your PC. The <strong>tapeconv.jcl</strong> file in the
+Hercules directory contains a sample program which you can run under
+OS/390 on your mainframe system. It reads a file from tape and converts
+it to AWSTAPE format. Download the AWSTAPE file to your PC (making sure
+to choose <em>binary</em> format for the download), and then add the downloaded
+filename to the Hercules configuration file as a virtual tape device.
+You will then be able to read the tape file from the virtual tape drive
+located on your PC.</p>
+<p><em>Note: the “tapeconv” program will not correctly process input tapes
+whose block size exceeds 32760!</em> One symptom of this may be the message
+“ <code class="docutils literal notranslate"><span class="pre">ADRY011E</span> <span class="pre">I/O</span> <span class="pre">ERROR</span> <span class="pre">-</span> <span class="pre">DEVICE</span> <span class="pre">NOT</span> <span class="pre">ATTACHED.0000,NA,00...00,0000&quot;</span></code>
+when attempting to restore from tape originally created using the
+default DF/DSS block size. The solution is to recreate the dump tape
+with DCB=BLKSIZE=32760.</p>
+</section>
+<section id="can-i-attach-a-pc-tape-drive-to-hercules">
+<h2>Can I attach a PC tape drive to Hercules?<a class="headerlink" href="#can-i-attach-a-pc-tape-drive-to-hercules" title="Permalink to this heading">¶</a></h2>
+<p>Yes. Hercules can read and write tapes on SCSI drives. I have tested
+this with 4mm DAT, QIC-1000, and 9-track drives.</p>
+</section>
+<section id="can-i-process-mainframe-tapes-with-hercules">
+<h2>Can I process mainframe tapes with Hercules?<a class="headerlink" href="#can-i-process-mainframe-tapes-with-hercules" title="Permalink to this heading">¶</a></h2>
+<p>Yes. It is possible to obtain 9-track open reel drives and 3480-type
+cartridge drives which attach to the SCSI bus. Hercules makes these
+appear to the operating system as channel-attached 3420 or 3480 devices,
+making it possible to read and write real mainframe tapes.</p>
+</section>
+<section id="can-i-create-assembler-programs-without-a-mainframe">
+<h2>Can I create Assembler programs without a mainframe?<a class="headerlink" href="#can-i-create-assembler-programs-without-a-mainframe" title="Permalink to this heading">¶</a></h2>
+<p>Yes. If you want to write Assembler (BAL) programs to run on Hercules,
+but you don’t have access to a mainframe, then there are two interesting
+products which you can run on your PC to assemble programs:</p>
+<dl class="simple">
+<dt>The “Tachyon 390 Cross Assembler” ( <a class="reference external" href="http://www.tachyonsoft.com/tachyon">http://www.tachyonsoft.com/tachyon</a> )</dt><dd><p>With this assembler you can produce S/390-compatible object decks
+using your Linux or Windows PC. A high degree of HLASM compatibility,
+coupled with the ability to perform complex assemblies at lightning
+speed, make this a product which is well worth looking at. I have
+tried this assembler and it is truly amazing.</p>
+</dd>
+<dt>The “Dignus Systems/C Compiler” ( <a class="reference external" href="http://www.dignus.com/">http://www.dignus.com</a> )</dt><dd><p>This is a C compiler which runs under Windows or Linux and generates
+mainframe assembler code which you can then assemble using the
+Tachyon assembler.</p>
+</dd>
+</dl>
+<p>Sam Golob wrote a fascinating review of these two products in the
+September 1999 issue of <a class="reference external" href="http://www.naspa.com">NaSPA</a> Technical
+Support magazine.</p>
+</section>
+<hr class="docutils" />
+<section id="what-architectural-features-are-implemented">
+<h2>What architectural features are implemented?<a class="headerlink" href="#what-architectural-features-are-implemented" title="Permalink to this heading">¶</a></h2>
+<p>The following features of <strong>ESA/390</strong> <em>have</em> been implemented:</p>
+<ul class="simple">
+<li><p>24-bit and 31-bit addressing</p></li>
+<li><p>370-XA Channel Subsystem</p></li>
+<li><p>Access-List-Controlled Protection</p></li>
+<li><p>Access Register Mode</p></li>
+<li><p>Address-Limit Checking</p></li>
+<li><p>BAKR/PC/PR/PT instructions</p></li>
+<li><p>Binary Floating-Point instructions</p></li>
+<li><p>Branch-Relative instructions</p></li>
+<li><p>Branch and Save</p></li>
+<li><p>Branch and Set Authority</p></li>
+<li><p>Broadcasted Purging</p></li>
+<li><p>Cancel I/O Facility</p></li>
+<li><p>Channel Indirect Data Addressing</p></li>
+<li><p>Channel Program Suspend/Resume</p></li>
+<li><p>Checksum instruction</p></li>
+<li><p>Commercial Instruction Set</p></li>
+<li><p>Compare and Form Codeword and Update Tree instructions</p></li>
+<li><p>Compare and Move Extended instructions</p></li>
+<li><p>Compare Until Substring Equal</p></li>
+<li><p>Compression</p></li>
+<li><p>Concurrent Sense</p></li>
+<li><p>Conditional Swapping</p></li>
+<li><p>DAT-Enhancement Facility 1</p></li>
+<li><p>Decimal Instructions</p></li>
+<li><p>Dual Address Space</p></li>
+<li><p>Dynamic Address Translation</p></li>
+<li><p>Dynamic Reconfiguration</p></li>
+<li><p>ETF2-Enhancement Facility</p></li>
+<li><p>Expanded Storage</p></li>
+<li><p>Extended TOD clock</p></li>
+<li><p>Extended Translation Facility 1</p></li>
+<li><p>Extended-Translation Facility 2</p></li>
+<li><p>Fast Synchronous Data Mover Facility</p></li>
+<li><p>Floating-Point-Support Extensions</p></li>
+<li><p>Guest PER enhancement</p></li>
+<li><p>Halfword-Immediate instructions</p></li>
+<li><p>Hexadecimal Floating-Point Instructions</p></li>
+<li><p>HFP-Multiply-and-Add/Subtract Facility</p></li>
+<li><p>Home Space Mode</p></li>
+<li><p>Incorrect-Length-Indication Suppression</p></li>
+<li><p>Interlocked-Access Facility 2</p></li>
+<li><p>Interpretive Execution (SIE)</p></li>
+<li><p>Key-Controlled Protection</p></li>
+<li><p>Linkage Stack</p></li>
+<li><p>Logical Partition (LPAR) Support</p></li>
+<li><p>Long-Displacement Facility</p></li>
+<li><p>Low-Address Protection</p></li>
+<li><p>LURA/STURA instructions</p></li>
+<li><p>Message-Security-Assist Extension 1 Support</p></li>
+<li><p>Message-Security-Assist Extension 2 Support</p></li>
+<li><p>Message-Security Assist</p></li>
+<li><p>MVCIN Move Inverse Instruction Support</p></li>
+<li><p>Move Page (Facility 2)</p></li>
+<li><p>Multiple Controlled Data Space (VM dataspaces)</p></li>
+<li><p>MVCS/MVCP/MVCK/MVCSK/MVCDK instructions</p></li>
+<li><p>MVS assists</p></li>
+<li><p>N3 Instructions are installed</p></li>
+<li><p>Operational Extensions: Console Integration</p></li>
+<li><p>Page Protection</p></li>
+<li><p>Perform Locked Operation</p></li>
+<li><p>Private Space</p></li>
+<li><p>Program Controlled Interruption (PCI)</p></li>
+<li><p>Program Event Recording</p></li>
+<li><p>Service-call-logical-processor (SCLP) facility</p></li>
+<li><p>Set Address Space Control Fast</p></li>
+<li><p>Square Root</p></li>
+<li><p>Storage-Protection Override</p></li>
+<li><p>Storage Key assist</p></li>
+<li><p>Store-Facility-List-Extended Facility</p></li>
+<li><p>Store System Information</p></li>
+<li><p>String instructions</p></li>
+<li><p>Subspace Group</p></li>
+<li><p>Suppression on Protection with Virtual-Address enhancement</p></li>
+<li><p>TB/TPROT instructions</p></li>
+<li><p>TOD Clock, Clock Comparator, and CPU Timer</p></li>
+<li><p>z/Architecture architectural mode is installed</p></li>
+</ul>
+<p>The following features of <strong>z/Architecture</strong> <em>have</em> been implemented:</p>
+<ul class="simple">
+<li><p>Access-Exception-Fetch/Store-Indication Facility</p></li>
+<li><p>ASN-and-LX-Reuse Facility</p></li>
+<li><p>BEAR-Enhancement Facility</p></li>
+<li><p>CMPSC-Enhancement Facility</p></li>
+<li><p>Compare-and-Swap-and-Store Facility 1</p></li>
+<li><p>Compare-and-Swap-and-Store Facility 2</p></li>
+<li><p>Conditional-Emergency-Signal and Sense-Running-Status Facility</p></li>
+<li><p>Conditional-SSKE Facility</p></li>
+<li><p>Configuration-Topology Facility</p></li>
+<li><p>Constrained-Transactional-Execution Facility</p></li>
+<li><p>DAT-Enhancement Facility 1</p></li>
+<li><p>DAT-Enhancement Facility 2</p></li>
+<li><p>Decimal-Floating-Point Facility</p></li>
+<li><p>Decimal-Floating-Point Facility Has High Performance</p></li>
+<li><p>Decimal-Floating-Point-Rounding Facility</p></li>
+<li><p>Decimal-Floating-Point-Zoned-Conversion Facility</p></li>
+<li><p>Decimal-Floating-Point-Packed-Conversion Facility</p></li>
+<li><p>Distinct-Operands Facility</p></li>
+<li><p>Enhanced-DAT Facility 1</p></li>
+<li><p>Enhanced-Monitor Facility</p></li>
+<li><p>ETF2-Enhancement Facility</p></li>
+<li><p>ETF3-Enhancement Facility</p></li>
+<li><p>Execute-Extensions Facility</p></li>
+<li><p>Execution-Hint Facility</p></li>
+<li><p>Extended-Immediate Facility</p></li>
+<li><p>Extended-Translation Facility 1</p></li>
+<li><p>Extended-Translation Facility 2</p></li>
+<li><p>Extended-Translation Facility 3</p></li>
+<li><p>Extract-CPU-Time Facility</p></li>
+<li><p>Fast-BCR-Serialization Facility</p></li>
+<li><p>Floating-Point-Extension Facility</p></li>
+<li><p>Floating-Point-Support-Enhancement Facility</p></li>
+<li><p>Floating-Point-Support-Sign-Handling Facility</p></li>
+<li><p>FPR-GR-Transfer Facility</p></li>
+<li><p>General-Instructions-Extension Facility</p></li>
+<li><p>HFP-Multiply-and-Add/Subtract Facility</p></li>
+<li><p>HFP-Unnormalized-Extensions Facility</p></li>
+<li><p>High-Word Facility</p></li>
+<li><p>IEEE-Exception-Simulation Facility</p></li>
+<li><p>Integrated 3270 (SYSG) Console</p></li>
+<li><p>Insert-Reference-Bits-Multiple Facility</p></li>
+<li><p>Interlocked-Access Facility 1</p></li>
+<li><p>Interlocked-Access Facility 2</p></li>
+<li><p>IPTE-Range Facility</p></li>
+<li><p>List-Directed Initial Program Load</p></li>
+<li><p>Load-and-Trap Facility</p></li>
+<li><p>Load-and-Zero-Rightmost-Byte Facility</p></li>
+<li><p>Load-Program-Parameter Facility</p></li>
+<li><p>Load/Store-on-Condition Facility 1</p></li>
+<li><p>Load/Store-on-Condition Facility 2</p></li>
+<li><p>Local-TLB-Clearing Facility</p></li>
+<li><p>Logical Partition (LPAR) Support</p></li>
+<li><p>Long-Displacement Facility</p></li>
+<li><p>Long-Displacement Facility Has High Performance</p></li>
+<li><p>Message-Security Assist</p></li>
+<li><p>Message-Security-Assist Extension 1 Support</p></li>
+<li><p>Message-Security-Assist Extension 2 Support</p></li>
+<li><p>Message-Security-Assist Extension 3</p></li>
+<li><p>Message-Security-Assist Extension 4</p></li>
+<li><p>Miscellaneous-Instruction-Extensions Facility 1</p></li>
+<li><p>Miscellaneous-Instruction-Extensions Facility 2</p></li>
+<li><p>Miscellaneous-Instruction-Extensions Facility 3</p></li>
+<li><p>Modified CCW Indirect Data Addressing (MIDAW) Facility</p></li>
+<li><p>Move-with-Optional-Specifications Facility</p></li>
+<li><p>Multiple-Subchannel-Set Facility</p></li>
+<li><p>MVCIN Move Inverse Instruction Support</p></li>
+<li><p>N3 Instructions are installed</p></li>
+<li><p>Nonquiescing Key-Setting Facility</p></li>
+<li><p>Parsing-Enhancement Facility</p></li>
+<li><p>PER-3 Facility</p></li>
+<li><p>PER Storage-Key-Alteration Facility</p></li>
+<li><p>PER Zero-Address-Detection Facility</p></li>
+<li><p>PFPO (Perform Floating-Point Operation) Facility</p></li>
+<li><p>Population-Count Facility</p></li>
+<li><p>Processor-Assist Facility</p></li>
+<li><p>QDIO-Assist Support</p></li>
+<li><p>QDIO Enhanced Buffer-State Management Support</p></li>
+<li><p>QDIO Thin-Interrupts Support</p></li>
+<li><p>QDIO Time-Delayed-Dispatching Support</p></li>
+<li><p>Reset-Reference-Bits-Multiple Facility</p></li>
+<li><p>Sense-Running-Status Facility</p></li>
+<li><p>Store-Clock-Fast Facility</p></li>
+<li><p>Store-Facility-List-Extended Facility</p></li>
+<li><p>Store-Hypervisor-Information Facility</p></li>
+<li><p>SVS Set Vector Summary Instruction Support</p></li>
+<li><p>TOD-Clock-Steering Facility</p></li>
+<li><p>Transactional-Execution Facility</p></li>
+<li><p>z/Architecture architectural mode is installed</p></li>
+<li><p>z/Architecture architectural mode is active</p></li>
+</ul>
+<p>The following features of <strong>z/Architecture</strong> have <em>not</em> yet been
+implemented:</p>
+<ul class="simple">
+<li><p>CPU-Measurement Counter Facility</p></li>
+<li><p>CPU-Measurement Sampling Facility</p></li>
+<li><p>CZAM Facility (Configuration-z/Architecture-Architectural-Mode)</p></li>
+<li><p>DEFLATE-Conversion Facility</p></li>
+<li><p>Enhanced-DAT Facility 2</p></li>
+<li><p>Enhanced-Sort Facility</p></li>
+<li><p>Entropy-Encoding-Compression Facility</p></li>
+<li><p>ESA/390-compatibility-Mode Facility</p></li>
+<li><p>Extended-I/O-Measurement-Block Facility</p></li>
+<li><p>Extended-I/O-Measurement-Word Facility</p></li>
+<li><p>FCX-Bidirectional-Data-Transfer Facility</p></li>
+<li><p>Fibre-Channel-Extensions (FCX) Facility</p></li>
+<li><p>Guarded-Storage Facility</p></li>
+<li><p>IDTE selective clearing when region-table invalidated</p></li>
+<li><p>IDTE selective clearing when segment-table invalidated</p></li>
+<li><p>Instruction-Execution-Protection Facility</p></li>
+<li><p>Integrated ASCII (SYSA) Console</p></li>
+<li><p>Message-Security-Assist Extension 5</p></li>
+<li><p>Message-Security-Assist Extension 6</p></li>
+<li><p>Message-Security-Assist Extension 7</p></li>
+<li><p>Message-Security-Assist Extension 8</p></li>
+<li><p>Message-Security-Assist Extension 9</p></li>
+<li><p>Move-Page-and-Set-Key Facility</p></li>
+<li><p>Multiple-Epoch Facility</p></li>
+<li><p>Multithreading Facility</p></li>
+<li><p>Neural-Network-Processing-Assist Facility</p></li>
+<li><p>Order-Preserving-Compression Facility</p></li>
+<li><p>Processor-Activity-Instrumentation Facility</p></li>
+<li><p>Processor-Activity-Instrumentation Extension 1 Facility</p></li>
+<li><p>Program-Directed IPL (<em>proper</em> Diagnose x’308’ support)</p></li>
+<li><p>Reset-DAT-Protection Facility</p></li>
+<li><p>Restore-Subchannel Facility</p></li>
+<li><p>Secure-Execution-Unpack Facility</p></li>
+<li><p>Server-Time-Protocol Facility</p></li>
+<li><p>Side-Effect-Access Facility</p></li>
+<li><p>Storage-Key-Removal Facility</p></li>
+<li><p>Store-CPU-Counter-Multiple Facility</p></li>
+<li><p>Test-Pending-External-Interruption Facility</p></li>
+<li><p>Ultravisor-Call Facility</p></li>
+<li><p>Vector-Enhancements Facility 1</p></li>
+<li><p>Vector-Enhancements Facility 2</p></li>
+<li><p>Vector Packed-Decimal Facility</p></li>
+<li><p>Vector-Packed-Decimal-Enhancement Facility 1</p></li>
+<li><p>Vector-Packed-Decimal-Enhancement Facility 2</p></li>
+<li><p>Warning-Track-Interruption Facility</p></li>
+<li><p>z/Architecture Vector Facility</p></li>
+</ul>
+<p>The following <strong>standard</strong> feature has <em>not</em> yet been implemented:</p>
+<ul class="simple">
+<li><p>Clear I/O (full functionality for S/370)</p></li>
+</ul>
+<p>The following <strong>optional</strong> features have been <em>partially</em> implemented:</p>
+<ul class="simple">
+<li><p>Channel-Subsystem Call</p></li>
+<li><p>VM/370 Assists (most but not all)</p></li>
+</ul>
+<p>The following features are <em>not</em> yet implemented, either due to lack of
+documentation, limited host system capability, or lack of supporting
+hardware:</p>
+<ul class="simple">
+<li><p>Asynchronous Data Mover Facility</p></li>
+<li><p>Asynchronous Pageout Facility</p></li>
+<li><p>Coupling Links</p></li>
+<li><p>ESCON</p></li>
+<li><p>Extended Sorting</p></li>
+<li><p>External Time Reference (Sysplex Timer)</p></li>
+<li><p>FICON</p></li>
+<li><p>ICRF (Cryptography)</p></li>
+<li><p>MIF (Multiple Image Facility)</p></li>
+<li><p>Operational Extensions: Automatic Reconfiguration, Storage
+Reconfiguration, SCP-initiated Reset, Processor Availability</p></li>
+<li><p>PR/SM</p></li>
+<li><p>Program-Controlled re-IPL</p></li>
+</ul>
+<p>Hercules is compliant with IBM’s ALS-1, ALS-2 and ALS-3 architectural
+level sets to the degree necessary to run all OS/390 versions through
+2.10 and known versions of z/OS in both ARCHLVL 1 and ARCHLVL 2 mode,
+and Linux and z/VM and z/VSE in both ESA/390 and z/Architecture mode.</p>
+</section>
+<hr class="docutils" />
+<section id="who-are-the-herculeans">
+<h2>Who are the Herculeans?<a class="headerlink" href="#who-are-the-herculeans" title="Permalink to this heading">¶</a></h2>
+<p>The following people are among those who have contributed to this
+project, either as coders or as testers or both:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://www.rogerbowler.fr/hercules.htm">Roger Bowler</a> (original author)</p></li>
+<li><p><a class="reference external" href="http://en.wikipedia.org/wiki/Jay_Maynard">Jay Maynard</a></p></li>
+<li><p><a class="reference external" href="http://www.cbttape.org/~jjaeger">Jan Jaeger</a></p></li>
+<li><p>Butch Anton</p></li>
+<li><p><a class="reference external" href="http://www.bsp-gmbh.com/">Volker Bandke</a></p></li>
+<li><p>David Barth</p></li>
+<li><p><a class="reference external" href="http://www.clueful.co.uk/mbeattie/">Malcolm Beattie</a></p></li>
+<li><p>Mario Bezzi</p></li>
+<li><p>Florian Bilek</p></li>
+<li><p>Gordon Bonorchis</p></li>
+<li><p>Mike Cairns</p></li>
+<li><p>Chris Cheney</p></li>
+<li><p><a class="reference external" href="http://www.isoc.org.pl/user/3">Marcin Cieslak</a></p></li>
+<li><p><a class="reference external" href="http://au.linkedin.com/in/clementclarke">Clem Clarke</a></p></li>
+<li><p><a class="reference external" href="http://veejoe.com.au/vic/index.htm">Vic Cross</a></p></li>
+<li><p><a class="reference external" href="http://www.mvsdasd.org/about.html">Jacob Dekel</a></p></li>
+<li><p>Guy Desbiens</p></li>
+<li><p>Jacques Dilbert</p></li>
+<li><p>Juergen Dobrinski</p></li>
+<li><p>Fritz Elfert</p></li>
+<li><p>Neale Ferguson</p></li>
+<li><p>Tomas Fott</p></li>
+<li><p>Mike Frysinger</p></li>
+<li><p>Martin Gasparovic</p></li>
+<li><p>Mark Gaubatz</p></li>
+<li><p>Steve Gay</p></li>
+<li><p>Paolo Giacobbis</p></li>
+<li><p>Peter Glanzmann</p></li>
+<li><p>Roland Goetschi</p></li>
+<li><p>Graham Goodwin</p></li>
+<li><p>Paul Gorlinsky</p></li>
+<li><p>Harold Grovesteen</p></li>
+<li><p>John P. Hartmann</p></li>
+<li><p>Glen Herrmannsfeldt</p></li>
+<li><p>Brandon Hill</p></li>
+<li><p>Laddie Hanus</p></li>
+<li><p>Robert Hodge</p></li>
+<li><p>Gabor Hoffer</p></li>
+<li><p>Dan Horak</p></li>
+<li><p>Peter J. Jansen</p></li>
+<li><p>Soren Jorvang</p></li>
+<li><p><a class="reference external" href="http://konynenberg.com/">Willem Konynenberg</a></p></li>
+<li><p>John Kozak</p></li>
+<li><p>Nobumichi Kozawa</p></li>
+<li><p>Peter Kuschnerus</p></li>
+<li><p>Paul Leisy</p></li>
+<li><p>Kevin Leonard</p></li>
+<li><p><a class="reference external" href="https://github.com/wrljet/">Bill Lewis</a></p></li>
+<li><p>Albert Louw</p></li>
+<li><p>Peter Macdonald</p></li>
+<li><p>Lutz Mader</p></li>
+<li><p>Tomas Masek</p></li>
+<li><p>Rick McKelvy</p></li>
+<li><p>John McKown</p></li>
+<li><p>Dave Morton</p></li>
+<li><p>Christophe Nillon</p></li>
+<li><p>Mike Noel</p></li>
+<li><p>Andy Norrie</p></li>
+<li><p>Steve Orso</p></li>
+<li><p>Dutch Owen</p></li>
+<li><p><a class="reference external" href="http://www.lightlink.com/mhp/3705/">Max H. Parke</a></p></li>
+<li><p>Gerd Petermann</p></li>
+<li><p>Reed H. Petty</p></li>
+<li><p>Jim Pierson</p></li>
+<li><p>Richard Pinion</p></li>
+<li><p><a class="reference external" href="http://www.timpinkawa.net/hercules">Tim Pinkawa</a></p></li>
+<li><p><a class="reference external" href="http://upi.iki.fi/">Pasi Pirhonen</a></p></li>
+<li><p>Valery Pogonchenko</p></li>
+<li><p>Bob Polmanter</p></li>
+<li><p>Andy Polyakov</p></li>
+<li><p><a class="reference external" href="http://www.debian.org/News/2010/20100831">Frans Pop</a></p></li>
+<li><p><a class="reference external" href="http://www.xing.com/profile/Wolfhard_Reimer">Wolfhard Reimer</a></p></li>
+<li><p>Emerson Santos</p></li>
+<li><p><a class="reference external" href="http://blogs.oracle.com/jsavit/">Jeff Savit</a></p></li>
+<li><p><a class="reference external" href="http://de.linkedin.com/pub/axel-schwarzer/2/739/655">Axel Schwarzer</a></p></li>
+<li><p>Paul Scott</p></li>
+<li><p>Daniel Seagraves</p></li>
+<li><p>Victor Shkamerda</p></li>
+<li><p>Ian Shorter</p></li>
+<li><p><a class="reference external" href="http://www.linuxvm.org/community/gsmith.html">Greg Smith</a></p></li>
+<li><p>Enrico Sorichetti</p></li>
+<li><p>John Summerfield</p></li>
+<li><p><a class="reference external" href="http://www.edelweb.fr/EdelStuff/Prospectus/sylvester.html">Peter Sylvester</a></p></li>
+<li><p>Mark Szlaga</p></li>
+<li><p>Adam Thornton</p></li>
+<li><p>Adrian Trenkwalder</p></li>
+<li><p><a class="reference external" href="http://www.softdevlabs.com">“Fish” (David B. Trout)</a></p></li>
+<li><p>Ronen Tzur</p></li>
+<li><p>Bernard van der Helm</p></li>
+<li><p>Ard van der Leeuw</p></li>
+<li><p>Kris Van Hees</p></li>
+<li><p>Adam Vandenberg</p></li>
+<li><p>Kees Verruijt</p></li>
+<li><p><a class="reference external" href="http://www.vitillaro.org/">Giuseppe Vitillaro</a></p></li>
+<li><p><a class="reference external" href="http://www.ivansoftware.com/">Ivan Warren</a></p></li>
+<li><p>James Wekel</p></li>
+<li><p><a class="reference external" href="https://www1.ethz.ch/id/people/allid_list/juergen">Juergen Winkelmann</a></p></li>
+<li><p>Bob Wood</p></li>
+<li><p>Ian Worthington</p></li>
+<li><p>Rod Zazubek</p></li>
+<li><p>Bjoern A. Zeeb</p></li>
+<li><p><a class="reference external" href="http://en.wikipedia.org/wiki/Matt_Zimmerman_(technologist)">Matt Zimmerman</a></p></li>
+</ul>
+<p>And thanks for support and encouragement from:</p>
+<ul class="simple">
+<li><p>Tim Alpaerts</p></li>
+<li><p>Bertus Bekker</p></li>
+<li><p>Giorgio de Nunzio</p></li>
+<li><p><a class="reference external" href="http://articles.petoskeynews.com/2012-07-27/memorial-service_32894245">Rick Fochtman</a></p></li>
+<li><p>Alex Friis</p></li>
+<li><p>Sam Golob</p></li>
+<li><p><a class="reference external" href="http://home.arcor.de/achim.haag//haagjobe.htm">Achim Haag</a></p></li>
+<li><p><a class="reference external" href="http://www.legacy.com/obituaries/washingtonpost/obituary.aspx?pid=143636886">Cory Hamasaki</a></p></li>
+<li><p>Tony Harminc</p></li>
+<li><p><a class="reference external" href="http://www.linuxvm.org/community/rhigson.html">Richard Higson</a></p></li>
+<li><p><a class="reference external" href="http://groups.yahoo.com/group/hercules-390/message/50662">Jim Keohane</a></p></li>
+<li><p>Sam Knutson</p></li>
+<li><p><a class="reference external" href="http://www.corestore.org/">Mike Ross</a></p></li>
+<li><p>Daniel Rudin</p></li>
+<li><p><a class="reference external" href="http://www.linuxvm.org/community/rsmrcina.html">Rich Smrcina</a></p></li>
+<li><p>Henk Stegeman</p></li>
+<li><p>Mark S. Waterbury</p></li>
+</ul>
+<p>If anyone feels they have been unfairly omitted from either of these
+lists, please let us know.</p>
+</section>
+<hr class="docutils" />
+<section id="where-can-i-obtain-technical-support">
+<h2>Where can I obtain technical support?<a class="headerlink" href="#where-can-i-obtain-technical-support" title="Permalink to this heading">¶</a></h2>
+<p>Please see our <a class="reference internal" href="hercsupp.html#techsupp"><span class="std std-ref">Technical Support</span></a> web page.</p>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="messages.html" class="btn btn-neutral float-right" title="Messages and Codes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="hercsupp.html" class="btn btn-neutral float-left" title="Technical Support" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Read the Docs</span>
+      v: fovea1959
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+      <dl>
+        <dt>Languages</dt>
+        
+           <strong> 
+          <dd><a href="/herc-docs-demo/en/fovea1959/">en</a></dd>
+           </strong> 
+        
+      </dl>
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+           <strong> 
+          <dd><a href="/herc-docs-demo/en/fovea1959/">fovea1959</a></dd>
+           </strong> 
+        
+          
+          <dd><a href="/herc-docs-demo/en/master/">master</a></dd>
+          
+        
+          
+          <dd><a href="/herc-docs-demo/en/0.0/">0.0</a></dd>
+          
+        
+          
+          <dd><a href="/herc-docs-demo/en/1.0/">1.0</a></dd>
+          
+        
+      </dl>
+      
+      
+      <dl>
+        <dt>Downloads</dt>
+        
+          <dd><a href="/herc-docs-demo/en/fovea1959/Hercules Documentation Demo-docs_en_fovea1959.pdf">pdf</a></dd>
+        
+          <dd><a href="/herc-docs-demo/en/fovea1959/Hercules Documentation Demo-docs_en_fovea1959.epub">epub</a></dd>
+        
+          <dd><a href="/herc-docs-demo/en/fovea1959/Hercules Documentation Demo-docs_en_fovea1959.html.tar.gz">tarred HTML</a></dd>
+        
+          <dd><a href="/herc-docs-demo/en/fovea1959/Hercules Documentation Demo-docs_en_fovea1959.single.html.tar.gz">tarred single file HTML</a></dd>
+        
+      </dl>
+      
+      
+      <hr/>
+      <a href="https://tech.michaelaltfield.net/2020/07/18/sphinx-rtd-github-pages-1/">Continuous Documentation</a> hosting provided by <a href="https://pages.github.com/">GitHub Pages</a>.
+ 
+    </div>
+  </div>
+
+ 
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,436 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Hercules “External Packages” &mdash; Hercules Documentation Demo 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link href="_static/herc_style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Hercules Documentation Demo
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                master
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="hercinst.html">Building and Installing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration File</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercdasd.html">Creating DASD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercoper.html">Operating Procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercsupp.html">Technical Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercfaq.html">Frequently-Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="messages.html">Messages and Codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aa_auxdocs.html">Supporting documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_a.html">Appendix A - Documentation Standards</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Hercules Documentation Demo</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Hercules “External Packages”</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/README.EXTPKG.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="hercules-external-packages">
+<h1>Hercules “External Packages”<a class="headerlink" href="#hercules-external-packages" title="Permalink to this heading">¶</a></h1>
+<p>This version of Hercules 4.x Hyperion links with several “external
+package” static libraries.</p>
+<p>Hercules comes distributed with pre-built external packages as part of
+its source code repository that were built, at the time of this writing,
+using the latest version of Visual Studio (2017) (or clang, etc, for
+Linux) that ideally <em>should</em> work fine for most everyone as-is, thus
+eliminating the need to build any of them yourself. Just build Hercules
+normally and you’re done.</p>
+<p>In some situations however you might need (or want) to rebuild one or
+more of the external packages for your system. Some (but certainly not
+all) of those situations include (but are not limited to) the following:</p>
+<ol class="arabic simple">
+<li><p>Developing or Debugging a new/existing version of an external
+package.</p></li>
+<li><p>Building Hercules for a different version of Visual Studio.</p></li>
+<li><p>Building Hercules for a different processor architecture or for an
+unusual non-mainstream *Nix platform (Apple Mac, Raspberry Pi, etc).</p></li>
+</ol>
+<p>Each package is maintained in its own unique source code repository
+separate from the Hercules emulator itself. The Hercules 4.x Hyperion
+repository only hosts default package static libraries (along with a few
+accompanying files) in separate external package subdirectories. Each
+package’s source code is kept in its own separate source code
+repository. The Hercules repository no longer contains any source code
+for these external packages. The Hercules repository only contains
+default builds of each package’s static link libraries and whatever
+header files the package requires to call into its functions.</p>
+<p>Each external package is built separately from the Hercules emulator and
+then “installed” into a directory of your choosing. On Windows, the
+<code class="docutils literal notranslate"><span class="pre">lib</span></code> sub-directoty of this external packages “installation directory”
+should then be specified in your <strong>``LIB``</strong> environment variable so
+that Hercules can then find your custom built external package static
+libraries. (On *Nix the equivalent variable would be the
+<strong>``LIBRARY_PATH``</strong> variable.) The same idea applies for the
+<strong>``INCLUDE``</strong> environment variable too (on *Nix the equivalent
+variable would be the <strong>``CPATH``</strong> variable): it should point to the
+external package installation directory’s “include” subdirectory.</p>
+<p>Currently, there are four such external packages this Hercules 4.x
+Hyperion links with. These packages are the <strong>crypto</strong>, <strong>decNumber</strong>,
+<strong>SoftFloat</strong>, and <strong>telnet</strong> packages. Each of these package names
+correspond to an existing subdirectory of Hyperion. Over time additional
+Hercules functionality will be moved out of the emulator into their own
+separately maintained and built external package repositories,
+eventually reducing the Hercules emulator to just its core
+functionality: accurate emulation of the System/370, ESA/390, and z
+architectures.</p>
+<p>The four repositories for the external packages can be located at these
+URLs:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/sdl-hercules-390/crypto">https://github.com/sdl-hercules-390/crypto</a></p></li>
+<li><p><a class="reference external" href="https://github.com/sdl-hercules-390/decNumber">https://github.com/sdl-hercules-390/decNumber</a></p></li>
+<li><p><a class="reference external" href="https://github.com/sdl-hercules-390/SoftFloat">https://github.com/sdl-hercules-390/SoftFloat</a></p></li>
+<li><p><a class="reference external" href="https://github.com/sdl-hercules-390/telnet">https://github.com/sdl-hercules-390/telnet</a></p></li>
+</ul>
+<p>The procedure for building each of the external packages is outlined
+further below. More information about each of the packages can be found
+in a <code class="docutils literal notranslate"><span class="pre">README</span></code> document within each of their respective repositories.</p>
+<section id="linux">
+<h2>Linux<a class="headerlink" href="#linux" title="Permalink to this heading">¶</a></h2>
+<p>The procedure detailed below is explained from a Windows point of view,
+but the procedure for Linux is virtually identical. If you are
+reasonably skilled at Linux you should have no trouble making the needed
+adjustments.</p>
+<p>One of the adjustments that must be made is to either point your
+<strong>``LIBRARY_PATH``</strong> and <strong>``CPATH``</strong> variables to your
+<code class="docutils literal notranslate"><span class="pre">./extpkgs/lib</span></code> and <code class="docutils literal notranslate"><span class="pre">./extpkgs/include</span></code> directories or else specify
+the the top level <code class="docutils literal notranslate"><span class="pre">./extpkgs</span></code> directory for your
+<code class="docutils literal notranslate"><span class="pre">--enable-extpkgs=DIR</span></code> configure option.</p>
+</section>
+<section id="building-the-external-packages-for-a-windows-based-hyperion">
+<h2>Building the External Packages for a Windows-based Hyperion<a class="headerlink" href="#building-the-external-packages-for-a-windows-based-hyperion" title="Permalink to this heading">¶</a></h2>
+<p>Building the packages is a fairly simple and straightforward process and
+the steps are outlined and then detailed below. These steps presume you
+are using Windows and that you need both the x86 and x64 builds of the
+external packages.</p>
+<section id="summary-of-the-steps-involved">
+<h3>Summary of the steps involved<a class="headerlink" href="#summary-of-the-steps-involved" title="Permalink to this heading">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Download and install CMake.</p></li>
+<li><p>Make a directory where all packages should be installed into.</p></li>
+<li><p>Download <code class="docutils literal notranslate"><span class="pre">ExtPkgs.cmd</span></code> and <code class="docutils literal notranslate"><span class="pre">ExtPkgs.cmd.ini</span></code> from GitHub and
+adjust <code class="docutils literal notranslate"><span class="pre">ExtPkgs.cmd.ini</span></code> for your system (e.g. <code class="docutils literal notranslate"><span class="pre">cpu</span> <span class="pre">=</span> <span class="pre">arm</span></code>).</p></li>
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">ExtPkgs</span></code> command to clone, build and install all of the
+external packages at once, with one simple command.</p></li>
+<li><p>Update your <code class="docutils literal notranslate"><span class="pre">LIB</span></code> and <code class="docutils literal notranslate"><span class="pre">INCLUDE</span></code> environment variables.</p></li>
+<li><p>Build Hercules as normal.</p></li>
+</ol>
+<p>For the purposes of this example, it is presumed that you have
+downloaded the Hyperion repository and placed it into the <code class="docutils literal notranslate"><span class="pre">\hyperion</span></code>
+directory. Then we will follow the process to build the external
+packages and have them all installed into the common <code class="docutils literal notranslate"><span class="pre">\extpkgs</span></code>
+installation directory.</p>
+</section>
+<section id="detailed-instructions">
+<h3>Detailed Instructions<a class="headerlink" href="#detailed-instructions" title="Permalink to this heading">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Download and install CMake. Cmake is a tool that is used to build the
+packages from their source repositories. Download Cmake
+<a class="reference external" href="https://cmake.org/">here</a>.</p></li>
+</ol>
+<p>Either download the .msi installer package or the .zip file and install
+Cmake. It is simple and installs in seconds.</p>
+<ol class="arabic simple" start="2">
+<li><p>Make a directory where all packages should be installed into. To keep
+things organized, create this directory at the same level as your
+primary Hercules directory. This is only a recommendation, not a
+requirement.</p></li>
+</ol>
+<div class="highlight-dos notranslate"><div class="highlight"><pre><span></span>chdir  \hercules
+chdir  ..
+mkdir  \extpkgs
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Download the “<strong>ExtPkgs.cmd</strong>” and “<strong>ExtPkgs.cmd.ini</strong>” files from
+the <a class="reference external" href="https://github.com/SDL-Hercules-390/gists">GitHub “gists”
+repository</a>. You do not
+need to clone this repository. You only need those two files.</p></li>
+</ol>
+<p>Place these files into your local <code class="docutils literal notranslate"><span class="pre">bin</span></code> directory (or if you don’t
+have such a directory, place them into your <code class="docutils literal notranslate"><span class="pre">\extpkgs</span></code> directory that
+you just created).</p>
+<p>Adjust the “<strong>ExtPkgs.cmd.ini</strong>” as needed for your system
+(e.g. <code class="docutils literal notranslate"><span class="pre">cpu</span> <span class="pre">=</span> <span class="pre">arm</span></code>).</p>
+<ol class="arabic" start="4">
+<li><p>Now clone and build the external packages by making the package
+install directory your current directory and issuing the
+<code class="docutils literal notranslate"><span class="pre">ExtPkgs</span></code>**(*)** command to clone, build and install all of
+the packages at once directly into your installation directory:</p>
+<pre>
+   chdir  \extpkgs
+   ExtPkgs.cmd   CLONE   c  d  s  t        <i><b>(see footnote at end)</b></i>
+</pre></li>
+</ol>
+<p>Depending on the speed of your system it may take anywhere from a couple
+of minutes to several minutes to finish building all of the packages.</p>
+<ol class="arabic simple" start="5">
+<li><p>Update your <strong>``LIB``</strong> and <strong>``INCLUDE``</strong> environment variables (on
+Linux this would be your <strong>``LIBRARY_PATH``</strong> and <strong>``CPATH``</strong>
+variables) to point to the directory where your packages were just
+installed:</p></li>
+</ol>
+<div class="highlight-dos notranslate"><div class="highlight"><pre><span></span>setx LIB &quot;%LIB%;\extpkgs\lib&quot;
+setx INCLUDE &quot;%INCLUDE%;\extpkgs\include&quot;
+</pre></div>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>Build Hercules as normal. (self explanatory)</p></li>
+</ol>
+<p>That concludes the necessary steps to build the external packages. You
+now have the 32-bit and 64-bit versions of the Debug and Release builds
+of the external packages. If you desire, you may delete both the
+<code class="docutils literal notranslate"><span class="pre">\repo</span></code> and <code class="docutils literal notranslate"><span class="pre">\work</span></code> directories as they are no longer needed. You
+only need to keep the <strong>``extpkgs``</strong> directory needed by Hercules
+(pointed to by your <code class="docutils literal notranslate"><span class="pre">LIB</span></code> environment variable).</p>
+<p>If you clone the <code class="docutils literal notranslate"><span class="pre">\hyperion</span></code> directory or download a newer Hyperion
+repository in the future, there is nothing extra you need to do. You do
+<strong>not</strong> need to rebuild the external packages ever again (unless they
+are updated of course).</p>
+<hr class="docutils" />
+<p>**(*)** Use <code class="docutils literal notranslate"><span class="pre">extpkgs</span> <span class="pre">--help</span></code> (Linux) or <code class="docutils literal notranslate"><span class="pre">extpkgs</span> <span class="pre">/?</span></code> (Windows) to
+obtain more information regarding the extpkgs script’s parameters.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Read the Docs</span>
+      v: master
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+      <dl>
+        <dt>Languages</dt>
+        
+           <strong> 
+          <dd><a href="/herc-docs-demo/en/master/">en</a></dd>
+           </strong> 
+        
+      </dl>
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+          
+          <dd><a href="/herc-docs-demo/en/fovea1959/">fovea1959</a></dd>
+          
+        
+           <strong> 
+          <dd><a href="/herc-docs-demo/en/master/">master</a></dd>
+           </strong> 
+        
+          
+          <dd><a href="/herc-docs-demo/en/0.0/">0.0</a></dd>
+          
+        
+          
+          <dd><a href="/herc-docs-demo/en/1.0/">1.0</a></dd>
+          
+        
+      </dl>
+      
+      
+      <dl>
+        <dt>Downloads</dt>
+        
+          <dd><a href="/herc-docs-demo/en/master/Hercules Documentation Demo-docs_en_master.pdf">pdf</a></dd>
+        
+          <dd><a href="/herc-docs-demo/en/master/Hercules Documentation Demo-docs_en_master.epub">epub</a></dd>
+        
+          <dd><a href="/herc-docs-demo/en/master/Hercules Documentation Demo-docs_en_master.html.tar.gz">tarred HTML</a></dd>
+        
+          <dd><a href="/herc-docs-demo/en/master/Hercules Documentation Demo-docs_en_master.single.html.tar.gz">tarred single file HTML</a></dd>
+        
+      </dl>
+      
+      
+      <hr/>
+      <a href="https://tech.michaelaltfield.net/2020/07/18/sphinx-rtd-github-pages-1/">Continuous Documentation</a> hosting provided by <a href="https://pages.github.com/">GitHub Pages</a>.
+ 
+    </div>
+  </div>
+
+ 
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

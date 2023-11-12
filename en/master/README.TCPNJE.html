@@ -1,0 +1,558 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>TCPNJE - NJE over TCP/IP device implementation for VM/370 or MVS 3.8 running on Hercules &mdash; Hercules Documentation Demo 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link href="_static/herc_style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Hercules Documentation Demo
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                master
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="hercinst.html">Building and Installing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration File</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercdasd.html">Creating DASD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercoper.html">Operating Procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercsupp.html">Technical Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercfaq.html">Frequently-Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="messages.html">Messages and Codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aa_auxdocs.html">Supporting documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_a.html">Appendix A - Documentation Standards</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Hercules Documentation Demo</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>TCPNJE - NJE over TCP/IP device implementation for VM/370 or MVS 3.8 running on Hercules</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/README.TCPNJE.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="tcpnje-nje-over-tcp-ip-device-implementation-for-vm-370-or-mvs-3-8-running-on-hercules">
+<h1>TCPNJE - NJE over TCP/IP device implementation for VM/370 or MVS 3.8 running on Hercules<a class="headerlink" href="#tcpnje-nje-over-tcp-ip-device-implementation-for-vm-370-or-mvs-3-8-running-on-hercules" title="Permalink to this heading">¶</a></h1>
+<p>To a Hercules guest, this device looks like a 2703 bisync adapter. To
+the world outside Hercules, it looks like an NJE over TCP/IP
+implementation. VM/370 RSCS (modified to support the NJE protocol) and
+MVS 3.8 NJE38 can, while running under Hercules, use this device to
+implement NJE links over a TCP/IP network including over the internet to
+remote locations. (Implementing NJE links over the internet for the
+BITNET II network is what the NJE over TCP/IP protocol was designed to
+do.)</p>
+<p>The remote end can be a similarly modified version of VM/370 RSCS or MVS
+3.8 NJE38 running on a version of Hercules equipped with this device
+emulation. However, the remote end does not have to involve RSCS or
+Hercules even. It can be any one of a variety NJE over TCP/IP
+implementations for other platforms.</p>
+<p>The remote end does not even have to be remote. Two instances of
+(modified) VM/370 RSCS or MVS 3.8 NJE38 running on the same VM/370
+instance running on Hercules may use a pair of these devices to create
+an NJE link between themselves, between first level VM/370 and second
+level MVS 3.8 for example.</p>
+<p>NJE over TCP/IP is described here:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://www.nic.funet.fi/pub/netinfo/CREN/brfc0002.text">http://www.nic.funet.fi/pub/netinfo/CREN/brfc0002.text</a></p></li>
+</ul>
+<p>Please note that references to VMNET in the above are unrelated to the
+VMNET CTC emulation present in Hercules which is something different
+entirely.</p>
+<p>Although this device emulates a 2703 to the Hercules guest, this does
+not impose any requirement for 2703 emulation or bisync lines to exist
+at the far end of any links. No 2703 specific protocol or emulation is
+exposed outside Hercules. I do not know any way of using this device
+emulation in conjunction with a real 2703 or a real bisync line but it
+is not impossible that hardware could exist that can convert between a
+real bisync line and NJE over TCP/IP protocol.</p>
+<p>This device emulation is based on Ivan Warren’s <strong>``commadpt.c``</strong> 2703
+emulation.</p>
+<section id="hercules-device-statement">
+<h2>Hercules device statement<a class="headerlink" href="#hercules-device-statement" title="Permalink to this heading">¶</a></h2>
+<pre>
+0CUU  <b>TCPNJE</b>  2703  <b>rhost</b>=address  <b>rnode</b>=node  <b>rport</b>=port
+                    <b>lhost</b>=address  <b>lnode</b>=node  <b>lport</b>=port
+                    <b>connect</b>=n  <b>listen</b>=n
+                    <b>debug</b>=n  <b>trace</b>=n  <b>bufsize</b>=n
+</pre><pre>
+    <b>cuu</b>       Device address (VM/370 and MVS 3.8 allow device addresses
+              between 000 and fff).
+
+    <b>rhost</b>     The remote host ip address or domain name.  If a domain name is
+              specified, it is only looked up at device configuration time.
+
+    <b>rnode</b>     The NJE link name of the remote end.  To minimise confusion, it should
+              agree with RSCS remote linkname. <b><a href=#footnotes>[1]</a></b>
+
+    <b>rport</b>     The remote port number or service name.  Defaults to 175.  Must agree
+              with whatever the remote end is using as their listening port. This can
+              be altered by NAT along the path between the local end and the remote
+              end.
+
+    <b>lhost</b>     The local interface IP address on which to listen.  If not specified,
+              all interfaces will be used.  Only relevant if there is more than one IP
+              interface and even then, more trouble than it is worth so don't use it!
+
+    <b>lnode</b>     The NJE link name of the local end.  Should agree with the local
+              nodename in use by RSCS. <b><a href=#footnotes>[1]</a></b>
+
+    <b>lport</b>     The local TCP port number or service name on which the line will listen
+              for incoming TCP calls.  Defaults to 175.  As this is a privileged port
+              (< 1024), Hercules will need to be run with privileges to be able to
+              listen on this port.  If this is not desired, use a port number > 1024
+              (which is not guaranteed to be available), for example 1175, or put up
+              with the listener not working. <b><a href=#footnotes>[2]</a></b>
+
+    <b>connect</b>   An integer controlling whether this line will attempt outgoing connects.
+              If the line is active and connect is set to one (which is the default), an
+              outgoing connection attempt is made periodically. If connect is set to zero,
+              no outgoing connection attempts are made. <b><a href=#footnotes>[3]</a></b>
+
+    <b>listen</b>    An integer controlling whether this line will listen for incoming
+              connections. If the line is active and listen is set to one (which is the
+              default), the line will listen for incoming connections. If listen is set to
+              zero, the line will not listen for incoming connections. <b><a href=#footnotes>[3]</a></b>
+
+    <b>debug</b>     An integer representing the debug level which specifies what messages
+              tcpnje will display on the Hercules console.  The default value is 127
+              which results in messages relating to "unusual" and "unexpected"
+              events only being displayed. <b><a href=#footnotes>[4]</a></b>
+
+    <b>trace</b>     An integer representing the debug level which specifies what messages
+              tcpnje will display on the Hercules console when device tracing is on.
+              The default value is 65535 which causes all categories of messages to
+              be displayed when device tracing is enabled. <b><a href=#footnotes>[4]</a></b>
+
+    <b>rto</b>       Read timeout in milliseconds.  Default 3000 (3 seconds).
+
+    <b>bufsize</b>   TCPNJE buffer size in bytes.  Defaults to 8192.  Must correspond
+              with the value in use at the other end of the link.
+</pre><p>Multiple tcpnje device statements may use the same <code class="docutils literal notranslate"><span class="pre">lport</span></code> value and
+this is the recommend practice. Only one of the devices will succeed in
+listening on the specified port at any given time, however, incoming
+connections for other devices received by the listening device will be
+automatically redirected to the correct tcpnje device.</p>
+<p>Changes may be made to tcpnje device parameters while Hercules is
+running by using the Hercules console commands <code class="docutils literal notranslate"><span class="pre">detach</span></code> and
+<code class="docutils literal notranslate"><span class="pre">attach</span></code>. It is recommended that devices are varied offline under
+VM/370, MVS 3.8 etc before detaching.</p>
+<hr class="docutils" />
+<section id="footnotes">
+<h3>Footnotes:<a class="headerlink" href="#footnotes" title="Permalink to this heading">¶</a></h3>
+<p>1.   NJE nodenames are one to eight characters long and should be
+composed of letters and numbers. Lower case letters get translated to
+upper case. Other characters could also work but problems with
+translation to ASCII and other such issues can only become greater.</p>
+<p>2.   TCPNJE is peer-to-peer, not client/server. Even if it is not
+possible to receive incoming connections, outgoing connections could
+succeed, provided the remote end does not have the same issue with it’s
+listener.</p>
+<p>3.   The connect and listen options are primarily meant to be used in
+situations as described above [2]. The TCPNJE protocoll was designed
+without firewalls in mind, i.e. under the assumption the both peers will
+always be able to communicate freely in both directions. Particularly,
+the resolution of connect collisions during session setup is based upon
+this assumption. When connects are only possible in one direction this
+assumption can lead to deadlocks, such that the session will never
+connect. In these situations the connect and listen options can be used
+to define in advance, which side will be the active one (listen=0) and
+which side will be the passive one (connect=0). That way, no collisions
+are possible and connections will typically succeed flawlessly.</p>
+<p>Another use case for the connect and listen options are nodes that are
+not regularly connected (the typical <a class="reference external" href="mailto:mainframe&#37;&#52;&#48;home">mainframe<span>&#64;</span>home</a>). Setting connect=0
+on the side of the connection that is regularly online, and listen=0 on
+the <a class="reference external" href="mailto:mainframe&#37;&#52;&#48;home">mainframe<span>&#64;</span>home</a>, will massively reduce the amount of console messages
+being issued due to failed connection attempts while the <a class="reference external" href="mailto:mainframe&#37;&#52;&#48;home">mainframe<span>&#64;</span>home</a>
+isn’t up.</p>
+<ol class="arabic simple" start="4">
+<li><p>  Message categories for debug and trace bitmasks:</p></li>
+</ol>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>binary</p></th>
+<th class="head"><p>Hex</p></th>
+<th class="head"><p>Category</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>X’0001’</p></td>
+<td><p>Startup messages, unexpected serious errors</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>X’0002’</p></td>
+<td><p>Configuration / data errors</p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p>X’0004’</p></td>
+<td><p>Unexpected TCP/IP failures</p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td><p>X’0008’</p></td>
+<td><p>TCPNJE failures</p></td>
+</tr>
+<tr class="row-even"><td><p>16</p></td>
+<td><p>X’0010’</p></td>
+<td><p>NJE failures</p></td>
+</tr>
+<tr class="row-odd"><td><p>32</p></td>
+<td><p>X’0020’</p></td>
+<td><p>Routine TCP/IP failures</p></td>
+</tr>
+<tr class="row-even"><td><p>64</p></td>
+<td><p>X’0040’</p></td>
+<td><p>NJE connection information</p></td>
+</tr>
+<tr class="row-odd"><td><p>128</p></td>
+<td><p>X’0080’</p></td>
+<td><p>TCP/IP information</p></td>
+</tr>
+<tr class="row-even"><td><p>256</p></td>
+<td><p>X’0100’</p></td>
+<td><p>TCPNJE connection information</p></td>
+</tr>
+<tr class="row-odd"><td><p>512</p></td>
+<td><p>X’0200’</p></td>
+<td><p>General information</p></td>
+</tr>
+<tr class="row-even"><td><p>1024</p></td>
+<td><p>X’0400’</p></td>
+<td><p>CCW tracing</p></td>
+</tr>
+<tr class="row-odd"><td><p>2048</p></td>
+<td><p>X’0800’</p></td>
+<td><p>NJE record information</p></td>
+</tr>
+<tr class="row-even"><td><p>4096</p></td>
+<td><p>X’1000’</p></td>
+<td><p>2703 overhead</p></td>
+</tr>
+<tr class="row-odd"><td><p>8192</p></td>
+<td><p>X’2000’</p></td>
+<td><p>Full data dumps</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">¶</a></h2>
+<p>Sample device statements to link two RSCS userids running on VM/370 or
+MVS 3.8:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0040</span>  <span class="n">TCPNJE</span>  <span class="mi">2703</span>  <span class="n">rhost</span><span class="o">=</span><span class="mf">127.0.0.1</span>  <span class="n">rport</span><span class="o">=</span><span class="mi">1175</span>  <span class="n">rnode</span><span class="o">=</span><span class="n">NODEA</span>  <span class="n">lport</span><span class="o">=</span><span class="mi">1175</span>  <span class="n">lnode</span><span class="o">=</span><span class="n">NODEB</span>
+<span class="mi">0041</span>  <span class="n">TCPNJE</span>  <span class="mi">2703</span>  <span class="n">rhost</span><span class="o">=</span><span class="mf">127.0.0.1</span>  <span class="n">rport</span><span class="o">=</span><span class="mi">1175</span>  <span class="n">rnode</span><span class="o">=</span><span class="n">NODEB</span>  <span class="n">lport</span><span class="o">=</span><span class="mi">1175</span>  <span class="n">lnode</span><span class="o">=</span><span class="n">NODEA</span>
+</pre></div>
+</div>
+<p>Sample device statements to link two nodes, one of which being protected
+by a firewall:</p>
+<p>On the node inside the firewall</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0090</span>  <span class="n">TCPNJE</span>  <span class="mi">2703</span>  <span class="n">listen</span><span class="o">=</span><span class="mi">0</span>  <span class="n">lnode</span><span class="o">=</span><span class="n">yEARN</span> <span class="n">rnode</span><span class="o">=</span><span class="n">xEARN</span> <span class="n">lport</span><span class="o">=</span><span class="mi">39175</span> <span class="n">rport</span><span class="o">=</span><span class="mi">27030</span> <span class="n">rhost</span><span class="o">=</span><span class="n">xEA</span><span class="o">.</span><span class="n">RNi</span><span class="o">.</span><span class="n">p</span><span class="o">-</span><span class="n">a</span><span class="o">.</span><span class="n">ddr</span>
+</pre></div>
+</div>
+<p>On the node outside the firewall</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0090</span>  <span class="n">TCPNJE</span>  <span class="mi">2703</span>  <span class="n">connect</span><span class="o">=</span><span class="mi">0</span> <span class="n">lnode</span><span class="o">=</span><span class="n">xEARN</span> <span class="n">rnode</span><span class="o">=</span><span class="n">yEARN</span> <span class="n">lport</span><span class="o">=</span><span class="mi">27030</span> <span class="n">rport</span><span class="o">=</span><span class="mi">39175</span> <span class="n">rhost</span><span class="o">=</span><span class="n">yEA</span><span class="o">.</span><span class="n">RNi</span><span class="o">.</span><span class="n">p</span><span class="o">-</span><span class="n">a</span><span class="o">.</span><span class="n">ddr</span>
+</pre></div>
+</div>
+</section>
+<section id="integration-with-vm-370">
+<h2>Integration with VM/370<a class="headerlink" href="#integration-with-vm-370" title="Permalink to this heading">¶</a></h2>
+<p>For modifications to VM/370 RSCS to support NJE links, see:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://software.beyondthepale.ie/VM/RSCSupdates/">http://software.beyondthepale.ie/VM/RSCSupdates/</a></p></li>
+</ul>
+</section>
+<section id="integration-with-mvs-3-8">
+<h2>Integration with MVS 3.8<a class="headerlink" href="#integration-with-mvs-3-8" title="Permalink to this heading">¶</a></h2>
+<p>Like VM/370 RSCS, MVS 3.8 JES2 does not support NJE out of the box. A
+natural step would have been to make similar modifications to MVS 3.8
+JES2 than the ones for VM/370 RSCS mentioned above. However, this turned
+out being an extremely complex effort and was thus abandoned. Instead,
+Bob Polmanter developed a standalone product named NJE38 to perform NJE
+communications independently from JES2. Thanks to Bob Polmanter for
+making it publicly available from
+<a class="reference external" href="https://groups.io/g/H390-MVS/files/nje38v200.zip">https://groups.io/g/H390-MVS/files/nje38v200.zip</a>! Please follow the
+detailed installation instructions that come with the product.</p>
+</section>
+<section id="known-bugs-and-caveats">
+<h2>Known Bugs and Caveats<a class="headerlink" href="#known-bugs-and-caveats" title="Permalink to this heading">¶</a></h2>
+<p>As well as the bugs and caveats originally listed by Ivan below, support
+for DIAL, POLL and PREPARE CCWs and connection timeouts are not
+implemented although code from <strong>``commadpt.c``</strong> has been left in place
+in case there is a need for these in the future. Support for read
+timeouts is somewhat dubious. Provision has been included for
+implementing this device as a CTCA rather than a 2703 but no work has
+been done on this as yet. Some of the timeouts specified in brfc0002
+have not yet been implemented. This can lead to links getting stuck in
+the wrong state when attempting to connect and the other end is not
+ready. Stopping and restarting the link is required to get back to a
+state from which the link can reconnect. It is hoped to implement the
+timeouts necessary to avoid this issue in a later release.</p>
+<section id="ivans-original-bugs-caveats">
+<h3>Ivan’s original Bugs, Caveats:<a class="headerlink" href="#ivans-original-bugs-caveats" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>The Address Prepare is not implemented.</p></li>
+<li><p>The POLL CCW has not been tested.</p></li>
+<li><p>Group DIAL IN is not implemented.</p></li>
+<li><p>DIAL CCW Not tested.</p></li>
+<li><p>There is 1 thread per line, when there should be 1 thread for ALL
+lines.</p></li>
+<li><p>MAXDEVT may have to be adjusted under WINDOWS to accomodate for a
+large number of lines (because some I/O may take an undefinite amount
+of time).</p></li>
+<li><p>There is no “REAL” BSC line support yet.</p></li>
+</ul>
+</section>
+</section>
+<section id="bug-reports">
+<h2>Bug Reports<a class="headerlink" href="#bug-reports" title="Permalink to this heading">¶</a></h2>
+<p>Please report any problems with this implementation of TCPNJE to the
+<a class="reference external" href="http://www.sdl-hercules-390.org">SDL Hercules Hyperion</a> development
+team via our official <a class="reference external" href="https://github.com/SDL-Hercules-390/hyperion/issues">GitHub
+Issues</a> web page
+at:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/SDL-Hercules-390/hyperion/issues">https://github.com/SDL-Hercules-390/hyperion/issues</a></p></li>
+</ul>
+<p>Please DO NOT report problems to Peter Coghlan. He does NOT provide any
+support for this implementation. This implementation of TCPNJE is
+supported ONLY by the SDL Hercules Hyperion development team.</p>
+<p>Thank you.</p>
+<p>Enjoy your personal mainframe.   <code class="docutils literal notranslate"><span class="pre">:)</span></code></p>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Read the Docs</span>
+      v: master
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+      <dl>
+        <dt>Languages</dt>
+        
+           <strong> 
+          <dd><a href="/herc-docs-demo/en/master/">en</a></dd>
+           </strong> 
+        
+      </dl>
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+          
+          <dd><a href="/herc-docs-demo/en/fovea1959/">fovea1959</a></dd>
+          
+        
+           <strong> 
+          <dd><a href="/herc-docs-demo/en/master/">master</a></dd>
+           </strong> 
+        
+          
+          <dd><a href="/herc-docs-demo/en/0.0/">0.0</a></dd>
+          
+        
+          
+          <dd><a href="/herc-docs-demo/en/1.0/">1.0</a></dd>
+          
+        
+      </dl>
+      
+      
+      <dl>
+        <dt>Downloads</dt>
+        
+          <dd><a href="/herc-docs-demo/en/master/Hercules Documentation Demo-docs_en_master.pdf">pdf</a></dd>
+        
+          <dd><a href="/herc-docs-demo/en/master/Hercules Documentation Demo-docs_en_master.epub">epub</a></dd>
+        
+          <dd><a href="/herc-docs-demo/en/master/Hercules Documentation Demo-docs_en_master.html.tar.gz">tarred HTML</a></dd>
+        
+          <dd><a href="/herc-docs-demo/en/master/Hercules Documentation Demo-docs_en_master.single.html.tar.gz">tarred single file HTML</a></dd>
+        
+      </dl>
+      
+      
+      <hr/>
+      <a href="https://tech.michaelaltfield.net/2020/07/18/sphinx-rtd-github-pages-1/">Continuous Documentation</a> hosting provided by <a href="https://pages.github.com/">GitHub Pages</a>.
+ 
+    </div>
+  </div>
+
+ 
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

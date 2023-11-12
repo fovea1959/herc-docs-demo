@@ -1,0 +1,512 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Hercules PTT Tracing &mdash; Hercules Documentation Demo 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link href="_static/herc_style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Hercules Documentation Demo
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                master
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="hercinst.html">Building and Installing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration File</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercdasd.html">Creating DASD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercoper.html">Operating Procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercsupp.html">Technical Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercfaq.html">Frequently-Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="messages.html">Messages and Codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aa_auxdocs.html">Supporting documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_a.html">Appendix A - Documentation Standards</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Hercules Documentation Demo</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Hercules PTT Tracing</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/README.PTT.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="hercules-ptt-tracing">
+<h1>Hercules PTT Tracing<a class="headerlink" href="#hercules-ptt-tracing" title="Permalink to this heading">¶</a></h1>
+<p><strong>``PTT``</strong> is a misnomer.</p>
+<p>The Hercules “Threading and locking trace debugger” is not just for
+thread and lock tracing. It is actually a generic Hercules internal
+event tracing debugging facility.</p>
+<p>Early in Hercules development when threading and locks were introduced,
+we had a lot of trouble with incorrect lock management, resulting in
+deadlocks and other thread related problems. We’re better at it now, but
+we still have problems with it from time to time. (Programmers are not
+perfect creatures and sometimes make mistakes, Hercules developers
+included.)</p>
+<p>Greg Smith was the one that took up the challenge and created our basic
+PTT tracing facility to try and help identify such threading/locking
+problems. (The <code class="docutils literal notranslate"><span class="pre">PTT</span></code> orignally stood for “POSIX Thread Tracing”.)</p>
+<p>It was primarily written to intercept lock and condition variable calls
+and add a table entry to an internal wraparound event table which could
+then be dumped (displayed) on demand whenever it appeared a deadlock had
+occurred.</p>
+<p>He designed it however as pretty much a generic “event tracing” tool,
+such that <em>ANY</em> “event” could be traced, and not just locking or
+threading events.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">ptt</span></code> command is used to create (allocate) the table and to define
+what type (class) of events should be traced. Enter <code class="docutils literal notranslate"><span class="pre">help</span> <span class="pre">ptt</span></code> for
+more information:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Command               Description
+----------------      -------------------------------------------------------
+ptt                  *Activate or display internal trace table
+
+Format: &quot;ptt [?] [events] [options] [nnnnnn]&quot;
+
+When specified with no operands, the ptt command displays the defined trace
+parameters and the contents of the internal trace table.
+
+When specified with operands, the ptt command defines the trace parameters
+identifying which events are to be traced. When the last option is numeric,
+it defines the size of the trace table itself and activates tracing.
+
+Events:    (should be specified first, before any options are specified)
+
+     (no)log          trace internal logger events
+     (no)tmr          trace internal timer events
+     (no)thr          trace internal threading events
+     (no)inf          trace instruction information events
+     (no)err          trace instruction error events
+     (no)pgm          trace program interrupt events
+     (no)csf          trace interlocked instruction type events
+     (no)sie          trace SIE instruction events
+     (no)sig          trace SIGP instruction events
+     (no)io           trace I/O instruction events
+     (no)txf          trace Transactional-Execution Facility events
+     (no)lcs1         trace LCS timing events
+     (no)lcs2         trace LCS general debugging events
+     (no)qeth         trace QETH general debugging events
+     (no)xxx          trace undefined/generic/custom events
+
+options:   (should be specified last, after any events are specified)
+
+     ?                show currently defined trace parameters
+     (no)lock         lock table before updating
+     (no)tod          timestamp table entries
+     (no)wrap         wraparound trace table
+     (no)dtax         dump table at exit
+     to=nnn           automatic display timeout  (number of seconds)
+     nnnnnn           table size                 (number of entries)
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">PTT</span></code> macro statement is then used to add events to the table.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">ptt</span></code> command without any operands is used to dump (display) the
+table.</p>
+<p>As originally written by Greg, the locking call intercept functions were
+part of the general PTT facility, and macro redefinitions were created
+to automatically route our locking calls (<code class="docutils literal notranslate"><span class="pre">obtain_lock</span></code>,
+<code class="docutils literal notranslate"><span class="pre">release_lock</span></code>, etc) to the appropriate “ptt_pthread_xxxx” function
+that would then add the entry to the trace table.</p>
+<p>In June of 2013 however, Fish needed to make some enhancements to the
+lock functions to automatically detect and report errors (non-zero
+return codes from any of the locking calls) under the guidance of Mark
+L. Gaubatz.</p>
+<p>It was at this time it was recognized that the generalized “PTT
+intercept” functions that were originally a part of the pttrace.c module
+as originally written/designed by Greg Smith should actually be moved
+into a separate “threading/locking” module
+(<a class="reference external" href="../hthreads.c">hthreads.c</a>), thereby leaving the
+<a class="reference external" href="../pttrace.c">pttrace.c</a>/<a class="reference external" href="../pttrace.h">.h</a> modules responsible
+for only what they were meant for: generalized event table tracing.</p>
+<p>This allowed us to clean up much of the macro redefinition monkey
+business originally in the <a class="reference external" href="../hthreads.h">hthreads.h</a> header that
+was originally coded solely for the purpose of interfacing with the
+“PTT” internal trace table facility.</p>
+<p>Now, the <code class="docutils literal notranslate"><span class="pre">htreads.c</span></code> module is responsible for calling the proper
+threading implementation function (pthreads on non-Windows or fthreads
+on Windows) as well as checking the return code and, if necessary,
+calling the “PTT” facility to add an entry to the trace table.</p>
+<section id="using-ptt">
+<h2>Using PTT<a class="headerlink" href="#using-ptt" title="Permalink to this heading">¶</a></h2>
+<p>The PTT tracing facility can be used to add generic “events” to the
+internal trace table, and is thus ideal for helping to debug <em>ANY</em>
+Hercules module/driver and not just for debugging lock/thread handling.</p>
+<p>To use it, simply add a <code class="docutils literal notranslate"><span class="pre">PTT</span></code> macro statement to your code:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="n">PTT</span><span class="p">(</span><span class="w"> </span><span class="n">trclass</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="p">,</span><span class="w"> </span><span class="n">data1</span><span class="p">,</span><span class="w"> </span><span class="n">data2</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="w"> </span><span class="p">);</span>
+<span class="n">or</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">g</span><span class="o">:</span>
+<span class="w">    </span><span class="n">PTT_XXX</span><span class="p">(</span><span class="w"> </span><span class="n">msg</span><span class="p">,</span><span class="w"> </span><span class="n">data1</span><span class="p">,</span><span class="w"> </span><span class="n">data2</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="w"> </span><span class="p">);</span>
+</pre></div>
+</div>
+<p>The specified macro arguments are then added to the trace table entry
+when the event occurs:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="cm">/* Trace Table Entry                                                 */</span>
+<span class="cm">/*-------------------------------------------------------------------*/</span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">PTT_TRACE</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">TID</span><span class="w">             </span><span class="n">tid</span><span class="p">;</span><span class="w">                </span><span class="cm">/* Thread id                 */</span>
+<span class="w">    </span><span class="n">U64</span><span class="w">             </span><span class="n">trclass</span><span class="p">;</span><span class="w">            </span><span class="cm">/* Trace class (see header)  */</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w">     </span><span class="n">msg</span><span class="p">;</span><span class="w">                </span><span class="cm">/* Trace message             */</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="o">*</span><span class="w">     </span><span class="n">data1</span><span class="p">;</span><span class="w">              </span><span class="cm">/* Data 1                    */</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="o">*</span><span class="w">     </span><span class="n">data2</span><span class="p">;</span><span class="w">              </span><span class="cm">/* Data 2                    */</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w">     </span><span class="n">loc</span><span class="p">;</span><span class="w">                </span><span class="cm">/* File name:line number     */</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">timeval</span><span class="w">  </span><span class="n">tv</span><span class="p">;</span><span class="w">                 </span><span class="cm">/* Time of day               */</span>
+<span class="w">    </span><span class="n">S64</span><span class="w">             </span><span class="n">rc</span><span class="p">;</span><span class="w">                 </span><span class="cm">/* Return code               */</span>
+<span class="p">};</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">PTT_TRACE</span><span class="w"> </span><span class="n">PTT_TRACE</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>The message must be a string value that remains valid for the duration
+of Hercules execution. Usually it is coded as a string constant
+(“message”) and not as a pointer variable name (since the variable might
+go out of scope or change in value, which would lead to
+erroneous/misleading trace messages). It is suggested to try and keep
+them short (no longer than 11-12 characters or so).</p>
+<p>The two data pointer values can be anything. They do not need to
+actually point to anything. They could be a 64-bit integer value for
+example. Same idea with the return code: it can be any integer value
+meaningful to you and your code/driver. It does not have to be an actual
+return code.</p>
+<p>The trace class must be one of the predefined classes. To make PTT
+easier to use, helper macros are defined that include the predefined
+class already in the macro definition itself, so all you have to do is
+use the helper macro instead, specifying only your “message” and data
+values without having to be bothered with also coding the trace class
+too:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define PTT_LOG(   m, d1, d2, rc )  PTT( PTT_CL_LOG,   m, d1, d2, rc )</span>
+<span class="cp">#define PTT_TMR(   m, d1, d2, rc )  PTT( PTT_CL_TMR,   m, d1, d2, rc )</span>
+<span class="cp">#define PTT_THR(   m, d1, d2, rc )  PTT( PTT_CL_THR,   m, d1, d2, rc )</span>
+<span class="cp">#define PTT_INF(   m, d1, d2, rc )  PTT( PTT_CL_INF,   m, d1, d2, rc )</span>
+<span class="cp">#define PTT_ERR(   m, d1, d2, rc )  PTT( PTT_CL_ERR,   m, d1, d2, rc )</span>
+<span class="cp">#define PTT_PGM(   m, d1, d2, rc )  PTT( PTT_CL_PGM,   m, d1, d2, rc )</span>
+<span class="cp">#define PTT_CSF(   m, d1, d2, rc )  PTT( PTT_CL_CSF,   m, d1, d2, rc )</span>
+<span class="cp">#define PTT_SIE(   m, d1, d2, rc )  PTT( PTT_CL_SIE,   m, d1, d2, rc )</span>
+<span class="cp">#define PTT_SIG(   m, d1, d2, rc )  PTT( PTT_CL_SIG,   m, d1, d2, rc )</span>
+<span class="cp">#define PTT_IO(    m, d1, d2, rc )  PTT( PTT_CL_IO,    m, d1, d2, rc )</span>
+<span class="cp">#define PTT_TXF(   m, d1, d2, rc )  PTT( PTT_CL_TXF,   m, d1, d2, rc )</span>
+<span class="cp">#define PTT_LCS1(  m, d1, d2, rc )  PTT( PTT_CL_LCS1,  m, d1, d2, rc )</span>
+<span class="cp">#define PTT_LCS2(  m, d1, d2, rc )  PTT( PTT_CL_LCS2,  m, d1, d2, rc )</span>
+<span class="cp">#define PTT_QETH(  m, d1, d2, rc )  PTT( PTT_CL_QETH,  m, d1, d2, rc )</span>
+<span class="cp">#define PTT_XXX(   m, d1, d2, rc )  PTT( PTT_CL_XXX,   m, d1, d2, rc )</span>
+</pre></div>
+</div>
+<p>For generic event type trace entries you should use the <code class="docutils literal notranslate"><span class="pre">PTT_XXX</span></code>
+helper macro. The other helper macros are predefined classes meant for
+specific areas of Hercules logic where you want the PTT trace statement
+to remain a permanent part of Hercules source, allowing it to be
+activated at any time via the <code class="docutils literal notranslate"><span class="pre">ptt</span></code> command. Other classes are being
+developed/defined for future use to make it easier to define your own
+trace classes separate from the Hercules predefined internal classes.
+The <code class="docutils literal notranslate"><span class="pre">PTT_XXX</span></code> macro is meant for temporary one-shot debugging.</p>
+<p>When PTT tracing is activated via the <code class="docutils literal notranslate"><span class="pre">ptt</span></code> command to allocate a
+non-zero number of trace table entries (enter <code class="docutils literal notranslate"><span class="pre">help</span> <span class="pre">ptt</span></code> for more
+information), the PTT facility will then insert your trace events into
+the table as they occur. (Note that the table is a wrap-around table
+unless the <code class="docutils literal notranslate"><span class="pre">nowrap</span></code> option is specified.)</p>
+<p>When the entry is added, the thread id of the thread making the call,
+the current time of day and the source file name and line number where
+the call was made are added to the trace table entry along with whatever
+other debug information you may need (up to 3 different 64-bit values,
+being the <code class="docutils literal notranslate"><span class="pre">d1</span></code>, <code class="docutils literal notranslate"><span class="pre">d2</span></code> and <code class="docutils literal notranslate"><span class="pre">rc</span></code> arguments of the macros you see
+above). They can be anything you want. An address, a numeric value.
+Anything! It’s just a 64-bit value as far as PTT is concerned.</p>
+<p>When you later enter the <code class="docutils literal notranslate"><span class="pre">ptt</span></code> command with no arguments to dump
+(display) the table, the resulting display might then look something
+like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">HHC90021D</span> <span class="mi">08</span><span class="p">:</span><span class="mi">41</span><span class="p">:</span><span class="mf">34.817511</span> <span class="mi">00001414</span> <span class="n">Processor</span> <span class="n">CP00</span>  <span class="n">io</span><span class="o">.</span><span class="n">c</span><span class="p">:</span><span class="mi">789</span>           <span class="n">stsch</span> <span class="n">b4ob</span>        <span class="mi">0000000000000000</span> <span class="mi">0000000000000000</span> <span class="mi">0000000000000000</span>
+<span class="n">HHC90021D</span> <span class="mi">08</span><span class="p">:</span><span class="mi">41</span><span class="p">:</span><span class="mf">34.817512</span> <span class="mi">00001414</span> <span class="n">Processor</span> <span class="n">CP00</span>  <span class="n">io</span><span class="o">.</span><span class="n">c</span><span class="p">:</span><span class="mi">791</span>           <span class="n">stsch</span> <span class="n">afob</span>        <span class="mi">0000000000000000</span> <span class="mi">0000000000000000</span> <span class="mi">0000000000000000</span>
+<span class="n">HHC90021D</span> <span class="mi">08</span><span class="p">:</span><span class="mi">41</span><span class="p">:</span><span class="mf">34.817512</span> <span class="mi">00001414</span> <span class="n">Processor</span> <span class="n">CP00</span>  <span class="n">io</span><span class="o">.</span><span class="n">c</span><span class="p">:</span><span class="mi">798</span>           <span class="n">stsch</span> <span class="n">b4rl</span>        <span class="mi">0000000000000000</span> <span class="mi">0000000000000000</span> <span class="mi">0000000000000000</span>
+<span class="n">HHC90021D</span> <span class="mi">08</span><span class="p">:</span><span class="mi">41</span><span class="p">:</span><span class="mf">34.817512</span> <span class="mi">00001414</span> <span class="n">Processor</span> <span class="n">CP00</span>  <span class="n">io</span><span class="o">.</span><span class="n">c</span><span class="p">:</span><span class="mi">800</span>           <span class="n">stsch</span> <span class="n">afrl</span>        <span class="mi">0000000000000000</span> <span class="mi">0000000000000000</span> <span class="mi">0000000000000000</span>
+<span class="n">HHC90021D</span> <span class="mi">08</span><span class="p">:</span><span class="mi">41</span><span class="p">:</span><span class="mf">34.817517</span> <span class="mi">00001414</span> <span class="n">Processor</span> <span class="n">CP00</span>  <span class="n">io</span><span class="o">.</span><span class="n">c</span><span class="p">:</span><span class="mi">789</span>           <span class="n">stsch</span> <span class="n">b4ob</span>        <span class="mi">0000000000000000</span> <span class="mi">0000000000000000</span> <span class="mi">0000000000000000</span>
+<span class="n">HHC90021D</span> <span class="mi">08</span><span class="p">:</span><span class="mi">41</span><span class="p">:</span><span class="mf">34.817518</span> <span class="mi">00001414</span> <span class="n">Processor</span> <span class="n">CP00</span>  <span class="n">io</span><span class="o">.</span><span class="n">c</span><span class="p">:</span><span class="mi">791</span>           <span class="n">stsch</span> <span class="n">afob</span>        <span class="mi">0000000000000000</span> <span class="mi">0000000000000000</span> <span class="mi">0000000000000000</span>
+<span class="n">HHC90021D</span> <span class="mi">08</span><span class="p">:</span><span class="mi">41</span><span class="p">:</span><span class="mf">34.817518</span> <span class="mi">00001414</span> <span class="n">Processor</span> <span class="n">CP00</span>  <span class="n">io</span><span class="o">.</span><span class="n">c</span><span class="p">:</span><span class="mi">798</span>           <span class="n">stsch</span> <span class="n">b4rl</span>        <span class="mi">0000000000000000</span> <span class="mi">0000000000000000</span> <span class="mi">0000000000000000</span>
+<span class="n">HHC90021D</span> <span class="mi">08</span><span class="p">:</span><span class="mi">41</span><span class="p">:</span><span class="mf">34.817519</span> <span class="mi">00001414</span> <span class="n">Processor</span> <span class="n">CP00</span>  <span class="n">io</span><span class="o">.</span><span class="n">c</span><span class="p">:</span><span class="mi">800</span>           <span class="n">stsch</span> <span class="n">afrl</span>        <span class="mi">0000000000000000</span> <span class="mi">0000000000000000</span> <span class="mi">0000000000000000</span>
+<span class="n">HHC90021D</span> <span class="mi">08</span><span class="p">:</span><span class="mi">41</span><span class="p">:</span><span class="mf">34.817520</span> <span class="mi">00001414</span> <span class="n">Processor</span> <span class="n">CP00</span>  <span class="n">io</span><span class="o">.</span><span class="n">c</span><span class="p">:</span><span class="mi">789</span>           <span class="n">stsch</span> <span class="n">b4ob</span>        <span class="mi">0000000000000000</span> <span class="mi">0000000000000000</span> <span class="mi">0000000000000000</span>
+<span class="n">HHC90021D</span> <span class="mi">08</span><span class="p">:</span><span class="mi">41</span><span class="p">:</span><span class="mf">34.817520</span> <span class="mi">00001414</span> <span class="n">Processor</span> <span class="n">CP00</span>  <span class="n">io</span><span class="o">.</span><span class="n">c</span><span class="p">:</span><span class="mi">791</span>           <span class="n">stsch</span> <span class="n">afob</span>        <span class="mi">0000000000000000</span> <span class="mi">0000000000000000</span> <span class="mi">0000000000000000</span>
+<span class="n">HHC90021D</span> <span class="mi">08</span><span class="p">:</span><span class="mi">41</span><span class="p">:</span><span class="mf">34.817520</span> <span class="mi">00001414</span> <span class="n">Processor</span> <span class="n">CP00</span>  <span class="n">io</span><span class="o">.</span><span class="n">c</span><span class="p">:</span><span class="mi">798</span>           <span class="n">stsch</span> <span class="n">b4rl</span>        <span class="mi">0000000000000000</span> <span class="mi">0000000000000000</span> <span class="mi">0000000000000000</span>
+<span class="n">HHC90021D</span> <span class="mi">08</span><span class="p">:</span><span class="mi">41</span><span class="p">:</span><span class="mf">34.817521</span> <span class="mi">00001414</span> <span class="n">Processor</span> <span class="n">CP00</span>  <span class="n">io</span><span class="o">.</span><span class="n">c</span><span class="p">:</span><span class="mi">800</span>           <span class="n">stsch</span> <span class="n">afrl</span>        <span class="mi">0000000000000000</span> <span class="mi">0000000000000000</span> <span class="mi">0000000000000000</span>
+<span class="n">HHC90021D</span> <span class="mi">08</span><span class="p">:</span><span class="mi">41</span><span class="p">:</span><span class="mf">34.817522</span> <span class="mi">00001414</span> <span class="n">Processor</span> <span class="n">CP00</span>  <span class="n">io</span><span class="o">.</span><span class="n">c</span><span class="p">:</span><span class="mi">789</span>           <span class="n">stsch</span> <span class="n">b4ob</span>        <span class="mi">0000000000000000</span> <span class="mi">0000000000000000</span> <span class="mi">0000000000000000</span>
+<span class="n">HHC90021D</span> <span class="mi">08</span><span class="p">:</span><span class="mi">41</span><span class="p">:</span><span class="mf">34.817522</span> <span class="mi">00001414</span> <span class="n">Processor</span> <span class="n">CP00</span>  <span class="n">io</span><span class="o">.</span><span class="n">c</span><span class="p">:</span><span class="mi">791</span>           <span class="n">stsch</span> <span class="n">afob</span>        <span class="mi">0000000000000000</span> <span class="mi">0000000000000000</span> <span class="mi">0000000000000000</span>
+<span class="n">HHC90021D</span> <span class="mi">08</span><span class="p">:</span><span class="mi">41</span><span class="p">:</span><span class="mf">34.817522</span> <span class="mi">00001414</span> <span class="n">Processor</span> <span class="n">CP00</span>  <span class="n">io</span><span class="o">.</span><span class="n">c</span><span class="p">:</span><span class="mi">798</span>           <span class="n">stsch</span> <span class="n">b4rl</span>        <span class="mi">0000000000000000</span> <span class="mi">0000000000000000</span> <span class="mi">0000000000000000</span>
+<span class="n">HHC90021D</span> <span class="mi">08</span><span class="p">:</span><span class="mi">41</span><span class="p">:</span><span class="mf">34.817523</span> <span class="mi">00001414</span> <span class="n">Processor</span> <span class="n">CP00</span>  <span class="n">io</span><span class="o">.</span><span class="n">c</span><span class="p">:</span><span class="mi">800</span>           <span class="n">stsch</span> <span class="n">afrl</span>        <span class="mi">0000000000000000</span> <span class="mi">0000000000000000</span> <span class="mi">0000000000000000</span>
+<span class="n">HHC90021D</span> <span class="mi">08</span><span class="p">:</span><span class="mi">41</span><span class="p">:</span><span class="mf">34.818615</span> <span class="mi">000025</span><span class="n">a8</span> <span class="n">dev</span> <span class="mi">0580</span> <span class="n">thrd</span>   <span class="n">tapedev</span><span class="o">.</span><span class="n">c</span><span class="p">:</span><span class="mi">2841</span>     <span class="n">locat</span> <span class="n">b4ob</span>        <span class="mi">000000000002421</span><span class="n">c</span> <span class="mi">0000000000000000</span> <span class="mi">0000000000000000</span>
+<span class="n">HHC90021D</span> <span class="mi">08</span><span class="p">:</span><span class="mi">41</span><span class="p">:</span><span class="mf">34.818617</span> <span class="mi">000025</span><span class="n">a8</span> <span class="n">dev</span> <span class="mi">0580</span> <span class="n">thrd</span>   <span class="n">tapedev</span><span class="o">.</span><span class="n">c</span><span class="p">:</span><span class="mi">2843</span>     <span class="n">locat</span> <span class="n">afob</span>        <span class="mi">000000000002421</span><span class="n">c</span> <span class="mi">0000000000000000</span> <span class="mi">0000000000000000</span>
+<span class="n">HHC90021D</span> <span class="mi">08</span><span class="p">:</span><span class="mi">41</span><span class="p">:</span><span class="mf">34.818621</span> <span class="mi">000025</span><span class="n">a8</span> <span class="n">dev</span> <span class="mi">0580</span> <span class="n">thrd</span>   <span class="n">hettape</span><span class="o">.</span><span class="n">c</span><span class="p">:</span><span class="mi">381</span>      <span class="n">fsb_het</span> <span class="n">b4fsb</span>     <span class="mi">0000000000000000</span> <span class="mi">0000000000000000</span> <span class="mi">0000000000000000</span>
+<span class="n">HHC90021D</span> <span class="mi">08</span><span class="p">:</span><span class="mi">41</span><span class="p">:</span><span class="mf">34.819892</span> <span class="mi">000025</span><span class="n">a8</span> <span class="n">dev</span> <span class="mi">0580</span> <span class="n">thrd</span>   <span class="n">hettape</span><span class="o">.</span><span class="n">c</span><span class="p">:</span><span class="mi">385</span>      <span class="n">fsb_het</span> <span class="n">affsb</span>     <span class="mi">0000000000000000</span> <span class="mi">0000000000000000</span> <span class="mi">0000000000000001</span>
+<span class="n">HHC90021D</span> <span class="mi">08</span><span class="p">:</span><span class="mi">41</span><span class="p">:</span><span class="mf">35.819169</span> <span class="mi">000025</span><span class="n">a8</span> <span class="n">dev</span> <span class="mi">0580</span> <span class="n">thrd</span>   <span class="n">hettape</span><span class="o">.</span><span class="n">c</span><span class="p">:</span><span class="mi">381</span>      <span class="n">fsb_het</span> <span class="n">b4fsb</span>     <span class="mi">0000000000000000</span> <span class="mf">00000000000003e8</span> <span class="mi">0000000000000000</span>
+<span class="n">HHC90021D</span> <span class="mi">08</span><span class="p">:</span><span class="mi">41</span><span class="p">:</span><span class="mf">35.820135</span> <span class="mi">000025</span><span class="n">a8</span> <span class="n">dev</span> <span class="mi">0580</span> <span class="n">thrd</span>   <span class="n">hettape</span><span class="o">.</span><span class="n">c</span><span class="p">:</span><span class="mi">385</span>      <span class="n">fsb_het</span> <span class="n">affsb</span>     <span class="mi">0000000000000000</span> <span class="mf">00000000000003e8</span> <span class="mf">00000000000003e9</span>
+<span class="n">HHC90021D</span> <span class="mi">08</span><span class="p">:</span><span class="mi">41</span><span class="p">:</span><span class="mf">36.167940</span> <span class="mi">00001414</span> <span class="n">Processor</span> <span class="n">CP00</span>  <span class="n">io</span><span class="o">.</span><span class="n">c</span><span class="p">:</span><span class="mi">789</span>           <span class="n">stsch</span> <span class="n">b4ob</span>        <span class="mi">0000000000000000</span> <span class="mi">0000000000000000</span> <span class="mi">0000000000000000</span>
+<span class="n">HHC90021D</span> <span class="mi">08</span><span class="p">:</span><span class="mi">41</span><span class="p">:</span><span class="mf">36.819231</span> <span class="mi">000025</span><span class="n">a8</span> <span class="n">dev</span> <span class="mi">0580</span> <span class="n">thrd</span>   <span class="n">hettape</span><span class="o">.</span><span class="n">c</span><span class="p">:</span><span class="mi">381</span>      <span class="n">fsb_het</span> <span class="n">b4fsb</span>     <span class="mi">0000000000000000</span> <span class="mi">00000000000007</span><span class="n">d0</span> <span class="mi">0000000000000000</span>
+<span class="n">HHC90021D</span> <span class="mi">08</span><span class="p">:</span><span class="mi">41</span><span class="p">:</span><span class="mf">36.820209</span> <span class="mi">000025</span><span class="n">a8</span> <span class="n">dev</span> <span class="mi">0580</span> <span class="n">thrd</span>   <span class="n">hettape</span><span class="o">.</span><span class="n">c</span><span class="p">:</span><span class="mi">385</span>      <span class="n">fsb_het</span> <span class="n">affsb</span>     <span class="mi">0000000000000000</span> <span class="mi">00000000000007</span><span class="n">d0</span> <span class="mi">00000000000007</span><span class="n">d1</span>
+<span class="n">HHC90021D</span> <span class="mi">08</span><span class="p">:</span><span class="mi">41</span><span class="p">:</span><span class="mf">37.819128</span> <span class="mi">000025</span><span class="n">a8</span> <span class="n">dev</span> <span class="mi">0580</span> <span class="n">thrd</span>   <span class="n">hettape</span><span class="o">.</span><span class="n">c</span><span class="p">:</span><span class="mi">381</span>      <span class="n">fsb_het</span> <span class="n">b4fsb</span>     <span class="mi">0000000000000000</span> <span class="mi">0000000000000</span><span class="n">bb8</span> <span class="mi">0000000000000000</span>
+<span class="n">HHC90021D</span> <span class="mi">08</span><span class="p">:</span><span class="mi">41</span><span class="p">:</span><span class="mf">37.820136</span> <span class="mi">000025</span><span class="n">a8</span> <span class="n">dev</span> <span class="mi">0580</span> <span class="n">thrd</span>   <span class="n">hettape</span><span class="o">.</span><span class="n">c</span><span class="p">:</span><span class="mi">385</span>      <span class="n">fsb_het</span> <span class="n">affsb</span>     <span class="mi">0000000000000000</span> <span class="mi">0000000000000</span><span class="n">bb8</span> <span class="mi">0000000000000</span><span class="n">bb9</span>
+</pre></div>
+</div>
+<p>The <strong>first column</strong> is the gettimeofday of when the trace event was
+logged, down to the microsecond.</p>
+<p>The <strong>second column</strong> is the id of the thread that logged it.</p>
+<p>The <strong>third column</strong> is the thread name.</p>
+<p>The <strong>fourth</strong> is the of course the filename and line number of the
+source file where the event was logged.</p>
+<p>The <strong>fifth</strong> is a description of the event (i.e. the <code class="docutils literal notranslate"><span class="pre">m</span></code> message
+argument of your PTT helper macro statement, e.g:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">PTT_XXX</span><span class="p">(</span><span class="w"> </span><span class="s">&quot;foobar!&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">val1</span><span class="p">,</span><span class="w"> </span><span class="n">val2</span><span class="p">,</span><span class="w"> </span><span class="n">val3</span><span class="w"> </span><span class="p">);</span>
+</pre></div>
+</div>
+<p>The <strong>last 3 columns</strong> are of course the formatted display of the
+<code class="docutils literal notranslate"><span class="pre">d1</span></code>, <code class="docutils literal notranslate"><span class="pre">d2</span></code> and <code class="docutils literal notranslate"><span class="pre">rc</span></code> helper macro values, being whatever debug
+information you wish to place into your trace record.</p>
+</section>
+<section id="future-direction">
+<h2>Future Direction<a class="headerlink" href="#future-direction" title="Permalink to this heading">¶</a></h2>
+<p>The future direction of the PTT tracing facility is to eventually allow
+each module/driver define their own private trace event classes allowing
+the user (or especially <em>you</em>, the Hercules developer!) to tell PTT
+which of your private classes it should trace. The hope is to provide
+faster and easier debugging without impacting the overall speed of
+execution that “LOGMSG” and “TRACE” macros normally incur (which simply
+log messages to the Hercules panel).</p>
+<p>Each module will ideally be able to define their own set of classes and
+class names separate from other modules. How exactly this is going to
+work has not been thought out yet. It is still in the design / “TODO”
+stage.</p>
+<p>Hopefully someone will find the time to take up the challenge and
+develop it for us.</p>
+<p>“Fish” (David B. Trout) updated January 30, 2023</p>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Read the Docs</span>
+      v: master
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+      <dl>
+        <dt>Languages</dt>
+        
+           <strong> 
+          <dd><a href="/herc-docs-demo/en/master/">en</a></dd>
+           </strong> 
+        
+      </dl>
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+          
+          <dd><a href="/herc-docs-demo/en/fovea1959/">fovea1959</a></dd>
+          
+        
+           <strong> 
+          <dd><a href="/herc-docs-demo/en/master/">master</a></dd>
+           </strong> 
+        
+          
+          <dd><a href="/herc-docs-demo/en/0.0/">0.0</a></dd>
+          
+        
+          
+          <dd><a href="/herc-docs-demo/en/1.0/">1.0</a></dd>
+          
+        
+      </dl>
+      
+      
+      <dl>
+        <dt>Downloads</dt>
+        
+          <dd><a href="/herc-docs-demo/en/master/Hercules Documentation Demo-docs_en_master.pdf">pdf</a></dd>
+        
+          <dd><a href="/herc-docs-demo/en/master/Hercules Documentation Demo-docs_en_master.epub">epub</a></dd>
+        
+          <dd><a href="/herc-docs-demo/en/master/Hercules Documentation Demo-docs_en_master.html.tar.gz">tarred HTML</a></dd>
+        
+          <dd><a href="/herc-docs-demo/en/master/Hercules Documentation Demo-docs_en_master.single.html.tar.gz">tarred single file HTML</a></dd>
+        
+      </dl>
+      
+      
+      <hr/>
+      <a href="https://tech.michaelaltfield.net/2020/07/18/sphinx-rtd-github-pages-1/">Continuous Documentation</a> hosting provided by <a href="https://pages.github.com/">GitHub Pages</a>.
+ 
+    </div>
+  </div>
+
+ 
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

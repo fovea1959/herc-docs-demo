@@ -1,0 +1,724 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="es" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="es" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>System Messages &mdash; documentación de Hercules Documentation Test - 1.0.0</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="prev" title="Operation" href="operation.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Hercules Documentation Test
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Contenidos:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation Instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration File</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operation.html">Operation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">System Messages</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#message-format">Message Format</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ca-communication-adapter-emulation">CA Communication Adapter emulation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#hhcca001i">HHCCA001I</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hhcca002i">HHCCA002I</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hhcca003e">HHCCA003E</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hhcca004w">HHCCA004W</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hhcca005i">HHCCA005I</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hhcca006t">HHCCA006T</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#cf-configuration-file-processing">CF Configuration file processing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cp-cpu-emulation">CP CPU emulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ct-channel-to-channel-adapter-emulation">CT Channel-to-channel adapter emulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cu-cckd-utility">CU CCKD utility</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#da-dasd-emulation-both-ckd-and-fba">DA DASD emulation (both CKD and FBA)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dc-dasdcopy">DC dasdcopy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dg-dyngui-dll">DG dyngui.dll</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#di-dasdinit">DI dasdinit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dl-dasdload">DL dasdload</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ds-dasdisup">DS dasdisup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dt-dasdcat">DT dasdcat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#du-dasd-utilities-common-functions">DU DASD utilities common functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hd-hercules-dynamic-loader">HD Hercules Dynamic Loader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#he-hetinit">HE hetinit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hg-hetget">HG hetget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hm-hetmap">HM hetmap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ht-http-server">HT HTTP server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hu-hetupd">HU hetupd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#if-hercifc-network-interface-configuration-handler">IF hercifc (Network interface configuration handler)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#in-hercules-initialization">IN Hercules initialization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lc-lcs-emulation">LC LCS emulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lg-system-log-functions">LG System Log functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pn-hercules-control-panel-command-messages">PN Hercules control panel command messages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pr-printer-emulation">PR Printer emulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pu-card-punch-emulation">PU Card punch emulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rd-card-reader-emulation">RD Card reader emulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sd-socket-devices-common-functions">SD Socket devices common functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ta-tape-device-emulation">TA Tape device emulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tc-tapecopy">TC tapecopy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#te-1052-and-3270-terminal-emulation">TE 1052 and 3270 terminal emulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tm-tapemap">TM tapemap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ts-tapesplt">TS tapesplt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tt-tod-clock-and-timer-services">TT TOD Clock and Timer Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tu-tun-tap-driver-support">TU TUN/TAP driver support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#vm-vm-cp-emulation-facility">VM VM/CP emulation facility</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Hercules Documentation Test</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>System Messages</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/gsf600y/rtd-github-pages/blob/master/docs/messages.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="system-messages">
+<span id="autodoc"></span><h1>System Messages<a class="headerlink" href="#system-messages" title="Enlace permanente a este encabezado">¶</a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Enlace permanente a este encabezado">¶</a></h2>
+<p>This page describes the system messages for the Hercules S/370, ESA/390, and z/Architecture emulator.</p>
+</section>
+<section id="message-format">
+<h2>Message Format<a class="headerlink" href="#message-format" title="Enlace permanente a este encabezado">¶</a></h2>
+<p>All Hercules-issued messages are of the form <code class="docutils literal notranslate"><span class="pre">HHC*mmnnns*</span> <span class="pre">*text*</span></code> where:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">HHC</span></code> is the message prefix for Hercules. All Hercules messages will have this prefix.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mm</span></code>  specifies the function that issued the message, from the below list</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">nnn</span></code> Specific message number, assigned more or less sequentially.</p></li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">s</span></code>  Message severity</dt><dd><ul>
+<li><p>S  Severe error. Causes immediate termination of Hercules.</p></li>
+<li><p>E  Error. The function being requested did not execute correctly, but Hercules should continue running.</p></li>
+<li><p>W  Warning. Not necessarily an error, but something to take note of and possibly correct.</p></li>
+<li><p>I  Information. General messages that do not require any further action.</p></li>
+<li><p>A  Action. You need to do something.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>text  Message text.</p></li>
+</ul>
+<p>CA Communication Adapter emulation
+CF Configuration file processing
+CP CPU emulation
+CT Channel-to-channel adapter emulation
+CU CCKD utility
+DA DASD emulation (both CKD and FBA)
+DC dasdcopy
+DG dyngui.dll
+DI dasdinit
+DL dasdload
+DS dasdisup
+DT dasdcat
+DU DASD utilities common functions
+HD Hercules Dynamic Loader
+HE hetinit
+HG hetget
+HM hetmap
+HT HTTP server
+HU hetupd
+IF hercifc (Network interface configuration handler)
+IN Hercules initialization
+LC LCS emulation
+LG System Log functions
+PN Hercules control panel command messages
+PR Printer emulation
+PU Card punch emulation
+RD Card reader emulation
+SD Socket devices common functions
+TA Tape device emulation
+TC tapecopy
+TE 1052 and 3270 terminal emulation
+TM tapemap
+TS tapesplt
+TT TOD Clock and Timer Services
+TU TUN/TAP driver support
+VM VM/CP emulation facility</p>
+<section id="ca-communication-adapter-emulation">
+<h3>CA Communication Adapter emulation<a class="headerlink" href="#ca-communication-adapter-emulation" title="Enlace permanente a este encabezado">¶</a></h3>
+<section id="hhcca001i">
+<h4>HHCCA001I<a class="headerlink" href="#hhcca001i" title="Enlace permanente a este encabezado">¶</a></h4>
+<p>HHCCA001I CCUU:Connect out to ipaddr:port failed during initial status : System Cause Text
+Explanation
+HERCULES attempted to make an outgoing TCP connection to ipaddr:port, but the system indicated that there was an error while processing the request.
+System Action
+The DIAL or ENABLE CCW that caused the connection attempt ends with Unit Check and Intervention Required. The reason for the failure is indicated in the System Cause Text field
+Operator Action
+None
+Programmer Action
+Correct the RHOST/RPORT configuration statements in the configuration file. If this message occured during a program initiated DIAL, correct the dial data.
+Module
+commadpt.c
+Function
+commadpt_connout</p>
+</section>
+<section id="hhcca002i">
+<h4>HHCCA002I<a class="headerlink" href="#hhcca002i" title="Enlace permanente a este encabezado">¶</a></h4>
+<p>HHCCA002I CCUU:Line Communication thread thread id started
+Explanation
+The thread responsible for asynchronous operations for the BSC emulated line CCUU has been started.
+System Action
+The system continues
+Operator Action
+None. This is an informational message
+Programmer Action
+None. This is an informational message
+Module
+commadpt.c
+Function
+commadpt_thread</p>
+</section>
+<section id="hhcca003e">
+<h4>HHCCA003E<a class="headerlink" href="#hhcca003e" title="Enlace permanente a este encabezado">¶</a></h4>
+<p>HHCCA003E CCUU:Cannot obtain socket for incoming calls : System Cause Text
+Explanation
+A system error occured while attempting to create a socket to listen for incoming calls.
+System Action
+The device creation is aborted.
+Operator Action
+None.
+Programmer Action
+Check the System Cause Text for any information relating to the host system. Notify support.
+Module
+commadpt.c
+Function
+commadpt_thread</p>
+</section>
+<section id="hhcca004w">
+<h4>HHCCA004W<a class="headerlink" href="#hhcca004w" title="Enlace permanente a este encabezado">¶</a></h4>
+<p>HHCCA004W CCUU:Waiting 5 seconds for port port to become available
+Explanation
+While attempting to reserve port port to listen to it, the system indicated the port was already being used.
+System Action
+The system waits 5 seconds and then retries the operation
+Operator Action
+Terminate the device if the port is in error
+Programmer Action
+Determine the program holding the specified port. If the port cannot be made available, use a different port.</p>
+</section>
+<section id="hhcca005i">
+<h4>HHCCA005I<a class="headerlink" href="#hhcca005i" title="Enlace permanente a este encabezado">¶</a></h4>
+<p>HHCCA005I CCUU:Listening on port port for incoming TCP connections
+Explanation
+The system is now listening on port port for incoming a tcp connection.
+System Action
+The system continues
+Operator Action
+None. This is an informational message
+Programmer Action
+None. This is an informational message</p>
+</section>
+<section id="hhcca006t">
+<h4>HHCCA006T<a class="headerlink" href="#hhcca006t" title="Enlace permanente a este encabezado">¶</a></h4>
+<p>HHCCA006T CCUU:Select failed : System Cause Text
+Explanation
+An error occured during a “select” system call.
+System Action
+The BSC thread is terminated
+Operator Action
+None.
+Programmer Action
+Check the System Cause Text for any indication of where the error might come from. Notify Support.
+HHCCA007W CCUU:Outgoing call failed during ENABLE|DIAL command : System Cause Text
+Explanation
+The system reported that a previously initiated TCP connection could not be completed
+System Action
+The I/O operation responsible for the TCP outgoing connection is ended with Unit Check and Intervention Required.
+Operator Action
+If the error indicates that the error is temporary, retry the operation.
+Programmer Action
+Check that the destination for this line is correctly configured. If the operation was a DIAL attempt, check in the application configuration or operation data.
+HHCCA008I CCUU:cthread - Incoming Call
+Explanation
+The BSC thread has received an incoming call.
+System Action
+Depending on configuration and operational status, the call is either accepted or rejected. Eventually, an ongoign I/O operation may complete.
+Operator Action
+None. This is an informational message
+Programmer Action
+None. This is an informational message
+HHCCA009I CCUU:BSC utility thread terminated
+Explanation
+The BSC thread has ended
+System Action
+the system continue.
+Operator Action
+Refer to any previous error message if this message was not unexpected
+Programmer Action
+Refer to any previous error message if this message was not unexpected
+HHCCA010I CCUU:initialisation not performed
+Explanation
+The Device initialisation process has failed.
+System Action
+the system terminates or continues, depending on the reason for which the device was initialisation was initiated.
+Operator Action
+Refer to any previous error message
+Programmer Action
+Refer to any previous error message
+HHCCA011E CCUU:Error parsing Keyword
+Explanation
+The device keyword parser found an error while parsing a known keyword.
+System Action
+The system continues. The device initialisation routine turns on a NOGO flag.
+Operator Action
+for a runtime initialisation, correct the device initialisation parameters, otherwise notify the programmer.
+Programmer Action
+For an engine initialisation, correct the device configuration parameters in the configuration file.
+HHCCA012E CCUU:Unrecognized parameter Keyword
+Explanation
+The device keyword parser found an unknown keyword in the device parameter list.
+System Action
+The system continues. The device initialisation routine turns on a NOGO flag.
+Operator Action
+for a runtime initialisation, correct the device initialisation parameters, otherwise notify the programmer.
+Programmer Action
+For an engine initialisation, correct the device configuration parameters in the configuration file.
+HHCCA013E CCUU:Incorrect local port|remote port|local host|remote host specification value
+Explanation
+The device initialisation routine could not correctly parse a parameter value.
+System Action
+The system continues. The device initialisation routine turns on a NOGO flag.
+Operator Action
+for a runtime initialisation, correct the device initialisation parameters, otherwise notify the programmer.
+Programmer Action
+For an engine initialisation, correct the device configuration parameters in the configuration file.
+HHCCA014E CCUU:Incorrect switched/dial specification value; defaulting to DIAL=OUT
+Explanation
+The device initialisation routine found an incorrect DIAL value.
+System Action
+The system continues. The device initialisation routine turns on a NOGO flag.
+Operator Action
+for a runtime initialisation, correct the device initialisation parameters, otherwise notify the programmer.
+Programmer Action
+For an engine initialisation, correct the device configuration parameters in the configuration file.
+HHCCA015E CCUU:Missing parameter : DIAL=NO|IN|OUT|INOUT and LPORT|RPORT|LHOST|RHOST not specified
+Explanation
+The device initialisation routine found that a mandatory parameter was not provided for a specific DIAL Value.
+System Action
+The system continues. The device initialisation routine turns on a NOGO flag.
+Operator Action
+for a runtime initialisation, correct the device initialisation parameters, otherwise notify the programmer.
+Programmer Action
+For an engine initialisation, correct the device configuration parameters in the configuration file.
+Note
+For DIAL=NO , LPORT, RPORT and RHOST are needed
+For DIAL=IN , LPORT is required
+For DIAL=OUT None of LPORT,LHOST,RPORT,RHOST are required
+For DIAL=INOUT, LPORT is required
+HHCCA016W CCUU:Conflicting parameter : DIAL=NO|IN|OUT|INOUT and LPORT|RPORT|LHOST|RHOST=value specified
+Explanation
+The device initialisation routine found that a parameter was provided for a parameter that is not relevant for a specific DIAL Value.
+System Action
+The parameter is ignored. The system continues
+Operator Action
+for a runtime initialisation, correct the device initialisation parameters, otherwise notify the programmer.
+Programmer Action
+For an engine initialisation, correct the device configuration parameters in the configuration file.
+Note
+For DIAL=IN , RPORT and RHOST are ignored
+For DIAL=OUT , LPORT, LHOST, RPORT and RHOST are ignored
+For DIAL=INOUT, RPORT and RHOST are ignored
+HHCCA017I CCUU:LPORT|RPORT|LHOST|RHOST parameter ignored
+Explanation
+The system indicates that the parameter specified is ignored. This message is preceeded by message HHCCA016W
+System Action
+The system continues
+Operator Action
+None
+Programmer Action
+None
+HHCCA018E CCUU:Bind failed : System Cause Text
+Explanation
+While attempting to bind a socket to a specific host/port, the host system returned an uncorrectable error.
+System Action
+BSC Thread terminates
+Operator Action
+None
+Programmer Action
+Check that the LHOST parameter for this device is indeed a local IP address. Otherwise, notify support.
+HHCCA019E CCUU:BSC comm thread did not initialise
+Explanation
+The BSC communication thread reported that it terminated while the device was initialising.
+System Action
+The device is not initialised.
+Operator Action
+Check for any previously issued error message.
+Programmer Action
+Check for any previously issued error message.
+HHCCA020E CCUU:Memory allocation failure for main control block
+Explanation
+A memory allocation failure occured while attempting to reserve memory for the Communication Adapter control block
+System Action
+The device is not initialised.
+Operator Action
+None
+Programmer Action
+Contact support
+HHCCA021I CCUU:Initialization failed due to previous errors
+Explanation
+The initialisation process for device CCUU did not complete succesfully
+System Action
+The device is not initialised
+Operator Action
+None
+Programmer Action
+Refer to any previous error message
+HHCCA300D Debug Message
+Explanation
+This is a debug message. CCW Tracing has been turned on for this device and the Line Handler issues debug messages to help diagnose interface, conformance and protocol issues.
+System Action
+The system continues
+Operator Action
+If the debug messages are no longer necessary, turn off CCW tracing (panel command : “t-CCUU”).
+Programmer Action
+None</p>
+</section>
+</section>
+<section id="cf-configuration-file-processing">
+<h3>CF Configuration file processing<a class="headerlink" href="#cf-configuration-file-processing" title="Enlace permanente a este encabezado">¶</a></h3>
+</section>
+<section id="cp-cpu-emulation">
+<h3>CP CPU emulation<a class="headerlink" href="#cp-cpu-emulation" title="Enlace permanente a este encabezado">¶</a></h3>
+</section>
+<section id="ct-channel-to-channel-adapter-emulation">
+<h3>CT Channel-to-channel adapter emulation<a class="headerlink" href="#ct-channel-to-channel-adapter-emulation" title="Enlace permanente a este encabezado">¶</a></h3>
+</section>
+<section id="cu-cckd-utility">
+<h3>CU CCKD utility<a class="headerlink" href="#cu-cckd-utility" title="Enlace permanente a este encabezado">¶</a></h3>
+</section>
+<section id="da-dasd-emulation-both-ckd-and-fba">
+<h3>DA DASD emulation (both CKD and FBA)<a class="headerlink" href="#da-dasd-emulation-both-ckd-and-fba" title="Enlace permanente a este encabezado">¶</a></h3>
+</section>
+<section id="dc-dasdcopy">
+<h3>DC dasdcopy<a class="headerlink" href="#dc-dasdcopy" title="Enlace permanente a este encabezado">¶</a></h3>
+</section>
+<section id="dg-dyngui-dll">
+<h3>DG dyngui.dll<a class="headerlink" href="#dg-dyngui-dll" title="Enlace permanente a este encabezado">¶</a></h3>
+</section>
+<section id="di-dasdinit">
+<h3>DI dasdinit<a class="headerlink" href="#di-dasdinit" title="Enlace permanente a este encabezado">¶</a></h3>
+</section>
+<section id="dl-dasdload">
+<h3>DL dasdload<a class="headerlink" href="#dl-dasdload" title="Enlace permanente a este encabezado">¶</a></h3>
+</section>
+<section id="ds-dasdisup">
+<h3>DS dasdisup<a class="headerlink" href="#ds-dasdisup" title="Enlace permanente a este encabezado">¶</a></h3>
+</section>
+<section id="dt-dasdcat">
+<h3>DT dasdcat<a class="headerlink" href="#dt-dasdcat" title="Enlace permanente a este encabezado">¶</a></h3>
+</section>
+<section id="du-dasd-utilities-common-functions">
+<h3>DU DASD utilities common functions<a class="headerlink" href="#du-dasd-utilities-common-functions" title="Enlace permanente a este encabezado">¶</a></h3>
+</section>
+<section id="hd-hercules-dynamic-loader">
+<h3>HD Hercules Dynamic Loader<a class="headerlink" href="#hd-hercules-dynamic-loader" title="Enlace permanente a este encabezado">¶</a></h3>
+</section>
+<section id="he-hetinit">
+<h3>HE hetinit<a class="headerlink" href="#he-hetinit" title="Enlace permanente a este encabezado">¶</a></h3>
+</section>
+<section id="hg-hetget">
+<h3>HG hetget<a class="headerlink" href="#hg-hetget" title="Enlace permanente a este encabezado">¶</a></h3>
+</section>
+<section id="hm-hetmap">
+<h3>HM hetmap<a class="headerlink" href="#hm-hetmap" title="Enlace permanente a este encabezado">¶</a></h3>
+</section>
+<section id="ht-http-server">
+<h3>HT HTTP server<a class="headerlink" href="#ht-http-server" title="Enlace permanente a este encabezado">¶</a></h3>
+</section>
+<section id="hu-hetupd">
+<h3>HU hetupd<a class="headerlink" href="#hu-hetupd" title="Enlace permanente a este encabezado">¶</a></h3>
+</section>
+<section id="if-hercifc-network-interface-configuration-handler">
+<h3>IF hercifc (Network interface configuration handler)<a class="headerlink" href="#if-hercifc-network-interface-configuration-handler" title="Enlace permanente a este encabezado">¶</a></h3>
+</section>
+<section id="in-hercules-initialization">
+<h3>IN Hercules initialization<a class="headerlink" href="#in-hercules-initialization" title="Enlace permanente a este encabezado">¶</a></h3>
+</section>
+<section id="lc-lcs-emulation">
+<h3>LC LCS emulation<a class="headerlink" href="#lc-lcs-emulation" title="Enlace permanente a este encabezado">¶</a></h3>
+</section>
+<section id="lg-system-log-functions">
+<h3>LG System Log functions<a class="headerlink" href="#lg-system-log-functions" title="Enlace permanente a este encabezado">¶</a></h3>
+</section>
+<section id="pn-hercules-control-panel-command-messages">
+<h3>PN Hercules control panel command messages<a class="headerlink" href="#pn-hercules-control-panel-command-messages" title="Enlace permanente a este encabezado">¶</a></h3>
+</section>
+<section id="pr-printer-emulation">
+<h3>PR Printer emulation<a class="headerlink" href="#pr-printer-emulation" title="Enlace permanente a este encabezado">¶</a></h3>
+</section>
+<section id="pu-card-punch-emulation">
+<h3>PU Card punch emulation<a class="headerlink" href="#pu-card-punch-emulation" title="Enlace permanente a este encabezado">¶</a></h3>
+</section>
+<section id="rd-card-reader-emulation">
+<h3>RD Card reader emulation<a class="headerlink" href="#rd-card-reader-emulation" title="Enlace permanente a este encabezado">¶</a></h3>
+</section>
+<section id="sd-socket-devices-common-functions">
+<h3>SD Socket devices common functions<a class="headerlink" href="#sd-socket-devices-common-functions" title="Enlace permanente a este encabezado">¶</a></h3>
+</section>
+<section id="ta-tape-device-emulation">
+<h3>TA Tape device emulation<a class="headerlink" href="#ta-tape-device-emulation" title="Enlace permanente a este encabezado">¶</a></h3>
+</section>
+<section id="tc-tapecopy">
+<h3>TC tapecopy<a class="headerlink" href="#tc-tapecopy" title="Enlace permanente a este encabezado">¶</a></h3>
+</section>
+<section id="te-1052-and-3270-terminal-emulation">
+<h3>TE 1052 and 3270 terminal emulation<a class="headerlink" href="#te-1052-and-3270-terminal-emulation" title="Enlace permanente a este encabezado">¶</a></h3>
+</section>
+<section id="tm-tapemap">
+<h3>TM tapemap<a class="headerlink" href="#tm-tapemap" title="Enlace permanente a este encabezado">¶</a></h3>
+</section>
+<section id="ts-tapesplt">
+<h3>TS tapesplt<a class="headerlink" href="#ts-tapesplt" title="Enlace permanente a este encabezado">¶</a></h3>
+</section>
+<section id="tt-tod-clock-and-timer-services">
+<h3>TT TOD Clock and Timer Services<a class="headerlink" href="#tt-tod-clock-and-timer-services" title="Enlace permanente a este encabezado">¶</a></h3>
+</section>
+<section id="tu-tun-tap-driver-support">
+<h3>TU TUN/TAP driver support<a class="headerlink" href="#tu-tun-tap-driver-support" title="Enlace permanente a este encabezado">¶</a></h3>
+</section>
+<section id="vm-vm-cp-emulation-facility">
+<h3>VM VM/CP emulation facility<a class="headerlink" href="#vm-vm-cp-emulation-facility" title="Enlace permanente a este encabezado">¶</a></h3>
+</section>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="operation.html" class="btn btn-neutral float-left" title="Operation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Read the Docs</span>
+      v: 1.0
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+      <dl>
+        <dt>Languages</dt>
+        
+          
+          <dd><a href="/herc-docs-demo/en/1.0/">en</a></dd>
+          
+        
+           <strong> 
+          <dd><a href="/herc-docs-demo/es/1.0/">es</a></dd>
+           </strong> 
+        
+      </dl>
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+          
+          <dd><a href="/herc-docs-demo/es/fovea1959/">fovea1959</a></dd>
+          
+        
+          
+          <dd><a href="/herc-docs-demo/es/master/">master</a></dd>
+          
+        
+      </dl>
+      
+      
+      <dl>
+        <dt>Downloads</dt>
+        
+          <dd><a href="/herc-docs-demo/es/1.0/Hercules Documentation Test-docs_es_1.0.pdf">pdf</a></dd>
+        
+          <dd><a href="/herc-docs-demo/es/1.0/Hercules Documentation Test-docs_es_1.0.epub">epub</a></dd>
+        
+      </dl>
+      
+      
+      <hr/>
+      <a href="https://tech.michaelaltfield.net/2020/07/18/sphinx-rtd-github-pages-1/">Continuous Documentation</a> hosting provided by <a href="https://pages.github.com/">GitHub Pages</a>.
+ 
+    </div>
+  </div>
+
+ 
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

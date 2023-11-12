@@ -1,0 +1,419 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Adding New Source Files to Hercules &mdash; Hercules Documentation Demo 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link href="_static/herc_style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Hercules Documentation Demo
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                master
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="hercinst.html">Building and Installing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration File</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercdasd.html">Creating DASD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercoper.html">Operating Procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercsupp.html">Technical Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercfaq.html">Frequently-Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="messages.html">Messages and Codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aa_auxdocs.html">Supporting documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_a.html">Appendix A - Documentation Standards</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Hercules Documentation Demo</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Adding New Source Files to Hercules</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/README.ADDING.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="adding-new-source-files-to-hercules">
+<h1>Adding New Source Files to Hercules<a class="headerlink" href="#adding-new-source-files-to-hercules" title="Permalink to this heading">¶</a></h1>
+<p>Adding new files to the Hercules emulator project would certainly seem
+like a simple straightforward thing. Unfortunately there are some
+additional details which far too many Hercules developers frequently
+overlook <em>(including myself sometimes!)</em>.</p>
+<p>This document attempts to describe these oversights and should be used
+as internal reference documentation that all Hercules developers should
+review on occasion.</p>
+<p>Adding new files to the repository is only the <em>first</em> (and most
+important) step in the process. But the other steps, which too many
+developers tend to forget about, are just as important.</p>
+<p>Those additional steps (which many developers tend to overlook) fall
+into two major areas:</p>
+<ol class="arabic simple">
+<li><p><em>Updating the</em> <strong>build files</strong> <em>so that the new files are included in
+the build process.</em></p></li>
+<li><p><em>Adding the files to the</em> <strong>Visual Studio project files</strong> <em>(user
+interface).</em></p></li>
+</ol>
+<section id="repository">
+<h2>Repository<a class="headerlink" href="#repository" title="Permalink to this heading">¶</a></h2>
+<p>Adding a new source file to our git repository is a simple and
+straightforward process so I won’t bother going into any detail. If you
+don’t already know how to add new files to the git repository, then you
+probably have no business being a Hercules developer!</p>
+</section>
+<section id="build-files">
+<h2>Build Files<a class="headerlink" href="#build-files" title="Permalink to this heading">¶</a></h2>
+<p>After adding the new source file to the repository you need to update
+one of the <code class="docutils literal notranslate"><span class="pre">Makefile.am</span></code> files (non-Windows) <strong>and</strong> one or more of
+the <code class="docutils literal notranslate"><span class="pre">msvc.makefile.includes</span></code> files (Windows). Which makefile or
+msvc.makefile.includes file you need to update depends on what type of
+file you are adding.</p>
+<p>The easiest way to determine which Makefile (or msvc.makefile.includes
+file) that you need to update <em>(as well as the change you need to make
+to it)</em>, is to simply do a <code class="docutils literal notranslate"><span class="pre">grep</span></code> for the filename of a <em>similar</em> file
+that already exists in Hercules.</p>
+<p>For example, if you are adding a new .c source file pertaining to
+instruction emulation <code class="docutils literal notranslate"><span class="pre">hengine.dll</span></code>, you might do a grep for
+<code class="docutils literal notranslate"><span class="pre">general1</span></code> <em>(without the extension!)</em> and make your change to all of
+the same files in the same manner. If you are adding a new html file,
+you might do your grep for <code class="docutils literal notranslate"><span class="pre">hercconf</span></code>, etc.</p>
+<section id="linux">
+<h3><em>Linux:</em><a class="headerlink" href="#linux" title="Permalink to this heading">¶</a></h3>
+<p>If you are adding a new <strong>``.c`` source file</strong>, you need to update the
+project’s main (primary) <code class="docutils literal notranslate"><span class="pre">Makefile.am</span></code> file in the root directory of
+the repository:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">`Makefile.am</span></code> &lt;<a class="reference external" href="https://github.com/SDL-Hercules-390/hyperion/blob/master/Makefile.am">https://github.com/SDL-Hercules-390/hyperion/blob/master/Makefile.am</a>&gt;`__</p></li>
+</ul>
+<p>If you are adding a new <strong>runtest</strong> test file to the <code class="docutils literal notranslate"><span class="pre">tests</span></code>
+subdirectory, you need to update the <code class="docutils literal notranslate"><span class="pre">Makefile.am</span></code> file in <em>that</em>
+directory:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">`tests/Makefile.am</span></code> &lt;<a class="reference external" href="https://github.com/SDL-Hercules-390/hyperion/blob/master/tests/Makefile.am">https://github.com/SDL-Hercules-390/hyperion/blob/master/tests/Makefile.am</a>&gt;`__</p></li>
+</ul>
+<p>If you are adding a new <code class="docutils literal notranslate"><span class="pre">.html</span></code> documentation <strong>webpage</strong> to the
+<code class="docutils literal notranslate"><span class="pre">html</span></code> subdirectory, then you need to add your new file to <em>that</em>
+subdirectory’s <code class="docutils literal notranslate"><span class="pre">Makefile.am</span></code> file:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">`html/Makefile.am</span></code> &lt;<a class="reference external" href="https://github.com/SDL-Hercules-390/hyperion/blob/master/html/Makefile.am">https://github.com/SDL-Hercules-390/hyperion/blob/master/html/Makefile.am</a>&gt;`__</p></li>
+</ul>
+</section>
+<section id="msvc">
+<h3><em>MSVC:</em><a class="headerlink" href="#msvc" title="Permalink to this heading">¶</a></h3>
+<p>If you are adding a new <code class="docutils literal notranslate"><span class="pre">.c</span></code> source file, you first need to determine
+which “module” (DLL) that file is a part of. The collection of object
+code pertaining to each of our modules (shared libraries or DLLs) is
+controlled via the <code class="docutils literal notranslate"><span class="pre">OBJ_CODE.msvc</span></code>, <code class="docutils literal notranslate"><span class="pre">MODULES.msvc</span></code> and
+<code class="docutils literal notranslate"><span class="pre">MOD_RULES2.msvc</span></code> makefile fragments in the <code class="docutils literal notranslate"><span class="pre">msvc.makefile.includes</span></code>
+directory:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">`OBJ_CODE.msvc</span></code> &lt;<a class="reference external" href="https://github.com/SDL-Hercules-390/hyperion/blob/master/msvc.makefile.includes/OBJ_CODE.msvc">https://github.com/SDL-Hercules-390/hyperion/blob/master/msvc.makefile.includes/OBJ_CODE.msvc</a>&gt;`__
+(maybe, depending on what type of file you are adding)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">`MODULES.msvc</span></code> &lt;<a class="reference external" href="https://github.com/SDL-Hercules-390/hyperion/blob/master/msvc.makefile.includes/MODULES.msvc">https://github.com/SDL-Hercules-390/hyperion/blob/master/msvc.makefile.includes/MODULES.msvc</a>&gt;`__
+(maybe, depending on what type of file you are adding)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">`MOD_RULES2.msvc</span></code> &lt;<a class="reference external" href="https://github.com/SDL-Hercules-390/hyperion/blob/master/msvc.makefile.includes/MOD_RULES2.msvc">https://github.com/SDL-Hercules-390/hyperion/blob/master/msvc.makefile.includes/MOD_RULES2.msvc</a>&gt;`__
+(maybe, depending on what type of file you are adding)</p></li>
+</ul>
+<p>If you are adding a new <strong>runtest</strong> test file to the <code class="docutils literal notranslate"><span class="pre">tests</span></code>
+subdirectory, you do <em>not</em> need to update any build file. You only need
+to update one of the <strong>Visual Studio project files</strong> as discussed in the
+“Visual Studio” section just below.</p>
+<p>If you are adding a new <code class="docutils literal notranslate"><span class="pre">.html</span></code> documentation <strong>webpage</strong> to the
+<code class="docutils literal notranslate"><span class="pre">html</span></code> subdirectory, then once again, you <em>only</em> need to update one of
+the <strong>Visual Studio project files</strong> as discussed in the next section
+immediately below.</p>
+</section>
+</section>
+<section id="visual-studio">
+<h2>Visual Studio<a class="headerlink" href="#visual-studio" title="Permalink to this heading">¶</a></h2>
+<p>As part of the process of adding a new file to Hercules, it is also
+important to add that file to the following Visual Studio project files:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/SDL-Hercules-390/hyperion/blob/master/Hercules_VS2008.vcproj">Hercules_VS2008.vcproj</a></p></li>
+<li><p><a class="reference external" href="https://github.com/SDL-Hercules-390/hyperion/blob/master/Hercules_VS2015.vcxproj">Hercules_VS2015.vcxproj</a></p></li>
+<li><p><a class="reference external" href="https://github.com/SDL-Hercules-390/hyperion/blob/master/Hercules_VS2015.vcxproj.filters">Hercules_VS2015.vcxproj.filters</a></p></li>
+<li><p><a class="reference external" href="https://github.com/SDL-Hercules-390/hyperion/blob/master/Hercules_VS2017.vcxproj">Hercules_VS2017.vcxproj</a></p></li>
+<li><p><a class="reference external" href="https://github.com/SDL-Hercules-390/hyperion/blob/master/Hercules_VS2017.vcxproj.filters">Hercules_VS2017.vcxproj.filters</a></p></li>
+<li><p><a class="reference external" href="https://github.com/SDL-Hercules-390/hyperion/blob/master/Hercules_VS2019.vcxproj">Hercules_VS2019.vcxproj</a></p></li>
+<li><p><a class="reference external" href="https://github.com/SDL-Hercules-390/hyperion/blob/master/Hercules_VS2019.vcxproj.filters">Hercules_VS2019.vcxproj.filters</a></p></li>
+<li><p><a class="reference external" href="https://github.com/SDL-Hercules-390/hyperion/blob/master/Hercules_VS2022.vcxproj">Hercules_VS2022.vcxproj</a></p></li>
+<li><p><a class="reference external" href="https://github.com/SDL-Hercules-390/hyperion/blob/master/Hercules_VS2022.vcxproj.filters">Hercules_VS2022.vcxproj.filters</a></p></li>
+</ul>
+<p>The change that you need to make to each of the above files should
+hopefully be obvious, and you should follow the same format that already
+exists.</p>
+<blockquote>
+<div><p><strong>NOTE:</strong> *  The changes that need to be made to the above Visual
+Studio 2015, 2017, 2019 and 2022 project files are all exactly
+identical. The easiest way to make your changes is to first change
+the two 2015 files first, and then simply copy those exact same
+changes over into the same 2017, 2019 and 2022 files. Please also
+note that the VS2008 project file is an exception to the rule. Its
+format is completely different, so be sure to make your changes in
+the right place.*</p>
+</div></blockquote>
+<p>The easiest way to determine how to make your change is to simply search
+for the filename of a <em>similar</em> file that already exists in Hercules.</p>
+<p>Here are some sample commits so you can see the changes that need to be
+made when adding a new file to Hercules:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/SDL-Hercules-390/hyperion/commit/ae0313a371fd5c7189dcba4939700a0d3692e007">New “cckdmap”
+utility</a></p></li>
+<li><p><a class="reference external" href="https://github.com/SDL-Hercules-390/hyperion/commit/7714b835ebcc8ceeb0a8bd473f7694d2e427b1f8">Add TCPIP (X’75’) instruction; see README.TCPIP for
+details.</a></p></li>
+</ul>
+<p>But again, the perhaps easiest way is to simple make the same changes
+that were made when a <em>similar</em> type file was added in the past.</p>
+<hr class="docutils" />
+<p>Please let me know if there is anything I can do to explain the above
+process more clearly for you.</p>
+<p>I know it seems somewhat complicated, but it’s not.</p>
+<p><strong>You basically just need to remember to:</strong></p>
+<ul class="simple">
+<li><p>Add the file to the correct autoconf <code class="docutils literal notranslate"><span class="pre">Makefile.am</span></code> file</p></li>
+<li><p>Add the file to the correct MSVC makefile fragment
+<em>(``OBJ_CODE.msvc`` etc)</em></p></li>
+<li><p>Add the file to all of the Visual Studio project files
+(<code class="docutils literal notranslate"><span class="pre">Hercules_VS2008.vcproj</span></code>, <code class="docutils literal notranslate"><span class="pre">Hercules_VS2015.vcxproj</span></code>,
+<code class="docutils literal notranslate"><span class="pre">Hercules_VS2015.vcxproj.filters</span></code>, etc)</p></li>
+</ul>
+<p>And the easiest way to do that is, like I said, by doing it just like
+others have done it previously. Do a grep for a similar type file and
+review the files and the changes that were made when that file was
+added.</p>
+<p><strong>“Fish”</strong> <em>(David B. Trout)     October 5, 2010</em></p>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Read the Docs</span>
+      v: master
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+      <dl>
+        <dt>Languages</dt>
+        
+           <strong> 
+          <dd><a href="/herc-docs-demo/en/master/">en</a></dd>
+           </strong> 
+        
+      </dl>
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+          
+          <dd><a href="/herc-docs-demo/en/fovea1959/">fovea1959</a></dd>
+          
+        
+           <strong> 
+          <dd><a href="/herc-docs-demo/en/master/">master</a></dd>
+           </strong> 
+        
+          
+          <dd><a href="/herc-docs-demo/en/0.0/">0.0</a></dd>
+          
+        
+          
+          <dd><a href="/herc-docs-demo/en/1.0/">1.0</a></dd>
+          
+        
+      </dl>
+      
+      
+      <dl>
+        <dt>Downloads</dt>
+        
+          <dd><a href="/herc-docs-demo/en/master/Hercules Documentation Demo-docs_en_master.pdf">pdf</a></dd>
+        
+          <dd><a href="/herc-docs-demo/en/master/Hercules Documentation Demo-docs_en_master.epub">epub</a></dd>
+        
+          <dd><a href="/herc-docs-demo/en/master/Hercules Documentation Demo-docs_en_master.html.tar.gz">tarred HTML</a></dd>
+        
+          <dd><a href="/herc-docs-demo/en/master/Hercules Documentation Demo-docs_en_master.single.html.tar.gz">tarred single file HTML</a></dd>
+        
+      </dl>
+      
+      
+      <hr/>
+      <a href="https://tech.michaelaltfield.net/2020/07/18/sphinx-rtd-github-pages-1/">Continuous Documentation</a> hosting provided by <a href="https://pages.github.com/">GitHub Pages</a>.
+ 
+    </div>
+  </div>
+
+ 
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

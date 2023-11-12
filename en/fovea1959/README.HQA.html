@@ -1,0 +1,441 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>HQA Build Scenarios (Hercules Quality Assurance) &mdash; Hercules Documentation Demo 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link href="_static/herc_style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Hercules Documentation Demo
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                fovea1959
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="hercinst.html">Building and Installing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration File</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercdasd.html">Creating DASD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercoper.html">Operating Procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercsupp.html">Technical Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercfaq.html">Frequently-Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="messages.html">Messages and Codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aa_auxdocs.html">Supporting documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_a.html">Appendix A - Documentation Standards</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Hercules Documentation Demo</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>HQA Build Scenarios (Hercules Quality Assurance)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/README.HQA.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="hqa-build-scenarios-hercules-quality-assurance">
+<h1>HQA Build Scenarios (Hercules Quality Assurance)<a class="headerlink" href="#hqa-build-scenarios-hercules-quality-assurance" title="Permalink to this heading">¶</a></h1>
+<p>The “Hercules Quality Assurance” Build Scenarios feature is designed to
+make it easier for Hercules developers to build Hercules using different
+predefined build settings called “Build Scenarios”. Each predefined
+Build Scenario is defined in the <a class="reference external" href="../hqadefs.h">hqadefs.h</a> header
+which is automatically #included by the <a class="reference external" href="../hqainc.h">hqainc.h</a>
+header whenever the <code class="docutils literal notranslate"><span class="pre">HAVE_HQA_H</span></code> macros is defined at build time.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">HQA_H</span></code> header (also #included by the <a class="reference external" href="../hqainc.h">hqainc.h</a>
+header when <code class="docutils literal notranslate"><span class="pre">HAVE_HQA_H</span></code> is defined at build time) selects which of
+the predefined <a class="reference external" href="../hqadefs.h">hqadefs.h</a> build scenarios you wish to
+test (build). The <code class="docutils literal notranslate"><span class="pre">hqa.h</span></code> header is a header that you, the Hercules
+developer, must supply. Hercules does not come with one.</p>
+<p>The idea is to be able to quickly and easily build various different
+“builds” of Hercules (each one using a different set of build options
+(i.e. each one with a different set of <code class="docutils literal notranslate"><span class="pre">#define</span> <span class="pre">OPTION_XXX...</span></code> options
+defined)) without having to modify the Hercules source code at all. That
+is to say, The HQA (Hercules Quality Assurance) feature allows the
+developer to quickly and easily test different predefined “builds” of
+Hercules without having to manually modify the Hercules source code.</p>
+<section id="how-to-use-hqa">
+<h2>How to use HQA<a class="headerlink" href="#how-to-use-hqa" title="Permalink to this heading">¶</a></h2>
+<p>To use the HQA feature simply define a <code class="docutils literal notranslate"><span class="pre">HQA_DIR</span></code> environment variable
+with the value of the directory where your <code class="docutils literal notranslate"><span class="pre">hqa.h</span></code> header exists and
+then rebuild Hercules.</p>
+<p>To make things easy for you, the Windows and non-Windows versions of
+Hercules have already been modified to accept new build parameters to
+easily select whichever HQA Build Scenario you may wish to choose.</p>
+<p>On Windows, just pass the <code class="docutils literal notranslate"><span class="pre">-hqa</span> <span class="pre">{directory}</span></code> option to
+<a class="reference external" href="../makefile.bat">makefile.bat</a>. On *nix, you can activate an HQA
+build in one of several ways:</p>
+<ul class="simple">
+<li><p>You can define the <code class="docutils literal notranslate"><span class="pre">HQA_DIR</span></code> environment variable pointing to the
+directory containing your <code class="docutils literal notranslate"><span class="pre">hqa.h</span></code> header.</p></li>
+<li><p>You can prefix your <code class="docutils literal notranslate"><span class="pre">./configure</span></code> command with an appropriate
+<code class="docutils literal notranslate"><span class="pre">HQA_DIR=/path/to/my/hqadir</span></code> value and let the configure script do
+the rest.</p></li>
+<li><p>You can use the <code class="docutils literal notranslate"><span class="pre">--enable-hqa=/path/to/my/hqadir</span></code> configure option
+(which overrides your <code class="docutils literal notranslate"><span class="pre">HQA_DIR</span></code> environment variable if defined)</p></li>
+</ul>
+<p>Your <code class="docutils literal notranslate"><span class="pre">hqa.h</span></code> header should then select the desired Build Scenario by
+appropriately <code class="docutils literal notranslate"><span class="pre">#defining</span> <span class="pre">HQA_SCENARIO</span></code> to the proper value. Refer to
+the <a class="reference external" href="../hqadefs.h">hqadefs.h</a> header for the list of currently
+defined build scenarios.</p>
+<p>When Hercules is built, it checks to see if the <code class="docutils literal notranslate"><span class="pre">HQA_DIR</span></code> variable is
+defined and if so, checks further to see whether it contains a file
+called <code class="docutils literal notranslate"><span class="pre">hqa.h</span></code> or not. If both conditions are true, then it defines
+the <code class="docutils literal notranslate"><span class="pre">HAVE_HQA_H</span></code> macro which causes the <a class="reference external" href="../hqainc.h">hqainc.h</a>
+header to automatically #include your <code class="docutils literal notranslate"><span class="pre">hqa.h</span></code> header when Hercules is
+built.</p>
+<p>Your <code class="docutils literal notranslate"><span class="pre">hqa.h</span></code> header then defines <code class="docutils literal notranslate"><span class="pre">HQA_SCENARIO</span></code> to the appropriate
+value to automatically select the proper build settings (called “Build
+Scenarios”) within the <a class="reference external" href="../hqadefs.h">hqadefs.h</a> header.</p>
+<p>Also note that while your HQA directory, if defined, must exist, the
+<code class="docutils literal notranslate"><span class="pre">hqa.h</span></code> header file does not. That is to say, it is not an error for
+the <code class="docutils literal notranslate"><span class="pre">hqa.h</span></code> header to not exist. It is only an error for the HQA
+directory, if defined, to not exist. Thus you can have a permanently
+defined HQA directory and only create an <code class="docutils literal notranslate"><span class="pre">hqa.h</span></code> header file within it
+whenever you need to.</p>
+</section>
+<section id="creating-new-build-scenarios">
+<h2>Creating new build scenarios<a class="headerlink" href="#creating-new-build-scenarios" title="Permalink to this heading">¶</a></h2>
+<p>If none of the predefined set of Build Scenarios within the
+<a class="reference external" href="../hqadefs.h">hqadefs.h</a> header suits your needs, then just #define
+whatever OPTION_XXXX build settings you need within your <code class="docutils literal notranslate"><span class="pre">hqa.h</span></code>
+header instead, leaving <code class="docutils literal notranslate"><span class="pre">HQA_SCENARIO</span></code> undefined or set to 0.</p>
+<p>Once your new build settings have been fully tested (not only to build
+properly but also to run properly too!) you are then strongly encouraged
+add your new set of build settings to the <a class="reference external" href="../hqadefs.h">hqadefs.h</a>
+header as a new <code class="docutils literal notranslate"><span class="pre">HQA_SCENARIO</span></code> Build Scenario so other developers may
+take advantage of it.</p>
+</section>
+<section id="samples">
+<h2>Samples<a class="headerlink" href="#samples" title="Permalink to this heading">¶</a></h2>
+<section id="sample-hqa-h-header">
+<h3>SAMPLE “hqa.h” HEADER<a class="headerlink" href="#sample-hqa-h-header" title="Permalink to this heading">¶</a></h3>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">////////////////////////////////////////////////////////////////////////////</span>
+<span class="c1">//    Hercules Quality Assurance Build Configuration Testing Scenarios</span>
+<span class="c1">////////////////////////////////////////////////////////////////////////////</span>
+
+<span class="cp">#ifndef _HQA_H_</span>
+<span class="cp">#define _HQA_H_</span>
+
+<span class="c1">//#define HQA_SCENARIO  0   // (normal build)</span>
+<span class="c1">//#define HQA_SCENARIO  1   // System/370 support only</span>
+<span class="c1">//#define HQA_SCENARIO  2   // ESA/390 support only</span>
+<span class="c1">//#define HQA_SCENARIO  3   // System/370 and ESA/390 support only</span>
+<span class="c1">//#define HQA_SCENARIO  4   // zArchitecure and ESA/390 support only</span>
+<span class="c1">//#define HQA_SCENARIO  5   // Windows, fthreads</span>
+<span class="c1">//#define HQA_SCENARIO  6   // Windows, Posix threads</span>
+<span class="c1">//#define HQA_SCENARIO  7   // Vista, fthreads</span>
+<span class="c1">//#define HQA_SCENARIO  8   // Vista, Posix threads</span>
+<span class="c1">//#define HQA_SCENARIO  9   // INLINE == forced inline</span>
+<span class="c1">//#define HQA_SCENARIO  10  // INLINE == inline (just a suggestion)</span>
+<span class="c1">//#define HQA_SCENARIO  11  // INLINE == null (compiler decides on own)</span>
+<span class="c1">//#define HQA_SCENARIO  12  // With Shared Devices,    With Syncio</span>
+<span class="c1">//#define HQA_SCENARIO  13  // Without Shared Devices, With Syncio</span>
+<span class="c1">//#define HQA_SCENARIO  14  // With Shared Devices,    Without Syncio</span>
+<span class="c1">//#define HQA_SCENARIO  15  // Without Shared Devices, Without Syncio</span>
+<span class="c1">//#define HQA_SCENARIO  16  // Without Object Rexx</span>
+<span class="c1">//#define HQA_SCENARIO  17  // Without Regina Rexx</span>
+<span class="c1">//#define HQA_SCENARIO  18  // Without Object Rexx, Without Regina Rexx</span>
+<span class="c1">//#define HQA_SCENARIO  19  // Without TCP keepalive support</span>
+<span class="c1">//#define HQA_SCENARIO  20  // With Basic TCP keepalive support</span>
+<span class="c1">//#define HQA_SCENARIO  21  // With Partial TCP keepalive support</span>
+<span class="c1">//#define HQA_SCENARIO  22  // With Full TCP keepalive support</span>
+
+<span class="cp">#endif </span><span class="cm">/*_HQA_H_*/</span>
+</pre></div>
+</div>
+</section>
+<section id="sample-hqa-msvc-nmake-include-file">
+<h3>SAMPLE “HQA.msvc” NMAKE “!INCLUDE” file<a class="headerlink" href="#sample-hqa-msvc-nmake-include-file" title="Permalink to this heading">¶</a></h3>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span>#----------------------------------------------------------------------
+#  Hercules Quality Assurance Testing msvc build settings overrides
+#----------------------------------------------------------------------
+
+#----------------------------------------------------------------------
+!IF 0   #             --- EXAMPLES ---
+#----------------------------------------------------------------------
+
+# You can display custom messages that appear near
+# the very beginning of the build log if you want...
+
+!MESSAGE  *
+!MESSAGE  ***   My custom BUILD message    ***
+!MESSAGE  *
+
+
+# Normally you should NEVER override the VERSION string
+# since it&#39;s important to be able to identify what git
+# version your modifications are based on (if any)...
+
+!IF 0
+VERSION = \&quot;My completely overridden VERSION string\&quot;
+!ENDIF
+
+
+# But you MAY instead provide an additional custom build
+# string to identify your own specific custom build...
+
+CUSTOM_BUILD_STRING = &quot;***  My custom BUILD string  ***&quot;
+
+
+# You can also override actual compiler settings used
+# during the build too. To illustrate, instead of any
+# warning aborting the build, let&#39;s make all warnings
+# be actual warnings by removing the &quot;/WX&quot; option...
+
+cflags  = $(cflags:/WX=)       # (in case /WX used)
+cflags  = $(cflags:-WX=)       # (in case -WX used)
+
+#----------------------------------------------------------------------
+!ENDIF
+#----------------------------------------------------------------------
+
+
+# FishTest: maximum 3MB stack in 1MB increments
+##conlflags = $(conlflags) /STACK:3145728,1048576
+
+
+# FishTest: Disable use of pre-compiler headers
+##use_pch_opt =
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">“Fish” (David B. Trout)</div>
+<div class="line">January 2015</div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Read the Docs</span>
+      v: fovea1959
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+      <dl>
+        <dt>Languages</dt>
+        
+           <strong> 
+          <dd><a href="/herc-docs-demo/en/fovea1959/">en</a></dd>
+           </strong> 
+        
+      </dl>
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+           <strong> 
+          <dd><a href="/herc-docs-demo/en/fovea1959/">fovea1959</a></dd>
+           </strong> 
+        
+          
+          <dd><a href="/herc-docs-demo/en/master/">master</a></dd>
+          
+        
+          
+          <dd><a href="/herc-docs-demo/en/0.0/">0.0</a></dd>
+          
+        
+          
+          <dd><a href="/herc-docs-demo/en/1.0/">1.0</a></dd>
+          
+        
+      </dl>
+      
+      
+      <dl>
+        <dt>Downloads</dt>
+        
+          <dd><a href="/herc-docs-demo/en/fovea1959/Hercules Documentation Demo-docs_en_fovea1959.pdf">pdf</a></dd>
+        
+          <dd><a href="/herc-docs-demo/en/fovea1959/Hercules Documentation Demo-docs_en_fovea1959.epub">epub</a></dd>
+        
+          <dd><a href="/herc-docs-demo/en/fovea1959/Hercules Documentation Demo-docs_en_fovea1959.html.tar.gz">tarred HTML</a></dd>
+        
+          <dd><a href="/herc-docs-demo/en/fovea1959/Hercules Documentation Demo-docs_en_fovea1959.single.html.tar.gz">tarred single file HTML</a></dd>
+        
+      </dl>
+      
+      
+      <hr/>
+      <a href="https://tech.michaelaltfield.net/2020/07/18/sphinx-rtd-github-pages-1/">Continuous Documentation</a> hosting provided by <a href="https://pages.github.com/">GitHub Pages</a>.
+ 
+    </div>
+  </div>
+
+ 
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,475 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>VMFPLC2 (VM) Formatted Tape Utility &mdash; Hercules Documentation Demo 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link href="_static/herc_style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Hercules Documentation Demo
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                fovea1959
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="hercinst.html">Building and Installing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration File</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercdasd.html">Creating DASD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercoper.html">Operating Procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercsupp.html">Technical Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercfaq.html">Frequently-Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="messages.html">Messages and Codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aa_auxdocs.html">Supporting documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_a.html">Appendix A - Documentation Standards</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Hercules Documentation Demo</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>VMFPLC2 (VM) Formatted Tape Utility</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/README.VMFPLC2.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="vmfplc2-vm-formatted-tape-utility">
+<h1>VMFPLC2 (VM) Formatted Tape Utility<a class="headerlink" href="#vmfplc2-vm-formatted-tape-utility" title="Permalink to this heading">¶</a></h1>
+<p>Hercules command to manipulate (create or read) VMFPLC2 formatted tapes
+for VM/CMS use.</p>
+<section id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">vmfplc2</span>   <span class="p">[</span><span class="n">options</span><span class="p">]</span>   <span class="n">VERB</span>  <span class="p">[</span><span class="o">&lt;</span><span class="n">ctlfile</span><span class="o">&gt;</span><span class="p">]</span>  <span class="o">&lt;</span><span class="n">tapein</span><span class="o">&gt;</span> <span class="o">|</span> <span class="o">&lt;</span><span class="n">tapeout</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="arguments">
+<h2>Arguments<a class="headerlink" href="#arguments" title="Permalink to this heading">¶</a></h2>
+<p>The vmfplc2 utility requires a function (DUMP, SCAN or LOAD) followed by
+the name of a control file and the name of an input or output tape file.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DUMP</span>      <span class="n">The</span> <span class="n">DUMP</span> <span class="n">function</span> <span class="n">allows</span> <span class="n">creating</span> <span class="n">a</span> <span class="n">VMFPLC2</span> <span class="n">formatted</span> <span class="n">tape</span><span class="o">.</span>
+
+<span class="n">SCAN</span>      <span class="n">The</span> <span class="n">SCAN</span> <span class="n">function</span> <span class="n">allows</span> <span class="n">listing</span> <span class="n">the</span> <span class="n">contents</span> <span class="n">of</span> <span class="n">a</span> <span class="n">VMFPLC2</span>
+          <span class="n">formatted</span> <span class="n">tape</span><span class="o">.</span>
+
+<span class="n">LOAD</span>      <span class="n">The</span> <span class="n">LOAD</span> <span class="n">function</span> <span class="n">allows</span> <span class="n">importing</span> <span class="n">the</span> <span class="n">contents</span> <span class="n">of</span> <span class="n">a</span> <span class="n">VMFPLC2</span>
+          <span class="n">formatted</span> <span class="n">tape</span> <span class="n">unto</span> <span class="n">the</span> <span class="n">system</span><span class="o">.</span>
+
+<span class="n">ctlfile</span>   <span class="n">The</span> <span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">control</span> <span class="n">file</span> <span class="n">identifying</span> <span class="n">which</span> <span class="n">host</span> <span class="n">file</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+          <span class="n">are</span> <span class="n">to</span> <span class="n">be</span> <span class="n">DUMPed</span> <span class="n">to</span> <span class="n">the</span> <span class="n">tape</span> <span class="n">output</span> <span class="n">file</span> <span class="ow">or</span> <span class="n">LOADed</span> <span class="kn">from</span> <span class="nn">the</span>
+          <span class="n">tape</span> <span class="nb">input</span> <span class="n">file</span><span class="o">.</span>  <span class="n">See</span> <span class="n">the</span> <span class="s2">&quot;CONTROL FILE&quot;</span> <span class="n">section</span> <span class="n">below</span> <span class="k">for</span>
+          <span class="n">the</span> <span class="nb">format</span> <span class="n">of</span> <span class="n">the</span> <span class="n">control</span> <span class="n">file</span><span class="o">.</span>
+
+<span class="n">tapein</span>    <span class="n">The</span> <span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="nb">input</span> <span class="n">tape</span> <span class="n">file</span> <span class="k">for</span> <span class="n">the</span> <span class="n">SCAN</span><span class="o">/</span><span class="n">LOAD</span> <span class="n">functions</span><span class="o">.</span>
+
+<span class="n">tapeout</span>   <span class="n">The</span> <span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">output</span> <span class="n">tape</span> <span class="n">file</span> <span class="n">to</span> <span class="n">be</span> <span class="n">created</span> <span class="n">by</span> <span class="n">the</span> <span class="n">DUMP</span>
+          <span class="n">function</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>Surround the name of the control file and/or the name of the
+input/output tape file with double quotes if it contains any blanks in
+its name.</p>
+</section>
+<section id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">c</span> <span class="n">cp</span>     <span class="n">The</span> <span class="n">desired</span> <span class="n">translation</span> <span class="n">code</span> <span class="n">page</span> <span class="n">to</span> <span class="n">be</span> <span class="n">used</span> <span class="k">for</span> <span class="n">ASCII</span> <span class="n">to</span>
+          <span class="n">EBCDIC</span> <span class="n">translation</span> <span class="p">(</span><span class="ow">and</span> <span class="n">vice</span> <span class="n">versa</span><span class="p">)</span><span class="o">.</span>  <span class="n">For</span> <span class="n">a</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">valid</span>
+          <span class="n">code</span> <span class="n">pages</span> <span class="n">please</span> <span class="n">refer</span> <span class="n">to</span> <span class="n">the</span> <span class="n">Hercules</span> <span class="n">documentation</span> <span class="k">for</span>
+          <span class="n">the</span> <span class="s1">&#39;codepage&#39;</span> <span class="n">configuration</span> <span class="n">file</span> <span class="n">statement</span><span class="o">.</span>  <span class="n">The</span> <span class="n">default</span>
+          <span class="n">translation</span> <span class="n">code</span> <span class="n">page</span> <span class="ow">is</span> <span class="s2">&quot;default&quot;</span><span class="o">.</span>  <span class="n">The</span> <span class="n">recommended</span> <span class="n">code</span>
+          <span class="n">page</span> <span class="ow">is</span> <span class="s2">&quot;819/1047&quot;</span><span class="o">.</span>
+
+<span class="o">-</span><span class="n">u</span>        <span class="n">Create</span> <span class="n">an</span> <span class="n">uncompressed</span> <span class="o">.</span><span class="n">AWS</span> <span class="n">output</span> <span class="n">tape</span><span class="o">.</span>
+<span class="o">-</span><span class="n">z</span>        <span class="n">Creates</span> <span class="n">a</span> <span class="n">compressed</span> <span class="o">.</span><span class="n">HET</span> <span class="n">output</span> <span class="n">tape</span> <span class="n">using</span> <span class="n">zlib</span> <span class="p">(</span><span class="n">default</span><span class="p">)</span><span class="o">.</span>
+<span class="o">-</span><span class="n">b</span>        <span class="n">Creates</span> <span class="n">a</span> <span class="n">compressed</span> <span class="o">.</span><span class="n">HET</span> <span class="n">output</span> <span class="n">tape</span> <span class="n">using</span> <span class="n">bzip2</span><span class="o">.</span>
+<span class="o">-</span><span class="n">n</span>        <span class="n">Desired</span> <span class="n">compression</span> <span class="n">level</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span> <span class="o">...</span> <span class="o">-</span><span class="mi">9</span><span class="p">)</span><span class="o">.</span>  <span class="n">Default</span> <span class="ow">is</span> <span class="o">-</span><span class="mf">4.</span>
+<span class="o">-</span><span class="n">v</span>        <span class="n">Verbose</span><span class="o">.</span> <span class="p">(</span><span class="n">Don</span><span class="s1">&#39;t suppress certain informational messages.)</span>
+
+<span class="o">-</span><span class="n">t</span>        <span class="n">Read</span> <span class="nb">input</span> <span class="n">tape</span> <span class="ow">or</span> <span class="n">create</span> <span class="n">output</span> <span class="n">tape</span> <span class="ow">in</span> <span class="n">CMS</span> <span class="s1">&#39;TAPE&#39;</span> <span class="n">DUMP</span>
+          <span class="nb">format</span><span class="o">.</span>  <span class="n">The</span> <span class="n">default</span> <span class="ow">is</span> <span class="n">to</span> <span class="n">use</span> <span class="n">the</span> <span class="s1">&#39;VMFPLC2&#39;</span> <span class="n">DUMP</span> <span class="nb">format</span><span class="o">.</span>
+          <span class="n">The</span> <span class="s1">&#39;TAPE&#39;</span> <span class="n">DUMP</span> <span class="nb">format</span> <span class="n">allows</span> <span class="n">tapes</span> <span class="n">to</span> <span class="n">be</span> <span class="n">read</span> <span class="n">by</span> <span class="n">earlier</span>
+          <span class="n">versions</span> <span class="n">of</span> <span class="n">VM</span><span class="o">/</span><span class="n">CMS</span> <span class="n">such</span> <span class="k">as</span> <span class="n">VM</span><span class="o">/</span><span class="mf">370.</span>  <span class="n">The</span> <span class="n">VMFPLC2</span> <span class="nb">format</span> <span class="ow">is</span>
+          <span class="n">only</span> <span class="n">used</span> <span class="n">by</span> <span class="n">later</span> <span class="n">versions</span> <span class="n">of</span> <span class="n">VM</span><span class="o">/</span><span class="n">CMS</span> <span class="n">such</span> <span class="k">as</span> <span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span> <span class="n">z</span><span class="o">/</span><span class="n">VM</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+<section id="control-file">
+<h2>Control File<a class="headerlink" href="#control-file" title="Permalink to this heading">¶</a></h2>
+<p>The control file lets the DUMP/LOAD functions to determine which host
+files are to be dumped or loaded to/from tape and how they should be
+interpreted on VM. Each statement of the control file has the following
+format:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   [codepage]  &lt;fn&gt;  &lt;ft&gt;  &lt;fm&gt;  &lt;recfm&gt;  [lrecl]  &lt;type&gt;  &lt;hostfile&gt;
+
+codepage  Is an optional code page specification to be used when dumping
+          or loading the specified file. If the first word contains a &#39;/&#39;
+          slash character anywhere in its name it is interpreted as a code
+          page specification.  Otherwise the first word is interpreted
+          as the &#39;fn&#39; filename argument and the codepage specified on the
+          command line is used instead.  Code pages are only used to DUMP
+          or LOAD Text files (refer to the &quot;type&quot; argument further below).
+
+fn        Is the 1 to 8 characters that represents the file name. The file
+          name can be specified as lower case, but will be translated to
+          upper case to follow CMS conventions.  Characters allowed are
+          [A-Z], [0-9], $ (Dollar), + (Plus), - (Minus), : (Colon), @ (At),
+          # (Pound/Hash) and _ (Underscore).
+
+          The special filename &quot;@TM&quot; (At, &quot;T&quot;, &quot;M&quot;) is interpreted as a
+          request to write a tapemark to the output file, and the rest of
+          the line is ignored.
+
+          The special filenames &quot;*&quot; (asterisk), &quot;#&quot; (pound or hash) or &quot;;&quot;
+          (semicolon) are treated as comment lines causing and the rest of
+          the line to be ignored.  All blank lines are also always ignored.
+
+ft        Is the 1 to 8 characters that represents the file type. The file
+          type can be specified as lower case, but will be translated to
+          upper case to follow CMS conventions.  Characters allowed are
+          [A-Z], [0-9], $ (Dollar), + (Plus), - (Minus), : (Colon), @ (At),
+          # (Pound/Hash) and _ (Underscore).
+
+fm        Is 1 or 2 characters that represents the file mode. The first
+          character is a letter from A to Z and represents the &quot;original&quot;
+          file mode when scanned on VM/CMS. (It does NOT cause the file
+          to be loaded on that cms disk.)  The second character is a digit
+          from 0 to 6.  The file mode number indicates specific behavior
+          for the file under CMS. Refer to CMS documentation for more info.
+
+recfm     Indicates the record format, and should be specified as either
+          F[ixed] or V[ariable].
+
+lrecl     Indicates the logical record length.  This should only be spec-
+          ified for recfm F[ixed] files.  For recfm V[ariable] files the
+          record length varies from one record to the next and thus should
+          NOT be specified (should be left out from the statement).
+
+type      Indicates how the file should be processed.  The only supported
+          values are B[inary], S[tructured] or T[extual]:
+
+
+            Binary      The file is not translated and is written as-is.
+                        For RECFM F files, the file is cut into records
+                        of the length specified by the lrecl parameter.
+                        For RECFM V files, the file is cut into records
+                        of 65535 bytes except for the last record which
+                        has a length of the remainder of the file.
+
+
+            Structured  The file is in structured format where each record
+                        is preceded with a 16-bit BIG ENDIAN format length
+                        field followed by the bytes of the record itself.
+                        The recfm must always be specified as V[ariable].
+                        Structured files are not translated and are written
+                        as-is.
+
+
+            Textual     The file is translated from ASCII to EBCDIC using
+                        the specified translation code page if specified,
+                        or the code page specified on the command line if
+                        not specified.  Refer to the &quot;codepage&quot; parameter
+                        further above.
+
+                        Trailing CR, LF, CRLF line termination characters
+                        are removed by DUMP and added by LOAD.
+
+                        For RECFM F files the record is truncated if it
+                        is longer than the specified lrecl or padded with
+                        EBCDIC X&#39;40&#39; characters (white space) if shorter.
+
+                        For RECFM V files records are neither padded nor
+                        truncated and can be up to 65535 characters long.
+
+
+hostfile  The name of the input or output host file to be DUMPed or LOADed.
+          If the full path of the file is not specified then the file is
+          treated as being relative to the current directory.  Enclose the
+          file name within double quotes if it contains any blanks.
+</pre></div>
+</div>
+</section>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">¶</a></h2>
+<p>The following creates a VMFPLC2 formatted tape named “vmfplc2.het”
+containing three files named “mytest.asm”, “profile.xedit.txt” and
+“synonyms.txt”, which can then be loaded onto the guest system as CMS
+files <code class="docutils literal notranslate"><span class="pre">MYTEST</span> <span class="pre">ASSEMBLE</span> <span class="pre">A1</span></code>, <code class="docutils literal notranslate"><span class="pre">PROFILE</span> <span class="pre">XEDIT</span> <span class="pre">A1</span></code> and
+<code class="docutils literal notranslate"><span class="pre">MY</span> <span class="pre">SYNONYM</span> <span class="pre">A1</span></code>:</p>
+<pre>
+    <b>command</b>:        vmfplc2  DUMP myfiles.txt  vmfplc2.het
+
+    <b>myfiles.txt</b>:    MYTEST   ASSEMBLE A1  Fixed 80 Text  mytest.asm
+                    PROFILE  XEDIT    A1  Variable Text  profile.xedit.txt
+                    USER     SYNONYM  A1  Fixed 80 Text  synonyms.txt
+</pre><p>The following example reads a VMFPLC2 formatted input tape named
+“vmfplc2.het” and lists all of the files that are found on the tape:</p>
+<pre>
+    <b>command</b>:        vmfplc2  SCAN vmfplc2.het
+</pre><p>The following example reads a VMFPLC2 formatted tape named “vmfplc2.het”
+and restores onto the host system any files found on the tape that match
+one of the entries listed in the “myfiles.txt” control file:</p>
+<pre>
+    <b>command</b>:        vmfplc2  LOAD myfiles.txt  vmfplc2.het
+
+    <b>myfiles.txt</b>:    MYTEST XEDIT A1  Variable Text  mytest.rexx
+                    MYTEST DATA  A1  Fixed 80 Text  mytest.dat
+</pre></section>
+<section id="bug-reports">
+<h2>Bug Reports<a class="headerlink" href="#bug-reports" title="Permalink to this heading">¶</a></h2>
+<p><a class="reference external" href="https://github.com/sdl-hercules-390/hyperion/issues">Bug reports</a>
+<em>(together with your diagnosis of the fault, please!)</em> should be either
+entered into our <a class="reference external" href="https://github.com/sdl-hercules-390/hyperion/issues">Github issue
+tracker</a>
+<em>(preferred)</em> at <a class="reference external" href="https://github.com/SDL-Hercules-390/hyperion/issues/">https://github.com/SDL-Hercules-390/hyperion/issues/</a>,
+or else reported via message to the <a class="reference external" href="https://hercules-390.groups.io/g/group">main hercules-390 discussion
+group</a> at
+<a class="reference external" href="https://hercules-390.groups.io/g/group">https://hercules-390.groups.io/g/group</a>.</p>
+</section>
+<section id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this heading">¶</a></h2>
+<p>The Hercules emulator homepage at: <a class="reference external" href="http://www.sdl-hercules-390.org/">http://www.sdl-hercules-390.org/</a></p>
+</section>
+<section id="history">
+<h2>History<a class="headerlink" href="#history" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">2010</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">07</span>  <span class="n">Originally</span> <span class="n">written</span> <span class="n">by</span> <span class="n">Ivan</span> <span class="n">S</span><span class="o">.</span> <span class="n">Warren</span>
+
+<span class="mi">2019</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">29</span>  <span class="n">Program</span> <span class="n">completely</span> <span class="n">rewritten</span> <span class="n">by</span> <span class="s2">&quot;Fish&quot;</span> <span class="p">(</span><span class="n">David</span> <span class="n">B</span><span class="o">.</span> <span class="n">Trout</span><span class="p">)</span>
+            <span class="n">Any</span> <span class="n">typos</span> <span class="ow">or</span> <span class="n">bugs</span> <span class="n">are</span> <span class="n">purely</span> <span class="n">my</span> <span class="n">own</span> <span class="n">fault</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">Ivan</span><span class="s1">&#39;s.</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Read the Docs</span>
+      v: fovea1959
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+      <dl>
+        <dt>Languages</dt>
+        
+           <strong> 
+          <dd><a href="/herc-docs-demo/en/fovea1959/">en</a></dd>
+           </strong> 
+        
+      </dl>
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+           <strong> 
+          <dd><a href="/herc-docs-demo/en/fovea1959/">fovea1959</a></dd>
+           </strong> 
+        
+          
+          <dd><a href="/herc-docs-demo/en/master/">master</a></dd>
+          
+        
+          
+          <dd><a href="/herc-docs-demo/en/0.0/">0.0</a></dd>
+          
+        
+          
+          <dd><a href="/herc-docs-demo/en/1.0/">1.0</a></dd>
+          
+        
+      </dl>
+      
+      
+      <dl>
+        <dt>Downloads</dt>
+        
+          <dd><a href="/herc-docs-demo/en/fovea1959/Hercules Documentation Demo-docs_en_fovea1959.pdf">pdf</a></dd>
+        
+          <dd><a href="/herc-docs-demo/en/fovea1959/Hercules Documentation Demo-docs_en_fovea1959.epub">epub</a></dd>
+        
+          <dd><a href="/herc-docs-demo/en/fovea1959/Hercules Documentation Demo-docs_en_fovea1959.html.tar.gz">tarred HTML</a></dd>
+        
+          <dd><a href="/herc-docs-demo/en/fovea1959/Hercules Documentation Demo-docs_en_fovea1959.single.html.tar.gz">tarred single file HTML</a></dd>
+        
+      </dl>
+      
+      
+      <hr/>
+      <a href="https://tech.michaelaltfield.net/2020/07/18/sphinx-rtd-github-pages-1/">Continuous Documentation</a> hosting provided by <a href="https://pages.github.com/">GitHub Pages</a>.
+ 
+    </div>
+  </div>
+
+ 
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,826 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Hercules Networking &mdash; Hercules Documentation Demo 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link href="_static/herc_style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Hercules Documentation Demo
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                master
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="hercinst.html">Building and Installing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration File</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercdasd.html">Creating DASD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercoper.html">Operating Procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercsupp.html">Technical Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercfaq.html">Frequently-Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="messages.html">Messages and Codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aa_auxdocs.html">Supporting documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_a.html">Appendix A - Documentation Standards</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Hercules Documentation Demo</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Hercules Networking</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/README.NETWORKING.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="hercules-networking">
+<h1>Hercules Networking<a class="headerlink" href="#hercules-networking" title="Permalink to this heading">¶</a></h1>
+<p><em>(Please read</em>
+<a class="reference external" href="https://sdl-hercules-390.github.io/html/herctcp.html">herctcp.html</a>
+<em>as Roger explains how to set up TCP/IP networking with Hercules.)</em></p>
+<p>Most of the network communication emulations implemented within Hercules
+use a CTCA (Channel to Channel Adapter) type device. Depending on the
+“flavor”, the CTCA device will provide either a point-to-point or a
+virtual network adapter interface to the driving system’s TCP/IP stack
+or in the case of CTCE, a true CTCA connection to another instance of
+Hercules via a TCP/IP connection.</p>
+<p>Most current emulations, with the exception of, CTCT and CTCE use the
+Universal TUN/TAP driver on <em>nix and TunTap32 (WinPCap) on the Windows
+platforms which creates a network interface on the driving system which
+allow Hercules to present frames to, and receive frames from the TCP/IP
+stack. This network interface is configured on</em> nix platforms by the
+<code class="docutils literal notranslate"><span class="pre">hercifc</span></code> program which is invoked by Hercules after the TUN/TAP
+device is opened. The <code class="docutils literal notranslate"><span class="pre">hercifc</span></code> program runs as root. Please read
+<a class="reference external" href="https://sdl-hercules-390.github.io/html/herctcp.html">herctcp.html</a>
+for more information on the security implications of the <code class="docutils literal notranslate"><span class="pre">hercifc</span></code>
+program.</p>
+<section id="details">
+<h2>Details<a class="headerlink" href="#details" title="Permalink to this heading">¶</a></h2>
+<p><em>(Important information about changes to the Hercules configuration
+files!</em> <strong>PLEASE READ!</strong><em>)</em></p>
+<p>The format of the Hercules configuration file statements for all of the
+networking emulations have changed from the previous releases of
+Hercules. While the older format may still be accepted for a short while
+in order to maintain compatibility, it is recommended to switch to the
+new format as soon as possible. Also note that there is no distinction
+between the CTCI and CTCI-W32 modes any more, in fact CTCI-W32 does not
+exist in this release.</p>
+<p>In releases prior to Hercules version 3.00, all of the TCP/IP emulations
+required two addresses to be defined in the Hercules configuration file:
+one address for the read subchannel and the other for write.</p>
+<p>Hercules release version 3.00, however, [temporarily] changed the rules:
+With [<strong>ONLY!</strong>] version 3.00 of Hercules, only the <em>first</em> address need
+be specified in the configuration file. Hercules version 3.00
+automatically creates the second address. Care must be taken to <em>not</em>
+define the second address [<em>with Hercules version 3.00</em> <strong>ONLY!</strong>] or a
+configuration error will occur.</p>
+<p>Starting with Hercules version 3.01 however, we’ve gone back to doing
+things the way we were <em>originally</em> (and the way most users were used
+to) doing them (i.e. the way most users <em>expect</em> things to work):</p>
+<p>With Hercules version 3.01 you need to define <em>both</em> addresses.</p>
+<p>Both the even numbered read device <em>as well as</em> the odd numbered write
+device must <em>both</em> be defined in your Hercules configuration file
+starting with Hercules version 3.01. We apologize for the mess, but we
+thought having Herc automatically define the write device for you (as it
+does in version 3.00) would be easier for everyone. Turns out it caused
+a lot of problems with a lot of people, so we decided to go back to the
+original way. Again, we apologize for whatever headaches this may have
+caused anyone.</p>
+<p>Note that the CTCT protocol has always required both addresses to be
+defined (i.e. <em>all</em> versions of Hercules, including version 3.00 as
+well, require <em>both</em> even/odd read/write devices to be defined
+separately [in your Hercules configuration file]).</p>
+</section>
+<section id="emulation-modes">
+<h2>Emulation Modes<a class="headerlink" href="#emulation-modes" title="Permalink to this heading">¶</a></h2>
+<p>The currently supported emulation modes are:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CTCT</span>     <span class="o">-</span> <span class="n">CTCA</span> <span class="n">Emulation</span> <span class="n">via</span> <span class="n">TCP</span> <span class="n">connection</span>
+<span class="n">CTCE</span>     <span class="o">-</span> <span class="n">Enhanced</span> <span class="n">CTCA</span> <span class="n">Emulation</span> <span class="n">via</span> <span class="n">TCP</span> <span class="n">connection</span>
+<span class="n">CTCI</span>     <span class="o">-</span> <span class="n">Point</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">point</span> <span class="n">connection</span> <span class="n">to</span> <span class="n">the</span> <span class="n">host</span> <span class="n">IP</span> <span class="n">stack</span><span class="o">.</span>
+<span class="n">LCS</span>      <span class="o">-</span> <span class="n">LAN</span> <span class="n">Channel</span> <span class="n">Station</span> <span class="p">(</span><span class="mi">3172</span><span class="o">/</span><span class="n">OSA</span><span class="p">)</span>
+<span class="n">PTP</span>      <span class="o">-</span> <span class="n">Point</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">point</span> <span class="n">connection</span> <span class="n">to</span> <span class="n">the</span> <span class="n">host</span> <span class="n">IP</span> <span class="n">stack</span><span class="o">.</span>
+<span class="n">OSA</span>      <span class="o">-</span> <span class="n">Open</span> <span class="n">Systems</span> <span class="n">Adapter</span>
+</pre></div>
+</div>
+<section id="ctct-channel-to-channel-emulation-via-tcp-connection">
+<h3>CTCT - Channel to Channel Emulation via TCP connection<a class="headerlink" href="#ctct-channel-to-channel-emulation-via-tcp-connection" title="Permalink to this heading">¶</a></h3>
+<p>This emulation mode provides protocol-independent communication with
+another instance of this driver via a TCP connection.</p>
+<p>This mode appears to the operating system running in the Hercules
+machine as an IBM 3088 Channel to Channel Adapter and can operate in
+either Basic or Extended mode.</p>
+<p>The configuration statement for CTCT is as follows:</p>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;devnum&gt;</span> <span class="pre">3088</span> <span class="pre">CTCT</span> <span class="pre">&lt;lport&gt;</span> <span class="pre">&lt;raddress&gt;</span> <span class="pre">&lt;rport&gt;</span> <span class="pre">&lt;mtu&gt;</span></code></p>
+<p>where:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">devnum</span><span class="o">&gt;</span>   <span class="ow">is</span> <span class="n">the</span> <span class="n">address</span> <span class="n">of</span> <span class="n">the</span> <span class="n">CTCT</span> <span class="n">device</span><span class="o">.</span>
+<span class="o">&lt;</span><span class="n">lport</span><span class="o">&gt;</span>    <span class="ow">is</span> <span class="n">the</span> <span class="n">TCP</span><span class="o">/</span><span class="n">IP</span> <span class="n">port</span> <span class="n">on</span> <span class="n">the</span> <span class="n">local</span> <span class="n">system</span><span class="o">.</span>
+<span class="o">&lt;</span><span class="n">raddress</span><span class="o">&gt;</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">IP</span> <span class="n">address</span> <span class="n">on</span> <span class="n">the</span> <span class="n">remote</span><span class="o">.</span>
+<span class="o">&lt;</span><span class="n">rport</span><span class="o">&gt;</span>    <span class="ow">is</span> <span class="n">the</span> <span class="n">TCP</span><span class="o">/</span><span class="n">IP</span> <span class="n">port</span> <span class="n">on</span> <span class="n">the</span> <span class="n">remote</span> <span class="n">system</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+<section id="ctci-channel-to-channel-link-to-tcp-ip-stack">
+<h3>CTCI - Channel to Channel link to TCP/IP stack<a class="headerlink" href="#ctci-channel-to-channel-link-to-tcp-ip-stack" title="Permalink to this heading">¶</a></h3>
+<p>This is a point-to-point link to the driving system’s TCP/IP stack. From
+the point of view of the operating system running in the Hercules
+machine it appears to be a CTC link to a machine running TCP/IP for MVS
+or VM.</p>
+<p>CTCI uses the Universal TUN/TAP driver on *nix and Riverbed
+Technology’s WinPCap packet driver as well as Fish’s <a class="reference external" href="http://www.softdevlabs.com/ctci">CTCI-WIN
+product</a> on Windows **(*)**.</p>
+<p>The configuration statement for CTCI is as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">devnum1</span><span class="o">-</span><span class="n">devnum2</span><span class="o">&gt;</span> <span class="n">CTCI</span> <span class="p">[</span><span class="n">options</span><span class="p">]</span> <span class="o">&lt;</span><span class="n">guestip</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">hostip</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>where:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">devnum1</span><span class="o">-</span><span class="n">devnum2</span><span class="o">&gt;</span>   <span class="ow">is</span> <span class="n">the</span> <span class="n">address</span> <span class="n">pair</span> <span class="n">of</span> <span class="n">the</span> <span class="n">CTCI</span> <span class="n">device</span><span class="o">.</span>
+<span class="o">&lt;</span><span class="n">guestip</span><span class="o">&gt;</span>  <span class="ow">is</span> <span class="n">the</span> <span class="n">IP</span> <span class="n">address</span> <span class="n">of</span> <span class="n">the</span> <span class="n">Hercules</span> <span class="p">(</span><span class="n">guest</span> <span class="n">OS</span><span class="p">)</span> <span class="n">side</span><span class="o">.</span>
+<span class="o">&lt;</span><span class="n">hostip</span><span class="o">&gt;</span>   <span class="ow">is</span> <span class="n">the</span> <span class="n">IP</span> <span class="n">address</span> <span class="n">on</span> <span class="n">the</span> <span class="n">driving</span> <span class="n">system</span><span class="o">.</span>
+<span class="p">[</span><span class="n">options</span><span class="p">]</span>  <span class="n">can</span> <span class="n">be</span> <span class="nb">any</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span><span class="p">:</span>
+         <span class="o">-</span><span class="n">n</span> <span class="o">&lt;</span><span class="n">devname</span><span class="o">&gt;</span> <span class="ow">or</span> <span class="o">--</span><span class="n">dev</span> <span class="o">&lt;</span><span class="n">devname</span><span class="o">&gt;</span>
+             <span class="n">where</span> <span class="o">&lt;</span><span class="n">devname</span><span class="o">&gt;</span> <span class="ow">is</span><span class="p">:</span>
+             <span class="p">[</span><span class="o">*</span><span class="n">nix</span><span class="p">]</span> <span class="n">the</span> <span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">TUN</span><span class="o">/</span><span class="n">TAP</span> <span class="n">special</span> <span class="n">character</span>
+             <span class="n">device</span><span class="p">,</span> <span class="n">normally</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">net</span><span class="o">/</span><span class="n">tun</span><span class="o">.</span>
+             <span class="p">[</span><span class="n">Windows</span><span class="p">]</span> <span class="ow">is</span> <span class="n">either</span> <span class="n">the</span> <span class="n">IP</span> <span class="ow">or</span> <span class="n">MAC</span> <span class="n">address</span> <span class="n">of</span> <span class="n">the</span>
+             <span class="n">driving</span> <span class="n">systems</span> <span class="n">network</span> <span class="n">card</span><span class="o">.</span> <span class="n">TunTap32</span> <span class="n">will</span>
+             <span class="n">automatically</span> <span class="n">select</span> <span class="n">the</span> <span class="n">first</span> <span class="n">network</span> <span class="n">card</span> <span class="n">it</span>
+             <span class="n">finds</span> <span class="k">if</span> <span class="n">this</span> <span class="n">option</span> <span class="ow">is</span> <span class="n">omitted</span><span class="p">,</span> <span class="n">this</span> <span class="n">may</span> <span class="ow">not</span> <span class="n">be</span>
+             <span class="n">desirable</span> <span class="k">for</span> <span class="n">some</span> <span class="n">users</span><span class="o">.</span>
+
+         <span class="o">-</span><span class="n">t</span> <span class="o">&lt;</span><span class="n">mtu</span><span class="o">&gt;</span> <span class="ow">or</span> <span class="o">--</span><span class="n">mtu</span> <span class="o">&lt;</span><span class="n">mtu</span><span class="o">&gt;</span>
+
+             <span class="p">[</span><span class="o">*</span><span class="n">nix</span> <span class="n">only</span><span class="p">]</span> <span class="n">where</span> <span class="o">&lt;</span><span class="n">mtu</span><span class="o">&gt;</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">maximum</span> <span class="n">transmission</span>
+             <span class="n">unit</span> <span class="n">size</span><span class="p">,</span> <span class="n">normally</span> <span class="mi">1500</span>
+
+         <span class="o">-</span><span class="n">s</span> <span class="o">&lt;</span><span class="n">netmask</span><span class="o">&gt;</span> <span class="ow">or</span> <span class="o">--</span><span class="n">netmask</span> <span class="o">&lt;</span><span class="n">netmask</span><span class="o">&gt;</span>
+
+             <span class="p">[</span><span class="o">*</span><span class="n">nix</span> <span class="n">only</span><span class="p">]</span> <span class="n">where</span> <span class="o">&lt;</span><span class="n">netmask</span><span class="o">&gt;</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">netmask</span> <span class="n">to</span>
+             <span class="n">be</span> <span class="n">configured</span> <span class="n">on</span> <span class="n">the</span> <span class="n">link</span><span class="o">.</span> <span class="n">Note</span><span class="p">:</span> <span class="n">Since</span> <span class="n">this</span> <span class="ow">is</span> <span class="n">a</span>
+             <span class="n">point</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">point</span> <span class="n">link</span> <span class="n">netmask</span> <span class="ow">is</span> <span class="n">meaningless</span> <span class="kn">from</span>
+             <span class="nn">the</span> <span class="n">perspective</span> <span class="n">of</span> <span class="n">the</span> <span class="n">actual</span> <span class="n">network</span> <span class="n">device</span><span class="o">.</span>
+
+         <span class="o">-</span><span class="n">m</span> <span class="o">&lt;</span><span class="n">MAC</span> <span class="n">Address</span><span class="o">&gt;</span> <span class="ow">or</span> <span class="o">--</span><span class="n">mac</span> <span class="o">&lt;</span><span class="n">MAC</span> <span class="n">address</span><span class="o">&gt;</span>
+
+             <span class="p">[</span><span class="n">Windows</span> <span class="n">only</span><span class="p">]</span> <span class="n">where</span> <span class="o">&lt;</span><span class="n">MAC</span> <span class="n">Address</span><span class="o">&gt;</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">optional</span>
+             <span class="n">hardware</span> <span class="n">address</span> <span class="n">of</span> <span class="n">the</span> <span class="n">interface</span> <span class="ow">in</span> <span class="n">the</span> <span class="nb">format</span> <span class="n">of</span>
+             <span class="n">either</span> <span class="n">xx</span><span class="p">:</span><span class="n">xx</span><span class="p">:</span><span class="n">xx</span><span class="p">:</span><span class="n">xx</span><span class="p">:</span><span class="n">xx</span><span class="p">:</span><span class="n">xx</span> <span class="ow">or</span> <span class="n">xx</span><span class="o">-</span><span class="n">xx</span><span class="o">-</span><span class="n">xx</span><span class="o">-</span><span class="n">xx</span><span class="o">-</span><span class="n">xx</span><span class="o">-</span><span class="n">xx</span><span class="o">.</span>
+
+         <span class="o">-</span><span class="n">k</span> <span class="o">&lt;</span><span class="n">kbuff</span><span class="o">&gt;</span> <span class="ow">or</span> <span class="o">--</span><span class="n">kbuff</span> <span class="o">&lt;</span><span class="n">kbuff</span><span class="o">&gt;</span>
+
+             <span class="p">[</span><span class="n">Windows</span> <span class="n">only</span><span class="p">]</span> <span class="n">where</span> <span class="o">&lt;</span><span class="n">kbuff</span><span class="o">&gt;</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">size</span> <span class="n">of</span> <span class="n">the</span>
+             <span class="n">WinPCap</span> <span class="n">kernel</span> <span class="n">buffer</span> <span class="n">size</span><span class="p">,</span> <span class="n">normally</span> <span class="mf">1024.</span>
+
+         <span class="o">-</span><span class="n">i</span> <span class="o">&lt;</span><span class="n">ibuff</span><span class="o">&gt;</span> <span class="ow">or</span> <span class="o">--</span><span class="n">ibuff</span> <span class="o">&lt;</span><span class="n">ibuff</span><span class="o">&gt;</span>
+
+             <span class="p">[</span><span class="n">Windows</span> <span class="n">only</span><span class="p">]</span> <span class="n">where</span> <span class="o">&lt;</span><span class="n">ibuff</span><span class="o">&gt;</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">size</span> <span class="n">of</span> <span class="n">the</span>
+             <span class="n">WinPCap</span> <span class="n">I</span><span class="o">/</span><span class="n">O</span> <span class="n">buffer</span> <span class="n">size</span><span class="p">,</span> <span class="n">normally</span> <span class="mf">64.</span>
+
+         <span class="o">-</span><span class="n">d</span> <span class="ow">or</span> <span class="o">--</span><span class="n">debug</span>
+
+             <span class="n">this</span> <span class="n">will</span> <span class="n">turn</span> <span class="n">on</span> <span class="n">the</span> <span class="n">internal</span> <span class="n">debugging</span> <span class="n">routines</span><span class="o">.</span>
+             <span class="ne">Warning</span><span class="p">:</span> <span class="n">This</span> <span class="n">will</span> <span class="n">produce</span> <span class="n">a</span> <span class="n">tremendous</span> <span class="n">amount</span> <span class="n">of</span>
+             <span class="n">output</span> <span class="n">to</span> <span class="n">the</span> <span class="n">Hercules</span> <span class="n">console</span><span class="o">.</span> <span class="n">It</span> <span class="ow">is</span> <span class="n">suggested</span> <span class="n">that</span>
+             <span class="n">you</span> <span class="n">only</span> <span class="n">enable</span> <span class="n">this</span> <span class="n">at</span> <span class="n">the</span> <span class="n">request</span> <span class="n">of</span> <span class="n">the</span> <span class="n">maintainers</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+<section id="lcs-lan-channel-station">
+<h3>LCS - LAN Channel Station<a class="headerlink" href="#lcs-lan-channel-station" title="Permalink to this heading">¶</a></h3>
+<p>This emulation mode appears to the operating system running in the
+Hercules machine as an IBM 8232 LCS device, an IBM 2216 router, a 3172
+running ICP (Interconnect Communications Program), the LCS3172 driver of
+a P/390, or an IBM Open Systems Adapter.</p>
+<p>Rather than a point-to-point link, this emulation creates a virtual
+ethernet adapter through which the guest operating system running in the
+Hercules machine can communicate. As such, this mode is not limited to
+TCP/IP traffic, but in fact will handle any ethernet frame.</p>
+<p>The configuration statement for LCS is as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">devnum1</span><span class="o">-</span><span class="n">devnum2</span><span class="o">&gt;</span> <span class="n">LCS</span> <span class="p">[</span><span class="n">options</span><span class="p">]</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">guestip</span><span class="o">&gt;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>where:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">devnum1</span><span class="o">-</span><span class="n">devnum2</span><span class="o">&gt;</span>   <span class="ow">is</span> <span class="n">the</span> <span class="n">address</span> <span class="n">pair</span> <span class="n">of</span> <span class="n">the</span> <span class="n">LCS</span> <span class="n">device</span><span class="o">.</span>
+                <span class="n">This</span> <span class="n">pair</span> <span class="n">must</span> <span class="n">be</span> <span class="n">an</span> <span class="n">even</span><span class="o">-</span><span class="n">odd</span> <span class="n">address</span><span class="o">.</span>
+
+     <span class="p">[</span><span class="o">&lt;</span><span class="n">guestip</span><span class="o">&gt;</span><span class="p">]</span> <span class="ow">is</span> <span class="n">an</span> <span class="n">optional</span> <span class="n">IP</span> <span class="n">address</span> <span class="n">of</span> <span class="n">the</span> <span class="n">Hercules</span>
+                <span class="p">(</span><span class="n">guest</span> <span class="n">OS</span><span class="p">)</span> <span class="n">side</span><span class="o">.</span> <span class="n">Note</span><span class="p">:</span> <span class="n">This</span> <span class="ow">is</span> <span class="n">only</span> <span class="n">used</span> <span class="n">to</span>
+                <span class="n">establish</span> <span class="n">a</span> <span class="n">point</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">point</span> <span class="n">routing</span> <span class="n">table</span> <span class="n">entry</span>
+                <span class="n">on</span> <span class="n">driving</span> <span class="n">system</span><span class="o">.</span> <span class="n">If</span> <span class="n">you</span> <span class="n">use</span> <span class="n">the</span> <span class="o">--</span><span class="n">oat</span> <span class="n">option</span><span class="p">,</span>
+                <span class="n">do</span> <span class="ow">not</span> <span class="n">specify</span> <span class="n">an</span> <span class="n">address</span> <span class="n">here</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>There are no required parameters for the LCS emulation, however there
+are several options that can be specified on the config statement:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">n</span> <span class="o">&lt;</span><span class="n">devname</span><span class="o">&gt;</span> <span class="ow">or</span> <span class="o">--</span><span class="n">dev</span> <span class="o">&lt;</span><span class="n">devname</span><span class="o">&gt;</span>
+
+    <span class="n">where</span> <span class="o">&lt;</span><span class="n">devname</span><span class="o">&gt;</span> <span class="ow">is</span><span class="p">:</span>
+
+    <span class="p">[</span><span class="o">*</span><span class="n">nix</span><span class="p">]</span> <span class="n">the</span> <span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">TUN</span><span class="o">/</span><span class="n">TAP</span> <span class="n">special</span> <span class="n">character</span> <span class="n">device</span><span class="p">,</span>
+    <span class="n">normally</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">net</span><span class="o">/</span><span class="n">tun</span><span class="o">.</span>
+
+    <span class="p">[</span><span class="n">Windows</span><span class="p">]</span> <span class="ow">is</span> <span class="n">either</span> <span class="n">the</span> <span class="n">IP</span> <span class="ow">or</span> <span class="n">MAC</span> <span class="n">address</span> <span class="n">of</span> <span class="n">the</span> <span class="n">driving</span>
+    <span class="n">systems</span> <span class="n">network</span> <span class="n">card</span><span class="o">.</span> <span class="n">TunTap32</span> <span class="n">will</span> <span class="n">automatically</span> <span class="n">select</span>
+    <span class="n">the</span> <span class="n">first</span> <span class="n">network</span> <span class="n">card</span> <span class="n">it</span> <span class="n">finds</span> <span class="k">if</span> <span class="n">this</span> <span class="n">option</span> <span class="ow">is</span>
+    <span class="n">omitted</span><span class="p">,</span> <span class="n">this</span> <span class="n">may</span> <span class="ow">not</span> <span class="n">be</span> <span class="n">desirable</span> <span class="k">for</span> <span class="n">some</span> <span class="n">users</span><span class="o">.</span>
+
+<span class="o">-</span><span class="n">o</span> <span class="o">&lt;</span><span class="n">filename</span><span class="o">&gt;</span> <span class="ow">or</span> <span class="o">--</span><span class="n">oat</span> <span class="o">&lt;</span><span class="n">filename</span><span class="o">&gt;</span>
+
+    <span class="n">where</span> <span class="o">&lt;</span><span class="n">filename</span><span class="o">&gt;</span> <span class="n">specifies</span> <span class="n">the</span> <span class="n">filename</span> <span class="n">of</span> <span class="n">the</span> <span class="n">Address</span>
+    <span class="n">Translation</span> <span class="n">file</span><span class="o">.</span> <span class="n">If</span> <span class="n">this</span> <span class="n">option</span> <span class="ow">is</span> <span class="n">specified</span><span class="p">,</span> <span class="n">the</span> <span class="n">optional</span>
+    <span class="o">&lt;</span><span class="n">guestip</span><span class="o">&gt;</span> <span class="ow">and</span> <span class="o">--</span><span class="n">mac</span> <span class="n">entries</span> <span class="n">are</span> <span class="n">ignored</span> <span class="ow">in</span> <span class="n">preference</span> <span class="n">to</span>
+    <span class="n">statements</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">OAT</span><span class="o">.</span> <span class="p">(</span><span class="n">See</span> <span class="n">below</span> <span class="k">for</span> <span class="n">the</span> <span class="nb">format</span> <span class="n">of</span> <span class="n">the</span> <span class="n">OAT</span><span class="p">)</span>
+
+<span class="o">-</span><span class="n">m</span> <span class="o">&lt;</span><span class="n">MAC</span> <span class="n">Address</span><span class="o">&gt;</span> <span class="ow">or</span> <span class="o">--</span><span class="n">mac</span> <span class="o">&lt;</span><span class="n">MAC</span> <span class="n">address</span><span class="o">&gt;</span>
+
+    <span class="n">where</span> <span class="o">&lt;</span><span class="n">MAC</span> <span class="n">Address</span><span class="o">&gt;</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">optional</span> <span class="n">hardware</span> <span class="n">address</span> <span class="n">of</span>
+    <span class="n">the</span> <span class="n">interface</span> <span class="ow">in</span> <span class="n">the</span> <span class="nb">format</span><span class="p">:</span> <span class="n">xx</span><span class="p">:</span><span class="n">xx</span><span class="p">:</span><span class="n">xx</span><span class="p">:</span><span class="n">xx</span><span class="p">:</span><span class="n">xx</span><span class="p">:</span><span class="n">xx</span>
+
+<span class="o">-</span><span class="n">d</span> <span class="ow">or</span> <span class="o">--</span><span class="n">debug</span>
+
+    <span class="n">this</span> <span class="n">will</span> <span class="n">turn</span> <span class="n">on</span> <span class="n">the</span> <span class="n">internal</span> <span class="n">debugging</span> <span class="n">routines</span><span class="o">.</span>
+    <span class="ne">Warning</span><span class="p">:</span> <span class="n">This</span> <span class="n">will</span> <span class="n">produce</span> <span class="n">a</span> <span class="n">tremendous</span> <span class="n">amount</span> <span class="n">of</span>
+    <span class="n">output</span> <span class="n">to</span> <span class="n">the</span> <span class="n">Hercules</span> <span class="n">console</span><span class="o">.</span> <span class="n">It</span> <span class="ow">is</span> <span class="n">suggested</span> <span class="n">that</span>
+    <span class="n">you</span> <span class="n">only</span> <span class="n">enable</span> <span class="n">this</span> <span class="n">at</span> <span class="n">the</span> <span class="n">request</span> <span class="n">of</span> <span class="n">the</span> <span class="n">maintainers</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>If no Address Translation file is specified, the emulation module will
+create the following:</p>
+<ul>
+<li><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">An</span> <span class="n">ethernet</span> <span class="n">adapter</span> <span class="p">(</span><span class="n">port</span> <span class="mi">0</span><span class="p">)</span> <span class="k">for</span> <span class="n">TCP</span><span class="o">/</span><span class="n">IP</span> <span class="n">traffic</span> <span class="n">only</span><span class="o">.</span>
+</pre></div>
+</div>
+</li>
+<li><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Two</span> <span class="n">device</span> <span class="n">addresses</span> <span class="n">will</span> <span class="n">be</span> <span class="n">defined</span> <span class="p">(</span><span class="n">devnum</span> <span class="ow">and</span> <span class="n">devnum</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>The syntax for the Address Translation file is as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*********************************************************</span>
+<span class="o">*</span> <span class="n">Dev</span> <span class="n">Mode</span> <span class="n">Port</span> <span class="n">Entry</span> <span class="n">specific</span> <span class="n">information</span>              <span class="o">*</span>
+<span class="o">*********************************************************</span>
+  <span class="mi">0400</span>  <span class="n">IP</span>   <span class="mi">00</span>  <span class="n">PRI</span> <span class="mf">172.021.003.032</span>
+  <span class="mi">0402</span>  <span class="n">IP</span>   <span class="mi">00</span>  <span class="n">SEC</span> <span class="mf">172.021.003.033</span>
+  <span class="mi">0404</span>  <span class="n">IP</span>   <span class="mi">00</span>  <span class="n">NO</span>  <span class="mf">172.021.003.038</span>
+  <span class="mi">0406</span>  <span class="n">IP</span>   <span class="mi">01</span>  <span class="n">NO</span>  <span class="mf">172.021.002.016</span>
+  <span class="mi">040</span><span class="n">E</span>  <span class="n">SNA</span>  <span class="mi">00</span>
+
+  <span class="n">HWADD</span> <span class="mi">00</span> <span class="mi">02</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="n">FE</span><span class="p">:</span><span class="n">DF</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">42</span>
+  <span class="n">HWADD</span> <span class="mi">01</span> <span class="mi">02</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="n">FE</span><span class="p">:</span><span class="n">DF</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">43</span>
+  <span class="n">ROUTE</span> <span class="mi">00</span> <span class="mf">172.021.003.032</span> <span class="mf">255.255.255.224</span>
+</pre></div>
+</div>
+<p>where:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Dev</span>   <span class="ow">is</span> <span class="n">the</span> <span class="n">base</span> <span class="n">device</span> <span class="n">address</span>
+<span class="n">Mode</span>  <span class="ow">is</span> <span class="n">the</span> <span class="n">operation</span> <span class="n">mode</span> <span class="o">-</span> <span class="n">IP</span> <span class="ow">or</span> <span class="n">SNA</span>
+<span class="n">Port</span>  <span class="ow">is</span> <span class="n">the</span> <span class="n">virtual</span> <span class="p">(</span><span class="n">relative</span><span class="p">)</span> <span class="n">adapter</span> <span class="n">number</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>For <code class="docutils literal notranslate"><span class="pre">IP</span></code> modes, the Entry-specific information is as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PRI</span><span class="o">|</span><span class="n">SEC</span><span class="o">|</span><span class="n">NO</span>  <span class="n">specifies</span> <span class="n">where</span> <span class="n">a</span> <span class="n">packet</span> <span class="k">with</span> <span class="n">an</span> <span class="n">unknown</span> <span class="n">IP</span>
+            <span class="n">address</span> <span class="ow">is</span> <span class="n">forwarded</span> <span class="n">to</span><span class="o">.</span> <span class="n">PRI</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">primary</span>
+            <span class="n">default</span> <span class="n">entry</span><span class="p">,</span> <span class="n">SEC</span> <span class="n">specifies</span> <span class="n">the</span> <span class="n">entry</span> <span class="n">to</span> <span class="n">use</span>
+            <span class="n">when</span> <span class="n">the</span> <span class="n">primary</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">available</span><span class="p">,</span> <span class="ow">and</span> <span class="n">NO</span>
+            <span class="n">specifies</span> <span class="n">that</span> <span class="n">this</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">a</span> <span class="n">default</span> <span class="n">entry</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>When the operation mode is <code class="docutils literal notranslate"><span class="pre">IP</span></code>, specify only the even (read) address;
+the odd (write) address is created automatically. If an odd address is
+specified the read/write functions of the pair are swapped.</p>
+<p>Note: SNA mode does not currently work.</p>
+<p>Additionally, two other statements can be included in the address
+translation file. The <code class="docutils literal notranslate"><span class="pre">HWADD</span></code> and <code class="docutils literal notranslate"><span class="pre">ROUTE</span></code> statements.</p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">HWADD</span></code> to specify a hardware (MAC) address for a virtual adapter.
+The first parameter after <code class="docutils literal notranslate"><span class="pre">HWADD</span></code> specifies with relative adapter for
+which the address is applied.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">ROUTE</span></code> statement is included for convenience. This allows the
+<code class="docutils literal notranslate"><span class="pre">hercifc</span></code> program to create a network route for this specified virtual
+adapter. Please note that it is not necessary to include point-to-point
+routes for each IP address in the table. This is done automatically by
+the emulation module.</p>
+<p>Up to 4 virtual (relative) adapters (ports) 00-03 are currently
+supported.</p>
+</section>
+<section id="ctce-enhanced-channel-to-channel-emulation-via-tcp-connection">
+<h3>CTCE - Enhanced Channel to Channel Emulation via TCP connection<a class="headerlink" href="#ctce-enhanced-channel-to-channel-emulation-via-tcp-connection" title="Permalink to this heading">¶</a></h3>
+<p>The CTCE device type also emulates a <strong>real</strong> <em>3088 Channel to Channel
+Adapter</em> for non-IP traffic, enhancing the CTCT capabilities. CTCE
+connections are also based on TCP/IP between two (or more) Hercules
+instances, and require a pair of port numbers on each device side. In
+the previous CTCE version these had to be an even-odd pair of port
+numbers, whereby only the even port numbers had to be specified in the
+CTCE configuration. This restriction has now been removed. Any port
+number &gt; 1024 and &lt; 65534 is allowed. The CTCE configuration specifies
+the port number at the receiving end, the sender side port number is a
+free randomly chosen one. The resulting socket pairs cross-connect, the
+arrows showing the send-&gt;receive direction :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">-</span><span class="n">lport</span><span class="o">-</span><span class="n">random</span> <span class="o">--&gt;</span> <span class="n">y</span><span class="o">-</span><span class="n">rport</span><span class="o">-</span><span class="n">config</span>
+<span class="n">x</span><span class="o">-</span><span class="n">lport</span><span class="o">-</span><span class="n">config</span> <span class="o">&lt;--</span> <span class="n">y</span><span class="o">-</span><span class="n">rport</span><span class="o">-</span><span class="n">random</span>
+</pre></div>
+</div>
+<p>The configuration statement for CTCE is as follows, choosing one of 2
+possible formats (noting that items between [] brackets are optional,
+and the items between &lt;&gt; brackets require actual values to be given):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">ldevnum</span><span class="o">&gt;</span>     <span class="n">CTCE</span> <span class="o">&lt;</span><span class="n">lport</span><span class="o">&gt;</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">rdevnum</span><span class="o">&gt;=</span><span class="p">]</span><span class="o">&lt;</span><span class="n">raddress</span><span class="o">&gt;</span>  <span class="o">&lt;</span><span class="n">rport</span><span class="o">&gt;</span>  <span class="p">[[</span><span class="o">&lt;</span><span class="n">mtu</span><span class="o">&gt;</span><span class="p">]</span> <span class="o">&lt;</span><span class="n">sml</span><span class="o">&gt;</span><span class="p">]</span> <span class="p">[</span><span class="n">ATTNDELAY</span> <span class="o">&lt;</span><span class="n">delay</span><span class="o">&gt;</span><span class="p">]</span> <span class="p">[</span><span class="n">FICON</span><span class="p">]</span>
+<span class="o">&lt;</span><span class="n">ldevnum</span><span class="o">&gt;</span><span class="p">[</span><span class="o">.</span><span class="n">n</span><span class="p">]</span> <span class="n">CTCE</span> <span class="o">&lt;</span><span class="n">lport</span><span class="o">&gt;</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">rdevnum</span><span class="o">&gt;</span><span class="p">]</span><span class="o">=&lt;</span><span class="n">raddress</span><span class="o">&gt;</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">rport</span><span class="o">&gt;</span><span class="p">]</span> <span class="p">[[</span><span class="o">&lt;</span><span class="n">mtu</span><span class="o">&gt;</span><span class="p">]</span> <span class="o">&lt;</span><span class="n">sml</span><span class="o">&gt;</span><span class="p">]</span> <span class="p">[</span><span class="n">ATTNDELAY</span> <span class="o">&lt;</span><span class="n">delay</span><span class="o">&gt;</span><span class="p">]</span> <span class="p">[</span><span class="n">FICON</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>where:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">ldevnum</span><span class="o">&gt;</span>    <span class="ow">is</span> <span class="n">the</span> <span class="n">address</span> <span class="n">of</span> <span class="n">the</span> <span class="n">CTCE</span> <span class="n">device</span> <span class="n">at</span> <span class="n">the</span> <span class="n">local</span> <span class="n">system</span><span class="o">.</span>
+<span class="o">&lt;</span><span class="n">rdevnum</span><span class="o">&gt;</span>    <span class="ow">is</span> <span class="n">the</span> <span class="n">address</span> <span class="n">of</span> <span class="n">the</span> <span class="n">CTCE</span> <span class="n">device</span> <span class="n">at</span> <span class="n">the</span> <span class="n">remote</span> <span class="n">system</span><span class="o">.</span>
+<span class="o">&lt;</span><span class="n">lport</span><span class="o">&gt;</span>      <span class="ow">is</span> <span class="n">the</span> <span class="n">receiving</span> <span class="n">TCP</span><span class="o">/</span><span class="n">IP</span> <span class="n">port</span> <span class="n">on</span> <span class="n">the</span> <span class="n">local</span> <span class="n">system</span><span class="p">,</span>
+             <span class="n">which</span> <span class="n">defaults</span> <span class="n">to</span> <span class="mf">3088.</span>
+<span class="o">&lt;</span><span class="n">rport</span><span class="o">&gt;</span>      <span class="ow">is</span> <span class="n">the</span> <span class="n">receiving</span> <span class="n">TCP</span><span class="o">/</span><span class="n">IP</span> <span class="n">port</span> <span class="n">on</span> <span class="n">the</span> <span class="n">remote</span> <span class="n">system</span><span class="p">,</span>
+             <span class="n">which</span> <span class="n">also</span> <span class="n">defaults</span> <span class="n">to</span> <span class="mf">3088.</span>
+<span class="o">&lt;</span><span class="n">raddress</span><span class="o">&gt;</span>   <span class="ow">is</span> <span class="n">the</span> <span class="n">host</span> <span class="n">IP</span> <span class="n">address</span> <span class="n">on</span> <span class="n">the</span> <span class="n">remote</span> <span class="n">system</span><span class="o">.</span>
+<span class="o">&lt;</span><span class="n">mtu</span><span class="o">&gt;</span>        <span class="n">optional</span> <span class="n">mtu</span> <span class="n">buffersize</span><span class="p">,</span> <span class="n">defaults</span> <span class="n">to</span> <span class="mf">61596.</span>
+<span class="o">&lt;</span><span class="n">sml</span><span class="o">&gt;</span>        <span class="n">optional</span> <span class="n">small</span> <span class="n">minimum</span> <span class="k">for</span> <span class="n">mtu</span><span class="p">,</span> <span class="n">defaults</span> <span class="n">to</span> <span class="mf">16.</span>
+<span class="n">n</span>            <span class="n">the</span> <span class="n">number</span> <span class="n">of</span> <span class="n">CTCE</span> <span class="n">devices</span> <span class="n">being</span> <span class="n">configured</span><span class="p">,</span> <span class="k">with</span>
+             <span class="n">consecutive</span> <span class="n">addresses</span> <span class="n">starting</span> <span class="k">with</span> <span class="o">&lt;</span><span class="n">ldevnum</span><span class="o">&gt;.</span>
+             <span class="p">(</span><span class="n">Only</span> <span class="n">possible</span> <span class="ow">in</span> <span class="n">the</span> <span class="mi">2</span><span class="n">nd</span> <span class="nb">format</span><span class="p">,</span> <span class="n">which</span> <span class="n">implies</span> <span class="n">the</span>
+             <span class="n">equal</span> <span class="n">sign</span> <span class="p">(</span><span class="o">=</span><span class="p">)</span> <span class="ow">in</span> <span class="n">front</span> <span class="n">of</span> <span class="o">&lt;</span><span class="n">raddress</span><span class="o">&gt;.</span><span class="p">)</span>
+<span class="n">delay</span>        <span class="n">the</span> <span class="n">number</span> <span class="n">of</span> <span class="n">msec</span> <span class="n">ATTN</span> <span class="n">signals</span> <span class="n">are</span> <span class="n">to</span> <span class="n">be</span> <span class="n">delayed</span> <span class="ow">in</span> <span class="n">order</span> <span class="n">to</span>
+             <span class="n">circumvent</span> <span class="n">a</span> <span class="n">VM</span><span class="o">/</span><span class="n">SP</span> <span class="n">bug</span> <span class="n">causing</span> <span class="n">SIO</span> <span class="n">timeout</span> <span class="n">errors</span><span class="o">.</span>  <span class="n">Override</span>
+             <span class="n">the</span> <span class="n">default</span> <span class="n">of</span> <span class="mi">0</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span> <span class="k">with</span> <span class="mi">200</span> <span class="ow">or</span> <span class="n">some</span> <span class="n">smaller</span> <span class="n">value</span> <span class="k">for</span>
+             <span class="n">faster</span> <span class="n">Hercules</span> <span class="n">hosts</span><span class="p">,</span> <span class="n">but</span> <span class="n">only</span> <span class="n">when</span> <span class="n">needed</span><span class="o">.</span>
+<span class="n">FICON</span>        <span class="n">optional</span> <span class="n">parameter</span> <span class="n">specifying</span> <span class="n">a</span> <span class="n">FICON</span> <span class="n">Channel</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">Channel</span> <span class="n">adapter</span>
+             <span class="n">to</span> <span class="n">be</span> <span class="n">emulated</span> <span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">e</span><span class="o">.</span> <span class="n">a</span> <span class="n">FCTC</span> <span class="n">instead</span> <span class="n">of</span> <span class="n">a</span> <span class="n">CTCA</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>A sample CTCE device configuration (using the 1st format) is shown
+below:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hercules PC Host A with IP address 192.168.1.100:</span>
+
+   <span class="mf">0E40</span>  <span class="n">CTCE</span>  <span class="mi">30880</span>  <span class="mf">192.168.1.200</span>  <span class="mi">30880</span>
+   <span class="mf">0E41</span>  <span class="n">CTCE</span>  <span class="mi">30882</span>  <span class="mf">192.168.1.200</span>  <span class="mi">30882</span>
+
+<span class="c1"># Hercules PC Host B with IP address 192.168.1.200:</span>
+
+   <span class="mf">0E40</span>  <span class="n">CTCE</span>  <span class="mi">30880</span>  <span class="mf">192.168.1.100</span>  <span class="mi">30880</span>
+   <span class="mf">0E41</span>  <span class="n">CTCE</span>  <span class="mi">30882</span>  <span class="mf">192.168.1.100</span>  <span class="mi">30882</span>
+</pre></div>
+</div>
+<p>The 2nd format CTCE device configuration is easier to specify by
+omitting the &lt;lport&gt; and &lt;rport&gt; numbers, but specifying the &lt;rdevnum&gt;
+instead. The above sample configuration can then become :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hercules PC Host A with IP address 192.168.1.100:</span>
+
+   <span class="mf">0E40</span>  <span class="n">CTCE</span>  <span class="mf">0E40</span><span class="o">=</span><span class="mf">192.168.1.200</span>
+   <span class="mf">0E41</span>  <span class="n">CTCE</span>  <span class="mf">0E41</span><span class="o">=</span><span class="mf">192.168.1.200</span>
+
+<span class="c1"># Hercules PC Host B with IP address 192.168.1.200:</span>
+
+   <span class="mf">0E40</span>  <span class="n">CTCE</span>  <span class="mf">0E40</span><span class="o">=</span><span class="mf">192.168.1.100</span>
+   <span class="mf">0E41</span>  <span class="n">CTCE</span>  <span class="mf">0E41</span><span class="o">=</span><span class="mf">192.168.1.100</span>
+</pre></div>
+</div>
+<p>This can even be further simplified by (1) omitting the &lt;rdevnum&gt; as its
+default is being equal to &lt;ldevnum&gt;, and by (2) specifying the “.n”
+qualifier as “.2”, meaning that 2 CTCE devices starting at “0E40” are
+being defined :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hercules PC Host A with IP address 192.168.1.100:</span>
+
+   <span class="mf">0E40.2</span>  <span class="n">CTCE</span>  <span class="o">=</span><span class="mf">192.168.1.200</span>
+
+<span class="c1"># Hercules PC Host B with IP address 192.168.1.200:</span>
+
+   <span class="mf">0E40.2</span>  <span class="n">CTCE</span>  <span class="o">=</span><span class="mf">192.168.1.100</span>
+</pre></div>
+</div>
+<p>The above example omits &lt;rdevnum&gt;, and values for this below 0100 =
+0x0100 = 256 are not allowed. But single hex digit &lt;rdevnum&gt; values have
+a special menaing. They will be used to construct &lt;rdevnum&gt;’s by
+exclusive-or-ing the &lt;ldevnum&gt; with such value. As an example :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">0E40.4</span>  <span class="n">CTCE</span>       <span class="mi">1</span><span class="o">=</span><span class="mf">192.168.1.200</span>
+</pre></div>
+</div>
+<p>The above is the same as :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">0E40</span>    <span class="n">CTCE</span>    <span class="mf">0E41</span><span class="o">=</span><span class="mf">192.168.1.200</span>
+<span class="mf">0E41</span>    <span class="n">CTCE</span>    <span class="mf">0E40</span><span class="o">=</span><span class="mf">192.168.1.200</span>
+<span class="mf">0E42</span>    <span class="n">CTCE</span>    <span class="mf">0E43</span><span class="o">=</span><span class="mf">192.168.1.200</span>
+<span class="mf">0E43</span>    <span class="n">CTCE</span>    <span class="mf">0E42</span><span class="o">=</span><span class="mf">192.168.1.200</span>
+</pre></div>
+</div>
+<p>The above example could be used to establish a redundant pair of
+read/write CTC links, where each Hercules side uses the even devnum
+addresses for reading, and the odd ones for writing (or the other way
+around). That way, the operating system definitions on each side can be
+identical, e.g. for a VTAM MPC CTC link :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CTCATRL</span>  <span class="n">VBUILD</span> <span class="n">TYPE</span><span class="o">=</span><span class="n">TRL</span>
+<span class="n">C0E40TRL</span> <span class="n">TRLE</span>  <span class="n">LNCTL</span><span class="o">=</span><span class="n">MPC</span><span class="p">,</span><span class="n">READ</span><span class="o">=</span><span class="p">(</span><span class="mf">0E40</span><span class="p">,</span><span class="mf">0E42</span><span class="p">),</span><span class="n">WRITE</span><span class="o">=</span><span class="p">(</span><span class="mf">0E41</span><span class="p">,</span><span class="mf">0E43</span><span class="p">)</span>
+
+<span class="n">CTCALCL</span>  <span class="n">VBUILD</span> <span class="n">TYPE</span><span class="o">=</span><span class="n">LOCAL</span>
+<span class="n">C0E40LCL</span> <span class="n">PU</span>    <span class="n">TRLE</span><span class="o">=</span><span class="n">C0E40TRL</span><span class="p">,</span><span class="n">XID</span><span class="o">=</span><span class="n">YES</span><span class="p">,</span><span class="n">CONNTYPE</span><span class="o">=</span><span class="n">APPN</span><span class="p">,</span><span class="n">CPCP</span><span class="o">=</span><span class="n">YES</span><span class="p">,</span><span class="n">TGP</span><span class="o">=</span><span class="n">CHANNEL</span>
+</pre></div>
+</div>
+<p>Please also note the optional trailing keyword FICON. When specified, a
+fiber channel CTC adapter (FCTC) is being emulated, instead of a regular
+CTCA.</p>
+<p>CTCE connected Hercules instances can be hosted on any Hercules
+supported platform (Windows, Linux, MacOS …). Both sides do <em>not</em> need
+to be the same.</p>
+</section>
+<section id="ptp-mpcptp-pcptp6-channel-to-channel-link">
+<h3>PTP - MPCPTP/PCPTP6 Channel to Channel link<a class="headerlink" href="#ptp-mpcptp-pcptp6-channel-to-channel-link" title="Permalink to this heading">¶</a></h3>
+<p>This is a point-to-point link to the driving system’s TCP/IP stack. From
+the point of view of the z/OS V1R5 or later image running in the
+Hercules machine, it appears to be an MPCPTP and/or MPCPTP6 ESCON CTC
+link to another z/OS image.</p>
+<p>PTP uses the Universal TUN/TAP driver on *nix and Riverbed Technology’s
+WinPCap packet driver as well as Fish’s <a class="reference external" href="http://www.softdevlabs.com/ctci">CTCI-WIN
+product</a> on Windows **(*)**.</p>
+<p>The configuration statement for PTP is as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">devnum1</span><span class="o">-</span><span class="n">devnum2</span><span class="o">&gt;</span> <span class="n">PTP</span> <span class="p">[</span><span class="n">options</span><span class="p">]</span> <span class="o">&lt;</span><span class="n">guest1</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">host1</span><span class="o">&gt;</span> <span class="p">[</span> <span class="o">&lt;</span><span class="n">guest2</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">host2</span><span class="o">&gt;</span> <span class="p">]</span>
+</pre></div>
+</div>
+<p>or:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">devnum1</span><span class="o">-</span><span class="n">devnum2</span><span class="o">&gt;</span> <span class="n">PTP</span> <span class="p">[</span><span class="n">options</span><span class="p">]</span> <span class="o">&lt;</span><span class="n">ifname</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>where:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">devnum1</span><span class="o">-</span><span class="n">devnum2</span><span class="o">&gt;</span>  <span class="ow">is</span> <span class="n">the</span> <span class="n">address</span> <span class="n">pair</span> <span class="n">of</span> <span class="n">the</span> <span class="n">PTP</span> <span class="n">device</span><span class="o">.</span>
+
+<span class="o">&lt;</span><span class="n">guest1</span><span class="o">&gt;</span>  <span class="ow">is</span> <span class="n">the</span> <span class="n">host</span> <span class="n">name</span> <span class="ow">or</span> <span class="n">IP</span> <span class="n">address</span> <span class="n">of</span> <span class="n">the</span> <span class="n">Hercules</span> <span class="p">(</span><span class="n">guest</span> <span class="n">OS</span><span class="p">)</span> <span class="n">side</span><span class="o">.</span>
+
+<span class="o">&lt;</span><span class="n">host1</span><span class="o">&gt;</span>   <span class="ow">is</span> <span class="n">the</span> <span class="n">host</span> <span class="n">name</span> <span class="ow">or</span> <span class="n">IP</span> <span class="n">address</span> <span class="n">on</span> <span class="n">the</span> <span class="n">driving</span> <span class="n">system</span><span class="o">.</span>
+
+<span class="o">&lt;</span><span class="n">guest2</span><span class="o">&gt;</span>  <span class="ow">is</span> <span class="n">the</span> <span class="n">host</span> <span class="n">name</span> <span class="ow">or</span> <span class="n">IP</span> <span class="n">address</span> <span class="n">of</span> <span class="n">the</span> <span class="n">Hercules</span> <span class="p">(</span><span class="n">guest</span> <span class="n">OS</span><span class="p">)</span> <span class="n">side</span><span class="o">.</span>
+
+<span class="o">&lt;</span><span class="n">host2</span><span class="o">&gt;</span>   <span class="ow">is</span> <span class="n">the</span> <span class="n">host</span> <span class="n">name</span> <span class="ow">or</span> <span class="n">IP</span> <span class="n">address</span> <span class="n">on</span> <span class="n">the</span> <span class="n">driving</span> <span class="n">system</span><span class="o">.</span>
+
+        <span class="o">&lt;</span><span class="n">guest1</span><span class="o">&gt;</span> <span class="ow">and</span> <span class="o">&lt;</span><span class="n">host1</span><span class="o">&gt;</span> <span class="n">must</span> <span class="n">both</span> <span class="n">be</span> <span class="n">of</span> <span class="n">the</span> <span class="n">same</span> <span class="n">address</span>
+        <span class="n">family</span><span class="p">,</span> <span class="n">i</span><span class="o">.</span><span class="n">e</span><span class="o">.</span> <span class="n">both</span> <span class="n">IPv4</span> <span class="ow">or</span> <span class="n">both</span> <span class="n">IPv6</span><span class="o">.</span>
+
+        <span class="o">&lt;</span><span class="n">guest2</span><span class="o">&gt;</span> <span class="ow">and</span> <span class="o">&lt;</span><span class="n">host2</span><span class="o">&gt;</span><span class="p">,</span> <span class="k">if</span> <span class="n">specified</span><span class="p">,</span> <span class="n">must</span> <span class="n">both</span> <span class="n">be</span> <span class="n">of</span> <span class="n">the</span>
+        <span class="n">same</span> <span class="n">address</span> <span class="n">family</span><span class="p">,</span> <span class="n">i</span><span class="o">.</span><span class="n">e</span><span class="o">.</span> <span class="n">both</span> <span class="n">IPv4</span> <span class="ow">or</span> <span class="n">both</span> <span class="n">IPv6</span><span class="p">,</span> <span class="ow">and</span>
+        <span class="n">must</span> <span class="ow">not</span> <span class="n">be</span> <span class="n">of</span> <span class="n">the</span> <span class="n">same</span> <span class="n">address</span> <span class="n">family</span> <span class="k">as</span> <span class="o">&lt;</span><span class="n">guest1</span><span class="o">&gt;</span> <span class="ow">and</span>
+        <span class="o">&lt;</span><span class="n">host1</span><span class="o">&gt;.</span>
+
+        <span class="n">If</span> <span class="n">a</span> <span class="n">host</span> <span class="n">name</span> <span class="ow">is</span> <span class="n">specified</span> <span class="k">for</span> <span class="o">&lt;</span><span class="n">guest1</span><span class="o">&gt;</span><span class="p">,</span> <span class="ow">and</span> <span class="n">the</span> <span class="n">host</span>
+        <span class="n">name</span> <span class="n">can</span> <span class="n">be</span> <span class="n">resolved</span> <span class="n">to</span> <span class="n">both</span> <span class="n">an</span> <span class="n">IPv4</span> <span class="ow">and</span> <span class="n">an</span> <span class="n">IPv6</span>
+        <span class="n">address</span><span class="p">,</span> <span class="n">use</span> <span class="n">either</span> <span class="n">the</span> <span class="o">-</span><span class="mi">4</span><span class="o">/--</span><span class="n">inet</span> <span class="ow">or</span> <span class="n">the</span> <span class="o">-</span><span class="mi">6</span><span class="o">/--</span><span class="n">inet6</span>
+        <span class="n">option</span> <span class="n">to</span> <span class="n">specify</span> <span class="n">which</span> <span class="n">address</span> <span class="n">family</span> <span class="n">should</span> <span class="n">be</span>
+        <span class="n">used</span><span class="p">;</span> <span class="k">if</span> <span class="n">neither</span> <span class="n">the</span> <span class="o">-</span><span class="mi">4</span><span class="o">/--</span><span class="n">inet</span> <span class="n">nor</span> <span class="n">the</span> <span class="o">-</span><span class="mi">6</span><span class="o">/--</span><span class="n">inet6</span>
+        <span class="n">option</span> <span class="ow">is</span> <span class="n">specified</span><span class="p">,</span> <span class="n">whichever</span> <span class="n">address</span> <span class="n">family</span> <span class="n">the</span>
+        <span class="n">resolver</span> <span class="n">returns</span> <span class="n">first</span> <span class="n">will</span> <span class="n">be</span> <span class="n">used</span><span class="o">.</span>
+
+        <span class="o">&lt;</span><span class="n">host1</span><span class="o">&gt;</span> <span class="ow">or</span> <span class="o">&lt;</span><span class="n">host2</span><span class="o">&gt;</span> <span class="n">can</span> <span class="n">be</span> <span class="n">followed</span> <span class="n">by</span> <span class="n">the</span> <span class="n">prefix</span> <span class="n">size</span>
+        <span class="n">expressed</span> <span class="ow">in</span> <span class="n">CIDR</span> <span class="n">notation</span><span class="p">,</span> <span class="k">for</span> <span class="n">example</span> <span class="mf">192.168.1.1</span><span class="o">/</span><span class="mi">24</span>
+        <span class="ow">or</span> <span class="mi">2001</span><span class="p">:</span><span class="n">db8</span><span class="p">:</span><span class="mi">3003</span><span class="p">:</span><span class="mi">1</span><span class="p">::</span><span class="mi">543</span><span class="p">:</span><span class="mi">210</span><span class="n">f</span><span class="o">/</span><span class="mf">48.</span> <span class="n">For</span> <span class="n">IPv4</span> <span class="n">the</span> <span class="n">prefix</span>
+        <span class="n">size</span> <span class="n">can</span> <span class="n">have</span> <span class="n">a</span> <span class="n">value</span> <span class="kn">from</span> <span class="mi">0</span> <span class="n">to</span> <span class="mi">32</span><span class="p">;</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">specified</span> <span class="n">a</span>
+        <span class="n">value</span> <span class="n">of</span> <span class="mi">32</span> <span class="ow">is</span> <span class="n">assumed</span><span class="o">.</span> <span class="n">For</span> <span class="n">IPv6</span> <span class="n">the</span> <span class="n">prefix</span> <span class="n">size</span> <span class="n">can</span>
+        <span class="n">have</span> <span class="n">a</span> <span class="n">value</span> <span class="kn">from</span> <span class="mi">0</span> <span class="n">to</span> <span class="mi">128</span><span class="p">;</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">specified</span> <span class="n">a</span> <span class="n">value</span> <span class="n">of</span>
+        <span class="mi">128</span> <span class="ow">is</span> <span class="n">assumed</span><span class="o">.</span> <span class="n">For</span> <span class="n">IPv4</span> <span class="n">the</span> <span class="n">prefix</span> <span class="n">size</span> <span class="ow">is</span> <span class="n">used</span> <span class="n">to</span>
+        <span class="n">produce</span> <span class="n">the</span> <span class="n">equivalent</span> <span class="n">subnet</span> <span class="n">mask</span><span class="o">.</span> <span class="n">For</span> <span class="n">example</span><span class="p">,</span> <span class="n">a</span>
+        <span class="n">value</span> <span class="n">of</span> <span class="mi">24</span> <span class="n">produces</span> <span class="n">a</span> <span class="n">subnet</span> <span class="n">mask</span> <span class="n">of</span> <span class="mf">255.255.255.0</span><span class="o">.</span>
+
+        <span class="n">If</span> <span class="o">&lt;</span><span class="n">guest1</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">host1</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">guest2</span><span class="o">&gt;</span> <span class="ow">or</span> <span class="o">&lt;</span><span class="n">host2</span><span class="o">&gt;</span> <span class="n">are</span> <span class="n">numeric</span>
+        <span class="n">IPv6</span> <span class="n">addresses</span><span class="p">,</span> <span class="n">they</span> <span class="n">can</span> <span class="n">be</span> <span class="n">between</span> <span class="n">braces</span><span class="p">,</span> <span class="k">for</span> <span class="n">example</span>
+        <span class="p">[</span><span class="mi">2001</span><span class="p">:</span><span class="n">db8</span><span class="p">:</span><span class="mi">3003</span><span class="p">:</span><span class="mi">1</span><span class="p">::</span><span class="mi">543</span><span class="p">:</span><span class="mi">210</span><span class="n">f</span><span class="p">]</span><span class="o">.</span>
+
+<span class="o">&lt;</span><span class="n">ifname</span><span class="o">&gt;</span>  <span class="ow">is</span> <span class="n">the</span> <span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">pre</span><span class="o">-</span><span class="n">configured</span> <span class="n">TUN</span> <span class="n">interface</span><span class="o">.</span>
+
+        <span class="o">&lt;</span><span class="n">ifname</span><span class="o">&gt;</span> <span class="n">can</span> <span class="n">only</span> <span class="n">be</span> <span class="n">specified</span> <span class="n">on</span> <span class="o">*</span><span class="n">nix</span><span class="p">,</span> <span class="n">it</span> <span class="n">cannot</span> <span class="n">be</span>
+        <span class="n">specified</span> <span class="n">on</span> <span class="n">Windows</span><span class="o">.</span> <span class="n">The</span> <span class="n">named</span> <span class="n">TUN</span> <span class="n">interface</span> <span class="n">must</span> <span class="n">exist</span>
+        <span class="ow">and</span> <span class="n">be</span> <span class="n">configured</span> <span class="n">when</span> <span class="n">Hercules</span> <span class="n">starts</span><span class="o">.</span>
+
+<span class="p">[</span><span class="n">options</span><span class="p">]</span>  <span class="n">can</span> <span class="n">be</span> <span class="nb">any</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span><span class="p">:</span>
+
+    <span class="o">-</span><span class="n">n</span> <span class="o">&lt;</span><span class="n">devname</span><span class="o">&gt;</span> <span class="ow">or</span> <span class="o">--</span><span class="n">dev</span> <span class="o">&lt;</span><span class="n">devname</span><span class="o">&gt;</span>
+
+        <span class="n">where</span> <span class="o">&lt;</span><span class="n">devname</span><span class="o">&gt;</span> <span class="ow">is</span><span class="p">:</span>
+
+        <span class="p">[</span><span class="o">*</span><span class="n">nix</span><span class="p">]</span> <span class="n">the</span> <span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">TUN</span><span class="o">/</span><span class="n">TAP</span> <span class="n">special</span> <span class="n">character</span>
+        <span class="n">device</span><span class="p">,</span> <span class="n">normally</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">net</span><span class="o">/</span><span class="n">tun</span><span class="o">.</span>
+
+        <span class="p">[</span><span class="n">Windows</span><span class="p">]</span> <span class="ow">is</span> <span class="n">either</span> <span class="n">the</span> <span class="n">IP</span> <span class="ow">or</span> <span class="n">MAC</span> <span class="n">address</span> <span class="n">of</span> <span class="n">the</span>
+        <span class="n">driving</span> <span class="n">systems</span> <span class="n">network</span> <span class="n">card</span><span class="o">.</span> <span class="n">TunTap32</span> <span class="n">will</span>
+        <span class="n">automatically</span> <span class="n">select</span> <span class="n">the</span> <span class="n">first</span> <span class="n">network</span> <span class="n">card</span> <span class="n">it</span>
+        <span class="n">finds</span> <span class="k">if</span> <span class="n">this</span> <span class="n">option</span> <span class="ow">is</span> <span class="n">omitted</span><span class="p">,</span> <span class="n">this</span> <span class="n">may</span> <span class="ow">not</span> <span class="n">be</span>
+        <span class="n">desirable</span> <span class="k">for</span> <span class="n">some</span> <span class="n">users</span><span class="o">.</span>
+
+    <span class="o">-</span><span class="n">t</span> <span class="o">&lt;</span><span class="n">mtu</span><span class="o">&gt;</span> <span class="ow">or</span> <span class="o">--</span><span class="n">mtu</span> <span class="o">&lt;</span><span class="n">mtu</span><span class="o">&gt;</span>
+
+        <span class="p">[</span><span class="o">*</span><span class="n">nix</span> <span class="n">only</span><span class="p">]</span> <span class="n">where</span> <span class="o">&lt;</span><span class="n">mtu</span><span class="o">&gt;</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">maximum</span> <span class="n">transmission</span>
+        <span class="n">unit</span> <span class="n">size</span><span class="p">,</span> <span class="n">normally</span> <span class="mf">1500.</span>
+
+    <span class="o">-</span><span class="n">m</span> <span class="o">&lt;</span><span class="n">MAC</span> <span class="n">Address</span><span class="o">&gt;</span> <span class="ow">or</span> <span class="o">--</span><span class="n">mac</span> <span class="o">&lt;</span><span class="n">MAC</span> <span class="n">address</span><span class="o">&gt;</span>
+
+        <span class="p">[</span><span class="n">Windows</span> <span class="n">only</span><span class="p">]</span> <span class="n">where</span> <span class="o">&lt;</span><span class="n">MAC</span> <span class="n">Address</span><span class="o">&gt;</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">optional</span>
+        <span class="n">hardware</span> <span class="n">address</span> <span class="n">of</span> <span class="n">the</span> <span class="n">interface</span> <span class="ow">in</span> <span class="n">the</span> <span class="nb">format</span> <span class="n">of</span>
+        <span class="n">either</span> <span class="n">xx</span><span class="p">:</span><span class="n">xx</span><span class="p">:</span><span class="n">xx</span><span class="p">:</span><span class="n">xx</span><span class="p">:</span><span class="n">xx</span><span class="p">:</span><span class="n">xx</span> <span class="ow">or</span> <span class="n">xx</span><span class="o">-</span><span class="n">xx</span><span class="o">-</span><span class="n">xx</span><span class="o">-</span><span class="n">xx</span><span class="o">-</span><span class="n">xx</span><span class="o">-</span><span class="n">xx</span><span class="o">.</span>
+
+    <span class="o">-</span><span class="n">x</span> <span class="o">&lt;</span><span class="n">ifname</span><span class="o">&gt;</span> <span class="ow">or</span> <span class="o">--</span><span class="k">if</span> <span class="o">&lt;</span><span class="n">ifname</span><span class="o">&gt;</span>
+
+        <span class="p">[</span><span class="o">*</span><span class="n">nix</span> <span class="n">only</span><span class="p">]</span> <span class="n">where</span> <span class="o">&lt;</span><span class="n">ifname</span><span class="o">&gt;</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">name</span> <span class="n">of</span> <span class="n">the</span>
+        <span class="n">pre</span><span class="o">-</span><span class="n">existing</span> <span class="n">TUN</span> <span class="n">interface</span><span class="o">.</span>
+
+    <span class="o">-</span><span class="n">k</span> <span class="o">&lt;</span><span class="n">kbuff</span><span class="o">&gt;</span> <span class="ow">or</span> <span class="o">--</span><span class="n">kbuff</span> <span class="o">&lt;</span><span class="n">kbuff</span><span class="o">&gt;</span>
+
+        <span class="p">[</span><span class="n">Windows</span> <span class="n">only</span><span class="p">]</span> <span class="n">where</span> <span class="o">&lt;</span><span class="n">kbuff</span><span class="o">&gt;</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">size</span> <span class="n">of</span> <span class="n">the</span>
+        <span class="n">WinPCap</span> <span class="n">kernel</span> <span class="n">buffer</span> <span class="n">size</span><span class="p">,</span> <span class="n">normally</span> <span class="mf">1024.</span>
+
+    <span class="o">-</span><span class="n">i</span> <span class="o">&lt;</span><span class="n">ibuff</span><span class="o">&gt;</span> <span class="ow">or</span> <span class="o">--</span><span class="n">ibuff</span> <span class="o">&lt;</span><span class="n">ibuff</span><span class="o">&gt;</span>
+
+        <span class="p">[</span><span class="n">Windows</span> <span class="n">only</span><span class="p">]</span> <span class="n">where</span> <span class="o">&lt;</span><span class="n">ibuff</span><span class="o">&gt;</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">size</span> <span class="n">of</span> <span class="n">the</span>
+        <span class="n">WinPCap</span> <span class="n">I</span><span class="o">/</span><span class="n">O</span> <span class="n">buffer</span> <span class="n">size</span><span class="p">,</span> <span class="n">normally</span> <span class="mf">64.</span>
+
+    <span class="o">-</span><span class="mi">4</span> <span class="ow">or</span> <span class="o">--</span><span class="n">inet</span>
+
+        <span class="n">indicates</span> <span class="n">that</span> <span class="n">when</span> <span class="n">a</span> <span class="n">host</span> <span class="n">name</span> <span class="ow">is</span> <span class="n">specified</span> <span class="k">for</span>
+        <span class="o">&lt;</span><span class="n">guest1</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">the</span> <span class="n">host</span> <span class="n">name</span> <span class="n">must</span> <span class="n">resolve</span> <span class="n">to</span> <span class="n">an</span> <span class="n">IPv4</span>
+        <span class="n">address</span><span class="o">.</span>
+
+    <span class="o">-</span><span class="mi">6</span> <span class="ow">or</span> <span class="o">--</span><span class="n">inet6</span>
+
+        <span class="n">indicates</span> <span class="n">that</span> <span class="n">when</span> <span class="n">a</span> <span class="n">host</span> <span class="n">name</span> <span class="ow">is</span> <span class="n">specified</span> <span class="k">for</span>
+        <span class="o">&lt;</span><span class="n">guest1</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">the</span> <span class="n">host</span> <span class="n">name</span> <span class="n">must</span> <span class="n">resolve</span> <span class="n">to</span> <span class="n">an</span> <span class="n">IPv6</span>
+        <span class="n">address</span><span class="o">.</span>
+
+    <span class="o">-</span><span class="n">d</span> <span class="ow">or</span> <span class="o">--</span><span class="n">debug</span>
+
+        <span class="n">this</span> <span class="n">will</span> <span class="n">turn</span> <span class="n">on</span> <span class="n">the</span> <span class="n">internal</span> <span class="n">debugging</span> <span class="n">routines</span><span class="o">.</span>
+        <span class="ne">Warning</span><span class="p">:</span> <span class="n">This</span> <span class="n">will</span> <span class="n">produce</span> <span class="n">a</span> <span class="n">tremendous</span> <span class="n">amount</span> <span class="n">of</span>
+        <span class="n">output</span> <span class="n">to</span> <span class="n">the</span> <span class="n">Hercules</span> <span class="n">console</span><span class="o">.</span> <span class="n">It</span> <span class="ow">is</span> <span class="n">suggested</span> <span class="n">that</span>
+        <span class="n">you</span> <span class="n">only</span> <span class="n">enable</span> <span class="n">this</span> <span class="n">at</span> <span class="n">the</span> <span class="n">request</span> <span class="n">of</span> <span class="n">the</span> <span class="n">maintainers</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>The following commands are an example of how to create a pre-configured
+TUN interface on Linux.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ip</span> <span class="n">tuntap</span> <span class="n">add</span> <span class="n">mode</span> <span class="n">tun</span> <span class="n">dev</span> <span class="n">tun99</span>
+<span class="n">ip</span> <span class="n">link</span> <span class="nb">set</span> <span class="n">dev</span> <span class="n">tun99</span> <span class="n">mtu</span> <span class="mi">1500</span>
+<span class="n">ip</span> <span class="o">-</span><span class="n">f</span> <span class="n">inet</span> <span class="n">addr</span> <span class="n">add</span> <span class="n">dev</span> <span class="n">tun99</span> <span class="mf">192.168.1.1</span><span class="o">/</span><span class="mi">24</span>
+<span class="n">ip</span> <span class="o">-</span><span class="n">f</span> <span class="n">inet6</span> <span class="n">addr</span> <span class="n">add</span> <span class="n">dev</span> <span class="n">tun99</span> <span class="n">fe80</span><span class="p">::</span><span class="mi">1234</span><span class="p">:</span><span class="mi">5678</span><span class="p">:</span><span class="mi">9</span><span class="n">abc</span><span class="p">:</span><span class="n">def0</span><span class="o">/</span><span class="mi">64</span>
+<span class="n">ip</span> <span class="o">-</span><span class="n">f</span> <span class="n">inet6</span> <span class="n">addr</span> <span class="n">add</span> <span class="n">dev</span> <span class="n">tun99</span> <span class="mi">2001</span><span class="p">:</span><span class="n">db8</span><span class="p">:</span><span class="mi">3003</span><span class="p">:</span><span class="mi">1</span><span class="p">::</span><span class="mi">543</span><span class="p">:</span><span class="mi">210</span><span class="n">f</span><span class="o">/</span><span class="mi">112</span>
+<span class="n">ip</span> <span class="n">link</span> <span class="nb">set</span> <span class="n">dev</span> <span class="n">tun99</span> <span class="n">up</span>
+</pre></div>
+</div>
+<p>The TUN interface could then be used with a PTP specified as:-</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">E20</span><span class="o">-</span><span class="n">E21</span> <span class="n">PTP</span> <span class="n">tun99</span>
+</pre></div>
+</div>
+</section>
+<section id="osa-open-systems-adapter">
+<h3>OSA - Open Systems Adapter<a class="headerlink" href="#osa-open-systems-adapter" title="Permalink to this heading">¶</a></h3>
+<p>The QETH (or OSA) device type emulates an OSA Express card running in
+QDIO mode. Both layer-2 and layer-3 are currently supported. The mode of
+operation is selected by the emulated workload and cannot be configured
+from Hercules.</p>
+<p>For more information please refer to the the QETH/OSA section of the
+Hercules Configuration File web page,
+<a class="reference external" href="https://sdl-hercules-390.github.io/html/hercconf.html#QETH">hercconf.html</a>.</p>
+</section>
+</section>
+<section id="notes">
+<h2>Notes<a class="headerlink" href="#notes" title="Permalink to this heading">¶</a></h2>
+<p>Fish’s <a class="reference external" href="http://www.softdevlabs.com/ctci-win">CTCI-WIN</a> package
+includes the required <a class="reference external" href="http://www.winpcap.org">WinPCap</a> packet driver
+as well. See Fish’s web page for details.</p>
+<p>Also note that it is <em>highly recommended</em> that you stick with using
+<em>only</em> the current official <em>RELEASE</em> version of WinPCap and <strong>NOT</strong> any
+type of ‘alpha’ OR ‘beta’ version! <em>ALPHA AND BETA VERSIONS OF WINPCAP
+ARE</em> <strong>NOT SUPPORTED!</strong> <em>Only official RELEASE versions are supported!</em></p>
+<p>When you visit the WinPCap download web page, you need need to scroll
+down the page a bit to reach the OFFICIAL RELEASE VERSION of WinPcap.
+They usually put their Beta versions at the top of the page, and BETA
+versions ARE NOT SUPPORTED. <em>Please</em> scroll down the page and use and
+official RELEASE version. Thanks.</p>
+<p>You may, if you want, use a beta version of WinPCap, but if you do, then
+you’re on your own if you have any problems with it!</p>
+<p>– Fish, May 2004.</p>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Read the Docs</span>
+      v: master
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+      <dl>
+        <dt>Languages</dt>
+        
+           <strong> 
+          <dd><a href="/herc-docs-demo/en/master/">en</a></dd>
+           </strong> 
+        
+      </dl>
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+          
+          <dd><a href="/herc-docs-demo/en/fovea1959/">fovea1959</a></dd>
+          
+        
+           <strong> 
+          <dd><a href="/herc-docs-demo/en/master/">master</a></dd>
+           </strong> 
+        
+          
+          <dd><a href="/herc-docs-demo/en/0.0/">0.0</a></dd>
+          
+        
+          
+          <dd><a href="/herc-docs-demo/en/1.0/">1.0</a></dd>
+          
+        
+      </dl>
+      
+      
+      <dl>
+        <dt>Downloads</dt>
+        
+          <dd><a href="/herc-docs-demo/en/master/Hercules Documentation Demo-docs_en_master.pdf">pdf</a></dd>
+        
+          <dd><a href="/herc-docs-demo/en/master/Hercules Documentation Demo-docs_en_master.epub">epub</a></dd>
+        
+          <dd><a href="/herc-docs-demo/en/master/Hercules Documentation Demo-docs_en_master.html.tar.gz">tarred HTML</a></dd>
+        
+          <dd><a href="/herc-docs-demo/en/master/Hercules Documentation Demo-docs_en_master.single.html.tar.gz">tarred single file HTML</a></dd>
+        
+      </dl>
+      
+      
+      <hr/>
+      <a href="https://tech.michaelaltfield.net/2020/07/18/sphinx-rtd-github-pages-1/">Continuous Documentation</a> hosting provided by <a href="https://pages.github.com/">GitHub Pages</a>.
+ 
+    </div>
+  </div>
+
+ 
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

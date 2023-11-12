@@ -1,0 +1,344 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Hercifc and Hercules as setuid root programs &mdash; Hercules Documentation Demo 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link href="_static/herc_style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Hercules Documentation Demo
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                fovea1959
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="hercinst.html">Building and Installing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration File</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercdasd.html">Creating DASD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercoper.html">Operating Procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercsupp.html">Technical Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercfaq.html">Frequently-Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="messages.html">Messages and Codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aa_auxdocs.html">Supporting documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_a.html">Appendix A - Documentation Standards</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Hercules Documentation Demo</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Hercifc and Hercules as setuid root programs</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/README.SETUID.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="hercifc-and-hercules-as-setuid-root-programs">
+<h1>Hercifc and Hercules as setuid root programs<a class="headerlink" href="#hercifc-and-hercules-as-setuid-root-programs" title="Permalink to this heading">¶</a></h1>
+<p>Historically, <code class="docutils literal notranslate"><span class="pre">hercifc</span></code> (Hercules Network Interface Configuration
+utility) is usually setuid root so that it can make changes to the tun
+and tap interfaces on the system.</p>
+<p>There are also some reasons to have the Hercules executable itself
+setuid root, for example, to allow the timer thread to run with real
+time priority.</p>
+<p>This however leads to a number of security issues. <code class="docutils literal notranslate"><span class="pre">hercifc</span></code> is
+probably not hardened enough and besides any possible bug that may get
+introduced in it, there is also a possibility of bugs in the C library
+itself which may lead to possible privilege escalations.</p>
+<p>Having Hercules itself run setuid 0 is even more of a problem since it
+is now possible to load arbitrary code to support custom user made
+implementation of some features and/or I/O devices).</p>
+<p>In order to mitigate this, Hercules now makes use of the Posix draft
+1003.1e capabilities in order to restrict the executables to just the
+necessary privileges. For Hercules, this means the <code class="docutils literal notranslate"><span class="pre">CAP_SYS_NICE</span></code>
+capability, and for <code class="docutils literal notranslate"><span class="pre">hercifc</span></code>, this means <code class="docutils literal notranslate"><span class="pre">CAP_NET_ADMIN</span></code>
+capability.</p>
+<p>This is still not an ideal situation since a setuid 0 Hercules will
+allow anyone to modify dispatching/scheduling priority for process it
+owns beyond what is normally allowed for such a user. This is however
+less critical than having Hercules run as a full blown superuser.</p>
+<p>Note that this only applies if Hercules is setuid root. If this is not
+the case, then Hercules won’t be able to set the timer thread priority
+(or any other thread priority for that matter) to anything lower than 0
+and the user will not acquire any further privilege.</p>
+<p>Having <code class="docutils literal notranslate"><span class="pre">hercifc</span></code> setuid root is pretty much mandatory if it is desired
+to do some networking in the guest. hercifc already restricts on what
+interface a controlling program may act. However, limiting its
+capabilities to just <code class="docutils literal notranslate"><span class="pre">CAP_NET_ADMIN</span></code> restricts any escalation exploit
+to just <em>that</em> privilege.</p>
+<p>On systems that <em>do not</em> have the capabilities feature implemented (or
+lacking the necessary library) setting Hercules setuid root is strongly
+discouraged on a multi user machine (where users have normal access but
+not access to superuser privilege).</p>
+<p>On systems that <em>do</em> have the capabilities feature implemented and
+enabled, and providing Hercules has been built with the support enabled,
+setting Hercules setuid root still allows normal users to potentially
+have the capacity to set their own processes to negative nice values. So
+this also should be taken into consideration.</p>
+<p>Providing users have the authority to open a tun or tap device, having
+<code class="docutils literal notranslate"><span class="pre">hercifc</span></code> setuid root allows those users to create network interfaces
+with arbitrary network parameters. If this is a concern, those users
+should either not be allowed access to the tun/tap interface or
+<code class="docutils literal notranslate"><span class="pre">hercifc</span></code> should not be setuid root. Using capabilities with
+<code class="docutils literal notranslate"><span class="pre">hercifc</span></code> just guarantees that should an exploit exist in <code class="docutils literal notranslate"><span class="pre">hercifc</span></code>
+to execute arbitrary code, then the user will be limited to the
+<code class="docutils literal notranslate"><span class="pre">CAP_NET_ADMIN</span></code> privilege.</p>
+<section id="building-hercules-with-capabilities-feature">
+<h2>Building Hercules with capabilities feature<a class="headerlink" href="#building-hercules-with-capabilities-feature" title="Permalink to this heading">¶</a></h2>
+<p>A new configure flag has been added:
+<code class="docutils literal notranslate"><span class="pre">--[enable|disable]-capabilities</span></code>. This flag allows building Hercules
+without capabilities features even on a system that would allow it. This
+may be necessary if the intended target may be missing the necessary
+implementation (pre 2.2 linux kernel) and/or library (libcap).</p>
+<p>In order for the build to actually implement capabilities, the following
+files are necessary:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">libcap.a</span></code> in the libraries directory</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sys/capability.h</span></code> in the includes directory</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sys/prctl.h</span></code> in the includes directory (this one is usually
+standard on Linux systems)</p></li>
+</ol>
+<p>In order to run a version of Hercules built for capabilities support,
+the following file is necessary: <code class="docutils literal notranslate"><span class="pre">libcap.so.x</span></code> in the <code class="docutils literal notranslate"><span class="pre">libraries</span></code>
+directory (<code class="docutils literal notranslate"><span class="pre">x</span></code> is currently “1” at the time of writing).</p>
+<p>On Linux systems, these files usually come with the <code class="docutils literal notranslate"><span class="pre">libcap1</span></code> package
+for the runtime environment and the <code class="docutils literal notranslate"><span class="pre">libcap-dev</span></code> package for the build
+environment. Depending on your linux distribution, these packages may
+have other names.</p>
+<p>–Ivan Warren, 2/17/2008</p>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Read the Docs</span>
+      v: fovea1959
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+      <dl>
+        <dt>Languages</dt>
+        
+           <strong> 
+          <dd><a href="/herc-docs-demo/en/fovea1959/">en</a></dd>
+           </strong> 
+        
+      </dl>
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+           <strong> 
+          <dd><a href="/herc-docs-demo/en/fovea1959/">fovea1959</a></dd>
+           </strong> 
+        
+          
+          <dd><a href="/herc-docs-demo/en/master/">master</a></dd>
+          
+        
+          
+          <dd><a href="/herc-docs-demo/en/0.0/">0.0</a></dd>
+          
+        
+          
+          <dd><a href="/herc-docs-demo/en/1.0/">1.0</a></dd>
+          
+        
+      </dl>
+      
+      
+      <dl>
+        <dt>Downloads</dt>
+        
+          <dd><a href="/herc-docs-demo/en/fovea1959/Hercules Documentation Demo-docs_en_fovea1959.pdf">pdf</a></dd>
+        
+          <dd><a href="/herc-docs-demo/en/fovea1959/Hercules Documentation Demo-docs_en_fovea1959.epub">epub</a></dd>
+        
+          <dd><a href="/herc-docs-demo/en/fovea1959/Hercules Documentation Demo-docs_en_fovea1959.html.tar.gz">tarred HTML</a></dd>
+        
+          <dd><a href="/herc-docs-demo/en/fovea1959/Hercules Documentation Demo-docs_en_fovea1959.single.html.tar.gz">tarred single file HTML</a></dd>
+        
+      </dl>
+      
+      
+      <hr/>
+      <a href="https://tech.michaelaltfield.net/2020/07/18/sphinx-rtd-github-pages-1/">Continuous Documentation</a> hosting provided by <a href="https://pages.github.com/">GitHub Pages</a>.
+ 
+    </div>
+  </div>
+
+ 
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

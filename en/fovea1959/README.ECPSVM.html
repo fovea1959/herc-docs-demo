@@ -1,0 +1,553 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ECPS:VM : Extended Control Program Support : VM/370 &mdash; Hercules Documentation Demo 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link href="_static/herc_style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Hercules Documentation Demo
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                fovea1959
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="hercinst.html">Building and Installing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration File</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercdasd.html">Creating DASD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercoper.html">Operating Procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercsupp.html">Technical Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercfaq.html">Frequently-Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="messages.html">Messages and Codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aa_auxdocs.html">Supporting documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_a.html">Appendix A - Documentation Standards</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Hercules Documentation Demo</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>ECPS:VM : Extended Control Program Support : VM/370</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/README.ECPSVM.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="ecps-vm-extended-control-program-support-vm-370">
+<h1>ECPS:VM : Extended Control Program Support : VM/370<a class="headerlink" href="#ecps-vm-extended-control-program-support-vm-370" title="Permalink to this heading">¶</a></h1>
+<p>and # Extended VM Assists - Partial Privop Simulation And Virtual
+Interval Timer</p>
+<section id="change-log">
+<h2>Change Log<a class="headerlink" href="#change-log" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">03</span><span class="o">/</span><span class="mi">25</span><span class="o">/</span><span class="mi">21</span> <span class="p">:</span> <span class="n">Bug</span> <span class="n">fix</span> <span class="ow">in</span> <span class="n">DISP2</span> <span class="k">for</span> <span class="n">floating</span> <span class="n">point</span> <span class="n">users</span>
+         <span class="p">;</span> <span class="n">removed</span> <span class="n">support</span> <span class="k">for</span> <span class="n">SIO</span> <span class="ow">and</span> <span class="n">DIAG</span> <span class="n">assists</span> <span class="n">due</span> <span class="n">to</span> <span class="n">incompatibilities</span><span class="o">.</span>
+<span class="mi">08</span><span class="o">/</span><span class="mi">06</span><span class="o">/</span><span class="mi">18</span> <span class="p">:</span> <span class="n">Updated</span> <span class="n">supported</span> <span class="n">functions</span> <span class="n">to</span> <span class="n">include</span> <span class="n">DIAG</span> <span class="ow">and</span> <span class="n">STCTL</span> <span class="n">instruction</span> <span class="n">assists</span>
+         <span class="p">;</span> <span class="n">added</span> <span class="n">support</span> <span class="k">for</span> <span class="n">CP</span> <span class="n">assist</span> <span class="n">LCSPG</span><span class="o">.</span>
+<span class="mi">04</span><span class="o">/</span><span class="mi">12</span><span class="o">/</span><span class="mi">17</span> <span class="p">:</span> <span class="n">Updated</span> <span class="n">supported</span> <span class="n">functions</span> <span class="n">to</span> <span class="n">include</span> <span class="n">LRA</span> <span class="n">instruction</span> <span class="n">assist</span>
+         <span class="p">;</span> <span class="n">fixed</span> <span class="n">DISP0</span> <span class="n">assist</span> <span class="n">issue</span> <span class="n">where</span> <span class="n">VMPSWAIT</span> <span class="n">was</span> <span class="ow">not</span> <span class="n">being</span> <span class="nb">set</span><span class="o">.</span>
+<span class="mi">02</span><span class="o">/</span><span class="mi">18</span><span class="o">/</span><span class="mi">17</span> <span class="p">:</span> <span class="n">Updated</span> <span class="n">supported</span> <span class="n">functions</span> <span class="n">to</span> <span class="n">include</span> <span class="n">CCW</span> <span class="n">translation</span> <span class="n">assists</span> <span class="n">DFCCW</span><span class="p">,</span><span class="n">DNCCW</span><span class="p">,</span><span class="n">CCWGN</span><span class="p">,</span> <span class="ow">and</span> <span class="n">CCW</span> <span class="n">untranslation</span> <span class="n">assists</span> <span class="n">UXCCW</span><span class="p">,</span> <span class="n">FCCWS</span><span class="o">.</span>
+<span class="mi">02</span><span class="o">/</span><span class="mi">10</span><span class="o">/</span><span class="mi">17</span> <span class="p">:</span> <span class="n">Updated</span> <span class="n">supported</span> <span class="n">functions</span> <span class="n">to</span> <span class="n">include</span> <span class="n">SIO</span><span class="o">/</span><span class="n">SIOF</span> <span class="n">assist</span><span class="p">,</span> <span class="n">CP</span> <span class="n">LINK</span><span class="o">/</span><span class="n">RETURN</span> <span class="p">(</span><span class="n">SVC</span> <span class="mi">8</span><span class="o">/</span><span class="mi">12</span><span class="p">)</span> <span class="n">assist</span><span class="o">.</span>
+<span class="mi">02</span><span class="o">/</span><span class="mi">05</span><span class="o">/</span><span class="mi">17</span> <span class="p">:</span> <span class="n">Changed</span> <span class="n">description</span> <span class="k">for</span> <span class="n">configuration</span> <span class="ow">and</span> <span class="n">commands</span> <span class="k">for</span> <span class="n">ECPSVM</span> <span class="n">YES</span> <span class="n">TRAP</span><span class="o">/</span><span class="n">NOTRAP</span>
+         <span class="p">;</span> <span class="n">updated</span> <span class="n">relevant</span> <span class="n">text</span>
+         <span class="p">;</span> <span class="n">updated</span> <span class="n">supported</span> <span class="n">features</span> <span class="nb">list</span>
+         <span class="p">;</span> <span class="n">sample</span> <span class="n">output</span><span class="o">.</span>
+<span class="mi">07</span><span class="o">/</span><span class="mi">07</span><span class="o">/</span><span class="mi">03</span> <span class="p">:</span> <span class="n">Changed</span> <span class="n">description</span> <span class="k">for</span> <span class="n">configuration</span> <span class="ow">and</span> <span class="n">commands</span>
+           <span class="n">ECPS</span><span class="p">:</span><span class="n">VM</span> <span class="n">changed</span> <span class="n">to</span> <span class="n">ECPSVM</span> <span class="p">(</span><span class="n">configuration</span><span class="p">)</span>
+           <span class="n">evm</span> <span class="n">changed</span> <span class="n">to</span> <span class="n">ecpsvm</span>     <span class="p">(</span><span class="n">command</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="supported-systems">
+<h2>Supported Systems<a class="headerlink" href="#supported-systems" title="Permalink to this heading">¶</a></h2>
+<p>Affected operating systems: <strong>VM/370 Release 6</strong> (PTFs required - PLC
+029 works fine) up to: <strong>VM/SP 6</strong> (with or without HPO option)</p>
+<p>VM/XA SF, VM/XA SP, VM/ESA and z/VM do <strong>not</strong> use these Assists, but
+instead rely on the SIE instruction to perform some of these functions.</p>
+<p>A VM/SP Guest (or VM/370 Guest with 4K Storage key updates) running
+under [z/]VM[/[XA|ESA]] will <strong>not</strong> have access to either the CP
+assists or VM Assists. The ECPS:VM Feature is disabled when running
+under SIE.</p>
+</section>
+<section id="how-to-enable-disable-vm-assists">
+<h2>How to enable/disable VM Assists<a class="headerlink" href="#how-to-enable-disable-vm-assists" title="Permalink to this heading">¶</a></h2>
+<p>In the <code class="docutils literal notranslate"><span class="pre">HERCULES.CNF</span></code> file within the configuration section, insert
+one of the following statements:</p>
+<pre>
+    ECPSVM LEVEL n               Where n is the requested level (see CAUTION below!)
+    ECPSVM NO                    Assist not enabled (default)
+    ECPSVM YES [ <u>TRAP</u>   ]        Assist enabled with CP FREE/FRET trap support
+               [ NOTRAP ]        Assist enabled without FREE/FRET trap support
+</pre><p>If <code class="docutils literal notranslate"><span class="pre">YES</span></code> is specified, the most appropriate level is returned (Level
+20). If <code class="docutils literal notranslate"><span class="pre">TRAP</span></code> or <code class="docutils literal notranslate"><span class="pre">NOTRAP</span></code> is not specified with <code class="docutils literal notranslate"><span class="pre">ECPSVM</span> <span class="pre">YES</span></code>,
+then <strong>``TRAP``</strong> is the default. Refer to the Special Situations
+section further below for more information about TRAP/NOTRAP.</p>
+<p>NOTE: The ECPSVM LEVEL ‘n’ level number doesn’t affect the operations of
+the assist but rather only defines what level number is reported to the
+program.</p>
+<section id="caution">
+<h3>CAUTION!!<a class="headerlink" href="#caution" title="Permalink to this heading">¶</a></h3>
+<p><em>Use of the ``LEVEL n`` form is</em> <strong>NOT</strong> <em>recommended, and is only
+provided for engineering use!</em></p>
+</section>
+</section>
+<section id="new-panel-command">
+<h2>New panel command<a class="headerlink" href="#new-panel-command" title="Permalink to this heading">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">ecpsvm</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ecpsvm</span> <span class="n">help</span>                       <span class="n">Summary</span> <span class="n">of</span> <span class="n">these</span> <span class="n">commands</span>
+
+<span class="n">ecpsvm</span> <span class="n">stats</span>                      <span class="n">Shows</span> <span class="n">ECPS</span><span class="p">:</span><span class="n">VM</span> <span class="n">Call</span><span class="o">/</span><span class="n">Hit</span> <span class="n">statistics</span>
+                                  <span class="p">(</span><span class="n">example</span> <span class="n">further</span> <span class="n">below</span><span class="p">)</span>
+
+<span class="n">ecpsvm</span> <span class="n">enable</span>  <span class="n">feature</span>            <span class="n">Enable</span> <span class="n">named</span> <span class="n">feature</span>
+<span class="n">ecpsvm</span> <span class="n">disable</span> <span class="n">feature</span>            <span class="n">Disable</span> <span class="n">named</span> <span class="n">feature</span>
+
+<span class="n">ecpsvm</span> <span class="n">level</span> <span class="p">[</span><span class="n">nn</span><span class="p">]</span>                 <span class="n">Force</span> <span class="n">ECPS</span><span class="p">:</span><span class="n">VM</span> <span class="n">to</span> <span class="n">report</span> <span class="n">a</span> <span class="n">certain</span> <span class="n">support</span> <span class="n">level</span>
+                                  <span class="p">(</span><span class="ow">or</span> <span class="n">display</span> <span class="n">the</span> <span class="n">current</span> <span class="n">support</span> <span class="n">level</span><span class="p">)</span>
+
+<span class="n">ecpsvm</span> <span class="n">debug</span>   <span class="p">[</span><span class="n">feature</span><span class="p">]</span>          <span class="n">Turn</span> <span class="n">on</span> <span class="n">debugging</span> <span class="n">messages</span> <span class="k">for</span> <span class="n">a</span> <span class="n">specific</span>
+                                  <span class="n">feature</span><span class="p">,</span> <span class="n">where</span> <span class="n">feature</span> <span class="ow">is</span> <span class="n">either</span> <span class="n">ALL</span> <span class="p">(</span><span class="n">default</span><span class="p">),</span>
+                                  <span class="n">CPASSIST</span><span class="p">,</span> <span class="n">VMASSIST</span><span class="p">,</span> <span class="ow">or</span> <span class="n">one</span> <span class="n">of</span> <span class="n">the</span> <span class="n">many</span> <span class="n">named</span>
+                                  <span class="n">features</span> <span class="n">listed</span> <span class="n">further</span> <span class="n">below</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span> <span class="n">SCNRU</span><span class="p">,</span>
+                                  <span class="n">LCTL</span><span class="p">,</span> <span class="n">etc</span>
+
+<span class="n">ecpsvm</span> <span class="n">nodebug</span> <span class="p">[</span><span class="n">feature</span><span class="p">]</span>          <span class="n">Turn</span> <span class="n">off</span> <span class="n">debugging</span> <span class="n">messages</span>
+</pre></div>
+</div>
+<p><strong>NOTE:</strong> <code class="docutils literal notranslate"><span class="pre">ecpsvm</span> <span class="pre">disable</span></code> does <em>not</em> entirely disable all CP ASSISTS.
+If it did (i.e. generate a program interrupt whenever a E6xx instruction
+is invoked) then VM would abend immediately. Rather, omit the ECPSVM
+statement altogether from the configuration file.</p>
+<p>To determine the feature names, type <code class="docutils literal notranslate"><span class="pre">ecpsvm</span> <span class="pre">enable</span> <span class="pre">ALL</span></code>. All of the
+enabled features will then be listed.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">ecpsvm</span></code> command is <em>not</em> case sensitive.</p>
+</section>
+<section id="determining-if-the-assist-is-used-by-vm">
+<h2>Determining if the assist is used by VM<a class="headerlink" href="#determining-if-the-assist-is-used-by-vm" title="Permalink to this heading">¶</a></h2>
+<p>Use the following two CLASS A commands:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CP</span> <span class="n">QUERY</span> <span class="n">CPASSIST</span>
+<span class="n">CP</span> <span class="n">QUERY</span> <span class="n">SASSIST</span>
+</pre></div>
+</div>
+<p>Both queries should return <code class="docutils literal notranslate"><span class="pre">ON</span></code>.</p>
+<p>Also use the following CLASS G Command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CP</span> <span class="n">QUERY</span> <span class="n">SET</span>
+</pre></div>
+</div>
+<p>The second line should indicate:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ASSIST</span> <span class="n">ON</span> <span class="n">SVC</span> <span class="n">TMR</span>
+</pre></div>
+</div>
+</section>
+<section id="technical-information">
+<h2>Technical information<a class="headerlink" href="#technical-information" title="Permalink to this heading">¶</a></h2>
+<p>The CP Assists provides the VM System Control Program (SCP) with various
+microcoded instructions to shorten the supervisor pathlength. All
+microcoded instructions are privileged instructions and have an opcode
+of E6xx. They are native representation of what the SCP would do in a
+similar case. For all cases where the assist is not able to correctly
+assist the SCP, the E6xx instructions resolve to a no-op, thus leaving
+the responsibility of the task to the original CP code.</p>
+<p>The VM Assists alter the behavior of certain privileged instructions
+when executed in problem state (controlled by the Problem State bit in
+the PSW). The VM Assist will either completely simulate the instruction
+(when feasible), branch directly to the CP support module for that
+instruction (thereby bypassing program interruption processing and
+instruction decoding), or generate a privileged operation exception
+program interruption for all other cases so that CP can provide the
+simulation.</p>
+<p>The VM Virtual Interval Timer assist allows updating of a Virtual
+Machine virtual interval timer directly by the microcode.</p>
+<p>Both CP And VM Assists are controlled by real Control Register 6 which
+controls the availability and behavior of the assists.</p>
+</section>
+<section id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this heading">¶</a></h2>
+<p>In the event that a certain CP or VM Assist disrupts normal operations,
+it is possible to selectively disable each discrete component. The best
+method is to disable <strong>all</strong> VM and CP Assists (except STEVL and SSM if
+done prior to IPL) and then to enable each feature until the problem
+occurs. If it is unknown whether the problem lies in the VM or CP
+Assist, it is also possible to enable/disable the entire group of
+assists.</p>
+<p>Refer to the <code class="docutils literal notranslate"><span class="pre">ECPSVM</span> <span class="pre">ENABLE|DISABLE</span></code> command documented further above.</p>
+<p><code class="docutils literal notranslate"><span class="pre">ECPSVM</span> <span class="pre">STATS</span></code> allows you to see how often each assist is invoked. The
+hit count and hit ratio makes it possible to determine how effective the
+assists are.</p>
+<p>A low hit ratio may be normal in some situations. For example, the LPSW
+hit ratio will be very low when running VM under VM, because most PSW
+switches cannot be resolved by the assist.</p>
+<p>A low invocation count simply shows that the related assist is not often
+issued. For example, there are very few <code class="docutils literal notranslate"><span class="pre">LCTL</span></code>s when running CMS.</p>
+<p>Some assists are just invoked once at IPL (STEVL). This is normal
+behavior.</p>
+</section>
+<section id="implemented-assists">
+<h2>Implemented Assists<a class="headerlink" href="#implemented-assists" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>☒ DFCCW, DNCCW, CCWGN CCW translation</p></li>
+<li><p>☒ DISP0, DISP1, DISP2 CP Dispatching</p></li>
+<li><p>☒ FREEX, FRETX CP Free Storage management</p></li>
+<li><p>☐ FREE/FRET Original CP Free Storage Management (up to level 19)</p></li>
+<li><p>☒ LCKPG, ULKPG Real page frame locking/unlocking</p></li>
+<li><p>☒ LCSPG Locate changed shared page</p></li>
+<li><p>☒ LINK, RETRN CP SVC 8/12 LINK and RETURN function</p></li>
+<li><p>☐ PMASS Preferred Machine Assist (insufficient information)</p></li>
+<li><p>☒ SCNRU, SCNVU Real/Virtual Device control block scan</p></li>
+<li><p>☒ STEVL Store ECPS:VM support level</p></li>
+<li><p>☒ TRBRG, TRLCK Virtual frame addressing/locking</p></li>
+<li><p>☒ VIST, VIPT Invalidate shadow segment/page tables</p></li>
+<li><p>☒ UXCCW, FCCWS CCW untranslation</p></li>
+</ul>
+<ul class="simple">
+<li><p>☐ DIAG Simulation</p></li>
+<li><p>☐ IUCV</p></li>
+<li><p>☐ ISK/SSK/ISKE/SSKE/IVSK Extended Key Operations assist</p></li>
+<li><p>☒ LCTL Simulation</p></li>
+<li><p>☒ LPSW Simulation</p></li>
+<li><p>☒ LRA Simulation</p></li>
+<li><p>☐ SIO/SIOF Simulation</p></li>
+<li><p>☒ SSM Simulation</p></li>
+<li><p>☒ SVC Simulation</p></li>
+<li><p>☒ STNSM Simulation</p></li>
+<li><p>☒ STOSM Simulation</p></li>
+<li><p>☐ V=R Shadow Table Bypass assists [note]</p></li>
+<li><p>☒ Virtual Interval Timer</p></li>
+</ul>
+<p><strong>Note:</strong> The V=R Shadow Table Bypass assist is a feature which requires
+the guest program to be aware of the feature (Page 0 Relocation).</p>
+</section>
+<section id="special-situations">
+<h2>Special Situations<a class="headerlink" href="#special-situations" title="Permalink to this heading">¶</a></h2>
+<ol class="arabic simple">
+<li><p>ECPS:VM will <em>not</em> work in an AP or MP system. An AP or MP generated
+system locks various system control blocks being manipulated by the
+assisted functions (<code class="docutils literal notranslate"><span class="pre">VMBLOK</span></code>, <code class="docutils literal notranslate"><span class="pre">RDEVBLOK</span></code>, <code class="docutils literal notranslate"><span class="pre">VDEVBLOK</span></code>, etc..).
+However, the current ECPS:VM implementation doesn’t lock any of those
+structures.</p></li>
+</ol>
+<p>Therefore, CP will fairly quickly abend because it will find some of the
+control blocks to not have been locked when they should, resulting in
+various <code class="docutils literal notranslate"><span class="pre">LOKxxx</span></code> abends. Consequently, ECPS:VM <strong>must</strong> be disabled
+when a AP or MP system is used.</p>
+<ol class="arabic simple" start="2">
+<li><p>Many users that run VM/370 are also using a diagnostic tool called
+the FREE/FRET trap. This tool is used to help diagnose problems with
+CP’s management of free storage. The various builds of VM in use by
+emulator users typically have the trap already in effect. However,
+ECPS:VM normally cannot perform several of the CP Assists when the
+trap is in effect and the affected assists are turned off.
+Unfortunately, the assists that are turned off are otherwise highly
+used and losing the assist capability for these functions is a
+significant performance impact.</p></li>
+</ol>
+<p>This updated version of the ECPS:VM support provides the capability to
+operate with or without the FREE/FRET trap in effect. The assist can
+automatically determine at IPL time whether it needs to operate with the
+trap or without the trap. If the trap is enabled, all of the supported
+assists listed above are enabled.</p>
+<p>It is still possible to use ECPS:VM without any additional support for
+the FREE/FRET trap by simply specifying <code class="docutils literal notranslate"><span class="pre">ECPSVM</span> <span class="pre">YES</span> <span class="pre">NOTRAP</span></code> in the
+Hercules configuration file. In this case, the assists that cannot
+operate with the trap in effect will automatically be disabled as
+before. This means that the <code class="docutils literal notranslate"><span class="pre">DISP1</span></code>, <code class="docutils literal notranslate"><span class="pre">DISP2</span></code>, <code class="docutils literal notranslate"><span class="pre">FREEX</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">FRETX</span></code> assists will be disabled. If the trap is not present, all
+assists are enabled and <code class="docutils literal notranslate"><span class="pre">NOTRAP</span></code> has no meaning.</p>
+<p>Otherwise, regardless of whether the FREE/FRET trap is present, ECPS:VM
+will attempt to operate with all assists enabled with or without the
+trap when specifying <code class="docutils literal notranslate"><span class="pre">ECPSVM</span> <span class="pre">YES</span></code> or <code class="docutils literal notranslate"><span class="pre">ECPSVM</span> <span class="pre">YES</span> <span class="pre">TRAP</span></code>.
+(<code class="docutils literal notranslate"><span class="pre">ECPSVM</span> <span class="pre">YES</span></code> and <code class="docutils literal notranslate"><span class="pre">ECPSVM</span> <span class="pre">YES</span> <span class="pre">TRAP</span></code> are functionally equivalent.)</p>
+<p>You can determine if ECPS:VM is operating with the trap after IPL by
+issuing the <code class="docutils literal notranslate"><span class="pre">ecpsvm</span> <span class="pre">stats</span></code> command at the Hercules console. If the
+trap is in effect and ECPS:VM has recognized it, the following message
+will also be displayed at the beginning of the normal stats report:</p>
+<p><code class="docutils literal notranslate"><span class="pre">ECPS:VM</span> <span class="pre">Operating</span> <span class="pre">with</span> <span class="pre">CP</span> <span class="pre">FREE/FRET</span> <span class="pre">trap</span> <span class="pre">in</span> <span class="pre">effect</span></code></p>
+</section>
+<section id="example-ecpsvm-stat-report">
+<h2>Example ‘ecpsvm stat’ report<a class="headerlink" href="#example-ecpsvm-stat-report" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">15</span><span class="p">:</span><span class="mi">04</span><span class="p">:</span><span class="mi">36</span> <span class="n">HHC01603I</span> <span class="n">ecpsvm</span> <span class="n">stat</span>
+<span class="mi">15</span><span class="p">:</span><span class="mi">04</span><span class="p">:</span><span class="mi">36</span> <span class="n">HHC01719I</span> <span class="n">ECPS</span><span class="p">:</span><span class="n">VM</span> <span class="n">Command</span> <span class="n">processor</span> <span class="n">invoked</span>
+<span class="mi">14</span><span class="p">:</span><span class="mi">04</span><span class="p">:</span><span class="mi">36</span> <span class="n">HHC01724I</span> <span class="n">ECPS</span><span class="p">:</span><span class="n">VM</span> <span class="n">Operating</span> <span class="k">with</span> <span class="n">CP</span> <span class="n">FREE</span><span class="o">/</span><span class="n">FRET</span> <span class="n">trap</span> <span class="ow">in</span> <span class="n">effect</span>
+<span class="mi">15</span><span class="p">:</span><span class="mi">04</span><span class="p">:</span><span class="mi">36</span> <span class="n">HHC01725I</span> <span class="n">ECPS</span><span class="p">:</span><span class="n">VM</span> <span class="n">Code</span> <span class="n">version</span> <span class="mf">1.88</span>
+<span class="mi">15</span><span class="p">:</span><span class="mi">04</span><span class="p">:</span><span class="mi">36</span> <span class="n">HHC01702I</span> <span class="o">+-----------+------------+------------+-------+</span>
+<span class="mi">15</span><span class="p">:</span><span class="mi">04</span><span class="p">:</span><span class="mi">36</span> <span class="n">HHC01706I</span> <span class="o">|</span> <span class="n">VM</span> <span class="n">ASSIST</span> <span class="o">|</span>    <span class="n">Calls</span>   <span class="o">|</span>     <span class="n">Hits</span>   <span class="o">|</span> <span class="n">Ratio</span> <span class="o">|</span>
+<span class="mi">15</span><span class="p">:</span><span class="mi">04</span><span class="p">:</span><span class="mi">36</span> <span class="n">HHC01702I</span> <span class="o">+-----------+------------+------------+-------+</span>
+<span class="mi">15</span><span class="p">:</span><span class="mi">04</span><span class="p">:</span><span class="mi">36</span> <span class="n">HHC01701I</span> <span class="o">|</span> <span class="n">LRA</span>       <span class="o">|</span>    <span class="mi">2366260</span> <span class="o">|</span>    <span class="mi">2366260</span> <span class="o">|</span>  <span class="mi">100</span><span class="o">%</span> <span class="o">|</span>
+<span class="mi">15</span><span class="p">:</span><span class="mi">04</span><span class="p">:</span><span class="mi">36</span> <span class="n">HHC01701I</span> <span class="o">|</span> <span class="n">STNSM</span>     <span class="o">|</span>    <span class="mi">1844353</span> <span class="o">|</span>    <span class="mi">1839880</span> <span class="o">|</span>   <span class="mi">99</span><span class="o">%</span> <span class="o">|</span>
+<span class="mi">15</span><span class="p">:</span><span class="mi">04</span><span class="p">:</span><span class="mi">36</span> <span class="n">HHC01701I</span> <span class="o">|</span> <span class="n">STOSM</span>     <span class="o">|</span>    <span class="mi">1110753</span> <span class="o">|</span>    <span class="mi">1036311</span> <span class="o">|</span>   <span class="mi">93</span><span class="o">%</span> <span class="o">|</span>
+<span class="mi">15</span><span class="p">:</span><span class="mi">04</span><span class="p">:</span><span class="mi">36</span> <span class="n">HHC01701I</span> <span class="o">|</span> <span class="n">LPSW</span>      <span class="o">|</span>     <span class="mi">706882</span> <span class="o">|</span>     <span class="mi">694282</span> <span class="o">|</span>   <span class="mi">98</span><span class="o">%</span> <span class="o">|</span>
+<span class="mi">15</span><span class="p">:</span><span class="mi">04</span><span class="p">:</span><span class="mi">36</span> <span class="n">HHC01701I</span> <span class="o">|</span> <span class="n">LCTL</span>      <span class="o">|</span>     <span class="mi">699101</span> <span class="o">|</span>     <span class="mi">245626</span> <span class="o">|</span>   <span class="mi">35</span><span class="o">%</span> <span class="o">|</span>
+<span class="mi">15</span><span class="p">:</span><span class="mi">04</span><span class="p">:</span><span class="mi">36</span> <span class="n">HHC01701I</span> <span class="o">|</span> <span class="n">SVC</span>       <span class="o">|</span>     <span class="mi">258185</span> <span class="o">|</span>     <span class="mi">258181</span> <span class="o">|</span>   <span class="mi">99</span><span class="o">%</span> <span class="o">|</span>
+<span class="mi">15</span><span class="p">:</span><span class="mi">04</span><span class="p">:</span><span class="mi">36</span> <span class="n">HHC01701I</span> <span class="o">|</span> <span class="n">SSM</span>       <span class="o">|</span>     <span class="mi">209426</span> <span class="o">|</span>     <span class="mi">209228</span> <span class="o">|</span>   <span class="mi">99</span><span class="o">%</span> <span class="o">|</span>
+<span class="mi">15</span><span class="p">:</span><span class="mi">04</span><span class="p">:</span><span class="mi">36</span> <span class="n">HHC01701I</span> <span class="o">|</span> <span class="n">STCTL</span>     <span class="o">|</span>     <span class="mi">149228</span> <span class="o">|</span>     <span class="mi">149228</span> <span class="o">|</span>  <span class="mi">100</span><span class="o">%</span> <span class="o">|</span>
+<span class="mi">15</span><span class="p">:</span><span class="mi">04</span><span class="p">:</span><span class="mi">36</span> <span class="n">HHC01702I</span> <span class="o">+-----------+------------+------------+-------+</span>
+<span class="mi">15</span><span class="p">:</span><span class="mi">04</span><span class="p">:</span><span class="mi">36</span> <span class="n">HHC01701I</span> <span class="o">|</span> <span class="n">Total</span>     <span class="o">|</span>    <span class="mi">7513360</span> <span class="o">|</span>    <span class="mi">6967661</span> <span class="o">|</span>   <span class="mi">92</span><span class="o">%</span> <span class="o">|</span>
+<span class="mi">15</span><span class="p">:</span><span class="mi">04</span><span class="p">:</span><span class="mi">36</span> <span class="n">HHC01702I</span> <span class="o">+-----------+------------+------------+-------+</span>
+<span class="mi">15</span><span class="p">:</span><span class="mi">04</span><span class="p">:</span><span class="mi">36</span> <span class="n">HHC01703I</span> <span class="o">*</span> <span class="p">:</span> <span class="n">Unsupported</span><span class="p">,</span> <span class="o">-</span> <span class="p">:</span> <span class="n">Disabled</span><span class="p">,</span> <span class="o">%</span> <span class="o">-</span> <span class="n">Debug</span>
+<span class="mi">15</span><span class="p">:</span><span class="mi">04</span><span class="p">:</span><span class="mi">36</span> <span class="n">HHC01704I</span> <span class="mi">2</span> <span class="n">entries</span> <span class="ow">not</span> <span class="n">shown</span> <span class="ow">and</span> <span class="n">never</span> <span class="n">invoked</span>
+<span class="mi">15</span><span class="p">:</span><span class="mi">04</span><span class="p">:</span><span class="mi">36</span> <span class="n">HHC01702I</span> <span class="o">+-----------+------------+------------+-------+</span>
+<span class="mi">15</span><span class="p">:</span><span class="mi">04</span><span class="p">:</span><span class="mi">36</span> <span class="n">HHC01706I</span> <span class="o">|</span> <span class="n">CP</span> <span class="n">ASSIST</span> <span class="o">|</span>    <span class="n">Calls</span>   <span class="o">|</span>     <span class="n">Hits</span>   <span class="o">|</span> <span class="n">Ratio</span> <span class="o">|</span>
+<span class="mi">15</span><span class="p">:</span><span class="mi">04</span><span class="p">:</span><span class="mi">36</span> <span class="n">HHC01702I</span> <span class="o">+-----------+------------+------------+-------+</span>
+<span class="mi">15</span><span class="p">:</span><span class="mi">04</span><span class="p">:</span><span class="mi">36</span> <span class="n">HHC01701I</span> <span class="o">|</span> <span class="n">DISP0</span>     <span class="o">|</span>    <span class="mi">1226824</span> <span class="o">|</span>    <span class="mi">1226824</span> <span class="o">|</span>  <span class="mi">100</span><span class="o">%</span> <span class="o">|</span>
+<span class="mi">15</span><span class="p">:</span><span class="mi">04</span><span class="p">:</span><span class="mi">36</span> <span class="n">HHC01701I</span> <span class="o">|</span> <span class="n">DISP1</span>     <span class="o">|</span>    <span class="mi">1166688</span> <span class="o">|</span>    <span class="mi">1166688</span> <span class="o">|</span>  <span class="mi">100</span><span class="o">%</span> <span class="o">|</span>
+<span class="mi">15</span><span class="p">:</span><span class="mi">04</span><span class="p">:</span><span class="mi">36</span> <span class="n">HHC01701I</span> <span class="o">|</span> <span class="n">SCNVU</span>     <span class="o">|</span>     <span class="mi">802372</span> <span class="o">|</span>     <span class="mi">708491</span> <span class="o">|</span>   <span class="mi">88</span><span class="o">%</span> <span class="o">|</span>
+<span class="mi">15</span><span class="p">:</span><span class="mi">04</span><span class="p">:</span><span class="mi">36</span> <span class="n">HHC01701I</span> <span class="o">|</span> <span class="n">DISP2</span>     <span class="o">|</span>     <span class="mi">676761</span> <span class="o">|</span>     <span class="mi">676761</span> <span class="o">|</span>  <span class="mi">100</span><span class="o">%</span> <span class="o">|</span>
+<span class="mi">15</span><span class="p">:</span><span class="mi">04</span><span class="p">:</span><span class="mi">36</span> <span class="n">HHC01701I</span> <span class="o">|</span> <span class="n">VIPT</span>      <span class="o">|</span>     <span class="mi">592427</span> <span class="o">|</span>     <span class="mi">592427</span> <span class="o">|</span>  <span class="mi">100</span><span class="o">%</span> <span class="o">|</span>
+<span class="mi">15</span><span class="p">:</span><span class="mi">04</span><span class="p">:</span><span class="mi">36</span> <span class="n">HHC01701I</span> <span class="o">|</span> <span class="n">LINK</span>      <span class="o">|</span>     <span class="mi">571589</span> <span class="o">|</span>     <span class="mi">561217</span> <span class="o">|</span>   <span class="mi">98</span><span class="o">%</span> <span class="o">|</span>
+<span class="mi">15</span><span class="p">:</span><span class="mi">04</span><span class="p">:</span><span class="mi">36</span> <span class="n">HHC01701I</span> <span class="o">|</span> <span class="n">RETRN</span>     <span class="o">|</span>     <span class="mi">566264</span> <span class="o">|</span>     <span class="mi">560674</span> <span class="o">|</span>   <span class="mi">99</span><span class="o">%</span> <span class="o">|</span>
+<span class="mi">15</span><span class="p">:</span><span class="mi">04</span><span class="p">:</span><span class="mi">36</span> <span class="n">HHC01701I</span> <span class="o">|</span> <span class="n">FREEX</span>     <span class="o">|</span>     <span class="mi">455712</span> <span class="o">|</span>     <span class="mi">454295</span> <span class="o">|</span>   <span class="mi">99</span><span class="o">%</span> <span class="o">|</span>
+<span class="mi">15</span><span class="p">:</span><span class="mi">04</span><span class="p">:</span><span class="mi">36</span> <span class="n">HHC01701I</span> <span class="o">|</span> <span class="n">FRETX</span>     <span class="o">|</span>     <span class="mi">373856</span> <span class="o">|</span>     <span class="mi">373697</span> <span class="o">|</span>   <span class="mi">99</span><span class="o">%</span> <span class="o">|</span>
+<span class="mi">15</span><span class="p">:</span><span class="mi">04</span><span class="p">:</span><span class="mi">36</span> <span class="n">HHC01701I</span> <span class="o">|</span> <span class="n">SCNRU</span>     <span class="o">|</span>     <span class="mi">172740</span> <span class="o">|</span>     <span class="mi">172740</span> <span class="o">|</span>  <span class="mi">100</span><span class="o">%</span> <span class="o">|</span>
+<span class="mi">15</span><span class="p">:</span><span class="mi">04</span><span class="p">:</span><span class="mi">36</span> <span class="n">HHC01701I</span> <span class="o">|</span> <span class="n">DFCCW</span>     <span class="o">|</span>     <span class="mi">166317</span> <span class="o">|</span>     <span class="mi">161400</span> <span class="o">|</span>   <span class="mi">97</span><span class="o">%</span> <span class="o">|</span>
+<span class="mi">15</span><span class="p">:</span><span class="mi">04</span><span class="p">:</span><span class="mi">36</span> <span class="n">HHC01701I</span> <span class="o">|</span> <span class="n">DNCCW</span>     <span class="o">|</span>      <span class="mi">90880</span> <span class="o">|</span>      <span class="mi">90832</span> <span class="o">|</span>   <span class="mi">99</span><span class="o">%</span> <span class="o">|</span>
+<span class="mi">15</span><span class="p">:</span><span class="mi">04</span><span class="p">:</span><span class="mi">36</span> <span class="n">HHC01701I</span> <span class="o">|</span> <span class="n">CCWGN</span>     <span class="o">|</span>      <span class="mi">85310</span> <span class="o">|</span>      <span class="mi">84319</span> <span class="o">|</span>   <span class="mi">98</span><span class="o">%</span> <span class="o">|</span>
+<span class="mi">15</span><span class="p">:</span><span class="mi">04</span><span class="p">:</span><span class="mi">36</span> <span class="n">HHC01701I</span> <span class="o">|</span> <span class="n">TRBRG</span>     <span class="o">|</span>      <span class="mi">85001</span> <span class="o">|</span>      <span class="mi">80684</span> <span class="o">|</span>   <span class="mi">94</span><span class="o">%</span> <span class="o">|</span>
+<span class="mi">15</span><span class="p">:</span><span class="mi">04</span><span class="p">:</span><span class="mi">36</span> <span class="n">HHC01701I</span> <span class="o">|</span> <span class="n">UXCCW</span>     <span class="o">|</span>      <span class="mi">71824</span> <span class="o">|</span>      <span class="mi">71824</span> <span class="o">|</span>  <span class="mi">100</span><span class="o">%</span> <span class="o">|</span>
+<span class="mi">15</span><span class="p">:</span><span class="mi">04</span><span class="p">:</span><span class="mi">36</span> <span class="n">HHC01701I</span> <span class="o">|</span> <span class="n">FCCWS</span>     <span class="o">|</span>      <span class="mi">71667</span> <span class="o">|</span>      <span class="mi">71665</span> <span class="o">|</span>   <span class="mi">99</span><span class="o">%</span> <span class="o">|</span>
+<span class="mi">15</span><span class="p">:</span><span class="mi">04</span><span class="p">:</span><span class="mi">36</span> <span class="n">HHC01701I</span> <span class="o">|</span> <span class="n">LCKPG</span>     <span class="o">|</span>      <span class="mi">15297</span> <span class="o">|</span>      <span class="mi">15297</span> <span class="o">|</span>  <span class="mi">100</span><span class="o">%</span> <span class="o">|</span>
+<span class="mi">15</span><span class="p">:</span><span class="mi">04</span><span class="p">:</span><span class="mi">36</span> <span class="n">HHC01701I</span> <span class="o">|</span> <span class="n">ULKPG</span>     <span class="o">|</span>      <span class="mi">12249</span> <span class="o">|</span>      <span class="mi">12249</span> <span class="o">|</span>  <span class="mi">100</span><span class="o">%</span> <span class="o">|</span>
+<span class="mi">15</span><span class="p">:</span><span class="mi">04</span><span class="p">:</span><span class="mi">36</span> <span class="n">HHC01701I</span> <span class="o">|</span> <span class="n">LCSPG</span>     <span class="o">|</span>       <span class="mi">5724</span> <span class="o">|</span>       <span class="mi">5724</span> <span class="o">|</span>  <span class="mi">100</span><span class="o">%</span> <span class="o">|</span>
+<span class="mi">15</span><span class="p">:</span><span class="mi">04</span><span class="p">:</span><span class="mi">36</span> <span class="n">HHC01701I</span> <span class="o">|</span> <span class="n">TRLOK</span>     <span class="o">|</span>       <span class="mi">5408</span> <span class="o">|</span>       <span class="mi">3419</span> <span class="o">|</span>   <span class="mi">63</span><span class="o">%</span> <span class="o">|</span>
+<span class="mi">15</span><span class="p">:</span><span class="mi">04</span><span class="p">:</span><span class="mi">36</span> <span class="n">HHC01701I</span> <span class="o">|</span> <span class="n">STEVL</span>     <span class="o">|</span>          <span class="mi">1</span> <span class="o">|</span>          <span class="mi">1</span> <span class="o">|</span>  <span class="mi">100</span><span class="o">%</span> <span class="o">|</span>
+<span class="mi">15</span><span class="p">:</span><span class="mi">04</span><span class="p">:</span><span class="mi">36</span> <span class="n">HHC01702I</span> <span class="o">+-----------+------------+------------+-------+</span>
+<span class="mi">15</span><span class="p">:</span><span class="mi">04</span><span class="p">:</span><span class="mi">36</span> <span class="n">HHC01701I</span> <span class="o">|</span> <span class="n">Total</span>     <span class="o">|</span>    <span class="mi">7214911</span> <span class="o">|</span>    <span class="mi">7091228</span> <span class="o">|</span>   <span class="mi">98</span><span class="o">%</span> <span class="o">|</span>
+<span class="mi">15</span><span class="p">:</span><span class="mi">04</span><span class="p">:</span><span class="mi">36</span> <span class="n">HHC01702I</span> <span class="o">+-----------+------------+------------+-------+</span>
+<span class="mi">15</span><span class="p">:</span><span class="mi">04</span><span class="p">:</span><span class="mi">36</span> <span class="n">HHC01704I</span> <span class="mi">4</span> <span class="n">entries</span> <span class="ow">not</span> <span class="n">shown</span> <span class="ow">and</span> <span class="n">never</span> <span class="n">invoked</span>
+<span class="mi">15</span><span class="p">:</span><span class="mi">04</span><span class="p">:</span><span class="mi">36</span> <span class="n">HHC01722I</span> <span class="n">ECPS</span><span class="p">:</span><span class="n">VM</span> <span class="n">Command</span> <span class="n">processor</span> <span class="n">complete</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Read the Docs</span>
+      v: fovea1959
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+      <dl>
+        <dt>Languages</dt>
+        
+           <strong> 
+          <dd><a href="/herc-docs-demo/en/fovea1959/">en</a></dd>
+           </strong> 
+        
+      </dl>
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+           <strong> 
+          <dd><a href="/herc-docs-demo/en/fovea1959/">fovea1959</a></dd>
+           </strong> 
+        
+          
+          <dd><a href="/herc-docs-demo/en/master/">master</a></dd>
+          
+        
+          
+          <dd><a href="/herc-docs-demo/en/0.0/">0.0</a></dd>
+          
+        
+          
+          <dd><a href="/herc-docs-demo/en/1.0/">1.0</a></dd>
+          
+        
+      </dl>
+      
+      
+      <dl>
+        <dt>Downloads</dt>
+        
+          <dd><a href="/herc-docs-demo/en/fovea1959/Hercules Documentation Demo-docs_en_fovea1959.pdf">pdf</a></dd>
+        
+          <dd><a href="/herc-docs-demo/en/fovea1959/Hercules Documentation Demo-docs_en_fovea1959.epub">epub</a></dd>
+        
+          <dd><a href="/herc-docs-demo/en/fovea1959/Hercules Documentation Demo-docs_en_fovea1959.html.tar.gz">tarred HTML</a></dd>
+        
+          <dd><a href="/herc-docs-demo/en/fovea1959/Hercules Documentation Demo-docs_en_fovea1959.single.html.tar.gz">tarred single file HTML</a></dd>
+        
+      </dl>
+      
+      
+      <hr/>
+      <a href="https://tech.michaelaltfield.net/2020/07/18/sphinx-rtd-github-pages-1/">Continuous Documentation</a> hosting provided by <a href="https://pages.github.com/">GitHub Pages</a>.
+ 
+    </div>
+  </div>
+
+ 
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,384 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Hercules Automatic Operator &mdash; Hercules Documentation Demo 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link href="_static/herc_style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Hercules Documentation Demo
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                fovea1959
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="hercinst.html">Building and Installing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration File</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercdasd.html">Creating DASD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercoper.html">Operating Procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercsupp.html">Technical Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercfaq.html">Frequently-Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="messages.html">Messages and Codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aa_auxdocs.html">Supporting documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_a.html">Appendix A - Documentation Standards</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Hercules Documentation Demo</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Hercules Automatic Operator</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/README.HAO.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="hercules-automatic-operator">
+<h1>Hercules Automatic Operator<a class="headerlink" href="#hercules-automatic-operator" title="Permalink to this heading">¶</a></h1>
+<p>The Hercules Automatic Operator (HAO) feature is a facility that allows
+one to automatically issue panel commands in response to certain
+messages being issued.</p>
+<p>To use the Hercules Automatic Operator facility, one first defines a
+“rule” consisting of a “target” and an associated “command”. The
+“target” is just a regular expression pattern used to match against the
+text of the various messages that Hercules issues as it runs. Whenever a
+match is found, the rule “fires” and its associated command is
+automatically issued.</p>
+<p>The Hercules Automatic Operator facility is <strong>only</strong> for those messages
+issued <strong>by Hercules</strong> to its HMC (hardware console). It <strong>cannot</strong> be
+used for whatever messages the guest operating system may issue to any
+of its terminals. It is only a <strong>Hercules</strong> automatic operator and
+<strong>not</strong> a “VSE”, “MVS”, “VM”, etc, automatic operator!</p>
+<section id="defining-a-rule">
+<h2>Defining a rule<a class="headerlink" href="#defining-a-rule" title="Permalink to this heading">¶</a></h2>
+<p>To define a HAO rule, first enter the command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">hao</span>  <span class="o">&lt;</span><span class="n">tgt</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>to define the rule’s “target” match pattern (a simple regular
+expression), and then immediately follow it with the command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">hao</span>  <span class="o">&lt;</span><span class="n">cmd</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>to define the rule’s associated panel-command.</p>
+<p>The target pattern is a simple regular expression value as defined by
+whatever regular expression your host platform build happens to support.
+For Windows it must be a Perl Compatible Regular Expression (PCRE). For
+other supported build platforms it might be some other supported regular
+expression syntax. Check your host platform’s programming documentation
+for further details.</p>
+<p>The associated panel-command is whatever valid Hercules command you wish
+to execute in response to a message being issued that matches the
+specified pattern (target). (Okay, that’s not completely true. The
+“command” is actually any text string one desires. It doesn’t have to be
+a valid Hercules command, but it makes infinitely more sense if it is
+one).</p>
+</section>
+<section id="substituting-substrings-in-the-command">
+<h2>Substituting substrings in the command<a class="headerlink" href="#substituting-substrings-in-the-command" title="Permalink to this heading">¶</a></h2>
+<p>Substrings may be substituted into a rule’s associated panel-command by
+means of the special variables $1, $2, etc, which will be replaced by
+the values of “capturing groups” in the match pattern. A capturing group
+is a part of the regular expression enclosed in parentheses which is
+matched with text in the target message. In this way, commands may be
+constructed which contain substrings extracted from the message which
+triggered the command.</p>
+<p>The following special variables are recognized:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$1 to $9      the text which matched the 1st to 9th capturing group in the target regular expression.
+$`            the text preceding the regular expression match.
+$&#39;            the text following the regular expression match.
+$$            replaced by a single dollar sign.
+</pre></div>
+</div>
+<p>Note that substitution of a $n variable does not occur if there are
+fewer than n capturing groups in the regular expression.</p>
+<p>As an example, the rule below issues the Hercules command <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">001F</span></code> in
+response to the Hercules message
+“<strong>``HHC01090I 0:001F COMM: client 127.0.0.1 devtype 3270: connection reset``</strong>”:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>hao tgt HHC01090I .:([0-9A-F]{4}) COMM: .* connection reset
+hao cmd i $1
+</pre></div>
+</div>
+<p>Another example, shown below, illustrates how the dot matrix display of
+a 3590(?) tape unit might be used to implement an automatic tape library
+in response to the Hercules message
+“<strong>``HHC00224I 0:0581 Tape file *, type HET: display “K2DSBK2 “ / “M2DSBK3S” (alternating)``</strong>”:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>hao tgt HHC00224I .:([0-9A-F]{4}) Tape file .*: display (?:&quot;.{8}&quot; \/ )?&quot;M([A-Z0-9]{1,6})\s*S&quot;
+hao cmd devinit $1 /u/tapes/$2.aws
+</pre></div>
+</div>
+<p>Which would result in the Hercules command
+“<code class="docutils literal notranslate"><span class="pre">devinit</span> <span class="pre">0581</span> <span class="pre">/u/tapes/2DSBK3.aws</span></code>” being automatically issued.</p>
+<p>More information about Perl Compatible Regular Expression (PCRE) syntax
+(as well as a nice online web page that allows you to test your
+expressions) can be found here:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.debuggex.com/cheatsheet/regex/pcre">PCRE Regex
+Cheatsheet</a></p></li>
+<li><p><a class="reference external" href="https://regex101.com/">Online PCRE test page</a></p></li>
+</ul>
+</section>
+<section id="other-commands-and-limitations">
+<h2>Other commands and limitations<a class="headerlink" href="#other-commands-and-limitations" title="Permalink to this heading">¶</a></h2>
+<p>ALL defined rules are checked for a match each time Hercules issues a
+message. There is no way to specify “stop processing subsequent rules”.
+If a message is issued that matches two or more rules, each associated
+command is then issued in sequence.</p>
+<p>The current implementation limits the total number of defined rules to
+64. If you need to define more than 64 rules you will either have to
+build Hercules for yourself (increasing the value of the <code class="docutils literal notranslate"><span class="pre">HAO_MAXRULE</span></code>
+constant in <a class="reference external" href="../hao.c">hao.c</a>) or else beg one of the Hercules
+developers to please do it for you.</p>
+<p>To delete a fully or partially defined HAO rule, first use the
+<code class="docutils literal notranslate"><span class="pre">hao</span> <span class="pre">list</span></code> command to list all of the defined (or partially defined)
+rules, and then use the <code class="docutils literal notranslate"><span class="pre">hao</span> <span class="pre">del</span> <span class="pre">&lt;nnn&gt;</span></code> command to delete the specific
+rule identified by ‘nnn’. (All rules are assigned numbers as they are
+defined and are thus identified by their numeric value). Optionally, one
+may delete ALL defined or partially defined rules by issuing the command
+<code class="docutils literal notranslate"><span class="pre">hao</span> <span class="pre">clear</span></code>.</p>
+</section>
+<section id="giving-credit-where-credit-is-due">
+<h2>Giving credit where credit is due<a class="headerlink" href="#giving-credit-where-credit-is-due" title="Permalink to this heading">¶</a></h2>
+<p>The Hercules Automatic Operator facility was designed eons ago (or so it
+seems anyway) by Bernard van der Helm of Noordwijkerhout, The
+Netherlands, and is thus copyrighted by him. All I did was FINALLY get
+around to implementing it in the current release of Hercules. If you
+like it and find it to be useful, I think it’d be real nice if you’d let
+Bernard know that. Thanks.</p>
+<p>– Fish February 2021</p>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Read the Docs</span>
+      v: fovea1959
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+      <dl>
+        <dt>Languages</dt>
+        
+           <strong> 
+          <dd><a href="/herc-docs-demo/en/fovea1959/">en</a></dd>
+           </strong> 
+        
+      </dl>
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+           <strong> 
+          <dd><a href="/herc-docs-demo/en/fovea1959/">fovea1959</a></dd>
+           </strong> 
+        
+          
+          <dd><a href="/herc-docs-demo/en/master/">master</a></dd>
+          
+        
+          
+          <dd><a href="/herc-docs-demo/en/0.0/">0.0</a></dd>
+          
+        
+          
+          <dd><a href="/herc-docs-demo/en/1.0/">1.0</a></dd>
+          
+        
+      </dl>
+      
+      
+      <dl>
+        <dt>Downloads</dt>
+        
+          <dd><a href="/herc-docs-demo/en/fovea1959/Hercules Documentation Demo-docs_en_fovea1959.pdf">pdf</a></dd>
+        
+          <dd><a href="/herc-docs-demo/en/fovea1959/Hercules Documentation Demo-docs_en_fovea1959.epub">epub</a></dd>
+        
+          <dd><a href="/herc-docs-demo/en/fovea1959/Hercules Documentation Demo-docs_en_fovea1959.html.tar.gz">tarred HTML</a></dd>
+        
+          <dd><a href="/herc-docs-demo/en/fovea1959/Hercules Documentation Demo-docs_en_fovea1959.single.html.tar.gz">tarred single file HTML</a></dd>
+        
+      </dl>
+      
+      
+      <hr/>
+      <a href="https://tech.michaelaltfield.net/2020/07/18/sphinx-rtd-github-pages-1/">Continuous Documentation</a> hosting provided by <a href="https://pages.github.com/">GitHub Pages</a>.
+ 
+    </div>
+  </div>
+
+ 
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

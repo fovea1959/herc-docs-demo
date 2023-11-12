@@ -1,0 +1,359 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Hercules CCKD64 Support &mdash; Hercules Documentation Demo 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link href="_static/herc_style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Hercules Documentation Demo
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                fovea1959
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="hercinst.html">Building and Installing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration File</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercdasd.html">Creating DASD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercoper.html">Operating Procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercsupp.html">Technical Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercfaq.html">Frequently-Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="messages.html">Messages and Codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aa_auxdocs.html">Supporting documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_a.html">Appendix A - Documentation Standards</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Hercules Documentation Demo</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Hercules CCKD64 Support</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/README.CCKD64.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="hercules-cckd64-support">
+<h1>Hercules CCKD64 Support<a class="headerlink" href="#hercules-cckd64-support" title="Permalink to this heading">¶</a></h1>
+<p>Version 4.2 of SDL Hercules Hyperion introduced support for very large
+Compressed CKD (CCKD) dasd image files, called CCKD64, which can be much
+larger than 4GB in size.</p>
+<p>The current default implementation of CCKD only supports a maximum file
+size of 4GB. With the current CCKD implementation, when a compressed
+CCKD dasd image file (or any of its associated shadow files) reaches a
+file size of 4GB, unrecoverable I/O errors occur. This is caused by the
+use of only 32-bit file offset values being used in the original design.</p>
+<p>With the introduction of CCKD64 support however, the new CCKD64 file
+format uses 64-bit file offsets, thus allowing CCKD64 format compressed
+dasd image files (and their associated shadow files) to grow to the
+theoretical maximum of 18EB in size. (The actual maximum size that any
+operating system file can actually be however, is limited by the
+operating system itself as well as the format of the file system that
+the file resides on. On Windows with NTFS volumes for example, the
+actual maximum supported file size is 16TB.)</p>
+<section id="conversion-to-cckd64">
+<h2>Conversion to CCKD64<a class="headerlink" href="#conversion-to-cckd64" title="Permalink to this heading">¶</a></h2>
+<p>In order to take advantage of the new CCKD64 file format, existing
+emulated dasd image files in the old CCKD compressed format must first
+be converted to the new CCKD64 format by either:</p>
+<ul class="simple">
+<li><p>Using the new <strong>``convto64``</strong> utility to individually convert <em>each</em>
+old format base image <em>and associated shadow files</em> to the new format
+<em>(recommended)</em>, or</p></li>
+<li><p>Creating brand new cckd64 base image file using the new
+<strong>``dasdinit64``</strong> utility, or</p></li>
+<li><p>Copying existing old format CCKD images to the new CCKD64 format
+using the new <strong>``dasdcopy64``</strong> utility.</p></li>
+</ul>
+<p>It is <em>critical</em> the dasd images being converted <em>not have any errors</em>
+before they are converted! It is therefore highly recommended that
+<code class="docutils literal notranslate"><span class="pre">cckdcdsk</span> <span class="pre">-3</span></code> be run on each image before they are converted.</p>
+<p>Using the <strong>``convto64``</strong> utility to convert existing CCKD files to the
+CCKD64 format is recommended over using <code class="docutils literal notranslate"><span class="pre">dasdcopy64</span></code> as it is not only
+significantly faster than <code class="docutils literal notranslate"><span class="pre">dasdcopy64</span></code> but is also able to convert
+individual CCKD shadow files as well (which <code class="docutils literal notranslate"><span class="pre">dasdcopy64</span></code> cannot
+currently do). That is to say, if you already have a CCKD format base
+dasd image file with one or more shadow files associated with it,
+<code class="docutils literal notranslate"><span class="pre">dasdcopy64</span></code> can only copy the base image plus all of its shadow files
+into a single new CCKD64 base image file (i.e. the shadow files are
+automatically <em>merged</em> during the copy operation, resulting in a single
+CCKD64 base dasd image output file).</p>
+<p>The <strong>``convto64``</strong> utility however, directly converts base images
+<em>-OR-</em> shadow files <em>individually</em>, resulting in a new CCKD64 format
+base image or shadow file. It does <em>not</em> “merge” them together. Plus, as
+previously mentioned, it is <em>significantly</em> faster than <code class="docutils literal notranslate"><span class="pre">dasdcopy64</span></code>
+too. It is therefore the recommended way to convert existing CCKD dasd
+images (and shadow files) to the new CCKD64 format.</p>
+</section>
+<section id="procedure">
+<h2>Procedure<a class="headerlink" href="#procedure" title="Permalink to this heading">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Run <strong>``cckdcdsk -3``</strong> on all existing 32-bit CCKD dasds to correct
+any existing errors. <strong>(Critical!)</strong></p></li>
+<li><p>Use <strong>``convto64``</strong> to individually convert all 32-bit CCKD base
+images <em>and associated shadow files</em> to the new 64-bit CCKD64 format.
+<strong>Please note</strong> that <em>each</em> shadow file and base image must <em>each</em> be
+converted separately. <em>(required!)</em></p></li>
+<li><p>Run <strong>``cckdcdsk64 -3 -ro``</strong> on all of the newly converted 64-bit
+CCKD64 dasd images to verify the conversion was successful and that
+no errors exist on any of the images. <em>(optional)</em></p></li>
+</ol>
+</section>
+<section id="additional-information">
+<h2>Additional Information<a class="headerlink" href="#additional-information" title="Permalink to this heading">¶</a></h2>
+<p>In addition to the new <strong>``dasdinit64``</strong> and <strong>``dasdcopy64``</strong>
+utilities, there are also corresponding CCKD64 versions of:</p>
+<div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">cckdcdsk</span></code> check disk utility called <strong>``cckdcdsk64``</strong></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">cckdcomp</span></code> compression utility called <strong>``cckdcomp64``</strong></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">cckdswap</span></code> endianness toggling utility called <strong>``cckdswap64``</strong></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">cckddiag</span></code> diagnostic utility called <strong>``cckddiag64``</strong></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">dasdconv</span></code> conversion utility called <strong>``dasdconv64``</strong></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">dasdload</span></code> dasd building utility called <strong>``dasdload64``</strong></div>
+</div>
+<p>The existing <code class="docutils literal notranslate"><span class="pre">dasdls</span></code>, <code class="docutils literal notranslate"><span class="pre">dasdcat</span></code>, <code class="docutils literal notranslate"><span class="pre">dasdpdsu</span></code>, <code class="docutils literal notranslate"><span class="pre">dasdisup</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">dasdseq</span></code> utilities do not have any specialized CCKD64 versions.
+However, all of them <em>do</em> support the new CCKD64 file format in addition
+to the existing CCKD file format. They just don’t have separate
+executable names ending in ‘64’, since they have all been updated to
+support either of the two formats automatically.</p>
+<p>Additional information regarding the new CCKD64 file format can be found
+on the <a class="reference external" href="https://sdl-hercules-390.github.io/html/cckddasd.html">Compressed Dasd
+Emulation</a> web
+page.</p>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Read the Docs</span>
+      v: fovea1959
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+      <dl>
+        <dt>Languages</dt>
+        
+           <strong> 
+          <dd><a href="/herc-docs-demo/en/fovea1959/">en</a></dd>
+           </strong> 
+        
+      </dl>
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+           <strong> 
+          <dd><a href="/herc-docs-demo/en/fovea1959/">fovea1959</a></dd>
+           </strong> 
+        
+          
+          <dd><a href="/herc-docs-demo/en/master/">master</a></dd>
+          
+        
+          
+          <dd><a href="/herc-docs-demo/en/0.0/">0.0</a></dd>
+          
+        
+          
+          <dd><a href="/herc-docs-demo/en/1.0/">1.0</a></dd>
+          
+        
+      </dl>
+      
+      
+      <dl>
+        <dt>Downloads</dt>
+        
+          <dd><a href="/herc-docs-demo/en/fovea1959/Hercules Documentation Demo-docs_en_fovea1959.pdf">pdf</a></dd>
+        
+          <dd><a href="/herc-docs-demo/en/fovea1959/Hercules Documentation Demo-docs_en_fovea1959.epub">epub</a></dd>
+        
+          <dd><a href="/herc-docs-demo/en/fovea1959/Hercules Documentation Demo-docs_en_fovea1959.html.tar.gz">tarred HTML</a></dd>
+        
+          <dd><a href="/herc-docs-demo/en/fovea1959/Hercules Documentation Demo-docs_en_fovea1959.single.html.tar.gz">tarred single file HTML</a></dd>
+        
+      </dl>
+      
+      
+      <hr/>
+      <a href="https://tech.michaelaltfield.net/2020/07/18/sphinx-rtd-github-pages-1/">Continuous Documentation</a> hosting provided by <a href="https://pages.github.com/">GitHub Pages</a>.
+ 
+    </div>
+  </div>
+
+ 
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

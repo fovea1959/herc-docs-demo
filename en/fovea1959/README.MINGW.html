@@ -1,0 +1,1055 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Building on MINGW &mdash; Hercules Documentation Demo 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link href="_static/herc_style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Hercules Documentation Demo
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                fovea1959
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="hercinst.html">Building and Installing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration File</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercdasd.html">Creating DASD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercoper.html">Operating Procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercsupp.html">Technical Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercfaq.html">Frequently-Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="messages.html">Messages and Codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aa_auxdocs.html">Supporting documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_a.html">Appendix A - Documentation Standards</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Hercules Documentation Demo</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Building on MINGW</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/README.MINGW.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="building-on-mingw">
+<h1>Building on MINGW<a class="headerlink" href="#building-on-mingw" title="Permalink to this heading">¶</a></h1>
+<p>Once we got Herc to build successfully using MSVC, I/we stopped all
+effort on trying to make sure it continued to build under MinGW. At this
+late stage I doubt it will build at all under MinGW! That is to say, it
+more than likely will NOT build under MinGW, and thus the reason why
+this README should be deleted. The only reason I haven’t deleted it yet
+is simply because of its historical value since it might be beneficial
+to someone should they decide to try on their own to get Herc to build
+under MinGW.</p>
+<p>– Fish</p>
+<section id="original-readme-now-follows">
+<h2>Original readme now follows:<a class="headerlink" href="#original-readme-now-follows" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>******************************************************************
+******************************************************************
+
+                 -------------------------
+                 &gt; &gt; &gt;    N O T E    &lt; &lt; &lt;
+                 -------------------------
+
+  While the below information is probably reasonably accurate,
+  it should be noted that building Herc with MinGW may no longer
+  work. (It hasn&#39;t been tested in a long time).
+
+  The prefered method (and indeed the only SUPPORTED method) for
+  building the Win32 version of Hercules is via Microsoft&#39;s free
+  compiler toolkit as explained in the README.MSVC document. The
+  below information is mostly for historical purposes.
+
+******************************************************************
+******************************************************************
+
+                 MINGW PORTING NOTES:
+
+./configure --enable-fthreads --disable-shared --enable-static \
+     --disable-nls --disable-dynamic-load --disable-external-gui
+
+./configure --enable-fthreads --disable-shared --enable-static \
+     --disable-nls --disable-dynamic-load --disable-external-gui \
+     --enable-debug --enable-optimization=&quot;-O0 -g&quot;
+
+******************************************************************
+******************************************************************
+
+================================================================
+================================================================
+
+               INSTALLING  MSYS  +  MINGW
+
+================================================================
+================================================================
+
+--------------------------------------------------------------
+http://www.mingw.org/download.shtml
+
+1. Install MSYS-1.0.10.exe      --&gt;  d:/msys/1.0
+2. Install msysDTK-1.0.1.exe    --&gt;  d:/msys/1.0
+3. Install MinGW-3.1.0-1.exe    --&gt;  d:/MinGW
+
+In that order!
+
+
+--------------------------------------------------------------
+Create /etc/fstab to point to the mingw dir:
+
+    #Win32_Path                 Mount_Point
+    d:/mingw                    /mingw
+
+
+--------------------------------------------------------------
+Create .inputrc in home dir with desired terminal settings.
+
+    #--------------------------------------------------------------------------------
+    # Fish: The following from: http://www.ibb.net/~anne/keyboard/keyboard.html#Bash
+    #--------------------------------------------------------------------------------
+
+    &quot;\e[3~&quot;: delete-char
+    # this is actually equivalent to &quot;\C-?&quot;: delete-char
+    # VT
+    &quot;\e[1~&quot;: beginning-of-line
+    &quot;\e[4~&quot;: end-of-line
+    # kvt
+    &quot;\e[H&quot;:beginning-of-line
+    &quot;\e[F&quot;:end-of-line
+    # rxvt and konsole (i.e. the KDE-app...)
+    &quot;\e[7~&quot;:beginning-of-line
+    &quot;\e[8~&quot;:end-of-line
+
+    # --- (eof) ---
+
+
+--------------------------------------------------------------
+Update /etc/profile with desired aliases
+
+    # ------- Fish&#39;s preferences... -------
+
+      export HISTCONTROL=ignoredups
+      alias less=&#39;less -r&#39;
+    # alias rm=&#39;rm -i&#39;
+      alias whence=&#39;type -a&#39;
+      alias ls=&#39;ls -F --color=tty&#39;
+      alias dir=&#39;ls --color=auto --format=vertical&#39;
+      alias vdir=&#39;ls --color=auto --format=long&#39;
+      alias ll=&#39;ls -l&#39;
+      alias la=&#39;ls -A&#39;
+      alias l=&#39;ls -CF&#39;
+      alias cls=&#39;clear&#39;
+
+    # --- (eof) ---
+
+
+--------------------------------------------------------------
+(((Optional: you only need to do the following (if desired) if
+you plan on using the provided msys shell window (NOT recommended)
+instead of your own MSYS Command Prompt window (HIGHLY recommended)
+which I explain how to do in the next step just below))))...
+
+
+Make a copy of the &#39;msys.bat&#39; file in &quot;d:\msys\1.0&quot; and update it
+with your prefered colors and window geometry settings:
+
+
+rem (deleted by Fish)                      if &quot;x%MINGW32BGCOLOR%&quot; == &quot;x&quot; set MINGW32BGCOLOR=LightYellow
+rem (deleted by Fish)                      if &quot;x%MINGW32FGCOLOR%&quot; == &quot;x&quot; set MINGW32FGCOLOR=Navy
+rem (replaced with the following instead)
+                                           if &quot;x%MINGW32BGCOLOR%&quot; == &quot;x&quot; set MINGW32BGCOLOR=Black
+                                           if &quot;x%MINGW32FGCOLOR%&quot; == &quot;x&quot; set MINGW32FGCOLOR=#C0C0C0
+
+
+rem (deleted by Fish)                      start rxvt -backspacekey . -sl 2500 -fg %FGCOLOR% -bg %BGCOLOR% -sr -fn Courier-12 -tn msys -geometry 80x25  -e /bin/sh --login -i
+rem (replaced with the following instead)
+                                           start rxvt -backspacekey . -sl 2500 -fg %FGCOLOR% -bg %BGCOLOR% -sr -fn Courier-12 -tn msys -geometry 100x50 -e /bin/sh --login -i
+
+
+              *** IMPORTANT NOTE! ***
+
+Be VERY CAREFUL when modifiying the above &quot;start rxvt...&quot; line!
+The actual .BAT file contains an embedded backspace character
+which does not appear on the above example statements! Do NOT
+use the above example statements as-is! Instead, use notepad
+to manually edit the .bat file itself (being very careful
+when you do!).
+
+ALSO, it&#39;s important to MAKE A COPY of the msys.bat file and make
+your changes to it. This is because the MSYS.BAT file is REPLACED
+whenever msys/mingw is updated! Thus, if you fail to make your own
+copy of it, your changes will be lost!!
+
+
+--------------------------------------------------------------
+                 MINGW Command Prompt
+
+As an alternative to the crappy &#39;GNU&#39; shell window used by default
+by MSYS (rxvt?), it&#39;s easy enough to setup a native WinNT Command
+Prompt window to be your &quot;shell window&quot; instead.
+
+First, create a .bat (batch) file in the &#39;d:\msys\1.0&#39; directory
+called, for example, &quot;fish_msys.bat&quot; (try NOT to use a name with
+spaces in it!), with the following statements in it:
+
+
+    @echo off
+
+    SET CYGWIN=&quot;tty binmode title strip_title&quot; codepage:oem
+
+    D:
+    chdir \msys\1.0\bin
+
+    bash --login -i
+
+
+Yep! That&#39;s right. We&#39;re setting a &#39;CYGWIN&#39; environment variable
+with the above batch file. The msys/mingw package was ported FROM
+Cygwin after all, so, interestingly enough, the above does indeed
+do what one expects it to: displays the name of the program being
+executed in the window title (&#39;title&#39;), but with the path removed
+(&#39;strip_title&#39;), just like Cygwin&#39;s shell window does.
+
+Next, make a copy of Windows&#39;s &quot;Command Prompt&quot; shortcut and modify
+it as desired (width, height, etc -- i.e. the window&#39;s &#39;layout&#39;).
+
+To turn it into a MINGW Command Prompt window (instead of the native
+WinNT Command Prompt window it starts out as), simply modify the
+shortcut&#39;s &quot;Properties&quot; as follows:
+
+    Target:     D:\msys\1.0\fish_msys.bat
+    Start in:   D:\msys\1.0\bin
+    Comment:    MINGW Command Prompt
+
+Optional:
+
+    Click the &quot;Change Icon...&quot; button, followed by the &quot;Browse...&quot;
+    button, and navigate to the root MSYS directory (&quot;D:\msys\1.0&quot;)
+    and select the desired icon (&quot;m.ico&quot; or &quot;msys.ico&quot;).
+
+DONE!!
+
+Now whenever you click on that shortcut, Windows will open a normal
+Command Prompt window with the MINGW (MSYS) shell already started!
+
+Your working directory will automatically be you &#39;home&#39; directory,
+and you&#39;ll be able to enter whatever shell commands and/or execute
+any shell scripts you need, and the name of the program that&#39;s being
+executed (without the path) will be displayed in the window&#39;s title!
+
+COOL!!  :))
+
+
+(and MUCH better than the crappy window msys/mingw provides IMO)
+
+
+--------------------------------------------------------------
+(Optional): Create a symbolic link for bash.
+
+&quot;sh.exe&quot; is actually bash (at least according to the msys docu-
+mentation), so symlink &#39;bash.exe&#39; to &#39;sh.exe&#39;:
+
+   ln  -s  sh.exe  bash.exe
+
+so all of your scripts that start with #!/bin/bash will work.
+
+
+--------------------------------------------------------------
+The handling of quotes on command-lines is different in the
+msys shell than it is with cygwin. Thus whereas:
+
+   ./configure --enable-custom=&quot;value with spaces&quot;
+
+used to work fine with cygwin, it no longer works with the
+msys shell. Instead, you need to use MICROSOFT command-line
+escape rules, and enter the command as follows instead:
+
+   ./configure --enable-custom=\&quot;value with spaces\&quot;
+
+
+Note: as far as I know this only applies to manually entering
+commands in the msys shell window (i.e. at the command prompt).
+I don&#39;t believe it applies (i.e. I believe it does NOT apply)
+to scripts that happen to issue shell commands for example.
+
+
+--------------------------------------------------------------
+(Optional): Create the &#39;/usr/local/bin&#39; directory so you can
+use all of your previously created scripts and private override
+programs, etc.
+
+NOTE: the        &quot;d:/msys/1.0&quot;  directory
+is actually the  &quot;/usr&quot;         directory[*].
+
+Thus, to add our own  &quot;/usr/local/bin&quot;         directory,
+we need to create a   &quot;d:/msys/1.0/local/bin&quot;  directory.
+
+-----------
+ *  As well as the &#39;/&#39; root directory too, interestingly/confusingly
+    enough! Refer to the &quot;Automatic file system maps&quot; table in the
+    &quot;README.rtf&quot; document in the &quot;D:\msys\1.0\doc\msys&quot; directory
+    for details regarding hard-coded mount points.
+
+
+--------------------------------------------------------------
+Do a hercules &#39;bldlvlck&#39; to make sure you have everything that
+autoconf needs...
+
+Fish@SYSTEM2 ~
+$ cd hercules
+
+Fish@SYSTEM2 ~/hercules
+$ cd util
+
+Fish@SYSTEM2 ~/hercules/util
+$ bldlvlck
+
+This utility will check the level of various utilities needed to build
+hercules. Checking is done against versions that are KNOWN to work.
+This doesn&#39;t mean a build will NOT succeed with older versions
+of the utilities, but will give a hint as to what package may need
+an upgrade if the build ever fails with some odd reason.
+
+
+OK      SVN (informational), found x.yy
+
+OK      autoconf requires 2.5, found 2.56
+
+OK      automake requires 1.6, found 1.7.1
+
+INSTALL flex not found
+        URL: http://www.gnu.org/directory/flex.html
+
+OK      gawk requires 3.0, found 3.0.4
+
+OK      gcc requires 2.95, found 3.2.3
+
+INSTALL gettext not found
+        URL: http://www.gnu.org/directory/gettext.html
+
+OK      grep requires 0, found 2.5.1
+
+INSTALL iconv not found
+        URL: http://www.gnu.org/directory/libiconv.html
+        For first-time Libiconv installs, a recompile and reinstall of gettext
+        is recommended.  Source: libiconv-1.8/README
+
+OK      m4 requires 0.0, found 1.4
+
+OK      make requires 3.79, found 3.79.1
+
+OK      perl requires 5.6, found 5.6.1
+
+OK      sed requires 3.02, found 3.02
+
+
+--------------------------------------------------------------
+&quot;http://sourceforge.net/projects/gnuwin32/&quot; lists MANY GnuWin32
+packages. Use the &quot;Download&quot; link in the FAR RIGHT COLUMN to
+download the following needed packages:
+
+    +-------------------------------------------------------
+    |
+    |      ***   FISH ADDENDUM -- Feb 2005   ****
+    |
+    |  The below &quot;instructions&quot; are WRONG(?) (I think)
+    |  as far as the copying/installation is concerned.
+    |
+    |  I now believe the PROPER way to &quot;install&quot; an
+    |  external package meant for MSYS is to simply un-
+    |  zip it (extract it) directly into the main msys
+    |  directory, letting WinZip (or whatever zip util
+    |  you happen to be using), allowing it to automatically
+    |  overlay whatever files it needs to overlay/replace
+    |  and allowing it to automatically create whatever
+    |  directories it needs to create (as needed according
+    |  to whatever is contained in the zip file).
+    |
+    |  I haven&#39;t yet tried it myself yet, but I believe
+    |  that&#39;s all you need to do: unzip into msys and
+    |  that&#39;s it. (But as I said, I haven&#39;t confirmed
+    |  that yet).
+    |
+    |  So in the below instructions, try:
+    |
+    |     replace:  &quot;copy to /usr/local/bin&quot;
+    |     with:     &quot;unzip into msys&quot;
+    |
+    |  instead.
+    |
+    +-------------------------------------------------------
+
+
+    gettext-0.14.1-bin.zip
+
+        contains &quot;gettext.exe&quot; (and many other exes/dlls)
+        in the &#39;bin&#39; directory
+
+        copy &quot;gettext.exe&quot; (and many other exes/dlls)
+        to /usr/local/bin.
+
+
+(Recall that according to msys documentation the &quot;d:/msys/1.0&quot;
+ directory is actually your &#39;/usr&#39; directory)
+
+
+    gettext-0.14.1-dep.zip
+
+        contains &quot;libiconv2.dll&quot;
+        in the &#39;bin&#39; directory
+        needed by gettext.exe
+
+        copy &quot;libiconv2.dll&quot; to /usr/local/bin
+
+
+    libiconv-1.8-1-bin.zip
+
+        contains &quot;iconv.exe&quot; and most (but not all!) support dlls
+        in the &#39;bin&#39; directory
+
+        copy &quot;iconv.exe&quot; and most (but not all!) support dlls
+        to /usr/local/bin
+
+
+    libintl-0.11.5-2-bin.zip
+
+        contains &quot;libintl-2.dll&quot;
+        in the &#39;bin&#39; directory
+        needed by iconv.exe
+
+        copy &quot;libintl-2.dll&quot; to /usr/local/bin.
+
+
+     ---------------------------------------
+      Do we need the below?? I&#39;m thinking
+      that maybe we might for linking Herc
+     ---------------------------------------
+    libiconv-1.8-1-lib.zip
+
+        contains &quot;.a&quot; and &quot;.lib&quot; files
+        in the &#39;lib&#39; directory
+        used to link hercules with
+
+        copy &quot;.a&quot; and &quot;.lib&quot; files to ???????
+
+        contains *.h files
+        in the &#39;include&#39; directory
+        used to compile hercules with
+
+        copy *.h files to ???????
+
+
+================================================================
+================================================================
+
+                HERCULES MODIFICATIONS
+
+================================================================
+================================================================
+
+       ---------------------------------------
+       &gt;&gt;&gt; NLS disabled for the time being &lt;&lt;&lt;
+       ---------------------------------------
+
+I keep getting errors when the intl directory is built:
+
+  plural.y: In function `__gettextlex&#39;:
+  plural.y:263: error: argument &quot;pexp&quot; doesn&#39;t match prototype
+  plural.y:69: error: prototype declaration
+  plural.y: In function `__gettexterror&#39;:
+  plural.y:407: error: argument &quot;str&quot; doesn&#39;t match prototype
+  plural.y:70: error: prototype declaration
+  plural.y: At top level:
+  plural.y:406: warning: unused parameter &#39;str&#39;
+
+
+For the time being I&#39;m skipping past it via &quot;--disable-nls&quot;
+but it needs to be looked into.
+
+
+--------------------------------------------------------------
+No biggee, but &#39;-traditional-cpp&#39;, while originally (and for now)
+added (by Jay?) specifically for Apple builds, doesn&#39;t work for
+non-Apple builds. (I tried it.)
+
+It keeps issuing warnings regarding extra tokens on #endif and
+#include statements.
+
+I added &#39;-Wno-endif-labels&quot; to get rid of the warnings for #endifs,
+but can&#39;t find an option to suppress the warnings for #includes!
+
+But as I said, it&#39;s not a big problem right now since, as it&#39;s
+coded right now, we&#39;re only adding &#39;-traditional-cpp&#39; for Apple
+and ONLY for Apple builds.
+
+Note too, that we COULD get rid of all such warnings by simply
+coding our comments (on #endif and #include statements) using
+/* */ instead of //, but I&#39;m too lazy to change them all right
+now; maybe later if I&#39;m in the mood...
+
+
+--------------------------------------------------------------
+Created &#39;hthreads.h&#39;, &#39;hostopts.h&#39;, w32util.h/c&#39;.
+
+&#39;hostopts.h&#39; now contains the host specific options that
+used to be in featall.h. (I want to try and place all host-
+specific tests in one convenient place, replacing all #ifdef
+WIN32 and #ifdef __APPLE__, etc tests with #ifdef FEATURE_XXX.
+Doing that is more portable and makes porting efforts easier.
+
+
+--------------------------------------------------------------
+I was hoping to avoid having to do it, but in the end I had
+no other choice; trying to keep it was simply causing too much
+trouble and making the code too sloppy trying to finagle things
+to try and keep it.
+
+Soooooo.....
+
+I had to rename the Hercules &#39;DWORD&#39; type to &#39;DBLWRD&#39; so as to
+not conflict with Microsoft&#39;s existing DWORD typedef. &lt;grumble&gt;
+
+I kept the HWORD and FWORD typedefs as-is.
+
+
+--------------------------------------------------------------
+sie.c:  added  &quot;#if !defined(NO_SIGABEND_HANDLER)&quot;:
+
+DEF_INST(start_interpretive_execution)
+
+...
+
+    logmsg (_(&quot;HHCCP079E CPU%4.4X: calloc failed...
+        ...
+#if !defined(NO_SIGABEND_HANDLER)
+    signal_thread(sysblk.cputid[regs-&gt;cpuad], SIGUSR1);
+#endif
+
+...
+
+
+--------------------------------------------------------------
+ieee-w32.h:
+
+Changed all instances of:    u_int32_t
+                      to:    uint32_t
+
+since that seems to be the &quot;Hercules standard&quot; according to
+what I can see in the &#39;htypes.h&#39; header.
+
+(Same with &#39;u_int64_t&#39; too: changed them all to &#39;uint64_t&#39;).
+
+
+--------------------------------------------------------------
+cckddasd, cckdutil, etc...
+
+Created:
+
+&#39;get_file_accmode_flags&#39; --&gt; &quot;Poor man&#39;s&quot; fcntl( fd, F_GETFL )
+
+(only returns access mode flags not any others...)
+
+
+--------------------------------------------------------------
+Created: &#39;hconsts.h&#39;, &#39;hmacros.h&#39;, &#39;hstructs.h&#39;, &#39;hexterns.h&#39;
+
+to make  &quot;hercules.h&quot;  smaller/simpler and to basically make
+things a bit easier to maintain... (helps to keep things more
+organized IMO)
+
+
+--------------------------------------------------------------
+commadpt.c:
+
+  rc = fcntl( tempfd, F_GETFL );
+  rc |= O_NONBLOCK;
+  fcntl( tempfd, F_SETFL, rc );
+
+Changed to:
+
+  socket_set_blocking_mode(tempfd,0);
+
+Also created:
+
+   &#39;socket_init()&#39;  and  &#39;socket_deinit()&#39;
+
+functions since Windows Socket 2 requires calling &#39;WSAStartup&#39;
+and &#39;WSACleanup&#39;. (calls are in &#39;impl&#39; function in impl.c)
+
+
+--------------------------------------------------------------
+Started trying to remove all #ifdef WIN32, etc, and replace
+with #ifdef XXXXX (where &#39;XXXX&#39; is some feature name), (see
+next item for good example), but haven&#39;t finished yet...
+
+
+--------------------------------------------------------------
+hercifc.c:
+ctc_ctci.c:
+ctc_lcs.c:
+tuntap.c:
+
+Changed #ifndef __APPLE__ with #ifdef OPTION_TUNTAP_SETNETMASK,
+etc, and #defined or #undef&#39;ed OPTION_TUNTAP_SETNETMASK, etc
+as needed in new &#39;hostopts.h&#39; member.
+
+
+--------------------------------------------------------------
+feature.h:
+
+I see:
+
+  #if defined(WIN32) &amp;&amp; !defined(__WORDSIZE)
+    #define __WORDSIZE 32
+  #endif
+
+but __WORDSIZE doesn&#39;t seem to be used at all (there are a
+few statements but they&#39;re commented out).
+
+Can this be safely removed?? (it probably cam, but I&#39;m thinking
+it might be something in preparation for 64-bit builds, which
+is why I&#39;m asking)
+
+
+--------------------------------------------------------------
+vm.c:
+
+void ARCH_DEP(extid_call) (int r1, int r2, REGS *regs)
+...
+  /* Bytes 16-23 contain the userid in EBCDIC */
+#if defined( HAVE_GETLOGIN_R )
+  memset( unam, 0, sizeof(unam) );
+  VERIFY( getlogin_r ( unam, sizeof(unam) ) == 0 );
+  puser = unam;
+#else
+  puser = &quot;&quot;;
+#endif
+  for (i = 0; i &lt; 8; i++)
+  {
+    c = (*puser == &#39;\0&#39; ? SPACE : *(puser++));
+    buf[16+i] = host_to_guest(toupper(c));
+  }
+
+
+--------------------------------------------------------------
+You will see a LOT of &quot;comparison between signed and unsigned&quot;
+warnings during the build (esp. in &#39;commadpt.c&#39; for example)
+due to Microsoft&#39;s &#39;FD_SET&#39; macro implementation. There&#39;s no
+simple way to work around it so just ignore it for now...
+
+
+--------------------------------------------------------------
+tapedev.c:
+
+Had to make extensive modifications to &#39;mountnewtape&#39; function
+due to non-existence of regular expression library in MinGW.
+Luckily the patterns we&#39;re checking for are rather simple, so
+it wasn&#39;t that difficult to do. My question is WHY we&#39;re doing
+it via regular expressions in the first place??
+
+
+--------------------------------------------------------------
+ctcadpt.c:
+
+Support for VMNET is gen&#39;ed, but will not work until Win32
+equivalent for &#39;fork&#39; is developed. &#39;fork&#39; simply returns -1
+at the moment. (&#39;fork&#39; might take a while to port!)
+
+
+--------------------------------------------------------------
+hdl.h:
+
+minor fix: check if LTDL_SHLIB_EXT defined too when #defining
+HDL_MODULE_SUFFIX.
+
+
+--------------------------------------------------------------
+Various...       (many different places...)
+
+Unfortunately, MinGW always links with Micro$oft&#39;s MSVCRT
+runtime library. Thus, all scanf/printf format flags must use
+the Micro$oft format, which, for 64-bit values, is completely
+different from the GNU format.
+
+GNU uses                &quot;%lld&quot;,  &quot;%llx&quot;,  %16.16llX,  etc.
+whereas Micro$oft uses  &quot;%I64d&quot;, &quot;%I64x&quot;, %16.16I64X, etc.
+
+Thus I had to #define the following (in &#39;hconsts.h&#39;):
+
+#ifdef WIN32
+#  define  LL_FMT  &quot;I64&quot;
+#else
+#  define  LL_FMT  &quot;ll&quot;
+#endif
+
+and change all occurrences of:   &quot;%lld&quot;
+with:                            &quot;%&quot;LL_FMT&quot;d&quot;
+
+which is so UGLY beyond belief it&#39;s pitiful. :(
+
+
+--------------------------------------------------------------
+(Various):  workaround inability to redirect &#39;stdout&#39;...
+
+The logger thread in logger.c redirects the write end of the
+logmsg pipe into STDOUT via dup2, but unfortunately, the way
+I&#39;m currently handling the logmsg pipes for this MinGW port
+(wherein the pipe is actually just a socketpair connected to
+each other), that technique no longer works (since in Win32
+you can&#39;t do &#39;dup2&#39; on sockets) and thus I have it commented
+out (since we actually don&#39;t really need to do the dup2 at all
+as long as everyone uses the &#39;logmsg&#39; macro for their i/o).
+
+Unfortunately however, the &quot;display_version&quot; function (and
+indirectly the &quot;display_hostinfo&quot; function which display_version
+calls) are coded to &quot;fprintf&quot; to whatever FILE* is passed
+(which is usually stderr for the utilities and stdout for
+Hercules (impl.c)).
+
+Thus, in those two places -- and only in those two places --
+I had to code a duplicate &#39;print&#39; call: one that fprintf&#39;d
+to stderr, and the other to do a &#39;logmsg&#39;. When the utilities
+call it (display_version), they pass stderr and I do fprintf
+to stderr, but when if stdout is passed (as it is when impl.c
+calls it), then I do a logmsg.
+
+I haven&#39;t thought whether there&#39;s an easier/better way to do
+things; I just want to get this damn port FINISHED for now!
+I can go back and clean things up later. Okay?
+
+
+***********************************************************************
+***********************************************************************
+***********************************************************************
+
+ ** TODO **   ((  U N R E S O L V E D    I S S U E S  ))
+
+
+                (moved to README.MSVC)
+
+
+***********************************************************************
+***********************************************************************
+***********************************************************************
+
+From the MinGW &#39;FAQ&#39; @ &lt;http://www.mingw.org/mingwfaq.shtml#faq-msvcdll&gt;
+
+...
+
+
+How can an MSVC program call a MinGW DLL, and vice versa?
+
+
+---------
+
+Assume we have a testdll.h, testdll.c, and testmain.c. In the first case, we will compile
+testdll.c with MinGW, and let the MSVC-compiled testmain call it. You should use
+
+
+    gcc -shared -o testdll.dll testdll.c \
+        -Wl,--output-def,testdll.def,--out-implib,libtestdll.a
+
+
+to produce the DLL and DEF files. MSVC cannot use the MinGW library, but since you already have
+the DEF file you may easily produce one by the Microsoft LIB tool:
+
+
+    lib /machine:i386 /def:testdll.def
+
+
+Once you have testdll.lib, it is trivial to produce the executable with MSVC:
+
+
+    cl testmain.c testdll.lib
+
+
+
+---------
+
+Now for MinGW programs calling an MSVC DLL. We have two methods. One way is to specify
+the LIB files directly on the command line after the main program. For example, after
+
+    cl /LD testdll.c
+
+use
+
+    gcc -o testmain testmain.c testdll.lib
+
+
+&lt;doesn&#39;t work; see below&gt;
+
+The other way is to produce the .a files for GCC. For __cdecl functions (in most cases),
+it is simple: you only need to apply the &#39;reimp&#39; tool from Anders Norlander (since his
+web site is no longer available, you may choose to download here a version enhanced by
+Jose Fonseca):
+
+    reimp testdll.lib
+    gcc -o testmain testmain.c -L. -ltestdll
+
+&lt;/doesn&#39;t work; see below&gt;
+
+
+However, for __stdcall functions, the above method does not work. For MSVC will prefix
+an underscore to __stdcall functions while MinGW will not. The right way is to produce
+the DEF file using the &#39;pexports&#39; tool included in the mingw-utils package and filter
+off the first underscore by sed:
+
+
+    pexports testdll.dll | sed &quot;s/^_//&quot; &gt; testdll.def
+
+
+Then, when using dlltool to produce the import library, add `-U&#39; to the command line:
+
+    dlltool -U -d testdll.def -l libtestdll.a
+
+
+And now, you can proceed in the usual way:
+
+    gcc -o testmain testmain.c -L. -ltestdll
+
+
+Hooray, we got it.
+
+
+***********************************************************************
+***********************************************************************
+***********************************************************************
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Read the Docs</span>
+      v: fovea1959
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+      <dl>
+        <dt>Languages</dt>
+        
+           <strong> 
+          <dd><a href="/herc-docs-demo/en/fovea1959/">en</a></dd>
+           </strong> 
+        
+      </dl>
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+           <strong> 
+          <dd><a href="/herc-docs-demo/en/fovea1959/">fovea1959</a></dd>
+           </strong> 
+        
+          
+          <dd><a href="/herc-docs-demo/en/master/">master</a></dd>
+          
+        
+          
+          <dd><a href="/herc-docs-demo/en/0.0/">0.0</a></dd>
+          
+        
+          
+          <dd><a href="/herc-docs-demo/en/1.0/">1.0</a></dd>
+          
+        
+      </dl>
+      
+      
+      <dl>
+        <dt>Downloads</dt>
+        
+          <dd><a href="/herc-docs-demo/en/fovea1959/Hercules Documentation Demo-docs_en_fovea1959.pdf">pdf</a></dd>
+        
+          <dd><a href="/herc-docs-demo/en/fovea1959/Hercules Documentation Demo-docs_en_fovea1959.epub">epub</a></dd>
+        
+          <dd><a href="/herc-docs-demo/en/fovea1959/Hercules Documentation Demo-docs_en_fovea1959.html.tar.gz">tarred HTML</a></dd>
+        
+          <dd><a href="/herc-docs-demo/en/fovea1959/Hercules Documentation Demo-docs_en_fovea1959.single.html.tar.gz">tarred single file HTML</a></dd>
+        
+      </dl>
+      
+      
+      <hr/>
+      <a href="https://tech.michaelaltfield.net/2020/07/18/sphinx-rtd-github-pages-1/">Continuous Documentation</a> hosting provided by <a href="https://pages.github.com/">GitHub Pages</a>.
+ 
+    </div>
+  </div>
+
+ 
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

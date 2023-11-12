@@ -1,0 +1,865 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Hercules SNA support &mdash; Hercules Documentation Demo 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link href="_static/herc_style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Hercules Documentation Demo
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                fovea1959
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="hercinst.html">Building and Installing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration File</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercdasd.html">Creating DASD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercoper.html">Operating Procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercsupp.html">Technical Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercfaq.html">Frequently-Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="messages.html">Messages and Codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aa_auxdocs.html">Supporting documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_a.html">Appendix A - Documentation Standards</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Hercules Documentation Demo</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Hercules SNA support</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/README.SNA.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="hercules-sna-support">
+<h1>Hercules SNA support<a class="headerlink" href="#hercules-sna-support" title="Permalink to this heading">¶</a></h1>
+<p>The current implementation of the LCS device has been enhanced to handle
+SNA 802.2 DLC frames. This support is not 100% finished. It is known
+that the implementation of packet pacing - being a mandatory requirement
+in SNA networking - isn’t implemented completely. This can give rise to
+a multitude of timing-related issues. See “Reporting Bugs” below.</p>
+<p>Compiling Hercules is out of scope for this documentation since it is
+documented elsewhere.</p>
+<p>However, communication in general works fine, with some exceptions. One
+known is that there is an issue with using VTAM’s APING with very large
+packets, and/or high CONSEC never completes. If you don’t know what that
+is, you probably aren’t affected anyway.</p>
+<p>You should be aware that the popular Turnkey Systems (TK3, TK4-) are
+based on a very old release of the OS and accompanying VTAM code. These
+“don’t know” about the LCS device and thus can’t benefit from the
+introduced SNA to LAN support.</p>
+<p>Most examples shown here are collected from the “<strong>Request for Native
+SNA support</strong>” Github issues #348 discussion page.</p>
+<section id="physical-connection-to-the-outside-world">
+<h2>Physical connection to the outside world<a class="headerlink" href="#physical-connection-to-the-outside-world" title="Permalink to this heading">¶</a></h2>
+<p>The SNA protocols aren’t IP, and thus Hercules needs some means to send
+and receive bare Ethernet frames to get them onto the network medium.
+Therefore, Hercules supports the TUNTAP interfaces. TAP interfaces work
+on Layer 2 of the OSI stack and provide the necessary functionality.</p>
+<p>The general lack of proper documentation for TUNTAP makes it necessary
+to have some example configurations shown here, so users can get ahead
+quickly. However, a basic understanding about networking certainly
+helps.</p>
+<p>This documentation frequently mentions two terms:</p>
+<ul class="simple">
+<li><p>The Host is the operating system running Hercules, most often Linux
+or Windows.</p></li>
+<li><p>The Guest is the operating system running within Hercules. This only
+recognizes running on some kind of IBM Mainframe Hardware.</p></li>
+</ul>
+<p>The Hercules LCS drives an invisible virtual internal port being one end
+of the “TAP pipe”, while the other end appears as an ordinary network
+interface to the host operating system. We’ll focus on the host end for
+now.</p>
+<p>Getting network frames onto the physical medium from a virtual port
+involves “Bridging”.</p>
+<p>The Linux Kernel provides the necessary components to bridge multiple
+network interfaces. In the following annotated, distribution-independent
+example, eth0 (a physical network interface) and tap0 (a virtual TAP
+type interface) are being bridged.</p>
+<pre>
+# Add a virtual bridge interface.
+/sbin/ip link add br0 type bridge
+
+# Create a TAP interface for Hercules to be used.
+/sbin/ip tuntap add mode tap dev tap0
+
+# Set some parameters for the TAP.
+/sbin/ip link set dev tap0 address <b>02:00:FE:DF:00:42</b>
+/sbin/ip link set dev tap0 mtu 1500
+
+# Associate tap0 and eth0 to the bridge.
+/sbin/ip link set dev eth0 master br0
+/sbin/ip link set dev tap0 master br0
+
+# Set all interfaces to running state.
+/sbin/ip link set dev eth0 up
+/sbin/ip link set dev tap0 up
+/sbin/ip link set dev br0 up
+</pre><p>Shown are run-time commands for bridging a separate NIC (eth0). Because
+there is no IP involved, there are no IP addresses to be configured.</p>
+<p>One important thing to note is the <strong>MAC address</strong>. The MAC address
+being set on the TAP interface is automatically being incremented by one
+to derive the MAC address of the virtual “internal” port for the guest
+OS side. On the example above, it is 02:00:FE:DF:00:43. This means, if
+you configure adjacent SNA peers, you need to use the MAC address +1 for
+the destination MAC address and not the one you have configured!</p>
+<p>Finally, the MAC address you choose must adhere to certain rules:</p>
+<ul class="simple">
+<li><p><strong>Note:</strong> <em>The MAC address you specify for this option MUST have the
+02 locally assigned MAC bit on in the first byte, must NOT have the
+01 broadcast bit on in the first byte, and MUST be unique as seen by
+all other devices on your network segment. It should never, for
+example, be the same as the host adapter MAC address specified on the
+iface parameter.</em></p></li>
+</ul>
+<p><em>(FIXME: It is not clear if the first two restrictions still apply, and
+if they do, why.)</em></p>
+<p>The trickier part is how to make these commands being run automatically
+at boot time. This is highly dependent on which Linux distribution is
+used.</p>
+<p>Jay Maynard provided the following examples, for Raspberry PI running
+the 64-bit version of Raspberry Pi OS, and on his desktop running
+Pop!_OS 21.04.</p>
+<p>On both hosts, I’ve configured three tap interfaces, corresponding to
+three LCS devices, one IP for VM/ESA, one IP for OS/390, and one SNA for
+OS/390. VM/ESA uses E20-E21 on tap0; OS/390 IP uses E22-E23 on tap1; and
+OS/390 SNA uses E40 on tap2.</p>
+<p>The Raspberry Pi uses <code class="docutils literal notranslate"><span class="pre">if-up</span></code> and <code class="docutils literal notranslate"><span class="pre">if-down</span></code>. All of the
+configuration you need is in the file <code class="docutils literal notranslate"><span class="pre">/etc/network/interfaces</span></code>.</p>
+<p>Here’s mine:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># interfaces(5) file used by ifup(8) and ifdown(8)
+
+# Please note that this file is written to be used with dhcpcd
+# For static IP, consult /etc/dhcpcd.conf and &#39;man dhcpcd.conf&#39;
+
+# Include files from /etc/network/interfaces.d:
+# source-directory /etc/network/interfaces.d
+
+# Actually, we&#39;re going to be a bit more complex with our network,
+# which dhcpcd can&#39;t handle, so we&#39;ll do it here.
+
+auto lo
+iface lo inet loopback
+
+# The eth0 interface does not have an IP address...the bridge does that.
+# This configuration stanza brings up the interface without an address.
+auto eth0
+iface eth0 inet manual
+    pre-up ifconfig $IFACE up
+    post-down ifconfig $IFACE down
+
+# Three tap devices are defined for Hercules to use as LCS interrfaces.
+auto tap0
+iface tap0 inet manual
+    pre-up ip tuntap add tap0 mode tap user jmaynard
+    up ip link set dev tap0 up
+    post-down ip link del dev tap0
+
+auto tap1
+iface tap1 inet manual
+    pre-up ip tuntap add tap1 mode tap user jmaynard
+    up ip link set dev tap1 up
+    post-down ip link del dev tap1
+
+auto tap2
+iface tap2 inet manual
+    pre-up ip tuntap add tap2 mode tap user jmaynard
+    up ip link set dev tap2 up
+    up ip link set dev tap2 address 02:00:03:15:1e:e6
+    post-down ip link del dev tap2
+
+# Finally, the bridge setup. Here&#39;s where the actual TCP/IP
+# parameters are set. All three tap devices are bridged.
+auto br0
+iface br0 inet static
+    address 192.168.120.20
+    netmask 255.255.255.0
+    gateway 192.168.120.1
+    dns-nameservers 192.168.120.1
+    dns-domain conmicro.com
+    bridge_ports tap0 tap1 tap2 eth0
+    up /sbin/brctl setageing br0 0
+    up /sbin/brctl stp br0 off
+    up ip link set dev br0 address e4:5f:01:0a:ef:ee
+</pre></div>
+</div>
+<p>Pop!_OS, like Ubuntu and probably other derivatives, uses Network
+Manager. The needed setup can be done with the Network Manager CLI tool,
+<code class="docutils literal notranslate"><span class="pre">nmcli</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>nmcli con add type bridge ifname br0 \
+      ethernet.cloned-mac-address 24:4b:fe:55:79:a0
+nmcli con add type bridge-slave ifname enp7s0 master br0
+nmcli connection add type tun ifname tap0 con-name tap0 slave-type bridge \
+      master br0 mode tap owner `id -u`
+nmcli connection add type tun ifname tap1 con-name tap1 slave-type bridge \
+      master br0 mode tap owner `id -u`
+nmcli connection add type tun ifname tap2 con-name tap2 slave-type bridge \
+      master br0 mode tap owner `id -u` \
+      ethernet.cloned-mac-address 02:00:03:15:1e:a6
+</pre></div>
+</div>
+<p>Jeff Snyder provided the following example configuration for a newly
+installed Ubuntu 20.04.3 server:</p>
+<p>Set up the initial bridge to the ethernet inteface by updating the
+<code class="docutils literal notranslate"><span class="pre">/etc/netplan/00-installer-config.yaml</span></code> file to contain:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># This is the network config written by &#39;subiquity&#39;</span>
+<span class="n">network</span><span class="p">:</span>
+  <span class="n">version</span><span class="p">:</span> <span class="mi">2</span>
+  <span class="n">renderer</span><span class="p">:</span> <span class="n">networkd</span>
+  <span class="n">ethernets</span><span class="p">:</span>
+    <span class="n">eth0</span><span class="p">:</span>
+      <span class="n">dhcp4</span><span class="p">:</span> <span class="n">no</span>
+      <span class="n">dhcp6</span><span class="p">:</span> <span class="n">no</span>
+  <span class="n">bridges</span><span class="p">:</span>
+    <span class="n">br0</span><span class="p">:</span>
+      <span class="n">interfaces</span><span class="p">:</span> <span class="p">[</span><span class="n">eth0</span><span class="p">]</span>
+      <span class="n">macaddress</span><span class="p">:</span> <span class="mi">02</span><span class="p">:</span><span class="mi">21</span><span class="p">:</span><span class="mi">01</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span>
+      <span class="n">dhcp4</span><span class="p">:</span> <span class="n">no</span>
+      <span class="n">addresses</span><span class="p">:</span>
+      <span class="o">-</span> <span class="mf">192.168.1.4</span><span class="o">/</span><span class="mi">24</span>
+      <span class="n">gateway4</span><span class="p">:</span> <span class="mf">192.168.1.254</span>
+      <span class="n">nameservers</span><span class="p">:</span>
+        <span class="n">addresses</span><span class="p">:</span>
+        <span class="o">-</span> <span class="mf">192.168.1.254</span>
+        <span class="o">-</span> <span class="mf">8.8.8.8</span>
+        <span class="n">search</span><span class="p">:</span>
+        <span class="o">-</span> <span class="n">Snyder</span><span class="o">.</span><span class="n">ORG</span>
+      <span class="n">dhcp6</span><span class="p">:</span> <span class="n">no</span>
+</pre></div>
+</div>
+<p><strong>Note:</strong> Update the IP addresses and domain names to match your local
+requirements or you could use DHCP on the bridge interface by changing
+dhcp4 to “yes” and removing the addresses:, gateway4: and nameservers:
+information. If you want this interface to be SNA-only, you could
+probably use DHCP4:no and not include any address information, though I
+haven’t tried that. Reboot or use “netplan apply” to apply any changes
+to this file to your network.</p>
+<p>I have not found a way to create taps in netplan yet, so for now, I do
+them after the system is started, with a script:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>#!/usr/bin/bash
+
+for i in `seq 0 2`; do
+    sudo ip tuntap add name tap$i mode tap;
+    sudo ip link set up dev tap$i;
+    sudo ifconfig tap$i hw ether 02:21:02:0$i:00:00
+    sudo ip link set tap$i master br0;
+done;
+</pre></div>
+</div>
+<p>This creates 3 taps, tap0, tap1 and tap2 and bridges them with the
+ethernet interface under br0. For now, I only need 2 taps (one for TCPIP
+and one for SNA), but I expect to need more in the future. Note that the
+mac address for the taps ends in “:00”. Hercules will add 1 to the mac
+address for the “OS” end of the connection, so it will look like “:01”
+to the guest OS.</p>
+</section>
+<section id="hercules-configuration">
+<h2>Hercules Configuration<a class="headerlink" href="#hercules-configuration" title="Permalink to this heading">¶</a></h2>
+<p>The hercules.cnf syntax and options are documented here.</p>
+<p>Currently we use predefined TAP interfaces for SNA. First, because on
+creation time, an owning user can be set so Hercules doesn’t need to run
+as root <em>(FIXME: True?)</em>, and the MAC address can be set manually so it
+will always stay the same. Something highly desirable when using
+manually configured adjacencies.</p>
+<p>Normally, you’d need just this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">0E40</span>   <span class="n">LCS</span>  <span class="o">-</span><span class="n">e</span> <span class="n">SNA</span>  <span class="n">tap0</span>
+</pre></div>
+</div>
+<p>For debugging purposes, use these two lines:</p>
+<pre>
+  0E40    LCS  -e SNA  <b>-d</b>  tap0
+  <b>t+0E40</b>
+</pre></section>
+<section id="guest-os">
+<h2>Guest OS<a class="headerlink" href="#guest-os" title="Permalink to this heading">¶</a></h2>
+<p>Before trying anything, I applied the change regarding a <em>missing
+interrupt handler</em> as laid out in the <em>New User’s Cookbook</em> accompanying
+the distribution.</p>
+<p><em>(FIXME: Is this mandatory?)</em></p>
+<section id="mih">
+<h3>MIH<a class="headerlink" href="#mih" title="Permalink to this heading">¶</a></h3>
+<p>It required changing the parmlib member <em>IECIOS00</em>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">MIH</span> <span class="n">TIME</span><span class="o">=</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">,</span><span class="n">DEV</span><span class="o">=</span><span class="n">E40</span>
+</pre></div>
+</div>
+<p>I verified successfully that it works after the next IPL, with
+<code class="docutils literal notranslate"><span class="pre">D</span> <span class="pre">IOS,MIH,DEV=E40</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">0E40</span><span class="o">=</span><span class="mi">00</span><span class="p">:</span><span class="mf">00.</span>
+</pre></div>
+</div>
+<p><strong>Note:</strong> I have added the same configuration change to the E20-E21
+devices (CTCI), used solely for IP connectivity before I tried to get
+E40 running. So far, I’ve not observed any adverse effects.</p>
+</section>
+</section>
+<section id="vtam-configuration">
+<h2>VTAM configuration<a class="headerlink" href="#vtam-configuration" title="Permalink to this heading">¶</a></h2>
+<p>This is the configuration to be applied to the guest OS. In this case,
+it is OS/390 ADCD version 2.10. A copy can be obtained from archive.org:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://archive.org/details/OS390_V2R10_ADCD">https://archive.org/details/OS390_V2R10_ADCD</a></p></li>
+</ul>
+<p>Note that you’re still obliged to obtain a license to be allowed to use
+this OS.</p>
+<p>Configuring Hercules to run this OS is out of scope for this document.</p>
+<p>Steps being necessary to make the environment being presented on the CD
+images compatible so it can be run with Hercules is out of scope for
+this document.</p>
+<p>Extensive documentation about VTAM configuration can be found at
+<a class="reference external" href="https://ibmdocs.pocnet.net">https://ibmdocs.pocnet.net</a>. Scroll down to (or search for) the <em>“z/OS
+Communications Server”</em> section.</p>
+<p>Of particular interest might be:</p>
+<ul class="simple">
+<li><p>SNA Network Implementation Guide</p></li>
+<li><p>SNA Resource Definition Reference</p></li>
+<li><p>SNA Resource Definition Samples</p></li>
+</ul>
+<p>The configuration shown below is by no means refined and accordingly
+reduced to a working minimum set of definitions yet. Helpful input and
+testing is well appreciated! Nonetheless, this configuration is tested
+to work exactly as shown.</p>
+<section id="sys1-local-vtamlst-atcstr00">
+<h3>SYS1.LOCAL.VTAMLST(ATCSTR00)<a class="headerlink" href="#sys1-local-vtamlst-atcstr00" title="Permalink to this heading">¶</a></h3>
+<p>I left out the <em>IPADDR</em> and <em>TCPNAME</em> parameters for my EE
+configuration, since they are irrelevant. Apart from that, VTAM is told
+to be an APPN network node with no subarea functionality. The buffer
+parameters were left at default from the original <em>ATCSTR00</em>.</p>
+<p>Just in case, create a backup copy before making changes!</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CONFIG</span><span class="o">=</span><span class="mi">00</span><span class="p">,</span>                                                             <span class="o">-</span>
+<span class="n">CONNTYPE</span><span class="o">=</span><span class="n">APPN</span><span class="p">,</span>                                                         <span class="o">-</span>
+<span class="n">CPCDRSC</span><span class="o">=</span><span class="n">YES</span><span class="p">,</span>                                                           <span class="o">-</span>
+<span class="n">CPCP</span><span class="o">=</span><span class="n">YES</span><span class="p">,</span>                                                              <span class="o">-</span>
+<span class="n">DATEFORM</span><span class="o">=</span><span class="n">YMD</span><span class="p">,</span>                                                          <span class="o">-</span>
+<span class="n">DYNLU</span><span class="o">=</span><span class="n">YES</span><span class="p">,</span>                                                             <span class="o">-</span>
+<span class="n">DYNADJCP</span><span class="o">=</span><span class="n">YES</span><span class="p">,</span>                                                          <span class="o">-</span>
+<span class="n">NETID</span><span class="o">=</span><span class="n">POCNET</span><span class="p">,</span>                                                          <span class="o">-</span>
+<span class="n">NODETYPE</span><span class="o">=</span><span class="n">NN</span><span class="p">,</span>                                                           <span class="o">-</span>
+<span class="n">NOPROMPT</span><span class="p">,</span>                                                              <span class="o">-</span>
+<span class="n">NQNMODE</span><span class="o">=</span><span class="n">NQNAME</span><span class="p">,</span>                                                        <span class="o">-</span>
+<span class="n">SSCPID</span><span class="o">=</span><span class="mi">59</span><span class="p">,</span>                                                             <span class="o">-</span>
+<span class="n">SSCPNAME</span><span class="o">=</span><span class="n">LRRR</span><span class="p">,</span>                                                         <span class="o">-</span>
+<span class="n">SUPP</span><span class="o">=</span><span class="n">NOSUP</span><span class="p">,</span>                                                            <span class="o">-</span>
+<span class="n">VERIFYCP</span><span class="o">=</span><span class="n">NONE</span><span class="p">,</span>                                                         <span class="o">-</span>
+<span class="n">VFYRED</span><span class="o">=</span><span class="n">YES</span><span class="p">,</span>                                                            <span class="o">-</span>
+<span class="n">CRPLBUF</span><span class="o">=</span><span class="p">(</span><span class="mi">208</span><span class="p">,,</span><span class="mi">15</span><span class="p">,,</span><span class="mi">1</span><span class="p">,</span><span class="mi">16</span><span class="p">),</span>                                               <span class="o">-</span>
+<span class="n">IOBUF</span><span class="o">=</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span><span class="mi">508</span><span class="p">,</span><span class="mi">19</span><span class="p">,,</span><span class="mi">1</span><span class="p">,</span><span class="mi">20</span><span class="p">),</span>                                              <span class="o">-</span>
+<span class="n">LFBUF</span><span class="o">=</span><span class="p">(</span><span class="mi">104</span><span class="p">,,</span><span class="mi">0</span><span class="p">,,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span>                                                   <span class="o">-</span>
+<span class="n">LPBUF</span><span class="o">=</span><span class="p">(</span><span class="mi">64</span><span class="p">,,</span><span class="mi">0</span><span class="p">,,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span>                                                    <span class="o">-</span>
+<span class="n">SFBUF</span><span class="o">=</span><span class="p">(</span><span class="mi">163</span><span class="p">,,</span><span class="mi">0</span><span class="p">,,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>All other PDS members are new.</p>
+</section>
+<section id="sys1-local-vtamlst-cdrsc">
+<h3>SYS1.LOCAL.VTAMLST(CDRSC)<a class="headerlink" href="#sys1-local-vtamlst-cdrsc" title="Permalink to this heading">¶</a></h3>
+<p>I’m not sure if this is required for certain APPN scenarios or only when
+VTAM acts as a node in both Subarea and APPN networks.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>         <span class="n">VBUILD</span> <span class="n">TYPE</span><span class="o">=</span><span class="n">CDRSC</span>
+<span class="o">*</span>
+<span class="n">ILU1</span>     <span class="n">CDRSC</span> <span class="n">ALSLIST</span><span class="o">=</span><span class="n">ISTAPNPU</span>
+</pre></div>
+</div>
+</section>
+<section id="sys1-local-vtamlst-xcaethnt">
+<h3>SYS1.LOCAL.VTAMLST(XCAETHNT)<a class="headerlink" href="#sys1-local-vtamlst-xcaethnt" title="Permalink to this heading">¶</a></h3>
+<p>This references the LCS device from the Hercules configuration at
+address <em>E40</em>. Hint: The ADCD System has all necessary IODF correctly
+set by default to support an LCS 3172 at E40.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">XCAETH</span>  <span class="n">VBUILD</span> <span class="n">TYPE</span><span class="o">=</span><span class="n">XCA</span>
+<span class="o">*</span>
+<span class="n">ETHPRT</span>    <span class="n">PORT</span> <span class="n">ADAPNO</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>                                               <span class="o">-</span>
+               <span class="n">CUADDR</span><span class="o">=</span><span class="n">E40</span><span class="p">,</span>                                             <span class="o">-</span>
+               <span class="n">DELAY</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>                                                <span class="o">-</span>
+               <span class="n">MEDIUM</span><span class="o">=</span><span class="n">CSMACD</span><span class="p">,</span>                                          <span class="o">-</span>
+               <span class="n">SAPADDR</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>                                              <span class="o">-</span>
+               <span class="n">TIMER</span><span class="o">=</span><span class="mi">30</span>
+<span class="o">*</span>
+<span class="n">ETHGRP</span>   <span class="n">GROUP</span> <span class="n">ANSWER</span><span class="o">=</span><span class="n">ON</span><span class="p">,</span>                                              <span class="o">-</span>
+               <span class="n">AUTOGEN</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="n">E</span><span class="p">,</span><span class="n">X</span><span class="p">),</span>                                       <span class="o">-</span>
+               <span class="n">CALL</span><span class="o">=</span><span class="n">INOUT</span><span class="p">,</span>                                             <span class="o">-</span>
+               <span class="n">DIAL</span><span class="o">=</span><span class="n">YES</span><span class="p">,</span>                                               <span class="o">-</span>
+               <span class="n">DYNPU</span><span class="o">=</span><span class="n">YES</span><span class="p">,</span>                                              <span class="o">-</span>
+               <span class="n">DYNPUPFX</span><span class="o">=</span><span class="n">ET</span><span class="p">,</span>                                            <span class="o">-</span>
+               <span class="n">ISTATUS</span><span class="o">=</span><span class="n">ACTIVE</span>
+</pre></div>
+</div>
+</section>
+<section id="sys1-local-vtamlst-nibbl802">
+<h3>SYS1.LOCAL.VTAMLST(NIBBL802)<a class="headerlink" href="#sys1-local-vtamlst-nibbl802" title="Permalink to this heading">¶</a></h3>
+<p>This is the <em>switched major node</em> defining my AS/400, called <em>NIBBLER</em>.
+NETID and CPNAME can be found by issuing a DSPNETATR. IDBLK/IDNUM, and
+MAXDATA can be found by looking at the line description for the LAN IOA
+with WRKLIND, Option 5. The DIALNO is the SAP address directly followed
+by the IOA’s MAC address. Both to be found in the line description. SAP
+address 4 is the default, though.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">NIBSWN</span>   <span class="n">VBUILD</span> <span class="n">TYPE</span><span class="o">=</span><span class="n">SWNET</span>
+<span class="o">*</span>
+<span class="n">NIBPU</span>    <span class="n">PU</span>    <span class="n">ADDR</span><span class="o">=</span><span class="mi">01</span><span class="p">,</span>                                                <span class="o">-</span>
+               <span class="n">CONNTYPE</span><span class="o">=</span><span class="n">APPN</span><span class="p">,</span>                                          <span class="o">-</span>
+               <span class="n">CPCP</span><span class="o">=</span><span class="n">YES</span><span class="p">,</span>                                               <span class="o">-</span>
+               <span class="n">CPNAME</span><span class="o">=</span><span class="n">NIBBLER</span><span class="p">,</span>                                         <span class="o">-</span>
+               <span class="n">DISCNT</span><span class="o">=</span><span class="n">NO</span><span class="p">,</span>                                              <span class="o">-</span>
+               <span class="n">DWACT</span><span class="o">=</span><span class="n">NO</span><span class="p">,</span>                                               <span class="o">-</span>
+               <span class="n">DYNLU</span><span class="o">=</span><span class="n">YES</span><span class="p">,</span>                                              <span class="o">-</span>
+               <span class="n">HPR</span><span class="o">=</span><span class="n">NO</span><span class="p">,</span>                                                 <span class="o">-</span>
+               <span class="n">IDBLK</span><span class="o">=</span><span class="mi">056</span><span class="p">,</span>                                              <span class="o">-</span>
+               <span class="n">IDNUM</span><span class="o">=</span><span class="mi">41700</span><span class="p">,</span>                                            <span class="o">-</span>
+               <span class="n">ISTATUS</span><span class="o">=</span><span class="n">ACTIVE</span><span class="p">,</span>                                         <span class="o">-</span>
+               <span class="n">MAXDATA</span><span class="o">=</span><span class="mi">1496</span><span class="p">,</span>                                           <span class="o">-</span>
+               <span class="n">MAXOUT</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span>                                               <span class="o">-</span>
+               <span class="n">MODETAB</span><span class="o">=</span><span class="n">ISTINCLM</span><span class="p">,</span>                                       <span class="o">-</span>
+               <span class="n">NETID</span><span class="o">=</span><span class="n">POCNET</span><span class="p">,</span>                                           <span class="o">-</span>
+               <span class="n">PACING</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span>                                               <span class="o">-</span>
+               <span class="n">PUTYPE</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>                                               <span class="o">-</span>
+               <span class="n">SSCPFM</span><span class="o">=</span><span class="n">USSSCS</span><span class="p">,</span>                                          <span class="o">-</span>
+               <span class="n">VPACING</span><span class="o">=</span><span class="mi">7</span>
+<span class="o">*</span>
+<span class="n">NIBPTH</span>   <span class="n">PATH</span>  <span class="n">GRPNM</span><span class="o">=</span><span class="n">ETHGRP</span><span class="p">,</span>                                           <span class="o">-</span>
+               <span class="n">DIALNO</span><span class="o">=</span><span class="mi">0004002035</span><span class="n">B54164</span>
+</pre></div>
+</div>
+<p>Not that the DIALNO is a concatenation of the DSAP and the peer’s MAC
+address.</p>
+</section>
+<section id="sys1-local-vtamlst-atccon00">
+<h3>SYS1.LOCAL.VTAMLST(ATCCON00)<a class="headerlink" href="#sys1-local-vtamlst-atccon00" title="Permalink to this heading">¶</a></h3>
+<p>As usual, this contains the resources to be activated at VTAM start
+time. I removed some apparently unneeded resources just giving error
+messages at startup time.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">A0600</span><span class="p">,</span>                                                                 <span class="o">-</span>
+<span class="n">NSNA70X</span><span class="p">,</span>                                                               <span class="o">-</span>
+<span class="n">NSNA90X</span><span class="p">,</span>                                                               <span class="o">-</span>
+<span class="n">COSAPPN</span><span class="p">,</span>                                                               <span class="o">-</span>
+<span class="n">A0TCP</span><span class="p">,</span>                                                                 <span class="o">-</span>
+<span class="n">P390APP</span><span class="p">,</span>                                                               <span class="o">-</span>
+<span class="n">DYNMODEL</span><span class="p">,</span>                                                              <span class="o">-</span>
+<span class="n">XCAETHNT</span><span class="p">,</span>                                                              <span class="o">-</span>
+<span class="n">NIBBL802</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="making-it-run">
+<h2>Making it run<a class="headerlink" href="#making-it-run" title="Permalink to this heading">¶</a></h2>
+<p>AFAIK it’s not possible to dynamically reconfigure VTAM to the extent
+necessary with the new ATCSTR00. So, make the changes in ATCSTR, but
+leave out the switched major node for the other SNA node from ATCSTR00,
+and re-IPL. Alternatively, stop TCAM and VTAM, and restart both in
+reverse order.</p>
+<p>I’ve observed that having the switched major node being activated while
+VTAM starts up, the connection won’t come up. I don’t know if this is a
+VTAM timing/retry configuration issue, or related to side effects with
+the new SNA code in LCS.</p>
+<p>Issuing the proper vary command on the console for the major node
+yields:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="mf">17.56.37</span>           <span class="n">V</span> <span class="n">NET</span><span class="p">,</span><span class="n">ID</span><span class="o">=</span><span class="n">NIBBL802</span><span class="p">,</span><span class="n">ACT</span>
+  <span class="mf">17.56.37</span> <span class="n">STC00004</span>  <span class="n">IST097I</span> <span class="n">VARY</span> <span class="n">ACCEPTED</span>
+  <span class="mf">17.56.37</span> <span class="n">STC00004</span>  <span class="n">IST093I</span> <span class="n">NIBPU</span> <span class="n">ACTIVE</span>
+  <span class="mf">17.56.37</span> <span class="n">STC00004</span>  <span class="n">IST093I</span> <span class="n">NIBBL802</span> <span class="n">ACTIVE</span>
+  <span class="mf">17.56.37</span> <span class="n">STC00004</span>  <span class="n">IST590I</span> <span class="n">CONNECTOUT</span> <span class="n">ESTABLISHED</span> <span class="n">FOR</span> <span class="n">PU</span> <span class="n">NIBPU</span> <span class="n">ON</span> <span class="n">LINE</span>
+   <span class="n">E0E40000</span>
+  <span class="mf">17.56.37</span> <span class="n">STC00004</span>  <span class="n">IST1086I</span> <span class="n">APPN</span> <span class="n">CONNECTION</span> <span class="n">FOR</span> <span class="n">APPN</span><span class="o">.</span><span class="n">NIBBLER</span> <span class="n">IS</span> <span class="n">ACTIVE</span>
+   <span class="o">-</span> <span class="n">TGN</span> <span class="o">=</span> <span class="mi">21</span>
+  <span class="mf">17.56.37</span> <span class="n">STC00004</span>  <span class="n">IST1096I</span> <span class="n">CP</span><span class="o">-</span><span class="n">CP</span> <span class="n">SESSIONS</span> <span class="n">WITH</span> <span class="n">APPN</span><span class="o">.</span><span class="n">NIBBLER</span> <span class="n">ACTIVATED</span>
+</pre></div>
+</div>
+<p>For APPN Connections from End Node to (only one!) Network Node, and
+Network Node to Network Node to fully function, it’s crucial to see
+CP-CP Sessions come up. I successfully tested the connection with APING
+in both directions. Output from VTAM:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">04</span><span class="o">-</span> <span class="mf">17.56.54</span>           <span class="n">D</span> <span class="n">NET</span><span class="p">,</span><span class="n">APING</span><span class="p">,</span><span class="n">ID</span><span class="o">=</span><span class="n">NIBBLER</span><span class="p">,</span><span class="n">LOGMODE</span><span class="o">=</span><span class="c1">#INTER</span>
+    <span class="mf">17.56.54</span> <span class="n">STC00003</span>  <span class="n">IST097I</span> <span class="n">DISPLAY</span> <span class="n">ACCEPTED</span>
+    <span class="mf">17.56.54</span> <span class="n">STC00003</span>  <span class="n">IST1489I</span> <span class="n">APING</span> <span class="n">SESSION</span> <span class="n">INFORMATION</span>
+    <span class="n">IST1490I</span> <span class="n">DLU</span><span class="o">=</span><span class="n">APPN</span><span class="o">.</span><span class="n">NIBBLER</span> <span class="n">SID</span><span class="o">=</span><span class="n">FD8F3F629B0B3271</span>
+    <span class="n">IST933I</span> <span class="n">LOGMODE</span><span class="o">=</span><span class="c1">#INTER  , COS=#INTER</span>
+    <span class="n">IST875I</span> <span class="n">APPNCOS</span> <span class="n">TOWARDS</span> <span class="n">SLU</span> <span class="o">=</span> <span class="c1">#INTER</span>
+    <span class="n">IST1460I</span> <span class="n">TGN</span>  <span class="n">CPNAME</span>             <span class="n">TG</span> <span class="n">TYPE</span>      <span class="n">HPR</span>
+    <span class="n">IST1461I</span>  <span class="mi">21</span>  <span class="n">APPN</span><span class="o">.</span><span class="n">NIBBLER</span>       <span class="n">APPN</span>         <span class="o">*</span><span class="n">NA</span><span class="o">*</span>
+    <span class="n">IST314I</span> <span class="n">END</span>
+    <span class="mf">17.56.55</span> <span class="n">STC00003</span>  <span class="n">IST1457I</span> <span class="n">VTAM</span> <span class="n">APING</span> <span class="n">VERSION</span> <span class="mi">2</span><span class="n">R33</span> <span class="p">(</span><span class="n">PARTNER</span> <span class="n">TP</span> <span class="n">VERSION</span>
+     <span class="mi">2</span><span class="n">R43</span><span class="p">)</span>
+    <span class="n">IST1490I</span> <span class="n">DLU</span><span class="o">=</span><span class="n">APPN</span><span class="o">.</span><span class="n">NIBBLER</span> <span class="n">SID</span><span class="o">=</span><span class="n">FD8F3F629B0B3271</span>
+    <span class="n">IST1462I</span> <span class="n">ECHO</span> <span class="n">IS</span> <span class="n">ON</span>
+    <span class="n">IST1463I</span> <span class="n">ALLOCATION</span> <span class="n">DURATION</span><span class="p">:</span> <span class="mi">34</span> <span class="n">MILLISECONDS</span>
+    <span class="n">IST1464I</span> <span class="n">PROGRAM</span> <span class="n">STARTUP</span> <span class="n">AND</span> <span class="n">VERSION</span> <span class="n">EXCHANGE</span><span class="p">:</span> <span class="mi">723</span> <span class="n">MILLISECONDS</span>
+    <span class="n">IST1465I</span>         <span class="n">DURATION</span>      <span class="n">DATA</span> <span class="n">SENT</span>   <span class="n">DATA</span> <span class="n">RATE</span>   <span class="n">DATA</span> <span class="n">RATE</span>
+    <span class="n">IST1466I</span>      <span class="p">(</span><span class="n">MILLISECONDS</span><span class="p">)</span>    <span class="p">(</span><span class="n">BYTES</span><span class="p">)</span>  <span class="p">(</span><span class="n">KBYTE</span><span class="o">/</span><span class="n">SEC</span><span class="p">)</span>  <span class="p">(</span><span class="n">MBIT</span><span class="o">/</span><span class="n">SEC</span><span class="p">)</span>
+    <span class="n">IST1467I</span>               <span class="mi">17</span>            <span class="mi">200</span>          <span class="mi">11</span>           <span class="mi">0</span>
+    <span class="n">IST1467I</span>               <span class="mi">16</span>            <span class="mi">200</span>          <span class="mi">12</span>           <span class="mi">0</span>
+<span class="mi">00</span>  <span class="n">IST1468I</span> <span class="n">TOTALS</span><span class="p">:</span>       <span class="mi">33</span>            <span class="mi">400</span>          <span class="mi">12</span>           <span class="mi">0</span>
+    <span class="n">IST1469I</span> <span class="n">DURATION</span> <span class="n">STATISTICS</span><span class="p">:</span>
+    <span class="n">IST1470I</span> <span class="n">MINIMUM</span> <span class="o">=</span> <span class="mi">16</span> <span class="n">AVERAGE</span> <span class="o">=</span> <span class="mi">16</span> <span class="n">MAXIMUM</span> <span class="o">=</span> <span class="mi">17</span>
+    <span class="n">IST314I</span> <span class="n">END</span>
+</pre></div>
+</div>
+<p>My VTAM configuration also consists of an Enterprise Extender (SNA over
+UDP) definition (not shown). Sessions forwarded by VTAM between my
+AS/400 (because of it’s old OS only being able to support 802.2 DLC
+connections), and a newer IBM i 7.2 machine (because of it’s new OS only
+being able to support SNA over Enterprise Extender) work flawlessly.</p>
+<p>This is a definition as submitted by Jay Maynard:</p>
+<p>My switched network major node, on one of the R/390s. That R/390 is
+subarea 14; subarea 02 is the desktop Linux OS/390, 06 is the Raspberry
+Pi, 10 is my Linux laptop (which I haven’t set this up on yet, but
+expect no trouble now that I know where the pitfalls are), and 18 is the
+other R/390:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">S14SWNET</span> <span class="n">VBUILD</span> <span class="n">TYPE</span><span class="o">=</span><span class="n">SWNET</span>
+<span class="o">*</span> <span class="n">APPN</span> <span class="n">LINKS</span> <span class="n">OVER</span> <span class="n">ETHERNET</span>
+<span class="o">*</span> <span class="n">NOTE</span><span class="p">:</span> <span class="n">HERCULES</span> <span class="n">MAC</span> <span class="n">ADDRESSES</span> <span class="n">ARE</span> <span class="n">ONE</span> <span class="n">HIGHER</span> <span class="n">THAN</span> <span class="n">CONFIGURED</span> <span class="n">ON</span> <span class="n">THE</span>
+<span class="o">*</span>       <span class="n">HERCULES</span> <span class="n">HOST</span><span class="s1">&#39;S TAP INTERFACE SETUP</span>
+<span class="n">P14CP02</span>  <span class="n">PU</span>    <span class="n">MAXPATH</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">MAXDATA</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span><span class="n">ADDR</span><span class="o">=</span><span class="mi">02</span><span class="p">,</span>                          <span class="n">X</span>
+               <span class="n">CPNAME</span><span class="o">=</span><span class="n">H02SSCP</span><span class="p">,</span><span class="n">CPCP</span><span class="o">=</span><span class="n">YES</span><span class="p">,</span><span class="n">PUTYPE</span><span class="o">=</span><span class="mi">2</span>
+<span class="n">L14CP02</span>  <span class="n">PATH</span>  <span class="n">DIALNO</span><span class="o">=</span><span class="mi">0104020003151</span><span class="n">EA7</span><span class="p">,</span><span class="n">GRPNM</span><span class="o">=</span><span class="n">X14E40G1</span>
+<span class="n">A14CP02</span>  <span class="n">LU</span>    <span class="n">LOCADDR</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">ISTATUS</span><span class="o">=</span><span class="n">INACTIVE</span>
+<span class="o">*</span>
+<span class="n">P14CP06</span>  <span class="n">PU</span>    <span class="n">MAXPATH</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">MAXDATA</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span><span class="n">ADDR</span><span class="o">=</span><span class="mi">02</span><span class="p">,</span>                          <span class="n">X</span>
+               <span class="n">CPNAME</span><span class="o">=</span><span class="n">H06SSCP</span><span class="p">,</span><span class="n">CPCP</span><span class="o">=</span><span class="n">YES</span><span class="p">,</span><span class="n">PUTYPE</span><span class="o">=</span><span class="mi">2</span>
+<span class="n">L14CP06</span>  <span class="n">PATH</span>  <span class="n">DIALNO</span><span class="o">=</span><span class="mi">0104020003151</span><span class="n">EE7</span><span class="p">,</span><span class="n">GRPNM</span><span class="o">=</span><span class="n">X14E40G1</span>
+<span class="n">A14CP06</span>  <span class="n">LU</span>    <span class="n">LOCADDR</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">ISTATUS</span><span class="o">=</span><span class="n">INACTIVE</span>
+<span class="o">*</span>
+<span class="n">P14CP10</span>  <span class="n">PU</span>    <span class="n">MAXPATH</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">MAXDATA</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span><span class="n">ADDR</span><span class="o">=</span><span class="mi">02</span><span class="p">,</span>                          <span class="n">X</span>
+               <span class="n">CPNAME</span><span class="o">=</span><span class="n">H10SSCP</span><span class="p">,</span><span class="n">CPCP</span><span class="o">=</span><span class="n">YES</span><span class="p">,</span><span class="n">PUTYPE</span><span class="o">=</span><span class="mi">2</span>
+<span class="n">L14CP10</span>  <span class="n">PATH</span>  <span class="n">DIALNO</span><span class="o">=</span><span class="mf">0104020003151E97</span><span class="p">,</span><span class="n">GRPNM</span><span class="o">=</span><span class="n">X14E40G1</span>
+<span class="n">A14CP10</span>  <span class="n">LU</span>    <span class="n">LOCADDR</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">ISTATUS</span><span class="o">=</span><span class="n">INACTIVE</span>
+<span class="o">*</span>
+<span class="n">P14CP18</span>  <span class="n">PU</span>    <span class="n">MAXPATH</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">MAXDATA</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span><span class="n">ADDR</span><span class="o">=</span><span class="mi">01</span><span class="p">,</span>                          <span class="n">X</span>
+               <span class="n">CPNAME</span><span class="o">=</span><span class="n">H18SSCP</span><span class="p">,</span><span class="n">CPCP</span><span class="o">=</span><span class="n">YES</span><span class="p">,</span><span class="n">PUTYPE</span><span class="o">=</span><span class="mi">2</span>
+<span class="n">L14CP18</span>  <span class="n">PATH</span>  <span class="n">DIALNO</span><span class="o">=</span><span class="mf">0104020003151E04</span><span class="p">,</span><span class="n">GRPNM</span><span class="o">=</span><span class="n">X14E40G1</span>
+<span class="n">A14CP18</span>  <span class="n">LU</span>    <span class="n">LOCADDR</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">ISTATUS</span><span class="o">=</span><span class="n">INACTIVE</span>
+</pre></div>
+</div>
+</section>
+<section id="reporting-bugs">
+<h2>Reporting Bugs<a class="headerlink" href="#reporting-bugs" title="Permalink to this heading">¶</a></h2>
+<p>First, please always make sure you use the most recent code base. It’s
+completely sufficient to run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span> <span class="pre">&amp;&amp;</span> <span class="pre">make</span> <span class="pre">&amp;&amp;</span> <span class="pre">make</span> <span class="pre">install</span></code>. No
+<code class="docutils literal notranslate"><span class="pre">configure</span></code> and time consuming full-compile are necessary after the
+initial run.</p>
+<p>In addition to providing the usual information for understanding any
+issues, please include:</p>
+<ul class="simple">
+<li><p>a packet capture restricted to the MAC addresses of the hosts
+involved. Example:
+<code class="docutils literal notranslate"><span class="pre">tcpdump</span> <span class="pre">-w</span> <span class="pre">debug.pcap</span> <span class="pre">-n</span> <span class="pre">-i</span> <span class="pre">tap0</span> <span class="pre">ether</span> <span class="pre">host</span> <span class="pre">02:00:fe:df:00:43</span> <span class="pre">or</span> <span class="pre">ether</span> <span class="pre">host</span> <span class="pre">10:00:e0:5e:b6:c5</span></code></p></li>
+<li><p>Hercules log output (redirect stdout to a file prior to start or use
+the new <code class="docutils literal notranslate"><span class="pre">-o</span></code> command line option). Please only submit the relevant
+time frame of the log.</p></li>
+</ul>
+<p>Often, a VTAM trace to see what VTAM is doing is mandatory. You do need
+to use GTF. Unfortunately, I can’t recall all of the exact detail
+because its been about ten years since I last did any VTAM traces and so
+I am trying to remember all of this from memory. But basically, the
+process is something like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">START</span> <span class="n">GTF</span>           <span class="p">(</span><span class="n">an</span> <span class="n">operator</span> <span class="n">command</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>After GTF starts, it will prompt you at the console for the kind of
+trace you want and what types of records you wish to trace. As best I
+can recall, VTAM traces needed GTF to record USR trace entries.</p>
+<p>After GTF is satisfied, then you start the actual VTAM trace itself,
+another operator command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">F</span> <span class="n">NET</span><span class="p">,</span><span class="n">TRACE</span><span class="p">,</span><span class="n">TYPE</span><span class="o">=</span><span class="nb">type</span><span class="p">,</span><span class="n">ID</span><span class="o">=</span><span class="n">node_name</span>
+</pre></div>
+</div>
+<p>Where, ‘type’ is BUF for a buffer trace of the data stream, or you might
+use type IO for an i/o trace or CNM for a network management trace. For
+your issue described, either one of these might be beneficial but some
+more than others.</p>
+<p>ID=node_name is the name of the VTAM entity you wish to trace, for
+example the node or controller or line you are trying to activate as
+described in this Github issue above.</p>
+<p>Once the F NET trace is started, then you would issue VARY NET to
+activate your node. The trace data should be recorded to GTF. Once you
+are satisfied that you have recreated your situation, stop the traces:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">F</span> <span class="n">NET</span><span class="p">,</span><span class="n">NOTRACE</span><span class="p">,</span><span class="n">TYPE</span><span class="o">=</span><span class="n">buf</span><span class="o">/</span><span class="n">io</span><span class="o">/</span><span class="n">cnm</span><span class="p">,</span><span class="n">ID</span><span class="o">=</span><span class="n">node_name</span>
+<span class="n">P</span> <span class="n">GTF</span>
+</pre></div>
+</div>
+<p>The trace data should be in your GTF trace dataset. In order to get it
+out of there, you need to format it. It used to be done with a service
+aid utility like AMDPRDMP or something like that but I think now you
+have to use IPCS to view the trace in a formatted style.</p>
+<p>Before starting GTF, you’ll also need to review the GTF started task
+procedure to ensure the trace datasets are defined and that you can
+access them. It’s rather an ordeal to get all of this set up for the
+first time, but once done, it is easy to just issue the commands to
+start and stop the traces as needed and review the results, repeatedly.</p>
+<p>In order to find the data you are looking for, you’ll need a manual
+which I believe was called <a class="reference external" href="http://bitsavers.trailing-edge.com/pdf/ibm/sna/GA27-3136-10_SNA_Formats_Jun89.pdf">SNA
+Formats</a>.
+It should have the layout and description of the data streams that VTAM
+will send and receive from your node. I believe that they were called
+PIUs.</p>
+<p>I wish I could be more specific. I used to keep notes on all of this
+stuff so I could use it when needed but after I retired I don’t have
+access to these notes any longer. There is also a manual called <a class="reference external" href="https://www-01.ibm.com/servers/resourcelink/svc00100.nsf/pages/zOSV2R3ga320905?OpenDocument">z/OS
+MVS Diagnosis Tools and Service
+Aids</a>.
+In there is a whole chapter on GTF and how to set it up, answer the
+prompts, and how to view the trace. Also, for the format of the VTAM
+<code class="docutils literal notranslate"><span class="pre">F</span> <span class="pre">NET,TRACE</span></code> command, look in a manual called <strong>VTAM Operation</strong>.</p>
+<p>While none of this immediately gets you going, hopefully there is enough
+here to get you pointed in the right direction where you can start
+tracking down how to do it and get what you need.</p>
+</section>
+<section id="acknowledgements">
+<h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Huge thanks to Ian Shorter for his incredible work in making SNA over
+LCS possible.</p></li>
+<li><p>Thanks to Marco Lorig for providing a remotely accessible R/390
+environment for initial VTAM traces, and packet dumps on a “real”
+LCS.</p></li>
+<li><p>Thanks to Jeff Snyder for providing an initial VTAM configuration and
+some more configuration examples to work with.</p></li>
+<li><p>Thanks to Jay Maynard for working out how to properly integrate
+bridging into some distribution specific mechanisms.</p></li>
+<li><p>Thanks to Bob Polmanter for a short summary about how to do a GTF
+trace.</p></li>
+</ul>
+<p>For readers interested in participating in platform-independent
+discussions revolving around mainly SNA, you might find the following to
+be beneficial:</p>
+<p>    ibm-big-iron-networking GROUP WEB PAGE:
+ <a class="reference external" href="https://groups.io/g/ibm-big-iron-networking">https://groups.io/g/ibm-big-iron-networking</a>     ibm-big-iron-networking
+EMAIL ADDRESS:     <a class="reference external" href="mailto:ibm-big-iron-networking&#37;&#52;&#48;groups&#46;io">ibm-big-iron-networking<span>&#64;</span>groups<span>&#46;</span>io</a></p>
+<p>— Patrik Schindler October 2021</p>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Read the Docs</span>
+      v: fovea1959
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+      <dl>
+        <dt>Languages</dt>
+        
+           <strong> 
+          <dd><a href="/herc-docs-demo/en/fovea1959/">en</a></dd>
+           </strong> 
+        
+      </dl>
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+           <strong> 
+          <dd><a href="/herc-docs-demo/en/fovea1959/">fovea1959</a></dd>
+           </strong> 
+        
+          
+          <dd><a href="/herc-docs-demo/en/master/">master</a></dd>
+          
+        
+          
+          <dd><a href="/herc-docs-demo/en/0.0/">0.0</a></dd>
+          
+        
+          
+          <dd><a href="/herc-docs-demo/en/1.0/">1.0</a></dd>
+          
+        
+      </dl>
+      
+      
+      <dl>
+        <dt>Downloads</dt>
+        
+          <dd><a href="/herc-docs-demo/en/fovea1959/Hercules Documentation Demo-docs_en_fovea1959.pdf">pdf</a></dd>
+        
+          <dd><a href="/herc-docs-demo/en/fovea1959/Hercules Documentation Demo-docs_en_fovea1959.epub">epub</a></dd>
+        
+          <dd><a href="/herc-docs-demo/en/fovea1959/Hercules Documentation Demo-docs_en_fovea1959.html.tar.gz">tarred HTML</a></dd>
+        
+          <dd><a href="/herc-docs-demo/en/fovea1959/Hercules Documentation Demo-docs_en_fovea1959.single.html.tar.gz">tarred single file HTML</a></dd>
+        
+      </dl>
+      
+      
+      <hr/>
+      <a href="https://tech.michaelaltfield.net/2020/07/18/sphinx-rtd-github-pages-1/">Continuous Documentation</a> hosting provided by <a href="https://pages.github.com/">GitHub Pages</a>.
+ 
+    </div>
+  </div>
+
+ 
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

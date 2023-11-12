@@ -1,0 +1,568 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Building and Installing &mdash; Hercules Documentation Demo 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Configuration File" href="configuration.html" />
+    <link rel="prev" title="Welcome to the Hercules Documentation Demo site!" href="index.html" />
+    <link href="_static/herc_style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Hercules Documentation Demo
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                fovea1959
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Building and Installing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#building-from-source-windows">Building from source - Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#windows-pre-built-binaries">Windows pre-built binaries:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#building-from-source-mac-os-x">Building from source - Mac OS X</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#building-from-source-linux-and-macos-high-sierra-and-newer">Building from source - Linux and macOS (High Sierra and newer)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration File</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercdasd.html">Creating DASD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercoper.html">Operating Procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercsupp.html">Technical Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hercfaq.html">Frequently-Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="messages.html">Messages and Codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aa_auxdocs.html">Supporting documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix_a.html">Appendix A - Documentation Standards</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Hercules Documentation Demo</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Building and Installing</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/hercinst.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="building-and-installing">
+<h1>Building and Installing<a class="headerlink" href="#building-and-installing" title="Permalink to this heading">¶</a></h1>
+<section id="building-from-source-windows">
+<h2>Building from source - Windows<a class="headerlink" href="#building-from-source-windows" title="Permalink to this heading">¶</a></h2>
+<ol class="arabic">
+<li><p>Download the <a class="reference external" href="https://github.com/sdl-hercules-390/hyperion/archive/master.zip">source code .ZIP
+file</a>
+from Github, or even better, <a class="reference external" href="https://github.com/sdl-hercules-390/hyperion">clone the
+repository</a><strong>.</strong>
+(Note: building from the source code .zip file is <em>strongly
+discouraged</em>. Instead, it is <em>highly recommended</em> that you clone the
+git repository and build from that instead.)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span>  <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">SDL</span><span class="o">-</span><span class="n">Hercules</span><span class="o">-</span><span class="mi">390</span><span class="o">/</span><span class="n">hyperion</span><span class="o">.</span><span class="n">git</span>  <span class="o">&lt;</span><span class="n">directory</span><span class="o">-</span><span class="n">name</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Note:</strong> <em>By downloading the .zip file (or cloning the repostiory)
+you agree to the terms of the</em> <a class="reference external" href="herclic.html">Q Public
+Licence</a><em>.</em></div>
+</div>
+</li>
+<li><p>Hercules for Windows is built using the Microsoft Visual C (MSVC)
+compiler. Refer to file
+<a class="reference external" href="https://github.com/sdl-hercules-390/hyperion/blob/master/readme/README.WIN64.md">README.WIN64</a>
+for details. Note: Fish also has updated VS2015/VS2017 instructions
+on his <a class="reference external" href="http://www.softdevlabs.com/hercules-vs2015-build.html">MSVC Hercules Build
+Instructions</a>
+web page.</p></li>
+<li><p>Be sure to read the <a class="reference external" href="https://sdl-hercules-390.github.io/html/hercrnot.html">Release
+Notes</a> with
+every new release, which contains important late-breaking information
+about each new release.</p></li>
+</ol>
+</section>
+<section id="windows-pre-built-binaries">
+<h2>Windows pre-built binaries:<a class="headerlink" href="#windows-pre-built-binaries" title="Permalink to this heading">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Download one of the <a class="reference external" href="http://www.softdevlabs.com/hyperion.html#prebuilt">pre-built
+binaries</a> from
+<a class="reference external" href="http://www.softdevlabs.com">SoftDevLabs</a>.</p></li>
+<li><p>(Optional) You might also want to install Fish’s <a class="reference external" href="http://www.softdevlabs.com/hercgui">Hercules GUI for
+Windows</a>.</p></li>
+</ol>
+</section>
+<section id="building-from-source-mac-os-x">
+<h2>Building from source - Mac OS X<a class="headerlink" href="#building-from-source-mac-os-x" title="Permalink to this heading">¶</a></h2>
+<p><strong>Important - Not Recently Tested. May be obsolete.</strong></p>
+<ol class="arabic simple">
+<li><p>Install <strong>Xcode</strong> from the <a class="reference external" href="http://itunes.apple.com/app/xcode/id497799835">App
+Store</a>.</p></li>
+<li><p>Install <strong>Homebrew</strong> using the procedure described at <a class="reference external" href="http://brew.sh/">http://brew.sh/</a></p></li>
+<li><p>Use these commands to install pre-requisite software:
+<code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">install</span> <span class="pre">gnu-sed</span></code></p></li>
+<li><p>Proceed with <em>Building from source - Linux and macOS</em> below.</p></li>
+</ol>
+</section>
+<section id="building-from-source-linux-and-macos-high-sierra-and-newer">
+<h2>Building from source - Linux and macOS (High Sierra and newer)<a class="headerlink" href="#building-from-source-linux-and-macos-high-sierra-and-newer" title="Permalink to this heading">¶</a></h2>
+<p><strong>Important: Please read everything before doing anything. Don’t be
+bashful about asking for help.</strong></p>
+<div class="line-block">
+<div class="line"><strong>Important:</strong> You must use at least version 6.2.0 of the gcc compiler
+and associated glibc2 library. Refer to the <a class="reference external" href="hercfaq.html#3.04">Hercules Frequently-Asked
+Questions</a> page for required compiler and other
+software levels.</div>
+</div>
+<ol class="arabic">
+<li><p>Download the <a class="reference external" href="https://github.com/sdl-hercules-390/hyperion/archive/master.zip">source code .ZIP
+file</a>
+from Github, or even better, <a class="reference external" href="https://github.com/sdl-hercules-390/hyperion">clone the
+repository</a><strong>.</strong>
+(Note: building from the source code .zip file is <em>strongly
+discouraged</em>. Instead, it is <em>highly recommended</em> that you clone the
+git repository and build from that instead. This allows the exact
+version of the source code to be determined, which is very helpful
+should a problem need to be diagnosed.)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span>  <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">SDL</span><span class="o">-</span><span class="n">Hercules</span><span class="o">-</span><span class="mi">390</span><span class="o">/</span><span class="n">hyperion</span><span class="o">.</span><span class="n">git</span>  <span class="o">&lt;</span><span class="n">directory</span><span class="o">-</span><span class="n">name</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Note:</strong> <em>By downloading the .zip file (or cloning the repostiory)
+you agree to the terms of the</em> <a class="reference external" href="herclic.html">Q Public
+Licence</a><em>.</em></div>
+</div>
+</li>
+<li><p>Be sure to read the <a class="reference external" href="https://sdl-hercules-390.github.io/html/hercrnot.html">Release
+Notes</a> with
+every new release, which contains important late-breaking information
+about each new release.</p></li>
+<li><p>Install the required packages appropriate for your system.</p>
+<ul>
+<li><p>Debian / Ubuntu / Mint / etc</p>
+<div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">-y</span> <span class="pre">install</span> <span class="pre">git</span> <span class="pre">wget</span> <span class="pre">time</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">-y</span> <span class="pre">install</span> <span class="pre">build-essential</span> <span class="pre">cmake</span> <span class="pre">flex</span> <span class="pre">gawk</span> <span class="pre">m4</span> <span class="pre">autoconf</span> <span class="pre">automake</span> <span class="pre">libtool-bin</span> <span class="pre">libltdl-dev</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">-y</span> <span class="pre">install</span> <span class="pre">libbz2-dev</span> <span class="pre">zlib1g-dev</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">-y</span> <span class="pre">install</span> <span class="pre">libcap2-bin</span></code></div>
+</div>
+<p><em>Note: For Regina REXX to run the included tests:</em></p>
+<p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">-y</span> <span class="pre">install</span> <span class="pre">libregina3-dev</span></code></p>
+</li>
+<li><p>Elbrus Linux (similar to Debian)</p>
+<div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">-y</span> <span class="pre">install</span> <span class="pre">git</span> <span class="pre">wget</span> <span class="pre">time</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">-y</span> <span class="pre">install</span> <span class="pre">build-essential</span> <span class="pre">cmake</span> <span class="pre">flex</span> <span class="pre">gawk</span> <span class="pre">m4</span> <span class="pre">autoconf</span> <span class="pre">automake</span> <span class="pre">libtool</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">-y</span> <span class="pre">install</span> <span class="pre">bzip2</span> <span class="pre">zlib</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">-y</span> <span class="pre">install</span> <span class="pre">libcap</span></code></div>
+</div>
+</li>
+<li><p>Arch / Manjaro</p>
+<div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">pacman</span> <span class="pre">-S</span> <span class="pre">--needed</span> <span class="pre">--noconfirm</span> <span class="pre">git</span> <span class="pre">wget</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">pacman</span> <span class="pre">-S</span> <span class="pre">--needed</span> <span class="pre">--noconfirm</span> <span class="pre">base-devel</span> <span class="pre">make</span> <span class="pre">cmake</span> <span class="pre">flex</span> <span class="pre">gawk</span> <span class="pre">m4</span> <span class="pre">autoconf</span> <span class="pre">automake</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">pacman</span> <span class="pre">-S</span> <span class="pre">--needed</span> <span class="pre">--noconfirm</span> <span class="pre">bzip2</span> <span class="pre">zlib</span></code></div>
+</div>
+</li>
+<li><p>Fedora</p>
+<div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">dnf</span> <span class="pre">-y</span> <span class="pre">install</span> <span class="pre">git</span> <span class="pre">wget</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">dnf</span> <span class="pre">-y</span> <span class="pre">install</span> <span class="pre">gcc</span> <span class="pre">make</span> <span class="pre">cmake</span> <span class="pre">flex</span> <span class="pre">gawk</span> <span class="pre">m4</span> <span class="pre">autoconf</span> <span class="pre">automake</span> <span class="pre">libtool-ltdl-devel</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">dnf</span> <span class="pre">-y</span> <span class="pre">install</span> <span class="pre">bzip2-devel</span> <span class="pre">zlib-devel</span></code></div>
+</div>
+</li>
+<li><p>CentOS / AlmaLinux / Rocky Linux 8+ / Red Hat RHEL 9</p>
+<div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">yum</span> <span class="pre">-y</span> <span class="pre">install</span> <span class="pre">git</span> <span class="pre">wget</span> <span class="pre">time</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">yum</span> <span class="pre">-y</span> <span class="pre">install</span> <span class="pre">gcc</span> <span class="pre">make</span> <span class="pre">cmake</span> <span class="pre">flex</span> <span class="pre">gawk</span> <span class="pre">m4</span> <span class="pre">autoconf</span> <span class="pre">automake</span> <span class="pre">libtool-ltdl-devel</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">yum</span> <span class="pre">-y</span> <span class="pre">install</span> <span class="pre">bzip2-devel</span> <span class="pre">zlib-devel</span></code></div>
+</div>
+<p><em>Note: On CentOS 9, the following command is required</em> <strong>before</strong>
+<em>installing the packages:</em></p>
+<p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">yum</span> <span class="pre">config-manager</span> <span class="pre">--set-enabled</span> <span class="pre">crb</span></code></p>
+<div class="line-block">
+<div class="line"><em>Note: On Red Hat RHEL 9, the following command is required</em>
+<strong>before</strong> <em>installing the packages:</em></div>
+<div class="line">(refer
+<a class="reference external" href="https://www.redhat.com/sysadmin/install-epel-linux">here</a>
+for more information)</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">subscription-manager</span> <span class="pre">repos</span> <span class="pre">--enable</span> <span class="pre">codeready-builder-for-rhel-9-$(arch)-rpms</span></code></p>
+</li>
+<li><p>CentOS 7</p>
+<div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">yum</span> <span class="pre">-y</span> <span class="pre">install</span> <span class="pre">git</span> <span class="pre">wget</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">yum</span> <span class="pre">-y</span> <span class="pre">install</span> <span class="pre">gcc</span> <span class="pre">make</span> <span class="pre">flex</span> <span class="pre">gawk</span> <span class="pre">m4</span> <span class="pre">autoconf</span> <span class="pre">automake</span> <span class="pre">libtool-ltdl-devel</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">yum</span> <span class="pre">-y</span> <span class="pre">install</span> <span class="pre">bzip2-devel</span> <span class="pre">zlib-devel</span></code></div>
+</div>
+<p><em>Note: On CentOS 7, there is no package for CMAKE 3.x, it must be
+built from source.</em></p>
+</li>
+<li><p>openSUSE (15.1+)</p>
+<div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">zypper</span> <span class="pre">install</span> <span class="pre">-y</span> <span class="pre">git</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">zypper</span> <span class="pre">install</span> <span class="pre">-y</span> <span class="pre">-t</span> <span class="pre">pattern</span> <span class="pre">devel_basis</span> <span class="pre">autoconf</span> <span class="pre">automake</span> <span class="pre">cmake</span> <span class="pre">flex</span> <span class="pre">gawk</span> <span class="pre">m4</span> <span class="pre">libtool</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">zypper</span> <span class="pre">install</span> <span class="pre">-y</span> <span class="pre">-t</span> <span class="pre">pattern</span> <span class="pre">bzip2</span> <span class="pre">libz1</span> <span class="pre">zlib-devel</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">zypper</span> <span class="pre">install</span> <span class="pre">-y</span> <span class="pre">libcap-progs</span></code></div>
+</div>
+</li>
+<li><p>Apple Darwin (macOS High Sierra, Mojave, Catalina, Big Sur, etc.)
+with Homebrew</p>
+<div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">xcode-select</span> <span class="pre">--install</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">/bin/bash</span> <span class="pre">-c</span> <span class="pre">&quot;$(curl</span> <span class="pre">-fsSL</span> <span class="pre">https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;</span></code></div>
+</div>
+<div class="line-block">
+<div class="line">brew install wget gsed</div>
+<div class="line">brew install cmake autoconf automake libtool</div>
+</div>
+<p><em>Note: So configure/make will find ltdl.h and libltdl:</em></p>
+<div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">CFLAGS=&quot;$CFLAGS</span> <span class="pre">-I$(find</span> <span class="pre">$(brew</span> <span class="pre">--cellar</span> <span class="pre">libtool)</span> <span class="pre">-type</span> <span class="pre">d</span> <span class="pre">-name</span> <span class="pre">&quot;include&quot;</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">-n</span> <span class="pre">|</span> <span class="pre">tail</span> <span class="pre">-n</span> <span class="pre">1)&quot;</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">LDFLAGS=&quot;$LDFLAGS</span> <span class="pre">-L$(find</span> <span class="pre">$(brew</span> <span class="pre">--cellar</span> <span class="pre">libtool)</span> <span class="pre">-type</span> <span class="pre">d</span> <span class="pre">-name</span> <span class="pre">&quot;lib&quot;</span> <span class="pre">|</span> <span class="pre">sort</span> <span class="pre">-n</span> <span class="pre">|</span> <span class="pre">tail</span> <span class="pre">-n</span> <span class="pre">1)&quot;</span></code></div>
+</div>
+<p><em>And include these options to configure:</em></p>
+<div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">--disable-getoptwrapper</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">--without-included-ltdl</span></code></div>
+</div>
+</li>
+<li><p>Apple Darwin (macOS Big Sur) with MacPorts</p>
+<p>Information on installing MacPorts may be found
+<a class="reference external" href="https://guide.macports.org/chunked/installing.macports.html">here</a>.</p>
+<div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">port</span> <span class="pre">install</span> <span class="pre">wget</span> <span class="pre">gsed</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">port</span> <span class="pre">install</span> <span class="pre">cmake</span> <span class="pre">autoconf</span> <span class="pre">automake</span> <span class="pre">libtool</span></code></div>
+</div>
+<p><em>Note: So configure/make will find ltdl.h and libltdl:</em></p>
+<p><code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">CFLAGS=-I/opt/local/include</span> <span class="pre">LDFLAGS=-L/opt/local/lib</span></code></p>
+</li>
+<li><p>FreeBSD</p>
+<div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">pkg</span> <span class="pre">install</span> <span class="pre">-y</span> <span class="pre">bash</span> <span class="pre">git</span> <span class="pre">wget</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">pkg</span> <span class="pre">install</span> <span class="pre">-y</span> <span class="pre">gmake</span> <span class="pre">autoconf</span> <span class="pre">automake</span> <span class="pre">cmake</span> <span class="pre">flex</span> <span class="pre">gawk</span> <span class="pre">m4</span> <span class="pre">libltdl</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">pkg</span> <span class="pre">install</span> <span class="pre">-y</span> <span class="pre">bzip2</span></code></div>
+</div>
+<p><em>Note: Bash is required by parts of the build apparatus.</em></p>
+<p><em>Note: So configure/make will find ltdl.h and libltdl:</em></p>
+<p><code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">CFLAGS=-I/usr/local/include</span> <span class="pre">LDFLAGS=-L/usr/local/lib</span></code></p>
+</li>
+<li><p>OpenBSD is not currently supported</p></li>
+</ul>
+</li>
+<li><p>Verify you have all of the correct versions of the more important
+packages installed:</p>
+<p><code class="docutils literal notranslate"><span class="pre">./util/bldlvlck</span></code></p>
+<p>Please note that SDL Hyperion comes pre-delivered with an already
+pre-generated <code class="docutils literal notranslate"><span class="pre">./configure</span></code> script, so doing a <code class="docutils literal notranslate"><span class="pre">./autogen.sh</span></code> is
+not necessary and is in fact now strongly discouraged. An autogen
+would only be necessary if you were to manually make some changes to
+the Hercules default <code class="docutils literal notranslate"><span class="pre">Makefile.am</span></code> and/or <code class="docutils literal notranslate"><span class="pre">configure.ac</span></code> files
+(which under normal circumstances you should never need to do).</p>
+</li>
+<li><p>Download and build all <strong>External Packages</strong>, if needed:
+Hercules links with several pre-built “External Package” static link
+libraries that have been pre-built for you and come distributed with
+Hercules (i.e. they are a part of the Hercules repository).
+Currently all of the external package static link libraries for the
+Intel x86 (32-bit) and x64 (64-bit) architectures for both Windows
+and Linux for both normal optimized Release builds as well as
+unoptimized Debug builds are already provided as part of the
+distribution. Thus to build Hercules you should not need to do
+anything special. Simply build Hercules just as you normally would.
+In some unusual situations however, you MIGHT need to rebuild ALL
+existing external packages for your particular system. Exactly what
+those situations are and what causes them to occur is unclear, but
+one thing is certain: it will never hurt to build all of the external
+packages anyway just to be safe.
+If you wish to modify or debug any of the external packages
+themselves (or need to build a non-Intel x86/x64 architecture build
+of Hercules however, such as arm, mips, ppc, sparc, xscale, etc),
+then you will need to manually build each of the external packages
+first in order to create the static link libraries that Hercules will
+need to link with, before you can then build Hercules.
+For more detailed External Package build information please refer to
+the
+<a class="reference external" href="https://github.com/sdl-hercules-390/hyperion/blob/master/readme/README.EXTPKG.md">README.EXTPKG</a>
+document.</p></li>
+<li><p>Configure Hercules for your system:</p>
+<p><code class="docutils literal notranslate"><span class="pre">./configure</span></code></p>
+<p>By default, the configure script will attempt to guess appropriate
+compiler optimization flags for your system. If its guesses turn out
+to be wrong, you can either specify your own optimization flags with
+<code class="docutils literal notranslate"><span class="pre">--enable-optimization=FLAGS</span></code> (<em>preferred</em>) or else as a last
+resort disable all optimization by passing the
+<code class="docutils literal notranslate"><span class="pre">--disable-optimization</span></code> option instead (<strong>not</strong> <em>recommended</em>).
+For additional configuration options, run:
+<code class="docutils literal notranslate"><span class="pre">./configure</span> <span class="pre">--help=short</span></code>.</p>
+<p>For Apple macOS, these additional configure switches are recommended:</p>
+<div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">--disable-getoptwrapper</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">--without-included-ltdl</span></code></div>
+</div>
+</li>
+<li><p>Build the executables:</p>
+<p><code class="docutils literal notranslate"><span class="pre">make</span></code></p>
+</li>
+<li><p>(Optional) Install the programs:</p>
+<div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">make</span> <span class="pre">install</span></code></div>
+</div>
+<p>This is an optional step because once Hercules is built, you should
+be able to run Hercules directly from the Hercules build directory
+itself without needing to install anything beforehand. But if you
+want to officially install it somewhere, then by all means do so.</p>
+<p>It should be mentioned however, that if you do decide to run directly
+out of the build directory, you should first set the ‘cap_sys_nice’
+capabilities on the Hercules executables and start Hercules as root.
+This will allow Hercules to properly set the priorities of its
+internal threads:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">setcap</span> <span class="s1">&#39;cap_sys_nice=eip&#39;</span> <span class="o">./</span><span class="n">hercules</span>
+<span class="n">sudo</span> <span class="n">setcap</span> <span class="s1">&#39;cap_sys_nice=eip&#39;</span> <span class="o">./</span><span class="n">herclin</span>
+<span class="n">sudo</span> <span class="n">setcap</span> <span class="s1">&#39;cap_net_admin+ep&#39;</span> <span class="o">./</span><span class="n">hercifc</span>
+</pre></div>
+</div>
+<p>You <em>don’t</em> need to do this if you do <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">make</span> <span class="pre">install</span></code> however
+since the makefile does this for you. You only need to do this when
+you decide to <em>not</em> install the results of the build and run directly
+out of the build directory instead.</p>
+</li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="configuration.html" class="btn btn-neutral float-right" title="Configuration File" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to the Hercules Documentation Demo site!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Read the Docs</span>
+      v: fovea1959
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+      <dl>
+        <dt>Languages</dt>
+        
+           <strong> 
+          <dd><a href="/herc-docs-demo/en/fovea1959/">en</a></dd>
+           </strong> 
+        
+      </dl>
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+           <strong> 
+          <dd><a href="/herc-docs-demo/en/fovea1959/">fovea1959</a></dd>
+           </strong> 
+        
+          
+          <dd><a href="/herc-docs-demo/en/master/">master</a></dd>
+          
+        
+          
+          <dd><a href="/herc-docs-demo/en/0.0/">0.0</a></dd>
+          
+        
+          
+          <dd><a href="/herc-docs-demo/en/1.0/">1.0</a></dd>
+          
+        
+      </dl>
+      
+      
+      <dl>
+        <dt>Downloads</dt>
+        
+          <dd><a href="/herc-docs-demo/en/fovea1959/Hercules Documentation Demo-docs_en_fovea1959.pdf">pdf</a></dd>
+        
+          <dd><a href="/herc-docs-demo/en/fovea1959/Hercules Documentation Demo-docs_en_fovea1959.epub">epub</a></dd>
+        
+          <dd><a href="/herc-docs-demo/en/fovea1959/Hercules Documentation Demo-docs_en_fovea1959.html.tar.gz">tarred HTML</a></dd>
+        
+          <dd><a href="/herc-docs-demo/en/fovea1959/Hercules Documentation Demo-docs_en_fovea1959.single.html.tar.gz">tarred single file HTML</a></dd>
+        
+      </dl>
+      
+      
+      <hr/>
+      <a href="https://tech.michaelaltfield.net/2020/07/18/sphinx-rtd-github-pages-1/">Continuous Documentation</a> hosting provided by <a href="https://pages.github.com/">GitHub Pages</a>.
+ 
+    </div>
+  </div>
+
+ 
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
