@@ -542,8 +542,8 @@ Part I: New Messages
 --------------------
 
 
-Messages HHC00001s – HHC00069s (General Messages)
-=================================================
+HHC00001s – HHC00069s (General)
+===============================
 
 HHC00001I
 ---------
@@ -570,7 +570,7 @@ Action …
 HHC00003E
 ---------
 
-HHC000 03 E is not yet documented
+HHC00003E is not yet documented
 
 Explanation …
 
@@ -771,8 +771,8 @@ Severity …
 
 Action …
 
-Messages HHC00070s – HHC00099s (Hercules Automatic Operator)
-============================================================
+HHC00070s – HHC00099s (Hercules Automatic Operator)
+===================================================
 
 HHC00070E
 ---------
@@ -809,7 +809,7 @@ HAO_MAXRULE nn” in file hao.c).
 HHC00072E
 ---------
 
-HHC000 72 E The command ‘cmd’ given, but the command ‘tgt’ was expected
+HHC00072E The command ‘cmd’ given, but the command ‘tgt’ was expected
 HHC00072E The command ‘tgt’ given, but the command ‘cmd’ was expected
 
 Explanation
@@ -1069,8 +1069,8 @@ Severity Error.
 
 Action Define a HAO rule before using the “HAO LIST” command.
 
-Messages HHC00100s – HHC00199s (General Messages)
-=================================================
+HHC00100s – HHC00199s (General)
+===============================
 
 HHC00100I
 ---------
@@ -1395,8 +1395,8 @@ Severity …
 
 Action …
 
-Messages HHC00200s – HHC00299s (Tape Device Emulation)
-======================================================
+HHC00200s – HHC00299s (Tape Device Emulation)
+=============================================
 
 HHC00201I
 ---------
@@ -1739,8 +1739,8 @@ Severity …
 
 Action …
 
-Messages HHC00300s – HHC00399s (DASD Device Emulation (CCKD))
-=============================================================
+HHC00300s – HHC00399s (DASD Device Emulation (CCKD))
+====================================================
 
 HHC00300E
 ---------
@@ -2633,8 +2633,8 @@ Severity …
 
 Action …
 
-Messages HHC00400s – HHC00499s (DASD Device Emulation (CKD))
-============================================================
+HHC00400s – HHC00499s (DASD Device Emulation (CKD))
+===================================================
 
 HHC00400E
 ---------
@@ -3384,8 +3384,8 @@ Severity …
 
 Action …
 
-Messages HHC00500s – HHC00599s (DASD Device Emulation (FBA))
-============================================================
+HHC00500s – HHC00599s (DASD Device Emulation (FBA))
+===================================================
 
 HHC00500E
 ---------
@@ -3629,8 +3629,8 @@ Severity …
 
 Action …
 
-Messages HHC00600s – HHC00699s (DASD Device Emulation (SCE))
-============================================================
+HHC00600s – HHC00699s (DASD Device Emulation (SCE))
+===================================================
 
 HHC00600E
 ---------
@@ -3698,8 +3698,8 @@ Severity …
 
 Action …
 
-Messages HHC00700s – HHC00799s (Shared Device Server)
-=====================================================
+HHC00700s – HHC00799s (Shared Device Server)
+============================================
 
 HHC00700S
 ---------
@@ -4185,8 +4185,8 @@ Severity …
 
 Action …
 
-Messages HHC00800s – HHC00899s (CPU Emulation)
-==============================================
+HHC00800s – HHC00899s (CPU Emulation)
+=====================================
 
 HHC00800I
 ---------
@@ -5073,8 +5073,8 @@ Severity …
 
 Action …
 
-Messages HHC00900s – HHC00999s (CTC Adapter Emulation)
-======================================================
+HHC00900s – HHC00999s (CTC Adapter Emulation)
+=============================================
 
 HHC00900E
 ---------
@@ -5714,8 +5714,8 @@ Severity …
 
 Action …
 
-16. Messages HHC01000s – HHC01099s (Communication Adapter Emulation)………………………….
--------------------------------------------------------------------------------
+HHC01000s – HHC01099s (Communication Adapter Emulation)
+=======================================================
 
 HHC01000E
 ---------
@@ -6672,8 +6672,8 @@ Severity …
 
 Action …
 
-17. Messages HHC01100s – HHC01199s (Printer Emulation)
-------------------------------------------------------
+HHC01100s – HHC01199s (Printer Emulation)
+=========================================
 
 HHC01100I
 ---------
@@ -6774,8 +6774,8 @@ Severity …
 
 Action …
 
-18. Messages HHC01200s – HHC01299s (Card Punch / Card Reader Emulation)
------------------------------------------------------------------------
+HHC01200s – HHC01299s (Card Punch / Card Reader Emulation)
+==========================================================
 
 HHC01200E
 ---------
@@ -6887,8 +6887,8 @@ Severity …
 
 Action …
 
-19. Messages HHC01300s – HHC01399s (Channel-to-Channel Adapter Emulation)
--------------------------------------------------------------------------
+HHC01300s – HHC01399s (Channel-to-Channel Adapter Emulation)
+============================================================
 
 HHC0 1300 I
 ---------~~
@@ -7220,8 +7220,8 @@ Severity …
 
 Action …
 
-20. Messages HHC01400s – HHC01499s (Hercules Initialization and Shutdown)
--------------------------------------------------------------------------
+HHC01400s – HHC01499s (Hercules Initialization and Shutdown)
+============================================================
 
 HHC01400I
 ---------
@@ -8158,8 +8158,8 @@ Severity …
 
 Action …
 
-21. Messages HHC01500s – HHC01599s (Dynamic Loader)
----------------------------------------------------
+HHC01500s – HHC01599s (Dynamic Loader)
+======================================
 
 HHC01500I
 ---------
@@ -8580,8 +8580,8 @@ Severity Information.
 
 Action None. This is an informational message.
 
-22. Messages HHC01600s – HHC01699s (Panel Communication)
---------------------------------------------------------
+HHC01600s – HHC01699s (Panel Communication)
+===========================================
 
 HHC01600E
 ---------
@@ -8694,8 +8694,8 @@ Severity …
 
 Action …
 
-23. Messages HHC01700s – HHC01799s (ECPS:VM Support)…………………………………………………
------------------------------------------------------------------------
+HHC01700s – HHC01799s (ECPS:VM Support)
+=======================================
 
 HHC01700W
 ---------
@@ -8964,7 +8964,7 @@ Severity …
 
 Action …
 
-24. Messages HHC01800s – HHC01899s (HTTP Server)
+24. HHC01800s – HHC01899s (HTTP Server)
 ------------------------------------------------
 
 HHC01800E
@@ -9133,8 +9133,8 @@ Severity …
 
 Action …
 
-25. Messages HHC01900s – HHC01999s (Diagnose Calls)
----------------------------------------------------
+HHC01900s – HHC01999s (Diagnose Calls)
+======================================
 
 HHC01900I
 ---------
@@ -9583,8 +9583,8 @@ panel commands, the facility should be in- cluded in the build process.
 Additionally, the DIAG8CMD configuration statement should be specified
 with the ENABLE parameter.
 
-26. Messages HHC02000s – HHC02099s (Suspend / Resume Processing)
-----------------------------------------------------------------
+HHC02000s – HHC02099s (Suspend / Resume Processing)
+===================================================
 
 HHC02000E
 ---------
@@ -9828,8 +9828,8 @@ Severity …
 
 Action …
 
-27. Messages HHC02100s – HHC02199s (System Logger)
---------------------------------------------------
+HHC02100s – HHC02199s (System Logger)
+=====================================
 
 HHC02100E
 ---------
@@ -9942,8 +9942,8 @@ Severity …
 
 Action …
 
-28. Messages HHC02200s – HHC02299s (Command Processing)
--------------------------------------------------------
+HHC02200s – HHC02299s (Command Processing)
+==========================================
 
 HHC02200E
 ---------
@@ -11003,8 +11003,8 @@ Severity …
 
 Action …
 
-29. Messages HHC02300s – HHC02399s (IEEE Component)
----------------------------------------------------
+HHC02300s – HHC02399s (IEEE Component)
+======================================
 
 HHC02300I
 ---------
@@ -11237,7 +11237,7 @@ Severity …
 
 Action …
 
-30. Messages HHC02400s – HHC02499s (DASD Utilities)
+30. HHC02400s – HHC02499s (DASD Utilities)
 ---------------------------------------------------
 
 HHC02400E
@@ -12131,7 +12131,7 @@ Severity …
 
 Action …
 
-31. Messages HHC02500s – HHC02599s (DASD Utilities)
+31. HHC02500s – HHC02599s (DASD Utilities)
 ---------------------------------------------------
 
 HHC02500E
@@ -13168,7 +13168,7 @@ Severity …
 
 Action …
 
-32. Messages HHC02600s – HHC02699s (Various Utilities)
+32. HHC02600s – HHC02699s (Various Utilities)
 ------------------------------------------------------
 
 HHC02600I
@@ -13270,7 +13270,7 @@ Severity …
 
 Action …
 
-33. Messages HHC02700s – HHC02799s (Tape Utilities)
+33. HHC02700s – HHC02799s (Tape Utilities)
 ---------------------------------------------------
 
 HHC02700I
@@ -13757,7 +13757,7 @@ Severity …
 
 Action …
 
-34. Messages HHC02800s – HHC02899s (Tape Utilities)
+34. HHC02800s – HHC02899s (Tape Utilities)
 ---------------------------------------------------
 
 HHC02800I
@@ -13837,7 +13837,7 @@ Severity …
 
 Action …
 
-35. Messages HHC03900s – HHC03999s (PTP Adapter Emulation)
+35. HHC03900s – HHC03999s (PTP Adapter Emulation)
 ----------------------------------------------------------
 
 HHC03901E
@@ -14269,7 +14269,7 @@ Severity …
 
 Action …
 
-36. Messages HHC04100s – HHC04199s (Windows Specific Components)
+36. HHC04100s – HHC04199s (Windows Specific Components)
 ----------------------------------------------------------------
 
 HHC04100I
@@ -14338,7 +14338,7 @@ Severity …
 
 Action …
 
-37. Messages HHC17000s – HHC17099s (Query Commands)
+37. HHC17000s – HHC17099s (Query Commands)
 ---------------------------------------------------
 
 HHC17000E
@@ -14484,7 +14484,7 @@ Severity …
 
 Action …
 
-38. Messages HHC17500s – HHC17599s (REXX Support)
+38. HHC17500s – HHC17599s (REXX Support)
 -------------------------------------------------
 
 HHC17500I
@@ -14740,7 +14740,7 @@ Severity …
 
 Action …
 
-39. Messages HHC90000s – HHC90099s (Debug Messages PTTRACE)
+39. HHC90000s – HHC90099s (Debug Messages PTTRACE)
 -----------------------------------------------------------
 
 HHC90000D
@@ -14864,7 +14864,7 @@ Severity …
 
 Action …
 
-40. Messages HHC90100s – HHC90199s (Debug Messages DYNCRYPT)
+40. HHC90100s – HHC90199s (Debug Messages DYNCRYPT)
 ------------------------------------------------------------
 
 HHC90100D
@@ -15021,7 +15021,7 @@ Severity …
 
 Action …
 
-41. Messages HHC90200s – HHC90299s (Debug Messages SCSITAPE)
+41. HHC90200s – HHC90299s (Debug Messages SCSITAPE)
 ------------------------------------------------------------
 
 HHC90205D
@@ -15035,7 +15035,7 @@ Severity …
 
 Action …
 
-42. Messages HHC90300s – HHC90399s (Debug Messages CMPSC)
+42. HHC90300s – HHC90399s (Debug Messages CMPSC)
 ---------------------------------------------------------
 
 HHC90300D
@@ -15745,7 +15745,7 @@ Action …
 Part II: Old Messages
 ---------------------
 
-43. Messages HHCAOnnns - Hercules Automatic Operator
+43. HHCAOnnns - Hercules Automatic Operator
 ----------------------------------------------------
 
 HHCAOnnns
@@ -15753,7 +15753,7 @@ HHCAOnnns
 
 Messages HHCAOnnns are not yet documented.
 
-44. Messages HHCCAnnns - Communication Adapter Emulation
+44. HHCCAnnns - Communication Adapter Emulation
 --------------------------------------------------------
 
 HHCCA001I
@@ -16114,7 +16114,7 @@ CCW tracing (panel command : ‘t-CCUU’).
 
 Programmer Action None.
 
-45. Messages HHCCFnnns - Configuration File Processing
+45. HHCCFnnns - Configuration File Processing
 ------------------------------------------------------
 
 HHCCF001S
@@ -17058,7 +17058,7 @@ line num.
 Action Correct the log option keyword in file fname and restart
 Hercules.
 
-46. Messages HHCCPnnns - CPU Emulation
+46. HHCCPnnns - CPU Emulation
 --------------------------------------
 
 HHCCP001W
@@ -17197,7 +17197,7 @@ Action None. This is an informational message.
 HHCCP024I
 ---------
 
-HHCCP0 24 I External interrupt: Clock comparator
+HHCCP024I External interrupt: Clock comparator
 
 Explanation The CPU has taken a clock comparator interrupt. This message
 is issued only when the CPU is in single- stepping or
@@ -17209,7 +17209,7 @@ part of normal system operation.
 HHCCP025I
 ---------
 
-HHCCP0 25 I External interrupt: CPU timer=xx…xx
+HHCCP025I External interrupt: CPU timer=xx…xx
 
 Explanation The CPU has taken a CPU timer interrupt. xx…xx is the
 hexadecimal value of the CPU timer. This message is issued only when the
@@ -17255,7 +17255,7 @@ configuration are put into a Check-Stop state.
 Action Ensure the CPU that issues the service call is a CP engine and
 restart the program.
 
-47. Messages HHCCTnnns - Channel-to-Channel Adapter Emulation
+47. HHCCTnnns - Channel-to-Channel Adapter Emulation
 -------------------------------------------------------------
 
 HHCCTnnns
@@ -17263,7 +17263,7 @@ HHCCTnnns
 
 Messages HHCCTnnns are not yet documented.
 
-48. Messages HHCCUnnns - CCKD Utilities
+48. HHCCUnnns - CCKD Utilities
 ---------------------------------------
 
 48.1 Format of the CCKD utilities messages
@@ -17685,7 +17685,7 @@ FBA_S370.
 
 Action Function processing terminates. Specify the correct file name.
 
-49. Messages HHCDAnnns - DASD Emulation (CKD, CCKD and FBA)
+49. HHCDAnnns - DASD Emulation (CKD, CCKD and FBA)
 -----------------------------------------------------------
 
 HHCDAnnns
@@ -17693,7 +17693,7 @@ HHCDAnnns
 
 Messages HHCDAnnns are not yet documented.
 
-50. Messages HHCDCnnns - DASDCOPY Utility
+50. HHCDCnnns - DASDCOPY Utility
 -----------------------------------------
 
 HHCDC001E
@@ -17801,7 +17801,7 @@ Explanation The copy operation has completed successfully.
 
 Action None. This is an informational message.
 
-51. Messages HHCDGnnns - Dyngui.DLL
+51. HHCDGnnns - Dyngui.DLL
 -----------------------------------
 
 HHCDG001I
@@ -17891,7 +17891,7 @@ memory allocation so that there is enough for Hercules to run, or else
 decrease the amount of memory that Hercules needs in order to run
 (e.g. decrease your MAINSIZE value).
 
-52. Messages HHCDInnns - DASDINIT Utility
+52. HHCDInnns - DASDINIT Utility
 -----------------------------------------
 
 HHCDI001I
@@ -17915,7 +17915,7 @@ successful.
 Action None. This is an informational message. Refer to preceding error
 messages to determine the cause.
 
-53. Messages HHCDLnnns - DASDLOAD Utility
+53. HHCDLnnns - DASDLOAD Utility
 -----------------------------------------
 
 HHCDL001E
@@ -19447,7 +19447,7 @@ sequential XMIT file.
 
 Action None.
 
-54. Messages HHCDSnnns - DASDISUP Utility
+54. HHCDSnnns - DASDISUP Utility
 -----------------------------------------
 
 HHCDS001E
@@ -19666,7 +19666,7 @@ the member in the reference pointer.
 
 Action None. This is an informational message.
 
-55. Messages HHCDTnnns - DASDCAT Utility
+55. HHCDTnnns - DASDCAT Utility
 ----------------------------------------
 
 HHCDT001E
@@ -19723,7 +19723,7 @@ specification. Only the options ‘a’ and ‘c’ are valid.
 Action Remove the invalid option from the dataset name specification and
 rerun dasdcat.
 
-56. Messages HHCDUnnns - DASD Utilities Common Functions
+56. HHCDUnnns - DASD Utilities Common Functions
 --------------------------------------------------------
 
 HHCDU001I
@@ -20451,7 +20451,7 @@ successfully created. It contains count sectors.
 
 Action None. This is an informational message.
 
-57. Messages HHCHDnnns - Hercules Dynamic Loader
+57. HHCHDnnns - Hercules Dynamic Loader
 ------------------------------------------------
 
 HHCHD001E
@@ -20656,7 +20656,7 @@ Explanation Module module has been unloaded.
 
 Action No action required
 
-58. Messages HHCHEnnns - HETINIT Utility……………………………………………………………………………
+58. HHCHEnnns - HETINIT Utility……………………………………………………………………………
 ---------------------------------------------------------------------
 
 HHCHEnnns
@@ -20664,7 +20664,7 @@ HHCHEnnns
 
 Messages HHCHEnnns are not yet documented.
 
-59. Messages HHCHGnnns - HETGET Utility…………………………………………………………………………..
+59. HHCHGnnns - HETGET Utility…………………………………………………………………………..
 ---------------------------------------------------------------------
 
 HHCHGnnns
@@ -20672,7 +20672,7 @@ HHCHGnnns
 
 Messages HHCHGnnns are not yet documented.
 
-60. Messages HHCHMnnns - HETMAP Utility
+60. HHCHMnnns - HETMAP Utility
 ---------------------------------------
 
 HHCHMnnns
@@ -20680,7 +20680,7 @@ HHCHMnnns
 
 Messages HHCHMnnns are not yet documented.
 
-61. Messages HHCHTnnns - HTTP Server………………………………………………………………………………
+61. HHCHTnnns - HTTP Server………………………………………………………………………………
 ------------------------------------------------------------------
 
 HHCHT001I
@@ -20803,7 +20803,7 @@ Explanation The root directory path for the HTTP server is pathname.
 
 Action No action required.
 
-62. Messages HHCHUnnns - HETUPD Utility…………………………………………………………………………..
+62. HHCHUnnns - HETUPD Utility…………………………………………………………………………..
 ---------------------------------------------------------------------
 
 HHCHUnnns
@@ -20811,7 +20811,7 @@ HHCHUnnns
 
 Messages HHCHUnnns are not yet documented.
 
-63. Messages HHCIFnnns - Network Interface Configuration Handler (hercifc)
+63. HHCIFnnns - Network Interface Configuration Handler (hercifc)
 --------------------------------------------------------------------------
 
 HHCIF001E
@@ -20870,7 +20870,7 @@ was executed using the name programname.
 
 Action Correct the error and retry the operation.
 
-64. Messages HHCINnnns - Hercules Initialization
+64. HHCINnnns - Hercules Initialization
 ------------------------------------------------
 
 HHCIN001S
@@ -20969,7 +20969,7 @@ Explanation Hercules has ended.
 
 Action No action required.
 
-65. Messages HHCLCnnns - LCS Emulation
+65. HHCLCnnns - LCS Emulation
 --------------------------------------
 
 HHCLC001E
@@ -21250,7 +21250,7 @@ TUN/TAP device named tapn.
 
 Action None. This is an informational message.
 
-66. Messages HHCLGnnns - System Log Functions
+66. HHCLGnnns - System Log Functions
 ---------------------------------------------
 
 HHCLG001E
@@ -21391,7 +21391,7 @@ the requested log file.
 
 Action None. This is an informational message.
 
-67. Messages HHCPNnnns - Control Panel Command Messages
+67. HHCPNnnns - Control Panel Command Messages
 -------------------------------------------------------
 
 HHCPN001I
@@ -21617,7 +21617,7 @@ option val has been set. val is TIMESTAMP or NOTIMESTAMP.
 
 Action None. This is an informational message.
 
-68. Messages HHCPRnnns - Printer Emulation
+68. HHCPRnnns - Printer Emulation
 ------------------------------------------
 
 HHCPR001E
@@ -21747,7 +21747,7 @@ by error.
 
 Action Correct the error and retry the operation.
 
-69. Messages HHCPUnnns - Card Punch Emulation
+69. HHCPUnnns - Card Punch Emulation
 ---------------------------------------------
 
 HHCPU001E
@@ -21790,7 +21790,7 @@ card punch data. The error is described by error.
 
 Action Correct the error and retry the operation.
 
-70. Messages HHCRDnnns - Card Reader Emulation
+70. HHCRDnnns - Card Reader Emulation
 ----------------------------------------------
 
 HHCRD001E
@@ -22001,7 +22001,7 @@ bytes.
 Action Either ensure that all lines in the file are less than size bytes
 long or specify the trunc option on the reader definition.
 
-71. Messages HHCSDnnns - Socket Devices Common Functions
+71. HHCSDnnns - Socket Devices Common Functions
 --------------------------------------------------------
 
 HHCSDnnns
@@ -22009,7 +22009,7 @@ HHCSDnnns
 
 Messages HHCSDnnns are not yet documented.
 
-72. Messages HHCTAnnns - Tape Device Emulation
+72. HHCTAnnns - Tape Device Emulation
 ----------------------------------------------
 
 HHCTAnnns
@@ -22017,7 +22017,7 @@ HHCTAnnns
 
 Messages HHCTAnnns are not yet documented.
 
-73. Messages HHCTCnnns - TAPECOPY Utility
+73. HHCTCnnns - TAPECOPY Utility
 -----------------------------------------
 
 HHCTCnnns
@@ -22025,7 +22025,7 @@ HHCTCnnns
 
 Messages HHCTCnnns are not yet documented.
 
-74. Messages HHCTEnnns - Terminal Emulation
+74. HHCTEnnns - Terminal Emulation
 -------------------------------------------
 
 HHCTE001I
@@ -22187,7 +22187,7 @@ can be defined per system.
 Action Correct the statement in the configuration file and restart
 Hercules.
 
-75. Messages HHCTMnnns - TAPEMAP Utility
+75. HHCTMnnns - TAPEMAP Utility
 ----------------------------------------
 
 HHCTMnnns
@@ -22195,7 +22195,7 @@ HHCTMnnns
 
 Messages HHCTMnnns are not yet documented.
 
-76. Messages HHCTSnnns - TAPESPLT Utility
+76. HHCTSnnns - TAPESPLT Utility
 -----------------------------------------
 
 HHCTSnnns
@@ -22203,7 +22203,7 @@ HHCTSnnns
 
 Messages HHCTSnnns are not yet documented.
 
-77. Messages HHCTTnnns - TOD Clock and Timer Services
+77. HHCTTnnns - TOD Clock and Timer Services
 -----------------------------------------------------
 
 HHCTT001W
@@ -22240,7 +22240,7 @@ Explanation The thread for timing functions has ended.
 
 Action No action required.
 
-78. Messages HHCTUnnns - TUN / TAP Driver Support
+78. HHCTUnnns - TUN / TAP Driver Support
 -------------------------------------------------
 
 HHCTUnnns
@@ -22248,7 +22248,7 @@ HHCTUnnns
 
 Messages HHCTUnnns are not yet documented.
 
-79. Messages HHCVMnnns - VM / CP Emulation
+79. HHCVMnnns - VM / CP Emulation
 ------------------------------------------
 
 HHCVM001I
