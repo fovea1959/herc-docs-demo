@@ -18,6 +18,7 @@ Welcome to the Hercules Documentation Demo site!
    hercfaq
    messages
    aa_auxdocs
+   appendix_a
 
 
 Indices and tables
